@@ -1,0 +1,17 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "obd2.c"
+        "ui.c"
+    INCLUDE_DIRS
+        "."
+    PRIV_REQUIRES
+        driver
+        esp_event
+        esp_lcd
+        esp_timer
+        esp_driver_i2c
+        esp_driver_twai
+        lvgl
+        nvs_flash
+)

@@ -1,0 +1,38 @@
+menu "ODB2 Dashboard"
+
+    config OBD2_CAN_TX_GPIO
+        int "CAN TX GPIO"
+        default 20
+        range 0 48
+        help
+            GPIO connected to the TXD pin of the external CAN transceiver.
+
+    config OBD2_CAN_RX_GPIO
+        int "CAN RX GPIO"
+        default 19
+        range 0 48
+        help
+            GPIO connected to the RXD pin of the external CAN transceiver.
+
+    config OBD2_CAN_BITRATE
+        int "CAN bitrate"
+        default 500000
+        range 10000 1000000
+        help
+            Classic CAN bitrate used on the vehicle bus.
+
+    config OBD2_POLL_INTERVAL_MS
+        int "Poll interval (ms)"
+        default 1000
+        range 100 10000
+        help
+            Interval between OBD-II refresh cycles.
+
+    config OBD2_RESPONSE_TIMEOUT_MS
+        int "Response timeout (ms)"
+        default 120
+        range 20 1000
+        help
+            Timeout used while waiting for each OBD-II response frame.
+
+endmenu

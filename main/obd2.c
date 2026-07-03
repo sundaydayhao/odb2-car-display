@@ -13,6 +13,7 @@
 static const char *TAG = "obd2";
 
 #define OBD2_RX_QUEUE_DEPTH 16
+#define OBD2_BUS_RECOVERY_DELAY_MS 1000
 
 typedef struct {
     twai_frame_t frame;
@@ -21,6 +22,29 @@ typedef struct {
 
 static twai_node_handle_t s_twai_node;
 static QueueHandle_t s_rx_queue;
+static int64_t s_bus_recover_until_us;
+
+static esp_err_t obd2_recover_bus_off(void)
+{
+    twai_node_status_t status = { 0 };
+    esp_err_t err = twai_node_get_info(s_twai_node, &status, NULL);
+    if (err != ESP_OK) {
+        return err;
+    }
+
+    if (status.state != TWAI_ERROR_BUS_OFF) {
+        return ESP_OK;
+    }
+
+    ESP_LOGW(TAG, "TWAI bus off detected, starting recovery");
+    err = twai_node_recover(s_twai_node);
+    if (err != ESP_OK) {
+        return err;
+    }
+
+    s_bus_recover_until_us = esp_timer_get_time() + (int64_t)OBD2_BUS_RECOVERY_DELAY_MS * 1000LL;
+    return ESP_OK;
+}
 
 static bool IRAM_ATTR obd2_on_rx_done(twai_node_handle_t handle, const twai_rx_done_event_data_t *edata, void *user_ctx)
 {
@@ -47,6 +71,10 @@ static bool IRAM_ATTR obd2_on_rx_done(twai_node_handle_t handle, const twai_rx_d
 
 static esp_err_t send_obd_request(uint8_t pid)
 {
+    if (esp_timer_get_time() < s_bus_recover_until_us) {
+        return ESP_ERR_TIMEOUT;
+    }
+
     uint8_t payload[8] = {
         0x02, 0x01, pid, 0x00, 0x00, 0x00, 0x00, 0x00,
     };
@@ -64,8 +92,21 @@ static esp_err_t send_obd_request(uint8_t pid)
         .buffer_len = sizeof(payload),
     };
 
-    ESP_RETURN_ON_ERROR(twai_node_transmit(s_twai_node, &frame, 100), TAG, "twai_node_transmit failed");
-    return twai_node_transmit_wait_all_done(s_twai_node, 100);
+    esp_err_t err = twai_node_transmit(s_twai_node, &frame, 100);
+    if (err == ESP_ERR_INVALID_STATE) {
+        ESP_RETURN_ON_ERROR(obd2_recover_bus_off(), TAG, "failed to recover TWAI bus");
+        return ESP_ERR_TIMEOUT;
+    }
+    if (err != ESP_OK) {
+        return err;
+    }
+
+    err = twai_node_transmit_wait_all_done(s_twai_node, 100);
+    if (err == ESP_ERR_INVALID_STATE) {
+        ESP_RETURN_ON_ERROR(obd2_recover_bus_off(), TAG, "failed to recover TWAI bus");
+        return ESP_ERR_TIMEOUT;
+    }
+    return err;
 }
 
 static bool parse_obd_response(const twai_frame_t *msg, uint8_t pid, obd2_vehicle_data_t *out)
@@ -109,7 +150,13 @@ static bool parse_obd_response(const twai_frame_t *msg, uint8_t pid, obd2_vehicl
 
 static esp_err_t query_pid(uint8_t pid, obd2_vehicle_data_t *out)
 {
-    ESP_RETURN_ON_ERROR(send_obd_request(pid), TAG, "failed to send PID 0x%02X", pid);
+    esp_err_t err = send_obd_request(pid);
+    if (err != ESP_OK) {
+        if (err != ESP_ERR_TIMEOUT) {
+            ESP_LOGE(TAG, "failed to send PID 0x%02X: %s", pid, esp_err_to_name(err));
+        }
+        return err;
+    }
 
     const int64_t deadline = esp_timer_get_time() + (int64_t)CONFIG_OBD2_RESPONSE_TIMEOUT_MS * 1000LL;
     while (esp_timer_get_time() < deadline) {

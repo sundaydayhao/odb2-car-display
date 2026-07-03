@@ -47,12 +47,16 @@ static const char *TAG = "ui";
 #define BOARD_I2C_SPEED_HZ           400000
 #define BOARD_I2C_TIMEOUT_MS         100
 
-#define CH422G_ADDR_OUT              0x24
-#define CH422G_ADDR_CONFIG           0x48
-#define CH422G_ADDR_IO               0x38
-#define CH422G_OC_MODE               0x01
-#define CH422G_IO_OE                 0x02
-#define CH422G_BL_BIT                BIT2
+#define CH422G_ADDR_WR_SET           0x24
+#define CH422G_ADDR_WR_IO            0x38
+#define CH422G_WR_SET_IO_OE          0x01
+#define CH422G_EXIO_TP_RST           BIT1
+#define CH422G_EXIO_LCD_BL           BIT2
+#define CH422G_EXIO_LCD_RST          BIT3
+#define CH422G_EXIO_SD_CS            BIT4
+#define CH422G_EXIO_USB_SEL          BIT5
+#define CH422G_OUTPUT_LCD_ON_CAN     (CH422G_EXIO_TP_RST | CH422G_EXIO_LCD_BL | CH422G_EXIO_LCD_RST | \
+                                      CH422G_EXIO_SD_CS | CH422G_EXIO_USB_SEL)
 
 #define LVGL_TICK_PERIOD_MS          2
 #define LVGL_TASK_STACK_SIZE         (8 * 1024)
@@ -153,13 +157,12 @@ static esp_err_t i2c_write_u8(i2c_master_dev_handle_t dev, uint8_t value)
     return i2c_master_transmit(dev, &value, 1, BOARD_I2C_TIMEOUT_MS);
 }
 
-static esp_err_t init_board_backlight(void)
+static esp_err_t init_board_io_expander(void)
 {
     esp_err_t ret = ESP_OK;
     i2c_master_bus_handle_t bus = NULL;
-    i2c_master_dev_handle_t ch422g_config = NULL;
-    i2c_master_dev_handle_t ch422g_out = NULL;
-    i2c_master_dev_handle_t ch422g_io = NULL;
+    i2c_master_dev_handle_t ch422g_wr_set = NULL;
+    i2c_master_dev_handle_t ch422g_wr_io = NULL;
 
     i2c_master_bus_config_t bus_config = {
         .i2c_port = BOARD_I2C_PORT,
@@ -171,23 +174,22 @@ static esp_err_t init_board_backlight(void)
     };
 
     ESP_RETURN_ON_ERROR(i2c_new_master_bus(&bus_config, &bus), TAG, "create I2C bus failed");
-    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_CONFIG, &ch422g_config), cleanup, TAG, "add CH422G config device failed");
-    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_OUT, &ch422g_out), cleanup, TAG, "add CH422G output device failed");
-    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_IO, &ch422g_io), cleanup, TAG, "add CH422G IO device failed");
+    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_WR_SET, &ch422g_wr_set), cleanup, TAG,
+                      "add CH422G WR_SET device failed");
+    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_WR_IO, &ch422g_wr_io), cleanup, TAG,
+                      "add CH422G WR_IO device failed");
 
-    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_config, CH422G_IO_OE), cleanup, TAG, "enable CH422G output failed");
-    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_out, CH422G_OC_MODE), cleanup, TAG, "set CH422G open drain mode failed");
-    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_io, CH422G_BL_BIT), cleanup, TAG, "turn on LCD backlight failed");
+    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_set, CH422G_WR_SET_IO_OE), cleanup, TAG,
+                      "enable CH422G output failed");
+    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_io, CH422G_OUTPUT_LCD_ON_CAN), cleanup, TAG,
+                      "set CH422G LCD backlight and CAN mode failed");
 
 cleanup:
-    if (ch422g_io != NULL) {
-        i2c_master_bus_rm_device(ch422g_io);
+    if (ch422g_wr_io != NULL) {
+        i2c_master_bus_rm_device(ch422g_wr_io);
     }
-    if (ch422g_out != NULL) {
-        i2c_master_bus_rm_device(ch422g_out);
-    }
-    if (ch422g_config != NULL) {
-        i2c_master_bus_rm_device(ch422g_config);
+    if (ch422g_wr_set != NULL) {
+        i2c_master_bus_rm_device(ch422g_wr_set);
     }
     if (bus != NULL) {
         i2c_del_master_bus(bus);
@@ -631,9 +633,9 @@ void ui_init(void)
         return;
     }
 
-    err = init_board_backlight();
+    err = init_board_io_expander();
     if (err != ESP_OK) {
-        ESP_LOGW(TAG, "LCD backlight control failed: %s", esp_err_to_name(err));
+        ESP_LOGW(TAG, "Board IO expander setup failed: %s", esp_err_to_name(err));
     }
 
     _lock_acquire(&s_lvgl_lock);

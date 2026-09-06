@@ -24,6 +24,7 @@ static twai_node_handle_t s_twai_node;
 static QueueHandle_t s_rx_queue;
 static int64_t s_bus_recover_until_us;
 
+#if CONFIG_OBD2_TRANSPORT_DIRECT_CAN
 static esp_err_t obd2_recover_bus_off(void)
 {
     twai_node_status_t status = { 0 };
@@ -128,9 +129,21 @@ static bool parse_obd_response(const twai_frame_t *msg, uint8_t pid, obd2_vehicl
     }
 
     switch (pid) {
+    case 0x04:  // Calculated engine load
+        out->engine_load_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
+        out->engine_load_valid = true;
+        return true;
+    case 0x05:  // Engine coolant temperature
+        out->coolant_temp_c = (int16_t)msg->buffer[3] - 40;
+        out->coolant_temp_valid = true;
+        return true;
     case 0x0D:  // Vehicle speed
         out->speed_kph = msg->buffer[3];
         out->speed_valid = true;
+        return true;
+    case 0x11:  // Throttle position
+        out->throttle_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
+        out->throttle_valid = true;
         return true;
     case 0x2F:  // Fuel level input
         out->fuel_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
@@ -142,6 +155,13 @@ static bool parse_obd_response(const twai_frame_t *msg, uint8_t pid, obd2_vehicl
         }
         out->rpm = (uint16_t)((((uint16_t)msg->buffer[3] << 8) | msg->buffer[4]) / 4U);
         out->rpm_valid = true;
+        return true;
+    case 0x42:  // Control module voltage
+        if (msg->header.dlc < 5) {
+            return false;
+        }
+        out->control_voltage_mv = (uint16_t)((((uint16_t)msg->buffer[3] << 8) | msg->buffer[4]));
+        out->control_voltage_valid = true;
         return true;
     default:
         return false;
@@ -224,16 +244,39 @@ esp_err_t obd2_read_vehicle_data(obd2_vehicle_data_t *out)
         return err;
     }
 
-    err = query_pid(0x2F, out);
-    if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
-        return err;
-    }
-
     err = query_pid(0x0C, out);
     if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
         return err;
     }
 
+    const uint8_t secondary_pids[] = {0x2F, 0x05, 0x04, 0x11, 0x42};
+    for (size_t i = 0; i < sizeof(secondary_pids) / sizeof(secondary_pids[0]); ++i) {
+        err = query_pid(secondary_pids[i], out);
+        if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
+            return err;
+        }
+    }
+
     out->last_update_ms = esp_timer_get_time() / 1000LL;
     return ESP_OK;
 }
+#else
+esp_err_t obd2_init(void)
+{
+    ESP_LOGW(TAG,
+             "ELM327 BLE transport selected. ESP32-S3 requires a BLE ELM327 adapter; Classic SPP adapters are not "
+             "supported by this target yet.");
+    return ESP_ERR_NOT_SUPPORTED;
+}
+
+esp_err_t obd2_read_vehicle_data(obd2_vehicle_data_t *out)
+{
+    if (out == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    memset(out, 0, sizeof(*out));
+    out->last_update_ms = esp_timer_get_time() / 1000LL;
+    return ESP_ERR_NOT_SUPPORTED;
+}
+#endif

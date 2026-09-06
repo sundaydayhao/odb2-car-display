@@ -3,6 +3,11 @@ idf_component_register(
         "app_main.c"
         "obd2.c"
         "ui.c"
+        "dashboard.c"
+        "fonts/dashboard_text_18.c"
+        "fonts/dashboard_text_22.c"
+        "fonts/dashboard_digits_144.c"
+        "fonts/dashboard_digits_72.c"
     INCLUDE_DIRS
         "."
     PRIV_REQUIRES

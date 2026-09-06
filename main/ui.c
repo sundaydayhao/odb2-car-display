@@ -1,4 +1,5 @@
 #include "ui.h"
+#include "dashboard.h"
 
 #include <assert.h>
 #include <stdio.h>
@@ -9,8 +10,12 @@
 #include "driver/i2c_master.h"
 #include "esp_check.h"
 #include "esp_err.h"
+#include "esp_heap_caps.h"
+#include "esp_lcd_panel_io.h"
 #include "esp_lcd_panel_ops.h"
 #include "esp_lcd_panel_rgb.h"
+#include "esp_lcd_touch.h"
+#include "esp_lcd_touch_gt911.h"
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
@@ -46,6 +51,7 @@ static const char *TAG = "ui";
 #define BOARD_I2C_SCL                9
 #define BOARD_I2C_SPEED_HZ           400000
 #define BOARD_I2C_TIMEOUT_MS         100
+#define TOUCH_INT_GPIO               4
 
 #define CH422G_ADDR_WR_SET           0x24
 #define CH422G_ADDR_WR_IO            0x38
@@ -64,37 +70,12 @@ static const char *TAG = "ui";
 #define LVGL_TASK_MAX_DELAY_MS       500
 #define LVGL_TASK_MIN_DELAY_MS       (1000 / CONFIG_FREERTOS_HZ)
 
-#define SPEED_MAX_KPH                240
-#define RPM_MAX                      8000
-#define RPM_WARN                     6000
-#define FUEL_LOW_PERCENT             15
-#define UI_ARRAY_SIZE(a)             (sizeof(a) / sizeof((a)[0]))
-
 static _lock_t s_lvgl_lock;
 static lv_display_t *s_display;
+static i2c_master_bus_handle_t s_i2c_bus;
+static esp_lcd_touch_handle_t s_touch_handle;
+static esp_lcd_panel_io_handle_t s_touch_io_handle;
 static bool s_ui_ready;
-
-static lv_obj_t *s_speed_arc;
-static lv_obj_t *s_speed_value_label;
-static lv_obj_t *s_speed_state_label;
-static lv_obj_t *s_rpm_arc;
-static lv_obj_t *s_rpm_value_label;
-static lv_obj_t *s_rpm_state_label;
-static lv_obj_t *s_fuel_bar;
-static lv_obj_t *s_fuel_value_label;
-static lv_obj_t *s_fuel_state_label;
-static lv_obj_t *s_status_label;
-
-static lv_style_t s_screen_style;
-static lv_style_t s_panel_style;
-static lv_style_t s_label_dim_style;
-static lv_style_t s_label_value_style;
-static lv_style_t s_speed_arc_main_style;
-static lv_style_t s_speed_arc_indicator_style;
-static lv_style_t s_rpm_arc_main_style;
-static lv_style_t s_rpm_arc_indicator_style;
-static lv_style_t s_fuel_bar_main_style;
-static lv_style_t s_fuel_bar_indicator_style;
 
 static bool notify_lvgl_flush_ready(esp_lcd_panel_handle_t panel,
                                     const esp_lcd_rgb_panel_event_data_t *event_data,
@@ -157,12 +138,11 @@ static esp_err_t i2c_write_u8(i2c_master_dev_handle_t dev, uint8_t value)
     return i2c_master_transmit(dev, &value, 1, BOARD_I2C_TIMEOUT_MS);
 }
 
-static esp_err_t init_board_io_expander(void)
+static esp_err_t init_board_i2c_bus(void)
 {
-    esp_err_t ret = ESP_OK;
-    i2c_master_bus_handle_t bus = NULL;
-    i2c_master_dev_handle_t ch422g_wr_set = NULL;
-    i2c_master_dev_handle_t ch422g_wr_io = NULL;
+    if (s_i2c_bus != NULL) {
+        return ESP_OK;
+    }
 
     i2c_master_bus_config_t bus_config = {
         .i2c_port = BOARD_I2C_PORT,
@@ -173,15 +153,24 @@ static esp_err_t init_board_io_expander(void)
         .flags.enable_internal_pullup = true,
     };
 
-    ESP_RETURN_ON_ERROR(i2c_new_master_bus(&bus_config, &bus), TAG, "create I2C bus failed");
-    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_WR_SET, &ch422g_wr_set), cleanup, TAG,
+    return i2c_new_master_bus(&bus_config, &s_i2c_bus);
+}
+
+static esp_err_t write_board_outputs(uint8_t value)
+{
+    esp_err_t ret = ESP_OK;
+    i2c_master_dev_handle_t ch422g_wr_set = NULL;
+    i2c_master_dev_handle_t ch422g_wr_io = NULL;
+
+    ESP_RETURN_ON_ERROR(init_board_i2c_bus(), TAG, "create I2C bus failed");
+    ESP_GOTO_ON_ERROR(i2c_add_device(s_i2c_bus, CH422G_ADDR_WR_SET, &ch422g_wr_set), cleanup, TAG,
                       "add CH422G WR_SET device failed");
-    ESP_GOTO_ON_ERROR(i2c_add_device(bus, CH422G_ADDR_WR_IO, &ch422g_wr_io), cleanup, TAG,
+    ESP_GOTO_ON_ERROR(i2c_add_device(s_i2c_bus, CH422G_ADDR_WR_IO, &ch422g_wr_io), cleanup, TAG,
                       "add CH422G WR_IO device failed");
 
     ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_set, CH422G_WR_SET_IO_OE), cleanup, TAG,
                       "enable CH422G output failed");
-    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_io, CH422G_OUTPUT_LCD_ON_CAN), cleanup, TAG,
+    ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_io, value), cleanup, TAG,
                       "set CH422G LCD backlight and CAN mode failed");
 
 cleanup:
@@ -191,280 +180,84 @@ cleanup:
     if (ch422g_wr_set != NULL) {
         i2c_master_bus_rm_device(ch422g_wr_set);
     }
-    if (bus != NULL) {
-        i2c_del_master_bus(bus);
-    }
 
     return ret;
 }
 
-static void configure_arc(lv_obj_t *arc, int32_t min, int32_t max, int16_t rotation, int16_t bg_start, int16_t bg_end)
+static esp_err_t init_board_io_expander(void)
 {
-    lv_arc_set_range(arc, min, max);
-    lv_arc_set_value(arc, min);
-    lv_arc_set_rotation(arc, rotation);
-    lv_arc_set_bg_angles(arc, bg_start, bg_end);
-    lv_obj_remove_style(arc, NULL, LV_PART_KNOB);
-    lv_obj_clear_flag(arc, LV_OBJ_FLAG_CLICKABLE);
+    return write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN);
 }
 
-static lv_obj_t *create_label(lv_obj_t *parent,
-                              const char *text,
-                              const lv_font_t *font,
-                              lv_color_t color,
-                              lv_text_align_t align)
+static esp_err_t pulse_touch_reset(void)
 {
-    lv_obj_t *label = lv_label_create(parent);
-    lv_label_set_text(label, text);
-    lv_obj_set_style_text_font(label, font, 0);
-    lv_obj_set_style_text_color(label, color, 0);
-    lv_obj_set_style_text_align(label, align, 0);
-    lv_label_set_long_mode(label, LV_LABEL_LONG_CLIP);
-    return label;
+    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN & ~CH422G_EXIO_TP_RST),
+                        TAG,
+                        "drive touch reset low failed");
+    vTaskDelay(pdMS_TO_TICKS(20));
+    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN), TAG, "drive touch reset high failed");
+    vTaskDelay(pdMS_TO_TICKS(120));
+    return ESP_OK;
 }
 
-static void init_styles(void)
+static void lvgl_touch_read_cb(lv_indev_t *indev, lv_indev_data_t *data)
 {
-    lv_style_init(&s_screen_style);
-    lv_style_set_bg_color(&s_screen_style, lv_color_hex(0x070a0f));
-    lv_style_set_bg_opa(&s_screen_style, LV_OPA_COVER);
+    (void)indev;
+    esp_lcd_touch_point_data_t touch_points[1];
+    uint8_t touch_count = 0;
 
-    lv_style_init(&s_panel_style);
-    lv_style_set_bg_color(&s_panel_style, lv_color_hex(0x111821));
-    lv_style_set_bg_opa(&s_panel_style, LV_OPA_80);
-    lv_style_set_border_color(&s_panel_style, lv_color_hex(0x233241));
-    lv_style_set_border_width(&s_panel_style, 1);
-    lv_style_set_radius(&s_panel_style, 8);
-    lv_style_set_pad_all(&s_panel_style, 12);
+    if (s_touch_handle == NULL || esp_lcd_touch_read_data(s_touch_handle) != ESP_OK ||
+        esp_lcd_touch_get_data(s_touch_handle, touch_points, &touch_count, 1) != ESP_OK || touch_count == 0) {
+        data->state = LV_INDEV_STATE_RELEASED;
+        return;
+    }
 
-    lv_style_init(&s_label_dim_style);
-    lv_style_set_text_color(&s_label_dim_style, lv_color_hex(0x7d8ea3));
-    lv_style_set_text_letter_space(&s_label_dim_style, 0);
-
-    lv_style_init(&s_label_value_style);
-    lv_style_set_text_color(&s_label_value_style, lv_color_hex(0xf3f7fb));
-    lv_style_set_text_letter_space(&s_label_value_style, 0);
-
-    lv_style_init(&s_speed_arc_main_style);
-    lv_style_set_arc_color(&s_speed_arc_main_style, lv_color_hex(0x263442));
-    lv_style_set_arc_width(&s_speed_arc_main_style, 18);
-    lv_style_set_arc_rounded(&s_speed_arc_main_style, true);
-
-    lv_style_init(&s_speed_arc_indicator_style);
-    lv_style_set_arc_color(&s_speed_arc_indicator_style, lv_color_hex(0x16c7d6));
-    lv_style_set_arc_width(&s_speed_arc_indicator_style, 18);
-    lv_style_set_arc_rounded(&s_speed_arc_indicator_style, true);
-
-    lv_style_init(&s_rpm_arc_main_style);
-    lv_style_set_arc_color(&s_rpm_arc_main_style, lv_color_hex(0x2b3038));
-    lv_style_set_arc_width(&s_rpm_arc_main_style, 12);
-    lv_style_set_arc_rounded(&s_rpm_arc_main_style, true);
-
-    lv_style_init(&s_rpm_arc_indicator_style);
-    lv_style_set_arc_color(&s_rpm_arc_indicator_style, lv_color_hex(0xf0a52b));
-    lv_style_set_arc_width(&s_rpm_arc_indicator_style, 12);
-    lv_style_set_arc_rounded(&s_rpm_arc_indicator_style, true);
-
-    lv_style_init(&s_fuel_bar_main_style);
-    lv_style_set_bg_color(&s_fuel_bar_main_style, lv_color_hex(0x252f3a));
-    lv_style_set_bg_opa(&s_fuel_bar_main_style, LV_OPA_COVER);
-    lv_style_set_radius(&s_fuel_bar_main_style, 4);
-
-    lv_style_init(&s_fuel_bar_indicator_style);
-    lv_style_set_bg_color(&s_fuel_bar_indicator_style, lv_color_hex(0x4fd071));
-    lv_style_set_bg_opa(&s_fuel_bar_indicator_style, LV_OPA_COVER);
-    lv_style_set_radius(&s_fuel_bar_indicator_style, 4);
+    data->point.x = touch_points[0].x;
+    data->point.y = touch_points[0].y;
+    data->state = LV_INDEV_STATE_PRESSED;
 }
 
-static void add_tick_labels(lv_obj_t *parent)
+static esp_err_t init_gt911_touch(lv_display_t *display)
 {
-    static const struct {
-        const char *text;
-        lv_coord_t x;
-        lv_coord_t y;
-    } ticks[] = {
-        {"0", -168, 116},
-        {"60", -182, -4},
-        {"120", -74, -120},
-        {"180", 78, -120},
-        {"240", 172, 116},
+    ESP_RETURN_ON_ERROR(init_board_i2c_bus(), TAG, "create I2C bus failed");
+    ESP_RETURN_ON_ERROR(pulse_touch_reset(), TAG, "reset GT911 touch failed");
+
+    esp_lcd_panel_io_i2c_config_t io_config = ESP_LCD_TOUCH_IO_I2C_GT911_CONFIG();
+    ESP_RETURN_ON_ERROR(esp_lcd_new_panel_io_i2c(s_i2c_bus, &io_config, &s_touch_io_handle),
+                        TAG,
+                        "create GT911 panel IO failed");
+
+    esp_lcd_touch_io_gt911_config_t gt911_config = {
+        .dev_addr = io_config.dev_addr,
+    };
+    esp_lcd_touch_config_t touch_config = {
+        .x_max = LCD_H_RES,
+        .y_max = LCD_V_RES,
+        .rst_gpio_num = -1,
+        .int_gpio_num = TOUCH_INT_GPIO,
+        .levels = {
+            .reset = 0,
+            .interrupt = 0,
+        },
+        .flags = {
+            .swap_xy = 0,
+            .mirror_x = 0,
+            .mirror_y = 0,
+        },
+        .driver_data = &gt911_config,
     };
 
-    for (size_t i = 0; i < UI_ARRAY_SIZE(ticks); ++i) {
-        lv_obj_t *label = create_label(parent,
-                                       ticks[i].text,
-                                       &lv_font_montserrat_16,
-                                       lv_color_hex(0x52667d),
-                                       LV_TEXT_ALIGN_CENTER);
-        lv_obj_set_width(label, 54);
-        lv_obj_align(label, LV_ALIGN_CENTER, ticks[i].x, ticks[i].y);
-    }
-}
+    ESP_RETURN_ON_ERROR(esp_lcd_touch_new_i2c_gt911(s_touch_io_handle, &touch_config, &s_touch_handle),
+                        TAG,
+                        "init GT911 touch failed");
 
-static void create_dashboard(lv_display_t *display)
-{
-    lv_obj_t *screen = lv_display_get_screen_active(display);
-    lv_obj_add_style(screen, &s_screen_style, 0);
-    lv_obj_clear_flag(screen, LV_OBJ_FLAG_SCROLLABLE);
-
-    lv_obj_t *top_line = lv_obj_create(screen);
-    lv_obj_remove_style_all(top_line);
-    lv_obj_set_size(top_line, LCD_H_RES, 2);
-    lv_obj_set_style_bg_color(top_line, lv_color_hex(0x16c7d6), 0);
-    lv_obj_set_style_bg_opa(top_line, LV_OPA_60, 0);
-    lv_obj_align(top_line, LV_ALIGN_TOP_MID, 0, 0);
-
-    s_status_label = create_label(screen,
-                                  "OBD-II WAIT",
-                                  &lv_font_montserrat_18,
-                                  lv_color_hex(0x9fb0c3),
-                                  LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_status_label, 220);
-    lv_obj_align(s_status_label, LV_ALIGN_TOP_MID, 0, 16);
-
-    lv_obj_t *speed_panel = lv_obj_create(screen);
-    lv_obj_add_style(speed_panel, &s_panel_style, 0);
-    lv_obj_set_size(speed_panel, 392, 392);
-    lv_obj_align(speed_panel, LV_ALIGN_CENTER, 0, 34);
-    lv_obj_clear_flag(speed_panel, LV_OBJ_FLAG_SCROLLABLE);
-
-    s_speed_arc = lv_arc_create(speed_panel);
-    lv_obj_set_size(s_speed_arc, 354, 354);
-    lv_obj_center(s_speed_arc);
-    configure_arc(s_speed_arc, 0, SPEED_MAX_KPH, 140, 0, 260);
-    lv_obj_add_style(s_speed_arc, &s_speed_arc_main_style, LV_PART_MAIN);
-    lv_obj_add_style(s_speed_arc, &s_speed_arc_indicator_style, LV_PART_INDICATOR);
-
-    add_tick_labels(speed_panel);
-
-    s_speed_value_label = create_label(speed_panel,
-                                       "--",
-                                       &lv_font_montserrat_48,
-                                       lv_color_hex(0xf8fbff),
-                                       LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_speed_value_label, 210);
-    lv_obj_align(s_speed_value_label, LV_ALIGN_CENTER, 0, -20);
-
-    lv_obj_t *speed_unit_label = create_label(speed_panel,
-                                              "km/h",
-                                              &lv_font_montserrat_24,
-                                              lv_color_hex(0x8aa3b8),
-                                              LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(speed_unit_label, 120);
-    lv_obj_align(speed_unit_label, LV_ALIGN_CENTER, 0, 48);
-
-    s_speed_state_label = create_label(speed_panel,
-                                       "SPEED",
-                                       &lv_font_montserrat_18,
-                                       lv_color_hex(0x16c7d6),
-                                       LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_speed_state_label, 160);
-    lv_obj_align(s_speed_state_label, LV_ALIGN_BOTTOM_MID, 0, -34);
-
-    lv_obj_t *rpm_panel = lv_obj_create(screen);
-    lv_obj_add_style(rpm_panel, &s_panel_style, 0);
-    lv_obj_set_size(rpm_panel, 188, 290);
-    lv_obj_align(rpm_panel, LV_ALIGN_LEFT_MID, 18, 26);
-    lv_obj_clear_flag(rpm_panel, LV_OBJ_FLAG_SCROLLABLE);
-
-    lv_obj_t *rpm_title = create_label(rpm_panel,
-                                       "RPM",
-                                       &lv_font_montserrat_18,
-                                       lv_color_hex(0xf0a52b),
-                                       LV_TEXT_ALIGN_LEFT);
-    lv_obj_align(rpm_title, LV_ALIGN_TOP_LEFT, 2, 0);
-
-    s_rpm_arc = lv_arc_create(rpm_panel);
-    lv_obj_set_size(s_rpm_arc, 150, 150);
-    lv_obj_align(s_rpm_arc, LV_ALIGN_TOP_MID, 0, 42);
-    configure_arc(s_rpm_arc, 0, RPM_MAX / 100, 135, 0, 270);
-    lv_obj_add_style(s_rpm_arc, &s_rpm_arc_main_style, LV_PART_MAIN);
-    lv_obj_add_style(s_rpm_arc, &s_rpm_arc_indicator_style, LV_PART_INDICATOR);
-
-    s_rpm_value_label = create_label(rpm_panel,
-                                     "--",
-                                     &lv_font_montserrat_32,
-                                     lv_color_hex(0xf3f7fb),
-                                     LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_rpm_value_label, 140);
-    lv_obj_align(s_rpm_value_label, LV_ALIGN_CENTER, 0, -4);
-
-    s_rpm_state_label = create_label(rpm_panel,
-                                     "x1000",
-                                     &lv_font_montserrat_16,
-                                     lv_color_hex(0x8595a7),
-                                     LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_rpm_state_label, 110);
-    lv_obj_align(s_rpm_state_label, LV_ALIGN_BOTTOM_MID, 0, -22);
-
-    lv_obj_t *fuel_panel = lv_obj_create(screen);
-    lv_obj_add_style(fuel_panel, &s_panel_style, 0);
-    lv_obj_set_size(fuel_panel, 188, 290);
-    lv_obj_align(fuel_panel, LV_ALIGN_RIGHT_MID, -18, 26);
-    lv_obj_clear_flag(fuel_panel, LV_OBJ_FLAG_SCROLLABLE);
-
-    lv_obj_t *fuel_title = create_label(fuel_panel,
-                                        "FUEL",
-                                        &lv_font_montserrat_18,
-                                        lv_color_hex(0x4fd071),
-                                        LV_TEXT_ALIGN_LEFT);
-    lv_obj_align(fuel_title, LV_ALIGN_TOP_LEFT, 2, 0);
-
-    s_fuel_value_label = create_label(fuel_panel,
-                                      "--%",
-                                      &lv_font_montserrat_32,
-                                      lv_color_hex(0xf3f7fb),
-                                      LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_fuel_value_label, 150);
-    lv_obj_align(s_fuel_value_label, LV_ALIGN_TOP_MID, 0, 64);
-
-    s_fuel_bar = lv_bar_create(fuel_panel);
-    lv_obj_set_size(s_fuel_bar, 34, 152);
-    lv_obj_align(s_fuel_bar, LV_ALIGN_CENTER, 0, 38);
-    lv_bar_set_range(s_fuel_bar, 0, 100);
-    lv_bar_set_value(s_fuel_bar, 0, LV_ANIM_OFF);
-    lv_obj_add_style(s_fuel_bar, &s_fuel_bar_main_style, LV_PART_MAIN);
-    lv_obj_add_style(s_fuel_bar, &s_fuel_bar_indicator_style, LV_PART_INDICATOR);
-
-    lv_obj_t *fuel_empty_label = create_label(fuel_panel,
-                                              "E",
-                                              &lv_font_montserrat_14,
-                                              lv_color_hex(0x7d8ea3),
-                                              LV_TEXT_ALIGN_CENTER);
-    lv_obj_align_to(fuel_empty_label, s_fuel_bar, LV_ALIGN_OUT_LEFT_BOTTOM, -14, 4);
-
-    lv_obj_t *fuel_full_label = create_label(fuel_panel,
-                                             "F",
-                                             &lv_font_montserrat_14,
-                                             lv_color_hex(0x7d8ea3),
-                                             LV_TEXT_ALIGN_CENTER);
-    lv_obj_align_to(fuel_full_label, s_fuel_bar, LV_ALIGN_OUT_LEFT_TOP, -14, -4);
-
-    s_fuel_state_label = create_label(fuel_panel,
-                                      "LEVEL",
-                                      &lv_font_montserrat_16,
-                                      lv_color_hex(0x8595a7),
-                                      LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(s_fuel_state_label, 130);
-    lv_obj_align(s_fuel_state_label, LV_ALIGN_BOTTOM_MID, 0, -22);
-
-    lv_obj_t *bottom_band = lv_obj_create(screen);
-    lv_obj_remove_style_all(bottom_band);
-    lv_obj_set_size(bottom_band, 764, 42);
-    lv_obj_set_style_bg_color(bottom_band, lv_color_hex(0x0d131b), 0);
-    lv_obj_set_style_bg_opa(bottom_band, LV_OPA_COVER, 0);
-    lv_obj_set_style_border_width(bottom_band, 1, 0);
-    lv_obj_set_style_border_color(bottom_band, lv_color_hex(0x25313f), 0);
-    lv_obj_set_style_radius(bottom_band, 6, 0);
-    lv_obj_align(bottom_band, LV_ALIGN_BOTTOM_MID, 0, -12);
-
-    lv_obj_t *hint = create_label(bottom_band,
-                                  "CAN 500K  |  ESP32-S3  |  800x480 RGB",
-                                  &lv_font_montserrat_16,
-                                  lv_color_hex(0x7d8ea3),
-                                  LV_TEXT_ALIGN_CENTER);
-    lv_obj_set_width(hint, 520);
-    lv_obj_center(hint);
+    lv_indev_t *indev = lv_indev_create();
+    ESP_RETURN_ON_FALSE(indev != NULL, ESP_ERR_NO_MEM, TAG, "create LVGL touch indev failed");
+    lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);
+    lv_indev_set_read_cb(indev, lvgl_touch_read_cb);
+    lv_indev_set_display(indev, display);
+    ESP_LOGI(TAG, "GT911 touch registered to LVGL");
+    return ESP_OK;
 }
 
 static esp_err_t init_rgb_lcd(lv_display_t **out_display)
@@ -513,7 +306,7 @@ static esp_err_t init_rgb_lcd(lv_display_t **out_display)
     lv_display_set_user_data(display, panel_handle);
     lv_display_set_color_format(display, LV_COLOR_FORMAT_RGB565);
 
-    void *buf = esp_lcd_rgb_alloc_draw_buffer(panel_handle, LCD_DRAW_BUF_SIZE, 0);
+    void *buf = heap_caps_malloc(LCD_DRAW_BUF_SIZE, MALLOC_CAP_DMA | MALLOC_CAP_8BIT);
     ESP_RETURN_ON_FALSE(buf != NULL, ESP_ERR_NO_MEM, TAG, "allocate LVGL draw buffer failed");
     lv_display_set_buffers(display, buf, NULL, LCD_DRAW_BUF_SIZE, LV_DISPLAY_RENDER_MODE_PARTIAL);
     lv_display_set_flush_cb(display, lvgl_flush_cb);
@@ -539,90 +332,6 @@ static esp_err_t init_rgb_lcd(lv_display_t **out_display)
     return ESP_OK;
 }
 
-static void update_status_label(const obd2_vehicle_data_t *data)
-{
-    if (data->speed_valid || data->rpm_valid || data->fuel_valid) {
-        lv_label_set_text(s_status_label, "OBD-II LIVE");
-        lv_obj_set_style_text_color(s_status_label, lv_color_hex(0x4fd071), 0);
-    } else {
-        lv_label_set_text(s_status_label, "OBD-II WAIT");
-        lv_obj_set_style_text_color(s_status_label, lv_color_hex(0xf0a52b), 0);
-    }
-}
-
-static void update_speed(const obd2_vehicle_data_t *data)
-{
-    if (!data->speed_valid) {
-        lv_arc_set_value(s_speed_arc, 0);
-        lv_label_set_text(s_speed_value_label, "--");
-        lv_label_set_text(s_speed_state_label, "SPEED");
-        lv_obj_set_style_text_color(s_speed_state_label, lv_color_hex(0x7d8ea3), 0);
-        return;
-    }
-
-    uint16_t speed = MIN(data->speed_kph, SPEED_MAX_KPH);
-    char value[8];
-    snprintf(value, sizeof(value), "%u", data->speed_kph);
-    lv_arc_set_value(s_speed_arc, speed);
-    lv_label_set_text(s_speed_value_label, value);
-    lv_label_set_text(s_speed_state_label, "SPEED");
-    lv_obj_set_style_text_color(s_speed_state_label, lv_color_hex(0x16c7d6), 0);
-}
-
-static void update_rpm(const obd2_vehicle_data_t *data)
-{
-    if (!data->rpm_valid) {
-        lv_arc_set_value(s_rpm_arc, 0);
-        lv_label_set_text(s_rpm_value_label, "--");
-        lv_label_set_text(s_rpm_state_label, "x1000");
-        lv_obj_set_style_text_color(s_rpm_value_label, lv_color_hex(0xf3f7fb), 0);
-        return;
-    }
-
-    uint16_t rpm = MIN(data->rpm, RPM_MAX);
-    char value[8];
-    snprintf(value, sizeof(value), "%u.%u", rpm / 1000, (rpm % 1000) / 100);
-    lv_arc_set_value(s_rpm_arc, rpm / 100);
-    lv_label_set_text(s_rpm_value_label, value);
-    lv_label_set_text(s_rpm_state_label, "x1000");
-
-    if (rpm >= RPM_WARN) {
-        lv_obj_set_style_text_color(s_rpm_value_label, lv_color_hex(0xef4e4e), 0);
-        lv_obj_set_style_arc_color(s_rpm_arc, lv_color_hex(0xef4e4e), LV_PART_INDICATOR);
-    } else {
-        lv_obj_set_style_text_color(s_rpm_value_label, lv_color_hex(0xf3f7fb), 0);
-        lv_obj_set_style_arc_color(s_rpm_arc, lv_color_hex(0xf0a52b), LV_PART_INDICATOR);
-    }
-}
-
-static void update_fuel(const obd2_vehicle_data_t *data)
-{
-    if (!data->fuel_valid) {
-        lv_bar_set_value(s_fuel_bar, 0, LV_ANIM_OFF);
-        lv_label_set_text(s_fuel_value_label, "--%");
-        lv_label_set_text(s_fuel_state_label, "LEVEL");
-        lv_obj_set_style_text_color(s_fuel_value_label, lv_color_hex(0xf3f7fb), 0);
-        lv_obj_set_style_bg_color(s_fuel_bar, lv_color_hex(0x4fd071), LV_PART_INDICATOR);
-        return;
-    }
-
-    uint8_t fuel = MIN(data->fuel_percent, 100);
-    char value[8];
-    snprintf(value, sizeof(value), "%u%%", fuel);
-    lv_bar_set_value(s_fuel_bar, fuel, LV_ANIM_OFF);
-    lv_label_set_text(s_fuel_value_label, value);
-
-    if (fuel <= FUEL_LOW_PERCENT) {
-        lv_label_set_text(s_fuel_state_label, "LOW");
-        lv_obj_set_style_text_color(s_fuel_value_label, lv_color_hex(0xef4e4e), 0);
-        lv_obj_set_style_bg_color(s_fuel_bar, lv_color_hex(0xef4e4e), LV_PART_INDICATOR);
-    } else {
-        lv_label_set_text(s_fuel_state_label, "LEVEL");
-        lv_obj_set_style_text_color(s_fuel_value_label, lv_color_hex(0xf3f7fb), 0);
-        lv_obj_set_style_bg_color(s_fuel_bar, lv_color_hex(0x4fd071), LV_PART_INDICATOR);
-    }
-}
-
 void ui_init(void)
 {
     ESP_LOGI(TAG, "Initialize 800x480 RGB LCD and LVGL dashboard");
@@ -638,10 +347,15 @@ void ui_init(void)
         ESP_LOGW(TAG, "Board IO expander setup failed: %s", esp_err_to_name(err));
     }
 
+    err = init_gt911_touch(s_display);
+    if (err != ESP_OK) {
+        ESP_LOGW(TAG, "GT911 touch setup failed: %s", esp_err_to_name(err));
+    }
+
     _lock_acquire(&s_lvgl_lock);
-    init_styles();
-    create_dashboard(s_display);
+    dashboard_create(s_display);
     _lock_release(&s_lvgl_lock);
+    ESP_LOGI(TAG, "Dashboard ready: five pages, three palettes, live mode; demo available in settings");
 
     xTaskCreate(lvgl_task, "lvgl", LVGL_TASK_STACK_SIZE, NULL, LVGL_TASK_PRIORITY, NULL);
     s_ui_ready = true;
@@ -653,10 +367,27 @@ void ui_render_vehicle_data(const obd2_vehicle_data_t *data)
         return;
     }
 
+    const dashboard_data_t view = {
+        .value = {
+            [DASH_SPEED] = data->speed_kph,
+            [DASH_RPM] = data->rpm,
+            [DASH_FUEL] = data->fuel_percent,
+            [DASH_COOLANT] = data->coolant_temp_c,
+            [DASH_VOLTAGE] = data->control_voltage_mv,
+            [DASH_LOAD] = data->engine_load_percent,
+            [DASH_THROTTLE] = data->throttle_percent,
+        },
+        .valid = {
+            [DASH_SPEED] = data->speed_valid,
+            [DASH_RPM] = data->rpm_valid,
+            [DASH_FUEL] = data->fuel_valid,
+            [DASH_COOLANT] = data->coolant_temp_valid,
+            [DASH_VOLTAGE] = data->control_voltage_valid,
+            [DASH_LOAD] = data->engine_load_valid,
+            [DASH_THROTTLE] = data->throttle_valid,
+        },
+    };
     _lock_acquire(&s_lvgl_lock);
-    update_status_label(data);
-    update_speed(data);
-    update_rpm(data);
-    update_fuel(data);
+    dashboard_update(&view);
     _lock_release(&s_lvgl_lock);
 }

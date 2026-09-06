@@ -1,8 +1,26 @@
 menu "ODB2 Dashboard"
 
+    choice OBD2_TRANSPORT
+        prompt "OBD-II transport"
+        default OBD2_TRANSPORT_DIRECT_CAN
+        help
+            Select how OBD-II data reaches the dashboard.
+
+        config OBD2_TRANSPORT_DIRECT_CAN
+            bool "Direct CAN via onboard TWAI transceiver"
+
+        config OBD2_TRANSPORT_ELM327_BLE
+            bool "ELM327 BLE adapter"
+            help
+                ESP32-S3 supports BLE, but not Bluetooth Classic SPP. Use a BLE ELM327
+                adapter for this option. Classic Bluetooth ELM327 dongles need a
+                different ESP32 target, a serial bridge, or a Wi-Fi adapter.
+    endchoice
+
     config OBD2_CAN_TX_GPIO
         int "CAN TX GPIO"
         default 20
+        depends on OBD2_TRANSPORT_DIRECT_CAN
         range 0 48
         help
             GPIO connected to the TXD pin of the external CAN transceiver.
@@ -10,6 +28,7 @@ menu "ODB2 Dashboard"
     config OBD2_CAN_RX_GPIO
         int "CAN RX GPIO"
         default 19
+        depends on OBD2_TRANSPORT_DIRECT_CAN
         range 0 48
         help
             GPIO connected to the RXD pin of the external CAN transceiver.
@@ -17,9 +36,18 @@ menu "ODB2 Dashboard"
     config OBD2_CAN_BITRATE
         int "CAN bitrate"
         default 500000
+        depends on OBD2_TRANSPORT_DIRECT_CAN
         range 10000 1000000
         help
             Classic CAN bitrate used on the vehicle bus.
+
+    config OBD2_ELM327_BLE_NAME
+        string "ELM327 BLE advertised name"
+        default "OBDII"
+        depends on OBD2_TRANSPORT_ELM327_BLE
+        help
+            BLE adapter name to scan for. Many BLE ELM327 adapters advertise as
+            OBDII, V-LINK, VEEPEAK, or BLE OBD.
 
     config OBD2_POLL_INTERVAL_MS
         int "Poll interval (ms)"

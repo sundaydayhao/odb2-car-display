@@ -1,0 +1,428 @@
+<div id="car-companion" aria-label="汽车副屏产品原型">
+  <div class="cc-device" data-appearance="dark" data-skin="neon">
+    <header class="cc-header">
+      <div class="cc-heading"><span class="cc-page-index" aria-hidden="true">01</span><span class="cc-title">驾驶概览</span><span class="cc-clock">09:41 <span>25°C</span></span></div>
+      <div class="cc-actions">
+        <button class="cc-status" type="button" data-action="alerts" aria-label="查看车辆提醒"><span class="cc-dot"></span><span class="cc-status-text">暂无提醒</span></button>
+        <button class="cc-icon-button cc-palette-button" type="button" data-action="style" aria-label="界面风格" data-tooltip="界面风格"><i data-lucide="palette" aria-hidden="true"></i></button>
+        <button class="cc-icon-button" type="button" data-action="settings" aria-label="设置" data-tooltip="设置"><i data-lucide="settings-2" aria-hidden="true"></i></button>
+      </div>
+    </header>
+    <main class="cc-content"></main>
+    <nav class="cc-nav" aria-label="主页面">
+      <button type="button" data-page="drive" aria-current="page"><i data-lucide="gauge" aria-hidden="true"></i><span>驾驶</span></button>
+      <button type="button" data-page="health"><i data-lucide="activity" aria-hidden="true"></i><span>车况</span></button>
+      <button type="button" data-page="tires"><i data-lucide="circle-dot" aria-hidden="true"></i><span>胎压</span></button>
+      <button type="button" data-page="trip"><i data-lucide="route" aria-hidden="true"></i><span>行程</span></button>
+      <button type="button" data-page="performance"><i data-lucide="zap" aria-hidden="true"></i><span>性能</span></button>
+    </nav>
+    <div class="cc-overlay" hidden>
+      <section class="cc-sheet" role="dialog" aria-modal="true" aria-labelledby="cc-dialog-title">
+        <div class="cc-sheet-head"><h2 id="cc-dialog-title"></h2><button class="cc-icon-button" type="button" data-action="close" aria-label="关闭"><i data-lucide="x" aria-hidden="true"></i></button></div>
+        <div class="cc-sheet-content"></div>
+      </section>
+    </div>
+  </div>
+</div>
+<style>
+  #car-companion { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; letter-spacing:0; max-width:800px; margin:0 auto; }
+  #car-companion * { box-sizing:border-box; }
+  #car-companion .cc-device { --cc-bg:#f0f2f1; --cc-ink:#191d20; --cc-muted:#5e666b; --cc-line:#ccd4d2; --cc-track:#dce3e1; --cc-panel:#fff; --cc-blue:#007e6d; --cc-hero:#566b00; --cc-secondary:#b32166; --cc-green:#21823e; --cc-red:#c62727; --cc-amber:#8f5700; --cc-on-accent:#fff; --cc-tint:#deece5; position:relative; isolation:isolate; background:var(--cc-bg); color:var(--cc-ink); width:100%; height:480px; display:grid; grid-template-rows:54px 1fr 60px; font-size:16px; line-height:1.4; color-scheme:light; overflow:hidden; }
+  #car-companion .cc-device[data-appearance="dark"] { --cc-bg:#101214; --cc-ink:#f3f7f3; --cc-muted:#a0aca9; --cc-line:#303a37; --cc-track:#26322e; --cc-panel:#1c2321; --cc-blue:#46f3c5; --cc-hero:#ddf87a; --cc-secondary:#ff86bb; --cc-green:#83e69a; --cc-red:#ff7474; --cc-amber:#ffd079; --cc-on-accent:#101b18; --cc-tint:#172a24; color-scheme:dark; }
+  #car-companion .cc-device[data-skin="lava"] { --cc-blue:#ba3e15; --cc-hero:#b34016; --cc-secondary:#0a679b; --cc-tint:#f0e3dd; --cc-line:#ddd1cb; --cc-track:#e8dcd6; }
+  #car-companion .cc-device[data-skin="lava"][data-appearance="dark"] { --cc-blue:#ff9b70; --cc-hero:#ffab75; --cc-secondary:#7bdaff; --cc-tint:#2b201b; --cc-line:#42332d; --cc-track:#352922; }
+  #car-companion .cc-device[data-skin="acid"] { --cc-blue:#637600; --cc-hero:#637600; --cc-secondary:#067c75; --cc-tint:#e9edce; --cc-line:#d2d6b9; --cc-track:#e1e5c7; }
+  #car-companion .cc-device[data-skin="acid"][data-appearance="dark"] { --cc-blue:#e7fb69; --cc-hero:#e7fb69; --cc-secondary:#59e1ce; --cc-tint:#252919; --cc-line:#393f28; --cc-track:#303621; }
+  #car-companion .cc-device[data-skin="acid"] { --cc-tertiary:#b32166; }
+  #car-companion .cc-device[data-skin="acid"][data-appearance="dark"] { --cc-tertiary:#ff86bb; }
+  #car-companion .cc-device::before { content:""; position:absolute; top:0; left:0; width:80%; height:3px; background:var(--cc-blue); pointer-events:none; }
+  #car-companion .cc-device::after { content:""; position:absolute; top:0; right:0; width:20%; height:3px; background:var(--cc-secondary); pointer-events:none; }
+  #car-companion button,#car-companion select,#car-companion input { font:inherit; letter-spacing:0; }
+  #car-companion button { cursor:pointer; color:inherit; border:0; background:none; padding:0; }
+  #car-companion button:focus-visible { outline:2px solid var(--cc-blue); outline-offset:-2px; }
+  #car-companion button:disabled { cursor:default; opacity:.52; }
+  #car-companion [hidden] { display:none !important; }
+  #car-companion .cc-header { margin:0 28px; border-bottom:1px solid var(--cc-line); display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  #car-companion .cc-heading { display:flex; align-items:center; gap:12px; }
+  #car-companion .cc-actions { display:flex; align-items:center; gap:7px; }
+  #car-companion .cc-page-index { font-family:"Bahnschrift","Segoe UI",sans-serif; color:var(--cc-blue); font-size:14px; border-right:1px solid var(--cc-line); padding-right:12px; }
+  #car-companion .cc-title { font-size:20px; font-weight:500; white-space:nowrap; }
+  #car-companion .cc-clock { color:var(--cc-muted); font-size:14px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  #car-companion .cc-clock span { margin-left:12px; }
+  #car-companion .cc-status { display:flex; align-items:center; gap:8px; font-size:14px; min-height:44px; }
+  #car-companion .cc-dot { background:var(--cc-green); width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+  #car-companion .cc-status-text { color:var(--cc-muted); }
+  #car-companion .cc-status[data-alert="true"] .cc-dot { background:var(--cc-red); }
+  #car-companion .cc-status[data-alert="true"] .cc-status-text { color:var(--cc-red); }
+  #car-companion .cc-icon-button { width:44px; height:44px; display:inline-grid; place-items:center; flex-shrink:0; }
+  #car-companion .cc-icon-button svg { width:20px; height:20px; }
+  #car-companion .cc-content { padding:14px 28px 8px; min-width:0; }
+  #car-companion .cc-nav { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--cc-line); padding:6px 22px; gap:5px; background:var(--cc-panel); }
+  #car-companion .cc-nav button { min-width:0; display:flex; align-items:center; justify-content:center; gap:10px; border-radius:3px; font-size:16px; color:var(--cc-muted); }
+  #car-companion .cc-nav button[aria-current="page"] { color:var(--cc-on-accent); background:var(--cc-blue); font-weight:500; clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px); }
+  #car-companion .cc-nav button:not([aria-current="page"]):hover { background:var(--cc-tint); color:var(--cc-blue); }
+  #car-companion .cc-nav svg { width:19px; height:19px; }
+  #car-companion .cc-kicker { font-size:15px; color:var(--cc-muted); margin:0; }
+  #car-companion .cc-number { font-family:"Bahnschrift","Segoe UI",sans-serif; font-variant-numeric:tabular-nums; font-weight:400; line-height:1.1; }
+  #car-companion .cc-unit { color:var(--cc-muted); font-size:15px; font-weight:400; white-space:nowrap; }
+  #car-companion .cc-value-row { display:flex; align-items:baseline; gap:8px; min-width:0; }
+  #car-companion .cc-value-row .cc-number { font-size:34px; }
+  #car-companion .cc-note { font-size:13px; color:var(--cc-muted); }
+  #car-companion .cc-meter { height:6px; border-radius:0; background:var(--cc-track); overflow:hidden; }
+  #car-companion .cc-meter span { height:100%; display:block; border-radius:0; background:var(--cc-blue); }
+  #car-companion .cc-tach { display:grid; grid-template-columns:104px 1fr 65px; align-items:center; gap:16px; margin-bottom:18px; }
+  #car-companion .cc-revs { display:grid; grid-template-columns:repeat(32,minmax(0,1fr)); gap:3px; height:13px; padding:0 2px; }
+  #car-companion .cc-revs span { background:var(--cc-track); transform:skewX(-15deg); }
+  #car-companion .cc-revs span[data-lit="true"] { background:var(--cc-blue); }
+  #car-companion .cc-revs span[data-zone="high"] { background:color-mix(in srgb,var(--cc-secondary) 22%,var(--cc-track)); }
+  #car-companion .cc-revs span[data-zone="high"][data-lit="true"] { background:var(--cc-secondary); }
+  #car-companion .cc-revs span[data-zone="limit"] { background:color-mix(in srgb,var(--cc-red) 22%,var(--cc-track)); }
+  #car-companion .cc-revs span[data-zone="limit"][data-lit="true"] { background:var(--cc-red); }
+  #car-companion .cc-tach .cc-kicker { font-size:13px; }
+  #car-companion .cc-tach-amount { text-align:right; font-size:17px; color:var(--cc-blue); font-family:"Bahnschrift","Segoe UI",sans-serif; font-variant-numeric:tabular-nums; }
+  #car-companion .cc-drive-main { display:grid; grid-template-columns:1.1fr 1fr; min-height:209px; }
+  #car-companion .cc-speed-area { display:flex; flex-direction:column; justify-content:center; padding-bottom:14px; }
+  #car-companion .cc-speed-line { display:flex; align-items:center; gap:28px; }
+  #car-companion .cc-speed { font-size:136px; line-height:1.02; color:var(--cc-hero); font-style:italic; padding-right:7px; }
+  #car-companion .cc-gear { font-size:26px; color:var(--cc-on-accent); background:var(--cc-blue); min-width:50px; text-align:center; padding:9px 5px 6px; clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px); }
+  #car-companion .cc-speed-area .cc-unit { font-size:18px; margin-top:3px; }
+  #car-companion .cc-drive-side { border-left:2px solid var(--cc-blue); padding-left:28px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-content:center; background:var(--cc-tint); padding-right:18px; }
+  #car-companion .cc-drive-side .cc-number { font-size:46px; }
+  #car-companion .cc-range .cc-number { color:var(--cc-blue); }
+  #car-companion .cc-instant .cc-number { color:var(--cc-secondary); }
+  #car-companion .cc-range { grid-column:1/-1; }
+  #car-companion .cc-range .cc-value-row { justify-content:space-between; align-items:baseline; margin-top:4px; }
+  #car-companion .cc-range .cc-meter { margin-top:10px; }
+  #car-companion .cc-range .cc-meter span { background:var(--cc-green); }
+  #car-companion .cc-range .cc-fuel-summary { color:var(--cc-muted); font-size:14px; display:inline-flex; gap:5px; align-items:center; white-space:nowrap; }
+  #car-companion .cc-range .cc-fuel-summary svg { width:15px; height:15px; vertical-align:-2px; margin-right:5px; }
+  #car-companion .cc-secondary { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--cc-line); margin-top:13px; padding-top:15px; gap:18px; }
+  #car-companion .cc-secondary > div { border-left:3px solid var(--cc-blue); padding-left:10px; }
+  #car-companion .cc-secondary > div:nth-child(2) { border-color:var(--cc-tertiary,var(--cc-amber)); }
+  #car-companion .cc-secondary > div:nth-child(3) { border-color:var(--cc-secondary); }
+  #car-companion .cc-secondary > div:nth-child(4) { border-color:var(--cc-green); }
+  #car-companion .cc-secondary .cc-value-row { margin-top:5px; }
+  #car-companion .cc-secondary .cc-number { font-size:30px; }
+  #car-companion .cc-health-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+  #car-companion .cc-health-item { --cc-metric-color:var(--cc-blue); padding:7px 0 16px; min-height:122px; position:relative; }
+  #car-companion .cc-health-item:nth-child(2),#car-companion .cc-health-item:nth-child(3) { --cc-metric-color:var(--cc-tertiary,var(--cc-amber)); }
+  #car-companion .cc-health-item:nth-child(5),#car-companion .cc-health-item:nth-child(6) { --cc-metric-color:var(--cc-secondary); }
+  #car-companion .cc-health-item .cc-number,#car-companion .cc-health-item .cc-kicker svg { color:var(--cc-metric-color); }
+  #car-companion .cc-health-item::after { content:""; position:absolute; left:0; bottom:10px; width:36px; height:2px; background:var(--cc-metric-color); }
+  #car-companion .cc-health-item:not(:nth-child(3n+1))::after { left:24px; }
+  #car-companion .cc-health-item:nth-child(n+4) { padding-top:17px; border-top:1px solid var(--cc-line); }
+  #car-companion .cc-health-item:not(:nth-child(3n+1)) { padding-left:24px; }
+  #car-companion .cc-health-item .cc-value-row { margin:9px 0 7px; }
+  #car-companion .cc-health-item .cc-number { font-size:42px; }
+  #car-companion .cc-health-item .cc-kicker { display:flex; align-items:center; gap:7px; }
+  #car-companion .cc-health-item .cc-kicker svg { width:16px; height:16px; }
+  #car-companion .cc-service-row { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--cc-line); margin-top:4px; padding-top:13px; gap:24px; }
+  #car-companion .cc-service-button { display:flex; text-align:left; justify-content:space-between; align-items:center; min-height:51px; }
+  #car-companion .cc-service-button small { display:block; font-size:13px; margin-top:5px; color:var(--cc-muted); }
+  #car-companion .cc-service-button svg { width:18px; height:18px; color:var(--cc-muted); }
+  #car-companion .cc-tire-layout { display:grid; grid-template-columns:1fr 184px 1fr; align-items:center; min-height:278px; gap:22px; }
+  #car-companion .cc-tire-column { display:flex; flex-direction:column; gap:24px; }
+  #car-companion .cc-tire-column:last-child { align-items:flex-end; }
+  #car-companion .cc-tire { min-width:145px; }
+  #car-companion .cc-tire .cc-number { font-size:43px; color:var(--cc-blue); }
+  #car-companion .cc-tire { border-left:3px solid var(--cc-blue); padding-left:12px; }
+  #car-companion .cc-tire[data-low="true"] { border-color:var(--cc-red); }
+  #car-companion .cc-tire .cc-value-row { margin:4px 0; }
+  #car-companion .cc-tire[data-low="true"] .cc-number,#car-companion .cc-tire[data-low="true"] .cc-note { color:var(--cc-red); }
+  #car-companion .cc-car-map { width:184px; height:252px; position:relative; }
+  #car-companion .cc-car-body { position:absolute; inset:6px 43px; border:2px solid var(--cc-blue); border-radius:35px 35px 22px 22px; background:var(--cc-blue); clip-path:polygon(17% 0,83% 0,100% 12%,94% 35%,100% 70%,97% 92%,85% 100%,15% 100%,3% 92%,0 70%,6% 35%,0 12%); }
+  #car-companion .cc-car-body::before { content:""; position:absolute; top:0; bottom:0; width:10px; left:calc(50% - 5px); background:var(--cc-on-accent); opacity:.65; }
+  #car-companion .cc-car-body::after { content:""; position:absolute; left:8px; right:8px; bottom:10px; height:6px; background:var(--cc-secondary); }
+  #car-companion .cc-windscreen { position:absolute; top:60px; left:52px; right:52px; height:120px; border:1px solid var(--cc-muted); border-radius:22px 22px 14px 14px; background:var(--cc-bg); }
+  #car-companion .cc-car-roof { position:absolute; top:82px; left:59px; right:59px; height:72px; border:1px solid var(--cc-blue); background:var(--cc-panel); border-radius:6px; }
+  #car-companion .cc-car-roof::after { content:""; position:absolute; left:calc(50% - 4px); width:8px; top:0; bottom:0; background:var(--cc-blue); }
+  #car-companion .cc-wheel { width:12px; height:35px; border-radius:4px; position:absolute; background:var(--cc-green); top:57px; left:30px; }
+  #car-companion .cc-wheel.fr { left:auto; right:30px; }
+  #car-companion .cc-wheel.rl { top:184px; }
+  #car-companion .cc-wheel.rr { top:184px; left:auto; right:30px; }
+  #car-companion .cc-axle { position:absolute; top:74px; left:10px; right:10px; height:1px; background:var(--cc-line); z-index:-1; }
+  #car-companion .cc-axle.rear { top:201px; }
+  #car-companion .cc-tire-summary { margin-top:15px; padding-top:15px; border-top:1px solid var(--cc-line); display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--cc-muted); font-size:13px; }
+  #car-companion .cc-tire-summary button { color:var(--cc-blue); min-height:30px; }
+  #car-companion .cc-trip-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:12px; }
+  #car-companion .cc-segments { display:flex; background:var(--cc-track); padding:3px; border-radius:6px; }
+  #car-companion .cc-segments button { padding:5px 13px; font-size:14px; border-radius:4px; min-height:30px; }
+  #car-companion .cc-segments button[aria-pressed="true"] { background:var(--cc-blue); color:var(--cc-on-accent); }
+  #car-companion .cc-trip-main { display:grid; grid-template-columns:1fr 1.3fr; gap:30px; align-items:center; }
+  #car-companion .cc-trip-distance .cc-number { font-size:72px; color:var(--cc-hero); font-style:italic; padding-right:5px; }
+  #car-companion .cc-trip-distance .cc-value-row { margin-top:6px; }
+  #car-companion .cc-trip-distance .cc-note { margin-top:11px; }
+  #car-companion .cc-chart { width:100%; height:114px; display:block; overflow:visible; }
+  #car-companion .cc-chart text { font-size:11px; fill:var(--cc-muted); }
+  #car-companion .cc-chart-label { display:flex; justify-content:space-between; font-size:13px; color:var(--cc-muted); }
+  #car-companion .cc-trip-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:18px; }
+  #car-companion .cc-trip-stat { padding:8px 0; border-top:1px solid var(--cc-line); }
+  #car-companion .cc-trip-stat .cc-value-row { margin-top:3px; }
+  #car-companion .cc-trip-stat .cc-number { font-size:28px; }
+  #car-companion .cc-trip-stat:nth-child(2) .cc-number { color:var(--cc-blue); }
+  #car-companion .cc-trip-stat:nth-child(3) .cc-number { color:var(--cc-secondary); }
+  #car-companion .cc-trip-stat .cc-kicker { font-size:13px; }
+  #car-companion .cc-performance-main { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+  #car-companion .cc-boost .cc-number { font-size:74px; color:var(--cc-hero); font-style:italic; padding-right:5px; }
+  #car-companion .cc-performance-bars > div:nth-child(2) .cc-meter span { background:var(--cc-secondary); }
+  #car-companion .cc-boost .cc-value-row { margin-top:7px; }
+  #car-companion .cc-performance-bars { display:grid; gap:14px; margin-top:19px; }
+  #car-companion .cc-bar-title { display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px; color:var(--cc-muted); }
+  #car-companion .cc-g-area { display:grid; grid-template-columns:140px 1fr; align-items:center; gap:16px; }
+  #car-companion .cc-g { width:140px; height:140px; }
+  #car-companion .cc-g .cc-ring { fill:none; stroke:var(--cc-line); stroke-width:1; }
+  #car-companion .cc-g text { fill:var(--cc-muted); font-size:11px; }
+  #car-companion .cc-g .cc-trace { fill:none; stroke:var(--cc-blue); stroke-width:3; opacity:.65; }
+  #car-companion .cc-g .cc-point { fill:var(--cc-blue); }
+  #car-companion .cc-g .cc-ring:first-child { stroke:var(--cc-secondary); stroke-width:2; }
+  #car-companion .cc-g-values .cc-number { color:var(--cc-blue); }
+  #car-companion .cc-g-values .cc-number { font-size:25px; }
+  #car-companion .cc-g-values .cc-value-row { margin:3px 0 15px; }
+  #car-companion .cc-performance-rpm { margin-top:12px; padding-top:14px; border-top:1px solid var(--cc-line); display:flex; justify-content:space-between; align-items:baseline; }
+  #car-companion .cc-performance-rpm .cc-number { font-size:33px; color:var(--cc-secondary); }
+  #car-companion .cc-records { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; border-top:1px solid var(--cc-line); margin-top:18px; padding-top:15px; }
+  #car-companion .cc-records .cc-kicker { font-size:13px; }
+  #car-companion .cc-records .cc-number { font-size:28px; }
+  #car-companion .cc-records .cc-value-row { margin-top:7px; }
+  #car-companion .cc-records > div { padding-left:12px; border-left:3px solid var(--cc-blue); }
+  #car-companion .cc-records > div:nth-child(2) { border-color:var(--cc-secondary); }
+  #car-companion .cc-records > div:nth-child(3) { border-color:var(--cc-hero); }
+  #car-companion .cc-record-heading { display:flex; justify-content:space-between; align-items:center; margin-top:12px; font-size:12px; color:var(--cc-muted); }
+  #car-companion .cc-record-heading button { min-height:30px; color:var(--cc-blue); display:flex; gap:6px; align-items:center; }
+  #car-companion .cc-record-heading svg { width:15px; height:15px; }
+  #car-companion .cc-overlay { position:absolute; inset:0; background:rgb(0 0 0 / .32); z-index:10; display:grid; place-items:center; padding:16px; }
+  #car-companion .cc-sheet { width:min(420px,100%); background:var(--cc-panel); color:var(--cc-ink); padding:18px 24px 22px; border-radius:8px; box-shadow:0 12px 40px rgb(0 0 0 / .18); }
+  #car-companion .cc-sheet-head { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--cc-line); padding-bottom:7px; margin-bottom:10px; }
+  #car-companion .cc-sheet h2 { margin:0; font-size:20px; font-weight:500; }
+  #car-companion .cc-setting { padding:12px 0; display:flex; align-items:center; justify-content:space-between; gap:14px; border-bottom:1px solid var(--cc-line); font-size:15px; }
+  #car-companion .cc-setting:last-child { border-bottom:0; }
+  #car-companion .cc-setting select { max-width:176px; background:var(--cc-bg); color:var(--cc-ink); border:1px solid var(--cc-line); border-radius:4px; padding:5px 8px; font-size:14px; }
+  #car-companion .cc-setting input { width:130px; accent-color:var(--cc-blue); }
+  #car-companion .cc-setting input[type="number"] { width:80px; border:1px solid var(--cc-line); background:var(--cc-bg); padding:5px; color:var(--cc-ink); border-radius:4px; }
+  #car-companion .cc-detail-value { color:var(--cc-muted); text-align:right; }
+  #car-companion .cc-alert-detail { padding:14px 0; }
+  #car-companion .cc-alert-detail strong { font-weight:500; color:var(--cc-red); }
+  #car-companion .cc-alert-detail p { margin:8px 0; font-size:15px; }
+  #car-companion .cc-primary { background:var(--cc-blue); color:var(--cc-on-accent); width:100%; min-height:42px; border-radius:5px; margin-top:14px; }
+  #car-companion .cc-palette-button { color:var(--cc-secondary); }
+  #car-companion .cc-skin-option { display:flex; align-items:center; gap:13px; width:100%; padding:18px 4px; min-height:70px; border-bottom:1px solid var(--cc-line); text-align:left; }
+  #car-companion .cc-skin-option:last-child { border-bottom:0; }
+  #car-companion .cc-skin-option input { accent-color:var(--cc-blue); width:17px; height:17px; margin:0; }
+  #car-companion .cc-skin-swatches { display:flex; gap:3px; margin-left:auto; }
+  #car-companion .cc-skin-swatches span { width:22px; height:28px; transform:skewX(-12deg); display:block; }
+  #car-companion .cc-chart-area { fill:var(--cc-blue); opacity:.11; }
+  #car-companion .cc-device[data-connected="false"] .cc-speed,
+  #car-companion .cc-device[data-connected="false"] .cc-drive-side .cc-number,
+  #car-companion .cc-device[data-connected="false"] .cc-health-item .cc-number,
+  #car-companion .cc-device[data-connected="false"] .cc-tire .cc-number,
+  #car-companion .cc-device[data-connected="false"] .cc-boost .cc-number { color:var(--cc-muted); }
+  #car-companion .cc-device[data-connected="false"] .cc-gear { color:var(--cc-muted); background:var(--cc-track); }
+  @media(max-width:620px) {
+    #car-companion .cc-device { min-height:480px; height:auto; }
+    #car-companion .cc-header { margin:0 18px; }
+    #car-companion .cc-clock { display:none; }
+    #car-companion .cc-page-index { display:none; }
+    #car-companion .cc-content { padding:18px; }
+    #car-companion .cc-actions { gap:3px; }
+    #car-companion .cc-nav { padding:4px 8px; }
+    #car-companion .cc-nav button { flex-direction:column; gap:3px; font-size:13px; }
+    #car-companion .cc-drive-main { grid-template-columns:1fr; }
+    #car-companion .cc-speed-area { padding:5px 0 20px; }
+    #car-companion .cc-drive-side { border-left:0; border-top:1px solid var(--cc-line); padding:16px; grid-template-columns:1fr 1fr; }
+    #car-companion .cc-range { grid-column:auto; }
+    #car-companion .cc-drive-side .cc-instant { align-self:center; }
+    #car-companion .cc-drive-side .cc-fuel-summary { display:none; }
+    #car-companion .cc-drive-side .cc-number { font-size:40px; }
+    #car-companion .cc-secondary { grid-template-columns:1fr 1fr; row-gap:18px; padding-bottom:5px; }
+    #car-companion .cc-health-grid { grid-template-columns:1fr 1fr; }
+    #car-companion .cc-health-item:not(:nth-child(3n+1)) { padding-left:0; }
+    #car-companion .cc-health-item:nth-child(even) { padding-left:14px; }
+    #car-companion .cc-health-item:nth-child(n)::after { left:0; }
+    #car-companion .cc-health-item:nth-child(even)::after { left:14px; }
+    #car-companion .cc-health-item:nth-child(n+3) { padding-top:17px; border-top:1px solid var(--cc-line); }
+    #car-companion .cc-service-row { grid-template-columns:1fr; gap:0; }
+    #car-companion .cc-service-button { min-height:56px; }
+    #car-companion .cc-tire-layout { grid-template-columns:1fr 70px 1fr; gap:8px; min-height:300px; }
+    #car-companion .cc-car-map { width:70px; height:220px; }
+    #car-companion .cc-car-body { inset:0 7px; }
+    #car-companion .cc-windscreen { left:13px; right:13px; top:49px; height:100px; }
+    #car-companion .cc-car-roof { left:17px; right:17px; top:72px; height:57px; border-radius:5px; }
+    #car-companion .cc-wheel { left:0; width:7px; top:50px; }
+    #car-companion .cc-wheel.fr { right:0; }
+    #car-companion .cc-wheel.rl { top:169px; }
+    #car-companion .cc-wheel.rr { right:0; top:169px; }
+    #car-companion .cc-tire { min-width:0; padding-left:5px; border-left-width:2px; }
+    #car-companion .cc-tire .cc-number { font-size:32px; }
+    #car-companion .cc-tire .cc-value-row { gap:4px; flex-wrap:wrap; row-gap:0; }
+    #car-companion .cc-tire-summary { flex-wrap:wrap; }
+    #car-companion .cc-tire .cc-note { font-size:12px; }
+    #car-companion .cc-trip-main { grid-template-columns:1fr; gap:20px; }
+    #car-companion .cc-trip-stats { grid-template-columns:1fr 1fr; }
+    #car-companion .cc-trip-top { flex-wrap:wrap; }
+    #car-companion .cc-performance-main { grid-template-columns:1fr; gap:24px; }
+    #car-companion .cc-g-area { grid-template-columns:140px 1fr; }
+    #car-companion .cc-records { gap:10px; }
+    #car-companion .cc-records .cc-number { font-size:24px; }
+    #car-companion .cc-sheet { padding:12px 16px; }
+    #car-companion .cc-status { font-size:12px; gap:5px; }
+    #car-companion .cc-title { font-size:18px; }
+    #car-companion .cc-tach { grid-template-columns:87px 1fr 56px; gap:9px; }
+    #car-companion .cc-revs { gap:2px; }
+    #car-companion .cc-records > div { padding-left:7px; }
+  }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('car-companion');
+  const device = root.querySelector('.cc-device');
+  const content = root.querySelector('.cc-content');
+  const overlay = root.querySelector('.cc-overlay');
+  const settings = { appearance:'夜间', skin:'夜行霓虹', scenario:'行驶', powertrain:'涡轮增压', pressure:'bar', fuelPrice:8.15, brightness:75 };
+  const skins = {
+    '夜行霓虹': { id:'neon', colors:['#46f3c5','#ddf87a','#ff86bb'] },
+    '熔岩赛道': { id:'lava', colors:['#ff9b70','#7bdaff','#ffd079'] },
+    '酸性机能': { id:'acid', colors:['#e7fb69','#59e1ce','#ff86bb'] }
+  };
+  let page = 'drive', period = '本次', lastFocus = null;
+  const pageNames = {drive:'驾驶概览',health:'车辆状态',tires:'四轮胎压',trip:'行程与花费',performance:'动力与性能'};
+  const online = () => settings.scenario !== '待连接';
+  const low = () => settings.scenario === '胎压偏低';
+  const val = number => online() ? number : '--';
+  const icon = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
+  const number = (value, unit, live=true) => `<div class="cc-value-row"><span class="cc-number">${live?val(value):value}</span><span class="cc-unit">${unit}</span></div>`;
+  const metric = (title,value,unit) => `<div><p class="cc-kicker">${title}</p>${number(value,unit)}</div>`;
+  const meter = (amount) => `<div class="cc-meter"><span style="width:${online()?amount:0}%"></span></div>`;
+  const revs = rpm => `<div class="cc-revs" aria-hidden="true">${Array.from({length:32},(_,i)=>`<span data-lit="${online()&&i<Math.round(rpm/8000*32)}" data-zone="${i>=28?'limit':i>=24?'high':'normal'}"></span>`).join('')}</div>`;
+  function drive() {
+    return `<div class="cc-tach"><span class="cc-kicker">发动机 · rpm</span>${revs(2450)}<span class="cc-tach-amount">${val('2,450')}</span></div>
+    <div class="cc-drive-main"><div class="cc-speed-area"><p class="cc-kicker">当前车速</p><div class="cc-speed-line"><span class="cc-number cc-speed">${val('86')}</span><span class="cc-number cc-gear">${val('D6')}</span></div><span class="cc-unit">km/h</span></div>
+    <div class="cc-drive-side"><div class="cc-range"><p class="cc-kicker">预估续航</p><div class="cc-value-row"><span><span class="cc-number">${val('386')}</span> <span class="cc-unit">km</span></span><span class="cc-fuel-summary">${icon('fuel')}${val('68')}%</span></div>${meter(68)}</div>
+    <div class="cc-instant" style="grid-column:1/-1"><p class="cc-kicker">瞬时油耗 · 估算</p>${number('6.8','L/100km')}</div></div></div>
+    <div class="cc-secondary">${metric('水温','89','°C')}${metric('机油温度','98','°C')}${metric('系统电压','14.2','V')}${metric('平均油耗 · 估算','7.4','L/100km')}</div>`;
+  }
+  function health() {
+    const items = [ ['冷却液温度','89','°C','本次最高 92°C','thermometer'],['机油温度','98','°C','本次最高 102°C','droplet'],['变速箱温度','82','°C','本次最高 86°C','settings'],['进气温度','32','°C','本次最高 38°C','wind'],['机油压力','3.6','bar','发动机运转中','gauge'],['系统电压','14.2','V','发动机运转中','battery-charging'] ];
+    return `<div class="cc-health-grid">${items.map(([title,v,u,n,i])=>`<div class="cc-health-item"><p class="cc-kicker">${icon(i)}${title}</p>${number(v,u)}<span class="cc-note">${online()?n:'等待车辆数据'}</span></div>`).join('')}</div><div class="cc-service-row"><button class="cc-service-button" type="button" data-action="diagnostics"><span>发动机状态<small>${online()?'未见故障提示':'尚未读取'}</small></span>${icon('chevron-right')}</button><button class="cc-service-button" type="button" data-action="maintenance"><span>保养计划<small>距下次保养 2,400 km</small></span>${icon('chevron-right')}</button></div>`;
+  }
+  function pressure(bar) {
+    return settings.pressure==='kPa' ? Math.round(bar*100) : settings.pressure==='psi' ? (bar*14.5038).toFixed(1) : bar.toFixed(1);
+  }
+  function tire(name,bar,temp,isLow=false) {
+    return `<div class="cc-tire" data-low="${isLow}"><p class="cc-kicker">${name}</p>${number(pressure(bar),settings.pressure)}<div class="cc-note">${online()?temp+'°C · '+(isLow?'压力偏低':'已更新'):'等待传感器'}</div></div>`;
+  }
+  function tires() {
+    return `<div class="cc-tire-layout"><div class="cc-tire-column">${tire('左前',2.4,31)}${tire('左后',low()?1.7:2.3,low()?38:32,low())}</div>
+    <div class="cc-car-map" role="img" aria-label="车辆俯视图，标记四轮位置"><div class="cc-axle"></div><div class="cc-axle rear"></div><div class="cc-car-body"></div><div class="cc-windscreen"></div><div class="cc-car-roof"></div><div class="cc-wheel"></div><div class="cc-wheel fr"></div><div class="cc-wheel rl" ${low()?'style="background:var(--cc-red)"':''}></div><div class="cc-wheel rr"></div></div>
+    <div class="cc-tire-column">${tire('右前',2.4,30)}${tire('右后',2.3,32)}</div></div>
+    <div class="cc-tire-summary"><span>${online()?'更新于 09:41:02':'等待轮胎传感器'}</span><span>冷胎基准 ${pressure(2.4)} / ${pressure(2.3)} ${settings.pressure}</span><button type="button" data-action="tire-settings">轮胎设置</button></div>`;
+  }
+  const trips = {
+    '本次': {distance:'37.6',duration:'44',avg:'51.3',economy:'7.4',used:'2.78',idle:'06:20',time:'08:57 – 09:41',cost:2.78,values:[8.5,8.1,7.8,7.4,7.6,7.1,7.3,7.0]},
+    '今日': {distance:'82.4',duration:'106',avg:'46.6',economy:'7.6',used:'6.26',idle:'14:10',time:'今日 · 3 段行程',cost:6.26,values:[8.8,8.2,7.5,7.6,7.3,7.8,7.4,7.0]},
+    '本箱油': {distance:'326',duration:'418',avg:'46.8',economy:'7.5',used:'24.45',idle:'48:30',time:'自上次加油 · 9 月 2 日',cost:24.45,values:[8.5,8.0,7.7,7.4,7.8,7.1,7.0,7.5]}
+  };
+  function trip() {
+    const t = trips[period];
+    return `<div class="cc-trip-top"><div class="cc-segments" aria-label="行程范围">${Object.keys(trips).map(p=>`<button type="button" data-period="${p}" aria-pressed="${p===period}">${p}</button>`).join('')}</div><span class="cc-note">${online()?t.time:'已保存行程 · '+t.time}</span></div>
+    <div class="cc-trip-main"><div class="cc-trip-distance"><p class="cc-kicker">行驶里程</p>${number(t.distance,'km',false)}<div class="cc-note">行驶 ${t.duration} 分钟 · 平均 ${t.avg} km/h</div></div><div><div class="cc-chart-label"><span>平均油耗趋势 · 估算</span><span>L/100km</span></div><svg class="cc-chart" role="img" aria-label="本范围平均油耗趋势，纵轴单位升每百公里"></svg></div></div>
+    <div class="cc-trip-stats">${[['平均油耗',t.economy,'L/100km'],['消耗燃油',t.used,'L'],['燃油费用',(t.cost*settings.fuelPrice).toFixed(2),'元'],['平均车速',t.avg,'km/h'],['怠速时间',t.idle,'分:秒'],['当前油价',settings.fuelPrice.toFixed(2),'元/L']].map(([title,v,u])=>`<div class="cc-trip-stat"><p class="cc-kicker">${title}</p>${number(v,u,false)}</div>`).join('')}</div>`;
+  }
+  function performance() {
+    const turbo = settings.powertrain==='涡轮增压';
+    return `<div class="cc-performance-main"><div class="cc-boost"><p class="cc-kicker">${turbo?'涡轮增压 · 相对压力':'进气歧管 · 绝对压力'}</p>${number(turbo?'0.62':'84',turbo?'bar':'kPa')}
+    <div class="cc-performance-bars"><div><div class="cc-bar-title"><span>节气门开度</span><span>${val('38')} %</span></div>${meter(38)}</div><div><div class="cc-bar-title"><span>发动机负载</span><span>${val('52')} %</span></div>${meter(52)}</div></div></div>
+    <div><div class="cc-g-area"><svg class="cc-g" viewBox="0 0 140 140" role="img" aria-label="车辆横向与纵向加速度示意，满量程正负 0.5 g"><circle class="cc-ring" cx="70" cy="70" r="55"/><circle class="cc-ring" cx="70" cy="70" r="28"/><path class="cc-ring" d="M15 70h110M70 15v110"/><text x="70" y="11" text-anchor="middle">0.5 g</text>${online()?'<path class="cc-trace" d="M70 70 L70 64 L72 58 L75 53 L74 48 L79 46 L83 48"/><circle class="cc-point" cx="83" cy="48" r="5"/>':''}</svg><div class="cc-g-values"><p class="cc-kicker">纵向</p>${number('0.20','g')}<p class="cc-kicker">横向</p>${number('0.12','g')}</div></div><div class="cc-performance-rpm"><span class="cc-kicker">发动机转速</span>${number('3,820','rpm')}</div></div></div>
+    <div class="cc-records">${[['0–100 km/h','8.4','s'],['80–120 km/h','5.8','s'],['100–0 km/h','39.2','m']].map(([title,v,u])=>`<div><p class="cc-kicker">${title}</p>${number(v,u,false)}</div>`).join('')}</div><div class="cc-record-heading"><span>上次记录 · 9 月 5 日 · 封闭场地</span><button type="button" data-action="records">查看记录 ${icon('chevron-right')}</button></div>`;
+  }
+  function drawChart() {
+    const svg = root.querySelector('.cc-chart');
+    if (!svg) return;
+    const width = svg.getBoundingClientRect().width;
+    const values = trips[period].values, left=27, right=8, top=12, bottom=93;
+    const min = Math.min(...values)-.5, max = Math.max(...values)+.5;
+    const x = i=>left+i*(width-left-right)/(values.length-1), y=v=>bottom-(v-min)/(max-min)*(bottom-top);
+    const points=values.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
+    svg.setAttribute('viewBox',`0 0 ${width} 114`);
+    svg.innerHTML=`<polygon class="cc-chart-area" points="${left},${bottom} ${points} ${width-right},${bottom}"/>`+[min,(min+max)/2,max].map(v=>`<path d="M${left} ${y(v)}H${width-right}" fill="none" stroke="var(--cc-line)"/><text x="0" y="${y(v)+4}">${v.toFixed(1)}</text>`).join('')+`<polyline points="${points}" fill="none" stroke="var(--cc-blue)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="${x(7)}" cy="${y(values[7])}" r="3.5" fill="var(--cc-blue)"/><text x="${left}" y="111">起点</text><text x="${width-right}" y="111" text-anchor="end">当前</text>`;
+  }
+  function render() {
+    device.dataset.appearance=settings.appearance==='夜间'?'dark':'light';
+    device.dataset.skin=skins[settings.skin].id;
+    device.dataset.connected=String(online());
+    root.querySelector('.cc-title').textContent=pageNames[page];
+    root.querySelector('.cc-page-index').textContent=String(Object.keys(pageNames).indexOf(page)+1).padStart(2,'0');
+    const status=root.querySelector('.cc-status');
+    status.dataset.alert=String(low());
+    root.querySelector('.cc-status-text').textContent=low()?'左后胎压偏低':online()?'暂无提醒':'等待车辆';
+    root.querySelector('.cc-dot').style.background=online()?'':'var(--cc-muted)';
+    root.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-current',b.dataset.page===page?'page':'false'));
+    content.innerHTML=({drive,health,tires,trip,performance})[page]();
+    if (!online()) root.querySelectorAll('.cc-wheel').forEach(w=>w.style.background='var(--cc-muted)');
+    if (globalThis.lucide) lucide.createIcons();
+    drawChart();
+  }
+  function closeDialog() { overlay.hidden=true; if(lastFocus)lastFocus.focus(); }
+  function dialog(title,html) {
+    lastFocus=document.activeElement;
+    root.querySelector('#cc-dialog-title').textContent=title;
+    root.querySelector('.cc-sheet-content').innerHTML=html;
+    overlay.hidden=false;
+    overlay.querySelector('[data-action="close"]').focus();
+    if(globalThis.lucide)lucide.createIcons();
+  }
+  const detail=(name,value)=>`<div class="cc-setting"><span>${name}</span><span class="cc-detail-value">${value}</span></div>`;
+  const select=(key,label,values)=>`<label class="cc-setting"><span>${label}</span><select data-setting="${key}">${values.map(v=>`<option${settings[key]===v?' selected':''}>${v}</option>`).join('')}</select></label>`;
+  const skinOptions=()=>Object.entries(skins).map(([name,skin])=>`<label class="cc-skin-option"><input type="radio" name="cc-skin" data-setting="skin" value="${name}"${settings.skin===name?' checked':''}><span class="cc-skin-swatches" aria-hidden="true">${skin.colors.map(color=>`<span style="background:${color}"></span>`).join('')}</span><span>${name}</span></label>`).join('');
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('button');
+    if(!button)return;
+    if(button.dataset.page){page=button.dataset.page;render();return;}
+    if(button.dataset.period){period=button.dataset.period;render();return;}
+    switch(button.dataset.action){
+      case 'close':closeDialog();break;
+      case 'style':dialog('界面风格',skinOptions());break;
+      case 'settings':dialog('显示与车辆',select('appearance','外观',['日间','夜间'])+select('powertrain','动力类型',['涡轮增压','自然吸气'])+`<label class="cc-setting"><span>亮度 <output id="cc-brightness">${settings.brightness}%</output></span><input type="range" min="20" max="100" value="${settings.brightness}" data-setting="brightness" aria-label="屏幕亮度"></label><label class="cc-setting"><span>燃油单价 · 元/L</span><input type="number" min="1" max="30" step="0.01" value="${settings.fuelPrice}" data-setting="fuelPrice" aria-label="燃油单价"></label>`);break;
+      case 'alerts':dialog('车辆提醒',low()?`<div class="cc-alert-detail"><strong>左后轮压力偏低</strong><p>${pressure(1.7)} ${settings.pressure} · 38°C</p><span class="cc-note">09:40:52 · 当前提醒</span></div><button type="button" class="cc-primary" data-action="view-tires">查看四轮胎压</button>`:detail('当前提醒',online()?'暂无提醒':'尚未获取车辆状态'));break;
+      case 'view-tires':closeDialog();page='tires';render();break;
+      case 'diagnostics':dialog('发动机状态',detail('故障灯',online()?'未点亮':'尚未读取')+detail('当前故障',online()?'0 项':'--')+detail('待定故障',online()?'0 项':'--')+detail('排放监测',online()?'已完成':'尚未读取')+detail('最后读取',online()?'09:41:02':'--'));break;
+      case 'maintenance':dialog('保养计划',detail('机油与机滤','剩余 2,400 km')+detail('空气滤芯','剩余 8,600 km')+detail('下次保养日期','2026 年 12 月')+detail('里程依据','手动基准 + 累计行程'));break;
+      case 'tire-settings':dialog('轮胎设置',select('pressure','压力单位',['bar','kPa','psi'])+detail('前轮冷胎基准',pressure(2.4)+' '+settings.pressure)+detail('后轮冷胎基准',pressure(2.3)+' '+settings.pressure)+detail('车辆档案','自定义车辆'));break;
+      case 'records':dialog('上次性能记录',detail('记录日期','9 月 5 日 15:32')+detail('0–100 km/h','8.4 s')+detail('80–120 km/h','5.8 s')+detail('100–0 km/h','39.2 m')+detail('测量环境','封闭场地'));break;
+    }
+  });
+  root.addEventListener('change',event=>{
+    const key=event.target.dataset.setting;
+    if(!key)return;
+    if(key==='fuelPrice')settings[key]=Math.max(1,Math.min(30,Number(event.target.value)||8.15));
+    else settings[key]=event.target.value;
+    render();
+    if(key==='pressure')dialog('轮胎设置',select('pressure','压力单位',['bar','kPa','psi'])+detail('前轮冷胎基准',pressure(2.4)+' '+settings.pressure)+detail('后轮冷胎基准',pressure(2.3)+' '+settings.pressure)+detail('车辆档案','自定义车辆'));
+  });
+  root.addEventListener('input',event=>{
+    if(event.target.dataset.setting!=='brightness')return;
+    settings.brightness=Number(event.target.value);
+    root.querySelector('#cc-brightness').textContent=settings.brightness+'%';
+    content.style.opacity=String(.5+settings.brightness/200);
+  });
+  overlay.addEventListener('click',event=>{if(event.target===overlay)closeDialog();});
+  root.addEventListener('keydown',event=>{
+    if(overlay.hidden)return;
+    if(event.key==='Escape'){closeDialog();return;}
+    if(event.key==='Tab'){
+      const controls=[...overlay.querySelectorAll('button,select,input')].filter(e=>!e.disabled);
+      const first=controls[0],last=controls[controls.length-1];
+      if(event.shiftKey&&document.activeElement===first){last.focus();event.preventDefault();}
+      else if(!event.shiftKey&&document.activeElement===last){first.focus();event.preventDefault();}
+    }
+  });
+  new ResizeObserver(drawChart).observe(device);
+  render();
+  if(globalThis.Tweak){
+    const tweak=new Tweak({container:device,onChange:()=>{closeDialog();render();}});
+    tweak.addSelect(settings,'skin',{label:'界面风格',options:Object.keys(skins)});
+    tweak.addSelect(settings,'appearance',{label:'外观',options:['日间','夜间']});
+    tweak.addSelect(settings,'scenario',{label:'车辆状态',options:['行驶','待连接','胎压偏低']});
+    tweak.addSelect(settings,'powertrain',{label:'动力类型',options:['涡轮增压','自然吸气']});
+  }
+})();
+</script>

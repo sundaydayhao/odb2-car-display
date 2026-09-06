@@ -39,7 +39,10 @@ void app_main(void)
 
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     ui_init();
-    ESP_ERROR_CHECK(obd2_init());
+    err = obd2_init();
+    if (err != ESP_OK) {
+        ESP_LOGW(TAG, "OBD-II transport unavailable: %s", esp_err_to_name(err));
+    }
 
     xTaskCreate(vehicle_task, "vehicle_task", 4096, NULL, 5, NULL);
     ESP_LOGI(TAG, "ODB2 dashboard started");

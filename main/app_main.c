@@ -23,7 +23,7 @@ static void vehicle_task(void *arg)
             ESP_LOGW(TAG, "OBD-II refresh failed: %s", esp_err_to_name(err));
         }
 
-        vTaskDelay(pdMS_TO_TICKS(CONFIG_OBD2_POLL_INTERVAL_MS));
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
 

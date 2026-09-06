@@ -1,66 +1,56 @@
-menu "ODB2 Dashboard"
-
-    choice OBD2_TRANSPORT
-        prompt "OBD-II transport"
-        default OBD2_TRANSPORT_DIRECT_CAN
-        help
-            Select how OBD-II data reaches the dashboard.
-
-        config OBD2_TRANSPORT_DIRECT_CAN
-            bool "Direct CAN via onboard TWAI transceiver"
-
-        config OBD2_TRANSPORT_ELM327_BLE
-            bool "ELM327 BLE adapter"
-            help
-                ESP32-S3 supports BLE, but not Bluetooth Classic SPP. Use a BLE ELM327
-                adapter for this option. Classic Bluetooth ELM327 dongles need a
-                different ESP32 target, a serial bridge, or a Wi-Fi adapter.
-    endchoice
-
-    config OBD2_CAN_TX_GPIO
-        int "CAN TX GPIO"
-        default 20
-        depends on OBD2_TRANSPORT_DIRECT_CAN
-        range 0 48
-        help
-            GPIO connected to the TXD pin of the external CAN transceiver.
-
-    config OBD2_CAN_RX_GPIO
-        int "CAN RX GPIO"
-        default 19
-        depends on OBD2_TRANSPORT_DIRECT_CAN
-        range 0 48
-        help
-            GPIO connected to the RXD pin of the external CAN transceiver.
-
-    config OBD2_CAN_BITRATE
-        int "CAN bitrate"
-        default 500000
-        depends on OBD2_TRANSPORT_DIRECT_CAN
-        range 10000 1000000
-        help
-            Classic CAN bitrate used on the vehicle bus.
+menu "ELM327 BLE Dashboard"
+    config OBD2_TRANSPORT_ELM327_BLE
+        bool
+        default y
 
     config OBD2_ELM327_BLE_NAME
-        string "ELM327 BLE advertised name"
-        default "OBDII"
-        depends on OBD2_TRANSPORT_ELM327_BLE
+        string "Adapter name filter (empty: common adapter names)"
+        default ""
         help
-            BLE adapter name to scan for. Many BLE ELM327 adapters advertise as
-            OBDII, V-LINK, VEEPEAK, or BLE OBD.
+            Case-insensitive substring. Empty accepts OBD, ELM, VLINK, V-LINK,
+            VEEPEAK and VGATE names. Only BLE adapters are supported, not Classic SPP.
+
+    config OBD2_ELM327_BLE_ADDRESS
+        string "Adapter address (optional AA:BB:CC:DD:EE:FF)"
+        default ""
+        help
+            An address overrides the name filter. Use this to select one adapter
+            when several are nearby. Private random addresses may rotate.
+
+    config OBD2_ELM327_SERVICE_UUID
+        string "Custom UART service UUID (optional)"
+        default ""
+    config OBD2_ELM327_WRITE_UUID
+        string "Custom writable characteristic UUID (optional)"
+        default ""
+    config OBD2_ELM327_NOTIFY_UUID
+        string "Custom notify/indicate characteristic UUID (optional)"
+        default ""
+        help
+            Set all three UUIDs together, or leave all empty for FFF0/FFF2/FFF1,
+            FFE0/FFE1/FFE1 and Nordic UART Service. UUIDs can be 16 or 128 bits.
+
+    config OBD2_ELM327_BLE_REQUIRE_PAIRING
+        bool "Pair before discovery (for encrypted UART adapters)"
+        default n
+    config OBD2_ELM327_BLE_PASSKEY
+        int "BLE passkey (-1: Just Works/no input)"
+        range -1 999999
+        default -1
+        help
+            This is a BLE SMP passkey, not a Classic Bluetooth serial PIN.
+            A configured passkey enables pairing before service discovery.
 
     config OBD2_POLL_INTERVAL_MS
-        int "Poll interval (ms)"
-        default 1000
-        range 100 10000
-        help
-            Interval between OBD-II refresh cycles.
-
-    config OBD2_RESPONSE_TIMEOUT_MS
-        int "Response timeout (ms)"
-        default 120
+        int "Minimum delay between PID commands (ms)"
+        default 50
         range 20 1000
-        help
-            Timeout used while waiting for each OBD-II response frame.
-
+    config OBD2_RESPONSE_TIMEOUT_MS
+        int "ELM response prompt timeout (ms)"
+        default 1500
+        range 500 5000
+    config OBD2_ELM327_SEARCH_TIMEOUT_MS
+        int "Initial vehicle protocol search timeout (ms)"
+        default 20000
+        range 5000 30000
 endmenu

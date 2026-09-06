@@ -2,6 +2,9 @@ idf_component_register(
     SRCS
         "app_main.c"
         "obd2.c"
+        "obd2_decode.c"
+        "elm327_protocol.c"
+        "elm327_ble.c"
         "ui.c"
         "dashboard.c"
         "fonts/dashboard_text_18.c"
@@ -11,12 +14,12 @@ idf_component_register(
     INCLUDE_DIRS
         "."
     PRIV_REQUIRES
-        driver
+        bt
+        esp_driver_gpio
         esp_event
         esp_lcd
         esp_timer
         esp_driver_i2c
-        esp_driver_twai
         lvgl
         nvs_flash
 )

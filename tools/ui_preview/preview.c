@@ -164,6 +164,20 @@ int main(int argc, char **argv)
     lv_indev_set_display(pointer, display);
     lv_indev_set_read_cb(pointer, read_pointer);
     dashboard_create(display);
+    dashboard_data_t link_state={.link_state=DASH_LINK_SCANNING};
+    dashboard_update(&link_state);
+    assert(count_text(lv_screen_active(),TXT_SCANNING)==1);
+    snapshot(display,argv[1],"ble-scanning",0);
+    link_state.link_state=DASH_LINK_CONNECTING;
+    dashboard_update(&link_state);
+    assert(count_text(lv_screen_active(),TXT_CONNECTING)==1);
+    snapshot(display,argv[1],"ble-connecting",0);
+    link_state.link_state=DASH_LINK_INITIALIZING;
+    dashboard_update(&link_state);
+    assert(count_text(lv_screen_active(),TXT_INITIALIZING)==1);
+    snapshot(display,argv[1],"ble-initializing",0);
+    link_state.link_state=DASH_LINK_WAITING;
+    dashboard_update(&link_state);
     inspect_all(display, pointer, argv[1], "waiting");
 
     dashboard_data_t sample = {

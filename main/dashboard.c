@@ -362,6 +362,9 @@ static const char *status_text(const dashboard_data_t *data)
     if (data->valid[DASH_FUEL] && warning(DASH_FUEL,data->value[DASH_FUEL])) return TXT_FUEL_LOW;
     if (data->valid[DASH_RPM] && warning(DASH_RPM,data->value[DASH_RPM])) return TXT_RPM_HIGH;
     for (int i = 0; i < DASH_METRIC_COUNT; ++i) if (data->valid[i]) return TXT_LIVE;
+    if (data->link_state == DASH_LINK_SCANNING) return TXT_SCANNING;
+    if (data->link_state == DASH_LINK_CONNECTING) return TXT_CONNECTING;
+    if (data->link_state == DASH_LINK_INITIALIZING) return TXT_INITIALIZING;
     return TXT_WAITING;
 }
 
@@ -410,10 +413,10 @@ static void refresh(void)
         data.valid[DASH_AVERAGE_FUEL] = false;
     }
     const char *status = status_text(&data);
-    bool alert = !s_demo && strcmp(status,TXT_LIVE) && strcmp(status,TXT_WAITING);
+    bool alert = !s_demo && (!strcmp(status,TXT_COOLANT_HIGH) || !strcmp(status,TXT_FUEL_LOW) || !strcmp(status,TXT_RPM_HIGH));
     lv_label_set_text(s_status,status);
     lv_obj_set_style_text_color(s_status,lv_color_hex(s_demo ? s_p->secondary : alert ? s_p->red : s_p->muted),0);
-    lv_obj_set_style_bg_color(s_dot,lv_color_hex(s_demo ? s_p->secondary : alert ? s_p->red : !strcmp(status,TXT_WAITING) ? s_p->muted : s_p->green),0);
+    lv_obj_set_style_bg_color(s_dot,lv_color_hex(s_demo ? s_p->secondary : alert ? s_p->red : !strcmp(status,TXT_LIVE) ? s_p->green : s_p->muted),0);
     for (size_t i = 0; i < s_binding_count; ++i) {
         binding_t *b = &s_bindings[i];
         bool valid = data.valid[b->metric];

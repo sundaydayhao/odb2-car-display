@@ -1,282 +1,167 @@
 #include "obd2.h"
 
+#include <stdio.h>
 #include <string.h>
-
-#include "esp_check.h"
+#include "elm327_ble.h"
+#include "obd2_decode.h"
 #include "esp_log.h"
-#include "esp_twai.h"
-#include "esp_twai_onchip.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/queue.h"
 #include "esp_timer.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "sdkconfig.h"
 
-static const char *TAG = "obd2";
+static const char *TAG="obd2";
+static portMUX_TYPE s_cache_lock=portMUX_INITIALIZER_UNLOCKED;
+static obd_cache_t s_cache;
+static uint32_t s_cache_generation;
+static bool s_started;
+static elm_response_t s_response;
 
-#define OBD2_RX_QUEUE_DEPTH 16
-#define OBD2_BUS_RECOVERY_DELAY_MS 1000
+static int64_t now_ms(void) { return esp_timer_get_time()/1000; }
 
-typedef struct {
-    twai_frame_t frame;
-    uint8_t buffer[TWAI_FRAME_MAX_LEN];
-} obd2_rx_item_t;
-
-static twai_node_handle_t s_twai_node;
-static QueueHandle_t s_rx_queue;
-static int64_t s_bus_recover_until_us;
-
-#if CONFIG_OBD2_TRANSPORT_DIRECT_CAN
-static esp_err_t obd2_recover_bus_off(void)
+static void state(obd2_link_state_t next, bool clear)
 {
-    twai_node_status_t status = { 0 };
-    esp_err_t err = twai_node_get_info(s_twai_node, &status, NULL);
-    if (err != ESP_OK) {
-        return err;
-    }
-
-    if (status.state != TWAI_ERROR_BUS_OFF) {
-        return ESP_OK;
-    }
-
-    ESP_LOGW(TAG, "TWAI bus off detected, starting recovery");
-    err = twai_node_recover(s_twai_node);
-    if (err != ESP_OK) {
-        return err;
-    }
-
-    s_bus_recover_until_us = esp_timer_get_time() + (int64_t)OBD2_BUS_RECOVERY_DELAY_MS * 1000LL;
-    return ESP_OK;
+    portENTER_CRITICAL(&s_cache_lock);
+    if (clear) memset(&s_cache,0,sizeof(s_cache));
+    s_cache.data.link_state=next;
+    portEXIT_CRITICAL(&s_cache_lock);
 }
 
-static bool IRAM_ATTR obd2_on_rx_done(twai_node_handle_t handle, const twai_rx_done_event_data_t *edata, void *user_ctx)
+static esp_err_t command(const char *cmd, uint32_t timeout)
 {
-    (void)edata;
-    QueueHandle_t queue = (QueueHandle_t)user_ctx;
-    BaseType_t higher_priority_task_woken = pdFALSE;
-
-    if (queue == NULL) {
-        return false;
-    }
-
-    obd2_rx_item_t item = { 0 };
-    item.frame.buffer = item.buffer;
-    item.frame.buffer_len = sizeof(item.buffer);
-
-    if (twai_node_receive_from_isr(handle, &item.frame) == ESP_OK) {
-        if (xQueueSendFromISR(queue, &item, &higher_priority_task_woken) != pdTRUE) {
-            ESP_EARLY_LOGW(TAG, "RX queue full, dropping frame");
-        }
-    }
-
-    return (higher_priority_task_woken == pdTRUE);
-}
-
-static esp_err_t send_obd_request(uint8_t pid)
-{
-    if (esp_timer_get_time() < s_bus_recover_until_us) {
-        return ESP_ERR_TIMEOUT;
-    }
-
-    uint8_t payload[8] = {
-        0x02, 0x01, pid, 0x00, 0x00, 0x00, 0x00, 0x00,
-    };
-    twai_frame_t frame = {
-        .header = {
-            .id = 0x7DF,
-            .dlc = twaifd_len2dlc(sizeof(payload)),
-            .ide = 0,
-            .rtr = 0,
-            .fdf = 0,
-            .brs = 0,
-            .esi = 0,
-        },
-        .buffer = payload,
-        .buffer_len = sizeof(payload),
-    };
-
-    esp_err_t err = twai_node_transmit(s_twai_node, &frame, 100);
-    if (err == ESP_ERR_INVALID_STATE) {
-        ESP_RETURN_ON_ERROR(obd2_recover_bus_off(), TAG, "failed to recover TWAI bus");
-        return ESP_ERR_TIMEOUT;
-    }
-    if (err != ESP_OK) {
-        return err;
-    }
-
-    err = twai_node_transmit_wait_all_done(s_twai_node, 100);
-    if (err == ESP_ERR_INVALID_STATE) {
-        ESP_RETURN_ON_ERROR(obd2_recover_bus_off(), TAG, "failed to recover TWAI bus");
-        return ESP_ERR_TIMEOUT;
-    }
+    esp_err_t err=elm_ble_command(cmd,&s_response,timeout);
+    if (err!=ESP_OK) ESP_LOGW(TAG,"Command %s failed: %s",cmd,esp_err_to_name(err));
     return err;
 }
 
-static bool parse_obd_response(const twai_frame_t *msg, uint8_t pid, obd2_vehicle_data_t *out)
+static esp_err_t configure_adapter(void)
 {
-    if (msg->header.ide || msg->header.rtr) {
-        return false;
+    state(OBD_LINK_INITIALIZING,true);
+    if (command("ATZ",4000)!=ESP_OK) return ESP_FAIL;
+    if (command("ATI",2000)!=ESP_OK || !elm_response_is_adapter(&s_response)) {
+        ESP_LOGW(TAG,"The selected UART device did not identify as ELM327/STN");
+        return ESP_ERR_NOT_SUPPORTED;
     }
-
-    if (msg->header.id < 0x7E8 || msg->header.id > 0x7EF) {
-        return false;
-    }
-
-    if (msg->header.dlc < 4) {
-        return false;
-    }
-
-    if (msg->buffer[1] != 0x41 || msg->buffer[2] != pid) {
-        return false;
-    }
-
-    switch (pid) {
-    case 0x04:  // Calculated engine load
-        out->engine_load_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
-        out->engine_load_valid = true;
-        return true;
-    case 0x05:  // Engine coolant temperature
-        out->coolant_temp_c = (int16_t)msg->buffer[3] - 40;
-        out->coolant_temp_valid = true;
-        return true;
-    case 0x0D:  // Vehicle speed
-        out->speed_kph = msg->buffer[3];
-        out->speed_valid = true;
-        return true;
-    case 0x11:  // Throttle position
-        out->throttle_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
-        out->throttle_valid = true;
-        return true;
-    case 0x2F:  // Fuel level input
-        out->fuel_percent = (uint8_t)((msg->buffer[3] * 100U) / 255U);
-        out->fuel_valid = true;
-        return true;
-    case 0x0C:  // Engine RPM
-        if (msg->header.dlc < 5) {
-            return false;
+    static const char *commands[]={"ATE0","ATL0","ATS1","ATH1","ATCAF1","ATCFC1","ATAT1","ATST64","ATSP0"};
+    for (unsigned i=0;i<sizeof(commands)/sizeof(commands[0]);++i) {
+        if (command(commands[i],2000)!=ESP_OK || !elm_response_is_ok(&s_response)) {
+            ESP_LOGW(TAG,"Required adapter command rejected: %s",commands[i]);
+            return ESP_ERR_NOT_SUPPORTED;
         }
-        out->rpm = (uint16_t)((((uint16_t)msg->buffer[3] << 8) | msg->buffer[4]) / 4U);
-        out->rpm_valid = true;
-        return true;
-    case 0x42:  // Control module voltage
-        if (msg->header.dlc < 5) {
-            return false;
-        }
-        out->control_voltage_mv = (uint16_t)((((uint16_t)msg->buffer[3] << 8) | msg->buffer[4]));
-        out->control_voltage_valid = true;
-        return true;
-    default:
-        return false;
     }
+    ESP_LOGI(TAG,"Adapter initialized; discovering vehicle PID capabilities");
+    return ESP_OK;
 }
 
-static esp_err_t query_pid(uint8_t pid, obd2_vehicle_data_t *out)
+static bool discover_vehicle(bool supported[OBD_PARAMETER_COUNT], uint32_t *ecu)
 {
-    esp_err_t err = send_obd_request(pid);
-    if (err != ESP_OK) {
-        if (err != ESP_ERR_TIMEOUT) {
-            ESP_LOGE(TAG, "failed to send PID 0x%02X: %s", pid, esp_err_to_name(err));
-        }
-        return err;
+    memset(supported,0,OBD_PARAMETER_COUNT*sizeof(*supported));
+    elm_pid_reply_t reply;
+    /* Auto protocol search can take seconds; it has a separate bounded deadline. */
+    if (command("0100",CONFIG_OBD2_ELM327_SEARCH_TIMEOUT_MS)!=ESP_OK || !elm_decode_pid(&s_response,0,ELM_ECU_ANY,&reply) || reply.length<4 || !reply.ecu) return false;
+    *ecu=reply.ecu;
+    for (unsigned i=0;i<OBD_PARAMETER_COUNT;++i) supported[i]=elm_supported_pid(&reply,0,obd_parameters[i].pid);
+    bool next=elm_supported_pid(&reply,0,0x20);
+    if (command("ATDPN",2000)!=ESP_OK || !elm_response_is_can_protocol(&s_response)) {
+        ESP_LOGW(TAG,"Vehicle is not using a supported ISO 15765-4 protocol");
+        return false;
     }
+    for (unsigned base=0x20;next && base<=0x40;base+=0x20) {
+        char request[8]; snprintf(request,sizeof(request),"01%02X",base);
+        if (command(request,CONFIG_OBD2_RESPONSE_TIMEOUT_MS)!=ESP_OK) return false;
+        if (!elm_decode_pid(&s_response,base,*ecu,&reply) || reply.length<4) break;
+        for (unsigned i=0;i<OBD_PARAMETER_COUNT;++i) supported[i] |= elm_supported_pid(&reply,base,obd_parameters[i].pid);
+        next=elm_supported_pid(&reply,base,base+0x20);
+    }
+    unsigned count=0;
+    for (unsigned i=0;i<OBD_PARAMETER_COUNT;++i) count+=supported[i];
+    ESP_LOGI(TAG,"Vehicle ECU=%08lX, %u dashboard parameters supported",(unsigned long)*ecu,count);
+    return count>0;
+}
 
-    const int64_t deadline = esp_timer_get_time() + (int64_t)CONFIG_OBD2_RESPONSE_TIMEOUT_MS * 1000LL;
-    while (esp_timer_get_time() < deadline) {
-        obd2_rx_item_t item;
-        if (xQueueReceive(s_rx_queue, &item, pdMS_TO_TICKS(20)) != pdTRUE) {
+static void worker(void *arg)
+{
+    (void)arg;
+    uint32_t generation=0, ecu=ELM_ECU_ANY;
+    bool initialized=false, vehicle=false, supported[OBD_PARAMETER_COUNT]={0};
+    unsigned turn=0, slow=2, failures=0;
+    int64_t probe_after=0;
+    for (;;) {
+        elm_ble_status_t link=elm_ble_status();
+        if (link.state!=ELM_BLE_READY) {
+            initialized=false; vehicle=false;
+            state(link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : OBD_LINK_CONNECTING,true);
+            vTaskDelay(pdMS_TO_TICKS(100));
             continue;
         }
-        if (parse_obd_response(&item.frame, pid, out)) {
-            return ESP_OK;
+        if (generation!=link.generation) {
+            generation=link.generation; initialized=false; vehicle=false; probe_after=0;
+            portENTER_CRITICAL(&s_cache_lock);
+            memset(&s_cache,0,sizeof(s_cache));
+            s_cache_generation=generation;
+            s_cache.data.link_state=OBD_LINK_INITIALIZING;
+            portEXIT_CRITICAL(&s_cache_lock);
         }
+        if (!initialized) {
+            if (configure_adapter()!=ESP_OK) {
+                if (elm_ble_status().state==ELM_BLE_READY) elm_ble_reset_link();
+                vTaskDelay(pdMS_TO_TICKS(200));
+                continue;
+            }
+            initialized=true;
+        }
+        if (!vehicle) {
+            state(OBD_LINK_WAITING,true);
+            if (now_ms()<probe_after) { vTaskDelay(pdMS_TO_TICKS(100)); continue; }
+            vehicle=discover_vehicle(supported,&ecu);
+            if (!vehicle) { probe_after=now_ms()+3000; continue; }
+            failures=0; turn=0; slow=2;
+            state(OBD_LINK_ACTIVE,false);
+        }
+        /* Two fast readings for each rotating secondary reading, without starving slow PIDs. */
+        unsigned index;
+        if (turn%3<2) index=turn%3;
+        else { index=slow++; if (slow==OBD_PARAMETER_COUNT) slow=2; }
+        ++turn;
+        if (!supported[index]) { vTaskDelay(pdMS_TO_TICKS(10)); continue; }
+        char request[8]; snprintf(request,sizeof(request),"01%02X",obd_parameters[index].pid);
+        esp_err_t err=command(request,CONFIG_OBD2_RESPONSE_TIMEOUT_MS);
+        elm_pid_reply_t reply;
+        bool valid=err==ESP_OK && elm_decode_pid(&s_response,obd_parameters[index].pid,ecu,&reply);
+        portENTER_CRITICAL(&s_cache_lock);
+        if (valid) valid=obd_cache_apply(&s_cache,index,&reply,now_ms());
+        if (!valid) obd_cache_invalidate(&s_cache,index);
+        obd_cache_expire(&s_cache,now_ms());
+        portEXIT_CRITICAL(&s_cache_lock);
+        if (valid) failures=0; else ++failures;
+        if (failures>=12) { vehicle=false; probe_after=now_ms()+3000; state(OBD_LINK_WAITING,true); }
+        vTaskDelay(pdMS_TO_TICKS(CONFIG_OBD2_POLL_INTERVAL_MS));
     }
-
-    return ESP_ERR_TIMEOUT;
 }
 
 esp_err_t obd2_init(void)
 {
-    s_rx_queue = xQueueCreate(OBD2_RX_QUEUE_DEPTH, sizeof(obd2_rx_item_t));
-    ESP_RETURN_ON_FALSE(s_rx_queue != NULL, ESP_ERR_NO_MEM, TAG, "failed to create RX queue");
-
-    twai_onchip_node_config_t node_config = {
-        .io_cfg = {
-            .tx = CONFIG_OBD2_CAN_TX_GPIO,
-            .rx = CONFIG_OBD2_CAN_RX_GPIO,
-            .quanta_clk_out = GPIO_NUM_NC,
-            .bus_off_indicator = GPIO_NUM_NC,
-        },
-        .bit_timing = {
-            .bitrate = CONFIG_OBD2_CAN_BITRATE,
-        },
-        .tx_queue_depth = 8,
-        .fail_retry_cnt = 3,
-    };
-
-    ESP_RETURN_ON_ERROR(twai_new_node_onchip(&node_config, &s_twai_node), TAG, "twai_new_node_onchip failed");
-
-    twai_mask_filter_config_t f_config = {
-        .id = 0,
-        .mask = 0,
-        .is_ext = false,
-    };
-    ESP_RETURN_ON_ERROR(twai_node_config_mask_filter(s_twai_node, 0, &f_config), TAG, "twai_node_config_mask_filter failed");
-
-    twai_event_callbacks_t callbacks = {
-        .on_rx_done = obd2_on_rx_done,
-    };
-    ESP_RETURN_ON_ERROR(twai_node_register_event_callbacks(s_twai_node, &callbacks, s_rx_queue), TAG,
-                        "twai_node_register_event_callbacks failed");
-    ESP_RETURN_ON_ERROR(twai_node_enable(s_twai_node), TAG, "twai_node_enable failed");
-
-    ESP_LOGI(TAG, "TWAI started on TX=%d RX=%d", CONFIG_OBD2_CAN_TX_GPIO, CONFIG_OBD2_CAN_RX_GPIO);
+    if (s_started) return ESP_ERR_INVALID_STATE;
+    state(OBD_LINK_SCANNING,true);
+    esp_err_t err=elm_ble_init();
+    if (err!=ESP_OK) return err;
+    if (xTaskCreate(worker,"elm_poll",8192,NULL,3,NULL)!=pdPASS) return ESP_ERR_NO_MEM;
+    s_started=true;
     return ESP_OK;
 }
 
 esp_err_t obd2_read_vehicle_data(obd2_vehicle_data_t *out)
 {
-    if (out == NULL) {
-        return ESP_ERR_INVALID_ARG;
+    if (!out) return ESP_ERR_INVALID_ARG;
+    elm_ble_status_t link=elm_ble_status();
+    portENTER_CRITICAL(&s_cache_lock);
+    obd_cache_expire(&s_cache,now_ms());
+    *out=s_cache.data;
+    bool same_session=s_cache_generation==link.generation;
+    portEXIT_CRITICAL(&s_cache_lock);
+    if (link.state!=ELM_BLE_READY || !same_session) {
+        memset(out,0,sizeof(*out));
+        out->link_state=link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : link.state==ELM_BLE_READY ? OBD_LINK_INITIALIZING : OBD_LINK_CONNECTING;
     }
-
-    memset(out, 0, sizeof(*out));
-
-    esp_err_t err = query_pid(0x0D, out);
-    if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
-        return err;
-    }
-
-    err = query_pid(0x0C, out);
-    if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
-        return err;
-    }
-
-    const uint8_t secondary_pids[] = {0x2F, 0x05, 0x04, 0x11, 0x42};
-    for (size_t i = 0; i < sizeof(secondary_pids) / sizeof(secondary_pids[0]); ++i) {
-        err = query_pid(secondary_pids[i], out);
-        if (err != ESP_OK && err != ESP_ERR_TIMEOUT) {
-            return err;
-        }
-    }
-
-    out->last_update_ms = esp_timer_get_time() / 1000LL;
     return ESP_OK;
 }
-#else
-esp_err_t obd2_init(void)
-{
-    ESP_LOGW(TAG,
-             "ELM327 BLE transport selected. ESP32-S3 requires a BLE ELM327 adapter; Classic SPP adapters are not "
-             "supported by this target yet.");
-    return ESP_ERR_NOT_SUPPORTED;
-}
-
-esp_err_t obd2_read_vehicle_data(obd2_vehicle_data_t *out)
-{
-    if (out == NULL) {
-        return ESP_ERR_INVALID_ARG;
-    }
-
-    memset(out, 0, sizeof(*out));
-    out->last_update_ms = esp_timer_get_time() / 1000LL;
-    return ESP_ERR_NOT_SUPPORTED;
-}
-#endif

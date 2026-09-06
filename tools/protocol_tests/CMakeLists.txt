@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.16)
+project(elm_protocol_tests C)
+set(CMAKE_C_STANDARD 99)
+get_filename_component(ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+add_executable(elm_protocol_tests test_protocol.c
+    "${ROOT}/main/elm327_protocol.c" "${ROOT}/main/obd2_decode.c")
+target_include_directories(elm_protocol_tests PRIVATE "${ROOT}/main")
+if(NOT MSVC)
+    target_compile_options(elm_protocol_tests PRIVATE -Wall -Wextra -Werror)
+endif()
+enable_testing()
+add_test(NAME elm_protocol COMMAND elm_protocol_tests)

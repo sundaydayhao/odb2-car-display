@@ -43,9 +43,11 @@ typedef enum {
 /* Voltage: mV. Fuel economy, distance, trip speed: tenths. Pressures: kPa.
  * Trip fuel: hundredths of a litre. Acceleration: hundredths of g. Idle: seconds.
  * All other metrics use displayed units. Unsupported inputs remain invalid. */
+typedef enum { DASH_LINK_WAITING, DASH_LINK_SCANNING, DASH_LINK_CONNECTING, DASH_LINK_INITIALIZING } dashboard_link_t;
 typedef struct {
     int32_t value[DASH_METRIC_COUNT];
     bool valid[DASH_METRIC_COUNT];
+    dashboard_link_t link_state;
 } dashboard_data_t;
 
 void dashboard_create(lv_display_t *display);

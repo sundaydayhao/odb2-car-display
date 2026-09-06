@@ -60,9 +60,9 @@ static const char *TAG = "ui";
 #define CH422G_EXIO_LCD_BL           BIT2
 #define CH422G_EXIO_LCD_RST          BIT3
 #define CH422G_EXIO_SD_CS            BIT4
-#define CH422G_EXIO_USB_SEL          BIT5
-#define CH422G_OUTPUT_LCD_ON_CAN     (CH422G_EXIO_TP_RST | CH422G_EXIO_LCD_BL | CH422G_EXIO_LCD_RST | \
-                                      CH422G_EXIO_SD_CS | CH422G_EXIO_USB_SEL)
+/* EXIO5 stays low: GPIO19/20 are routed to USB, not the vehicle connector. */
+#define CH422G_OUTPUT_LCD_ON         (CH422G_EXIO_TP_RST | CH422G_EXIO_LCD_BL | CH422G_EXIO_LCD_RST | \
+                                      CH422G_EXIO_SD_CS)
 
 #define LVGL_TICK_PERIOD_MS          2
 #define LVGL_TASK_STACK_SIZE         (8 * 1024)
@@ -171,7 +171,7 @@ static esp_err_t write_board_outputs(uint8_t value)
     ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_set, CH422G_WR_SET_IO_OE), cleanup, TAG,
                       "enable CH422G output failed");
     ESP_GOTO_ON_ERROR(i2c_write_u8(ch422g_wr_io, value), cleanup, TAG,
-                      "set CH422G LCD backlight and CAN mode failed");
+                      "set CH422G LCD backlight and USB routing failed");
 
 cleanup:
     if (ch422g_wr_io != NULL) {
@@ -186,16 +186,16 @@ cleanup:
 
 static esp_err_t init_board_io_expander(void)
 {
-    return write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN);
+    return write_board_outputs(CH422G_OUTPUT_LCD_ON);
 }
 
 static esp_err_t pulse_touch_reset(void)
 {
-    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN & ~CH422G_EXIO_TP_RST),
+    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON & ~CH422G_EXIO_TP_RST),
                         TAG,
                         "drive touch reset low failed");
     vTaskDelay(pdMS_TO_TICKS(20));
-    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON_CAN), TAG, "drive touch reset high failed");
+    ESP_RETURN_ON_ERROR(write_board_outputs(CH422G_OUTPUT_LCD_ON), TAG, "drive touch reset high failed");
     vTaskDelay(pdMS_TO_TICKS(120));
     return ESP_OK;
 }
@@ -376,6 +376,9 @@ void ui_render_vehicle_data(const obd2_vehicle_data_t *data)
             [DASH_VOLTAGE] = data->control_voltage_mv,
             [DASH_LOAD] = data->engine_load_percent,
             [DASH_THROTTLE] = data->throttle_percent,
+            [DASH_INTAKE_TEMP] = data->intake_temp_c,
+            [DASH_OIL_TEMP] = data->oil_temp_c,
+            [DASH_MANIFOLD] = data->manifold_pressure_kpa,
         },
         .valid = {
             [DASH_SPEED] = data->speed_valid,
@@ -385,7 +388,13 @@ void ui_render_vehicle_data(const obd2_vehicle_data_t *data)
             [DASH_VOLTAGE] = data->control_voltage_valid,
             [DASH_LOAD] = data->engine_load_valid,
             [DASH_THROTTLE] = data->throttle_valid,
+            [DASH_INTAKE_TEMP] = data->intake_temp_valid,
+            [DASH_OIL_TEMP] = data->oil_temp_valid,
+            [DASH_MANIFOLD] = data->manifold_pressure_valid,
         },
+        .link_state = data->link_state == OBD_LINK_SCANNING ? DASH_LINK_SCANNING :
+                      data->link_state == OBD_LINK_CONNECTING ? DASH_LINK_CONNECTING :
+                      data->link_state == OBD_LINK_INITIALIZING ? DASH_LINK_INITIALIZING : DASH_LINK_WAITING,
     };
     _lock_acquire(&s_lvgl_lock);
     dashboard_update(&view);

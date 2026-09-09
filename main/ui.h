@@ -2,5 +2,8 @@
 
 #include "obd2.h"
 
-void ui_init(void);
+bool ui_init(void);
+bool ui_healthy(void);
+void ui_camera_frame(const uint16_t *pixels);
+void ui_camera_clear(void);
 void ui_render_vehicle_data(const obd2_vehicle_data_t *data);

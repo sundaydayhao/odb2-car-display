@@ -37,6 +37,7 @@ typedef struct {
 } binding_t;
 
 static lv_obj_t *s_screen, *s_content, *s_nav, *s_overlay, *s_title, *s_index;
+static lv_obj_t *s_toolbar;
 static lv_obj_t *s_status, *s_dot, *s_style_icon, *s_settings_icon, *s_top[2], *s_rule;
 static lv_obj_t *s_tabs[PAGE_COUNT], *s_tab_labels[PAGE_COUNT], *s_tab_icons[PAGE_COUNT];
 static lv_obj_t *s_revs[32], *s_wheels[4], *s_gear_bg, *s_g_point;
@@ -52,6 +53,9 @@ static const char *s_names[] = {TXT_DRIVE, TXT_HEALTH, TXT_TIRES, TXT_TRIP, TXT_
 static const char *s_titles[] = {TXT_DRIVE_TITLE, TXT_HEALTH_TITLE, TXT_TIRES_TITLE, TXT_TRIP_TITLE, TXT_POWER_TITLE};
 static const char *s_theme_names[] = {TXT_NEON, TXT_LAVA, TXT_ACID};
 static const char *s_units[] = {"bar", "kPa", "psi"};
+static int s_width = 800, s_height = 480;
+static int sx(int x) { return x * s_width / 800; }
+static int sy(int y) { return y * s_height / 480; }
 
 static void rebuild(void);
 static void refresh(void);
@@ -64,8 +68,8 @@ static lv_obj_t *surface(lv_obj_t *parent, int x, int y, int w, int h)
 {
     lv_obj_t *obj = lv_obj_create(parent);
     lv_obj_remove_style_all(obj);
-    lv_obj_set_pos(obj, x, y);
-    lv_obj_set_size(obj, w, h);
+    lv_obj_set_pos(obj, sx(x), sy(y));
+    lv_obj_set_size(obj, sx(w), sy(h));
     lv_obj_remove_flag(obj, LV_OBJ_FLAG_SCROLLABLE | LV_OBJ_FLAG_CLICKABLE);
     return obj;
 }
@@ -85,8 +89,8 @@ static lv_obj_t *label(lv_obj_t *parent, const char *text, int x, int y, int wid
     lv_obj_t *obj = lv_label_create(parent);
     lv_obj_remove_style_all(obj);
     lv_obj_remove_flag(obj, LV_OBJ_FLAG_CLICKABLE);
-    lv_obj_set_pos(obj, x, y);
-    lv_obj_set_size(obj, width, font->line_height);
+    lv_obj_set_pos(obj, sx(x), sy(y));
+    lv_obj_set_size(obj, sx(width), font->line_height);
     lv_obj_set_style_text_font(obj, font, 0);
     lv_obj_set_style_text_color(obj, lv_color_hex(color), 0);
     lv_obj_set_style_text_letter_space(obj, 0, 0);
@@ -124,8 +128,8 @@ static void meter(binding_t *b, int x, int y, int w, int max, uint32_t color)
 {
     lv_obj_t *obj = lv_bar_create(s_content);
     lv_obj_remove_style_all(obj);
-    lv_obj_set_pos(obj, x, y);
-    lv_obj_set_size(obj, w, 6);
+    lv_obj_set_pos(obj, sx(x), sy(y));
+    lv_obj_set_size(obj, sx(w), sy(6));
     lv_obj_set_style_bg_color(obj, lv_color_hex(s_p->track), LV_PART_MAIN);
     lv_obj_set_style_bg_opa(obj, LV_OPA_COVER, LV_PART_MAIN);
     lv_obj_set_style_bg_color(obj, lv_color_hex(color), LV_PART_INDICATOR);
@@ -228,8 +232,11 @@ static void create_tires(void)
 
 static void line(lv_obj_t *parent, const lv_point_precise_t *points, int count, uint32_t color, int width)
 {
+    static lv_point_precise_t scaled[8];
+    LV_ASSERT(count <= 8);
+    for (int i = 0; i < count; ++i) scaled[i] = (lv_point_precise_t){sx(points[i].x), sy(points[i].y)};
     lv_obj_t *obj = lv_line_create(parent);
-    lv_line_set_points(obj, points, count);
+    lv_line_set_points(obj, scaled, count);
     lv_obj_set_style_line_color(obj, lv_color_hex(color), 0);
     lv_obj_set_style_line_width(obj, width, 0);
     lv_obj_remove_flag(obj, LV_OBJ_FLAG_CLICKABLE);
@@ -442,7 +449,7 @@ static void refresh(void)
         if (data.valid[DASH_LONG_G] && data.valid[DASH_LATERAL_G]) {
             int x = data.value[DASH_LATERAL_G], y = data.value[DASH_LONG_G];
             x = LV_CLAMP(-50,x,50); y = LV_CLAMP(-50,y,50);
-            lv_obj_set_pos(s_g_point,492+x,92-y);
+            lv_obj_set_pos(s_g_point,sx(492+x),sy(92-y));
             lv_obj_remove_flag(s_g_point,LV_OBJ_FLAG_HIDDEN);
         } else lv_obj_add_flag(s_g_point,LV_OBJ_FLAG_HIDDEN);
     }
@@ -458,6 +465,8 @@ static void rebuild(void)
     memset(s_wheels,0,sizeof(s_wheels));
     s_gear_bg = s_g_point = NULL;
     lv_obj_set_style_bg_color(s_screen,lv_color_hex(s_p->bg),0);
+    lv_obj_set_style_bg_color(s_toolbar,lv_color_hex(s_p->bg),0);
+    lv_obj_send_event(s_toolbar,LV_EVENT_STYLE_CHANGED,NULL);
     lv_obj_set_style_bg_color(s_nav,lv_color_hex(s_p->panel),0);
     lv_obj_set_style_bg_color(s_top[0],lv_color_hex(s_p->accent),0);
     lv_obj_set_style_bg_color(s_top[1],lv_color_hex(s_p->secondary),0);
@@ -536,8 +545,8 @@ static void open_settings(void)
     for (int i = 0; i < 3; ++i) {
         label(sheet,titles[i],24,85+i*60,250,&dashboard_text_18,s_p->ink,LV_TEXT_ALIGN_LEFT);
         lv_obj_t *sw = lv_switch_create(sheet);
-        lv_obj_set_pos(sw,324,75+i*60);
-        lv_obj_set_size(sw,68,38);
+        lv_obj_set_pos(sw,sx(324),sy(75+i*60));
+        lv_obj_set_size(sw,sx(68),sy(38));
         lv_obj_set_style_bg_color(sw,lv_color_hex(s_p->track),LV_PART_MAIN);
         lv_obj_set_style_bg_color(sw,lv_color_hex(s_p->accent),LV_PART_INDICATOR | LV_STATE_CHECKED);
         if (enabled[i]) lv_obj_add_state(sw,LV_STATE_CHECKED);
@@ -614,14 +623,23 @@ static void expire_data(lv_timer_t *timer)
 
 void dashboard_create(lv_display_t *display)
 {
-    s_screen = lv_display_get_screen_active(display);
+    dashboard_create_on(lv_display_get_screen_active(display), lv_display_get_horizontal_resolution(display),
+                        lv_display_get_vertical_resolution(display));
+}
+
+void dashboard_create_on(lv_obj_t *parent, int width, int height)
+{
+    s_width = width; s_height = height;
+    s_screen = parent;
     lv_obj_remove_style_all(s_screen);
+    lv_obj_set_size(s_screen, width, height);
     lv_obj_remove_flag(s_screen,LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_style_bg_opa(s_screen,LV_OPA_COVER,0);
     s_top[0] = rect(s_screen,0,0,640,3,s_p->accent,0);
     s_top[1] = rect(s_screen,640,0,160,3,s_p->secondary,0);
     s_index = label(s_screen,"01",28,21,28,&lv_font_montserrat_14,s_p->accent,LV_TEXT_ALIGN_LEFT);
-    s_title = label(s_screen,TXT_DRIVE_TITLE,65,15,310,&dashboard_text_22,s_p->ink,LV_TEXT_ALIGN_LEFT);
+    s_title = label(s_screen,TXT_DRIVE_TITLE,65,15,170,&dashboard_text_22,s_p->ink,LV_TEXT_ALIGN_LEFT);
+    s_toolbar = surface(s_screen,240,6,246,44);
     s_rule = rect(s_screen,28,53,744,1,s_p->line,0);
     lv_obj_t *status_button = button(s_screen,496,6,184,44,ACTION_ALERTS,s_p->bg);
     lv_obj_set_style_bg_opa(status_button,LV_OPA_TRANSP,0);
@@ -647,3 +665,5 @@ void dashboard_create(lv_display_t *display)
     rebuild();
     lv_timer_create(expire_data,1000,NULL);
 }
+
+lv_obj_t *dashboard_service_toolbar(void) { return s_toolbar; }

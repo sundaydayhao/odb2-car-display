@@ -7,6 +7,15 @@ idf_component_register(
         "elm327_ble.c"
         "ui.c"
         "dashboard.c"
+        "service_panel.c"
+        "device_services.c"
+        "network_service.c"
+        "device_console.c"
+        "voice_service.c"
+        "camera_service.c"
+        "recorder.c"
+        "cloud_service.c"
+        "ota_policy.c"
         "fonts/dashboard_text_18.c"
         "fonts/dashboard_text_22.c"
         "fonts/dashboard_digits_144.c"
@@ -22,4 +31,26 @@ idf_component_register(
         esp_driver_i2c
         lvgl
         nvs_flash
+        esp32_p4_function_ev_board
+        esp_wifi_remote
+        esp_xiaozhi
+        esp_audio_codec
+        esp_codec_dev
+        esp_video
+        esp_netif
+        esp_http_client
+        app_update
+        mbedtls
+        cjson
+        console
 )
+
+if(CONFIG_DEVICE_TRUST_DIR)
+    foreach(asset service_ca.pem ota_public.pem)
+        if(NOT EXISTS "${CONFIG_DEVICE_TRUST_DIR}/${asset}")
+            message(FATAL_ERROR "Missing public trust file: ${CONFIG_DEVICE_TRUST_DIR}/${asset}")
+        endif()
+        target_add_binary_data(${COMPONENT_LIB} "${CONFIG_DEVICE_TRUST_DIR}/${asset}" TEXT)
+    endforeach()
+    target_compile_definitions(${COMPONENT_LIB} PRIVATE DEVICE_CUSTOM_TRUST=1)
+endif()

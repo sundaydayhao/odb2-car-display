@@ -51,6 +51,8 @@ typedef struct {
 } dashboard_data_t;
 
 void dashboard_create(lv_display_t *display);
+void dashboard_create_on(lv_obj_t *parent, int width, int height);
+lv_obj_t *dashboard_service_toolbar(void);
 void dashboard_update(const dashboard_data_t *data);
 void dashboard_select_page(uint8_t page);
 uint8_t dashboard_active_page(void);

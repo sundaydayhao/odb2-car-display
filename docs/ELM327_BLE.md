@@ -1,5 +1,8 @@
 # ELM327 BLE 实现与验证
 
+当前硬件为 P4 Function EV Board v1.4。NimBLE Host 在 P4，C6 ESP-Hosted 2.12.11 以 SDIO/VHCI 提供 BLE Controller，
+Wi-Fi STA 与 BLE 共享这条链路；需要匹配的 C6 固件。详见 [P4 上板与联调](P4_BRINGUP.md)。
+
 ## 分层
 
 ```text

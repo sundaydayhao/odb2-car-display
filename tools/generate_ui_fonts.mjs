@@ -1,4 +1,4 @@
-import { readFileSync, mkdirSync, copyFileSync } from 'node:fs';
+import { readFileSync, mkdirSync, copyFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -9,7 +9,10 @@ const output = resolve(root, 'main/fonts');
 const source = readFileSync(resolve(root, 'main/dashboard_text.h'), 'utf8');
 const strings = [...source.matchAll(/^#define\s+TXT_\w+\s+(".*")$/gm)]
     .map(match => JSON.parse(match[1]));
-const symbols = [...new Set(strings.join('') + '°')].sort().join('');
+const serviceText = readdirSync(resolve(root, 'main')).filter(name => /\.[ch]$/.test(name))
+    .map(name => readFileSync(resolve(root, 'main', name), 'utf8')).join('');
+const symbols = [...new Set(strings.join('') + '°' + [...serviceText].filter(char => char.charCodeAt(0) > 127).join(''))]
+    .sort().join('');
 mkdirSync(output, { recursive: true });
 
 function convert(name, size, font, extra) {

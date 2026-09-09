@@ -54,3 +54,35 @@ menu "ELM327 BLE Dashboard"
         default 20000
         range 5000 30000
 endmenu
+
+menu "Vehicle P4 services"
+    config DEVICE_WIFI_SSID
+        string "Initial phone hotspot SSID (prefer serial provisioning)"
+        default ""
+    config DEVICE_WIFI_PASSWORD
+        string "Initial phone hotspot password"
+        default ""
+    config DEVICE_RECORD_MAX_FILES
+        int "Maximum sealed diagnostic files"
+        default 16
+        range 2 64
+    config DEVICE_RECORD_FILE_KB
+        int "Maximum diagnostic segment size (KiB)"
+        default 256
+        range 32 1024
+    config DEVICE_TRUST_DIR
+        string "Directory containing service_ca.pem and ota_public.pem (empty: OTA disabled)"
+        default ""
+        help
+            Public trust files only. Never put private signing keys in firmware.
+            Run tools/lab_server.py init to create a development trust directory.
+    config DEVICE_BENCH_MAINTENANCE
+        bool "Allow explicit bench OTA confirmation without valid vehicle speed"
+        default n
+        help
+            Laboratory builds only. Still requires an explicit local confirmation.
+    config DEVICE_CAMERA_PREVIEW_FPS
+        int "Maximum camera preview updates per second"
+        default 8
+        range 1 15
+endmenu

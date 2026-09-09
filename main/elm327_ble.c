@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdatomic.h>
+#include "recorder.h"
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
@@ -61,6 +63,7 @@ static ble_addr_t s_peer;
 static struct { ble_addr_t addr; int64_t until; } s_rejected[4];
 static unsigned s_rejected_index;
 static int64_t s_retry_after;
+static atomic_uint s_transaction, s_transaction_counter, s_notification;
 
 static int gap_event(struct ble_gap_event *event, void *arg);
 static int services_cb(uint16_t conn, const struct ble_gatt_error *error, const struct ble_gatt_svc *service, void *arg);
@@ -98,6 +101,7 @@ static void stage(elm_ble_state_t state, uint32_t timeout)
 
 static void clear_link(void)
 {
+    recorder_wire(RECORD_LINK, snapshot().generation, atomic_load(&s_transaction), 0, 0, 0, NULL, 0, 0);
     portENTER_CRITICAL(&s_lock);
     uint32_t generation=s_link.generation+1;
     s_link=(link_t){.conn=BLE_HS_CONN_HANDLE_NONE,.generation=generation};
@@ -303,12 +307,20 @@ static int gap_event(struct ble_gap_event *event, void *arg)
     case BLE_GAP_EVENT_NOTIFY_RX: {
         if (event->notify_rx.conn_handle!=link.conn || event->notify_rx.attr_handle!=link.rx) break;
         uint16_t length=OS_MBUF_PKTLEN(event->notify_rx.om);
+        uint32_t notification = atomic_fetch_add(&s_notification, 1) + 1;
+        uint32_t transaction = atomic_load(&s_transaction);
         for (uint16_t offset=0;offset<length;) {
             rx_chunk_t chunk={.generation=link.generation,.length=length-offset};
             if (chunk.length>RX_CHUNK) chunk.length=RX_CHUNK;
-            if (os_mbuf_copydata(event->notify_rx.om,offset,chunk.length,chunk.data) || xQueueSend(s_rx,&chunk,0)!=pdTRUE) {
+            if (os_mbuf_copydata(event->notify_rx.om,offset,chunk.length,chunk.data)) {
+                recorder_wire(RECORD_PARSE_GAP, link.generation, transaction, notification, offset, length, NULL, 0, ESP_FAIL);
                 portENTER_CRITICAL(&s_lock); s_link.overflow=true; portEXIT_CRITICAL(&s_lock);
                 break;
+            }
+            recorder_wire(RECORD_RX, link.generation, transaction, notification, offset, length, chunk.data, chunk.length, 0);
+            if (xQueueSend(s_rx,&chunk,0)!=pdTRUE) {
+                recorder_wire(RECORD_PARSE_GAP, link.generation, transaction, notification, offset, length, NULL, 0, ESP_ERR_NO_MEM);
+                portENTER_CRITICAL(&s_lock); s_link.overflow=true; portEXIT_CRITICAL(&s_lock);
             }
             offset+=chunk.length;
         }
@@ -388,6 +400,8 @@ esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_
     portENTER_CRITICAL(&s_lock); s_link.overflow=false; portEXIT_CRITICAL(&s_lock);
     char wire[20];
     int length=snprintf(wire,sizeof(wire),"%s\r",command);
+    atomic_store(&s_transaction, atomic_fetch_add(&s_transaction_counter, 1) + 1);
+    recorder_wire(RECORD_TX, link.generation, atomic_load(&s_transaction), 0, 0, length, wire, length, 0);
     int64_t deadline=now_ms()+timeout_ms;
     int rc;
     if (link.tx_properties & BLE_GATT_CHR_PROP_WRITE_NO_RSP) rc=ble_gattc_write_no_rsp_flat(link.conn,link.tx,wire,length);
@@ -417,6 +431,8 @@ broken:
     /* A late prompt must never be consumed by the next command. */
     elm_ble_reset_link();
 done:
+    recorder_wire(RECORD_RESULT, link.generation, atomic_load(&s_transaction), 0, 0, 0, NULL, 0, result);
+    atomic_store(&s_transaction, 0);
     xSemaphoreGive(s_command_lock);
     return result;
 }

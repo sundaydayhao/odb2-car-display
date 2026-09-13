@@ -1,0 +1,2118 @@
+{
+  "board_mm": [
+    38.5,
+    16.6
+  ],
+  "layers": 4,
+  "mechanical_status": "J1 solder-tail drawing required",
+  "parts": [
+    {
+      "ref": "J1",
+      "value": "OBD-II solder tails: DRAWING REQUIRED",
+      "lib_id": "Node:OBDII_LOGICAL_ONLY",
+      "footprint": "",
+      "nets": {
+        "4": "GND",
+        "5": "GND",
+        "6": "CAN_H",
+        "14": "CAN_L",
+        "16": "VBAT"
+      },
+      "sch": [
+        57.15,
+        73.66
+      ],
+      "pcb": null,
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "OBD-II solder tails: DRAWING REQUIRED",
+      "note": "No physical footprint: do not guess solder-tail geometry",
+      "dnp": false
+    },
+    {
+      "ref": "F1",
+      "value": "500mA 63V",
+      "lib_id": "Device:Fuse",
+      "footprint": "Fuse:Fuse_1206_3216Metric",
+      "nets": {
+        "1": "VBAT",
+        "2": "VBAT_FUSED"
+      },
+      "sch": [
+        133.35,
+        45.72
+      ],
+      "pcb": [
+        103,
+        102
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 0,
+      "mpn": "0466.500NR",
+      "note": "Validate fuse I2t / TVS coordination",
+      "dnp": false
+    },
+    {
+      "ref": "D1",
+      "value": "SS110 100V",
+      "lib_id": "Device:D_Schottky",
+      "footprint": "Diode_SMD:D_SMA",
+      "nets": {
+        "1": "VIN_PROT",
+        "2": "VBAT_FUSED"
+      },
+      "sch": [
+        185.42,
+        45.72
+      ],
+      "pcb": [
+        104.5,
+        103.5
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "SS110",
+      "note": "Series reverse-polarity protection",
+      "dnp": false
+    },
+    {
+      "ref": "D2",
+      "value": "SMBJ18A",
+      "lib_id": "Device:D_TVS",
+      "footprint": "Diode_SMD:D_SMB",
+      "nets": {
+        "1": "VIN_PROT",
+        "2": "GND"
+      },
+      "sch": [
+        137.16,
+        78.74
+      ],
+      "pcb": [
+        104.5,
+        106.5
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 0,
+      "mpn": "SMBJ18A",
+      "note": "12 V passenger cars; pulse qualification required",
+      "dnp": false
+    },
+    {
+      "ref": "C1",
+      "value": "2.2u 50V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "nets": {
+        "1": "VIN_PROT",
+        "2": "GND"
+      },
+      "sch": [
+        180.34,
+        78.74
+      ],
+      "pcb": [
+        113.8,
+        106.7
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "GRM21BR71H225KA12L",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C2",
+      "value": "100n 50V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "VIN_PROT",
+        "2": "GND"
+      },
+      "sch": [
+        218.44,
+        78.74
+      ],
+      "pcb": [
+        110.9,
+        106.7
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "GRM155R71H104KE14D",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "U1",
+      "value": "LMR51610YDBVR",
+      "lib_id": "Node:LMR51610YDBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "nets": {
+        "1": "BOOT_SW",
+        "2": "GND",
+        "3": "FB5",
+        "4": "VIN_PROT",
+        "5": "VIN_PROT",
+        "6": "SW"
+      },
+      "sch": [
+        279.4,
+        58.42
+      ],
+      "pcb": [
+        113.8,
+        103.4
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "LMR51610YDBVR",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C3",
+      "value": "100n 16V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "BOOT_SW",
+        "2": "SW"
+      },
+      "sch": [
+        340.36,
+        40.64
+      ],
+      "pcb": [
+        110.6,
+        102.4
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "100n 16V",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "L1",
+      "value": "10uH >=3A Isat",
+      "lib_id": "Device:L",
+      "footprint": "Inductor_SMD:L_Coilcraft_XAL4030-XXX",
+      "nets": {
+        "1": "SW",
+        "2": "+5V"
+      },
+      "sch": [
+        393.7,
+        45.72
+      ],
+      "pcb": [
+        120,
+        103.4
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 0,
+      "mpn": "XGL4030-103MEC",
+      "note": "XGL4030 datasheet verified: 0.98 x 3.4 mm lands, 2.37 mm center pitch; identical to KiCad XAL4030 land pattern",
+      "dnp": false
+    },
+    {
+      "ref": "C4",
+      "value": "10u 25V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "sch": [
+        355.6,
+        83.82
+      ],
+      "pcb": [
+        124.1,
+        101.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "GRM21BR61E106KA73L",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C5",
+      "value": "10u 25V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "sch": [
+        391.16,
+        83.82
+      ],
+      "pcb": [
+        124.1,
+        104.1
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "GRM21BR61E106KA73L",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R1",
+      "value": "84.5k 1%",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+5V",
+        "2": "FB5"
+      },
+      "sch": [
+        270.51,
+        99.06
+      ],
+      "pcb": [
+        114,
+        104
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "84.5k 1%",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R2",
+      "value": "16.2k 1%",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "FB5",
+        "2": "GND"
+      },
+      "sch": [
+        318.77,
+        99.06
+      ],
+      "pcb": [
+        114,
+        106
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "16.2k 1%",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "U2",
+      "value": "TLV75533PDBVR",
+      "lib_id": "Regulator_Linear:TLV75533PDBV",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "nets": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "+5V",
+        "5": "+3V3"
+      },
+      "sch": [
+        469.9,
+        54.61
+      ],
+      "pcb": [
+        128,
+        102.8
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "TLV75533PDBVR",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C6",
+      "value": "2.2u 10V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "sch": [
+        443.23,
+        101.6
+      ],
+      "pcb": [
+        128,
+        102.8
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "2.2u 10V",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C7",
+      "value": "10u 10V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        492.76,
+        101.6
+      ],
+      "pcb": [
+        132,
+        102.8
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "10u 10V",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "U3",
+      "value": "TCAN1044AVDRBRQ1",
+      "lib_id": "Node:TCAN1044AVDRBRQ1",
+      "footprint": "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.65x2.4mm",
+      "nets": {
+        "1": "TXD_GATE",
+        "2": "GND",
+        "3": "+5V",
+        "4": "CAN_RX",
+        "5": "+3V3",
+        "6": "CAN_L",
+        "7": "CAN_H",
+        "8": "CAN_STB",
+        "9": "GND"
+      },
+      "sch": [
+        196.85,
+        156.21
+      ],
+      "pcb": [
+        112.8,
+        112.3
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "TCAN1044AVDRBRQ1",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "U4",
+      "value": "SN74LVC1G32DCKR",
+      "lib_id": "Node:SN74LVC1G32DCKR",
+      "footprint": "Package_TO_SOT_SMD:SOT-353_SC-70-5",
+      "nets": {
+        "1": "CAN_TX",
+        "2": "TX_INHIBIT",
+        "3": "GND",
+        "4": "TXD_GATE",
+        "5": "+3V3"
+      },
+      "sch": [
+        77.47,
+        154.94
+      ],
+      "pcb": [
+        118,
+        112.3
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "SN74LVC1G32DCKR",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "D3",
+      "value": "PESD2CANFD24V-T",
+      "lib_id": "Node:PESD2CANFD24V-T",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "nets": {
+        "1": "CAN_L",
+        "2": "CAN_H",
+        "3": "GND"
+      },
+      "sch": [
+        308.61,
+        153.67
+      ],
+      "pcb": [
+        104.5,
+        112.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "PESD2CANFD24V-T",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R3",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "TX_INHIBIT"
+      },
+      "sch": [
+        58.42,
+        201.93
+      ],
+      "pcb": [
+        119,
+        109.5
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R4",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "CAN_STB"
+      },
+      "sch": [
+        118.11,
+        201.93
+      ],
+      "pcb": [
+        114,
+        109
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C8",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "sch": [
+        175.26,
+        201.93
+      ],
+      "pcb": [
+        109.45,
+        112.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C9",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        219.71,
+        201.93
+      ],
+      "pcb": [
+        115.8,
+        114.3
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 90,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C10",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        264.16,
+        201.93
+      ],
+      "pcb": [
+        118.3,
+        114
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "U5",
+      "value": "ESP32-C3FH4X",
+      "lib_id": "Node:ESP32-C3FH4X",
+      "footprint": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm",
+      "nets": {
+        "1": "RF_SOC",
+        "2": "VDD_RF",
+        "3": "VDD_RF",
+        "4": "VBAT_ADC",
+        "5": "CAN_TX",
+        "6": "STRAP2",
+        "7": "EN",
+        "8": "CAN_RX",
+        "9": "TX_INHIBIT",
+        "10": "CAN_STB",
+        "11": "+3V3",
+        "12": "LED",
+        "14": "STRAP8",
+        "15": "BOOT",
+        "17": "+3V3",
+        "18": "VDD_SPI",
+        "25": "USB_DM",
+        "26": "USB_DP",
+        "27": "U0RX",
+        "28": "U0TX",
+        "29": "XTAL_N",
+        "30": "XTAL_P",
+        "31": "+3V3",
+        "32": "+3V3",
+        "33": "GND"
+      },
+      "sch": [
+        438.15,
+        199.39
+      ],
+      "pcb": [
+        127.5,
+        111.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "ESP32-C3FH4X",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "FB1",
+      "value": "600R@100M 500mA",
+      "lib_id": "Device:FerriteBead",
+      "footprint": "Inductor_SMD:L_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "VDD_RF"
+      },
+      "sch": [
+        358.14,
+        265.43
+      ],
+      "pcb": [
+        120.5,
+        111.6
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 0,
+      "mpn": "BLM15AG601SN1D",
+      "note": "Verify RF supply impedance and transient droop",
+      "dnp": false
+    },
+    {
+      "ref": "C11",
+      "value": "10u 10V",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "nets": {
+        "1": "VDD_RF",
+        "2": "GND"
+      },
+      "sch": [
+        309.88,
+        295.91
+      ],
+      "pcb": [
+        122.1,
+        113.8
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "10u 10V",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C12",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "VDD_RF",
+        "2": "GND"
+      },
+      "sch": [
+        354.33,
+        295.91
+      ],
+      "pcb": [
+        122.9,
+        110.8
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 180,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C13",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        398.78,
+        295.91
+      ],
+      "pcb": [
+        126.7,
+        115.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C14",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        443.23,
+        295.91
+      ],
+      "pcb": [
+        132,
+        114.3
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C15",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "sch": [
+        487.68,
+        295.91
+      ],
+      "pcb": [
+        127.2,
+        107.6
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C16",
+      "value": "1u",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "VDD_SPI",
+        "2": "GND"
+      },
+      "sch": [
+        532.13,
+        295.91
+      ],
+      "pcb": [
+        132,
+        112.8
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "1u",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R5",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "EN"
+      },
+      "sch": [
+        58.42,
+        257.81
+      ],
+      "pcb": [
+        123.8,
+        114.6
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C17",
+      "value": "1u",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "EN",
+        "2": "GND"
+      },
+      "sch": [
+        102.87,
+        257.81
+      ],
+      "pcb": [
+        123.8,
+        112.5
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "1u",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R6",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "STRAP2"
+      },
+      "sch": [
+        160.02,
+        257.81
+      ],
+      "pcb": [
+        126.1,
+        112.5
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R7",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "STRAP8"
+      },
+      "sch": [
+        215.9,
+        257.81
+      ],
+      "pcb": [
+        128.4,
+        114.6
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R8",
+      "value": "10k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "+3V3",
+        "2": "BOOT"
+      },
+      "sch": [
+        58.42,
+        290.83
+      ],
+      "pcb": [
+        130.7,
+        114.6
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "10k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "Y1",
+      "value": "40MHz CL=10pF",
+      "lib_id": "Device:Crystal_GND24",
+      "footprint": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+      "nets": {
+        "1": "XTAL_P",
+        "2": "GND",
+        "3": "XTAL_N",
+        "4": "GND"
+      },
+      "sch": [
+        173.99,
+        299.72
+      ],
+      "pcb": [
+        133,
+        106
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "ABM8G-40.000MHZ-10-D2X-T",
+      "note": "40 MHz fundamental, CL 10 pF; 16 pF loads assume 2 pF stray. Verify total frequency error after assembly; 1.4 x 1.2 mm lands at 2.2 x 1.7 mm pitch match manufacturer drawing",
+      "dnp": false
+    },
+    {
+      "ref": "C18",
+      "value": "16p C0G",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "XTAL_P",
+        "2": "GND"
+      },
+      "sch": [
+        125.73,
+        325.12
+      ],
+      "pcb": [
+        131.8,
+        108.6
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "16p C0G",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C19",
+      "value": "16p C0G",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "XTAL_N",
+        "2": "GND"
+      },
+      "sch": [
+        219.71,
+        325.12
+      ],
+      "pcb": [
+        134.2,
+        108.6
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "16p C0G",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C20",
+      "value": "1.5p C0G",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0201_0603Metric",
+      "nets": {
+        "1": "RF_SOC",
+        "2": "GND"
+      },
+      "sch": [
+        353.06,
+        350.52
+      ],
+      "pcb": [
+        124,
+        108.9
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 90,
+      "mpn": "1.5p C0G",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "L2",
+      "value": "2.4nH",
+      "lib_id": "Device:L",
+      "footprint": "Inductor_SMD:L_0201_0603Metric",
+      "nets": {
+        "1": "RF_SOC",
+        "2": "RF50"
+      },
+      "sch": [
+        401.32,
+        341.63
+      ],
+      "pcb": [
+        122.8,
+        108
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 180,
+      "mpn": "LQP03TG2N4B02D",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C21",
+      "value": "1.5p C0G",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0201_0603Metric",
+      "nets": {
+        "1": "RF50",
+        "2": "GND"
+      },
+      "sch": [
+        447.04,
+        350.52
+      ],
+      "pcb": [
+        122.4,
+        109.5
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 90,
+      "mpn": "1.5p C0G",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "J2",
+      "value": "U.FL / external FPC antenna",
+      "lib_id": "Connector:Conn_Coaxial",
+      "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+      "nets": {
+        "1": "RF50",
+        "2": "GND"
+      },
+      "sch": [
+        523.24,
+        347.98
+      ],
+      "pcb": [
+        119.3,
+        108.4
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 180,
+      "mpn": "U.FL-R-SMT-1(10)",
+      "note": "Coax/FPC antenna located in plastic case away from OBD metal",
+      "dnp": false
+    },
+    {
+      "ref": "R9",
+      "value": "1M 1%",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "VIN_PROT",
+        "2": "VBAT_ADC"
+      },
+      "sch": [
+        59.69,
+        353.06
+      ],
+      "pcb": [
+        128.4,
+        109.3
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "1M 1%",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R10",
+      "value": "100k 1%",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "VBAT_ADC",
+        "2": "GND"
+      },
+      "sch": [
+        118.11,
+        353.06
+      ],
+      "pcb": [
+        126.1,
+        109.3
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "100k 1%",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "C22",
+      "value": "100n",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "VBAT_ADC",
+        "2": "GND"
+      },
+      "sch": [
+        175.26,
+        358.14
+      ],
+      "pcb": [
+        123.8,
+        109.3
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "100n",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R11",
+      "value": "1k",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "LED",
+        "2": "LED_A"
+      },
+      "sch": [
+        237.49,
+        350.52
+      ],
+      "pcb": [
+        134,
+        114
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "1k",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "D4",
+      "value": "GREEN",
+      "lib_id": "Device:LED",
+      "footprint": "LED_SMD:LED_0402_1005Metric",
+      "nets": {
+        "1": "GND",
+        "2": "LED_A"
+      },
+      "sch": [
+        275.59,
+        382.27
+      ],
+      "pcb": [
+        136.7,
+        113.7
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "GREEN",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "R12",
+      "value": "499R",
+      "lib_id": "Device:R",
+      "footprint": "Resistor_SMD:R_0402_1005Metric",
+      "nets": {
+        "1": "U0TX",
+        "2": "UART_TX"
+      },
+      "sch": [
+        52.07,
+        387.35
+      ],
+      "pcb": [
+        133.5,
+        111.4
+      ],
+      "rot": 90,
+      "side": "B",
+      "angle": 0,
+      "mpn": "499R",
+      "note": "",
+      "dnp": false
+    },
+    {
+      "ref": "TP1",
+      "value": "GND",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "GND"
+      },
+      "sch": [
+        326.39,
+        377.19
+      ],
+      "pcb": [
+        101.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "GND",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP2",
+      "value": "+3V3",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "+3V3"
+      },
+      "sch": [
+        358.14,
+        377.19
+      ],
+      "pcb": [
+        103.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "+3V3",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP3",
+      "value": "EN",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "EN"
+      },
+      "sch": [
+        389.89,
+        377.19
+      ],
+      "pcb": [
+        105.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "EN",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP4",
+      "value": "BOOT",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "BOOT"
+      },
+      "sch": [
+        421.64,
+        377.19
+      ],
+      "pcb": [
+        107.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "BOOT",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP5",
+      "value": "U0RX",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "U0RX"
+      },
+      "sch": [
+        326.39,
+        392.43
+      ],
+      "pcb": [
+        109.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "U0RX",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP6",
+      "value": "UART_TX",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "UART_TX"
+      },
+      "sch": [
+        358.14,
+        392.43
+      ],
+      "pcb": [
+        111.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "UART_TX",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP7",
+      "value": "USB_DM",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "USB_DM"
+      },
+      "sch": [
+        389.89,
+        392.43
+      ],
+      "pcb": [
+        113.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "USB_DM",
+      "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP8",
+      "value": "USB_DP",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "USB_DP"
+      },
+      "sch": [
+        421.64,
+        392.43
+      ],
+      "pcb": [
+        115.5,
+        115.2
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "USB_DP",
+      "note": "Bench fixture pad",
+      "dnp": false
+    }
+  ],
+  "expected_nets": {
+    "GND": [
+      [
+        "J1",
+        "4"
+      ],
+      [
+        "J1",
+        "5"
+      ],
+      [
+        "D2",
+        "2"
+      ],
+      [
+        "C1",
+        "2"
+      ],
+      [
+        "C2",
+        "2"
+      ],
+      [
+        "U1",
+        "2"
+      ],
+      [
+        "C4",
+        "2"
+      ],
+      [
+        "C5",
+        "2"
+      ],
+      [
+        "R2",
+        "2"
+      ],
+      [
+        "U2",
+        "2"
+      ],
+      [
+        "C6",
+        "2"
+      ],
+      [
+        "C7",
+        "2"
+      ],
+      [
+        "U3",
+        "2"
+      ],
+      [
+        "U3",
+        "9"
+      ],
+      [
+        "U4",
+        "3"
+      ],
+      [
+        "D3",
+        "3"
+      ],
+      [
+        "C8",
+        "2"
+      ],
+      [
+        "C9",
+        "2"
+      ],
+      [
+        "C10",
+        "2"
+      ],
+      [
+        "U5",
+        "33"
+      ],
+      [
+        "C11",
+        "2"
+      ],
+      [
+        "C12",
+        "2"
+      ],
+      [
+        "C13",
+        "2"
+      ],
+      [
+        "C14",
+        "2"
+      ],
+      [
+        "C15",
+        "2"
+      ],
+      [
+        "C16",
+        "2"
+      ],
+      [
+        "C17",
+        "2"
+      ],
+      [
+        "Y1",
+        "2"
+      ],
+      [
+        "Y1",
+        "4"
+      ],
+      [
+        "C18",
+        "2"
+      ],
+      [
+        "C19",
+        "2"
+      ],
+      [
+        "C20",
+        "2"
+      ],
+      [
+        "C21",
+        "2"
+      ],
+      [
+        "J2",
+        "2"
+      ],
+      [
+        "R10",
+        "2"
+      ],
+      [
+        "C22",
+        "2"
+      ],
+      [
+        "D4",
+        "1"
+      ],
+      [
+        "TP1",
+        "1"
+      ]
+    ],
+    "CAN_H": [
+      [
+        "J1",
+        "6"
+      ],
+      [
+        "U3",
+        "7"
+      ],
+      [
+        "D3",
+        "2"
+      ]
+    ],
+    "CAN_L": [
+      [
+        "J1",
+        "14"
+      ],
+      [
+        "U3",
+        "6"
+      ],
+      [
+        "D3",
+        "1"
+      ]
+    ],
+    "VBAT": [
+      [
+        "J1",
+        "16"
+      ],
+      [
+        "F1",
+        "1"
+      ]
+    ],
+    "VBAT_FUSED": [
+      [
+        "F1",
+        "2"
+      ],
+      [
+        "D1",
+        "2"
+      ]
+    ],
+    "VIN_PROT": [
+      [
+        "D1",
+        "1"
+      ],
+      [
+        "D2",
+        "1"
+      ],
+      [
+        "C1",
+        "1"
+      ],
+      [
+        "C2",
+        "1"
+      ],
+      [
+        "U1",
+        "5"
+      ],
+      [
+        "U1",
+        "4"
+      ],
+      [
+        "R9",
+        "1"
+      ]
+    ],
+    "BOOT_SW": [
+      [
+        "U1",
+        "1"
+      ],
+      [
+        "C3",
+        "1"
+      ]
+    ],
+    "SW": [
+      [
+        "U1",
+        "6"
+      ],
+      [
+        "C3",
+        "2"
+      ],
+      [
+        "L1",
+        "1"
+      ]
+    ],
+    "FB5": [
+      [
+        "U1",
+        "3"
+      ],
+      [
+        "R1",
+        "2"
+      ],
+      [
+        "R2",
+        "1"
+      ]
+    ],
+    "+5V": [
+      [
+        "L1",
+        "2"
+      ],
+      [
+        "C4",
+        "1"
+      ],
+      [
+        "C5",
+        "1"
+      ],
+      [
+        "R1",
+        "1"
+      ],
+      [
+        "U2",
+        "1"
+      ],
+      [
+        "U2",
+        "3"
+      ],
+      [
+        "C6",
+        "1"
+      ],
+      [
+        "U3",
+        "3"
+      ],
+      [
+        "C8",
+        "1"
+      ]
+    ],
+    "+3V3": [
+      [
+        "U2",
+        "5"
+      ],
+      [
+        "C7",
+        "1"
+      ],
+      [
+        "U3",
+        "5"
+      ],
+      [
+        "U4",
+        "5"
+      ],
+      [
+        "R3",
+        "1"
+      ],
+      [
+        "R4",
+        "1"
+      ],
+      [
+        "C9",
+        "1"
+      ],
+      [
+        "C10",
+        "1"
+      ],
+      [
+        "U5",
+        "11"
+      ],
+      [
+        "U5",
+        "17"
+      ],
+      [
+        "U5",
+        "31"
+      ],
+      [
+        "U5",
+        "32"
+      ],
+      [
+        "FB1",
+        "1"
+      ],
+      [
+        "C13",
+        "1"
+      ],
+      [
+        "C14",
+        "1"
+      ],
+      [
+        "C15",
+        "1"
+      ],
+      [
+        "R5",
+        "1"
+      ],
+      [
+        "R6",
+        "1"
+      ],
+      [
+        "R7",
+        "1"
+      ],
+      [
+        "R8",
+        "1"
+      ],
+      [
+        "TP2",
+        "1"
+      ]
+    ],
+    "TXD_GATE": [
+      [
+        "U3",
+        "1"
+      ],
+      [
+        "U4",
+        "4"
+      ]
+    ],
+    "CAN_RX": [
+      [
+        "U3",
+        "4"
+      ],
+      [
+        "U5",
+        "8"
+      ]
+    ],
+    "CAN_STB": [
+      [
+        "U3",
+        "8"
+      ],
+      [
+        "R4",
+        "2"
+      ],
+      [
+        "U5",
+        "10"
+      ]
+    ],
+    "CAN_TX": [
+      [
+        "U4",
+        "1"
+      ],
+      [
+        "U5",
+        "5"
+      ]
+    ],
+    "TX_INHIBIT": [
+      [
+        "U4",
+        "2"
+      ],
+      [
+        "R3",
+        "2"
+      ],
+      [
+        "U5",
+        "9"
+      ]
+    ],
+    "RF_SOC": [
+      [
+        "U5",
+        "1"
+      ],
+      [
+        "C20",
+        "1"
+      ],
+      [
+        "L2",
+        "1"
+      ]
+    ],
+    "VDD_RF": [
+      [
+        "U5",
+        "2"
+      ],
+      [
+        "U5",
+        "3"
+      ],
+      [
+        "FB1",
+        "2"
+      ],
+      [
+        "C11",
+        "1"
+      ],
+      [
+        "C12",
+        "1"
+      ]
+    ],
+    "VDD_SPI": [
+      [
+        "U5",
+        "18"
+      ],
+      [
+        "C16",
+        "1"
+      ]
+    ],
+    "EN": [
+      [
+        "U5",
+        "7"
+      ],
+      [
+        "R5",
+        "2"
+      ],
+      [
+        "C17",
+        "1"
+      ],
+      [
+        "TP3",
+        "1"
+      ]
+    ],
+    "XTAL_N": [
+      [
+        "U5",
+        "29"
+      ],
+      [
+        "Y1",
+        "3"
+      ],
+      [
+        "C19",
+        "1"
+      ]
+    ],
+    "XTAL_P": [
+      [
+        "U5",
+        "30"
+      ],
+      [
+        "Y1",
+        "1"
+      ],
+      [
+        "C18",
+        "1"
+      ]
+    ],
+    "VBAT_ADC": [
+      [
+        "U5",
+        "4"
+      ],
+      [
+        "R9",
+        "2"
+      ],
+      [
+        "R10",
+        "1"
+      ],
+      [
+        "C22",
+        "1"
+      ]
+    ],
+    "STRAP2": [
+      [
+        "U5",
+        "6"
+      ],
+      [
+        "R6",
+        "2"
+      ]
+    ],
+    "LED": [
+      [
+        "U5",
+        "12"
+      ],
+      [
+        "R11",
+        "1"
+      ]
+    ],
+    "STRAP8": [
+      [
+        "U5",
+        "14"
+      ],
+      [
+        "R7",
+        "2"
+      ]
+    ],
+    "BOOT": [
+      [
+        "U5",
+        "15"
+      ],
+      [
+        "R8",
+        "2"
+      ],
+      [
+        "TP4",
+        "1"
+      ]
+    ],
+    "USB_DM": [
+      [
+        "U5",
+        "25"
+      ],
+      [
+        "TP7",
+        "1"
+      ]
+    ],
+    "USB_DP": [
+      [
+        "U5",
+        "26"
+      ],
+      [
+        "TP8",
+        "1"
+      ]
+    ],
+    "U0RX": [
+      [
+        "U5",
+        "27"
+      ],
+      [
+        "TP5",
+        "1"
+      ]
+    ],
+    "U0TX": [
+      [
+        "U5",
+        "28"
+      ],
+      [
+        "R12",
+        "1"
+      ]
+    ],
+    "RF50": [
+      [
+        "L2",
+        "2"
+      ],
+      [
+        "C21",
+        "1"
+      ],
+      [
+        "J2",
+        "1"
+      ]
+    ],
+    "LED_A": [
+      [
+        "R11",
+        "2"
+      ],
+      [
+        "D4",
+        "2"
+      ]
+    ],
+    "UART_TX": [
+      [
+        "R12",
+        "2"
+      ],
+      [
+        "TP6",
+        "1"
+      ]
+    ]
+  }
+}

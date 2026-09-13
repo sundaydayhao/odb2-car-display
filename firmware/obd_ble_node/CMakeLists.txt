@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+set(IDF_TARGET esp32c3)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(obd_ble_node VERSION 0.1.0)
+if(NOT IDF_VERSION_MAJOR EQUAL 5 OR NOT IDF_VERSION_MINOR EQUAL 5)
+    message(FATAL_ERROR "This board is validated with ESP-IDF 5.5.x; activate that SDK.")
+endif()

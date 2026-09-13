@@ -1,8 +1,8 @@
 """Generate the review schematic and staged PCB using KiCad 10 + KiSkill.
 
-The OBD mating standard does NOT define PCB solder-tail geometry. J1 intentionally
-has no physical footprint until the actual connector drawing is supplied.
-Never export this staged board as fabrication-ready.
+The OBD mating standard does NOT define PCB solder-tail geometry. J1 now uses
+an explicitly assumed straight-tail footprint integrated with the electronics.
+Actual plug fit and vehicle qualification remain physical validation gates.
 """
 import argparse
 import copy
@@ -101,8 +101,8 @@ CFP='Capacitor_SMD:C_0402_1005Metric'
 def r(ref,value,a,b,sch,pcb,**kw): part(ref,value,'Device:R',RFP,{1:a,2:b},sch,pcb,rot=90,**kw)
 def c(ref,value,a,b,sch,pcb,footprint=CFP,**kw): part(ref,value,'Device:C',footprint,{1:a,2:b},sch,pcb,**kw)
 
-# OBD standard pin functions; physical solder-tail footprint remains deliberately absent.
-part('J1','OBD-II solder tails: DRAWING REQUIRED',OBD,'',{4:'GND',5:'GND',6:'CAN_H',14:'CAN_L',16:'VBAT'},(57.15,73.66),note='No physical footprint: do not guess solder-tail geometry')
+# Standard pin functions, with the user-requested straight-tail trial geometry.
+part('J1','OBD-II 16P / STRAIGHT TAIL ASSUMPTION',OBD,'Node:OBD_StraightTail_16P_4x8p6_Assumed',{4:'GND',5:'GND',6:'CAN_H',14:'CAN_L',16:'VBAT'},(57.15,73.66),(119.25,108.3),note='4.00 mm pitch / 8.60 mm rows; 2.40 x 1.20 mm plated slots are trial values. Verify actual solder tails and case.')
 part('F1','500mA 63V','Device:Fuse','Fuse:Fuse_1206_3216Metric',{1:'VBAT',2:'VBAT_FUSED'},(133.35,45.72),(102.6,103),rot=90,mpn='0466.500NR',note='Validate fuse I2t / TVS coordination')
 part('D1','SS110 100V','Device:D_Schottky','Diode_SMD:D_SMA',{1:'VIN_PROT',2:'VBAT_FUSED'},(185.42,45.72),(107.5,103),mpn='SS110',note='Series reverse-polarity protection')
 part('D2','SMBJ18A','Device:D_TVS','Diode_SMD:D_SMB',{1:'VIN_PROT',2:'GND'},(137.16,78.74),(107.6,108),rot=90,mpn='SMBJ18A',note='12 V passenger cars; pulse qualification required')
@@ -189,8 +189,15 @@ for p in parts:
     if p['ref'] in positions:p['pcb']=positions[p['ref']]
     if p['ref'] in angles:p['angle']=angles[p['ref']]
     if p['ref']=='D1':p['side']='B'
+
+# Integrated placement is maintained separately from schematic coordinates.
+integrated=json.loads((ROOT/'placement.json').read_text(encoding='utf-8'))
+assert set(integrated)=={p['ref'] for p in parts}
+for p in parts:
+    x,y,angle,side=integrated[p['ref']]
+    p.update(pcb=[100+x,100+y],angle=angle,side=side)
 doc=build.empty_sheet(uid('root'),'A2'); segments=[]; pins=[]; expected={}
-doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A0 - MECH PENDING"))'))
+doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A1 - INTEGRATED PROTOTYPE"))'))
 for p in parts:
     definition=p['symbol']; libpins=list(sexp.walk(definition,'pin'))
     names=[atoms(find(n,'number'))[0] for n in libpins]
@@ -256,7 +263,7 @@ for i,net in enumerate(['VBAT','GND','VIN_PROT','+5V','VDD_RF']):
 def text(msg,x,y,size=1.524):
     ops._insert_body(doc,parse(f'(text {sexp.dumps(q(msg))} (at {x:g} {y:g} 0) (effects (font (size {size:g} {size:g})) (justify left top)) (uuid "{uid(msg)}"))'))
 text('REV A / 38.5 x 16.6 mm / CLASSIC CAN + BLE / ENGINEERING DRAFT',22.86,17.78,2.54)
-text('OBD-II pin functions only\nJ1 solder-tail footprint is BLOCKED pending connector drawing.',20.32,28,1.27)
+text('J1: straight-tail 4.00 x 8.60 mm grid ASSUMED\nPlated slot 2.40 x 1.20 mm: verify actual plug fit.',20.32,28,1.27)
 text('12 V INPUT / REVERSE PROTECTION / 65 V BUCK / 5 V -> 3.3 V',120.65,25.4,1.778)
 text('No 120 ohm termination on vehicle stub. TX inhibit HIGH physically forces recessive.',25.4,133.35)
 text('RESET / STRAPS / 40 MHz',25.4,233.68,1.778)
@@ -269,13 +276,13 @@ errors=verify(segments,pins,[],merge_power=False)
 assert not errors,'\n'.join(errors)
 assert verify([Seg('A',(0,0),(5.08,0)),Seg('B',(2.54,-2.54),(2.54,2.54))],[],[],False), 'Mutation detector failed'
 ROOT.joinpath('build').mkdir(exist_ok=True)
-# Check connector remains explicitly unresolved, never a generic substitute footprint.
-assert parts[0]['ref']=='J1' and not parts[0]['footprint'] and parts[0]['pcb'] is None
+# The same schematic J1 is adopted by PCB, with electrical nets on physical pads.
+assert parts[0]['ref']=='J1' and parts[0]['footprint'].startswith('Node:OBD_')
 sexp.save_file(str(ROOT/(NAME+'.kicad_sch')),doc)
 project=ROOT/(NAME+'.kicad_pro')
 project_data=json.loads(project.read_text()) if project.exists() else {'meta':{'filename':project.name,'version':1}}
-project_data['board']={'design_settings':{'rules':{'min_clearance':0.15,'min_track_width':0.15,'min_copper_edge_clearance':0.25,'min_text_height':0.6,'min_text_thickness':0.1}}}
-project_data['net_settings']={'classes':[{'name':'Default','clearance':0.15,'track_width':0.2,'via_diameter':0.6,'via_drill':0.3,'pcb_color':'rgba(0, 0, 0, 0.000)','schematic_color':'rgba(0, 0, 0, 0.000)'}],'meta':{'version':3}}
+project_data.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update({'min_clearance':0.15,'min_track_width':0.15,'min_copper_edge_clearance':0.25,'min_text_height':0.6,'min_text_thickness':0.1,'min_through_hole_diameter':0.2,'min_via_diameter':0.45})
+project_data['net_settings']={'classes':[{'name':'Default','clearance':0.15,'track_width':0.15,'via_diameter':0.45,'via_drill':0.2,'pcb_color':'rgba(0, 0, 0, 0.000)','schematic_color':'rgba(0, 0, 0, 0.000)'}],'meta':{'version':3}}
 project.write_text(json.dumps(project_data,indent=2))
 (ROOT/(NAME+'.kicad_dru')).write_text('(version 1)\n(rule "Core copper clearance" (constraint clearance (min 0.15)))\n')
 libtree=parse('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor"))')
@@ -284,6 +291,6 @@ for name,definition in custom.items():
 sexp.save_file(str(ROOT/'Node.kicad_sym'),libtree)
 (ROOT/'sym-lib-table').write_text('(sym_lib_table (version 7) (lib (name "Node") (type "KiCad") (uri "${KIPRJMOD}/Node.kicad_sym") (options "") (descr "Verified pin maps; J1 mechanical interface pending")))\n')
 serial=[{k:v for k,v in p.items() if k!='symbol'} for p in parts]
-(ROOT/'design.json').write_text(json.dumps({'board_mm':[38.5,16.6],'layers':4,'mechanical_status':'J1 solder-tail drawing required','parts':serial,'expected_nets':expected},indent=2),encoding='utf-8')
+(ROOT/'design.json').write_text(json.dumps({'board_mm':[38.5,16.6],'layers':4,'mechanical_status':'Integrated straight-tail geometry; actual plug fit unverified','parts':serial,'expected_nets':expected},indent=2),encoding='utf-8')
 (ROOT/'build/geometry.json').write_text(json.dumps({'violations':errors,'mutation_detected':True,'pins':len(pins),'segments':len(segments)},indent=2))
-print(f'Schematic generated: {len(parts)} components, geometry verified; J1 is not a routable footprint.')
+print(f'Schematic generated: {len(parts)} components including netted J1; geometry verified.')

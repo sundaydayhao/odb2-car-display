@@ -6,10 +6,16 @@ idf_component_register(
         "elm327_protocol.c"
         "elm327_ble.c"
         "ui.c"
+        "lvgl_memory.c"
+        "audio_device.c"
+        "media_model.c"
+        "media_panel.c"
+        "media_service.c"
         "dashboard.c"
         "service_panel.c"
         "device_services.c"
         "network_service.c"
+        "wifi_networks.c"
         "device_console.c"
         "voice_service.c"
         "camera_service.c"
@@ -18,6 +24,7 @@ idf_component_register(
         "ota_policy.c"
         "fonts/dashboard_text_18.c"
         "fonts/dashboard_text_22.c"
+        "fonts/dashboard_wifi_18.c"
         "fonts/dashboard_digits_144.c"
         "fonts/dashboard_digits_72.c"
     INCLUDE_DIRS
@@ -44,6 +51,11 @@ idf_component_register(
         cjson
         console
 )
+
+if(CONFIG_LV_USE_CUSTOM_MALLOC)
+    # LVGL calls these hooks from another archive; retain the project's allocator.
+    target_link_libraries(${COMPONENT_LIB} INTERFACE "-u lv_mem_init")
+endif()
 
 if(CONFIG_DEVICE_TRUST_DIR)
     foreach(asset service_ca.pem ota_public.pem)

@@ -16,6 +16,8 @@
 #include "freertos/task.h"
 #include "cloud_service.h"
 #include "device_services.h"
+#include "audio_device.h"
+#include "esp_heap_caps.h"
 
 #define OPUS_MAX 1400
 #define PCM_MAX 4096
@@ -24,8 +26,10 @@ static QueueHandle_t s_audio;
 static atomic_bool s_pressed, s_active, s_accept_audio, s_fault, s_channel;
 static atomic_uint s_press_id, s_epoch;
 static esp_xiaozhi_chat_handle_t s_chat;
-static esp_codec_dev_handle_t s_mic, s_speaker;
 static int s_codec_mode;
+static void *s_encoder, *s_decoder;
+static uint8_t *s_pcm, *s_encoded;
+static int s_input_size, s_output_size;
 
 void voice_set_pressed(bool pressed)
 {
@@ -38,15 +42,20 @@ bool voice_is_active(void) { return atomic_load(&s_active); }
 static bool codec_mode(int mode)
 {
     if (s_codec_mode == mode) return true;
-    if (s_codec_mode) esp_codec_dev_close(s_codec_mode == 1 ? s_mic : s_speaker);
+    audio_device_release(AUDIO_OWNER_VOICE);
     s_codec_mode = 0;
     if (!mode) return true;
-    esp_codec_dev_sample_info_t format = {.sample_rate = 16000, .channel = 1, .bits_per_sample = 16};
-    esp_codec_dev_handle_t codec = mode == 1 ? s_mic : s_speaker;
-    if (!codec || esp_codec_dev_open(codec, &format) != ESP_CODEC_DEV_OK) return false;
+    bool acquired = false;
+    for (int i = 0; i < 100 && !cloud_ota_busy(); ++i) {
+        if (audio_device_acquire(AUDIO_OWNER_VOICE)) { acquired = true; break; }
+        vTaskDelay(pdMS_TO_TICKS(20));
+    }
+    if (!acquired) return false;
+    if (!audio_device_configure(AUDIO_OWNER_VOICE, mode == 1, 16000, 55)) {
+        audio_device_release(AUDIO_OWNER_VOICE);
+        return false;
+    }
     s_codec_mode = mode;
-    if (mode == 1) esp_codec_dev_set_in_gain(codec, 24.0f);
-    else esp_codec_dev_set_out_vol(codec, 55);
     return true;
 }
 
@@ -136,26 +145,36 @@ static void end_chat(void)
     atomic_fetch_add(&s_epoch, 1);
     xQueueReset(s_audio);
     codec_mode(0);
+    audio_device_voice_priority(false);
+    if (s_encoder) esp_opus_enc_close(s_encoder);
+    if (s_decoder) esp_opus_dec_close(s_decoder);
+    s_encoder = s_decoder = NULL;
+    free(s_pcm); free(s_encoded);
+    s_pcm = s_encoded = NULL;
     if (s_chat) esp_xiaozhi_chat_deinit(s_chat);
     s_chat = 0;
     atomic_store(&s_channel, false);
 }
 
-static void voice_task(void *arg)
+static bool prepare_audio(void)
 {
-    (void)arg;
-    void *encoder = NULL, *decoder = NULL;
-    uint8_t *pcm = malloc(PCM_MAX), *encoded = malloc(OPUS_MAX);
+    if (s_encoder && s_decoder) return true;
+    s_pcm = heap_caps_malloc(PCM_MAX, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+    s_encoded = heap_caps_malloc(OPUS_MAX, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     esp_opus_enc_config_t enc = ESP_OPUS_ENC_CONFIG_DEFAULT();
     enc.sample_rate = 16000; enc.channel = 1; enc.bitrate = 24000;
     enc.frame_duration = ESP_OPUS_ENC_FRAME_DURATION_60_MS;
     esp_opus_dec_cfg_t dec = {.sample_rate = 16000, .channel = 1,
         .frame_duration = ESP_OPUS_DEC_FRAME_DURATION_60_MS, .self_delimited = false};
-    int input_size = 0, output_size = 0;
-    if (!pcm || !encoded || esp_opus_enc_open(&enc, sizeof(enc), &encoder) != ESP_AUDIO_ERR_OK ||
-        esp_opus_enc_get_frame_size(encoder, &input_size, &output_size) != ESP_AUDIO_ERR_OK ||
-        input_size > PCM_MAX || output_size > OPUS_MAX ||
-        esp_opus_dec_open(&dec, sizeof(dec), &decoder) != ESP_AUDIO_ERR_OK) goto failed;
+    return s_pcm && s_encoded && esp_opus_enc_open(&enc, sizeof(enc), &s_encoder) == ESP_AUDIO_ERR_OK &&
+        esp_opus_enc_get_frame_size(s_encoder, &s_input_size, &s_output_size) == ESP_AUDIO_ERR_OK &&
+        s_input_size <= PCM_MAX && s_output_size <= OPUS_MAX &&
+        esp_opus_dec_open(&dec, sizeof(dec), &s_decoder) == ESP_AUDIO_ERR_OK;
+}
+
+static void voice_task(void *arg)
+{
+    (void)arg;
     uint32_t handled_press = 0;
     bool listening = false;
     int discard = 0;
@@ -186,17 +205,19 @@ static void voice_task(void *arg)
             xQueueReset(s_audio);
             codec_mode(0);
             atomic_store(&s_active, true);
+            audio_device_voice_priority(true);
             bool connected = connect_chat();
             if (!connected) { end_chat(); continue; }
-            if (!s_mic) {
-                s_speaker = bsp_audio_codec_speaker_init();
-                s_mic = bsp_audio_codec_microphone_init();
-            }
             last_activity = esp_timer_get_time();
             /* A release during HTTPS/hello must never result in delayed recording. */
             if (!atomic_load(&s_pressed) || press_id != atomic_load(&s_press_id)) {
-                atomic_store(&s_active, false);
+                end_chat();
                 device_status_set(SERVICE_VOICE, SERVICE_READY, "语音已就绪");
+                continue;
+            }
+            if (!prepare_audio()) {
+                end_chat();
+                device_status_set(SERVICE_VOICE, SERVICE_ERROR, "音频资源不足");
                 continue;
             }
             esp_xiaozhi_chat_send_abort_speaking(s_chat, ESP_XIAOZHI_CHAT_ABORT_SPEAKING_REASON_STOP_LISTENING);
@@ -221,17 +242,17 @@ static void voice_task(void *arg)
             device_status_set(SERVICE_VOICE, SERVICE_BUSY, "等待语音回复");
         }
         if (listening) {
-            if (esp_codec_dev_read(s_mic, pcm, input_size) != ESP_CODEC_DEV_OK) {
+            if (!audio_device_read(AUDIO_OWNER_VOICE, s_pcm, s_input_size)) {
                 atomic_store(&s_fault, true); continue;
             }
             if (discard) { discard--; continue; }
-            esp_audio_enc_in_frame_t in = {.buffer = pcm, .len = input_size};
-            esp_audio_enc_out_frame_t out = {.buffer = encoded, .len = OPUS_MAX};
-            if (esp_opus_enc_process(encoder, &in, &out) != ESP_AUDIO_ERR_OK) {
+            esp_audio_enc_in_frame_t in = {.buffer = s_pcm, .len = s_input_size};
+            esp_audio_enc_out_frame_t out = {.buffer = s_encoded, .len = OPUS_MAX};
+            if (esp_opus_enc_process(s_encoder, &in, &out) != ESP_AUDIO_ERR_OK) {
                 atomic_store(&s_fault, true); continue;
             }
             if (atomic_load(&s_pressed) && atomic_load(&s_press_id) == handled_press && out.encoded_bytes &&
-                esp_xiaozhi_chat_send_audio_data(s_chat, (const char *)encoded, out.encoded_bytes) != ESP_OK)
+                esp_xiaozhi_chat_send_audio_data(s_chat, (const char *)s_encoded, out.encoded_bytes) != ESP_OK)
                 atomic_store(&s_fault, true);
             last_activity = esp_timer_get_time();
         } else {
@@ -239,11 +260,11 @@ static void voice_task(void *arg)
             if (xQueueReceive(s_audio, &packet, pdMS_TO_TICKS(30)) == pdTRUE &&
                 packet.epoch == atomic_load(&s_epoch) && !atomic_load(&s_pressed) && atomic_load(&s_accept_audio)) {
                 esp_audio_dec_in_raw_t raw = {.buffer = packet.data, .len = packet.length};
-                esp_audio_dec_out_frame_t out = {.buffer = pcm, .len = PCM_MAX};
+                esp_audio_dec_out_frame_t out = {.buffer = s_pcm, .len = PCM_MAX};
                 esp_audio_dec_info_t info = {0};
-                if (esp_opus_dec_decode(decoder, &raw, &out, &info) != ESP_AUDIO_ERR_OK ||
+                if (!s_decoder || esp_opus_dec_decode(s_decoder, &raw, &out, &info) != ESP_AUDIO_ERR_OK ||
                     raw.consumed != packet.length || !codec_mode(2) ||
-                    esp_codec_dev_write(s_speaker, pcm, out.decoded_size) != ESP_CODEC_DEV_OK) {
+                    !audio_device_write(AUDIO_OWNER_VOICE, s_pcm, out.decoded_size)) {
                     atomic_store(&s_fault, true);
                 } else {
                     device_status_set(SERVICE_VOICE, SERVICE_BUSY, "正在播放回复");
@@ -256,12 +277,6 @@ static void voice_task(void *arg)
             }
         }
     }
-failed:
-    if (encoder) esp_opus_enc_close(encoder);
-    if (decoder) esp_opus_dec_close(decoder);
-    free(pcm); free(encoded);
-    device_status_set(SERVICE_VOICE, SERVICE_ERROR, "音频资源不足");
-    vTaskDelete(NULL);
 }
 
 esp_err_t voice_service_start(void)

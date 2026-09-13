@@ -4,6 +4,13 @@
 #include <stdint.h>
 #include "lvgl.h"
 
+enum { DASHBOARD_THEME_COUNT = 3, DASHBOARD_PAGE_COUNT = 6 };
+typedef struct {
+    uint32_t bg, ink, muted, line, track, panel, accent, hero, secondary, green, amber, red, on_accent, tint;
+} dashboard_palette_t;
+/* Shared by the instruments, settings and appearance preview cards. */
+const dashboard_palette_t *dashboard_palette(uint8_t theme, bool daylight);
+
 typedef enum {
     DASH_SPEED,
     DASH_RPM,
@@ -61,3 +68,9 @@ uint8_t dashboard_active_theme(void);
 void dashboard_set_demo(bool enabled);
 bool dashboard_demo_enabled(void);
 void dashboard_set_daylight(bool enabled);
+bool dashboard_daylight_enabled(void);
+bool dashboard_turbo_enabled(void);
+uint8_t dashboard_pressure_unit(void);
+void dashboard_set_turbo(bool enabled);
+void dashboard_set_pressure_unit(uint8_t unit);
+void dashboard_set_settings_handler(void (*handler)(void));

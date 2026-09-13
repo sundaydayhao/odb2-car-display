@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "esp_err.h"
+#include "wifi_networks.h"
 
 #define DEVICE_BOARD_ID "esp32-p4-function-ev-board-v1.4"
 #define DEVICE_PROJECT_ID "odb2_dash"
@@ -28,6 +29,8 @@ bool device_network_ready(void);
 bool device_clock_ready(void);
 esp_err_t device_network_start(void);
 void device_network_reconfigure(void);
+esp_err_t device_network_scan_request(void);
+void device_network_scan_get(wifi_networks_t *out);
 const char *device_id(void);
 const char *device_boot_id(void);
 bool device_maintenance_allowed(bool bench);

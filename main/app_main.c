@@ -15,6 +15,7 @@
 #include "cloud_service.h"
 #include "voice_service.h"
 #include "camera_service.h"
+#include "media_service.h"
 
 static const char *TAG = "app";
 
@@ -29,9 +30,8 @@ static void transport_task(void *arg)
     vTaskDelete(NULL);
 }
 
-static void probation_task(void *arg)
+static void verify_boot(void)
 {
-    (void)arg;
     const esp_partition_t *running = esp_ota_get_running_partition();
     esp_ota_img_states_t state;
     if (esp_ota_get_state_partition(running, &state) == ESP_OK && state == ESP_OTA_IMG_PENDING_VERIFY) {
@@ -44,7 +44,6 @@ static void probation_task(void *arg)
         if (healthy) ESP_ERROR_CHECK(esp_ota_mark_app_valid_cancel_rollback());
         else ESP_ERROR_CHECK(esp_ota_mark_app_invalid_rollback_and_reboot());
     }
-    vTaskDelete(NULL);
 }
 
 static void vehicle_task(void *arg)
@@ -80,11 +79,14 @@ void app_main(void)
     ESP_ERROR_CHECK(ui_init() ? ESP_OK : ESP_FAIL);
     ESP_ERROR_CHECK(recorder_start());
     ESP_ERROR_CHECK(voice_service_start());
+    ESP_ERROR_CHECK(media_service_start());
     ESP_ERROR_CHECK(camera_service_start());
     ESP_ERROR_CHECK(cloud_service_start());
     ESP_ERROR_CHECK(device_console_start());
     ESP_ERROR_CHECK(xTaskCreate(transport_task, "vehicle_init", 6144, NULL, 3, NULL) == pdPASS ? ESP_OK : ESP_ERR_NO_MEM);
     ESP_ERROR_CHECK(xTaskCreate(vehicle_task, "vehicle_task", 4096, NULL, 4, NULL) == pdPASS ? ESP_OK : ESP_ERR_NO_MEM);
-    ESP_ERROR_CHECK(xTaskCreate(probation_task, "boot_check", 4096, NULL, 2, NULL) == pdPASS ? ESP_OK : ESP_ERR_NO_MEM);
     ESP_LOGI(TAG, "Vehicle P4 services started");
+    /* Reuse the startup task's DRAM stack for flash metadata and probation.
+     * UI/radio tasks already run independently, including during OTA probation. */
+    verify_boot();
 }

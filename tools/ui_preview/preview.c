@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include "dashboard.h"
 #include "service_panel.h"
+#include "media_panel.h"
 #include "dashboard_text.h"
 #include "fonts/dashboard_fonts.h"
 #include "src/libs/lodepng/lodepng.h"
@@ -15,8 +17,21 @@ static int s_labels;
 static lv_point_t s_touch_point;
 static lv_indev_state_t s_touch_state;
 enum { SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 600, DASH_HEIGHT = SCREEN_HEIGHT };
-static unsigned s_actions[10];
-static void panel_action(panel_action_t action) { ++s_actions[action]; }
+static unsigned s_actions[PANEL_ACTION_COUNT];
+static panel_request_t s_last_request;
+static bool s_accept = true;
+static media_request_t s_last_media;
+static unsigned s_media_actions[MEDIA_CUSTOM_SAVE + 1];
+static bool media_action(const media_request_t *request) {
+    if (!s_accept) return false;
+    s_last_media = *request; ++s_media_actions[request->action]; return true;
+}
+static bool panel_action(const panel_request_t *request) {
+    if (!s_accept) return false;
+    assert(request->action < PANEL_ACTION_COUNT);
+    ++s_actions[request->action]; s_last_request = *request;
+    return true;
+}
 
 static void flush(lv_display_t *display, const lv_area_t *area, uint8_t *pixels)
 {
@@ -50,7 +65,11 @@ static void inspect(lv_obj_t *obj)
     if (lv_obj_has_flag(obj, LV_OBJ_FLAG_HIDDEN)) return;
     lv_area_t bounds;
     lv_obj_get_coords(obj, &bounds);
-    if (bounds.x1 < 0 || bounds.y1 < 0 || bounds.x2 >= SCREEN_WIDTH || bounds.y2 >= SCREEN_HEIGHT) {
+    bool scroll_child = false;
+    for (lv_obj_t *parent = lv_obj_get_parent(obj); parent; parent = lv_obj_get_parent(parent))
+        if (lv_obj_has_flag(parent, LV_OBJ_FLAG_SCROLLABLE)) scroll_child = true;
+    if (bounds.x1 < 0 || bounds.x2 >= SCREEN_WIDTH ||
+        (!scroll_child && (bounds.y1 < 0 || bounds.y2 >= SCREEN_HEIGHT))) {
         fprintf(stderr, "Object outside screen: %ld,%ld..%ld,%ld\n",
                 (long)bounds.x1, (long)bounds.y1, (long)bounds.x2, (long)bounds.y2);
         ++s_errors;
@@ -60,7 +79,7 @@ static void inspect(lv_obj_t *obj)
         const char *text = lv_label_get_text(obj);
         const lv_font_t *font = lv_obj_get_style_text_font(obj, 0);
         check_glyphs(text, font);
-        if (strstr(text, "OBD") || strstr(text, "CAN") || strstr(text, "ESP32")) {
+        if (font != &dashboard_wifi_18 && (strstr(text, "OBD") || strstr(text, "CAN") || strstr(text, "ESP32"))) {
             fprintf(stderr, "Technical text on screen: %s\n", text);
             ++s_errors;
         }
@@ -105,22 +124,41 @@ static unsigned count_text(lv_obj_t *obj, const char *text)
 
 static void snapshot(lv_display_t *display, const char *dir, const char *state, int page)
 {
+    /* Let state transitions finish before inspecting their visible appearance. */
+    lv_tick_inc(200);
+    lv_timer_handler();
     lv_obj_t *screen = lv_display_get_screen_active(display);
     lv_obj_update_layout(screen);
     lv_obj_t *toolbar = dashboard_service_toolbar();
-    assert(lv_obj_get_child_count(toolbar) == 6);
-    for (int i = 0; i < 6; ++i) {
-        lv_obj_t *tile = lv_obj_get_child(toolbar, i);
-        lv_area_t bounds;
-        lv_obj_get_coords(tile, &bounds);
-        assert(bounds.y1 >= 0 && bounds.y2 < 75);
-        assert(lv_obj_get_width(tile) >= 44 && lv_obj_get_height(tile) >= 44);
-        assert(lv_obj_get_child_count(tile) == 1);
-        lv_obj_t *symbol = lv_obj_get_child(tile, 0);
+    assert(lv_obj_get_child_count(toolbar) == 7);
+    assert(!lv_obj_has_flag(toolbar, LV_OBJ_FLAG_CLICKABLE));
+    int visible=0, left=SCREEN_WIDTH, right=0;
+    for (int i = 0; i < 7; ++i) {
+        lv_obj_t *symbol = lv_obj_get_child(toolbar, i);
         assert(lv_obj_check_type(symbol, &lv_label_class));
-        const char *value = lv_label_get_text(symbol);
-        uint32_t offset = 0;
-        assert(lv_text_encoded_next(value, &offset) != 0 && value[offset] == '\0');
+        assert(!lv_obj_has_flag(symbol, LV_OBJ_FLAG_CLICKABLE));
+        if (!lv_obj_has_flag(symbol,LV_OBJ_FLAG_HIDDEN)) {
+            lv_area_t bounds; lv_obj_get_coords(symbol,&bounds);
+            if (bounds.x1<left) left=bounds.x1;
+            if (bounds.x2>right) right=bounds.x2;
+            ++visible;
+        }
+    }
+    lv_area_t toolbar_bounds; lv_obj_get_coords(toolbar,&toolbar_bounds);
+    assert(right==toolbar_bounds.x2);
+    assert(right-left+1==visible*(SCREEN_WIDTH*32/800));
+    assert(left>SCREEN_WIDTH/2);
+    lv_obj_t *settings = lv_obj_get_child(screen, 1);
+    if (!lv_obj_has_flag(settings, LV_OBJ_FLAG_HIDDEN)) {
+        lv_obj_t *sidebar = lv_obj_get_child(settings, 0);
+        lv_obj_t *body = lv_obj_get_child(settings, 2);
+        lv_area_t side_bounds, body_bounds;
+        lv_obj_get_coords(sidebar, &side_bounds); lv_obj_get_coords(body, &body_bounds);
+        assert(lv_obj_get_width(sidebar) == 272);
+        assert(lv_obj_get_width(body) <= 680);
+        assert(body_bounds.x1 >= side_bounds.x2 + 24);
+        assert(body_bounds.x2 < SCREEN_WIDTH);
+        assert(lv_obj_get_child_count(sidebar) == 10); /* Title, subtitle, eight categories. */
     }
     inspect(screen);
     lv_draw_buf_t *buf = lv_snapshot_take(screen, LV_COLOR_FORMAT_RGB888);
@@ -167,6 +205,73 @@ static void tap_at(lv_indev_t *pointer, int x, int y)
     tap_raw(pointer, x * SCREEN_WIDTH / 800, y * DASH_HEIGHT / 480);
 }
 
+static lv_obj_t *find_label(lv_obj_t *parent,const char *value)
+{
+    if (lv_obj_has_flag(parent,LV_OBJ_FLAG_HIDDEN)) return NULL;
+    if (lv_obj_check_type(parent,&lv_label_class) && !strcmp(lv_label_get_text(parent),value)) return parent;
+    for (uint32_t i=0;i<lv_obj_get_child_count(parent);++i) {
+        lv_obj_t *found=find_label(lv_obj_get_child(parent,i),value);
+        if (found) return found;
+    }
+    return NULL;
+}
+static void tap_category(lv_indev_t *pointer,const char *value)
+{
+    lv_obj_update_layout(lv_screen_active());
+    lv_obj_t *label=find_label(lv_screen_active(),value); assert(label);
+    lv_area_t bounds; lv_obj_get_coords(label,&bounds);
+    tap_raw(pointer,(bounds.x1+bounds.x2)/2,(bounds.y1+bounds.y2)/2);
+}
+
+static lv_obj_t *find_class(lv_obj_t *parent, const lv_obj_class_t *type)
+{
+    if (lv_obj_check_type(parent, type)) return parent;
+    for (uint32_t i = 0; i < lv_obj_get_child_count(parent); ++i) {
+        lv_obj_t *found = find_class(lv_obj_get_child(parent, i), type);
+        if (found) return found;
+    }
+    return NULL;
+}
+
+static void tap_toggle(lv_indev_t *pointer, const char *title)
+{
+    lv_obj_t *label = find_label(lv_screen_active(), title); assert(label);
+    lv_obj_t *control = find_class(lv_obj_get_parent(label), &lv_switch_class); assert(control);
+    lv_obj_update_layout(control);
+    lv_area_t bounds; lv_obj_get_coords(control, &bounds);
+    tap_raw(pointer, (bounds.x1+bounds.x2)/2, (bounds.y1+bounds.y2)/2);
+}
+
+static lv_obj_t *network_list(void)
+{
+    lv_obj_t *label = find_label(lv_screen_active(), "附近的 Wi-Fi"); assert(label);
+    lv_obj_t *body = lv_obj_get_parent(label);
+    for (unsigned i = 0; i < lv_obj_get_child_count(body); ++i) {
+        lv_obj_t *child = lv_obj_get_child(body, i);
+        if (lv_obj_has_flag(child, LV_OBJ_FLAG_SCROLLABLE)) return child;
+    }
+    assert(false); return NULL;
+}
+static void tap_network(lv_indev_t *pointer, const char *ssid)
+{
+    lv_obj_t *list = network_list();
+    lv_obj_update_layout(list);
+    lv_obj_t *label = find_label(list, ssid);
+    if (!label) {
+        fprintf(stderr, "Missing scanned SSID %s in list with %u children\n", ssid, (unsigned)lv_obj_get_child_count(list));
+        for (unsigned i=0;i<lv_obj_get_child_count(list);++i) {
+            lv_obj_t *row=lv_obj_get_child(list,i);
+            lv_obj_t *name=lv_obj_get_child(row,1);
+            if (name && lv_obj_check_type(name,&lv_label_class)) fprintf(stderr,"row %u: [%s]\n",i,lv_label_get_text(name));
+        }
+    }
+    assert(label);
+    lv_obj_scroll_to_view(lv_obj_get_parent(label), LV_ANIM_OFF);
+    lv_obj_update_layout(list);
+    lv_area_t bounds; lv_obj_get_coords(label, &bounds);
+    tap_raw(pointer, (bounds.x1+bounds.x2)/2, (bounds.y1+bounds.y2)/2);
+}
+
 static void tap_service(lv_indev_t *pointer, unsigned id)
 {
     lv_obj_update_layout(lv_screen_active());
@@ -177,17 +282,43 @@ static void tap_service(lv_indev_t *pointer, unsigned id)
 
 static void inspect_all(lv_display_t *display, lv_indev_t *pointer, const char *dir, const char *state)
 {
-    for (int page = 0; page < 5; ++page) {
+    for (int page = 0; page < DASHBOARD_PAGE_COUNT; ++page) {
         lv_obj_update_layout(lv_display_get_screen_active(display));
-        tap_at(pointer, 96 + page * 152, 450);
+        tap_at(pointer, 83 + page * 126, 450);
         assert(dashboard_active_page() == page);
         snapshot(display, dir, state, page);
+    }
+}
+
+static double luminance(uint32_t color)
+{
+    double channels[3];
+    for (int i = 0; i < 3; ++i) {
+        double value = ((color >> (16 - 8 * i)) & 255) / 255.0;
+        channels[i] = value <= 0.04045 ? value / 12.92 : pow((value + 0.055) / 1.055, 2.4);
+    }
+    return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+}
+
+static void check_light_contrast(void)
+{
+    for (unsigned i = 0; i < DASHBOARD_THEME_COUNT; ++i) {
+        const dashboard_palette_t *p = dashboard_palette(i, true);
+        const uint32_t foregrounds[] = {p->ink, p->muted, p->accent, p->hero, p->secondary, p->green, p->amber, p->red};
+        const uint32_t backgrounds[] = {p->bg, p->panel, p->tint};
+        for (unsigned f = 0; f < sizeof(foregrounds)/sizeof(*foregrounds); ++f) {
+            for (unsigned b = 0; b < sizeof(backgrounds)/sizeof(*backgrounds); ++b) {
+                double contrast = (luminance(backgrounds[b]) + 0.05) / (luminance(foregrounds[f]) + 0.05);
+                if (contrast < 4.5) { fprintf(stderr,"Light theme %u contrast %.2f below 4.5 (text %06x / background %06x)\n",i,contrast,foregrounds[f],backgrounds[b]); ++s_errors; }
+            }
+        }
     }
 }
 
 int main(int argc, char **argv)
 {
     assert(argc == 2);
+    check_light_contrast();
     lv_init();
     lv_display_t *display = lv_display_create(SCREEN_WIDTH, SCREEN_HEIGHT);
     static uint8_t buffer[SCREEN_WIDTH * 48 * 2];
@@ -204,19 +335,27 @@ int main(int argc, char **argv)
     lv_obj_set_size(root, SCREEN_WIDTH, SCREEN_HEIGHT);
     dashboard_create_on(lv_obj_create(root), SCREEN_WIDTH, DASH_HEIGHT);
     service_panel_create(root, dashboard_service_toolbar(), panel_action);
+    media_panel_handlers(media_action, service_panel_open_media);
+    service_panel_media_handler(media_action);
+    panel_preferences_t defaults = PANEL_PREFERENCES_DEFAULT;
+    assert(sizeof(defaults) == 6 && service_panel_preferences_valid(&defaults));
+    service_panel_preferences(&defaults);
+    assert(dashboard_daylight_enabled() && dashboard_active_theme() == 0);
     const char *details[] = {"热点已连接", "语音待命", "摄像头已关闭", "正在记录车况", "上传已关闭", "尚未配置升级密钥"};
     for (int i = 0; i < 6; ++i) service_panel_status(i, i == 0 || i == 3 ? 3 : 0, details[i]);
+    service_panel_bluetooth(true,true,2,"正在查找适配器","");
     dashboard_data_t link_state={.link_state=DASH_LINK_SCANNING};
     dashboard_update(&link_state);
-    assert(count_text(lv_screen_active(),TXT_SCANNING)==1);
+    assert(count_text(lv_screen_active(),TXT_SCANNING)==0);
+    assert(count_text(lv_screen_active(),LV_SYMBOL_BLUETOOTH)==1);
     snapshot(display,argv[1],"ble-scanning",0);
     link_state.link_state=DASH_LINK_CONNECTING;
     dashboard_update(&link_state);
-    assert(count_text(lv_screen_active(),TXT_CONNECTING)==1);
+    assert(count_text(lv_screen_active(),TXT_CONNECTING)==0);
     snapshot(display,argv[1],"ble-connecting",0);
     link_state.link_state=DASH_LINK_INITIALIZING;
     dashboard_update(&link_state);
-    assert(count_text(lv_screen_active(),TXT_INITIALIZING)==1);
+    assert(count_text(lv_screen_active(),TXT_INITIALIZING)==0);
     snapshot(display,argv[1],"ble-initializing",0);
     link_state.link_state=DASH_LINK_WAITING;
     dashboard_update(&link_state);
@@ -245,12 +384,13 @@ int main(int argc, char **argv)
     dashboard_update(&sample);
     inspect_all(display, pointer, argv[1], "high-rpm");
 
+    dashboard_select_page(4);
     uint8_t selected = dashboard_active_page();
     lv_tick_inc(61000);
     lv_timer_handler();
     assert(dashboard_active_page() == selected);
     lv_obj_t *screen = lv_display_get_screen_active(display);
-    assert(count_text(screen, TXT_WAITING) == 1);
+    assert(count_text(screen, TXT_WAITING) == 0);
     assert(count_text(screen, "--") >= 6);
     inspect_all(display, pointer, argv[1], "expired");
     dashboard_data_t stopped = {.value = {0}, .valid = {[DASH_SPEED] = true}};
@@ -258,110 +398,261 @@ int main(int argc, char **argv)
     dashboard_select_page(0);
     assert(count_text(screen, "0") == 1);
     assert(count_text(screen, "--") >= 6);
-    assert(count_text(screen, TXT_LIVE) == 1);
-    /* Bench demonstration is explicitly entered by touch and survives live updates. */
+    assert(count_text(screen, TXT_LIVE) == 0);
+    /* All settings are reached through the single gear. Status taps do nothing. */
+    for (unsigned i = 0; i < 7; ++i) {
+        if (!lv_obj_has_flag(lv_obj_get_child(dashboard_service_toolbar(),i),LV_OBJ_FLAG_HIDDEN)) tap_service(pointer,i);
+    }
+    for (unsigned i = 0; i < PANEL_ACTION_COUNT; ++i) assert(s_actions[i] == 0);
+    assert(count_text(screen, LV_SYMBOL_SETTINGS) == 1);
+    assert(count_text(screen, LV_SYMBOL_TINT) == 0);
     tap_at(pointer,760,28);
-    snapshot(display,argv[1],"settings",0);
-    tap_service(pointer,1);
-    assert(s_actions[PANEL_VOICE_DOWN] == 0 && s_actions[PANEL_VOICE_UP] == 0);
-    tap_at(pointer,548,207);
+    snapshot(display,argv[1],"settings-home",0);
+    tap_category(pointer,"蓝牙设置");
+    snapshot(display,argv[1],"settings-bluetooth-scanning",0);
+    tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_OFF]==1);
+    service_panel_bluetooth(true,false,0,"蓝牙已关闭","");
+    snapshot(display,argv[1],"settings-bluetooth-off",0);
+    tap_category(pointer,"重新连接"); assert(s_actions[PANEL_BLUETOOTH_RECONNECT]==0);
+    s_accept=false; tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_ON]==0);
+    s_accept=true; tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_ON]==1);
+    service_panel_bluetooth(true,true,3,"已连接适配器","AA:BB:CC:DD:EE:FF");
+    snapshot(display,argv[1],"settings-bluetooth-connected",0);
+    tap_category(pointer,"重新连接"); assert(s_actions[PANEL_BLUETOOTH_RECONNECT]==1);
+    service_panel_bluetooth(false,true,1,"蓝牙尚未就绪","");
+    tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_OFF]==1);
+    service_panel_bluetooth(true,true,2,"正在查找适配器","");
+
+    tap_category(pointer,"显示与外观"); /* Display category. */
+    snapshot(display,argv[1],"settings-display",0);
+    tap_category(pointer,"界面主题");
+    snapshot(display,argv[1],"settings-themes",0);
+    s_accept=false; tap_category(pointer,TXT_LAVA);
+    assert(dashboard_daylight_enabled() && dashboard_active_theme()==0);
+    assert(count_text(screen,LV_SYMBOL_OK)==1); /* Rejection retains selected appearance. */
+    s_accept=true;
+    tap_category(pointer,LV_SYMBOL_LEFT); /* Theme page goes back to display, not the home menu. */
+    assert(find_label(screen,"屏幕亮度"));
+    tap_toggle(pointer,"演示模式（重启关闭）");
     assert(dashboard_demo_enabled());
-    assert(count_text(screen,TXT_DEMO) == 1);
     dashboard_update(&stopped);
     assert(count_text(screen,"86") == 1);
     for (int day = 0; day < 2; ++day) {
-        dashboard_set_daylight(day);
-        lv_obj_t *network_symbol = lv_obj_get_child(lv_obj_get_child(dashboard_service_toolbar(), 0), 0);
-        assert(lv_color_eq(lv_obj_get_style_text_color(network_symbol, 0), lv_color_hex(day ? 0x007E6D : 0x61EDBF)));
-        for (int theme = 0; theme < 3; ++theme) {
-            tap_at(pointer,710,28);
-            char name[32];
-            snprintf(name,sizeof(name),"theme-picker-%d-%d",day,theme);
-            snapshot(display,argv[1],name,0);
-            tap_at(pointer,450,165+theme*90);
+        for (int theme = 0; theme < DASHBOARD_THEME_COUNT; ++theme) {
+            tap_category(pointer,"界面主题");
+            const char *names[2][3]={{TXT_NEON,TXT_LAVA,TXT_ACID},{"清爽白","晴空蓝","暖沙米"}};
+            tap_category(pointer,names[day][theme]);
             assert(dashboard_active_theme() == theme);
-            snprintf(name,sizeof(name),"demo-%d-%d",day,theme);
+            assert(dashboard_daylight_enabled() == (bool)day);
+            assert(s_last_request.action == PANEL_PREFERENCES_SAVE);
+            assert(s_last_request.data.preferences.theme == theme);
+            assert(s_last_request.data.preferences.daylight == day);
+            assert(s_last_request.data.preferences.brightness == defaults.brightness);
+            assert(count_text(screen,LV_SYMBOL_OK)==1);
+            panel_preferences_t saved = s_last_request.data.preferences;
+            assert(service_panel_preferences_valid(&saved));
+            /* Exercise the same v1 restore entry point used by ui.c after NVS load. */
+            service_panel_preferences(&defaults);
+            service_panel_preferences(&saved);
+            assert(dashboard_active_theme()==theme && dashboard_daylight_enabled()==(bool)day);
+            const dashboard_palette_t *palette=dashboard_palette(theme,day);
+            lv_obj_t *overlay=lv_obj_get_child(screen,1);
+            assert(lv_color_eq(lv_obj_get_style_bg_color(overlay,0),lv_color_hex(palette->bg)));
+            assert(lv_color_eq(lv_obj_get_style_bg_color(lv_obj_get_child(overlay,2),0),lv_color_hex(palette->bg)));
+            assert(lv_color_eq(lv_obj_get_style_bg_color(lv_obj_get_child(overlay,0),0),lv_color_hex(palette->panel)));
+            char settings_name[40]; snprintf(settings_name,sizeof(settings_name),"themes-%d-%d",day,theme);
+            snapshot(display,argv[1],settings_name,0);
+            tap_category(pointer,LV_SYMBOL_CLOSE);
+            char name[32]; snprintf(name,sizeof(name),"demo-%d-%d",day,theme);
             inspect_all(display,pointer,argv[1],name);
+            tap_at(pointer,760,28); tap_category(pointer,"显示与外观");
         }
     }
-    dashboard_select_page(3);
-    tap_at(pointer,177,85);
-    assert(count_text(screen,"82.4") == 1);
-    snapshot(display,argv[1],"today",3);
-    dashboard_select_page(2);
-    tap_at(pointer,760,28);
-    tap_at(pointer,460,326);
-    assert(count_text(screen,"240") == 2);
-    snapshot(display,argv[1],"kpa",2);
-    tap_at(pointer,760,28);
-    tap_at(pointer,535,326);
-    assert(count_text(screen,"34.8") == 2);
-    snapshot(display,argv[1],"psi",2);
-    dashboard_select_page(4);
-    tap_at(pointer,760,28);
-    tap_at(pointer,548,267);
-    assert(count_text(screen,TXT_MANIFOLD) == 1);
+    tap_category(pointer,LV_SYMBOL_CLOSE);
+    dashboard_select_page(3); tap_at(pointer,177,85);
+    assert(count_text(screen,"82.4") == 1); snapshot(display,argv[1],"today",3);
+    dashboard_select_page(2); tap_at(pointer,760,28); tap_category(pointer,"显示与外观");
+    tap_category(pointer,"kPa"); assert(dashboard_pressure_unit()==1);
+    tap_category(pointer,LV_SYMBOL_CLOSE); assert(count_text(screen,"240") == 2); snapshot(display,argv[1],"kpa",2);
+    tap_at(pointer,760,28); tap_category(pointer,"显示与外观"); tap_category(pointer,"psi");
+    tap_category(pointer,LV_SYMBOL_CLOSE); assert(count_text(screen,"34.8") == 2); snapshot(display,argv[1],"psi",2);
+    dashboard_select_page(4); tap_at(pointer,760,28); tap_category(pointer,"显示与外观");
+    tap_toggle(pointer,"涡轮车型显示"); assert(!dashboard_turbo_enabled());
+    tap_toggle(pointer,"演示模式（重启关闭）"); assert(!dashboard_demo_enabled());
+    tap_category(pointer,LV_SYMBOL_CLOSE);
     snapshot(display,argv[1],"naturally-aspirated",4);
-    lv_tick_inc(61000);
-    lv_timer_handler();
-    assert(dashboard_active_page() == 4);
-    assert(dashboard_demo_enabled());
-    tap_at(pointer,760,28);
-    tap_at(pointer,548,207);
-    assert(!dashboard_demo_enabled());
-    assert(count_text(screen,TXT_WAITING) == 1);
-    /* Repeated rebuilds exercise object/binding lifetimes and stable touch targets. */
-    for (int i = 0; i < 150; ++i) {
-        dashboard_select_theme(i%3);
-        tap_at(pointer,96+(i%5)*152,450);
-        assert(dashboard_active_page() == i%5);
-    }
-    lv_obj_t *voice_icon = lv_obj_get_child(dashboard_service_toolbar(), 1);
-    lv_obj_send_event(voice_icon, LV_EVENT_HOVER_OVER, NULL);
-    assert(count_text(root,"小智语音") == 1);
-    snapshot(display,argv[1],"service-hover",0);
-    lv_obj_send_event(voice_icon, LV_EVENT_HOVER_LEAVE, NULL);
-    assert(count_text(root,"小智语音") == 0);
-    tap_service(pointer,1);
-    assert(s_actions[PANEL_VOICE_DOWN] == 1 && s_actions[PANEL_VOICE_UP] == 1);
-    lv_obj_send_event(voice_icon, LV_EVENT_PRESSED, NULL);
-    lv_obj_send_event(voice_icon, LV_EVENT_PRESS_LOST, NULL);
-    assert(s_actions[PANEL_VOICE_DOWN] == 2 && s_actions[PANEL_VOICE_UP] == 2);
-    tap_service(pointer,2);
-    assert(s_actions[PANEL_CAMERA_ON] == 1);
+    /* Scan results are fixtures; the real scanner and connection run on the board. */
+    service_panel_network_config("PhoneHotspot","testpass123");
+    service_panel_status(0,1,"未找到已保存的热点");
+    tap_at(pointer,760,28); tap_category(pointer,"网络与连接");
+    assert(s_actions[PANEL_WIFI_SCAN] == 1);
+    snapshot(display,argv[1],"network-scanning",0);
+    wifi_networks_t networks = {.revision=1,.state=NETWORK_SCAN_READY};
+    uint8_t name[33]="PhoneHotspot";
+    wifi_networks_add(&networks,name,-35,NETWORK_WPA2);
+    snprintf((char *)name,sizeof(name),"我的手机热点"); wifi_networks_add(&networks,name,-48,NETWORK_WPA3);
+    snprintf((char *)name,sizeof(name),"Guest WiFi"); wifi_networks_add(&networks,name,-60,NETWORK_OPEN);
+    snprintf((char *)name,sizeof(name),"Office Secure"); wifi_networks_add(&networks,name,-68,NETWORK_UNSUPPORTED);
+    for (int i=0;i<12;++i) { snprintf((char *)name,sizeof(name),"Nearby-%02d",i); wifi_networks_add(&networks,name,-70-i,NETWORK_WPA2); }
+    snprintf((char *)name,sizeof(name),"PhoneHotspot");
+    wifi_networks_add(&networks,name,-83,NETWORK_OPEN); /* Same name, different security is not the connected AP. */
+    service_panel_network_scan(&networks);
+    assert(!find_class(lv_obj_get_child(screen,1),&lv_textarea_class));
+    assert(count_text(screen,"热点名称")==0);
+    snapshot(display,argv[1],"settings-network",0);
+    lv_obj_scroll_to_y(network_list(),10000,LV_ANIM_OFF);
+    snapshot(display,argv[1],"network-list-bottom",0);
+    lv_obj_scroll_to_y(network_list(),0,LV_ANIM_OFF);
+    s_accept=false; tap_category(pointer,"重新扫描"); assert(s_actions[PANEL_WIFI_SCAN]==1);
+    s_accept=true; tap_category(pointer,"重新扫描"); assert(s_actions[PANEL_WIFI_SCAN]==2);
+    networks.revision++; service_panel_network_scan(&networks);
+    tap_network(pointer,"Office Secure"); assert(!find_class(lv_obj_get_child(screen,1),&lv_textarea_class));
+    tap_network(pointer,"PhoneHotspot");
+    lv_obj_t *settings_overlay=lv_obj_get_child(screen,1);
+    lv_obj_t *password=find_class(settings_overlay,&lv_textarea_class);
+    lv_obj_t *keyboard=find_class(settings_overlay,&lv_keyboard_class);
+    assert(password && keyboard && lv_textarea_get_password_mode(password));
+    assert(!strcmp(lv_textarea_get_text(password),"testpass123"));
+    snapshot(display,argv[1],"network-password",0);
+    lv_area_t field_bounds; lv_obj_get_coords(password,&field_bounds);
+    tap_raw(pointer,(field_bounds.x1+field_bounds.x2)/2,(field_bounds.y1+field_bounds.y2)/2);
+    snapshot(display,argv[1],"network-keyboard",0);
+    lv_textarea_set_text(password,"short");
+    networks.revision++; service_panel_network_scan(&networks);
+    assert(!strcmp(lv_textarea_get_text(password),"short")); /* Scan update preserves input. */
+    lv_obj_send_event(keyboard,LV_EVENT_READY,NULL);
+    tap_category(pointer,"连接"); assert(s_actions[PANEL_WIFI_SAVE]==0);
+    snapshot(display,argv[1],"network-validation",0);
+    lv_textarea_set_text(password,"testpass123");
+    s_accept=false; tap_category(pointer,"连接"); assert(s_actions[PANEL_WIFI_SAVE]==0);
+    s_accept=true; tap_category(pointer,"连接"); assert(s_actions[PANEL_WIFI_SAVE]==1);
+    assert(!strcmp(s_last_request.data.wifi.ssid,"PhoneHotspot"));
+    assert(!strcmp(s_last_request.data.wifi.password,"testpass123"));
+    service_panel_save_result(true);
+    networks.revision++; networks.connected=true;
+    networks.connected_security=NETWORK_WPA2;
+    service_panel_status(0,3,"已连接 Wi-Fi");
+    snprintf(networks.connected_ssid,sizeof(networks.connected_ssid),"PhoneHotspot");
+    service_panel_network_scan(&networks);
+    assert(count_text(screen,"已连接")==1);
+    snapshot(display,argv[1],"network-connected",0);
+    tap_category(pointer,"忘记"); assert(s_actions[PANEL_WIFI_SAVE]==2);
+    assert(!*s_last_request.data.wifi.ssid && !*s_last_request.data.wifi.password);
+    service_panel_network_config("","");
+    service_panel_status(0,0,"请选择附近的 Wi-Fi");
+    networks.revision++; networks.connected=false; networks.connected_ssid[0]=0;
+    service_panel_network_scan(&networks);
+    tap_network(pointer,"Guest WiFi");
+    assert(!find_class(settings_overlay,&lv_textarea_class));
+    snapshot(display,argv[1],"network-open",0);
+    tap_category(pointer,"连接"); assert(s_actions[PANEL_WIFI_SAVE]==3);
+    assert(!strcmp(s_last_request.data.wifi.ssid,"Guest WiFi") && !*s_last_request.data.wifi.password);
+    tap_network(pointer,"我的手机热点");
+    password=find_class(settings_overlay,&lv_textarea_class);
+    assert(password && !*lv_textarea_get_text(password));
+    lv_obj_get_coords(password,&field_bounds);
+    tap_raw(pointer,(field_bounds.x1+field_bounds.x2)/2,(field_bounds.y1+field_bounds.y2)/2);
+    tap_category(pointer,"蓝牙设置");
+    assert(!find_class(settings_overlay,&lv_keyboard_class));
+    tap_category(pointer,"网络与连接");
+    wifi_networks_t empty={.revision=networks.revision+1,.state=NETWORK_SCAN_READY};
+    snprintf(empty.message,sizeof(empty.message),"未发现热点，请开启手机的 2.4 GHz 热点");
+    service_panel_network_scan(&empty);
+    snapshot(display,argv[1],"network-empty",0);
+    empty.revision++; empty.state=NETWORK_SCAN_ERROR;
+    snprintf(empty.message,sizeof(empty.message),"扫描失败，请稍后重新扫描");
+    service_panel_network_scan(&empty);
+    snapshot(display,argv[1],"network-error",0);
+    tap_category(pointer,"语音助手");
+    snapshot(display,argv[1],"settings-voice",0);
+    tap_category(pointer,"按住说话");
+    assert(s_actions[PANEL_VOICE_DOWN]==1 && s_actions[PANEL_VOICE_UP]==1);
+    lv_obj_t *voice = lv_obj_get_parent(find_label(screen,"按住说话"));
+    lv_obj_send_event(voice,LV_EVENT_PRESSED,NULL);
+    lv_obj_send_event(voice,LV_EVENT_PRESS_LOST,NULL);
+    assert(s_actions[PANEL_VOICE_DOWN]==2 && s_actions[PANEL_VOICE_UP]==2);
+    lv_obj_send_event(voice,LV_EVENT_PRESSED,NULL);
+     tap_category(pointer,"摄像头");
+    assert(s_actions[PANEL_VOICE_DOWN]==3 && s_actions[PANEL_VOICE_UP]==3);
+    snapshot(display,argv[1],"settings-camera",0);
+    tap_category(pointer,"打开本地预览"); assert(s_actions[PANEL_CAMERA_ON]==1);
     snapshot(display,argv[1],"camera-waiting",0);
     static uint16_t camera[320*240];
-    for (int y = 0; y < 240; ++y) for (int x = 0; x < 320; ++x)
-        camera[y*320+x] = x < 106 ? 0xf800 : x < 213 ? 0x07e0 : 0x001f;
-    service_panel_camera_frame(camera);
-    snapshot(display,argv[1],"camera-test-pattern",0);
-    assert(count_text(root,"等待画面") == 0);
-    tap_raw(pointer,660,160);
-    assert(s_actions[PANEL_CAMERA_OFF] == 1);
-    tap_service(pointer,0);
-    snapshot(display,argv[1],"device-center",0);
-    tap_service(pointer,1);
-    assert(s_actions[PANEL_VOICE_DOWN] == 2 && s_actions[PANEL_VOICE_UP] == 2);
-    tap_raw(pointer,600,476);
-    assert(s_actions[PANEL_OTA_INSTALL] == 0);
+    for (int y=0;y<240;++y) for (int x=0;x<320;++x) camera[y*320+x]=x<106?0xf800:x<213?0x07e0:0x001f;
+    service_panel_camera_frame(camera); snapshot(display,argv[1],"camera-test-pattern",0);
+    tap_raw(pointer,660,160); assert(s_actions[PANEL_CAMERA_OFF]==1);
+     tap_category(pointer,"记录与同步");
+    snapshot(display,argv[1],"settings-record",0);
+    tap_toggle(pointer,"允许上传车辆记录"); assert(s_actions[PANEL_UPLOAD_ON]==1);
+    tap_toggle(pointer,"允许上传车辆记录"); assert(s_actions[PANEL_UPLOAD_OFF]==1);
+    tap_category(pointer,"保存当前记录"); assert(s_actions[PANEL_SEAL]==1);
+    tap_category(pointer,"立即同步"); assert(s_actions[PANEL_UPLOAD_NOW]==1);
+     tap_category(pointer,"系统更新");
+    snapshot(display,argv[1],"settings-update",0);
+    tap_category(pointer,"检查更新"); assert(s_actions[PANEL_OTA_CHECK]==1);
+    tap_category(pointer,"安装更新"); assert(s_actions[PANEL_OTA_INSTALL]==0);
     snapshot(display,argv[1],"update-confirm",0);
-    tap_raw(pointer,320,392);
-    assert(s_actions[PANEL_OTA_INSTALL] == 1);
-    tap_raw(pointer,760,180);
-    tap_service(pointer,3);
-    assert(s_actions[PANEL_SEAL] == 1);
-    tap_raw(pointer,818,106);
-    tap_service(pointer,4);
-    tap_raw(pointer,400,407);
-    assert(s_actions[PANEL_UPLOAD_ON] == 1);
-    tap_raw(pointer,400,407);
-    assert(s_actions[PANEL_UPLOAD_OFF] == 1);
-    tap_raw(pointer,240,478);
-    assert(s_actions[PANEL_UPLOAD_NOW] == 1);
-    tap_raw(pointer,818,106);
-    tap_service(pointer,5);
-    tap_raw(pointer,410,478);
-    assert(s_actions[PANEL_OTA_CHECK] == 1);
+    tap_category(pointer,"确认安装"); assert(s_actions[PANEL_OTA_INSTALL]==1);
+    tap_category(pointer,LV_SYMBOL_CLOSE);
+    for (int i=0;i<100;++i) {
+        static const char *categories[]={"网络与连接","蓝牙设置","显示与外观","语音助手","摄像头","记录与同步","系统更新"};
+        tap_at(pointer,760,28); tap_category(pointer,categories[i%7]);
+        service_panel_status(i%6,0,"等待车辆");
+        tap_category(pointer,LV_SYMBOL_CLOSE);
+        dashboard_select_theme(i%DASHBOARD_THEME_COUNT); dashboard_select_page(i%DASHBOARD_PAGE_COUNT);
+    }
+    service_panel_bluetooth(true,true,2,"正在查找适配器","");
+    dashboard_set_daylight(false); dashboard_select_theme(0); dashboard_select_page(0);
+    snapshot(display,argv[1],"final-dashboard",0);
+    for (unsigned i=0;i<6;++i) service_panel_status(i,2,"正在运行");
+    snapshot(display,argv[1],"all-status-icons",0);
+    dashboard_set_daylight(true);
+    snapshot(display,argv[1],"all-status-icons-day",0);
+    for (unsigned day = 0; day < 2; ++day) {
+        dashboard_set_daylight(day);
+        for (unsigned theme = 0; theme < DASHBOARD_THEME_COUNT; ++theme) {
+            dashboard_select_theme(theme); dashboard_select_page(5);
+            media_status_t media = {.network = true, .state = MEDIA_PLAYING, .source = 0,
+                .volume = 35, .played_ms = 71000, .custom_music = true};
+            strcpy(media.title, media_sources[0].title); strcpy(media.detail, "正在播放音乐");
+            media_panel_update(&media);
+            tap_category(pointer, LV_SYMBOL_PREV);
+            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 2);
+            tap_category(pointer, LV_SYMBOL_NEXT);
+            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 1);
+            tap_category(pointer, LV_SYMBOL_STOP);
+            assert(s_last_media.action == MEDIA_STOP);
+            snapshot(display, argv[1], day ? "media-music-light" : "media-music-dark", theme);
+            tap_category(pointer, "网络电台");
+            snapshot(display, argv[1], day ? "media-radio-light" : "media-radio-dark", theme);
+            tap_category(pointer, media_sources[3].title);
+            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 3);
+            tap_category(pointer, LV_SYMBOL_PAUSE);
+            assert(s_last_media.action == MEDIA_TOGGLE);
+            media.state = MEDIA_PAUSED; strcpy(media.detail, "已暂停"); media_panel_update(&media);
+            snapshot(display, argv[1], "media-paused", theme);
+            media.state = MEDIA_ERROR; strcpy(media.detail, "音源格式不支持，请使用 MP3 直链"); media_panel_update(&media);
+            snapshot(display, argv[1], "media-error", theme);
+            s_accept = false; tap_category(pointer, media_sources[3].title);
+            assert(count_text(root, "操作未提交，请稍后重试") == 1); s_accept = true;
+            tap_category(pointer, "我的电台");
+            assert(count_text(root, "电台播放地址") == 1);
+            snapshot(display, argv[1], "settings-media", theme);
+            tap_category(pointer, "电台播放地址");
+            lv_obj_t *url = find_class(root, &lv_textarea_class);
+            assert(url); lv_textarea_set_text(url, "not-a-url");
+            tap_category(pointer, "保存地址");
+            assert(count_text(root, "请输入完整的 HTTP 或 HTTPS 音频地址") == 1);
+            lv_textarea_set_text(url, "https://example.com/live.mp3");
+            tap_category(pointer, "保存地址");
+            assert(s_last_media.action == MEDIA_CUSTOM_SAVE && s_last_media.value == 1);
+            assert(!strcmp(s_last_media.url, "https://example.com/live.mp3"));
+            snapshot(display, argv[1], "settings-media-url", theme);
+            tap_category(pointer, "清除地址"); assert(!*s_last_media.url);
+            tap_category(pointer, LV_SYMBOL_CLOSE);
+            tap_category(pointer, "在线音乐");
+        }
+    }
     printf("Inspected %d rendered labels; %d errors. Dashboard and P4 service controls passed.\n", s_labels, s_errors);
     return s_errors ? 1 : 0;
 }

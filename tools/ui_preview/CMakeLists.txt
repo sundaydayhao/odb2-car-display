@@ -9,9 +9,13 @@ target_include_directories(lvgl_host PUBLIC "${LVGL}" "${CMAKE_CURRENT_SOURCE_DI
 target_compile_definitions(lvgl_host PUBLIC LV_CONF_INCLUDE_SIMPLE LV_KCONFIG_IGNORE)
 add_executable(dashboard_preview preview.c
     "${ROOT}/main/dashboard.c"
+    "${ROOT}/main/media_model.c"
+    "${ROOT}/main/media_panel.c"
     "${ROOT}/main/service_panel.c"
+    "${ROOT}/main/wifi_networks.c"
     "${ROOT}/main/fonts/dashboard_text_18.c"
     "${ROOT}/main/fonts/dashboard_text_22.c"
+    "${ROOT}/main/fonts/dashboard_wifi_18.c"
     "${ROOT}/main/fonts/dashboard_digits_144.c"
     "${ROOT}/main/fonts/dashboard_digits_72.c")
 target_include_directories(dashboard_preview PRIVATE "${ROOT}/main")

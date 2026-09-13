@@ -7,6 +7,7 @@
 #include "recorder.h"
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "nvs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 #include "freertos/semphr.h"
@@ -41,6 +42,7 @@ typedef struct {
     bool overflow;
     int write_status;
     int64_t deadline;
+    char address[18];
 } link_t;
 
 static portMUX_TYPE s_lock = portMUX_INITIALIZER_UNLOCKED;
@@ -64,6 +66,8 @@ static struct { ble_addr_t addr; int64_t until; } s_rejected[4];
 static unsigned s_rejected_index;
 static int64_t s_retry_after;
 static atomic_uint s_transaction, s_transaction_counter, s_notification;
+static atomic_bool s_enabled = true, s_available, s_control_pending;
+static bool s_immediate_retry;
 
 static int gap_event(struct ble_gap_event *event, void *arg);
 static int services_cb(uint16_t conn, const struct ble_gatt_error *error, const struct ble_gatt_svc *service, void *arg);
@@ -82,13 +86,18 @@ static link_t snapshot(void)
 elm_ble_status_t elm_ble_status(void)
 {
     link_t link=snapshot();
-    return (elm_ble_status_t){link.state,link.generation};
+    elm_ble_status_t result = {.state=link.state, .generation=link.generation,
+        .available=atomic_load(&s_available), .enabled=atomic_load(&s_enabled)};
+    if (!result.enabled && link.state!=ELM_BLE_OFF) result.state=ELM_BLE_STOPPING;
+    memcpy(result.address,link.address,sizeof(result.address));
+    return result;
 }
 
 static bool current(uint16_t conn, void *arg)
 {
     link_t link=snapshot();
-    return conn==link.conn && link.generation==(uint32_t)(uintptr_t)arg;
+    return atomic_load(&s_enabled) && !atomic_load(&s_control_pending) &&
+           conn==link.conn && link.generation==(uint32_t)(uintptr_t)arg;
 }
 
 static void stage(elm_ble_state_t state, uint32_t timeout)
@@ -104,9 +113,11 @@ static void clear_link(void)
     recorder_wire(RECORD_LINK, snapshot().generation, atomic_load(&s_transaction), 0, 0, 0, NULL, 0, 0);
     portENTER_CRITICAL(&s_lock);
     uint32_t generation=s_link.generation+1;
-    s_link=(link_t){.conn=BLE_HS_CONN_HANDLE_NONE,.generation=generation};
+    s_link=(link_t){.conn=BLE_HS_CONN_HANDLE_NONE,.generation=generation,
+        .state=atomic_load(&s_enabled) ? ELM_BLE_SCANNING : ELM_BLE_OFF};
     portEXIT_CRITICAL(&s_lock);
-    s_retry_after=now_ms()+3000;
+    s_retry_after=now_ms()+(s_immediate_retry ? 0 : 3000);
+    s_immediate_retry=false;
     xSemaphoreGive(s_write_done);
 }
 
@@ -122,13 +133,55 @@ static void drop(void)
     } else { ble_gap_conn_cancel(); clear_link(); }
 }
 
-static void reset_event(struct ble_npl_event *event) { (void)event; drop(); }
+static void reset_event(struct ble_npl_event *event) {
+    (void)event;
+    if (atomic_load(&s_enabled) && !atomic_load(&s_control_pending)) drop();
+}
 
 void elm_ble_reset_link(void)
 {
-    if (!s_command_lock) return;
+    if (!atomic_load(&s_available) || !atomic_load(&s_enabled) || atomic_load(&s_control_pending)) return;
     stage(ELM_BLE_DISCOVERING,3000);
     ble_npl_eventq_put(nimble_port_get_dflt_eventq(),&s_reset_event);
+}
+
+esp_err_t elm_ble_set_enabled(bool enabled)
+{
+    if (!atomic_load(&s_available)) return ESP_ERR_INVALID_STATE;
+    nvs_handle_t nvs;
+    esp_err_t err=nvs_open("bluetooth",NVS_READWRITE,&nvs);
+    if (err==ESP_OK) {
+        err=nvs_set_u8(nvs,"enabled",enabled ? 1 : 0);
+        if (err==ESP_OK) err=nvs_commit(nvs);
+        nvs_close(nvs);
+    }
+    if (err!=ESP_OK) return err;
+    if (atomic_exchange(&s_enabled,enabled)!=enabled) {
+        atomic_store(&s_control_pending,true);
+        xSemaphoreGive(s_write_done);
+    }
+    return ESP_OK;
+}
+
+esp_err_t elm_ble_reconnect(void)
+{
+    if (!atomic_load(&s_available) || !atomic_load(&s_enabled)) return ESP_ERR_INVALID_STATE;
+    atomic_store(&s_control_pending,true);
+    xSemaphoreGive(s_write_done);
+    return ESP_OK;
+}
+
+/* NimBLE host context only. Cancel scans/connections, then let disconnect invalidate the generation. */
+static void apply_control(void)
+{
+    link_t link=snapshot();
+    if (ble_gap_disc_active()) ble_gap_disc_cancel();
+    if (ble_gap_conn_active()) ble_gap_conn_cancel();
+    if (link.conn!=BLE_HS_CONN_HANDLE_NONE) {
+        stage(ELM_BLE_STOPPING,3000);
+        int rc=ble_gap_terminate(link.conn,BLE_ERR_REM_USER_CONN_TERM);
+        if (rc && rc!=BLE_HS_EALREADY) clear_link();
+    } else clear_link();
 }
 
 static bool secure(uint16_t conn, uint16_t status)
@@ -257,7 +310,8 @@ static bool matches(const struct ble_gap_disc_desc *disc)
 
 static void scan(void)
 {
-    if (!s_synced || snapshot().conn!=BLE_HS_CONN_HANDLE_NONE || ble_gap_conn_active() || ble_gap_disc_active()) return;
+    if (!s_synced || !atomic_load(&s_enabled) || atomic_load(&s_control_pending) ||
+        snapshot().conn!=BLE_HS_CONN_HANDLE_NONE || ble_gap_conn_active() || ble_gap_disc_active()) return;
     uint8_t own_type;
     if (ble_hs_id_infer_auto(0,&own_type)) return;
     struct ble_gap_disc_params params={.itvl=160,.window=96,.passive=0,.filter_duplicates=0};
@@ -272,12 +326,18 @@ static int gap_event(struct ble_gap_event *event, void *arg)
     link_t link=snapshot();
     switch (event->type) {
     case BLE_GAP_EVENT_DISC:
-        if (link.state!=ELM_BLE_SCANNING || now_ms()<s_retry_after || !matches(&event->disc)) break;
+        if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending) ||
+            link.state!=ELM_BLE_SCANNING || now_ms()<s_retry_after || !matches(&event->disc)) break;
         s_peer=event->disc.addr;
         if (ble_gap_disc_cancel()) break;
         uint8_t own_type;
         if (ble_hs_id_infer_auto(0,&own_type)) break;
         stage(ELM_BLE_CONNECTING,12000);
+        char address[18];
+        snprintf(address,sizeof(address),"%02X:%02X:%02X:%02X:%02X:%02X",s_peer.val[5],s_peer.val[4],s_peer.val[3],s_peer.val[2],s_peer.val[1],s_peer.val[0]);
+        portENTER_CRITICAL(&s_lock);
+        memcpy(s_link.address,address,sizeof(address));
+        portEXIT_CRITICAL(&s_lock);
         ESP_LOGI(TAG,"Connecting to %02X:%02X:%02X:%02X:%02X:%02X RSSI=%d",s_peer.val[5],s_peer.val[4],s_peer.val[3],s_peer.val[2],s_peer.val[1],s_peer.val[0],event->disc.rssi);
         if (ble_gap_connect(own_type,&s_peer,10000,NULL,gap_event,NULL)) drop();
         break;
@@ -285,12 +345,17 @@ static int gap_event(struct ble_gap_event *event, void *arg)
         s_retry_after=now_ms()+1500;
         break;
     case BLE_GAP_EVENT_CONNECT:
-        if (event->connect.status) { ESP_LOGW(TAG,"Connection failed: %d",event->connect.status); drop(); break; }
+        if (event->connect.status) {
+            if (!atomic_load(&s_enabled)) clear_link();
+            else { ESP_LOGW(TAG,"Connection failed: %d",event->connect.status); drop(); }
+            break;
+        }
         portENTER_CRITICAL(&s_lock);
         ++s_link.generation;
         s_link.conn=event->connect.conn_handle;
         s_link.overflow=false;
         portEXIT_CRITICAL(&s_lock);
+        if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending)) { apply_control(); break; }
         s_pairing=false;
         stage(ELM_BLE_DISCOVERING,15000);
         if (CONFIG_OBD2_ELM327_BLE_REQUIRE_PAIRING || CONFIG_OBD2_ELM327_BLE_PASSKEY>=0) {
@@ -305,7 +370,8 @@ static int gap_event(struct ble_gap_event *event, void *arg)
         clear_link();
         break;
     case BLE_GAP_EVENT_NOTIFY_RX: {
-        if (event->notify_rx.conn_handle!=link.conn || event->notify_rx.attr_handle!=link.rx) break;
+        if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending) ||
+            event->notify_rx.conn_handle!=link.conn || event->notify_rx.attr_handle!=link.rx) break;
         uint16_t length=OS_MBUF_PKTLEN(event->notify_rx.om);
         uint32_t notification = atomic_fetch_add(&s_notification, 1) + 1;
         uint32_t transaction = atomic_load(&s_transaction);
@@ -353,8 +419,16 @@ static void watchdog(struct ble_npl_event *event)
     (void)event;
     link_t link=snapshot();
     if (s_synced) {
-        if (link.deadline && now_ms()>link.deadline) { ESP_LOGW(TAG,"Connection/discovery deadline expired"); drop(); }
-        else if (link.conn==BLE_HS_CONN_HANDLE_NONE && now_ms()>=s_retry_after) scan();
+        if (atomic_exchange(&s_control_pending,false)) {
+            s_immediate_retry=atomic_load(&s_enabled);
+            memset(s_rejected,0,sizeof(s_rejected));
+            apply_control();
+        } else if (!atomic_load(&s_enabled)) {
+            if (link.state!=ELM_BLE_OFF && (!link.deadline || now_ms()>link.deadline)) apply_control();
+        } else if (link.deadline && now_ms()>link.deadline) {
+            if (link.state==ELM_BLE_STOPPING) apply_control();
+            else { ESP_LOGW(TAG,"Connection/discovery deadline expired"); drop(); }
+        } else if (link.conn==BLE_HS_CONN_HANDLE_NONE && now_ms()>=s_retry_after) scan();
     }
     ble_npl_callout_reset(&s_watchdog,ble_npl_time_ms_to_ticks32(1000));
 }
@@ -363,7 +437,7 @@ static void on_sync(void)
 {
     if (ble_hs_util_ensure_addr(0)) { ESP_LOGE(TAG,"No local BLE identity"); return; }
     s_synced=true;
-    scan();
+    if (atomic_load(&s_enabled)) scan(); else stage(ELM_BLE_OFF,0);
 }
 
 static void on_reset(int reason)
@@ -394,7 +468,7 @@ esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_
     if (!s_command_lock || xSemaphoreTake(s_command_lock,pdMS_TO_TICKS(1000))!=pdTRUE) return ESP_ERR_INVALID_STATE;
     esp_err_t result=ESP_ERR_INVALID_STATE;
     link_t link=snapshot();
-    if (link.state!=ELM_BLE_READY) goto done;
+    if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending) || link.state!=ELM_BLE_READY) goto done;
     rx_chunk_t chunk;
     while (xQueueReceive(s_rx,&chunk,0)==pdTRUE) {}
     portENTER_CRITICAL(&s_lock); s_link.overflow=false; portEXIT_CRITICAL(&s_lock);
@@ -411,7 +485,7 @@ esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_
         if (!rc) {
             if (xSemaphoreTake(s_write_done,pdMS_TO_TICKS(timeout_ms))!=pdTRUE) { result=ESP_ERR_TIMEOUT; goto broken; }
             link_t updated=snapshot();
-            if (updated.generation!=link.generation) goto done;
+            if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending) || updated.generation!=link.generation) goto done;
             if (updated.write_status==BLE_HS_EAGAIN) goto done;
             rc=updated.write_status;
         }
@@ -419,7 +493,7 @@ esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_
     if (rc) { ESP_LOGW(TAG,"UART write failed: %d",rc); result=ESP_FAIL; goto broken; }
     while (now_ms()<deadline) {
         link_t updated=snapshot();
-        if (updated.generation!=link.generation || updated.state!=ELM_BLE_READY) goto done;
+        if (!atomic_load(&s_enabled) || atomic_load(&s_control_pending) || updated.generation!=link.generation || updated.state!=ELM_BLE_READY) goto done;
         if (updated.overflow) { result=ESP_ERR_INVALID_SIZE; goto broken; }
         if (xQueueReceive(s_rx,&chunk,pdMS_TO_TICKS(20))!=pdTRUE || chunk.generation!=link.generation) continue;
         elm_response_feed(response,chunk.data,chunk.length);
@@ -440,6 +514,15 @@ done:
 esp_err_t elm_ble_init(void)
 {
     if (s_command_lock) return ESP_ERR_INVALID_STATE;
+    nvs_handle_t nvs;
+    uint8_t enabled=1;
+    esp_err_t settings_err=nvs_open("bluetooth",NVS_READONLY,&nvs);
+    if (settings_err==ESP_OK) {
+        settings_err=nvs_get_u8(nvs,"enabled",&enabled);
+        nvs_close(nvs);
+    }
+    if (settings_err!=ESP_OK && settings_err!=ESP_ERR_NVS_NOT_FOUND) return settings_err;
+    atomic_store(&s_enabled,enabled!=0);
     static const char *uuids[][3]={
         {"FFF0","FFF2","FFF1"}, {"FFE0","FFE1","FFE1"},
         {"6E400001-B5A3-F393-E0A9-E50E24DCCA9E","6E400002-B5A3-F393-E0A9-E50E24DCCA9E","6E400003-B5A3-F393-E0A9-E50E24DCCA9E"},
@@ -477,6 +560,7 @@ esp_err_t elm_ble_init(void)
     ble_npl_event_init(&s_reset_event,reset_event,NULL);
     ble_npl_callout_init(&s_watchdog,nimble_port_get_dflt_eventq(),watchdog,NULL);
     ble_npl_callout_reset(&s_watchdog,ble_npl_time_ms_to_ticks32(1000));
+    atomic_store(&s_available,true);
     nimble_port_freertos_init(host_task);
     return ESP_OK;
 fail:

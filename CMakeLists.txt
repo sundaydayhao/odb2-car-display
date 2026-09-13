@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 set(IDF_TARGET "esp32p4" CACHE STRING "Vehicle display target")
-set(PROJECT_VER "0.2.0")
+set(PROJECT_VER "0.2.6")
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(odb2_dash)
 if(NOT IDF_TARGET STREQUAL "esp32p4")

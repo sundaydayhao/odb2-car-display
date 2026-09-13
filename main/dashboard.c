@@ -5,26 +5,24 @@
 
 #include "dashboard_text.h"
 #include "fonts/dashboard_fonts.h"
+#include "media_panel.h"
 
-#define PAGE_COUNT 5
+#define PAGE_COUNT DASHBOARD_PAGE_COUNT
 #define BINDING_COUNT 24
 #define RPM_LIMIT 8000
 #define RPM_WARNING 6000
 
-typedef struct {
-    uint32_t bg, ink, muted, line, track, panel, accent, hero, secondary, green, amber, red, on_accent, tint;
-} palette_t;
-
-static const palette_t s_palettes[2][3] = {
+static const dashboard_palette_t s_palettes[2][DASHBOARD_THEME_COUNT] = {
     {
         {0x101214,0xF3F7F3,0xA0ACA9,0x303A37,0x26322E,0x1C2321,0x46F3C5,0xDDF87A,0xFF86BB,0x83E69A,0xFFD079,0xFF7474,0x101B18,0x172A24},
         {0x101214,0xF3F7F3,0xA0ACA9,0x42332D,0x352922,0x1C2321,0xFF9B70,0xFFAB75,0x7BDAFF,0x83E69A,0xFFD079,0xFF7474,0x101B18,0x2B201B},
         {0x101214,0xF3F7F3,0xA0ACA9,0x393F28,0x303621,0x1C2321,0xE7FB69,0xE7FB69,0x59E1CE,0x83E69A,0xFF86BB,0xFF7474,0x101B18,0x252919},
     },
     {
-        {0xF0F2F1,0x191D20,0x5E666B,0xCCD4D2,0xDCE3E1,0xFFFFFF,0x007E6D,0x566B00,0xB32166,0x21823E,0x8F5700,0xC62727,0xFFFFFF,0xDEECE5},
-        {0xF0F2F1,0x191D20,0x5E666B,0xDDD1CB,0xE8DCD6,0xFFFFFF,0xBA3E15,0xB34016,0x0A679B,0x21823E,0x8F5700,0xC62727,0xFFFFFF,0xF0E3DD},
-        {0xF0F2F1,0x191D20,0x5E666B,0xD2D6B9,0xE1E5C7,0xFFFFFF,0x637600,0x637600,0x067C75,0x21823E,0xB32166,0xC62727,0xFFFFFF,0xE9EDCE},
+        /* Clear white, sky blue and warm sand: complete light appearances. */
+        {0xF5F7FA,0x202C3B,0x596879,0xCCD5E0,0xE0E6ED,0xFFFFFF,0x1765B0,0x174D86,0x7150A0,0x24734D,0x945400,0xBB3037,0xFFFFFF,0xE4EDF8},
+        {0xE2F2FB,0x163C53,0x446679,0xB3D3E4,0xCAE2F0,0xF6FCFF,0x006C95,0x005C86,0x724CAF,0x1E724E,0x925300,0xB82E40,0xFFFFFF,0xCBE9F6},
+        {0xF5EBDD,0x463B30,0x6C5D4D,0xD7C6AF,0xE7D8C3,0xFFFAF1,0x8F4D20,0x86451F,0x3F685E,0x326B40,0x875200,0xB52B32,0xFFFFFF,0xEEDBC0},
     },
 };
 
@@ -38,20 +36,20 @@ typedef struct {
 
 static lv_obj_t *s_screen, *s_content, *s_nav, *s_overlay, *s_title, *s_index;
 static lv_obj_t *s_toolbar;
-static lv_obj_t *s_status, *s_dot, *s_style_icon, *s_settings_icon, *s_top[2], *s_rule;
+static lv_obj_t *s_status, *s_settings_icon, *s_top[2], *s_rule;
+static void (*s_settings_handler)(void);
 static lv_obj_t *s_tabs[PAGE_COUNT], *s_tab_labels[PAGE_COUNT], *s_tab_icons[PAGE_COUNT];
 static lv_obj_t *s_revs[32], *s_wheels[4], *s_gear_bg, *s_g_point;
 static binding_t s_bindings[BINDING_COUNT];
 static size_t s_binding_count;
 static dashboard_data_t s_live;
 static uint32_t s_last_update;
-static bool s_has_live, s_demo, s_daylight, s_turbo = true;
+static bool s_has_live, s_demo, s_daylight = true, s_turbo = true;
 static uint8_t s_page, s_theme, s_period, s_pressure;
 static int s_fuel_price = 815;
-static const palette_t *s_p = &s_palettes[0][0];
-static const char *s_names[] = {TXT_DRIVE, TXT_HEALTH, TXT_TIRES, TXT_TRIP, TXT_POWER};
-static const char *s_titles[] = {TXT_DRIVE_TITLE, TXT_HEALTH_TITLE, TXT_TIRES_TITLE, TXT_TRIP_TITLE, TXT_POWER_TITLE};
-static const char *s_theme_names[] = {TXT_NEON, TXT_LAVA, TXT_ACID};
+static const dashboard_palette_t *s_p = &s_palettes[1][0];
+static const char *s_names[] = {TXT_DRIVE, TXT_HEALTH, TXT_TIRES, TXT_TRIP, TXT_POWER, "多媒体"};
+static const char *s_titles[] = {TXT_DRIVE_TITLE, TXT_HEALTH_TITLE, TXT_TIRES_TITLE, TXT_TRIP_TITLE, TXT_POWER_TITLE, "多媒体"};
 static const char *s_units[] = {"bar", "kPa", "psi"};
 static int s_width = 800, s_height = 480;
 static int sx(int x) { return x * s_width / 800; }
@@ -59,10 +57,9 @@ static int sy(int y) { return y * s_height / 480; }
 
 static void rebuild(void);
 static void refresh(void);
-static void open_settings(void);
 static void action(lv_event_t *event);
 
-enum { ACTION_STYLE = 10, ACTION_SETTINGS, ACTION_ALERTS, ACTION_CLOSE, ACTION_ENGINE, ACTION_SERVICE, ACTION_RECORDS };
+enum { ACTION_SETTINGS = 11, ACTION_ALERTS, ACTION_CLOSE, ACTION_ENGINE, ACTION_SERVICE, ACTION_RECORDS };
 
 static lv_obj_t *surface(lv_obj_t *parent, int x, int y, int w, int h)
 {
@@ -368,11 +365,8 @@ static const char *status_text(const dashboard_data_t *data)
     if (data->valid[DASH_COOLANT] && warning(DASH_COOLANT,data->value[DASH_COOLANT])) return TXT_COOLANT_HIGH;
     if (data->valid[DASH_FUEL] && warning(DASH_FUEL,data->value[DASH_FUEL])) return TXT_FUEL_LOW;
     if (data->valid[DASH_RPM] && warning(DASH_RPM,data->value[DASH_RPM])) return TXT_RPM_HIGH;
-    for (int i = 0; i < DASH_METRIC_COUNT; ++i) if (data->valid[i]) return TXT_LIVE;
-    if (data->link_state == DASH_LINK_SCANNING) return TXT_SCANNING;
-    if (data->link_state == DASH_LINK_CONNECTING) return TXT_CONNECTING;
-    if (data->link_state == DASH_LINK_INITIALIZING) return TXT_INITIALIZING;
-    return TXT_WAITING;
+    /* Connection progress belongs to Bluetooth settings; retain demo and vehicle warnings. */
+    return "";
 }
 
 static void fixed(char *text, size_t size, int64_t number, int scale, int decimals)
@@ -423,7 +417,6 @@ static void refresh(void)
     bool alert = !s_demo && (!strcmp(status,TXT_COOLANT_HIGH) || !strcmp(status,TXT_FUEL_LOW) || !strcmp(status,TXT_RPM_HIGH));
     lv_label_set_text(s_status,status);
     lv_obj_set_style_text_color(s_status,lv_color_hex(s_demo ? s_p->secondary : alert ? s_p->red : s_p->muted),0);
-    lv_obj_set_style_bg_color(s_dot,lv_color_hex(s_demo ? s_p->secondary : alert ? s_p->red : !strcmp(status,TXT_LIVE) ? s_p->green : s_p->muted),0);
     for (size_t i = 0; i < s_binding_count; ++i) {
         binding_t *b = &s_bindings[i];
         bool valid = data.valid[b->metric];
@@ -459,6 +452,7 @@ static void rebuild(void)
 {
     if (!s_screen) return;
     s_p = &s_palettes[s_daylight][s_theme];
+    media_panel_detach();
     lv_obj_clean(s_content);
     s_binding_count = 0;
     memset(s_revs,0,sizeof(s_revs));
@@ -476,7 +470,6 @@ static void rebuild(void)
     lv_label_set_text(s_index,index);
     lv_obj_set_style_text_color(s_title,lv_color_hex(s_p->ink),0);
     lv_obj_set_style_text_color(s_index,lv_color_hex(s_p->accent),0);
-    lv_obj_set_style_text_color(s_style_icon,lv_color_hex(s_p->secondary),0);
     lv_obj_set_style_text_color(s_settings_icon,lv_color_hex(s_p->muted),0);
     for (int i = 0; i < PAGE_COUNT; ++i) {
         lv_obj_set_style_bg_color(s_tabs[i],lv_color_hex(s_page == i ? s_p->accent : s_p->panel),0);
@@ -489,6 +482,7 @@ static void rebuild(void)
         case 2: create_tires(); break;
         case 3: create_trip(); break;
         case 4: create_performance(); break;
+        case 5: media_panel_create(s_content, s_p); break;
     }
     lv_obj_update_layout(s_content);
     refresh();
@@ -503,11 +497,21 @@ void dashboard_select_page(uint8_t page)
 
 uint8_t dashboard_active_page(void) { return s_page; }
 uint8_t dashboard_active_theme(void) { return s_theme; }
+const dashboard_palette_t *dashboard_palette(uint8_t theme, bool daylight)
+{
+    return &s_palettes[daylight][theme < DASHBOARD_THEME_COUNT ? theme : 0];
+}
 bool dashboard_demo_enabled(void) { return s_demo; }
+bool dashboard_daylight_enabled(void) { return s_daylight; }
+bool dashboard_turbo_enabled(void) { return s_turbo; }
+uint8_t dashboard_pressure_unit(void) { return s_pressure; }
+void dashboard_set_turbo(bool enabled) { s_turbo = enabled; rebuild(); }
+void dashboard_set_pressure_unit(uint8_t unit) { if (unit < 3) { s_pressure = unit; rebuild(); } }
+void dashboard_set_settings_handler(void (*handler)(void)) { s_settings_handler = handler; }
 
 void dashboard_select_theme(uint8_t theme)
 {
-    if (theme >= 3) return;
+    if (theme >= DASHBOARD_THEME_COUNT) return;
     s_theme = theme;
     rebuild();
 }
@@ -537,62 +541,13 @@ static lv_obj_t *dialog(const char *title)
     return sheet;
 }
 
-static void open_settings(void)
-{
-    lv_obj_t *sheet = dialog(TXT_SETTINGS);
-    const char *titles[] = {TXT_DAY,TXT_DEMO_MODE,TXT_TURBO_MODE};
-    bool enabled[] = {s_daylight,s_demo,s_turbo};
-    for (int i = 0; i < 3; ++i) {
-        label(sheet,titles[i],24,85+i*60,250,&dashboard_text_18,s_p->ink,LV_TEXT_ALIGN_LEFT);
-        lv_obj_t *sw = lv_switch_create(sheet);
-        lv_obj_set_pos(sw,sx(324),sy(75+i*60));
-        lv_obj_set_size(sw,sx(68),sy(38));
-        lv_obj_set_style_bg_color(sw,lv_color_hex(s_p->track),LV_PART_MAIN);
-        lv_obj_set_style_bg_color(sw,lv_color_hex(s_p->accent),LV_PART_INDICATOR | LV_STATE_CHECKED);
-        if (enabled[i]) lv_obj_add_state(sw,LV_STATE_CHECKED);
-        lv_obj_add_event_cb(sw,action,LV_EVENT_VALUE_CHANGED,(void *)(uintptr_t)(50+i));
-    }
-    label(sheet,TXT_PRESSURE_UNIT,24,264,128,&dashboard_text_18,s_p->ink,LV_TEXT_ALIGN_LEFT);
-    for (int i = 0; i < 3; ++i) text_button(sheet,s_units[i],159+i*79,252,74,60+i,s_pressure == i);
-    label(sheet,s_demo ? TXT_DEMO_ONLY : TXT_LIVE_ONLY,24,328,372,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_LEFT);
-}
-
 static void action(lv_event_t *event)
 {
     int id = (int)(uintptr_t)lv_event_get_user_data(event);
     if (id < PAGE_COUNT) { dashboard_select_page(id); return; }
-    if (id >= 30 && id < 33) {
-        lv_obj_add_flag(s_overlay,LV_OBJ_FLAG_HIDDEN);
-        dashboard_select_theme(id-30); return;
-    }
     if (id >= 40 && id < 43) { s_period = id-40; rebuild(); return; }
-    if (id >= 50 && id < 53) {
-        bool on = lv_obj_has_state(lv_event_get_target_obj(event),LV_STATE_CHECKED);
-        if (id == 50) dashboard_set_daylight(on);
-        else if (id == 51) dashboard_set_demo(on);
-        else { s_turbo = on; rebuild(); }
-        lv_obj_add_flag(s_overlay,LV_OBJ_FLAG_HIDDEN);
-        return;
-    }
-    if (id >= 60 && id < 63) {
-        s_pressure = id-60; rebuild(); lv_obj_add_flag(s_overlay,LV_OBJ_FLAG_HIDDEN); return;
-    }
     if (id == ACTION_CLOSE) { lv_obj_add_flag(s_overlay,LV_OBJ_FLAG_HIDDEN); return; }
-    if (id == ACTION_SETTINGS) { open_settings(); return; }
-    if (id == ACTION_STYLE) {
-        lv_obj_t *sheet = dialog(TXT_STYLE);
-        for (int i = 0; i < 3; ++i) {
-            lv_obj_t *obj = button(sheet,20,76+i*90,380,76,30+i,s_p->panel);
-            const palette_t *p = &s_palettes[s_daylight][i];
-            label(obj,i == s_theme ? LV_SYMBOL_OK : LV_SYMBOL_TINT,4,28,28,&lv_font_montserrat_14,s_p->accent,LV_TEXT_ALIGN_CENTER);
-            label(obj,s_theme_names[i],50,26,170,&dashboard_text_22,s_p->ink,LV_TEXT_ALIGN_LEFT);
-            rect(obj,268,23,25,30,p->accent,0);
-            rect(obj,297,23,25,30,p->secondary,0);
-            rect(obj,326,23,25,30,i == 0 ? p->hero : p->amber,0);
-            rect(obj,4,75,368,1,s_p->line,0);
-        }
-        return;
-    }
+    if (id == ACTION_SETTINGS) { if (s_settings_handler) s_settings_handler(); return; }
     const char *title = id == ACTION_ENGINE ? TXT_ENGINE_STATUS : id == ACTION_SERVICE ? TXT_MAINTENANCE : id == ACTION_RECORDS ? TXT_RECORDS : TXT_ALERTS;
     const char *detail = id == ACTION_ENGINE ? (s_demo ? TXT_NO_FAULT : TXT_NOT_READ) :
                          id == ACTION_SERVICE ? (s_demo ? TXT_SAMPLE_PLAN : TXT_NO_PLAN) :
@@ -639,25 +594,22 @@ void dashboard_create_on(lv_obj_t *parent, int width, int height)
     s_top[1] = rect(s_screen,640,0,160,3,s_p->secondary,0);
     s_index = label(s_screen,"01",28,21,28,&lv_font_montserrat_14,s_p->accent,LV_TEXT_ALIGN_LEFT);
     s_title = label(s_screen,TXT_DRIVE_TITLE,65,15,170,&dashboard_text_22,s_p->ink,LV_TEXT_ALIGN_LEFT);
-    s_toolbar = surface(s_screen,240,6,246,44);
+    s_toolbar = surface(s_screen,448,6,282,44);
     s_rule = rect(s_screen,28,53,744,1,s_p->line,0);
-    lv_obj_t *status_button = button(s_screen,496,6,184,44,ACTION_ALERTS,s_p->bg);
+    lv_obj_t *status_button = surface(s_screen,240,6,200,44);
+    lv_obj_remove_flag(status_button, LV_OBJ_FLAG_CLICKABLE);
     lv_obj_set_style_bg_opa(status_button,LV_OPA_TRANSP,0);
-    s_dot = rect(status_button,8,20,6,6,s_p->muted,LV_RADIUS_CIRCLE);
-    s_status = label(status_button,TXT_WAITING,26,12,152,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_RIGHT);
-    lv_obj_t *style = button(s_screen,688,6,44,44,ACTION_STYLE,s_p->bg);
-    lv_obj_set_style_bg_opa(style,LV_OPA_TRANSP,0);
-    s_style_icon = label(style,LV_SYMBOL_TINT,0,14,44,&lv_font_montserrat_14,s_p->secondary,LV_TEXT_ALIGN_CENTER);
+    s_status = label(status_button,"",0,12,200,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_RIGHT);
     lv_obj_t *settings = button(s_screen,738,6,44,44,ACTION_SETTINGS,s_p->bg);
     lv_obj_set_style_bg_opa(settings,LV_OPA_TRANSP,0);
-    s_settings_icon = label(settings,LV_SYMBOL_SETTINGS,0,14,44,&lv_font_montserrat_14,s_p->muted,LV_TEXT_ALIGN_CENTER);
+    s_settings_icon = label(settings,LV_SYMBOL_SETTINGS,0,11,44,&lv_font_montserrat_24,s_p->muted,LV_TEXT_ALIGN_CENTER);
     s_content = surface(s_screen,0,54,800,366);
     s_nav = rect(s_screen,0,420,800,60,s_p->panel,0);
-    const char *icons[] = {LV_SYMBOL_HOME,LV_SYMBOL_BARS,LV_SYMBOL_REFRESH,LV_SYMBOL_GPS,LV_SYMBOL_CHARGE};
+    const char *icons[] = {LV_SYMBOL_HOME,LV_SYMBOL_BARS,LV_SYMBOL_REFRESH,LV_SYMBOL_GPS,LV_SYMBOL_CHARGE,LV_SYMBOL_AUDIO};
     for (int i = 0; i < PAGE_COUNT; ++i) {
-        s_tabs[i] = button(s_nav,22+i*152,6,148,48,i,s_p->panel);
-        s_tab_icons[i] = label(s_tabs[i],icons[i],35,16,20,&lv_font_montserrat_14,s_p->muted,LV_TEXT_ALIGN_CENTER);
-        s_tab_labels[i] = label(s_tabs[i],s_names[i],65,13,72,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_LEFT);
+        s_tabs[i] = button(s_nav,22+i*126,6,122,48,i,s_p->panel);
+        s_tab_icons[i] = label(s_tabs[i],icons[i],14,16,20,&lv_font_montserrat_14,s_p->muted,LV_TEXT_ALIGN_CENTER);
+        s_tab_labels[i] = label(s_tabs[i],s_names[i],43,13,72,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_LEFT);
     }
     s_overlay = rect(s_screen,0,0,800,480,0x000000,0);
     lv_obj_set_style_bg_opa(s_overlay,LV_OPA_50,0);

@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Size: 144 px
  * Bpp: 4
- * Opts: --font C:\projects\odb2-car-display\managed_components\lvgl__lvgl\scripts\built_in_font\Montserrat-Medium.ttf --size 144 --bpp 4 --format lvgl --no-compress --no-kerning --lv-include lvgl.h --symbols 0123456789- -o C:\projects\odb2-car-display\main\fonts\dashboard_digits_144.c
+ * Opts: --font C:\projects\esp32-odb2-car-display\managed_components\lvgl__lvgl\scripts\built_in_font\Montserrat-Medium.ttf --size 144 --bpp 4 --format lvgl --no-compress --no-kerning --lv-include lvgl.h --symbols 0123456789- -o C:\projects\esp32-odb2-car-display\main\fonts\dashboard_digits_144.c
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE

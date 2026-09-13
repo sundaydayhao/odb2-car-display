@@ -90,7 +90,7 @@ static void worker(void *arg)
         elm_ble_status_t link=elm_ble_status();
         if (link.state!=ELM_BLE_READY) {
             initialized=false; vehicle=false;
-            state(link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : OBD_LINK_CONNECTING,true);
+            state(!link.enabled || !link.available ? OBD_LINK_WAITING : link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : OBD_LINK_CONNECTING,true);
             vTaskDelay(pdMS_TO_TICKS(100));
             continue;
         }
@@ -161,7 +161,7 @@ esp_err_t obd2_read_vehicle_data(obd2_vehicle_data_t *out)
     portEXIT_CRITICAL(&s_cache_lock);
     if (link.state!=ELM_BLE_READY || !same_session) {
         memset(out,0,sizeof(*out));
-        out->link_state=link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : link.state==ELM_BLE_READY ? OBD_LINK_INITIALIZING : OBD_LINK_CONNECTING;
+        out->link_state=!link.enabled || !link.available ? OBD_LINK_WAITING : link.state==ELM_BLE_SCANNING ? OBD_LINK_SCANNING : link.state==ELM_BLE_READY ? OBD_LINK_INITIALIZING : OBD_LINK_CONNECTING;
     }
     return ESP_OK;
 }

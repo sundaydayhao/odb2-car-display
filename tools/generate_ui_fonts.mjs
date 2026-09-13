@@ -15,9 +15,9 @@ const symbols = [...new Set(strings.join('') + '°' + [...serviceText].filter(ch
     .sort().join('');
 mkdirSync(output, { recursive: true });
 
-function convert(name, size, font, extra) {
+function convert(name, size, font, extra, bpp = 4) {
     const args = ['--yes', 'lv_font_conv@1.5.3', '--font', font, '--size', String(size),
-        '--bpp', '4', '--format', 'lvgl', '--no-compress', '--no-kerning',
+        '--bpp', String(bpp), '--format', 'lvgl', '--no-compress', '--no-kerning',
         '--lv-include', 'lvgl.h', ...extra, '-o', resolve(output, `${name}.c`)];
     const npmCli = resolve(dirname(process.execPath), 'node_modules/npm/bin/npx-cli.js');
     const result = spawnSync(process.execPath, [npmCli, ...args], { stdio: 'inherit', cwd: root });
@@ -33,5 +33,9 @@ convert('dashboard_digits_144', 144,
     resolve(lvgl, 'scripts/built_in_font/Montserrat-Medium.ttf'), ['--symbols', '0123456789-']);
 convert('dashboard_digits_72', 72,
     resolve(lvgl, 'scripts/built_in_font/Montserrat-Medium.ttf'), ['--symbols', '0123456789.-']);
+// Scanned SSIDs are user text, not a fixed UI vocabulary. Two-bit CJK keeps the font within the OTA slot.
+convert('dashboard_wifi_18', 18,
+    resolve(lvgl, 'tests/src/test_files/fonts/noto/NotoSansSC-Regular.ttf'),
+    ['--range', '0x20-0x024f,0x3000-0x30ff,0x4e00-0x9fff'], 2);
 copyFileSync(resolve(lvgl, 'tests/src/test_files/fonts/noto/OFL.txt'), resolve(output, 'Noto-OFL.txt'));
 console.log(`Generated UI fonts with ${symbols.length} non-ASCII characters and printable ASCII.`);

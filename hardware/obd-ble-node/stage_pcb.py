@@ -12,8 +12,10 @@ args=parser.parse_args();sys.path.insert(0,args.engine)
 from kicad_lib import sexp
 import pcbnew as k
 from connector_footprint import generate as generate_connector
+from antenna_footprint import generate as generate_antenna, clearance as antenna_clearance
 ROOT=Path(__file__).resolve().parent; NAME='obd_ble_node'
 generate_connector()
+generate_antenna()
 config=json.loads((ROOT/'design.json').read_text(encoding='utf-8'))
 subprocess.run(['kicad-cli','sch','export','netlist','--output',str(ROOT/'build/netlist.net'),str(ROOT/(NAME+'.kicad_sch'))],check=True)
 tree=sexp.load_file(str(ROOT/'build/netlist.net'))
@@ -52,6 +54,7 @@ for p in config['parts']:
         prop=k.PCB_FIELD(fp,k.FIELD_T_USER,prop_name);prop.SetText(prop_text)
         prop.SetVisible(False);prop.SetLayer(k.F_Fab);fp.Add(prop)
     fp.SetFPID(k.LIB_ID(group,name));board.Add(fp)
+    if p['dnp']:fp.SetAttributes(fp.GetAttributes()|k.FP_DNP)
     path=k.KIID_PATH()
     for token in field(comps[p['ref']],'tstamps').strip('/').split('/'):
         path.push_back(k.KIID(token))
@@ -75,13 +78,14 @@ for p in config['parts']:
     placed.append(p['ref'])
 def note(s,x,y,size,layer):
     t=k.PCB_TEXT(board);t.SetText(s);t.SetPosition(v(x,y));t.SetTextSize(v(size,size));t.SetTextThickness(k.FromMM(.12));t.SetLayer(layer);board.Add(t)
-note('38.5 x 16.6 mm / INTEGRATED CAN + BLE NODE A1',119.25,97.2,.85,k.Dwgs_User)
+note('38.5 x 16.6 mm / INTEGRATED CAN + BLE NODE A2',119.25,97.2,.85,k.Dwgs_User)
 note('J1: straight coaxial tails ASSUMED / verify physical fit',119.25,119.5,.8,k.Dwgs_User)
-note('F.Cu = plug rear view / wide edge up / external FPC antenna',119.25,121,.8,k.Dwgs_User)
-note('OBD-C3 A1',107,101.2,.8,k.F_SilkS)
+note('F.Cu = plug rear view / wide edge up / ceramic antenna at top right',119.25,121,.8,k.Dwgs_User)
+note('OBD-C3 A2',107,101.2,.8,k.F_SilkS)
 note('6H',125.25,102,.6,k.Dwgs_User)
 note('14L',125.25,114.2,.6,k.F_SilkS)
 note('16+',133.25,114.2,.6,k.F_SilkS)
+antenna_clearance(board)
 k.SaveBoard(str(ROOT/(NAME+'.kicad_pcb')),board,True)
 report={'net_membership':'PASS: every specified net and pin matches exported schematic','nets_audited':len(config['expected_nets']),
     'components_staged':len(placed),'omitted_components':[],

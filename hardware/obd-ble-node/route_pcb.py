@@ -30,7 +30,11 @@ def main():
     def pt(ref,n):return xy(pads[(ref,str(n))].GetPosition())
     # RF is kept on F.Cu over the dedicated In1 ground reference.
     track('RF_SOC',[pt('U5',1),(123.1,106.55),(122.77,106.22),pt('C20',1),(121.64,106.22),pt('L2',1)],width=.18)
-    track('RF50',[pt('L2',2),pt('C21',1),(119.82,106.4),(119.445,106.775),pt('J2',1)],width=.18)
+    seed=json.loads((ROOT/'ceramic_rf_routes.json').read_text())
+    design=json.loads((ROOT/'design.json').read_text());by_ref={p['ref']:p for p in design['parts']}
+    for ref,expected in seed['placement'].items():
+        assert all(by_ref[ref][key]==value for key,value in expected.items()),'Update reviewed RF seed after moving '+ref
+    for segment in seed['segments']:track(segment['net'],[segment['start'],segment['end']],width=segment['width'])
     track('VDD_RF',[pt('U5',2),(123.05,107.05),(122.78,107.32),pt('C12',1)],width=.2)
     track('VDD_RF',[pt('U5',3),(123.05,107.55),(123.05,107.05)],width=.2)
     # Buck high-current local loop; the input and output bulk caps stay close.
@@ -44,6 +48,7 @@ def main():
     allpads=[p for f in b.GetFootprints() for p in f.Pads() if p.GetNumber()]
     nonground=[p for p in allpads if p.GetNetname()!='/GND']
     keepouts=[z.GetBoundingBox() for f in b.GetFootprints() for z in f.Zones() if z.GetIsRuleArea()]
+    keepouts += [z.GetBoundingBox() for z in b.Zones() if z.GetIsRuleArea()]
     critical=[t for t in b.GetTracks() if t.GetNetname()!='/GND']
     def track_width(t):return k.ToMM(t.GetWidth(k.F_Cu) if isinstance(t,k.PCB_VIA) else t.GetWidth())
     def dist_segment(x,y,t):

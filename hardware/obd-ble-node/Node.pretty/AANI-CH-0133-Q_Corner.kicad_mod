@@ -1,0 +1,186 @@
+(footprint "AANI-CH-0133-Q_Corner"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Abracon ceramic 1.6x0.8x0.4; 5x3 mm all-layer clearance; floating pad 2 radiator per datasheet p4")
+	(property "Reference" "AE1"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "fd63aa3c-aeea-4562-9edf-93f611e76879")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "AANI-CH-0133-Q"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bc11727c-575e-4ef3-b79c-03033c2a2466")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e0253067-f699-4fd4-9edd-1880abc1d74c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3b8b9e73-17e9-47f0-bf42-c20ee2f75b35")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.295 -0.75)
+		(end 1.295 -0.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "53d1d48d-c482-48bf-bda8-8c08a36bb5a3")
+	)
+	(fp_line
+		(start -1.295 0.75)
+		(end -1.295 -0.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "385e99e4-7c74-4552-aa19-78ee103f451c")
+	)
+	(fp_line
+		(start 1.295 -0.75)
+		(end 1.295 0.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "b22fd47e-7c5a-4e09-a4ca-19675268d38f")
+	)
+	(fp_line
+		(start 1.295 0.75)
+		(end -1.295 0.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "92f14b43-62c8-4313-a36e-f1dd919f2679")
+	)
+	(fp_line
+		(start -0.8 -0.4)
+		(end 0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "0a84d4de-ed0b-49fe-b33c-d86baab42a2f")
+	)
+	(fp_line
+		(start -0.8 0.4)
+		(end -0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "a86bb811-0488-4ee9-95c0-ad57d05097cb")
+	)
+	(fp_line
+		(start 0.8 -0.4)
+		(end 0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "3e245b9a-8122-49bb-ac57-632f77bbf05f")
+	)
+	(fp_line
+		(start 0.8 0.4)
+		(end -0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "170fc042-2d3c-46dc-8343-eb6fafb1a1f6")
+	)
+	(pad "1" smd rect
+		(at -0.795 0)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "f19a04d8-3a95-4db3-ba91-cc9fc1766bac")
+	)
+	(pad "2" smd rect
+		(at 0.795 0)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "35f4aa4e-4c14-4f01-bef0-e807010e78b2")
+	)
+	(pad "2" smd custom
+		(at 0.795 0)
+		(size 0.5 1)
+		(layers "F.Cu")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -0.05 0.49) (xy 0.25 0.49) (xy 0.25 3.01) (xy -0.05 3.01)
+				)
+				(width 0)
+				(fill yes)
+			)
+			(gr_poly
+				(pts
+					(xy -1.25 2.01) (xy 0.25 2.01) (xy 0.25 3.01) (xy -1.25 3.01)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "cbec13db-e542-4469-b682-f50e30e83405")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/Node.3dshapes/AANI-CH-0133-Q.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

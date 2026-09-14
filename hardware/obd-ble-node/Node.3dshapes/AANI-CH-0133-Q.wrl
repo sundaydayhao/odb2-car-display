@@ -1,0 +1,18 @@
+#VRML V2.0 utf8
+# Representative 1.6 x 0.8 x 0.4 mm ceramic body, inch/0.1 units for KiCad.
+Transform { translation 0 0 0.07874 children [ Shape {
+ appearance Appearance { material Material { diffuseColor 0.88 0.88 0.84 } }
+ geometry Box { size 0.62992 0.31496 0.15748 }
+} ] }
+Transform { translation -0.26575 0 0.07874 children [ Shape {
+ appearance Appearance { material Material { diffuseColor 0.65 0.67 0.69 } }
+ geometry Box { size 0.09842 0.3155 0.158 }
+} ] }
+Transform { translation 0.26575 0 0.07874 children [ Shape {
+ appearance Appearance { material Material { diffuseColor 0.65 0.67 0.69 } }
+ geometry Box { size 0.09842 0.3155 0.158 }
+} ] }
+Transform { translation -0.12 0 0.159 children [ Shape {
+ appearance Appearance { material Material { diffuseColor 0.15 0.15 0.15 } }
+ geometry Box { size 0.075 0.075 0.002 }
+} ] }

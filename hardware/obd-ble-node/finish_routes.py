@@ -16,7 +16,7 @@ def xy(p):return k.ToMM(p.x),k.ToMM(p.y)
 def grid(p):return round((p[0]-100)/STEP),round((p[1]-100)/STEP)
 def world(x,y):return 100+x*STEP,100+y*STEP
 def width(t):return k.ToMM(t.GetWidth(k.F_Cu) if isinstance(t,k.PCB_VIA) else t.GetWidth())
-def route(b,ref1,pin1,ref2,pin2,trace_width=.127):
+def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
     fps={f.GetReference():f for f in b.GetFootprints()}
     p1=next(p for p in fps[ref1].Pads() if p.GetNumber()==str(pin1));p2=next(p for p in fps[ref2].Pads() if p.GetNumber()==str(pin2))
     assert p1.GetNetname()==p2.GetNetname()
@@ -49,6 +49,12 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127):
             for i,layer in enumerate(LAYERS):
                 if z.IsOnLayer(layer):paint(blocked[i],box,distance,trace_width/2+.012)
             paint(via_block,box,distance,.212)
+    for z in b.Zones():
+        if not z.GetIsRuleArea():continue
+        bb=z.GetBoundingBox();box=tuple(k.ToMM(n) for n in [bb.GetLeft(),bb.GetTop(),bb.GetRight(),bb.GetBottom()]);distance=rectangle(box)
+        for i,layer in enumerate(LAYERS):
+            if z.IsOnLayer(layer) and not (net=='/ANT_FEED' and layer==k.F_Cu):paint(blocked[i],box,distance,trace_width/2+.012)
+        paint(via_block,box,distance,.212)
     for t in b.GetTracks():
         if t.GetNetname()==net:continue
         ax,ay=xy(t.GetStart());bx,by=xy(t.GetEnd());tw=width(t)
@@ -84,7 +90,7 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127):
         for dx,dy,extra in [(-1,0,1),(1,0,1),(0,-1,1),(0,1,1),(-1,-1,1.41421356),(-1,1,1.41421356),(1,-1,1.41421356),(1,1,1.41421356)]:
             nx=x+dx;ny=y+dy
             if 0<=nx<NX and 0<=ny<NY and not blocked[l,ny,nx]:neighbors.append((nx,ny,l,extra))
-        if not via_block[y,x]:
+        if allow_vias and not via_block[y,x]:
             for nl in range(3):
                 if nl!=l and not blocked[nl,y,x]:neighbors.append((x,y,nl,25))
         for nx,ny,nl,extra in neighbors:

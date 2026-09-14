@@ -89,6 +89,7 @@ GATE = ic('SN74LVC1G32DCKR', [('1','A','input'),('2','B','input'),('3','GND','po
 ESD = ic('PESD2CANFD24V-T', [('1','CANL','passive'),('2','CANH','passive')], [('3','GND','passive')],width=10.16)
 OBD = ic('OBDII_LOGICAL_ONLY', [(str(n),f'OBD_{n}','passive') for n in range(1,9)],
     [(str(n),f'OBD_{n}','passive') for n in range(9,17)],width=10.16)
+ANT = ic('AANI-CH-0133-Q', [('1','RF_FEED','passive')], [('2','OPEN_RADIATOR','no_connect')],width=15.24)
 
 parts = []
 def part(ref, value, symbol, footprint, nets, sch, pcb=None, rot=0, side='F', angle=0, mpn='', note='', dnp=False):
@@ -155,7 +156,11 @@ c('C19','16p C0G','XTAL_N','GND',(219.71,325.12),(134.7,107.9))
 c('C20','1.5p C0G','RF_SOC','GND',(353.06,350.52),(123.9,108),footprint='Capacitor_SMD:C_0201_0603Metric')
 part('L2','2.4nH','Device:L','Inductor_SMD:L_0201_0603Metric',{1:'RF_SOC',2:'RF50'},(401.32,341.63),(123,107.2),rot=90,mpn='LQP03TG2N4B02D')
 c('C21','1.5p C0G','RF50','GND',(447.04,350.52),(121.9,107.6),footprint='Capacitor_SMD:C_0201_0603Metric')
-part('J2','U.FL / external FPC antenna','Connector:Conn_Coaxial','Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical',{1:'RF50',2:'GND'},(523.24,347.98),(121.2,107.1),angle=180,mpn='U.FL-R-SMT-1(10)',note='Coax/FPC antenna located in plastic case away from OBD metal')
+# Antenna pi match is separate from the C3 chip matching circuit above.
+part('L3','5.6nH TUNE','Device:L','Inductor_SMD:L_0402_1005Metric',{1:'RF50',2:'ANT_FEED'},(401.32,375.92),rot=90,mpn='LQW15AN5N6C10',note='Antenna EVB X2 starting value; final enclosure VNA tuning required')
+part('L4','1.8nH TUNE','Device:L','Inductor_SMD:L_0402_1005Metric',{1:'RF50',2:'GND'},(346.71,382.27),mpn='LQW15AN1N8C00',note='Antenna EVB X3 shunt on radio side; tune after assembly')
+c('C23','DNP / ANT TUNE','ANT_FEED','GND',(454.66,382.27),None,dnp=True,note='EVB X1 antenna-side shunt slot; not fitted initially')
+part('AE1','AANI-CH-0133-Q',ANT,'Node:AANI-CH-0133-Q_Corner',{1:'ANT_FEED'},(528.32,369.57),mpn='AANI-CH-0133-Q-T',note='Ceramic antenna; 5 x 3 mm all-layer clearance. Pin 2 floating printed radiator per datasheet, never GND. Match in final OBD case.')
 
 # ADC samples the protected supply: reported voltage excludes D1/fuse drop.
 r('R9','1M 1%','VIN_PROT','VBAT_ADC',(59.69,353.06),(127.4,109.3),side='B')
@@ -166,7 +171,7 @@ part('D4','GREEN','Device:LED','LED_SMD:LED_0402_1005Metric',{1:'GND',2:'LED_A'}
 r('R12','499R','U0TX','UART_TX',(52.07,387.35),(133.5,111.4),side='B')
 # Separate pogo lands, not a USB connector or USB 5V supply input.
 for i, net in enumerate(['GND','+3V3','EN','BOOT','U0RX','UART_TX','USB_DM','USB_DP']):
-    part('TP'+str(i+1),net,'Connector:TestPoint','TestPoint:TestPoint_Pad_D1.0mm',{1:net},(326.39+31.75*(i%4),377.19+15.24*(i//4)),
+    part('TP'+str(i+1),net,'Connector:TestPoint','TestPoint:TestPoint_Pad_D1.0mm',{1:net},(100.33+40.64*(i%4),379.73+17.78*(i//4)),
          (101.5+2*i,115.2),side='B',note='Bench fixture pad')
 
 # Short, unambiguous label stubs keep the sheet legible at functional-block scale.
@@ -179,7 +184,7 @@ positions={
  'C12':(122.9,110.8),'FB1':(120.5,111.6),'C11':(122.1,113.8),
  'C13':(126.7,115.5),'C14':(132,114.3),'C15':(127.2,107.6),'C16':(132,112.8),
  'Y1':(133,106),'C18':(131.8,108.6),'C19':(134.2,108.6),
- 'C20':(124,108.9),'L2':(122.8,108),'C21':(122.4,109.5),'J2':(119.3,108.4),
+ 'C20':(124,108.9),'L2':(122.8,108),'C21':(122.4,109.5),
  'C22':(123.8,109.3),'R10':(126.1,109.3),'R9':(128.4,109.3),
  'R5':(123.8,114.6),'C17':(123.8,112.5),'R6':(126.1,112.5),'R7':(128.4,114.6),'R8':(130.7,114.6),
  'R1':(114,104),'R2':(114,106),'C6':(128,102.8)
@@ -197,7 +202,7 @@ for p in parts:
     x,y,angle,side=integrated[p['ref']]
     p.update(pcb=[100+x,100+y],angle=angle,side=side)
 doc=build.empty_sheet(uid('root'),'A2'); segments=[]; pins=[]; expected={}
-doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A1 PROTOTYPE"))'))
+doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A2"))'))
 for p in parts:
     definition=p['symbol']; libpins=list(sexp.walk(definition,'pin'))
     names=[atoms(find(n,'number'))[0] for n in libpins]
@@ -262,7 +267,7 @@ for i,net in enumerate(['VBAT','GND','VIN_PROT','+5V','VDD_RF']):
 
 def text(msg,x,y,size=1.524):
     ops._insert_body(doc,parse(f'(text {sexp.dumps(q(msg))} (at {x:g} {y:g} 0) (effects (font (size {size:g} {size:g})) (justify left top)) (uuid "{uid(msg)}"))'))
-text('REV A / 38.5 x 16.6 mm / CLASSIC CAN + BLE / ENGINEERING DRAFT',22.86,17.78,2.54)
+text('REV A2 / 38.5 x 16.6 mm / CLASSIC CAN + BLE / CERAMIC ANTENNA PROTOTYPE',22.86,17.78,2.54)
 text('J1: straight-tail 4.00 x 8.60 mm grid ASSUMED\nPlated slot 2.40 x 1.20 mm: verify actual plug fit.',20.32,28,1.27)
 text('12 V INPUT / REVERSE PROTECTION / 65 V BUCK / 5 V -> 3.3 V',120.65,25.4,1.778)
 text('No 120 ohm termination on vehicle stub. TX inhibit HIGH physically forces recessive.',25.4,133.35)

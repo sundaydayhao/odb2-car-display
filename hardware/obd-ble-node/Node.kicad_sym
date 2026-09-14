@@ -1525,4 +1525,78 @@
 			)
 		)
 	)
+	(symbol "AANI-CH-0133-Q"
+		(pin_names
+			(offset 0.635)
+		)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AANI-CH-0133-Q"
+			(at 0 -7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "AANI-CH-0133-Q_0_1"
+			(rectangle
+				(start -15.24 3.81)
+				(end 15.24 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "AANI-CH-0133-Q_1_1"
+			(pin passive line
+				(at -20.32 0 0)
+				(length 5.08)
+				(name "RF_FEED"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin no_connect line
+				(at 20.32 0 180)
+				(length 5.08)
+				(name "OPEN_RADIATOR"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+		)
+	)
 )

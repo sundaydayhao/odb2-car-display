@@ -28,6 +28,34 @@ import pcbnew as k
 board=k.LoadBoard(str(root/'obd_ble_node.kicad_pcb'))
 footprints={f.GetReference():f for f in board.GetFootprints()}
 assert set(footprints)=={p['ref'] for p in design['parts']}
+assert 'J2' not in footprints and 'AE1' in footprints,'External antenna connector must not return'
+ant=footprints['AE1']
+assert ant.GetValue()=='AANI-CH-0133-Q'
+assert ant.GetFPID().GetLibItemName()=='AANI-CH-0133-Q_Corner'
+for p in ant.Pads():
+    if p.GetNumber()=='1':assert p.GetNetname()=='/ANT_FEED'
+    elif p.GetNumber()=='2':assert p.GetNetname().startswith('unconnected-'), 'Radiator must float, never GND'
+assert footprints['C23'].GetAttributes() & k.FP_DNP,'Antenna X1 should initially be DNP'
+areas=[z for z in board.Zones() if z.GetIsRuleArea() and z.GetZoneName()=='ANTENNA_CLEARANCE']
+assert len(areas)==1
+area=areas[0];bb=area.GetBoundingBox()
+assert k.ToMM(bb.GetWidth())>=3.25 and k.ToMM(bb.GetHeight())>=5.25
+assert area.GetDoNotAllowZoneFills() and area.GetDoNotAllowVias()
+for layer in [k.F_Cu,k.In1_Cu,k.In2_Cu,k.B_Cu]:assert area.IsOnLayer(layer)
+assert {z.GetZoneName() for z in board.Zones() if z.GetIsRuleArea()} >= {'ANTENNA_NO_INNER_TRACKS','ANTENNA_TOP_TRACK_GUARD'}
+# Conservative geometric guard also covers the small reserved feed corridor.
+def touches_antenna(item):
+    box=item.GetBoundingBox()
+    return box.GetRight()>135250000 and box.GetLeft()<138500000 and box.GetBottom()>100000000 and box.GetTop()<105250000
+for f in board.GetFootprints():
+    if f.GetReference()!='AE1':assert not any(touches_antenna(p) for p in f.Pads()),('Foreign pad in antenna clearance',f.GetReference())
+for t in board.GetTracks():
+    if touches_antenna(t):assert not isinstance(t,k.PCB_VIA) and t.GetLayer()==k.F_Cu and t.GetNetname()=='/ANT_FEED','Foreign copper in antenna clearance'
+for t in board.GetTracks():
+    if t.GetNetname() in ['/RF_SOC','/RF50','/ANT_FEED']:
+        assert not isinstance(t,k.PCB_VIA) and t.GetLayer()==k.F_Cu,'RF must remain on F.Cu without signal vias'
+assert next(p for p in design['parts'] if p['ref']=='L3')['nets']=={'1':'RF50','2':'ANT_FEED'}
+assert next(p for p in design['parts'] if p['ref']=='L4')['nets']=={'1':'RF50','2':'GND'}
 j1={int(p.GetNumber()):p for p in footprints['J1'].Pads()}
 assert set(j1)==set(range(1,17))
 for n,p in j1.items():
@@ -52,6 +80,7 @@ result={'erc_violations':len(e),'pcb_placement_violations':len(drc['violations']
     'unconnected_items':len(drc['unconnected_items']),'schematic_parity_issues':len(parity),
     'firmware_pinmap':'PASS','components':len(footprints),'obd_physical_pads':len(j1),
     'tracks':len(tracks),'electrical_layout_gate':'PASS','production_ready':False,
+    'antenna':'AANI-CH-0133-Q-T; all-layer clearance and separate pi match verified',
     'blocker':'Verify actual plug fit, antenna/RF, CAN hardware, power transients and parking current on assembled prototypes.'}
 (out/'verification.json').write_text(json.dumps(result,indent=2))
 print(json.dumps(result,indent=2))

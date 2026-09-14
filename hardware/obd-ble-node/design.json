@@ -1084,27 +1084,98 @@
       "dnp": false
     },
     {
-      "ref": "J2",
-      "value": "U.FL / external FPC antenna",
-      "lib_id": "Connector:Conn_Coaxial",
-      "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+      "ref": "L3",
+      "value": "5.6nH TUNE",
+      "lib_id": "Device:L",
+      "footprint": "Inductor_SMD:L_0402_1005Metric",
+      "nets": {
+        "1": "RF50",
+        "2": "ANT_FEED"
+      },
+      "sch": [
+        401.32,
+        375.92
+      ],
+      "pcb": [
+        133.0,
+        100.8
+      ],
+      "rot": 90,
+      "side": "F",
+      "angle": 0,
+      "mpn": "LQW15AN5N6C10",
+      "note": "Antenna EVB X2 starting value; final enclosure VNA tuning required",
+      "dnp": false
+    },
+    {
+      "ref": "L4",
+      "value": "1.8nH TUNE",
+      "lib_id": "Device:L",
+      "footprint": "Inductor_SMD:L_0402_1005Metric",
       "nets": {
         "1": "RF50",
         "2": "GND"
       },
       "sch": [
-        523.24,
-        347.98
+        346.71,
+        382.27
       ],
       "pcb": [
-        118.8,
-        108.8
+        131.5,
+        101.5
       ],
       "rot": 0,
       "side": "F",
-      "angle": 270,
-      "mpn": "U.FL-R-SMT-1(10)",
-      "note": "Coax/FPC antenna located in plastic case away from OBD metal",
+      "angle": 90,
+      "mpn": "LQW15AN1N8C00",
+      "note": "Antenna EVB X3 shunt on radio side; tune after assembly",
+      "dnp": false
+    },
+    {
+      "ref": "C23",
+      "value": "DNP / ANT TUNE",
+      "lib_id": "Device:C",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "nets": {
+        "1": "ANT_FEED",
+        "2": "GND"
+      },
+      "sch": [
+        454.66,
+        382.27
+      ],
+      "pcb": [
+        134.8,
+        101.4
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 90,
+      "mpn": "DNP / ANT TUNE",
+      "note": "EVB X1 antenna-side shunt slot; not fitted initially",
+      "dnp": true
+    },
+    {
+      "ref": "AE1",
+      "value": "AANI-CH-0133-Q",
+      "lib_id": "Node:AANI-CH-0133-Q",
+      "footprint": "Node:AANI-CH-0133-Q_Corner",
+      "nets": {
+        "1": "ANT_FEED"
+      },
+      "sch": [
+        528.32,
+        369.57
+      ],
+      "pcb": [
+        137.20499999999998,
+        100.75
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "AANI-CH-0133-Q-T",
+      "note": "Ceramic antenna; 5 x 3 mm all-layer clearance. Pin 2 floating printed radiator per datasheet, never GND. Match in final OBD case.",
       "dnp": false
     },
     {
@@ -1193,12 +1264,12 @@
         350.52
       ],
       "pcb": [
-        135.4,
-        101.5
+        119,
+        109
       ],
       "rot": 90,
-      "side": "B",
-      "angle": 0,
+      "side": "F",
+      "angle": 180,
       "mpn": "1k",
       "note": "",
       "dnp": false
@@ -1217,8 +1288,8 @@
         382.27
       ],
       "pcb": [
-        136.5,
-        101.5
+        117,
+        108.8
       ],
       "rot": 0,
       "side": "F",
@@ -1260,8 +1331,8 @@
         "1": "GND"
       },
       "sch": [
-        326.39,
-        377.19
+        100.33,
+        379.73
       ],
       "pcb": [
         102.0,
@@ -1283,8 +1354,8 @@
         "1": "+3V3"
       },
       "sch": [
-        358.14,
-        377.19
+        140.97,
+        379.73
       ],
       "pcb": [
         104.5,
@@ -1306,8 +1377,8 @@
         "1": "EN"
       },
       "sch": [
-        389.89,
-        377.19
+        181.61,
+        379.73
       ],
       "pcb": [
         128.0,
@@ -1329,8 +1400,8 @@
         "1": "BOOT"
       },
       "sch": [
-        421.64,
-        377.19
+        222.25,
+        379.73
       ],
       "pcb": [
         130.1,
@@ -1352,8 +1423,8 @@
         "1": "U0RX"
       },
       "sch": [
-        326.39,
-        392.43
+        100.33,
+        397.51
       ],
       "pcb": [
         132.2,
@@ -1375,8 +1446,8 @@
         "1": "UART_TX"
       },
       "sch": [
-        358.14,
-        392.43
+        140.97,
+        397.51
       ],
       "pcb": [
         134.3,
@@ -1398,8 +1469,8 @@
         "1": "USB_DM"
       },
       "sch": [
-        389.89,
-        392.43
+        181.61,
+        397.51
       ],
       "pcb": [
         130.5,
@@ -1421,8 +1492,8 @@
         "1": "USB_DP"
       },
       "sch": [
-        421.64,
-        392.43
+        222.25,
+        397.51
       ],
       "pcb": [
         133.0,
@@ -1571,7 +1642,11 @@
         "2"
       ],
       [
-        "J2",
+        "L4",
+        "2"
+      ],
+      [
+        "C23",
         "2"
       ],
       [
@@ -2093,7 +2168,25 @@
         "1"
       ],
       [
-        "J2",
+        "L3",
+        "1"
+      ],
+      [
+        "L4",
+        "1"
+      ]
+    ],
+    "ANT_FEED": [
+      [
+        "L3",
+        "2"
+      ],
+      [
+        "C23",
+        "1"
+      ],
+      [
+        "AE1",
         "1"
       ]
     ],

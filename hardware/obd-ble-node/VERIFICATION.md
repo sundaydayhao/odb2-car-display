@@ -4,6 +4,8 @@
 
 随后以 `aa76353` 为基线完成红框走线清理：删除 +3V3 的重复绕行及 EN 的回折尖角，61 段旧线替换为 4 段短线；仅这两个网络的 B.Cu 走线改变。元件、焊孔、测试点、定位结构和全部过孔几何保持一致。关闭 KiCad 后核对原文件与审查基线一致，再应用副本；正式 PCB 再次通过完整检查。差分线长度审查见 [布线审查记录](ROUTING_REVIEW.md)。
 
+再以 `c9ab071` 为基线修复正面两处交叉：VDD_RF 三角重复连接改为共用供电连接，J1.12/J1.13 间 +3V3 重复绕行改为主干加支线。57 段替换为 11 段，仅两个电源网的 F.Cu 变化；PCB 其余内容的语义比较一致。正式文件再次通过下列电气与布局检查，原生前后图及像素差分已复核。
+
 | 检查 | 结果 |
 |---|---|
 | 原理图几何与交叉误连检查 | PASS；植入跨网交叉时校验器失败 |
@@ -12,7 +14,7 @@
 | 固件 GPIO 与 C3 引脚／网络 | PASS，引脚映射不变 |
 | 完整 PCB DRC | 0 项违规，检查配置不变，未新增排除项 |
 | PCB 未连接／原理图一致性 | 均为 0 项 |
-| 板框与元件 | 38.5 × 16.6 mm；64 个封装，1569 段走线、104 个过孔 |
+| 板框与元件 | 38.5 × 16.6 mm；64 个封装，1523 段走线、104 个过孔 |
 | 背面测试排 | 9 个 Ø1.0 mm 焊盘，2.0 mm 节距，y=15.0 mm；网络与坐标断言通过 |
 | 探针接触面 | B.Cu / B.Mask，无锡膏；附近钻孔边缘距测试焊盘至少 0.1 mm，TP5 内原有过孔已移出 |
 | 定位孔 | H1 Ø1.2 mm 圆孔；H2 1.6 × 1.2 mm 水平槽，均 NPTH，中心距 32.3 mm |
@@ -42,6 +44,7 @@ OBD 双面开窗问题由专项层检查发现，普通 DRC 没有报告。修�
 - `a3-review.json`：与基线比较器件、网络、位置、射频路径、检查配置及 ERC／DRC 差集。
 - `a3-pixel-review.json`、`a3-back-diff.png`、`a3-sch-diff.png`：统一比例原生图差分，红色为旧图删除，绿色为新图添加，灰色为相同区域。
 - `a3-front.png`、`a3-back.png`、`a3-mask.png`、`a3-sch-detail.png`：A3 测试点布局阶段检查图；`a3-contact-map.png` 对应已纳入 Git 的夹具 SVG。
-- `a3-route-cleanup/review.json`、`a3-route-cleanup/pixel-review.json`、`a3-route-cleanup/routing-comparison.png`：后续红框走线清理的语义、像素与目视复核。该目录 `work/obd_ble_node.kicad_pcb` 与当前正式 PCB 字节一致。
+- `a3-route-cleanup/review.json`、`a3-route-cleanup/pixel-review.json`、`a3-route-cleanup/routing-comparison.png`：此前底层红框走线清理的语义、像素与目视复核。
+- `a3-front-cleanup/review.json`、`a3-front-cleanup/pixel-review.json`、`a3-front-cleanup/routing-comparison.png`：正面两处交叉清理的语义、像素与目视复核。该目录 `work/obd_ble_node.kicad_pcb` 与当前正式 PCB 字节一致。
 
 量产尚需确认插头公差／可焊镀层／塑料耐温、板厂成品槽孔及叠层、天线匹配与连接距离、晶振起振／频偏、输入保护及电源温升、USB 与下载接触可靠性。平均停车电流 ≤0.5 mA 仍是待验证目标，应断开调试支路，在不少于 24 小时的窗口覆盖周期唤醒、静默／背景 CAN、BLE 无请求及低电压场景。

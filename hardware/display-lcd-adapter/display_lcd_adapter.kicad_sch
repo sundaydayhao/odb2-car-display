@@ -1,0 +1,194 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "398fad38-fcd2-5278-a5bc-ab02094964ef")
+	(paper "A3")
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(title_block
+		(title "7 inch LCD / touch adapter")
+		(date "2026-09-14")
+		(rev "A0 - ENGINEERING PROTOTYPE")
+		(company "OBD2 Car Display")
+	)
+	(text "7 INCH LCD + GT911 / WTP4C5MP07S"
+		(at 20.32 15.24 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+			)
+			(justify left top)
+		)
+		(uuid "4b846267-657d-5b29-94ba-94fb43fdbad0")
+	)
+	(text "Based on official LCD adapter. Outline: 165 x 100 mm / 2 layers. See assembly and stackup notes."
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "0be4c868-a8f1-5911-b772-052d44ba9303")
+	)
+	(text "Prototype uses a regulated 5 V supply. Do not connect directly to vehicle 12 V."
+		(at 20.32 33.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "27401132-c993-5278-899d-aec7f1505d5b")
+	)
+	(sheet
+		(at 25.4 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f84917f1-a8cf-5775-9c91-06a379a75f93")
+		(property "Sheetname" "7 inch LCD / GT911 touch / 5 V input / reset interface"
+			(at 25.4 49.529999999999994 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lcd_interfaces.kicad_sch"
+			(at 25.4 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef"
+					(page "2")
+				)
+			)
+		)
+	)
+	(text "56 symbols / global net labels"
+		(at 29.209999999999997 58.419999999999995 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "dc1bda6d-8992-5d30-89dd-e495d53958ba")
+	)
+	(sheet
+		(at 215.9 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "19ef008f-69b2-503f-9d81-af5ded7ec977")
+		(property "Sheetname" "Backlight constant-current boost / 182 mA"
+			(at 215.9 49.529999999999994 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "backlight.kicad_sch"
+			(at 215.9 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef"
+					(page "3")
+				)
+			)
+		)
+	)
+	(text "10 symbols / global net labels"
+		(at 219.71 58.419999999999995 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "27ab4811-315d-5f04-abcd-fb4c175fe093")
+	)
+	(sheet
+		(at 25.4 99.06)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "936093df-3bef-591c-b975-610367731510")
+		(property "Sheetname" "LCD bias rails / 1.8 V logic supply"
+			(at 25.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lcd_bias.kicad_sch"
+			(at 25.4 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef"
+					(page "4")
+				)
+			)
+		)
+	)
+	(text "45 symbols / global net labels"
+		(at 29.209999999999997 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "ebade1f9-3f8e-59ba-9cce-e27d8cd3b268")
+	)
+)

@@ -1,0 +1,7551 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "940f335c-660d-5dac-a839-f7c710d472cb")
+	(paper "A2")
+	(lib_symbols
+		(symbol "Display:AP3012K"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AP3012K"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AP3012K_0_1"
+				(rectangle
+					(start -15.24 7.62)
+					(end 15.24 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "AP3012K_1_1"
+				(pin output line
+					(at -20.32 3.81 0)
+					(length 5.08)
+					(name "SW"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 0.0 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -3.81 0)
+					(length 5.08)
+					(name "FB"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 3.81 180)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 0.0 180)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Display:Connector_TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Connector_TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Connector_TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Connector_TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:Device_C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Device_C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device_C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:Device_D_Schottky_A1K2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Device_D_Schottky_A1K2"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device_D_Schottky_A1K2_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_D_Schottky_A1K2_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:Device_D_Zener_A1K2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Device_D_Zener_A1K2"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device_D_Zener_A1K2_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_D_Zener_A1K2_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:Device_L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Device_L"
+				(at 1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device_L_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_L_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:Device_R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Device_R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Device_R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Display:ME6211C18M5G_N"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ME6211C18M5G_N"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ME6211C18M5G_N_0_1"
+				(rectangle
+					(start -15.24 7.62)
+					(end 15.24 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "ME6211C18M5G_N_1_1"
+				(pin power_in line
+					(at -20.32 3.81 0)
+					(length 5.08)
+					(name "V_{IN}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 0.0 0)
+					(length 5.08)
+					(name "V_{SS}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -3.81 0)
+					(length 5.08)
+					(name "CE"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 20.32 3.81 180)
+					(length 5.08)
+					(name "NC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 20.32 0.0 180)
+					(length 5.08)
+					(name "V_{OUT}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Display:power_PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "power_PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "power_PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "power_PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(title_block
+		(title "LCD bias rails / 1.8 V logic supply")
+		(date "2026-09-14")
+		(rev "A0 - ENGINEERING PROTOTYPE")
+		(company "OBD2 Car Display")
+		(comment 1 "Derived from Espressif LCD adapter; WTP4C5MP07S assembly variant")
+	)
+	(text "LCD bias rails / 1.8 V logic supply"
+		(at 15.24 12.7 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "570bed11-3135-544e-a031-e031d34405bc")
+	)
+	(text "A0: J2 LCD + J8 GT911. J5/J7 DNP. R4 fitted; R37/R38 DNP. Reset is level shifted to 1.8 V."
+		(at 15.24 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "918ac645-e652-56c2-884e-8636ed47e354")
+	)
+	(symbol
+		(lib_id "Display:ME6211C18M5G_N")
+		(at 86.36 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d8f575ee-b134-5a81-96a6-b08cbb044c36")
+		(property "Reference" "U2"
+			(at 86.36 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "ME6211C18M5G-N"
+			(at 86.36 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOT23-5__5f716075cd"
+			(at 86.36 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ceaa4af-931d-41db-ba1e-c15bcd4ee4fd")
+		)
+		(pin "2"
+			(uuid "73c256bb-d4d6-444d-9803-9a133924327d")
+		)
+		(pin "3"
+			(uuid "753108ea-0131-4252-abd6-c058ca4e84e4")
+		)
+		(pin "4"
+			(uuid "d6aaa3ac-1289-4371-bc16-17265131cd10")
+		)
+		(pin "5"
+			(uuid "ac6b03f2-43e0-46f0-998c-0361c78a6535")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "ME6211C18M5G-N"
+			(at 86.36 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 52.07) (xy 58.42 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8bcc17b-fddc-4400-8e21-892f6ba34931")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 58.42 52.07 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "b0c66053-742e-5e10-a23e-47f323cef504")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 58.42 52.07 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 55.88) (xy 58.42 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cce0336b-dad9-4a3c-ac64-7d23a7f17c5a")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 58.42 55.88 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "a9be17d9-72d7-50a7-85ec-3907e6c62ac5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 58.42 55.88 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 59.69) (xy 58.42 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bcb38a6-c65f-44f8-9f63-a38e7e9ec3ae")
+	)
+	(global_label "N17128822"
+		(shape bidirectional)
+		(at 58.42 59.69 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "eadf1fd0-83b5-5972-9e04-d59ab742ecca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 58.42 59.69 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(no_connect
+		(at 106.68 52.07)
+		(uuid "b90d2287-60d2-596c-9783-f5fdc0232284")
+	)
+	(wire
+		(pts
+			(xy 106.68 55.88) (xy 114.3 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cee6329a-a42b-4d1e-9652-331331c70c4e")
+	)
+	(global_label "LCD_VDD"
+		(shape bidirectional)
+		(at 114.3 55.88 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "33bda4cb-755e-56d6-b347-62173d1aad86")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 114.3 55.88 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:AP3012K")
+		(at 226.06 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cc2d7e6c-e1b8-5a01-b29f-2aab2b145244")
+		(property "Reference" "U3"
+			(at 226.06 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "AP3012k"
+			(at 226.06 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOT23-5__5f716075cd"
+			(at 226.06 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 226.06 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee24d565-0afa-4c0e-9f01-a6f67411d717")
+		)
+		(pin "2"
+			(uuid "e90b9951-251a-44f9-9eed-36b7a5166328")
+		)
+		(pin "3"
+			(uuid "c4583c31-8a77-4856-a184-6c7ea2beee7e")
+		)
+		(pin "4"
+			(uuid "4cf20ef3-35c4-42b4-b361-9d950ac7dd78")
+		)
+		(pin "5"
+			(uuid "548879a8-9576-4014-b243-fad278cd0f5e")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "AP3012KTR-G1"
+			(at 226.06 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 205.74 52.07) (xy 198.12 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dca6d335-6b4c-4e3e-8673-d94da5bdd007")
+	)
+	(global_label "N17134948"
+		(shape bidirectional)
+		(at 198.12 52.07 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "85425e68-e2b1-5a4c-b5f6-6a7e6b8bbfe4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 198.12 52.07 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 205.74 55.88) (xy 198.12 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4aca83a-6095-471b-b0e5-016651ae9776")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 198.12 55.88 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "11faa64b-5890-510e-9b6c-d8c784635217")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 198.12 55.88 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 205.74 59.69) (xy 198.12 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58d5b60c-5ae8-4da1-a1e5-6278b633d764")
+	)
+	(global_label "N17135258"
+		(shape bidirectional)
+		(at 198.12 59.69 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "49bf2e30-481c-5bc7-bfff-60f4d8bbd0dc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 198.12 59.69 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 52.07) (xy 254 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "221c19f3-639f-4ea5-ba56-1111e0107193")
+	)
+	(global_label "N17134769"
+		(shape bidirectional)
+		(at 254.0 52.07 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "c5842928-5850-57d0-a5ca-fe4bb2fc05c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0 52.07 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 55.88) (xy 254 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b658bd1a-8168-4e68-9757-e3e3788403f6")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 254.0 55.88 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "f9d1253d-929b-5e5d-a6af-809da2784872")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254.0 55.88 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:power_PWR_FLAG")
+		(at 330.2 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72a53d12-349f-53b5-b0e1-6473da955c6a")
+		(property "Reference" "#FLG1"
+			(at 316.23 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 316.23 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4378d939-b471-4ef4-a4a4-57be24cde58c")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "#FLG1")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 43.18) (xy 330.2 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6855388c-d7f1-4b26-acef-d2f2cd0a70be")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 330.2 46.99 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "06abf133-75c5-5d8f-9e19-d15745b5f6ee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 46.99 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:power_PWR_FLAG")
+		(at 401.32 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "024266d9-59b7-5394-9bb7-4e53edf58c2e")
+		(property "Reference" "#FLG2"
+			(at 387.35 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 387.35 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 401.32 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d85d1dcb-f31e-4685-9c7a-03e0f1ae6f64")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "#FLG2")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 401.32 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 43.18) (xy 401.32 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "935d8c4e-708e-41da-896a-b801336ab82c")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 401.32 46.99 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "16b11f69-f9e4-589d-b526-3575d0e2cd3e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 46.99 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 469.9 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2d802ac5-ca2c-5d9f-904f-20919a2759a8")
+		(property "Reference" "C10"
+			(at 455.93 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 455.93 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 469.9 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08622414-3e2c-4d5b-85e7-eedd82a961f2")
+		)
+		(pin "2"
+			(uuid "c5edd2c4-d240-4d25-be95-bfada95a030d")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 469.9 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 39.37) (xy 469.9 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7bdfa0b-e567-4e22-b011-9907cbab1615")
+	)
+	(global_label "LCD_VDD"
+		(shape bidirectional)
+		(at 469.9 35.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "632cbb86-0a1c-5767-9293-46f3951c79a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 35.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 46.99) (xy 469.9 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69aafa7e-cfcf-44db-a112-71eb471aee1e")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 469.9 50.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "be2a0402-30cb-5afb-9bcb-16ac63fef96d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 50.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 539.75 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "17b6b158-3ee4-57af-ab9b-88f6f00a5300")
+		(property "Reference" "C11"
+			(at 525.78 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 525.78 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 539.75 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e1fed02c-87f9-463a-a32e-4a93ffc1bb48")
+		)
+		(pin "2"
+			(uuid "a9be0080-bdf9-4012-8e06-5044028e33bb")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 539.75 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 39.37) (xy 539.75 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "237eb06c-34de-483c-9b9e-63019b61f504")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 539.75 35.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "41df1344-ff52-5ac4-a70e-28d75faa1f65")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 35.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 46.99) (xy 539.75 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ce1c56b-e10e-433e-b0d0-672417373006")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 539.75 50.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "a177b8c8-1495-5791-b929-66e0d9717799")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 50.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 330.2 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "069497e4-f94b-5bb6-b5a7-f9ff303b8f39")
+		(property "Reference" "C12"
+			(at 316.23 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 316.23 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 330.2 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c97c1224-e0e5-4ddb-9af6-39c03417ba5f")
+		)
+		(pin "2"
+			(uuid "b5cd2232-8c42-490a-a812-72a4fbc1afc2")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 64.77) (xy 330.2 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bf8b5da-3ca4-418f-bace-f09d5b8eebf5")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 330.2 60.96 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "21d2d70a-8b39-51d1-8e23-8ea8e313fbb9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 60.96 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 72.39) (xy 330.2 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba8211c0-23f3-4470-b1df-d67d9f5fa14c")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 330.2 76.2 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "041aac9d-69f8-536e-9cb4-cccd89aa787b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 76.2 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 401.32 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4deeebda-71e0-5551-8702-0453b670ddd5")
+		(property "Reference" "C13"
+			(at 387.35 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 387.35 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 401.32 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af0ae303-1346-4d8b-b3e7-1ea3c7d91f4e")
+		)
+		(pin "2"
+			(uuid "523fd1d6-ccd1-41c7-b790-77e24d5bc4a5")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 401.32 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 64.77) (xy 401.32 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e3132a1-f59c-4eed-b3ac-65db9b505162")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 401.32 60.96 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "0433b292-5217-5774-a7f3-dffbc4f50597")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 60.96 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 72.39) (xy 401.32 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44526ed9-eb6e-447a-ac6d-82b569f0dd4f")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 401.32 76.2 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "3728e350-ea81-5eb6-a1fd-06ae81522bd1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 76.2 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 469.9 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "82ef670e-7926-5494-93ed-e4c1bf33d6c6")
+		(property "Reference" "C14"
+			(at 455.93 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 455.93 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 469.9 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2b9057d-466c-4fa5-94f1-11aaf4a9a80b")
+		)
+		(pin "2"
+			(uuid "dc0b3907-1fd9-4903-9b8d-e80db6cb6080")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 469.9 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 64.77) (xy 469.9 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "054d0c8a-7eab-449a-8452-13de0750da19")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 469.9 60.96 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "11d8dbcb-35ca-5fb9-9843-f0ca6f2b8ed2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 60.96 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 72.39) (xy 469.9 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ce88ef4-f747-4504-9876-083c2d7ee9b2")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 469.9 76.2 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "83ecb174-50e6-5975-bfb2-8bc980a8bb7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 76.2 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 539.75 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "69964334-857d-53f5-b0ea-486093a5874c")
+		(property "Reference" "C15"
+			(at 525.78 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 525.78 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 539.75 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7b959962-ad7a-4178-b92f-c1002bc993b0")
+		)
+		(pin "2"
+			(uuid "61e14d3e-d86e-4216-8fee-7c204f412e3b")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 539.75 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 64.77) (xy 539.75 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e4f8493-b4e7-4edb-b236-f2dd8a666b48")
+	)
+	(global_label "N17136021"
+		(shape bidirectional)
+		(at 539.75 60.96 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "5b0f0a24-b352-5c5e-a277-fbbb13c1dcd8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 60.96 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 72.39) (xy 539.75 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fe5b905-4c85-4f5b-907b-908805c40498")
+	)
+	(global_label "N17134948"
+		(shape bidirectional)
+		(at 539.75 76.2 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "1c7914bb-eb64-5679-aafa-377c5dc809f4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 76.2 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 50.8 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d8891813-75db-54c2-9056-893cbc1bae7c")
+		(property "Reference" "C16"
+			(at 36.83 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 36.83 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 50.8 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ebff4a59-9789-4b41-9d57-e6468c2e891e")
+		)
+		(pin "2"
+			(uuid "023e90fc-5e0c-49b0-a045-d7e6f0c88dd1")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 50.8 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 90.17) (xy 50.8 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69d578a8-61d8-4d23-bafd-c1e5d19b1e0e")
+	)
+	(global_label "N17135942"
+		(shape bidirectional)
+		(at 50.8 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "cde192be-ee40-58f2-a5eb-69c48ffe1517")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 97.79) (xy 50.8 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b392f69d-76bc-4f24-b7b2-d17b6af134f5")
+	)
+	(global_label "N17134948"
+		(shape bidirectional)
+		(at 50.8 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "aa239703-d81a-5414-b6ba-f5e5bb7b0419")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 121.92 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7c44e61c-1617-5a14-9b73-8a4c3eb01a36")
+		(property "Reference" "C17"
+			(at 107.95 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "1u/50V"
+			(at 107.95 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 121.92 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e0d66d04-b1e0-47eb-ae14-53d1ef55e94c")
+		)
+		(pin "2"
+			(uuid "bad5b952-295f-4911-8693-5179a3629410")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 121.92 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 90.17) (xy 121.92 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e09c0942-b8fe-4c18-86f1-b3329eb5eeb8")
+	)
+	(global_label "N17136498"
+		(shape bidirectional)
+		(at 121.92 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "9b2b4e9a-85f6-51e3-be04-0ff2c01d24da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 97.79) (xy 121.92 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74ddb321-2364-4ba0-986c-77472109bdd5")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 121.92 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "f9ea6ab9-4a1a-5a9f-844c-f76bc53d6994")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 190.5 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "26157f30-40ef-5386-9c8e-f05253934b5f")
+		(property "Reference" "C18"
+			(at 176.53 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "1u/50V"
+			(at 176.53 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 190.5 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "688f0cff-86b0-4b14-a0ab-ee3b764d8f65")
+		)
+		(pin "2"
+			(uuid "06084ee6-2e51-48e7-9e72-701255e912d3")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 190.5 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 90.17) (xy 190.5 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0a25203-329e-4aae-84ec-f7b7139df38d")
+	)
+	(global_label "N17136250"
+		(shape bidirectional)
+		(at 190.5 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "465ab197-fcdb-54c8-8223-598ec63acd8a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 97.79) (xy 190.5 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7585b099-bb2a-4e67-9b07-a7a24c729455")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 190.5 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "5b0d8372-d2bb-57d4-9e72-537223f1988f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 260.35 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4377dfac-7695-5fa4-b666-85c01cf5345f")
+		(property "Reference" "C21"
+			(at 246.38 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 246.38 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 260.35 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c5412eed-a97b-4dd2-9e53-d1a82bf929bd")
+		)
+		(pin "2"
+			(uuid "8b394e4e-443a-4a02-88be-3002eec1d62a")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 260.35 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 90.17) (xy 260.35 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7418a8b8-490b-42ae-bde4-2a0ceaba38c3")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 260.35 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "32b51c65-8781-59ab-a679-35fdd4c5e0c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 97.79) (xy 260.35 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "862a413e-c234-40a9-8473-08cf86fd801b")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 260.35 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "be2524ac-6aa4-5eb8-8ac3-ab62c998dae2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 330.2 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d2508a2a-05db-5c26-8188-d84adba07ac7")
+		(property "Reference" "C22"
+			(at 316.23 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 316.23 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 330.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "87eaafac-9dc8-4f30-8e52-7c0c4642efff")
+		)
+		(pin "2"
+			(uuid "de862fe1-4fc2-4385-b9ca-969a405206c9")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 90.17) (xy 330.2 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3f30ce4-a30d-42b1-8f4a-b783e59fbdd1")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 330.2 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "4529a7e3-ee5d-5a4a-ae93-6ca3c2a71a3d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 97.79) (xy 330.2 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4edbd26-391c-49e1-82f2-a746aa42d415")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 330.2 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "fe260863-39e4-5c02-bc10-055fdd752205")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 401.32 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0bfbb524-2599-540c-88f0-2736dd7ae415")
+		(property "Reference" "C23"
+			(at 387.35 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/50V"
+			(at 387.35 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0805__9959ce48b0"
+			(at 401.32 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eab45c0b-8b27-43a1-ab54-f9ec7d8d2dbf")
+		)
+		(pin "2"
+			(uuid "ae7f4712-a06b-4dd3-8b68-6aee61e68091")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 401.32 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 90.17) (xy 401.32 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "078c9856-7089-4f39-b5f6-e833a43e4616")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 401.32 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "b207ebb3-9093-536f-8a29-30098c3f8b0c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 97.79) (xy 401.32 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68f68533-47fc-460a-853b-2520a5b4c179")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 401.32 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "9234b855-047e-59a9-814a-61b033ee31f1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 469.9 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8c983712-000d-50af-85ed-47f03e9a1247")
+		(property "Reference" "C24"
+			(at 455.93 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 455.93 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 469.9 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fb5c6a5b-b455-4b81-9de6-6a1d61a7eb06")
+		)
+		(pin "2"
+			(uuid "58152306-2263-4009-9252-7b8eea6019f6")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 469.9 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 90.17) (xy 469.9 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b55ff1c-1699-4b0f-ad39-69378b8e81c3")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 469.9 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "9e2847fd-b3c4-5228-8c9b-16d3d0d55213")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 97.79) (xy 469.9 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d15078b-feea-4022-9d75-dc41fbd59610")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 469.9 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "9047edad-cb57-594a-8828-806db8f7da79")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 539.75 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "90b5f21b-9825-5944-a4cc-f7f682c06b48")
+		(property "Reference" "C26"
+			(at 525.78 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 525.78 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 539.75 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3452c86f-401c-450e-8974-8e52b3047288")
+		)
+		(pin "2"
+			(uuid "ba10ef4c-f35d-4b8a-962b-00070c0c9298")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 539.75 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 90.17) (xy 539.75 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39a5629c-e290-48b3-8100-e0b30e282fda")
+	)
+	(global_label "LCD_VCOM"
+		(shape bidirectional)
+		(at 539.75 86.36 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "5031a3e2-e2ee-5794-9654-cfaa93ac083e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 86.36 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 97.79) (xy 539.75 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ca798fc-49e9-4b23-94dc-3a294ce455ca")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 539.75 101.6 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "bd0d9232-5f77-5c2a-a9b2-46e01c141b2f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 50.8 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6a429aca-bdad-5407-ad4c-983d24339b7f")
+		(property "Reference" "C27"
+			(at 36.83 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 36.83 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 50.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c5710d76-d5bb-4cd4-afcf-4131039bb333")
+		)
+		(pin "2"
+			(uuid "7b2bc3c1-de1d-49b8-9e32-07166704505c")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 50.8 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 115.57) (xy 50.8 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19b056b6-5798-4ef2-823f-c305e457087b")
+	)
+	(global_label "LCD_VCOM"
+		(shape bidirectional)
+		(at 50.8 111.76 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "85287471-1d7c-50b2-aa3a-af6d2abbbb34")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 111.76 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 123.19) (xy 50.8 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fa1d6c7-fb29-4394-86f8-28bc37c00f28")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 127.0 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "8a6638c6-18fe-52cb-b708-272c8902457f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 127.0 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 121.92 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "adc0f33a-798a-5d6a-8346-f98963bbe1aa")
+		(property "Reference" "C7"
+			(at 107.95 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10u/25V"
+			(at 107.95 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0603__4affcd651d"
+			(at 121.92 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af279f13-3ec5-4ff8-b080-4d7967614025")
+		)
+		(pin "2"
+			(uuid "e6a0c748-1ae2-46cd-bdec-46ae17ce6f11")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 121.92 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 115.57) (xy 121.92 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6aa60be7-4bcd-4fb8-b0b9-dbe0e1c19b88")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 121.92 111.76 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "0aac501c-2d41-52dd-b7cb-49750dab25d4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 111.76 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 123.19) (xy 121.92 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a9ec344-a0f9-41b1-aa1e-bdc7915c015c")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 121.92 127.0 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "3e71954d-025d-54f9-bbf1-e18ce670144b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 127.0 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 190.5 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "37d8e04f-b00a-55c8-9fbf-9114896bbd45")
+		(property "Reference" "C8"
+			(at 176.53 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 176.53 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 190.5 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00d58b05-eb61-4d2a-90e7-4e5e05087529")
+		)
+		(pin "2"
+			(uuid "b829899a-35e1-4b73-9329-c359ead5e7c8")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 190.5 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 115.57) (xy 190.5 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4ac3eef-5adc-4466-b8c0-582ee4a89278")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 190.5 111.76 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "f9a2d7cf-d79e-5f52-a4fe-00eb6b073cf8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 111.76 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 123.19) (xy 190.5 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01db076-2628-465d-a2a5-fa17e171c2a2")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 190.5 127.0 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "bf03fc93-a74f-5742-8da0-687a74bdc16a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 127.0 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_C")
+		(at 260.35 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a0f818f-8bf5-555d-a4f0-9d91c39f0942")
+		(property "Reference" "C9"
+			(at 246.38 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "0.1u/50V"
+			(at 246.38 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:C0402__b328da3f93"
+			(at 260.35 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0f503211-59bc-435f-ac17-baa40aaffa72")
+		)
+		(pin "2"
+			(uuid "9fb31ec5-1aa7-48da-92a9-8f391c2eb4f6")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 260.35 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 115.57) (xy 260.35 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eec56f3e-243c-4149-a1c3-3236716bdefc")
+	)
+	(global_label "LCD_VDD"
+		(shape bidirectional)
+		(at 260.35 111.76 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "807495c3-0337-5cac-a14c-ff808f45ea0a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 111.76 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 123.19) (xy 260.35 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "185e08b0-fd2c-4d6d-9797-1f8e2e1fedd6")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 260.35 127.0 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "ba2bced8-6113-5201-9cb6-f4f82dfce114")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 127.0 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Zener_A1K2")
+		(at 330.2 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3ad81c49-df08-5a22-9770-fa9a995bb35a")
+		(property "Reference" "D10"
+			(at 316.23 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMSZ5233BT1G"
+			(at 316.23 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD123__b888afbd6d"
+			(at 330.2 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e1a57cba-cc4f-4a61-b366-6b917211ef2a")
+		)
+		(pin "1"
+			(uuid "ce59739d-94f9-45fd-ae90-3966363444d5")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMSZ5233BT1G"
+			(at 330.2 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 326.39 119.38) (xy 318.77 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "382fecc2-a1e6-4a9e-882b-576187099edf")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 318.77 119.38 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "e6913e17-9267-5758-869a-49b525af16c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 318.77 119.38 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 334.01 119.38) (xy 341.63 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfedecad-e8fe-4cd5-95e2-7476dab14e1f")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 341.63 119.38 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "dea22837-4724-5607-bf95-cbf091d288f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 341.63 119.38 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Zener_A1K2")
+		(at 401.32 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "880df644-f306-5b96-a445-23c1a777385d")
+		(property "Reference" "D11"
+			(at 387.35 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "MM1W18"
+			(at 387.35 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD123__b888afbd6d"
+			(at 401.32 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ab22c14c-d84e-4c0a-b194-f9e684db770e")
+		)
+		(pin "1"
+			(uuid "f1d9d429-2f52-4dfd-8cf1-b566b8930361")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "MM1W18"
+			(at 401.32 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 397.51 119.38) (xy 389.89 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a942073b-7bd8-4f61-9e1a-291937b2faea")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 389.89 119.38 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "781c586f-da58-5f93-b1df-03420efbe015")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 389.89 119.38 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 405.13 119.38) (xy 412.75 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60eb4c3d-c2b5-48f9-a7e6-5cfca61a2baa")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 412.75 119.38 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "89ea3eb4-a8d0-5e6c-830a-43fdcf50f098")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 412.75 119.38 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Schottky_A1K2")
+		(at 469.9 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "180e98d8-1071-5500-956d-b8e38aac3c6b")
+		(property "Reference" "D5"
+			(at 455.93 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMBR140ET1G"
+			(at 455.93 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD323HE__f9a9ee848d"
+			(at 469.9 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "3ceca8d7-a6cc-4ac8-905b-ec391b0ea003")
+		)
+		(pin "1"
+			(uuid "198e7b97-6fad-4da6-b04d-942efc49a4d7")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMBR140ET1G"
+			(at 469.9 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 466.09 119.38) (xy 458.47 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d391b67-7c45-4f3d-a623-831e3b5b6c4c")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 458.47 119.38 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "e06acb5e-9106-5a73-9e41-453b747f2d15")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 458.47 119.38 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 473.71 119.38) (xy 481.33 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "570a90cf-d977-4706-9069-89f1dbb10eb3")
+	)
+	(global_label "N17134948"
+		(shape bidirectional)
+		(at 481.33 119.38 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "e177a160-074a-5ff6-80c6-cd7e416f5b29")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 481.33 119.38 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Schottky_A1K2")
+		(at 539.75 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4709c801-da1a-5d3d-8def-47b2f59b3b1f")
+		(property "Reference" "D6"
+			(at 525.78 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMBR140ET1G"
+			(at 525.78 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD323HE__f9a9ee848d"
+			(at 539.75 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "757af128-3963-4d8d-88de-9031eece3e27")
+		)
+		(pin "1"
+			(uuid "4a8cd7e0-80f0-49d1-8638-54e1a841be04")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMBR140ET1G"
+			(at 539.75 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 535.94 119.38) (xy 528.32 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b63eada-e53a-4da2-9e67-5fb1bae56d8f")
+	)
+	(global_label "N17136021"
+		(shape bidirectional)
+		(at 528.32 119.38 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "b678cde7-c896-517c-8811-035fff4b340b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 528.32 119.38 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 543.56 119.38) (xy 551.18 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "175d276b-3d42-4532-b421-401fea4c7959")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 551.18 119.38 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "d7d9542d-b5cf-5948-9d90-a164269df4e9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 551.18 119.38 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Schottky_A1K2")
+		(at 50.8 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a93a6dad-d46e-5c16-b54a-7bce0597e3f5")
+		(property "Reference" "D7"
+			(at 36.83 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMBR140ET1G"
+			(at 36.83 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD323HE__f9a9ee848d"
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "0c363b06-c992-47f2-a110-a6aa1c207783")
+		)
+		(pin "1"
+			(uuid "1b7adac9-47b9-488f-953c-941ebe6bd4ea")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMBR140ET1G"
+			(at 50.8 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 144.78) (xy 39.37 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bd97076-05a4-4bb2-a385-1999106b4f64")
+	)
+	(global_label "N17136250"
+		(shape bidirectional)
+		(at 39.37 144.78 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "7b10784d-e425-5991-beaa-217a6092349b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 144.78 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 54.61 144.78) (xy 62.23 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97500f61-7175-4fa4-adfa-862b5062c0f8")
+	)
+	(global_label "N17136021"
+		(shape bidirectional)
+		(at 62.23 144.78 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "052f982e-a3fe-57d0-9a0d-b8e6f448238f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 62.23 144.78 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Schottky_A1K2")
+		(at 121.92 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fdfc4ebd-a104-58d5-8521-919ee3335476")
+		(property "Reference" "D8"
+			(at 107.95 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMBR140ET1G"
+			(at 107.95 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD323HE__f9a9ee848d"
+			(at 121.92 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "8338d573-49e1-48a0-806a-e63bc85a3ca9")
+		)
+		(pin "1"
+			(uuid "7255c793-9539-434f-a666-07195a60600e")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMBR140ET1G"
+			(at 121.92 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 118.11 144.78) (xy 110.49 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0991624-4c19-4ae0-bf85-3220346b93ae")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 110.49 144.78 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "ca32ac2c-f87f-5269-bdeb-28d313a07265")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.49 144.78 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 125.73 144.78) (xy 133.35 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de7a1f33-8353-4d14-9fff-5d66839e4125")
+	)
+	(global_label "N17135942"
+		(shape bidirectional)
+		(at 133.35 144.78 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "e875817b-2b1c-506e-9d9d-e574623790c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.35 144.78 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_D_Schottky_A1K2")
+		(at 190.5 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ce3396b8-5b78-52eb-bb1f-b59bc68c8eec")
+		(property "Reference" "D9"
+			(at 176.53 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "LMBR140ET1G"
+			(at 176.53 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:SOD323HE__f9a9ee848d"
+			(at 190.5 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "dc9761c3-7226-46b1-99dc-809655484de1")
+		)
+		(pin "1"
+			(uuid "4b32e026-483e-4699-87d5-8c24b26f7512")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "LMBR140ET1G"
+			(at 190.5 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 186.69 144.78) (xy 179.07 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e665088e-6ef2-4cab-b1ff-ff50432b139e")
+	)
+	(global_label "N17135942"
+		(shape bidirectional)
+		(at 179.07 144.78 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "fda5e2ea-4d95-5f78-a2ae-2ca89db7fea0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 179.07 144.78 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 194.31 144.78) (xy 201.93 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaddcef4-e834-4775-be44-87a8546a8406")
+	)
+	(global_label "N17136498"
+		(shape bidirectional)
+		(at 201.93 144.78 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "20255b13-bc29-5225-9a2c-ac2b5fe6c0c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 201.93 144.78 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_L")
+		(at 260.35 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a3f167f7-1d5d-55d9-8901-04b083e80039")
+		(property "Reference" "L2"
+			(at 246.38 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10uH_0.8A"
+			(at 246.38 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:L3012S__5941442135"
+			(at 260.35 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "adfc96da-c7fd-49fe-a655-e5d4a22d8cf9")
+		)
+		(pin "2"
+			(uuid "47fa3e1d-96c2-4e24-ba41-83a28714aebf")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "L2")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "SWPA3012S100MT"
+			(at 260.35 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 140.97) (xy 260.35 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d86a3a5-48cf-4764-820b-78312921a61a")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 260.35 137.16 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "c117d432-b4f0-551f-8c51-5abebcbedb59")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 137.16 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 148.59) (xy 260.35 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aeda7a82-9324-441e-91d7-de0f0927c769")
+	)
+	(global_label "N17134948"
+		(shape bidirectional)
+		(at 260.35 152.4 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "fc5ccbdc-650e-5a21-9c1d-ffdd483adc6a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 152.4 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 330.2 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "aa60be60-f84a-505a-8598-815ef4338f9b")
+		(property "Reference" "R13"
+			(at 316.23 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 316.23 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 330.2 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "11f9d1ab-c2f3-4a82-8ae6-f74fdc299907")
+		)
+		(pin "2"
+			(uuid "4e4932b2-44e7-4a88-bce6-a589f58bcb44")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 140.97) (xy 330.2 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a7e36cc-6c18-4938-b832-e032bfc255fa")
+	)
+	(global_label "N17128822"
+		(shape bidirectional)
+		(at 330.2 137.16 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "a8891a3f-f4f8-5f9c-b512-839934286412")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 137.16 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 148.59) (xy 330.2 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08ac16b4-2ddd-49c8-bfa2-53277af30a31")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 330.2 152.4 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "b0827a84-1a61-5644-83d3-97dc7032afd5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 152.4 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 401.32 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fd6a832d-8576-5925-acd3-7cce84117534")
+		(property "Reference" "R14"
+			(at 387.35 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 387.35 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 401.32 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1e5f5abf-f1cd-40e4-8e18-9a76390d21fc")
+		)
+		(pin "2"
+			(uuid "a891eca5-c669-47d2-8e73-d612b7595ec0")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 401.32 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 140.97) (xy 401.32 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51982451-69c6-42aa-8afd-64c51f249a2d")
+	)
+	(global_label "N17134769"
+		(shape bidirectional)
+		(at 401.32 137.16 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "748fddf9-580e-5056-b167-f0d95b6e0b7a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 137.16 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 148.59) (xy 401.32 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a9762fb-e36e-42d0-8cf0-466786809a80")
+	)
+	(global_label "VCC_5V"
+		(shape bidirectional)
+		(at 401.32 152.4 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "42aeddeb-7b8b-5977-bdf2-9b9d63e7b3aa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 152.4 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 469.9 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e3dde791-313f-5a3b-ad8d-928563a616be")
+		(property "Reference" "R15"
+			(at 455.93 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "22k"
+			(at 455.93 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 469.9 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4da6e835-b24f-4bc6-b3f4-3c35196a1382")
+		)
+		(pin "2"
+			(uuid "c19cf233-45a8-4189-aaad-a080e5510c91")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 469.9 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 140.97) (xy 469.9 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e8430c4-d101-43cd-a71a-30a81516a831")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 469.9 137.16 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "86d40eb0-d014-5d48-9525-0348875e17ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 137.16 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 148.59) (xy 469.9 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b022fde0-1a81-47e9-8c2e-b4ed70cbea43")
+	)
+	(global_label "N17135258"
+		(shape bidirectional)
+		(at 469.9 152.4 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "cd933c64-5667-5436-95bb-1349f7597766")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 152.4 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 539.75 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3eeb3ea4-63ea-5468-9b80-35af6e13ba00")
+		(property "Reference" "R16"
+			(at 525.78 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 525.78 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 539.75 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e8c79f26-b3f4-4182-9a57-b99a3effb5cb")
+		)
+		(pin "2"
+			(uuid "aaa8e843-8ce0-40e5-9e68-7973edae18dc")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 539.75 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 140.97) (xy 539.75 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01f192bb-51ca-48c1-978d-0975fe484a53")
+	)
+	(global_label "N17135258"
+		(shape bidirectional)
+		(at 539.75 137.16 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "8ac07e30-f3f0-5340-aade-02c7aa95d9e3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 137.16 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 148.59) (xy 539.75 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f255ebfb-ac4e-4c94-9fea-b083e6f250d9")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 539.75 152.4 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "7fdacb86-1304-5bf0-ad1c-3256e1dac1e5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 152.4 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 50.8 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8ebd6367-891d-598b-8871-20bf49409c60")
+		(property "Reference" "R17"
+			(at 36.83 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 36.83 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 50.8 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cf4ff2c6-60ca-4238-b7b8-3a6860c5ff55")
+		)
+		(pin "2"
+			(uuid "37af433e-77d2-4875-8f43-994ffb691c06")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 50.8 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 166.37) (xy 50.8 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dd2ecc5-c338-42b2-a66a-7b78171778a4")
+	)
+	(global_label "N17136498"
+		(shape bidirectional)
+		(at 50.8 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "835ed581-9e07-5f09-b84b-b45057d81b5c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 173.99) (xy 50.8 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1f5cfda-e55d-45ba-8140-f4502685021f")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 50.8 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "f8f0ea11-8302-5bc1-b534-0109a5ce4297")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 121.92 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3d296e62-408c-5991-93a8-53e2dab81ceb")
+		(property "Reference" "R18"
+			(at 107.95 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "220"
+			(at 107.95 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 121.92 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1914d98a-8c58-4fa9-b13e-59fee78d9e32")
+		)
+		(pin "2"
+			(uuid "0129169c-137e-48f1-a1b5-5f2e5a5d1599")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 121.92 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 166.37) (xy 121.92 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96eb08ea-4977-4a5b-bfd9-a6ed38a141d7")
+	)
+	(global_label "N17136250"
+		(shape bidirectional)
+		(at 121.92 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "32a6e77e-3f4b-5992-a43c-caaf1293d1a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 173.99) (xy 121.92 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9ebb503-609e-4427-b4dc-32889256754e")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 121.92 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "bbb015fd-2b72-52a8-ae3e-33ec70368c25")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 190.5 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "68369c59-b11c-55d7-bd5b-2f36beadd428")
+		(property "Reference" "R19"
+			(at 176.53 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "51k"
+			(at 176.53 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 190.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f0ac4c79-4bf1-4943-84cb-f87960072b2f")
+		)
+		(pin "2"
+			(uuid "5e62a737-2c4d-497c-8817-e11c7f6c11ab")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 190.5 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 166.37) (xy 190.5 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "996fc530-18dd-4b39-89fe-5314bb1d5364")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 190.5 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "34ad6bde-472c-5e6c-b06a-22a8f3ac3e63")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 173.99) (xy 190.5 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a660e62-539a-402d-9c5f-8a6cb05a7168")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 190.5 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "675a44d4-3b94-5407-942b-0bc418f55356")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 260.35 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fcb369ed-4e6d-5da6-97a5-d5e4bd52d822")
+		(property "Reference" "R20"
+			(at 246.38 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "51k"
+			(at 246.38 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 260.35 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef905edc-5ddc-4c75-9299-985e285dca19")
+		)
+		(pin "2"
+			(uuid "9ebc77c7-b8ab-443e-a4c3-267b3df6bde5")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 260.35 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 166.37) (xy 260.35 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3ec9def-e9f9-443b-bc6a-4f9a0f545f04")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 260.35 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "275dca33-c6de-58b6-888d-34380145e412")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 173.99) (xy 260.35 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "065663f6-beea-4e1c-958a-0d13243dc43e")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 260.35 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "3c26c926-f66b-58c1-b5c8-7d0bf081c310")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 330.2 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c95427a1-56c2-5a24-9fe4-8c3962cca53a")
+		(property "Reference" "R22"
+			(at 316.23 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 316.23 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 330.2 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "872c7ff3-2868-4b95-93c7-2e944f07ad0e")
+		)
+		(pin "2"
+			(uuid "f752ac86-1885-46de-b919-7040e2763195")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 166.37) (xy 330.2 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fa04baf-b264-45c4-9efe-d141f00f48d4")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 330.2 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "9a7a63c9-83b9-5daa-8117-7dd7f3c67012")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 173.99) (xy 330.2 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6c53bce-d949-42b4-a674-a5df698976c1")
+	)
+	(global_label "LCD_VCOM"
+		(shape bidirectional)
+		(at 330.2 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "b17a9295-f3aa-51f9-b474-953cdcba3a7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 401.32 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e298eac4-8add-512d-bcbe-ff4a60a5c9d8")
+		(property "Reference" "R23"
+			(at 387.35 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "2k"
+			(at 387.35 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__b308b0f41e"
+			(at 401.32 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 401.32 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a2c71e36-b4dd-483e-a7ee-367424c703c2")
+		)
+		(pin "2"
+			(uuid "70774610-8104-49ba-be37-26340dac4aad")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 401.32 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 166.37) (xy 401.32 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84d25d61-be9f-48f8-9307-33b1deaa6c64")
+	)
+	(global_label "LCD_VCOM"
+		(shape bidirectional)
+		(at 401.32 162.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "975e85a6-6827-544e-ba96-f1f914f5cb47")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 162.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 401.32 173.99) (xy 401.32 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "115cee6e-8df1-47fa-9f77-ba43585c9063")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 401.32 177.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "90f7c973-fe6e-5b0b-9cba-6fab0dcb9c45")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 401.32 177.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 469.9 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "77c90a7d-617d-5537-8e88-f90523287294")
+		(property "Reference" "TP1"
+			(at 455.93 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 455.93 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__3c95fc0e3d"
+			(at 469.9 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 469.9 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6adc6bda-120e-442b-b5e3-d4eef8ac7187")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 469.9 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 469.9 170.18) (xy 469.9 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8b2e73d-934f-4f49-802a-44d4b612ecf1")
+	)
+	(global_label "LCD_VGL"
+		(shape bidirectional)
+		(at 469.9 173.99 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "6a3a2f6c-78b1-51bd-acf9-6c896e1a619a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 469.9 173.99 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 539.75 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2b110489-4ecb-5fc0-aaf3-e0e92ca4fb78")
+		(property "Reference" "TP2"
+			(at 525.78 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 525.78 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__3c95fc0e3d"
+			(at 539.75 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 539.75 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "72515a57-991a-4cdd-8eb7-3ecb9f884404")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 539.75 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 539.75 170.18) (xy 539.75 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f40afcf-912c-418b-bb6a-69e44fca1627")
+	)
+	(global_label "LCD_VGH"
+		(shape bidirectional)
+		(at 539.75 173.99 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "f4b081b2-9432-5672-93dc-688c2b853630")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 539.75 173.99 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 50.8 195.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6963145e-f297-5a03-b9e1-5e141d8cec56")
+		(property "Reference" "TP3"
+			(at 36.83 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 36.83 194.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__3c95fc0e3d"
+			(at 50.8 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "65607ecc-dd88-4ad9-8bdf-cf11449d7cf6")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 50.8 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 195.58) (xy 50.8 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f941fc8-bde7-4d6e-ba21-56fc60ff854b")
+	)
+	(global_label "LCD_VCOM"
+		(shape bidirectional)
+		(at 50.8 199.39 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "07b9972a-a03b-5957-b3d1-36ec15a637d2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 199.39 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 121.92 195.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "51a38d95-8b29-5e50-9f54-9905de43f271")
+		(property "Reference" "TP4"
+			(at 107.95 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 107.95 194.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__3c95fc0e3d"
+			(at 121.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50ded163-25ee-462e-8649-5fe5a579e830")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 121.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 195.58) (xy 121.92 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0aa8a20-474c-4e78-b5bc-1775990f5459")
+	)
+	(global_label "LCD_AVDD"
+		(shape bidirectional)
+		(at 121.92 199.39 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "d8d2a49f-1e8c-58d1-9121-d5ca178e1d1e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 199.39 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 190.5 195.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72d6dd25-7a27-5fe8-aa61-7dac4df4f1f4")
+		(property "Reference" "TP5"
+			(at 176.53 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 176.53 194.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__999ff27256"
+			(at 190.5 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bdb6dac7-bce7-4379-8651-cd2852324d1b")
+		)
+		(instances
+			(project "display_lcd_adapter"
+				(path "/398fad38-fcd2-5278-a5bc-ab02094964ef/936093df-3bef-591c-b975-610367731510"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 190.5 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 195.58) (xy 190.5 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b1be98b-d379-4391-8904-1e48c0325e1c")
+	)
+	(global_label "LCD_VDD"
+		(shape bidirectional)
+		(at 190.5 199.39 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "2c9eb01d-d286-5d07-8b0f-f1ebc640f86b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 199.39 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(text "TP5=1.8V; TP4~9.6V; TP2~18V; TP1~-6V; TP3~3.2V. Measure unloaded rails before fitting panel."
+		(at 15.24 400.05 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left top)
+		)
+		(uuid "8b14894f-35dd-5487-b801-25844f312058")
+	)
+)

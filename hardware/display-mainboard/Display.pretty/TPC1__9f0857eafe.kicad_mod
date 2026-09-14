@@ -1,0 +1,80 @@
+(footprint "TPC1__9f0857eafe"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "7824b49a-8b7f-4455-ace3-70f2a6387cfe")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Value" "TPC1__9f0857eafe"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "145cab38-2187-46fd-933d-5b4fa4467a3c")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "edabe513-e921-4625-9da3-43240ba69060")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e967df84-d555-4a90-b67d-c242dddf3028")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(sheetname "audio")
+	(sheetfile "audio.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -0.5 0.5)
+		(end 0.5 -0.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "7a8676f3-81b3-4733-bde4-ce4c4a843eff")
+	)
+	(fp_rect
+		(start -0.5 0.5)
+		(end 0.5 -0.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "fb34315b-1dad-44c6-a663-fbbebad697c7")
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 1 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ce44d82a-fbb5-488d-b837-194056b12532")
+	)
+	(embedded_fonts no)
+)

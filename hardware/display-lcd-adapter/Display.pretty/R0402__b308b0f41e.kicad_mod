@@ -1,0 +1,172 @@
+(footprint "R0402__b308b0f41e"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -1.0684 -0.05067 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "4956fe57-2eca-4f51-b767-5ddd04af50b8")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(property "Value" "R0402__b308b0f41e"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "84f3fc16-f54a-4a5c-aaf9-125317f435be")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1a966809-3821-4424-beb2-bb88d7e659d2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "88d407eb-bc6c-4eec-a236-1223f875b864")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.12)
+			)
+		)
+	)
+	(sheetname "lcd_interfaces")
+	(sheetfile "lcd_interfaces.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.8144 -0.381)
+		(end -0.8144 0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "133fc887-0a55-49af-9c66-3691cde40a09")
+	)
+	(fp_line
+		(start -0.8144 0.381)
+		(end -0.254 0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "804ce343-924f-453f-9fda-3386b51170f2")
+	)
+	(fp_line
+		(start -0.254 -0.381)
+		(end -0.8144 -0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "aec93d28-189c-4082-868c-f778f4645589")
+	)
+	(fp_line
+		(start 0.254 -0.381)
+		(end 0.8144 -0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "49701d8e-9d6e-4a02-84d0-b5ee018e3244")
+	)
+	(fp_line
+		(start 0.8144 -0.381)
+		(end 0.8144 0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "8aba2fe2-ee50-43f8-953c-19f1f4d033fe")
+	)
+	(fp_line
+		(start 0.8144 0.381)
+		(end 0.254 0.381)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a068df23-2477-4a67-ad11-35da3fe67f7b")
+	)
+	(fp_poly
+		(pts
+			(xy -0.82 0.38) (xy 0.82 0.38) (xy 0.82 -0.38) (xy -0.82 -0.38)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "984341c1-5cbc-4ce8-92a9-20f7729464a0")
+	)
+	(pad "1" smd rect
+		(at -0.429 0)
+		(size 0.508 0.508)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e54405af-82ff-4db6-a82c-1c0ebf3a9e28")
+	)
+	(pad "2" smd rect
+		(at 0.429 0)
+		(size 0.508 0.508)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c1196104-18e0-482d-8f50-bda284192ae5")
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "b6e4d7f4-9d94-4bdf-b753-f56403c5cbea")
+		(hatch none 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -0.05 -0.38) (xy -0.05 0.38) (xy 0.05 0.38) (xy 0.05 -0.38)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

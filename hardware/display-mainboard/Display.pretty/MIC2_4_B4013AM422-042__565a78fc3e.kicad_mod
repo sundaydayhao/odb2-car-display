@@ -1,0 +1,229 @@
+(footprint "MIC2_4_B4013AM422-042__565a78fc3e"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -2.95745 -0.7805 270)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "e0a14b9c-a352-403a-9183-97fbf42d802f")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.127)
+			)
+			(justify left)
+		)
+	)
+	(property "Value" "MIC2_4_B4013AM422-042__565a78fc3e"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "a5e05c60-90c9-4f6c-a14c-bb259ead178c")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a2e649fc-d58c-4474-9393-597bb34accf1")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bcffc845-be20-4851-bc4b-87a0f9351ad3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(sheetname "audio")
+	(sheetfile "audio.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_circle
+		(center 0 0)
+		(end 0 2)
+		(stroke
+			(width 0.127)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "3e21e099-a933-436d-aa99-7e13012f4de2")
+	)
+	(fp_poly
+		(pts
+			(arc
+				(start -0.4002 1.2893)
+				(mid -1.15576 0.69762)
+				(end -1.3273 -0.2466)
+			)
+			(arc
+				(start -0.8997 -0.0214)
+				(mid -0.770461 0.46509)
+				(end -0.4002 0.8061)
+			)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "99f9b6ac-b761-41bd-8bc1-61bd3fdacc17")
+	)
+	(fp_poly
+		(pts
+			(arc
+				(start 0.4002 0.8061)
+				(mid 0.776009 0.455815)
+				(end 0.8989 -0.043)
+			)
+			(arc
+				(start 1.321 -0.2783)
+				(mid 1.16404 0.683742)
+				(end 0.4002 1.2893)
+			)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "6f954ef0-1679-41c1-b8d9-3777f8359139")
+	)
+	(fp_poly
+		(pts
+			(arc
+				(start -0.9544 -0.9548)
+				(mid -0.016194 -1.349911)
+				(end 0.9312 -0.9774)
+			)
+			(arc
+				(start 0.5092 -0.7421)
+				(mid -0.010765 -0.899934)
+				(end -0.5268 -0.7297)
+			)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Paste")
+		(uuid "4b964f4c-110e-4857-92d7-ffd545c481dd")
+	)
+	(fp_poly
+		(pts
+			(arc
+				(start 0 1.4)
+				(mid 0 -1.4)
+				(end 0 1.4)
+			)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "f21256bc-4748-4984-a965-928d3ac2c4ba")
+	)
+	(fp_poly
+		(pts
+			(arc
+				(start 0 1.35)
+				(mid 0 -1.35)
+				(end 0 1.35)
+			)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "08f09a49-b584-4110-b4b2-ca3d36dd7b82")
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 0.9 0.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "dcc6511a-0b9d-4e99-ab2f-8f6efa79bbaf")
+	)
+	(pad "2" smd custom
+		(at 0 1.125)
+		(size 0.4 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(arc
+						(start 1.35 -1.1214)
+						(mid -1.350005 -1.125)
+						(end 1.35 -1.1286)
+					)
+					(arc
+						(start 0.9 -1.1286)
+						(mid -0.900007 -1.125)
+						(end 0.9 -1.1214)
+					)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "9fadb10b-0bc0-4949-b478-9655db3bf6b9")
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "fb571c31-f985-4f9e-9454-1659d7867ffd")
+		(hatch none 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(arc
+					(start 0 0.9)
+					(mid 0 -0.9)
+					(end 0 0.9)
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

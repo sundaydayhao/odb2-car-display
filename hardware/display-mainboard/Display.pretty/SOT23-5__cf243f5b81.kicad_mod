@@ -1,0 +1,136 @@
+(footprint "SOT23-5__cf243f5b81"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -2.8051 -0.95585 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "9f75c0b0-330c-4f3c-9d25-a9972ddcc6cc")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.127)
+			)
+			(justify left)
+		)
+	)
+	(property "Value" "SOT23-5__cf243f5b81"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "45fc7fea-bb03-4873-97e1-ef96c57f2f2a")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "88a5e4df-2c69-46ff-8617-d37f032f1792")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "32a99b71-b84d-4d48-a3b8-92247a6c7712")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(sheetname "power_usb")
+	(sheetfile "power_usb.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.875 -1.525)
+		(end -0.875 1.525)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5fef52fd-c450-4c90-b534-6e79e4bcbc34")
+	)
+	(fp_line
+		(start -0.875 1.525)
+		(end 0.875 1.525)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ba500a95-230b-4b7a-a790-32971676c9ea")
+	)
+	(fp_line
+		(start 0.875 -1.525)
+		(end -0.875 -1.525)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ed5a70dc-2b4f-4c50-8464-f6d9164c3d70")
+	)
+	(fp_line
+		(start 0.875 1.525)
+		(end 0.875 -1.525)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ae9b61c8-115d-4e8e-aba7-e3e53936c3ef")
+	)
+	(fp_rect
+		(start -2.0749 1.1999)
+		(end 2.0749 -1.1999)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "044c3b9e-a40f-456b-a7b8-d5da9cbeaf41")
+	)
+	(pad "1" smd oval
+		(at -1.5751 -0.95 90)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "1c3f2a92-1efa-40e3-b1db-7eb01356370b")
+	)
+	(pad "2" smd oval
+		(at -1.5751 0 90)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9d740faa-116b-498a-a3d9-26e0944b78e8")
+	)
+	(pad "3" smd oval
+		(at -1.5751 0.95 90)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "44f3cd2c-ea40-42e6-b221-d9989a696da5")
+	)
+	(pad "4" smd oval
+		(at 1.5751 0.95 90)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "dd2298b0-5f2f-4036-b316-77e987a90407")
+	)
+	(pad "5" smd oval
+		(at 1.5751 -0.95 90)
+		(size 0.5 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c24eba7a-37af-4077-884a-785f0a9427b2")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,434 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "0145c576-1537-55ec-a672-28c2e377c7b0")
+	(paper "A3")
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(title_block
+		(title "7 inch P4 display mainboard")
+		(date "2026-09-14")
+		(rev "A0 - ENGINEERING PROTOTYPE")
+		(company "OBD2 Car Display")
+	)
+	(text "7 INCH DISPLAY MAINBOARD / ESP32-P4X + ESP32-C6"
+		(at 20.32 15.24 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+			)
+			(justify left top)
+		)
+		(uuid "af8f875a-3af1-559f-9b7c-cac03aef038d")
+	)
+	(text "Based on official Function EV reference. Mechanical envelope: 88 x 74 mm / 4 layers / 1.6 mm."
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "e3d2d840-c829-5dc4-baf5-5bc5f6bbf90b")
+	)
+	(text "Prototype uses a regulated 5 V supply. Do not connect directly to vehicle 12 V."
+		(at 20.32 33.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "cb07594f-5047-5495-9376-f1dfde283ef0")
+	)
+	(sheet
+		(at 25.4 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "16393bbf-5acb-556c-b164-e155f3729bd9")
+		(property "Sheetname" "5 V input / power distribution"
+			(at 25.4 49.529999999999994 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_usb.kicad_sch"
+			(at 25.4 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "2")
+				)
+			)
+		)
+	)
+	(text "46 symbols / global net labels"
+		(at 29.209999999999997 58.419999999999995 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a6a15ca8-1b90-5cef-bada-503d9b8ff9dc")
+	)
+	(sheet
+		(at 215.9 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "225e9534-9e66-5340-b839-546e82a86e9e")
+		(property "Sheetname" "ESP32-P4X core / clocks / supplies"
+			(at 215.9 49.529999999999994 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p4_core.kicad_sch"
+			(at 215.9 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "3")
+				)
+			)
+		)
+	)
+	(text "68 symbols / global net labels"
+		(at 219.71 58.419999999999995 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "3f1d0777-cfb8-5ad3-9699-5739d0761b67")
+	)
+	(sheet
+		(at 25.4 99.06)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "7c1f6fee-8e87-53f2-b89d-445d2dfcee27")
+		(property "Sheetname" "GPIO routing / configuration links"
+			(at 25.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "gpio_routing.kicad_sch"
+			(at 25.4 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "4")
+				)
+			)
+		)
+	)
+	(text "91 symbols / global net labels"
+		(at 29.209999999999997 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2ff8cd62-b4df-544c-85f3-beb2e7f4b0b5")
+	)
+	(sheet
+		(at 215.9 99.06)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8b21ca11-7f2e-5f6b-ba7b-2e68a320279c")
+		(property "Sheetname" "MIPI display / camera / expansion"
+			(at 215.9 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mipi_io.kicad_sch"
+			(at 215.9 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "5")
+				)
+			)
+		)
+	)
+	(text "31 symbols / global net labels"
+		(at 219.71 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d5bd241c-7cb8-59a8-bc92-7c9f8600851a")
+	)
+	(sheet
+		(at 25.4 147.32)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6995b554-99a9-5048-acfb-a968a52542b9")
+		(property "Sheetname" "ES8311 codec / microphone / speaker"
+			(at 25.4 146.04999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "audio.kicad_sch"
+			(at 25.4 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "6")
+				)
+			)
+		)
+	)
+	(text "67 symbols / global net labels"
+		(at 29.209999999999997 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2047a14c-c2a3-5af1-8c26-f2f34c66cd99")
+	)
+	(sheet
+		(at 215.9 147.32)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c8de9f8e-9025-5b40-ad38-db41c25b87f4")
+		(property "Sheetname" "ESP32-C6 Wi-Fi + BLE / microSD"
+			(at 215.9 146.04999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "wifi_sd.kicad_sch"
+			(at 215.9 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "7")
+				)
+			)
+		)
+	)
+	(text "47 symbols / global net labels"
+		(at 219.71 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c06a61e2-dda4-5ccf-965f-ddb63933dd78")
+	)
+	(sheet
+		(at 25.4 195.57999999999998)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "90e19315-4fb9-5663-be6d-4d79078d2201")
+		(property "Sheetname" "Ethernet PHY / magnetics"
+			(at 25.4 194.30999999999997 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethernet.kicad_sch"
+			(at 25.4 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "8")
+				)
+			)
+		)
+	)
+	(text "46 symbols / global net labels"
+		(at 29.209999999999997 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5e588e8c-5770-5890-b35e-d022e55e66f1")
+	)
+	(sheet
+		(at 215.9 195.57999999999998)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "356104d1-cb1c-5b7a-9381-1246b68c81a3")
+		(property "Sheetname" "USB connectors / ESD"
+			(at 215.9 194.30999999999997 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb_ports.kicad_sch"
+			(at 215.9 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_mainboard"
+				(path "/0145c576-1537-55ec-a672-28c2e377c7b0"
+					(page "9")
+				)
+			)
+		)
+	)
+	(text "26 symbols / global net labels"
+		(at 219.71 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "ef2a6767-94b3-5a9d-a755-ce811d89b19e")
+	)
+)

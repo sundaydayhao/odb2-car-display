@@ -1,0 +1,109 @@
+﻿Reference,Value,MPN,Populate,Footprint,Schematic_sheet
+C1,1u / 16V,,NO (DNP),Display:C0402__b328da3f93,lcd_interfaces
+C10,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C11,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C12,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C13,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C14,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C15,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C16,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C17,1u/50V,,YES,Display:C0603__4affcd651d,lcd_bias
+C18,1u/50V,,YES,Display:C0603__4affcd651d,lcd_bias
+C2,1u/16V,,YES,Display:C0402__b328da3f93,lcd_interfaces
+C21,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C22,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C23,10u/50V,,YES,Display:C0805__9959ce48b0,lcd_bias
+C24,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C25,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_interfaces
+C26,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C27,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C28,100n / 16V,,YES,Display:C_0402_1005Metric__56c42d4718,lcd_interfaces
+C3,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_interfaces
+C4,10u/25V,,YES,Display:C0603__4affcd651d,backlight
+C5,10u/25V,,YES,Display:C0603__4affcd651d,backlight
+C6,22p/50V,,YES,Display:C0402__b328da3f93,backlight
+C7,10u/25V,,YES,Display:C0603__4affcd651d,lcd_bias
+C8,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+C9,0.1u/50V,,YES,Display:C0402__b328da3f93,lcd_bias
+D1,DSS24,DSS24,YES,Display:SOD123FL__46ae4cb21a,lcd_interfaces
+D10,LMSZ5233BT1G,LMSZ5233BT1G,YES,Display:SOD123__b888afbd6d,lcd_bias
+D11,MM1W18,MM1W18,YES,Display:SOD123__b888afbd6d,lcd_bias
+D12,DSS24,,NO (DNP),Display:SOD123FL__46ae4cb21a,lcd_interfaces
+D2,LESD5D5.0CT1G,LESD5D5.0CT1G,YES,Display:SOD523__04fef8a58b,lcd_interfaces
+D3,DSS24,DSS24,YES,Display:SOD123FL__46ae4cb21a,lcd_interfaces
+D4,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,backlight
+D5,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,lcd_bias
+D6,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,lcd_bias
+D7,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,lcd_bias
+D8,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,lcd_bias
+D9,LMBR140ET1G,LMBR140ET1G,YES,Display:SOD323HE__f9a9ee848d,lcd_bias
+H1,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H2,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H3,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H4,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H5,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H6,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H7,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+H8,STD,SMTSO2580CTJ,YES,Display:HOLE6P2_4P22__65e4372978,lcd_interfaces
+J1,USB_TYPEC_16P_F,TYPE-C-31-M-12,YES,Display:USB_TYPEC_16P_F__86066a2b25,lcd_interfaces
+J2,LCD_30P_0.5mm,AFC01-S30FCA-00,YES,Display:FFC30P_0P5__db095f96ca,lcd_interfaces
+J3,DSI_15P_1mm,1.0K-GT-15PB,YES,Display:FFC_15P_1_MIPI__6610367bd7,lcd_interfaces
+J5,FPC_6P_1mm_UNUSED,AFA07-S06ECA-00,NO (DNP),Display:FFC6P_1_UP__634cfe9cbb,lcd_interfaces
+J6,AUX_5V_BL_RESET_TOUCH,2.54-2*4P立贴针,YES,Display:CON4X2_2P54_SMT__7e2a9205d1,lcd_interfaces
+J7,FPC_40P_UNUSED,,NO (DNP),Display:FFC40P_0P5__8d5a270b71,lcd_interfaces
+J8,GT911_6P_0.5mm,,YES,Display:FFC6P_0P5_UP__fd49314884,lcd_interfaces
+L1,10uH_0.8A,SWPA3012S100MT,YES,Display:L3012S__5941442135,backlight
+L2,10uH_0.8A,SWPA3012S100MT,YES,Display:L3012S__5941442135,lcd_bias
+R1,10k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R10,10k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R11,10k,,YES,Display:R0402__b308b0f41e,backlight
+R12,1.1,,YES,Display:R0603__10d1fcc181,backlight
+R13,10k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R14,10k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R15,22k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R16,3.3k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R17,220,,YES,Display:R0402__b308b0f41e,lcd_bias
+R18,220,,YES,Display:R0402__b308b0f41e,lcd_bias
+R19,51k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R2,10k,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R20,51k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R22,1k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R23,2k,,YES,Display:R0402__b308b0f41e,lcd_bias
+R24,10k,,NO (DNP),Display:R0402__b308b0f41e,backlight
+R25,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R26,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R27,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R28,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R29,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R3,10k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R30,0,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R31,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R32,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R33,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R34,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R35,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R36,0R,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R37,1k,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R38,10k,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R39,10k,,YES,Display:R_0402_1005Metric__e20e110129,lcd_interfaces
+R4,10k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R40,100k,,YES,Display:R_0402_1005Metric__e20e110129,lcd_interfaces
+R41,10k,,YES,Display:R_0402_1005Metric__e20e110129,backlight
+R5,10k,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R6,10k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R7,10k,,NO (DNP),Display:R0402__b308b0f41e,lcd_interfaces
+R8,5.1k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+R9,5.1k,,YES,Display:R0402__b308b0f41e,lcd_interfaces
+TP1,TEST,,YES,Display:TPC1__3c95fc0e3d,lcd_bias
+TP2,TEST,,YES,Display:TPC1__3c95fc0e3d,lcd_bias
+TP3,TEST,,YES,Display:TPC1__3c95fc0e3d,lcd_bias
+TP4,TEST,,YES,Display:TPC1__3c95fc0e3d,lcd_bias
+TP5,TEST,,YES,Display:TPC1__999ff27256,lcd_bias
+TP6,TEST,,YES,Display:HOLE2P2_1__191d9da361,lcd_interfaces
+TP7,TEST,,YES,Display:HOLE2P2_1__191d9da361,lcd_interfaces
+TP8,TEST,,YES,Display:HOLE2P2_1__191d9da361,lcd_interfaces
+TP9,TEST,,YES,Display:HOLE2P2_1__191d9da361,lcd_interfaces
+U1,ETA1611,ETA1611S2G,YES,Display:SOT23-6__2edaa2116b,backlight
+U2,ME6211C18M5G-N,ME6211C18M5G-N,YES,Display:SOT23-5__5f716075cd,lcd_bias
+U3,AP3012k,AP3012KTR-G1,YES,Display:SOT23-5__5f716075cd,lcd_bias
+U4,SN74LVC1G07DBVR,SN74LVC1G07DBVR,YES,Display:SOT-23-5__81a06d98de,lcd_interfaces

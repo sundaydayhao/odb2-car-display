@@ -1,0 +1,79 @@
+(footprint "TPC1__3c95fc0e3d"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5b825085-38bc-4ea9-a539-e4b86cd42bfd")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "TPC1__3c95fc0e3d"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "54ee485c-5475-48d3-bad1-003d61a3b8a7")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "98a077d8-b5da-44be-9f55-8701712c9e90")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3c9feb9a-78c1-4051-8a3a-84479d5c5177")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.12)
+			)
+		)
+	)
+	(sheetname "lcd_bias")
+	(sheetfile "lcd_bias.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(arc
+				(start 0 -0.55)
+				(mid 0 0.55)
+				(end 0 -0.55)
+			)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "67c779a3-b663-4001-b058-934b0bafba80")
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 1 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "96393e58-adb8-4f4b-a7f5-49151e914443")
+	)
+	(embedded_fonts no)
+)

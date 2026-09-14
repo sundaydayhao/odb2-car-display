@@ -1,0 +1,2016 @@
+{
+  "J2": {
+    "uuid": "0126de75-7aa3-5d00-8cce-91aec1d48c20",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      86.36,
+      81.28
+    ],
+    "value": "LCD_30P_0.5mm",
+    "footprint": "FFC30P_0P5__db095f96ca",
+    "dnp": false,
+    "mpn": "AFC01-S30FCA-00",
+    "nets": {
+      "1": "LED+",
+      "2": "LED+",
+      "3": "LCD_VGH",
+      "4": "LCD_VGL",
+      "5": "UPDN",
+      "6": "SHLR",
+      "7": "LED-",
+      "8": "LED-",
+      "9": "LCD_AVDD",
+      "10": "GND",
+      "11": null,
+      "12": null,
+      "13": "GND",
+      "14": null,
+      "15": null,
+      "16": "GND",
+      "17": "A_CLKP",
+      "18": "A_CLKN",
+      "19": "GND",
+      "20": "A_DATP1",
+      "21": "A_DATN1",
+      "22": "GND",
+      "23": "A_DATP0",
+      "24": "A_DATN0",
+      "25": "GND",
+      "26": "STBYB",
+      "27": "RESET_LCD",
+      "28": "LCD_VDD",
+      "29": "LCD_VDD",
+      "30": "LCD_VCOM",
+      "31": "GND",
+      "32": "GND"
+    }
+  },
+  "J7": {
+    "uuid": "4551bf3a-614d-5f89-969a-df0373f4f1c1",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      226.06,
+      81.28
+    ],
+    "value": "FPC_40P_UNUSED",
+    "footprint": "FFC40P_0P5__8d5a270b71",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "B_DATP0",
+      "3": "B_DATN0",
+      "4": "GND",
+      "5": "B_DATP1",
+      "6": "B_DATN1",
+      "7": "GND",
+      "8": "B_CLKP",
+      "9": "B_CLKN",
+      "10": "GND",
+      "11": null,
+      "12": null,
+      "13": "GND",
+      "14": null,
+      "15": null,
+      "16": "GND",
+      "17": "GND",
+      "18": null,
+      "19": null,
+      "20": null,
+      "21": null,
+      "22": null,
+      "23": null,
+      "24": "RESET_LCD",
+      "25": null,
+      "26": null,
+      "27": "GND",
+      "28": "LED-",
+      "29": "LED-",
+      "30": "GND",
+      "31": null,
+      "32": "GND",
+      "33": "GND",
+      "34": null,
+      "35": "LED+",
+      "36": "LED+",
+      "37": "GND",
+      "38": "VDD_3V3",
+      "39": "VDD_3V3",
+      "40": null,
+      "41": "GND",
+      "42": "GND"
+    }
+  },
+  "J1": {
+    "uuid": "30822774-6ca4-52f4-b89b-de8cf5129c95",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      365.76,
+      68.58
+    ],
+    "value": "USB_TYPEC_16P_F",
+    "footprint": "USB_TYPEC_16P_F__86066a2b25",
+    "dnp": false,
+    "mpn": "TYPE-C-31-M-12",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "3": "USB_5V",
+      "4": "USB_5V",
+      "5": null,
+      "6": "N17131715",
+      "7": null,
+      "8": null,
+      "9": null,
+      "10": null,
+      "11": null,
+      "12": "N17131721",
+      "13": "USB_5V",
+      "14": "USB_5V",
+      "15": "GND",
+      "16": "GND",
+      "17": "GND",
+      "18": "GND",
+      "19": "GND",
+      "20": "GND"
+    }
+  },
+  "J3": {
+    "uuid": "c77fd1b0-d99a-5d2e-ab31-639aa89547f8",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      505.46,
+      68.58
+    ],
+    "value": "DSI_15P_1mm",
+    "footprint": "FFC_15P_1_MIPI__6610367bd7",
+    "dnp": false,
+    "mpn": "1.0K-GT-15PB",
+    "nets": {
+      "1": "GND",
+      "2": "ESP32_DATN1",
+      "3": "ESP32_DATP1",
+      "4": "GND",
+      "5": "ESP32_CLKN",
+      "6": "ESP32_CLKP",
+      "7": "GND",
+      "8": "ESP32_DATN0",
+      "9": "ESP32_DATP0",
+      "10": "GND",
+      "11": "ESP32_I2C_SCL",
+      "12": "ESP32_I2C_SDA",
+      "13": "GND",
+      "14": "VDD_3V3",
+      "15": "VDD_3V3",
+      "16": null,
+      "17": null,
+      "18": null,
+      "19": null,
+      "20": null,
+      "21": null,
+      "22": null,
+      "23": null,
+      "24": null,
+      "25": null,
+      "26": null,
+      "27": null,
+      "28": null,
+      "29": null,
+      "30": null
+    }
+  },
+  "J5": {
+    "uuid": "abd5ead5-5a0f-560e-9e4a-265a7e95793f",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      365.76,
+      132.08
+    ],
+    "value": "FPC_6P_1mm_UNUSED",
+    "footprint": "FFC6P_1_UP__634cfe9cbb",
+    "dnp": true,
+    "mpn": "AFA07-S06ECA-00",
+    "nets": {
+      "1": "VDD_3V3",
+      "2": "ESP32_I2C_SCL",
+      "3": "ESP32_I2C_SDA",
+      "4": "GND",
+      "5": "INT_TP",
+      "6": "RESET_TP",
+      "7": "GND",
+      "8": "GND"
+    }
+  },
+  "J6": {
+    "uuid": "5155805a-9961-539a-938b-8d4a1b38be87",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      505.46,
+      132.08
+    ],
+    "value": "AUX_5V_BL_RESET_TOUCH",
+    "footprint": "CON4X2_2P54_SMT__7e2a9205d1",
+    "dnp": false,
+    "mpn": "2.54-2*4P立贴针",
+    "nets": {
+      "1": "N17132617",
+      "2": "GND",
+      "3": null,
+      "4": null,
+      "5": "LED_CTRL",
+      "6": "LCD_RESET_HOST",
+      "7": "INT_TP",
+      "8": "RESET_TP"
+    }
+  },
+  "J8": {
+    "uuid": "b559d401-45ac-5f5b-9c80-3f45a740c15a",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      86.36,
+      157.48
+    ],
+    "value": "GT911_6P_0.5mm",
+    "footprint": "FFC6P_0P5_UP__fd49314884",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_TP",
+      "2": "VDD_3V3",
+      "3": "GND",
+      "4": "INT_TP",
+      "5": "ESP32_I2C_SDA",
+      "6": "ESP32_I2C_SCL",
+      "7": "GND",
+      "8": "GND"
+    }
+  },
+  "U4": {
+    "uuid": "5a9af24d-d461-5627-a787-a59ecf9b91aa",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      226.06,
+      157.48
+    ],
+    "value": "SN74LVC1G07DBVR",
+    "footprint": "SOT-23-5__81a06d98de",
+    "dnp": false,
+    "mpn": "SN74LVC1G07DBVR",
+    "nets": {
+      "1": null,
+      "2": "LCD_RESET_HOST",
+      "3": "GND",
+      "4": "RESET_LCD",
+      "5": "VDD_3V3"
+    }
+  },
+  "#FLG3": {
+    "uuid": "97ae1bbb-4992-5911-8fc2-aa4ea0aa021d",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_3V3"
+    }
+  },
+  "C1": {
+    "uuid": "5af4afce-92ac-558f-9060-2c4ff7a7d76c",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "1u / 16V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_LCD",
+      "2": "GND"
+    }
+  },
+  "C2": {
+    "uuid": "1340af3b-95d7-5a10-bb94-95111c1b9359",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_TP",
+      "2": "GND"
+    }
+  },
+  "C25": {
+    "uuid": "8079fbad-4798-5fea-b0fb-9307c61bcff2",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C28": {
+    "uuid": "f1e8cd9e-49bb-551e-8bd3-69d377559a25",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "100n / 16V",
+    "footprint": "C_0402_1005Metric__56c42d4718",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_3V3",
+      "2": "GND"
+    }
+  },
+  "C3": {
+    "uuid": "5b75e730-c987-534f-8fa5-249531285898",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_3V3",
+      "2": "GND"
+    }
+  },
+  "D1": {
+    "uuid": "97859dce-96d0-52e0-b11d-84ec802b00e6",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "DSS24",
+    "footprint": "SOD123FL__46ae4cb21a",
+    "dnp": false,
+    "mpn": "DSS24",
+    "nets": {
+      "1": "USB_5V",
+      "2": "VCC_5V"
+    }
+  },
+  "D12": {
+    "uuid": "de94dd7c-ecce-53ed-aecd-a530a33713ac",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "DSS24",
+    "footprint": "SOD123FL__46ae4cb21a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N17147084",
+      "2": "VCC_5V"
+    }
+  },
+  "D2": {
+    "uuid": "174e34db-81d9-54d7-a7fd-7b3728dd36a1",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__04fef8a58b",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB_5V"
+    }
+  },
+  "D3": {
+    "uuid": "aab87645-09e2-5b31-9a1d-138d33483421",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "DSS24",
+    "footprint": "SOD123FL__46ae4cb21a",
+    "dnp": false,
+    "mpn": "DSS24",
+    "nets": {
+      "1": "N17132617",
+      "2": "VCC_5V"
+    }
+  },
+  "H1": {
+    "uuid": "ff9a8e9a-8526-5cf6-a01b-0f60dc2ce68f",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H2": {
+    "uuid": "f02f6ad1-4a23-5b31-a43d-79d216b4118b",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H3": {
+    "uuid": "cf72fcd7-7654-59cc-add0-faaf62d31dc3",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H4": {
+    "uuid": "4c8e20db-f45f-5be1-8676-ab4d6c810f4c",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H5": {
+    "uuid": "f35472b4-975b-5413-b33e-93a5c6731be7",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H6": {
+    "uuid": "14ec7255-160a-5437-8181-4a71b108596c",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H7": {
+    "uuid": "986f088c-05c4-5616-a6e8-34a7d622a08e",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H8": {
+    "uuid": "132e98e1-7530-50b7-9c63-162537694b1c",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      220.98
+    ],
+    "value": "STD",
+    "footprint": "HOLE6P2_4P22__65e4372978",
+    "dnp": false,
+    "mpn": "SMTSO2580CTJ",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "R1": {
+    "uuid": "3c54bce0-77cd-594a-894b-cca8e317de80",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "UPDN",
+      "2": "LCD_VDD"
+    }
+  },
+  "R10": {
+    "uuid": "1312ca8d-b1c1-5a2c-9245-6eb8aa71576a",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_TP",
+      "2": "VDD_3V3"
+    }
+  },
+  "R2": {
+    "uuid": "f39c37d8-e366-5068-8a0b-3a6a9d1de09b",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      246.38
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "SHLR",
+      "2": "LCD_VDD"
+    }
+  },
+  "R25": {
+    "uuid": "f4b1d806-5374-5acf-9205-2dd9881014a0",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_DATN1",
+      "2": "ESP32_DATN1"
+    }
+  },
+  "R26": {
+    "uuid": "b45c00f1-4c07-59af-a41e-4460ee8fd4de",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_DATP1",
+      "2": "ESP32_DATP1"
+    }
+  },
+  "R27": {
+    "uuid": "c5c8d178-22af-559d-85a6-dba51b6ae070",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_CLKN",
+      "2": "ESP32_CLKN"
+    }
+  },
+  "R28": {
+    "uuid": "d06c3b00-59dc-51ff-b671-394850f38898",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_CLKP",
+      "2": "ESP32_CLKP"
+    }
+  },
+  "R29": {
+    "uuid": "3658043b-4b8c-5674-9471-471f1424d387",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_DATN0",
+      "2": "ESP32_DATN0"
+    }
+  },
+  "R3": {
+    "uuid": "0f7fe8b4-7125-512f-82f5-b8bb2d411f2a",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      246.38
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "STBYB",
+      "2": "LCD_VDD"
+    }
+  },
+  "R30": {
+    "uuid": "5ec8dd5b-6c41-5d6d-9019-61075cf93007",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      246.38
+    ],
+    "value": "0",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A_DATP0",
+      "2": "ESP32_DATP0"
+    }
+  },
+  "R31": {
+    "uuid": "926e4df0-52ba-50d9-a346-03da9ee90681",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_DATN1",
+      "2": "ESP32_DATN1"
+    }
+  },
+  "R32": {
+    "uuid": "53175e2f-a7e3-59d0-995c-7d908eead961",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_DATP1",
+      "2": "ESP32_DATP1"
+    }
+  },
+  "R33": {
+    "uuid": "b9025552-739e-5a10-8835-8b50405e23ce",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_CLKN",
+      "2": "ESP32_CLKN"
+    }
+  },
+  "R34": {
+    "uuid": "9030eb23-daa1-54cc-a073-440e22586cc5",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_CLKP",
+      "2": "ESP32_CLKP"
+    }
+  },
+  "R35": {
+    "uuid": "7f13a7e2-110b-52bc-bcf7-40190b5b1800",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_DATN0",
+      "2": "ESP32_DATN0"
+    }
+  },
+  "R36": {
+    "uuid": "bb46e5c3-17d1-56a4-b8e1-7d65eb906d49",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "B_DATP0",
+      "2": "ESP32_DATP0"
+    }
+  },
+  "R37": {
+    "uuid": "0448e300-9def-578e-bf71-3d394c878f67",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      271.78
+    ],
+    "value": "1k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_LCD",
+      "2": "VDD_3V3"
+    }
+  },
+  "R38": {
+    "uuid": "5c681ead-196a-5b21-a6e0-f90f2a962e0a",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      271.78
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "RESET_LCD"
+    }
+  },
+  "R39": {
+    "uuid": "2b0de102-cc2f-5049-befb-0c66f1dbe2d4",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      297.18
+    ],
+    "value": "10k",
+    "footprint": "R_0402_1005Metric__e20e110129",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_RESET_HOST",
+      "2": "GND"
+    }
+  },
+  "R4": {
+    "uuid": "83cb4a34-8a3f-5fa7-8594-7c0554985555",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      297.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RESET_LCD",
+      "2": "LCD_VDD"
+    }
+  },
+  "R40": {
+    "uuid": "b09e0409-eac8-59b7-a218-6881db9a22ac",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      297.18
+    ],
+    "value": "100k",
+    "footprint": "R_0402_1005Metric__e20e110129",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "INT_TP",
+      "2": "GND"
+    }
+  },
+  "R5": {
+    "uuid": "0ea5a99b-a1b9-5d4d-8f58-67dc0694de6c",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      297.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "UPDN"
+    }
+  },
+  "R6": {
+    "uuid": "c308f88d-1923-5d0c-b4d9-f25ff1916dd8",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      297.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "SHLR"
+    }
+  },
+  "R7": {
+    "uuid": "a3e048ea-307f-50e6-905c-dd0d89f1795a",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      297.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "STBYB"
+    }
+  },
+  "R8": {
+    "uuid": "e5123456-80ae-5c39-9176-de9d15a29d42",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      297.18
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N17131715"
+    }
+  },
+  "R9": {
+    "uuid": "76b6a3af-892b-5234-8848-4a83598e6c0e",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      297.18
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N17131721"
+    }
+  },
+  "TP6": {
+    "uuid": "467e66e0-90f5-5cef-944d-82d1eb2f4981",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      322.58
+    ],
+    "value": "TEST",
+    "footprint": "HOLE2P2_1__191d9da361",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17147084"
+    }
+  },
+  "TP7": {
+    "uuid": "9b4a98a3-88dc-5ced-8da2-31a0d23c1285",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      121.92,
+      322.58
+    ],
+    "value": "TEST",
+    "footprint": "HOLE2P2_1__191d9da361",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "TP8": {
+    "uuid": "9084d394-a16b-5699-8f2d-ee022aa5dbfa",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      322.58
+    ],
+    "value": "TEST",
+    "footprint": "HOLE2P2_1__191d9da361",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": null
+    }
+  },
+  "TP9": {
+    "uuid": "4031191c-6ac7-5ec0-b404-ede457b41261",
+    "sheet_uuid": "f84917f1-a8cf-5775-9c91-06a379a75f93",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      322.58
+    ],
+    "value": "TEST",
+    "footprint": "HOLE2P2_1__191d9da361",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": null
+    }
+  },
+  "U1": {
+    "uuid": "fa54cd0d-8ac1-5b92-8d43-80c44e6868fa",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      86.36,
+      55.88
+    ],
+    "value": "ETA1611",
+    "footprint": "SOT23-6__2edaa2116b",
+    "dnp": false,
+    "mpn": "ETA1611S2G",
+    "nets": {
+      "1": "N17127832",
+      "2": "GND",
+      "3": "LED-",
+      "4": "N17127878",
+      "5": "VCC_5V",
+      "6": null
+    }
+  },
+  "C4": {
+    "uuid": "69598f7b-36e3-5e3a-8de0-19f1a9281168",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      190.5,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C5": {
+    "uuid": "df04b943-2499-594e-8562-948fb32fff7b",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      260.35,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LED+",
+      "2": "GND"
+    }
+  },
+  "C6": {
+    "uuid": "2492e20b-04fd-53f4-97b1-e5261f288cc5",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17127878",
+      "2": "GND"
+    }
+  },
+  "D4": {
+    "uuid": "77e65c34-dd45-5257-99ca-f910a3c514a6",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "N17127832",
+      "2": "LED+"
+    }
+  },
+  "L1": {
+    "uuid": "5eebeea8-12f9-55b1-a12e-bbac716c4b7d",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "10uH_0.8A",
+    "footprint": "L3012S__5941442135",
+    "dnp": false,
+    "mpn": "SWPA3012S100MT",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "N17127832"
+    }
+  },
+  "R11": {
+    "uuid": "c535beee-d1b4-51fb-be68-bdbc2ddd341a",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17127878",
+      "2": "LED_CTRL"
+    }
+  },
+  "R12": {
+    "uuid": "0a994ff4-6033-5cf9-afae-85925eccf57f",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      190.5,
+      68.58
+    ],
+    "value": "1.1",
+    "footprint": "R0603__10d1fcc181",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "LED-"
+    }
+  },
+  "R24": {
+    "uuid": "038b4dd2-09c5-582a-8adc-9b6ba0579405",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      260.35,
+      68.58
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "LED_CTRL",
+      "2": "VDD_3V3"
+    }
+  },
+  "R41": {
+    "uuid": "a783b4cb-858e-594f-9f86-e0febefdddf9",
+    "sheet_uuid": "19ef008f-69b2-503f-9d81-af5ded7ec977",
+    "sheet": "backlight",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "10k",
+    "footprint": "R_0402_1005Metric__e20e110129",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LED_CTRL",
+      "2": "GND"
+    }
+  },
+  "U2": {
+    "uuid": "d8f575ee-b134-5a81-96a6-b08cbb044c36",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      86.36,
+      55.88
+    ],
+    "value": "ME6211C18M5G-N",
+    "footprint": "SOT23-5__5f716075cd",
+    "dnp": false,
+    "mpn": "ME6211C18M5G-N",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND",
+      "3": "N17128822",
+      "4": null,
+      "5": "LCD_VDD"
+    }
+  },
+  "U3": {
+    "uuid": "cc2d7e6c-e1b8-5a01-b29f-2aab2b145244",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "AP3012k",
+    "footprint": "SOT23-5__5f716075cd",
+    "dnp": false,
+    "mpn": "AP3012KTR-G1",
+    "nets": {
+      "1": "N17134948",
+      "2": "GND",
+      "3": "N17135258",
+      "4": "N17134769",
+      "5": "VCC_5V"
+    }
+  },
+  "#FLG1": {
+    "uuid": "72a53d12-349f-53b5-b0e1-6473da955c6a",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "#FLG2": {
+    "uuid": "024266d9-59b7-5394-9bb7-4e53edf58c2e",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V"
+    }
+  },
+  "C10": {
+    "uuid": "2d802ac5-ca2c-5d9f-904f-20919a2759a8",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VDD",
+      "2": "GND"
+    }
+  },
+  "C11": {
+    "uuid": "17b6b158-3ee4-57af-ab9b-88f6f00a5300",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C12": {
+    "uuid": "069497e4-f94b-5bb6-b5a7-f9ff303b8f39",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C13": {
+    "uuid": "4deeebda-71e0-5551-8702-0453b670ddd5",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_AVDD",
+      "2": "GND"
+    }
+  },
+  "C14": {
+    "uuid": "82ef670e-7926-5494-93ed-e4c1bf33d6c6",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_AVDD",
+      "2": "GND"
+    }
+  },
+  "C15": {
+    "uuid": "69964334-857d-53f5-b0ea-486093a5874c",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17136021",
+      "2": "N17134948"
+    }
+  },
+  "C16": {
+    "uuid": "d8891813-75db-54c2-9056-893cbc1bae7c",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17135942",
+      "2": "N17134948"
+    }
+  },
+  "C17": {
+    "uuid": "7c44e61c-1617-5a14-9b73-8a4c3eb01a36",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      93.98
+    ],
+    "value": "1u/50V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17136498",
+      "2": "GND"
+    }
+  },
+  "C18": {
+    "uuid": "26157f30-40ef-5386-9c8e-f05253934b5f",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "1u/50V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17136250",
+      "2": "GND"
+    }
+  },
+  "C21": {
+    "uuid": "4377dfac-7695-5fa4-b666-85c01cf5345f",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "C22": {
+    "uuid": "d2508a2a-05db-5c26-8188-d84adba07ac7",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "C23": {
+    "uuid": "0bfbb524-2599-540c-88f0-2736dd7ae415",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "10u/50V",
+    "footprint": "C0805__9959ce48b0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGH",
+      "2": "GND"
+    }
+  },
+  "C24": {
+    "uuid": "8c983712-000d-50af-85ed-47f03e9a1247",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGH",
+      "2": "GND"
+    }
+  },
+  "C26": {
+    "uuid": "90b5f21b-9825-5944-a4cc-f7f682c06b48",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VCOM",
+      "2": "GND"
+    }
+  },
+  "C27": {
+    "uuid": "6a429aca-bdad-5407-ad4c-983d24339b7f",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      119.38
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VCOM",
+      "2": "GND"
+    }
+  },
+  "C7": {
+    "uuid": "adc0f33a-798a-5d6a-8346-f98963bbe1aa",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      119.38
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4affcd651d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C8": {
+    "uuid": "37d8e04f-b00a-55c8-9fbf-9114896bbd45",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C9": {
+    "uuid": "7a0f818f-8bf5-555d-a4f0-9d91c39f0942",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__b328da3f93",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VDD",
+      "2": "GND"
+    }
+  },
+  "D10": {
+    "uuid": "3ad81c49-df08-5a22-9770-fa9a995bb35a",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "LMSZ5233BT1G",
+    "footprint": "SOD123__b888afbd6d",
+    "dnp": false,
+    "mpn": "LMSZ5233BT1G",
+    "nets": {
+      "1": "LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "D11": {
+    "uuid": "880df644-f306-5b96-a445-23c1a777385d",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "MM1W18",
+    "footprint": "SOD123__b888afbd6d",
+    "dnp": false,
+    "mpn": "MM1W18",
+    "nets": {
+      "1": "GND",
+      "2": "LCD_VGH"
+    }
+  },
+  "D5": {
+    "uuid": "180e98d8-1071-5500-956d-b8e38aac3c6b",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "N17134948",
+      "2": "LCD_AVDD"
+    }
+  },
+  "D6": {
+    "uuid": "4709c801-da1a-5d3d-8def-47b2f59b3b1f",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "LCD_AVDD",
+      "2": "N17136021"
+    }
+  },
+  "D7": {
+    "uuid": "a93a6dad-d46e-5c16-b54a-7bce0597e3f5",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "N17136021",
+      "2": "N17136250"
+    }
+  },
+  "D8": {
+    "uuid": "fdfc4ebd-a104-58d5-8521-919ee3335476",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "N17135942",
+      "2": "GND"
+    }
+  },
+  "D9": {
+    "uuid": "ce3396b8-5b78-52eb-bb1f-b59bc68c8eec",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__f9a9ee848d",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "N17136498",
+      "2": "N17135942"
+    }
+  },
+  "L2": {
+    "uuid": "a3f167f7-1d5d-55d9-8901-04b083e80039",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "10uH_0.8A",
+    "footprint": "L3012S__5941442135",
+    "dnp": false,
+    "mpn": "SWPA3012S100MT",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "N17134948"
+    }
+  },
+  "R13": {
+    "uuid": "aa60be60-f84a-505a-8598-815ef4338f9b",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17128822",
+      "2": "VCC_5V"
+    }
+  },
+  "R14": {
+    "uuid": "fd6a832d-8576-5925-acd3-7cce84117534",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17134769",
+      "2": "VCC_5V"
+    }
+  },
+  "R15": {
+    "uuid": "e3dde791-313f-5a3b-ad8d-928563a616be",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "22k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_AVDD",
+      "2": "N17135258"
+    }
+  },
+  "R16": {
+    "uuid": "3eeb3ea4-63ea-5468-9b80-35af6e13ba00",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "3.3k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17135258",
+      "2": "GND"
+    }
+  },
+  "R17": {
+    "uuid": "8ebd6367-891d-598b-8871-20bf49409c60",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "220",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17136498",
+      "2": "LCD_VGL"
+    }
+  },
+  "R18": {
+    "uuid": "3d296e62-408c-5991-93a8-53e2dab81ceb",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "220",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17136250",
+      "2": "LCD_VGH"
+    }
+  },
+  "R19": {
+    "uuid": "68369c59-b11c-55d7-bd5b-2f36beadd428",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "LCD_VGL"
+    }
+  },
+  "R20": {
+    "uuid": "fcb369ed-4e6d-5da6-97a5-d5e4bd52d822",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "LCD_VGH"
+    }
+  },
+  "R22": {
+    "uuid": "c95427a1-56c2-5a24-9fe4-8c3962cca53a",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "1k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "LCD_VCOM"
+    }
+  },
+  "R23": {
+    "uuid": "e298eac4-8add-512d-bcbe-ff4a60a5c9d8",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "2k",
+    "footprint": "R0402__b308b0f41e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VCOM",
+      "2": "LCD_AVDD"
+    }
+  },
+  "TP1": {
+    "uuid": "77c90a7d-617d-5537-8e88-f90523287294",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__3c95fc0e3d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGL"
+    }
+  },
+  "TP2": {
+    "uuid": "2b110489-4ecb-5fc0-aaf3-e0e92ca4fb78",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__3c95fc0e3d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VGH"
+    }
+  },
+  "TP3": {
+    "uuid": "6963145e-f297-5a03-b9e1-5e141d8cec56",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__3c95fc0e3d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VCOM"
+    }
+  },
+  "TP4": {
+    "uuid": "51a38d95-8b29-5e50-9f54-9905de43f271",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__3c95fc0e3d",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_AVDD"
+    }
+  },
+  "TP5": {
+    "uuid": "72d6dd25-7a27-5fe8-aa61-7dac4df4f1f4",
+    "sheet_uuid": "936093df-3bef-591c-b975-610367731510",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__999ff27256",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "LCD_VDD"
+    }
+  }
+}

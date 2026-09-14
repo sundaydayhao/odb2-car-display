@@ -1,0 +1,162 @@
+(footprint "SOD882_55527cd7__832596a649"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(locked yes)
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.3905 0.014625 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "dc2d3949-36f2-4ff4-8360-3eb17557dc33")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.0508)
+			)
+			(justify left)
+		)
+	)
+	(property "Value" "SOD882_55527cd7__832596a649"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "98aec0ec-aa77-4f46-b913-e70f1b6aaa6f")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "452f2de0-7e66-419b-b43a-598d3bf42e15")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "551633cf-eacd-48cc-9076-35b22350016d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(sheetname "wifi_sd")
+	(sheetfile "wifi_sd.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.85 -0.5)
+		(end -0.1 -0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6c731215-66f7-4e1f-8877-3c309ddfcfcb")
+	)
+	(fp_line
+		(start -0.85 0.5)
+		(end -0.85 -0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ebb0779e-bf86-47d7-8d3d-42b377e63a8d")
+	)
+	(fp_line
+		(start -0.7 -0.5)
+		(end -0.7 0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9d6207dc-5637-4bc9-9ef3-f24299131f83")
+	)
+	(fp_line
+		(start -0.1 0.5)
+		(end -0.85 0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a724fba9-a3d2-48a6-9f3a-e02acb6030bb")
+	)
+	(fp_line
+		(start 0.1 -0.5)
+		(end 0.7 -0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3ea9d41c-8f1e-418c-aec6-470c2825c429")
+	)
+	(fp_line
+		(start 0.7 -0.5)
+		(end 0.7 0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "129430a9-5314-4ae0-b303-7124e9ccc272")
+	)
+	(fp_line
+		(start 0.7 0.5)
+		(end 0.1 0.5)
+		(stroke
+			(width 0.1016)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9b170bbf-2e79-443a-a564-b1364cca471d")
+	)
+	(fp_poly
+		(pts
+			(xy 0.7 -0.505) (xy -0.8525 -0.505) (xy -0.8525 0.5025) (xy 0.7 0.5025)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "5c4a2507-f99c-4611-b1c6-b75e00b4f040")
+	)
+	(fp_poly
+		(pts
+			(xy 0.55 -0.3475) (xy -0.5525 -0.3475) (xy -0.5525 0.35) (xy 0.55 0.35)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "d38bfe4b-86d2-42b1-a85b-ac58596935ed")
+	)
+	(pad "1" smd rect
+		(at 0.35 0 180)
+		(size 0.4 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f896128a-190a-4ccb-a91b-39b6f6b3a758")
+	)
+	(pad "2" smd rect
+		(at -0.35 0 180)
+		(size 0.4 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "787f2593-9566-4d3f-ace9-e1006c029fd2")
+	)
+	(embedded_fonts no)
+)

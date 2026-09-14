@@ -1,0 +1,85 @@
+(footprint "HOLE5_3__0f3c3a2f1a"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(locked yes)
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0.0466 -0.007775 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1a327f05-25e7-4629-910a-ea2bf9332166")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.0508)
+			)
+		)
+	)
+	(property "Value" "HOLE5_3__0f3c3a2f1a"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "c40b5bc6-6b3d-4de3-9c11-fbae00c5aebf")
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7bbb0edd-55af-40e2-a779-0c1f8bfed5b0")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b36c0d69-855c-43d5-b23d-d611950d47b1")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(sheetname "power_usb")
+	(sheetfile "power_usb.kicad_sch")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.75 1.75)
+		(end 1.75 -1.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "2c6b2297-5c4a-463e-838f-dd120201026a")
+	)
+	(fp_rect
+		(start -1.75 1.75)
+		(end 1.75 -1.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "d7dd06c2-d8d4-4525-b72b-cc5bf7b119d9")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 5 5)
+		(drill 3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e4b6ef20-d6fe-4cb4-b6e4-9356a47c6b4a")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,8746 @@
+{
+  "Q2": {
+    "uuid": "899d794d-3927-5c03-9e72-81de636b3507",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      86.36,
+      55.88
+    ],
+    "value": "LMBT3906DW1T1G",
+    "footprint": "SOT-363__92e478113d",
+    "dnp": false,
+    "mpn": "LMBT3906DW1T1G",
+    "nets": {
+      "1": "USB0_5V",
+      "2": "N18399134",
+      "3": "N18399180",
+      "4": "USB_5V",
+      "5": "N18399134",
+      "6": "N18399134"
+    }
+  },
+  "Q5": {
+    "uuid": "13837a37-694a-5b60-b67e-d6f5e632c21a",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "LMBT3906DW1T1G",
+    "footprint": "SOT-363__92e478113d",
+    "dnp": false,
+    "mpn": "LMBT3906DW1T1G",
+    "nets": {
+      "1": "USB2_5V",
+      "2": "N18253640",
+      "3": "N18253683",
+      "4": "USB_5V",
+      "5": "N18253640",
+      "6": "N18253640"
+    }
+  },
+  "Q6": {
+    "uuid": "e9cbce1c-e663-5b15-b822-83b081a049c7",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "LMBT3906DW1T1G",
+    "footprint": "SOT-363__92e478113d",
+    "dnp": false,
+    "mpn": "LMBT3906DW1T1G",
+    "nets": {
+      "1": "USB1_5V",
+      "2": "N18251395",
+      "3": "N18251818",
+      "4": "USB_5V",
+      "5": "N18251395",
+      "6": "N18251395"
+    }
+  },
+  "U11": {
+    "uuid": "11eb4cd5-5ba4-5c29-895c-b2c220a2ae14",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      505.46,
+      55.88
+    ],
+    "value": "TLV62569",
+    "footprint": "SOT23_0P95_2P6__29960399d6",
+    "dnp": false,
+    "mpn": "TLV62569DBVR",
+    "nets": {
+      "1": "N18262777",
+      "2": "GND",
+      "3": "N18262785",
+      "4": "VCC_5V",
+      "5": "N18262730"
+    }
+  },
+  "U9": {
+    "uuid": "5eb6b09a-4ff8-5176-9506-089b904bc084",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      86.36,
+      106.68
+    ],
+    "value": "TPS2051CDBVR",
+    "footprint": "SOT23-5__f216817d34",
+    "dnp": false,
+    "mpn": "TPS2051CDBVR",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "GND",
+      "3": "N18248775",
+      "4": "VBUS_EN",
+      "5": "VCC_5V"
+    }
+  },
+  "#FLG13": {
+    "uuid": "f8f89b49-cd6d-5a8a-8848-e27ed000677e",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V"
+    }
+  },
+  "#FLG7": {
+    "uuid": "c75d74ec-4876-5c60-8c24-76376c04aa00",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "C110": {
+    "uuid": "4e0908dc-33f8-5a42-b9b9-0bb130393378",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB2_5V",
+      "2": "GND"
+    }
+  },
+  "C117": {
+    "uuid": "229a0300-a92a-5f38-b323-b1ad077dca81",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB1_5V",
+      "2": "GND"
+    }
+  },
+  "C65": {
+    "uuid": "b4e5924c-e19f-5a8d-9c21-770e39278cb7",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C69": {
+    "uuid": "dfefba4e-c401-5495-8f58-a6106e405716",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "22p / 50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18262736",
+      "2": "N18262730"
+    }
+  },
+  "C70": {
+    "uuid": "26783112-92cf-59a3-abd4-fd426911d089",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18262736",
+      "2": "GND"
+    }
+  },
+  "C71": {
+    "uuid": "c1faeae0-a240-5722-a23f-e134029c0883",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C72": {
+    "uuid": "eb650f93-a25c-5e4e-a0df-b4b609ee38e8",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "100u/10V",
+    "footprint": "C1206__8afc8bf708",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "GND"
+    }
+  },
+  "C73": {
+    "uuid": "3e7b86ec-11ad-542f-829f-f7a588c64d1a",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "GND"
+    }
+  },
+  "C74": {
+    "uuid": "a7c52527-ae05-51b8-bd72-10b94c9a0fc6",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "GND"
+    }
+  },
+  "C75": {
+    "uuid": "a9b2ce64-54e2-5934-8e0a-cc53a287196a",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "100u/10V",
+    "footprint": "C1206__8afc8bf708",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "GND"
+    }
+  },
+  "C76": {
+    "uuid": "e83d7fcf-975c-5114-8ad5-76176331884d",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB0_5V",
+      "2": "GND"
+    }
+  },
+  "C79": {
+    "uuid": "3c49df44-85dc-5cea-bc20-82fd150dd495",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "22uF/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_5V",
+      "2": "GND"
+    }
+  },
+  "C80": {
+    "uuid": "353e1fcc-e306-533a-8454-c8d1658b279b",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_5V",
+      "2": "GND"
+    }
+  },
+  "D12": {
+    "uuid": "b9c1c906-10e0-526f-bd3c-2c95d71ac796",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "RED LED",
+    "footprint": "LED0603__d3163388a4",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17578381",
+      "2": "GND"
+    }
+  },
+  "D15": {
+    "uuid": "e5b9cb93-58f1-5f80-b4cb-71ca87d3652f",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "VBUS_OUT"
+    }
+  },
+  "H1": {
+    "uuid": "8a65f7cb-a36a-55a5-8bd6-9a7e073c410e",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H2": {
+    "uuid": "b42c511b-f11f-58c3-912f-aea47f30dc84",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H3": {
+    "uuid": "4e35bce8-84c8-5fde-8b0d-243ba55f04f3",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H4": {
+    "uuid": "2733ee8b-d51f-53a1-9d00-fc099328cac0",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "L4": {
+    "uuid": "2297389b-4d27-5b1e-bd29-178736a07237",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "2.2uH",
+    "footprint": "L2520__31a445bbcb",
+    "dnp": false,
+    "mpn": "WPN252010U2R2MT",
+    "nets": {
+      "1": "N18262785",
+      "2": "N18262736"
+    }
+  },
+  "Q3": {
+    "uuid": "cd9bb63e-c2c5-5c8a-9822-153c36f5e2df",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "AO3401A",
+    "footprint": "SOT23-3__14816d8467",
+    "dnp": false,
+    "mpn": "AO3401A",
+    "nets": {
+      "1": "N18399180",
+      "2": "USB_5V",
+      "3": "USB0_5V"
+    }
+  },
+  "Q4": {
+    "uuid": "805f1915-529f-5e98-ad54-588232ddd442",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "AO3401A",
+    "footprint": "SOT23-3__14816d8467",
+    "dnp": false,
+    "mpn": "AO3401A",
+    "nets": {
+      "1": "N18253683",
+      "2": "USB_5V",
+      "3": "USB2_5V"
+    }
+  },
+  "Q7": {
+    "uuid": "1e7ed3a3-33b3-5d0b-8093-cd492df32a59",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "AO3401A",
+    "footprint": "SOT23-3__14816d8467",
+    "dnp": false,
+    "mpn": "AO3401A",
+    "nets": {
+      "1": "N18251818",
+      "2": "USB_5V",
+      "3": "USB1_5V"
+    }
+  },
+  "R145": {
+    "uuid": "bf8c4a7b-0add-5c6d-83f0-26252ad7fbea",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "VBUS_EN"
+    }
+  },
+  "R151": {
+    "uuid": "eb1e305d-10c8-5543-8eb3-04e192edeb08",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "N18248775"
+    }
+  },
+  "R152": {
+    "uuid": "4723395b-f33b-5e39-8f78-62f886750b6c",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "VBUS_EN"
+    }
+  },
+  "R170": {
+    "uuid": "3131134d-4594-53df-9bc4-395a60e473ee",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "22.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18262730",
+      "2": "GND"
+    }
+  },
+  "R172": {
+    "uuid": "edbfaee7-3fa6-5aeb-9fee-7bb28516b5b8",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "100k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18262736",
+      "2": "N18262730"
+    }
+  },
+  "R173": {
+    "uuid": "5087e4eb-e7e9-5be3-897c-6b00df744ec0",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "N18262777"
+    }
+  },
+  "R174": {
+    "uuid": "e30efeb5-974d-5f58-a5f1-637745df846c",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18262736",
+      "2": "ESP_3V3"
+    }
+  },
+  "R175": {
+    "uuid": "2184b035-4699-57f7-9736-ed081c0edae1",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N17578381",
+      "2": "VCC_5V"
+    }
+  },
+  "R176": {
+    "uuid": "da25747d-9c33-5f3d-9cb1-c3d246595677",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18399134"
+    }
+  },
+  "R177": {
+    "uuid": "81ebf350-bd1a-5352-99c0-27fdef9e7e89",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18399180"
+    }
+  },
+  "R216": {
+    "uuid": "59b7d064-4114-5e47-b9fb-5ea522d36853",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18253683"
+    }
+  },
+  "R217": {
+    "uuid": "cb88ec02-7265-5956-877f-23920ad6c0b1",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      50.8,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18253640"
+    }
+  },
+  "R224": {
+    "uuid": "656d51ca-179f-5202-9955-765974883608",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      121.92,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18251395"
+    }
+  },
+  "R225": {
+    "uuid": "575f7861-b7d7-5e56-8934-39b688bd41e0",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18251818"
+    }
+  },
+  "SW3": {
+    "uuid": "1297d689-467f-57d3-b4ed-0d5031046644",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "SS-12D10L3",
+    "footprint": "SS-12D10L3__26e04ae135",
+    "dnp": false,
+    "mpn": "SS-12D10L3",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "USB_5V",
+      "3": null
+    }
+  },
+  "TP28": {
+    "uuid": "59a0245d-9ee3-5866-ba75-7ff453ce5a31",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      330.2,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18248775"
+    }
+  },
+  "TP30": {
+    "uuid": "9fe7207a-6957-5093-8d9d-9ceb48ab3efe",
+    "sheet_uuid": "107c1902-d10b-52e2-a8b1-2d7366e71576",
+    "sheet": "power_usb",
+    "at": [
+      401.32,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18262736"
+    }
+  },
+  "U4": {
+    "uuid": "c23805b5-035e-52bf-bc3a-44fe9247bd6b",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      86.36,
+      144.78
+    ],
+    "value": "ESP32-P4NRW32X",
+    "footprint": "QFN104_0P35_10_E7P5_A__4ff47e723c",
+    "dnp": false,
+    "mpn": "ESP32-P4NRW32X",
+    "nets": {
+      "1": "GPIO1",
+      "2": "GPIO2",
+      "3": "GPIO3",
+      "4": "GPIO4",
+      "5": "GPIO5",
+      "6": "GPIO6",
+      "7": "GPIO7",
+      "8": "GPIO8",
+      "9": "ESP_3V3",
+      "10": "GPIO9",
+      "11": "GPIO10",
+      "12": "GPIO11",
+      "13": "GPIO12",
+      "14": "GPIO13",
+      "15": "GPIO14",
+      "16": "GPIO15",
+      "17": "GPIO16",
+      "18": "GPIO17",
+      "19": "GPIO18",
+      "20": "GPIO19",
+      "21": "ESP_3V3",
+      "22": "GPIO20",
+      "23": "GPIO21",
+      "24": "GPIO22",
+      "25": "GPIO23",
+      "26": "ESP_VDD_HP",
+      "27": "FLASH_CS",
+      "28": "FLASH_Q",
+      "29": "FLASH_WP",
+      "30": "VDD_FLASH",
+      "31": "FLASH_HD",
+      "32": "FLASH_CK",
+      "33": "FLASH_D",
+      "34": "DSI_REXT",
+      "35": "DSI_DATA1P",
+      "36": "DSI_DATA1N",
+      "37": "DSI_CLKN",
+      "38": "DSI_CLKP",
+      "39": "DSI_DATA0P",
+      "40": "DSI_DATA0N",
+      "41": "ESP_LDO_VO3",
+      "42": "CSI_DATA0N",
+      "43": "CSI_DATA0P",
+      "44": "CSI_CLKP",
+      "45": "CSI_CLKN",
+      "46": "CSI_DATA1N",
+      "47": "CSI_DATA1P",
+      "48": "CSI_REXT",
+      "49": "USB_DM",
+      "50": "USB_DP",
+      "51": "N18064827",
+      "52": "GPIO24",
+      "53": "GPIO25",
+      "54": "N18792940",
+      "55": "GPIO26",
+      "56": "GPIO27",
+      "57": "GPIO28",
+      "58": "GPIO29",
+      "59": "ESP_LDO_VO2",
+      "60": "GPIO30",
+      "61": "GPIO31",
+      "62": "ESP_3V3",
+      "63": "GPIO32",
+      "64": "GPIO33",
+      "65": "GPIO34",
+      "66": "GPIO35",
+      "67": "ESP_LDO_VO2",
+      "68": "GPIO36",
+      "69": "GPIO37",
+      "70": "GPIO38",
+      "71": "ESP_LDO_VO1",
+      "72": "ESP_LDO_VO2",
+      "73": "ESP_LDO_VO3",
+      "74": "ESP_LDO_VO4",
+      "75": "ESP_3V3",
+      "76": "ESP_VDD_HP",
+      "77": "ESP_3V3",
+      "78": "FB_DCDC",
+      "79": "EN_DCDC",
+      "80": "GPIO39",
+      "81": "GPIO40",
+      "82": "GPIO41",
+      "83": "GPIO42",
+      "84": "GPIO43",
+      "85": "ESP_LDO_VO4",
+      "86": "GPIO44",
+      "87": "GPIO45",
+      "88": "GPIO46",
+      "89": "GPIO47",
+      "90": "GPIO48",
+      "91": "ESP_VDD_HP",
+      "92": "GPIO49",
+      "93": "GPIO50",
+      "94": "GPIO51",
+      "95": "GPIO52",
+      "96": "ESP_3V3",
+      "97": "GPIO53",
+      "98": "GPIO54",
+      "99": "XTAL_N",
+      "100": "XTAL_P",
+      "101": "ESP_3V3",
+      "102": "ESP_VBAT",
+      "103": "ESP_EN",
+      "104": "GPIO0",
+      "105": "GND"
+    }
+  },
+  "U7": {
+    "uuid": "faff9bcd-ca77-5a08-8572-31e27c556f4a",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "TLV62569",
+    "footprint": "SOT23_0P95_2P6__29960399d6",
+    "dnp": false,
+    "mpn": "TLV62569DBVR",
+    "nets": {
+      "1": "EN_DCDC",
+      "2": "GND",
+      "3": "N18193822",
+      "4": "N18193754",
+      "5": "FB_DCDC"
+    }
+  },
+  "#FLG10": {
+    "uuid": "791fb5f3-b082-525a-a092-25341daffe69",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18792940"
+    }
+  },
+  "#FLG14": {
+    "uuid": "d37e770f-d40e-5a66-a4b3-422f51b390bd",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_FLASH"
+    }
+  },
+  "#FLG4": {
+    "uuid": "f3daf157-96b7-5918-9d2b-3a56a69b7d87",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3"
+    }
+  },
+  "#FLG5": {
+    "uuid": "1f8ec82c-eae6-5031-89e2-3f54f515285f",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VBAT"
+    }
+  },
+  "#FLG6": {
+    "uuid": "426d972b-705e-560b-8a62-f7ee2043323a",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP"
+    }
+  },
+  "#FLG8": {
+    "uuid": "d62634c2-dfe9-5dfa-8998-24746434e231",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      68.58
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18064827"
+    }
+  },
+  "#FLG9": {
+    "uuid": "ad225d39-af96-594c-9f7e-b47385ebbd39",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18193754"
+    }
+  },
+  "C100": {
+    "uuid": "6f2e8871-241f-5286-afe9-8274cd6c1e52",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "10nF/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18064827",
+      "2": "GND"
+    }
+  },
+  "C101": {
+    "uuid": "79476bf5-6bde-5b21-a9a0-a8521ef5b325",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "GND"
+    }
+  },
+  "C102": {
+    "uuid": "0c5baa9c-db95-5700-aa66-cf920dfdd7f5",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "10u/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "GND"
+    }
+  },
+  "C103": {
+    "uuid": "c9145a91-7cd6-5622-a88b-340add7816dc",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C104": {
+    "uuid": "62c5cae3-621f-5c1c-8ea3-4fec37ef1eab",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO2",
+      "2": "GND"
+    }
+  },
+  "C105": {
+    "uuid": "32021483-b3a7-5ff6-b8fe-a8ce1a8950e1",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO2",
+      "2": "GND"
+    }
+  },
+  "C107": {
+    "uuid": "c3ad3a94-5aea-5665-a0d7-7e1082b84e86",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "10u/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "GND"
+    }
+  },
+  "C118": {
+    "uuid": "e6495d7b-9c01-5567-a17a-08c1b1684f94",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18792940",
+      "2": "GND"
+    }
+  },
+  "C18": {
+    "uuid": "669f0957-6468-5644-9ba6-214384169167",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18110531",
+      "2": "GND"
+    }
+  },
+  "C19": {
+    "uuid": "40d0b077-50e5-514e-acec-fb47a13b066a",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18110516",
+      "2": "GND"
+    }
+  },
+  "C20": {
+    "uuid": "07d90597-e5d6-5094-b5f3-8a066cff337e",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_FLASH",
+      "2": "GND"
+    }
+  },
+  "C25": {
+    "uuid": "7905d05a-7f3c-5a52-ae7c-8cfced55f8db",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_FLASH",
+      "2": "GND"
+    }
+  },
+  "C28": {
+    "uuid": "f6f6aa03-268b-5194-bd4d-739009cc0117",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N16934509",
+      "2": "GND"
+    }
+  },
+  "C45": {
+    "uuid": "fa283397-db91-5910-a5a2-1bdb34de36eb",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N16934523",
+      "2": "GND"
+    }
+  },
+  "C50": {
+    "uuid": "308cb9a7-c3ec-5220-9617-83d44a1dd36f",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO2",
+      "2": "GND"
+    }
+  },
+  "C51": {
+    "uuid": "cb4f6d27-69e1-5ae0-8015-64efda324a3c",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "GND"
+    }
+  },
+  "C53": {
+    "uuid": "dc0b7128-ec73-5558-a76a-9e9395319c3c",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "FB_DCDC"
+    }
+  },
+  "C54": {
+    "uuid": "5fe2e24a-0eff-51b0-a089-f16b3f9d61fd",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "4.7uF/6.3V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18193754",
+      "2": "GND"
+    }
+  },
+  "C55": {
+    "uuid": "3200ac46-6018-571f-8d84-0bf586e1c599",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO3",
+      "2": "GND"
+    }
+  },
+  "C56": {
+    "uuid": "ee39437f-2e3b-5add-adb0-74992bb34b06",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO1",
+      "2": "GND"
+    }
+  },
+  "C61": {
+    "uuid": "a1dfef48-dcaf-5d13-bad4-76c602572ec0",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "22uF/6.3V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "GND"
+    }
+  },
+  "C82": {
+    "uuid": "e6aea55a-440e-53bc-9aa9-b7eeb10c1242",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "10u/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VBAT",
+      "2": "GND"
+    }
+  },
+  "C83": {
+    "uuid": "d6d66a8e-7e8d-5a54-93e7-b609605c5903",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C84": {
+    "uuid": "b18efe30-b749-5ae7-9354-8eedad460516",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VBAT",
+      "2": "GND"
+    }
+  },
+  "C85": {
+    "uuid": "78bed540-96e9-5651-afb7-8b69cf538900",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C86": {
+    "uuid": "6b960f8c-1a80-50be-bc10-8220e868bb1b",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "GND"
+    }
+  },
+  "C87": {
+    "uuid": "13fad655-e996-5b00-ae31-f939c830e242",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "10u/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C88": {
+    "uuid": "f5f44508-3bd7-541a-8052-c82f60f783a4",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C89": {
+    "uuid": "0442f16c-8f10-50ba-a2ba-8d2b005b9232",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "GND"
+    }
+  },
+  "C90": {
+    "uuid": "a33e1a15-0551-5cd8-a5d0-1e47698e90ca",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C91": {
+    "uuid": "0752caea-7583-50ad-ba1b-2e0302289607",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO3",
+      "2": "GND"
+    }
+  },
+  "C92": {
+    "uuid": "c2ace45e-8d92-58d0-a52d-257b83037e29",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO3",
+      "2": "GND"
+    }
+  },
+  "C93": {
+    "uuid": "6c5f924f-5716-543d-a2f6-5121af912c9c",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "10nF/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO3",
+      "2": "GND"
+    }
+  },
+  "C94": {
+    "uuid": "d6c1958e-a9fa-59c7-8167-7f6571f81753",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      220.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "GND"
+    }
+  },
+  "C95": {
+    "uuid": "c3b606f7-f4dc-5c9f-9ab6-6adb134468c7",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      220.98
+    ],
+    "value": "10u/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C96": {
+    "uuid": "00563bc8-e0ff-5a09-8bad-147f41db3752",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      220.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C97": {
+    "uuid": "94972c9c-f842-58d4-82d9-04cf64170233",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      220.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C98": {
+    "uuid": "6cc0d38a-d86a-5fa1-a8f3-0b244ab5fae8",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      246.38
+    ],
+    "value": "4.7uF/6.3V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18064827",
+      "2": "GND"
+    }
+  },
+  "C99": {
+    "uuid": "b1a4a107-42b1-5505-a216-b27fe0ecdc4c",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      246.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18064827",
+      "2": "GND"
+    }
+  },
+  "L1": {
+    "uuid": "3dc9e37d-7230-5df7-8a53-1f23bf5703d4",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      246.38
+    ],
+    "value": "2.2uH",
+    "footprint": "L2520__31a445bbcb",
+    "dnp": false,
+    "mpn": "WPN252010U2R2MT",
+    "nets": {
+      "1": "N18193822",
+      "2": "ESP_VDD_HP"
+    }
+  },
+  "R128": {
+    "uuid": "a900e2a3-a1dd-5592-988b-9920e5b87f79",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      246.38
+    ],
+    "value": "499k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VDD_HP",
+      "2": "FB_DCDC"
+    }
+  },
+  "R138": {
+    "uuid": "9c91f892-16f4-5040-9b7e-61131086ebea",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      246.38
+    ],
+    "value": "499k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FB_DCDC",
+      "2": "GND"
+    }
+  },
+  "R196": {
+    "uuid": "f6f3bf86-aac4-5d9e-8a48-fa9a38e8a4bb",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "BAT",
+      "2": "ESP_VBAT"
+    }
+  },
+  "R198": {
+    "uuid": "57687c61-4b0a-5e5d-b6c3-a53252e437c9",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      50.8,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "ESP_VBAT"
+    }
+  },
+  "R232": {
+    "uuid": "4e9f8fd5-9e52-56fc-a801-e397037868da",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      121.92,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18792940",
+      "2": "ESP_VDD_HP"
+    }
+  },
+  "R233": {
+    "uuid": "eb7de506-6a0c-5015-a0ad-d7e1a69c4304",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18064827",
+      "2": "ESP_3V3"
+    }
+  },
+  "R234": {
+    "uuid": "6fd0a509-1226-5381-a5ba-68460bd38ea8",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      271.78
+    ],
+    "value": "1M",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "USB_DP",
+      "2": "GND"
+    }
+  },
+  "R35": {
+    "uuid": "f6b12f22-62c3-58a6-85b8-3fc429748b8e",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "VDD_FLASH"
+    }
+  },
+  "R37": {
+    "uuid": "687b48dc-59d1-5078-929e-1586bc9dcf8e",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO1",
+      "2": "VDD_FLASH"
+    }
+  },
+  "R58": {
+    "uuid": "ac9693fa-38ce-5b92-a866-55c34c5b9b3e",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      271.78
+    ],
+    "value": "10M",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18110516",
+      "2": "N18110531"
+    }
+  },
+  "R59": {
+    "uuid": "258ebe2e-0c07-594c-bb26-2d60415fbfdc",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO1",
+      "2": "N18110531"
+    }
+  },
+  "R61": {
+    "uuid": "9028abf8-f9e7-5e9b-a8fd-110b6625d60a",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      50.8,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO0",
+      "2": "N18110516"
+    }
+  },
+  "TP1": {
+    "uuid": "ec3d981e-cd45-5f06-b936-35e0c36f45ac",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      121.92,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "TP2": {
+    "uuid": "04e3f5fb-c064-5d53-9768-1b28f60bdc51",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      190.5,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "BAT"
+    }
+  },
+  "TP24": {
+    "uuid": "e8e42242-2ddc-5a17-bbe1-96101a0c199b",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      260.35,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO2"
+    }
+  },
+  "TP25": {
+    "uuid": "87564a9c-eea5-5df8-afc7-b267e3f1f878",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      330.2,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4"
+    }
+  },
+  "TP26": {
+    "uuid": "70f9b21f-f2d3-5a43-8f9a-0dcdf381507c",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      401.32,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO1"
+    }
+  },
+  "TP27": {
+    "uuid": "92cec839-e56e-57d3-8766-d35e3e93719f",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      469.9,
+      297.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO3"
+    }
+  },
+  "Y1": {
+    "uuid": "a3efff6c-9f8e-5059-b59b-f470b61c0bad",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      539.75,
+      297.18
+    ],
+    "value": "32.768kHz",
+    "footprint": "XTAL3215__6c6f8c0a53",
+    "dnp": false,
+    "mpn": "SF32K32768D31T-12.5",
+    "nets": {
+      "1": "N18110531",
+      "2": "N18110516"
+    }
+  },
+  "Y2": {
+    "uuid": "26a9c408-c25a-5f14-b418-edadfa276191",
+    "sheet_uuid": "1afcc05b-b6be-53ed-953e-55a0f5de3545",
+    "sheet": "p4_core",
+    "at": [
+      50.8,
+      322.58
+    ],
+    "value": "40MHz",
+    "footprint": "XTAL3225__30de0c1c1f",
+    "dnp": false,
+    "mpn": "2.3.3.400001552EL",
+    "nets": {
+      "1": "N16934509",
+      "2": "GND",
+      "3": "N16934523",
+      "4": "GND"
+    }
+  },
+  "R100": {
+    "uuid": "ac31ceb5-d731-522f-b136-df7106a45caa",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO45",
+      "2": "CNN_GPIO45"
+    }
+  },
+  "R102": {
+    "uuid": "8d210d06-5acb-5fff-bc1d-c92ba2e74b09",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO44",
+      "2": "SD1_CMD"
+    }
+  },
+  "R103": {
+    "uuid": "66c7fc60-153b-519b-b3c1-c57addad2440",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO43",
+      "2": "SD1_CLK"
+    }
+  },
+  "R104": {
+    "uuid": "77f5c3d6-0f87-59ff-a058-b46716bfb413",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      43.18
+    ],
+    "value": "33",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO24",
+      "2": "USB1P1_N"
+    }
+  },
+  "R105": {
+    "uuid": "910942a7-8a44-581f-bb6c-0733cd3e4853",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "33",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO25",
+      "2": "USB1P1_P"
+    }
+  },
+  "R107": {
+    "uuid": "35b8c3ed-2952-545b-b8fb-34f7e5e8e5c5",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO42",
+      "2": "SD1_D3"
+    }
+  },
+  "R108": {
+    "uuid": "b31d6bb7-02a5-599b-8bd0-774c5d04459a",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO41",
+      "2": "SD1_D2"
+    }
+  },
+  "R110": {
+    "uuid": "62cb2352-2040-5a08-b562-33beac35a03f",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO40",
+      "2": "SD1_D1"
+    }
+  },
+  "R112": {
+    "uuid": "67782717-2f67-5530-a444-6aa1449feadd",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO36",
+      "2": "CNN_GPIO36"
+    }
+  },
+  "R113": {
+    "uuid": "51069ae4-d613-5c01-ab2a-bc05fb5cc998",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      68.58
+    ],
+    "value": "33",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO26",
+      "2": "USB1P1_N_2"
+    }
+  },
+  "R114": {
+    "uuid": "25029357-6cf1-5dac-adfd-a8e59efec83f",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO28",
+      "2": "RMII_RXDV"
+    }
+  },
+  "R115": {
+    "uuid": "650bf20e-b6f1-5404-898e-e8cf6b116d42",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO30",
+      "2": "RMII_RXD1"
+    }
+  },
+  "R116": {
+    "uuid": "4c9d1d06-059b-5455-9335-da4b078cc033",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO32",
+      "2": "CNN_GPIO32"
+    }
+  },
+  "R117": {
+    "uuid": "0a37c9bd-c50f-548c-8b60-2576210a0ebc",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO34",
+      "2": "RMII_TXD0"
+    }
+  },
+  "R118": {
+    "uuid": "62a0e8e8-2aa3-512b-b40d-2698b8a25fd3",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO38",
+      "2": "CNN_GPIO38"
+    }
+  },
+  "R122": {
+    "uuid": "2dad3b95-ed98-53b1-9655-2023b3ab2da8",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO39",
+      "2": "SD1_D0"
+    }
+  },
+  "R127": {
+    "uuid": "32175914-c941-5ddf-8cef-f875bb14e9b2",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "N18193754"
+    }
+  },
+  "R131": {
+    "uuid": "c1e7f019-423a-53fc-a818-b44b3a17356f",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      93.98
+    ],
+    "value": "33",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO27",
+      "2": "USB1P1_P_2"
+    }
+  },
+  "R132": {
+    "uuid": "28e8262f-aa40-5196-83f6-a79ccde59b00",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO29",
+      "2": "RMII_RXD0"
+    }
+  },
+  "R133": {
+    "uuid": "01b5d0f0-658c-5e3e-9726-23c064d92969",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO31",
+      "2": "MDC"
+    }
+  },
+  "R134": {
+    "uuid": "13c84e2c-c120-5e36-9d4f-4986bbe00d12",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO33",
+      "2": "CNN_GPIO33"
+    }
+  },
+  "R135": {
+    "uuid": "e8921d62-5f07-5b1f-a6c2-a4a3bee70347",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO35",
+      "2": "RMII_TXD1"
+    }
+  },
+  "R136": {
+    "uuid": "b0cc6bd1-ad44-5728-a919-2e8d5edb4198",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO37",
+      "2": "CNN_GPIO37"
+    }
+  },
+  "R190": {
+    "uuid": "96fe0798-7ef8-5cd6-88b9-3a85cb3eb67e",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SCL",
+      "2": "GPIO8"
+    }
+  },
+  "R194": {
+    "uuid": "4486dd26-7b8d-59e3-9e3e-d06d0585a811",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SDA",
+      "2": "GPIO7"
+    }
+  },
+  "R197": {
+    "uuid": "99073e28-0db9-56d8-91bc-0d6fb2a85ea6",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO1",
+      "2": "GPIO1"
+    }
+  },
+  "R199": {
+    "uuid": "49de789b-c3b9-58b7-854b-32422ad868b2",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO0",
+      "2": "GPIO0"
+    }
+  },
+  "R202": {
+    "uuid": "94a0f15e-0f8e-5301-8568-5e143a710b32",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "4.02k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_REXT",
+      "2": "GND"
+    }
+  },
+  "R203": {
+    "uuid": "a8d2e4ba-e040-5c67-8f6d-f2f8d38daa05",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "4.02k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_REXT",
+      "2": "GND"
+    }
+  },
+  "R204": {
+    "uuid": "e88c3fb9-9f0e-540d-9b64-50b4e8440391",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO36",
+      "2": "GPIO36_BOOTMODE"
+    }
+  },
+  "R205": {
+    "uuid": "a60177ab-0ba4-5b2b-8aa5-a82f4c3270e6",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO34_BOOTMODE",
+      "2": "GPIO34"
+    }
+  },
+  "R206": {
+    "uuid": "ffa932e2-d8a8-5e71-a283-4ead58f3d3f7",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO38",
+      "2": "GPIO38_BOOTMODE"
+    }
+  },
+  "R207": {
+    "uuid": "d0b8d2f3-4bb5-5c9d-8f56-0e7745082866",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO35",
+      "2": "GPIO35_BOOTMODE"
+    }
+  },
+  "R212": {
+    "uuid": "445747b8-83f4-54fd-b35c-5cd088b1c5bd",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO37",
+      "2": "GPIO37_BOOTMODE"
+    }
+  },
+  "R22": {
+    "uuid": "ac402909-9478-5e71-acd3-755329e7be66",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO2",
+      "2": "GPIO2"
+    }
+  },
+  "R227": {
+    "uuid": "52527001-d57b-5504-a95e-b9f93479a345",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "33",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO27",
+      "2": "CNN_GPIO27"
+    }
+  },
+  "R228": {
+    "uuid": "b85a198f-78c4-5cd7-9854-4185c5b8dbda",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "33",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO26",
+      "2": "CNN_GPIO26"
+    }
+  },
+  "R23": {
+    "uuid": "3c6178e7-9831-5f20-aefe-e340915a9e1f",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_CLK",
+      "2": "GPIO18"
+    }
+  },
+  "R231": {
+    "uuid": "dfbaa22a-b195-5663-adb9-33aa41879dd4",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO45",
+      "2": "SD_PWRN"
+    }
+  },
+  "R24": {
+    "uuid": "3f4580f6-5ff8-547a-ae62-932681a901ca",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D2",
+      "2": "GPIO16"
+    }
+  },
+  "R25": {
+    "uuid": "4e78b817-0747-5ac2-8be5-8cfc44c1a6e1",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D0",
+      "2": "GPIO14"
+    }
+  },
+  "R26": {
+    "uuid": "96bf3f26-e3cc-53ba-bd25-40a40292d291",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_SCLK",
+      "2": "GPIO12"
+    }
+  },
+  "R27": {
+    "uuid": "ee839930-4834-5034-ac3c-f96736394dfa",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_LRCK",
+      "2": "GPIO10"
+    }
+  },
+  "R28": {
+    "uuid": "b17a6256-0284-5150-af62-bfb0af1b9926",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO8",
+      "2": "GPIO8"
+    }
+  },
+  "R29": {
+    "uuid": "5bc76953-d0b1-5692-9cf4-56d27f86e688",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO6",
+      "2": "GPIO6"
+    }
+  },
+  "R30": {
+    "uuid": "ff671c2f-bfcd-5e35-8f85-e5fd19cb67de",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO6",
+      "2": "C6_WAKEUP"
+    }
+  },
+  "R31": {
+    "uuid": "4bd48c19-4d10-5523-ac4e-8bc2e47e9f49",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO4",
+      "2": "GPIO4"
+    }
+  },
+  "R32": {
+    "uuid": "11b24a84-9837-5b9a-b424-e344dd081990",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO22",
+      "2": "GPIO22"
+    }
+  },
+  "R33": {
+    "uuid": "f24de724-a23c-532f-807f-a93d212966c1",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO20",
+      "2": "GPIO20"
+    }
+  },
+  "R38": {
+    "uuid": "762ea1ed-728b-5616-95b1-7f3ac534687d",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO23",
+      "2": "GPIO23"
+    }
+  },
+  "R39": {
+    "uuid": "b594b54e-d644-587d-a083-69ae3ccf63ab",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO21",
+      "2": "GPIO21"
+    }
+  },
+  "R40": {
+    "uuid": "7f87850b-ea98-55f8-910c-a9d8a0a4e681",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_CMD",
+      "2": "GPIO19"
+    }
+  },
+  "R41": {
+    "uuid": "ba322242-3994-51eb-871a-276ad178af01",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D3",
+      "2": "GPIO17"
+    }
+  },
+  "R42": {
+    "uuid": "8a9833b5-4a64-5fd0-95cf-1357023e93cf",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D1",
+      "2": "GPIO15"
+    }
+  },
+  "R43": {
+    "uuid": "dbfbd376-837f-54ab-b0eb-1869ba328ba7",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_MCLK",
+      "2": "GPIO13"
+    }
+  },
+  "R44": {
+    "uuid": "4cb08ebb-cd98-576a-a879-16b64df6dd56",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_ASDOUT",
+      "2": "GPIO11"
+    }
+  },
+  "R45": {
+    "uuid": "302af13d-33cf-50fb-af84-c1bf74b20f89",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_DSDIN",
+      "2": "GPIO9"
+    }
+  },
+  "R46": {
+    "uuid": "d97820d8-1478-5f8f-bb7f-9c29b386e490",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO7",
+      "2": "GPIO7"
+    }
+  },
+  "R47": {
+    "uuid": "e01954d1-41b2-5b54-b5fa-f503930c1304",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO5",
+      "2": "GPIO5"
+    }
+  },
+  "R48": {
+    "uuid": "12c7f8be-61bc-506f-81c3-d0f5d8c55314",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO3",
+      "2": "GPIO3"
+    }
+  },
+  "R49": {
+    "uuid": "34902f95-03a3-585e-b315-8fa824f28b57",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_CK_A",
+      "2": "FLASH_CK"
+    }
+  },
+  "R50": {
+    "uuid": "63a5bee9-1e04-5381-91c1-c080a330c080",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_Q_A",
+      "2": "FLASH_Q"
+    }
+  },
+  "R53": {
+    "uuid": "190fb059-97a1-5ae9-874c-6c27561e6bce",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_D_A",
+      "2": "FLASH_D"
+    }
+  },
+  "R54": {
+    "uuid": "f052af62-d510-5bc2-9dee-5d4ab1df58f2",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_HD_A",
+      "2": "FLASH_HD"
+    }
+  },
+  "R55": {
+    "uuid": "44afa644-b92a-5012-9152-bad2fb904d61",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_WP_A",
+      "2": "FLASH_WP"
+    }
+  },
+  "R56": {
+    "uuid": "40d577e6-3950-5fed-8115-32f5162d5311",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_CS_A",
+      "2": "FLASH_CS"
+    }
+  },
+  "R67": {
+    "uuid": "e0971748-42a4-51a3-a734-564776d926c7",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "XTAL_P",
+      "2": "N16934509"
+    }
+  },
+  "R69": {
+    "uuid": "4ffe9a3c-ebc0-57a4-b9c7-7b95d8034be4",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_DATA1P",
+      "2": "DSI_DATA1P"
+    }
+  },
+  "R70": {
+    "uuid": "763eb1c0-ba2b-5d9c-b87b-3d6a29f42323",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "XTAL_N",
+      "2": "N16934523"
+    }
+  },
+  "R71": {
+    "uuid": "5991baed-fc1a-52e1-9dfd-eb7c2b6e6078",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_DATA1N",
+      "2": "DSI_DATA1N"
+    }
+  },
+  "R72": {
+    "uuid": "1a69326d-91f0-579c-818f-bbb4a750cc83",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_CLKN",
+      "2": "DSI_CLKN"
+    }
+  },
+  "R74": {
+    "uuid": "170469c7-c83b-5c94-86d7-4e6228354f00",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_CLKP",
+      "2": "DSI_CLKP"
+    }
+  },
+  "R75": {
+    "uuid": "ba9eb0ae-f0d3-5915-b3b9-f7023c64ee75",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_DATA0P",
+      "2": "DSI_DATA0P"
+    }
+  },
+  "R76": {
+    "uuid": "517751d9-bb7f-50dd-9819-59ffd528d0fa",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO54",
+      "2": "C6_EN"
+    }
+  },
+  "R77": {
+    "uuid": "565b7473-d2fa-54d2-ab94-25768e58cdd8",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DSI_A_DATA0N",
+      "2": "DSI_DATA0N"
+    }
+  },
+  "R78": {
+    "uuid": "78f3df0b-33c4-5c4d-be80-61d8e10beade",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      271.78
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_DATA0N",
+      "2": "CSI_A_DATA0N"
+    }
+  },
+  "R79": {
+    "uuid": "9521d8ce-2f35-5ff3-af9e-13b71121d9a4",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO53",
+      "2": "PA_CTRL"
+    }
+  },
+  "R80": {
+    "uuid": "738931d1-58e0-5f5e-971c-71fe1ecde0a1",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO54",
+      "2": "GPIO54"
+    }
+  },
+  "R81": {
+    "uuid": "47c9c11e-7cf4-52e2-83bf-fb42d6434440",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      271.78
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_DATA0P",
+      "2": "CSI_A_DATA0P"
+    }
+  },
+  "R82": {
+    "uuid": "4e5b8c3c-9fca-5cf7-a65a-4a3ae3f81afc",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      271.78
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_CLKP",
+      "2": "CSI_A_CLKP"
+    }
+  },
+  "R85": {
+    "uuid": "c7242614-c273-5ff3-bb6e-3568750c3ff7",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO53",
+      "2": "GPIO53"
+    }
+  },
+  "R86": {
+    "uuid": "fdf7b338-5774-55dc-b38b-c0f0dec4c99e",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      297.18
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_CLKN",
+      "2": "CSI_A_CLKN"
+    }
+  },
+  "R87": {
+    "uuid": "30ca74b2-db95-53d1-b054-8d880e6f38c3",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO52",
+      "2": "MDIO"
+    }
+  },
+  "R88": {
+    "uuid": "1bbcf444-735c-56f8-98f9-22e51e33fcf8",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      260.35,
+      297.18
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_DATA1N",
+      "2": "CSI_A_DATA1N"
+    }
+  },
+  "R89": {
+    "uuid": "cf2dd448-d95e-51fb-bd43-9c3bf2065c4d",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      330.2,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO51",
+      "2": "PHY_RSTN"
+    }
+  },
+  "R90": {
+    "uuid": "98ae7620-c960-5d14-8477-98a4dcc22e22",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      401.32,
+      297.18
+    ],
+    "value": "100",
+    "footprint": "R0201__aad23a0937",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CSI_DATA1P",
+      "2": "CSI_A_DATA1P"
+    }
+  },
+  "R91": {
+    "uuid": "434708bb-fa50-555f-8c79-a84ed8737f18",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      469.9,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO50",
+      "2": "RMII_CLK"
+    }
+  },
+  "R92": {
+    "uuid": "eb86e567-fa94-5056-9396-639708b11632",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      539.75,
+      297.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO49",
+      "2": "RMII_TXEN"
+    }
+  },
+  "R93": {
+    "uuid": "eb429377-8e5b-5d7d-abe3-a8455f78505a",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      50.8,
+      322.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO48",
+      "2": "CNN_GPIO48"
+    }
+  },
+  "R94": {
+    "uuid": "11d006f1-9432-57a1-93ca-b5cad5c250db",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      121.92,
+      322.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO47",
+      "2": "CNN_GPIO47"
+    }
+  },
+  "R97": {
+    "uuid": "077bcaa3-2358-59d1-bd28-f2f164d57de4",
+    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
+    "sheet": "gpio_routing",
+    "at": [
+      190.5,
+      322.58
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO46",
+      "2": "CNN_GPIO46"
+    }
+  },
+  "J1": {
+    "uuid": "92550491-7904-5b52-88b2-170ca7e344d2",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      86.36,
+      81.28
+    ],
+    "value": "CON20X2",
+    "footprint": "CON20X2_2P54__b2870a8640",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "VCC_5V",
+      "3": "CNN_GPIO7",
+      "4": "VCC_5V",
+      "5": "CNN_GPIO8",
+      "6": "GND",
+      "7": "CNN_GPIO23",
+      "8": "CNN_GPIO37",
+      "9": "GND",
+      "10": "CNN_GPIO38",
+      "11": "CNN_GPIO21",
+      "12": "CNN_GPIO22",
+      "13": "CNN_GPIO20",
+      "14": "GND",
+      "15": "CNN_GPIO6",
+      "16": "CNN_GPIO5",
+      "17": "ESP_3V3",
+      "18": "CNN_GPIO4",
+      "19": "CNN_GPIO3",
+      "20": "GND",
+      "21": "CNN_GPIO2",
+      "22": "CNN_GPIO1",
+      "23": "CNN_GPIO0",
+      "24": "CNN_GPIO36",
+      "25": "GND",
+      "26": "CNN_GPIO32",
+      "27": null,
+      "28": null,
+      "29": "CNN_GPIO33",
+      "30": "GND",
+      "31": "CNN_GPIO26",
+      "32": "CNN_GPIO54",
+      "33": "CNN_GPIO48",
+      "34": "GND",
+      "35": "CNN_GPIO53",
+      "36": "CNN_GPIO46",
+      "37": "CNN_GPIO47",
+      "38": "CNN_GPIO27",
+      "39": "GND",
+      "40": "CNN_GPIO45"
+    }
+  },
+  "J9": {
+    "uuid": "24984a69-f375-5caa-8252-ed1c52556dde",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      226.06,
+      68.58
+    ],
+    "value": "DSI_1-1734248-5",
+    "footprint": "FFC_15P_1_MIPI__e4ede50f2f",
+    "dnp": false,
+    "mpn": "1.0K-GT-15PB",
+    "nets": {
+      "1": "GND",
+      "2": "CSI_A_DATA0N",
+      "3": "CSI_A_DATA0P",
+      "4": "GND",
+      "5": "CSI_A_DATA1N",
+      "6": "CSI_A_DATA1P",
+      "7": "GND",
+      "8": "CSI_A_CLKN",
+      "9": "CSI_A_CLKP",
+      "10": "GND",
+      "11": "CSI_IO0",
+      "12": "CSI_IO1",
+      "13": "N18497724",
+      "14": "N18497727",
+      "15": "ESP_3V3",
+      "16": null,
+      "17": null,
+      "18": null,
+      "19": null,
+      "20": null,
+      "21": null,
+      "22": null,
+      "23": null,
+      "24": null,
+      "25": null,
+      "26": null,
+      "27": null,
+      "28": null,
+      "29": null,
+      "30": null
+    }
+  },
+  "U2": {
+    "uuid": "c52e6d44-39fb-57ab-ab09-e01728e909eb",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "FLASH-3V3",
+    "footprint": "WSON6X8__20e6c1659c",
+    "dnp": false,
+    "mpn": "GD25Q128ESIG",
+    "nets": {
+      "1": "FLASH_CS_A",
+      "2": "FLASH_Q_A",
+      "3": "FLASH_WP_A",
+      "4": "GND",
+      "5": "FLASH_D_A",
+      "6": "FLASH_CK_A",
+      "7": "FLASH_HD_A",
+      "8": "VDD_FLASH",
+      "9": "GND"
+    }
+  },
+  "C10": {
+    "uuid": "a10c0c92-e6d9-5da9-b44a-416e5e936f84",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C16": {
+    "uuid": "cb76fa89-087a-5ac8-8735-5002875e5a8e",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VDD_FLASH",
+      "2": "GND"
+    }
+  },
+  "C30": {
+    "uuid": "4c355c1b-cb74-5930-913c-e890d07cb5d2",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "1u / 16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_EN",
+      "2": "GND"
+    }
+  },
+  "C44": {
+    "uuid": "6d3a3fd7-a9f1-5f95-9ce8-411b8d23c77f",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "100n / 50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO35_BOOTMODE",
+      "2": "GND"
+    }
+  },
+  "C46": {
+    "uuid": "bda90e2d-2508-5db8-8974-10a0a472180c",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C47": {
+    "uuid": "1d38998e-a6d7-588d-b8ff-e253b712f3ac",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C7": {
+    "uuid": "1cd21cbe-e31e-52a1-9982-0f6f3183fbf3",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "R101": {
+    "uuid": "64126a9b-16e3-57b9-996f-c15d560e36c5",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SDA",
+      "2": "N18497727"
+    }
+  },
+  "R106": {
+    "uuid": "1de2b670-c4c2-5da9-8ea3-7c12768d927b",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SCL",
+      "2": "N18497724"
+    }
+  },
+  "R109": {
+    "uuid": "9b7a6a76-203f-51e6-8412-7f0f566a14cb",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "2.2k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "ESP_I2C_SCL"
+    }
+  },
+  "R111": {
+    "uuid": "256bfda1-b7bb-5a5f-8045-179595a65d77",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "CSI_IO1"
+    }
+  },
+  "R123": {
+    "uuid": "7c3aaf07-906b-58eb-91a3-337ea4fdc4fd",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "CSI_IO0"
+    }
+  },
+  "R18": {
+    "uuid": "8e2ba8a6-e8d3-5160-8ff4-9b9a78a7e10d",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "FLASH_CS_A",
+      "2": "VDD_FLASH"
+    }
+  },
+  "R200": {
+    "uuid": "e7f68594-3834-5104-8ee3-1006b26916fe",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_VBAT",
+      "2": "ESP_EN"
+    }
+  },
+  "R208": {
+    "uuid": "8db26c46-ad34-59b1-a336-2dae1ca1cee8",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO35_BOOTMODE",
+      "2": "ESP_3V3"
+    }
+  },
+  "R209": {
+    "uuid": "0b472938-ca23-5aa4-8bfc-c9a21e77ad44",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO36_BOOTMODE",
+      "2": "ESP_3V3"
+    }
+  },
+  "R8": {
+    "uuid": "29e5d1d6-90c7-5661-abe5-130e33803d8e",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SDA",
+      "2": "N18412242"
+    }
+  },
+  "R9": {
+    "uuid": "65090f22-314a-5a80-a9dd-a86a04d60ec2",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SCL",
+      "2": "N18412230"
+    }
+  },
+  "R98": {
+    "uuid": "77461ae2-cfb9-5f1f-9aba-55e86dcf4268",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "2.2k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "ESP_I2C_SDA"
+    }
+  },
+  "SW1": {
+    "uuid": "fbc00bb8-4354-52c8-8dbc-9f1875c63713",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "SW_SP_4P",
+    "footprint": "SW4-4P5X4P5X2P9-SMT__a0ea52c7f0",
+    "dnp": false,
+    "mpn": "K2-1109SP-B4SA-01",
+    "nets": {
+      "1": "GND",
+      "2": null,
+      "3": "ESP_EN",
+      "4": null
+    }
+  },
+  "SW2": {
+    "uuid": "953a50ee-7ed7-59ca-bcf7-24a57e499e2a",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "SW_SP_4P",
+    "footprint": "SW4-4P5X4P5X2P9-SMT__a0ea52c7f0",
+    "dnp": false,
+    "mpn": "K2-1109SP-B4SA-01",
+    "nets": {
+      "1": "GND",
+      "2": null,
+      "3": "GPIO35_BOOTMODE",
+      "4": null
+    }
+  },
+  "TP22": {
+    "uuid": "cfe8c482-a315-517a-80a1-71e5b456ac60",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO35_BOOTMODE"
+    }
+  },
+  "TP23": {
+    "uuid": "16a65c56-56c8-5808-a690-327b0d9e5294",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_EN"
+    }
+  },
+  "TP33": {
+    "uuid": "27d8688d-d04a-54e6-ba12-449ee9965156",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO36_BOOTMODE"
+    }
+  },
+  "TP34": {
+    "uuid": "ad3a17ed-70b1-5dcd-8a8e-ce5b624c5f58",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO34_BOOTMODE"
+    }
+  },
+  "TP35": {
+    "uuid": "41c17448-f3ef-5428-80c9-ca89d25daa4b",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO38_BOOTMODE"
+    }
+  },
+  "TP36": {
+    "uuid": "0ea2d0be-ed34-53ee-8abd-32e572607a4b",
+    "sheet_uuid": "8b0ef5e5-492e-5a5e-9d0f-385b6c430372",
+    "sheet": "mipi_io",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GPIO37_BOOTMODE"
+    }
+  },
+  "U3": {
+    "uuid": "2aa453ab-ea80-5d6f-9451-9acb65050dba",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      86.36,
+      68.58
+    ],
+    "value": "ES8311",
+    "footprint": "QFN20_0P4_3__5af107f985",
+    "dnp": false,
+    "mpn": "ES8311",
+    "nets": {
+      "1": "N18300035",
+      "2": "I2S_MCLK",
+      "3": "DVDD",
+      "4": "DVDD",
+      "5": "AGND",
+      "6": "I2S_SCLK",
+      "7": "I2S_ASDOUT",
+      "8": "I2S_LRCK",
+      "9": "I2S_DSDIN",
+      "10": "AGND",
+      "11": "AVDD",
+      "12": "N18302385",
+      "13": "N18302373",
+      "14": "DACVREF",
+      "15": "ADCVREF",
+      "16": "VMID",
+      "17": "N18299903",
+      "18": "N18299901",
+      "19": "N18300076",
+      "20": "CODEC_CE",
+      "21": "AGND"
+    }
+  },
+  "U10": {
+    "uuid": "58f28725-b4a0-5163-82cf-b6039f3b1c38",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "NS4150B",
+    "footprint": "SSOP8_0P65_5__7dc9ef4a12",
+    "dnp": false,
+    "mpn": "NS4150B",
+    "nets": {
+      "1": "PA_CTRL",
+      "2": "N18422156",
+      "3": "PA_INL+",
+      "4": "PA_INL-",
+      "5": "PA_OUTL-",
+      "6": "PA_PVDD1",
+      "7": "AGND",
+      "8": "PA_OUTL+"
+    }
+  },
+  "U5": {
+    "uuid": "a871a9d5-281b-5148-929e-bcd3a51cdda2",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "ME6211C33M5G-N",
+    "footprint": "SOT23-5__f216817d34",
+    "dnp": false,
+    "mpn": "ME6211C33M5G-N",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND",
+      "3": "N18604768",
+      "4": null,
+      "5": "A3V3"
+    }
+  },
+  "#FLG1": {
+    "uuid": "c46e1c8b-81be-5b33-a4f6-bc28b3f1859e",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND"
+    }
+  },
+  "#FLG11": {
+    "uuid": "1ef58679-e099-5200-a320-d529fe49c05d",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PA_PVDD1"
+    }
+  },
+  "#FLG2": {
+    "uuid": "7b56fc38-fecc-5fd0-b335-52bcddf0c770",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AVDD"
+    }
+  },
+  "#FLG3": {
+    "uuid": "613494f8-a43f-5766-b281-a4b3d84c4b65",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DVDD"
+    }
+  },
+  "C21": {
+    "uuid": "b9703e0f-3603-51d7-98a1-6ba096313881",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DVDD",
+      "2": "AGND"
+    }
+  },
+  "C22": {
+    "uuid": "86b9ad08-a6b6-5d00-86e8-c1b79f0d5634",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "DVDD",
+      "2": "AGND"
+    }
+  },
+  "C23": {
+    "uuid": "f35815e4-105d-584b-9289-c24c0bc350b5",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_MCLK",
+      "2": "AGND"
+    }
+  },
+  "C24": {
+    "uuid": "7f8d06cb-900b-56cf-9e21-8cf97ea40c78",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18300035",
+      "2": "AGND"
+    }
+  },
+  "C26": {
+    "uuid": "7a7d14fd-d74a-5c10-b1b5-d136513a3282",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_SCLK",
+      "2": "AGND"
+    }
+  },
+  "C27": {
+    "uuid": "458b68ad-f149-52d6-9fcb-7f1c3421fcda",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18300076",
+      "2": "AGND"
+    }
+  },
+  "C29": {
+    "uuid": "76fbf60d-3eef-5242-a8ed-956ce6d7a599",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      119.38
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "I2S_LRCK",
+      "2": "AGND"
+    }
+  },
+  "C31": {
+    "uuid": "2fcf4406-45c7-529e-9836-ac51f092757a",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      119.38
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A3V3",
+      "2": "GND"
+    }
+  },
+  "C32": {
+    "uuid": "25d5d86e-b98e-5077-abd6-ab47d1ad1fc1",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "MICP",
+      "2": "N18299901"
+    }
+  },
+  "C33": {
+    "uuid": "658df3da-10cc-5c41-a148-9e2ae9ea5233",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "A3V3",
+      "2": "GND"
+    }
+  },
+  "C34": {
+    "uuid": "50c331fe-0c8e-53eb-9cef-87523c12aa24",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "MICN",
+      "2": "N18299903"
+    }
+  },
+  "C35": {
+    "uuid": "cb8f3e3e-22d9-5561-a4b3-53f822cc9b20",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "AVDD"
+    }
+  },
+  "C36": {
+    "uuid": "cba5dd3f-e6dc-5314-a3bf-bc6344524274",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "N18300580"
+    }
+  },
+  "C37": {
+    "uuid": "8b8f6bd7-078f-534f-9358-507bbc2b4388",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "VMID"
+    }
+  },
+  "C38": {
+    "uuid": "c5cdeb9d-08ba-5fe8-b5b7-5ca3bb96323c",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302385",
+      "2": "AGND"
+    }
+  },
+  "C39": {
+    "uuid": "8568d811-37a0-5a82-a644-dfaf0e2dec5a",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302436",
+      "2": "N18302385"
+    }
+  },
+  "C40": {
+    "uuid": "67af55ce-4c21-526e-9a1b-7302498cc7d7",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302434",
+      "2": "N18302373"
+    }
+  },
+  "C41": {
+    "uuid": "7359fe86-8e84-5a40-926b-9011804283a2",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302373",
+      "2": "AGND"
+    }
+  },
+  "C42": {
+    "uuid": "ce18c791-e8a5-5e35-bb59-e393220e0b52",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "DACVREF"
+    }
+  },
+  "C43": {
+    "uuid": "c856887f-206c-55c2-9732-20ab5ef7973d",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ADCVREF",
+      "2": "AGND"
+    }
+  },
+  "C48": {
+    "uuid": "df9fac4f-ebf9-511e-aa42-abe9bc73cdfb",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C49": {
+    "uuid": "da3d4532-c149-56ed-977f-a1cd6524ff70",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C57": {
+    "uuid": "b97e47dd-87d8-5c05-af72-6d7a95c68eb9",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "OUTN",
+      "2": "AGND"
+    }
+  },
+  "C58": {
+    "uuid": "48bde2d6-72b1-5709-88d1-bcb7ec53e848",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "OUTN",
+      "2": "N18424043"
+    }
+  },
+  "C59": {
+    "uuid": "4ee54f60-18df-577c-bb37-2369ad5b26bd",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "OUTP",
+      "2": "N18424033"
+    }
+  },
+  "C60": {
+    "uuid": "94857f2f-8c9d-5a7b-8a9a-ab6bd4677446",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "OUTP",
+      "2": "AGND"
+    }
+  },
+  "C62": {
+    "uuid": "6f947787-ed13-58ab-8ab8-3c90916b56d9",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18422156",
+      "2": "AGND"
+    }
+  },
+  "C63": {
+    "uuid": "26df4305-dac5-5c4f-b686-77a714307ce2",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "100u/10V",
+    "footprint": "C1206__8afc8bf708",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PA_PVDD1",
+      "2": "AGND"
+    }
+  },
+  "C66": {
+    "uuid": "a749c1a8-0f7a-5743-8e12-9f64af9f0bda",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PA_PVDD1",
+      "2": "AGND"
+    }
+  },
+  "C67": {
+    "uuid": "6de2a77f-47fb-5e16-846f-d788ddfaee87",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "10u / 10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "PA_PVDD1"
+    }
+  },
+  "C77": {
+    "uuid": "34831a9e-3371-5c57-b042-fcacba35b6f8",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "330p / 50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "N18423897"
+    }
+  },
+  "C78": {
+    "uuid": "b5436f06-8b4c-506b-adf5-563ba521ffeb",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "330p / 50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18423915",
+      "2": "N18423897"
+    }
+  },
+  "C81": {
+    "uuid": "4c3467bb-7b21-58f7-b6cb-3297b21e16ce",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "330p / 50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18423915",
+      "2": "AGND"
+    }
+  },
+  "J16": {
+    "uuid": "f53a0d4e-18e9-5284-b28b-220dc92b9205",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "A2001WR-S-2P",
+    "footprint": "CON2X1_2P0_SMT_PH2A-S-A__738bdc5895",
+    "dnp": false,
+    "mpn": "A2001WR-S-2P",
+    "nets": {
+      "1": "N18423897",
+      "2": "N18423915",
+      "3": "AGND",
+      "4": "AGND"
+    }
+  },
+  "J7": {
+    "uuid": "388bbf77-1299-5491-bb00-8a4220cc67fa",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "MIC_ELECT",
+    "footprint": "MIC2_4_B4013AM422-042__625e34846d",
+    "dnp": false,
+    "mpn": "B4013AM422-042",
+    "nets": {
+      "1": "MICP",
+      "2": "N18300564"
+    }
+  },
+  "L2": {
+    "uuid": "06cae706-11f2-5491-8ff1-f81a717629ae",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18423915",
+      "2": "PA_OUTL-"
+    }
+  },
+  "L3": {
+    "uuid": "5750b487-25e5-5626-a62a-42f778d3e49a",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18423897",
+      "2": "PA_OUTL+"
+    }
+  },
+  "R146": {
+    "uuid": "78f13341-9954-5d0d-abb4-f8750b1853b4",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "150k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18424043",
+      "2": "PA_INL-"
+    }
+  },
+  "R147": {
+    "uuid": "a90cc70b-6be7-5b74-b58a-eb881bea6893",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      220.98
+    ],
+    "value": "150k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18424033",
+      "2": "PA_INL+"
+    }
+  },
+  "R148": {
+    "uuid": "a9a9eccd-79ff-500c-9dc9-f32b61058891",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PA_CTRL",
+      "2": "AGND"
+    }
+  },
+  "R171": {
+    "uuid": "d9601ad6-aef1-57ac-b6cb-ed860b285002",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PA_PVDD1",
+      "2": "VCC_5V"
+    }
+  },
+  "R226": {
+    "uuid": "d5c08c32-906e-5356-8988-aa40faacdbf7",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18604768",
+      "2": "VCC_5V"
+    }
+  },
+  "R51": {
+    "uuid": "234459e7-b718-5c6b-9bcf-c23544658007",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "DVDD"
+    }
+  },
+  "R52": {
+    "uuid": "79c2e2b3-fbb5-53f1-b377-9d414225b751",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      220.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SCL",
+      "2": "N18300035"
+    }
+  },
+  "R57": {
+    "uuid": "84573fc9-da7c-5584-8bb2-0f7dfad735ab",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "CODEC_CE"
+    }
+  },
+  "R60": {
+    "uuid": "cec8cf93-6469-59e7-bd7f-1aa7e74a8b2b",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      220.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "CODEC_CE",
+      "2": "ESP_3V3"
+    }
+  },
+  "R62": {
+    "uuid": "0a7e08c8-f48b-568f-9503-0d1df88e9d1a",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_I2C_SDA",
+      "2": "N18300076"
+    }
+  },
+  "R63": {
+    "uuid": "027a4b9b-5070-5d0f-8e7d-cd5549bde4b5",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      246.38
+    ],
+    "value": "2.2k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "MICP",
+      "2": "N18300580"
+    }
+  },
+  "R64": {
+    "uuid": "e5e373d1-6492-5004-ba6c-5e056853bd83",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18300564",
+      "2": "MICN"
+    }
+  },
+  "R65": {
+    "uuid": "6c1a569d-d117-5312-9697-615af0edc5cf",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      246.38
+    ],
+    "value": "2.2k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "MICN",
+      "2": "N18300580"
+    }
+  },
+  "R66": {
+    "uuid": "f19fbe6a-6365-5408-9709-49303a840c8d",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18300564",
+      "2": "AGND"
+    }
+  },
+  "R68": {
+    "uuid": "f35da949-f9df-5017-b685-e44fc1a2170b",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AVDD",
+      "2": "A3V3"
+    }
+  },
+  "R73": {
+    "uuid": "f1fe4985-2cc1-5f0b-b677-cd75d3d43c82",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      469.9,
+      246.38
+    ],
+    "value": "200",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18300580",
+      "2": "ADCVREF"
+    }
+  },
+  "R83": {
+    "uuid": "eee3597e-80aa-512e-9b41-0901c088f8c8",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      539.75,
+      246.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302436",
+      "2": "OUTP"
+    }
+  },
+  "R84": {
+    "uuid": "cf021d76-2105-5e72-8b8e-4e7237e1be30",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      50.8,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18302434",
+      "2": "OUTN"
+    }
+  },
+  "R99": {
+    "uuid": "3a7716d3-baa9-5c50-83a6-9bddce3cdbbd",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      121.92,
+      271.78
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "AGND",
+      "2": "GND"
+    }
+  },
+  "TP11": {
+    "uuid": "a2039b1a-9b2b-54e1-b00a-61986e960ced",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      190.5,
+      271.78
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "MICP"
+    }
+  },
+  "TP20": {
+    "uuid": "23fa144d-fb66-5198-9d0a-d60393a756e3",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      260.35,
+      271.78
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18300564"
+    }
+  },
+  "TP31": {
+    "uuid": "955d8592-47e3-598b-9b04-73e248ce65aa",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      330.2,
+      271.78
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18423915"
+    }
+  },
+  "TP32": {
+    "uuid": "d56c3bdb-3c08-5bf2-b1d4-27693fc13f6b",
+    "sheet_uuid": "9bc17746-3e47-589e-a952-45ded0514815",
+    "sheet": "audio",
+    "at": [
+      401.32,
+      271.78
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18423897"
+    }
+  },
+  "U1": {
+    "uuid": "11e8a98d-9179-5fde-9a4a-80e00434c482",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      86.36,
+      93.98
+    ],
+    "value": "ESP32-C6-MINI-1",
+    "footprint": "ESP32-C6-MINI-1__12b1335637",
+    "dnp": false,
+    "mpn": "ESP32-C6-MINI-1-N4",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "3": "ESP_3V3",
+      "4": null,
+      "5": "C6_WAKEUP",
+      "6": null,
+      "7": null,
+      "8": "C6_EN",
+      "9": null,
+      "10": null,
+      "11": "GND",
+      "12": null,
+      "13": null,
+      "14": "GND",
+      "15": null,
+      "16": null,
+      "17": null,
+      "18": null,
+      "19": null,
+      "20": null,
+      "21": null,
+      "22": "C6_IO8",
+      "23": "C6_IO9",
+      "24": "SD2_CMD",
+      "25": "SD2_CLK",
+      "26": "SD2_D0",
+      "27": "SD2_D1",
+      "28": "SD2_D2",
+      "29": "SD2_D3",
+      "30": "C6_U0RXD",
+      "31": "C6_U0TXD",
+      "32": null,
+      "33": null,
+      "34": null,
+      "35": null,
+      "36": "GND",
+      "37": "GND",
+      "38": "GND",
+      "39": "GND",
+      "40": "GND",
+      "41": "GND",
+      "42": "GND",
+      "43": "GND",
+      "44": "GND",
+      "45": "GND",
+      "46": "GND",
+      "47": "GND",
+      "48": "GND",
+      "49": "GND",
+      "50": "GND",
+      "51": "GND",
+      "52": "GND",
+      "53": "GND"
+    }
+  },
+  "J2": {
+    "uuid": "b338008b-237a-50ff-8f9f-d39b20ed7538",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "CON3X2",
+    "footprint": "CON3X2_2P54__5709bcd3ab",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "C6_EN",
+      "2": null,
+      "3": "C6_U0TXD",
+      "4": "GND",
+      "5": "C6_U0RXD",
+      "6": "C6_IO9"
+    }
+  },
+  "J21": {
+    "uuid": "33ed980e-cd8d-51c3-9d4f-076d5b5bfe52",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "TF_CARD",
+    "footprint": "TF_CARDA__9ea14d9044",
+    "dnp": false,
+    "mpn": "TF-1007F",
+    "nets": {
+      "1": "SD1_D2",
+      "2": "SD1_D3",
+      "3": "SD1_CMD",
+      "4": "SD1_VDD",
+      "5": "SD1_CLK",
+      "6": "GND",
+      "7": "SD1_D0",
+      "8": "SD1_D1",
+      "9": "SD_DET",
+      "10": "GND",
+      "11": "GND",
+      "12": "GND",
+      "13": "GND"
+    }
+  },
+  "C14": {
+    "uuid": "801405af-9be2-5b19-bc25-7e1ffb404f97",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_VDD",
+      "2": "GND"
+    }
+  },
+  "C15": {
+    "uuid": "dde33e9f-8b4b-5887-9907-9022a37f6715",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_VDD",
+      "2": "GND"
+    }
+  },
+  "C2": {
+    "uuid": "dfab4fdd-926b-5c74-a37a-dba9fe8ded86",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C8": {
+    "uuid": "78f70215-2dc5-5ef8-9992-9ef1c1183b35",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "1u/16V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "C6_EN",
+      "2": "GND"
+    }
+  },
+  "D10": {
+    "uuid": "7443a3d6-548e-5a21-8b4f-dee154d678e0",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_D1"
+    }
+  },
+  "D11": {
+    "uuid": "8c2dba62-fb45-5e32-9694-e6d5a6a8780d",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_D0"
+    }
+  },
+  "D3": {
+    "uuid": "32af2680-3a31-5dce-b953-5ed3d6ddead3",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_VDD"
+    }
+  },
+  "D4": {
+    "uuid": "6359c2ad-4f17-5509-bc0c-17a7426188f0",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_CMD"
+    }
+  },
+  "D5": {
+    "uuid": "1154d37e-7751-5c8a-96d8-00efb3bbae28",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD_DET"
+    }
+  },
+  "D6": {
+    "uuid": "11071be4-4bb8-59c3-8ecf-eebeba55ae5f",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_CLK"
+    }
+  },
+  "D7": {
+    "uuid": "296a636e-cf01-5a5f-96ce-c8a7744a0a5f",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_D3"
+    }
+  },
+  "D8": {
+    "uuid": "5a7d18b5-0cfe-5810-a269-72d4569101b6",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "BSDFN2C031U",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": false,
+    "mpn": "BSDFN2C031U",
+    "nets": {
+      "1": "GND",
+      "2": "SD1_D2"
+    }
+  },
+  "R1": {
+    "uuid": "e0771f83-d18a-527e-8e80-cb04b9149ff7",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_D3"
+    }
+  },
+  "R10": {
+    "uuid": "13a3673b-cc7f-55bd-9c57-c3cc553d3828",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "C6_IO8",
+      "2": "ESP_3V3"
+    }
+  },
+  "R11": {
+    "uuid": "dd9e8db5-fd96-58ba-9139-b183f64bd823",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_CMD"
+    }
+  },
+  "R12": {
+    "uuid": "7bf4873d-6def-5abb-9cba-63b7687901f0",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_CLK"
+    }
+  },
+  "R16": {
+    "uuid": "f1d3fa3b-9111-5571-8d06-3cbe343046e7",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_VDD",
+      "2": "SD_DET"
+    }
+  },
+  "R17": {
+    "uuid": "2cdb7a08-f426-5876-b9f1-e2d4c7937023",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "SD1_CMD"
+    }
+  },
+  "R19": {
+    "uuid": "e4d2cc28-6f0a-57ec-942e-42e08e0c265f",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "SD1_D3"
+    }
+  },
+  "R21": {
+    "uuid": "726bc437-8676-5f84-bbf0-3b84446c7df7",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "SD1_D2"
+    }
+  },
+  "R3": {
+    "uuid": "bd6464dc-c311-5b84-8549-de8cd380b4ba",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_D2"
+    }
+  },
+  "R34": {
+    "uuid": "e30edbf6-e0f4-5f59-97c0-1c34c1ff2768",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "SD1_D1"
+    }
+  },
+  "R36": {
+    "uuid": "fdf4e93a-b0dd-5c3e-bdfc-f134493ee061",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_LDO_VO4",
+      "2": "SD1_D0"
+    }
+  },
+  "R4": {
+    "uuid": "d86f5b5b-56f0-5a54-8b2f-dd85150dfb19",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "C6_EN",
+      "2": "ESP_3V3"
+    }
+  },
+  "R5": {
+    "uuid": "8ade260b-7af3-596a-9190-b79576cab7f8",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_D1"
+    }
+  },
+  "R6": {
+    "uuid": "3453e083-9a94-58de-81ac-3214147141a4",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "SD2_D0"
+    }
+  },
+  "TP10": {
+    "uuid": "5be17bb9-e90f-59e4-98e8-ee6ebc53bb58",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD_DET"
+    }
+  },
+  "TP12": {
+    "uuid": "a114bf4a-a0b1-5aa1-a5f4-51acda16af44",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "TP13": {
+    "uuid": "f223cf6f-8b94-5721-92f7-100e01bbc635",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_VDD"
+    }
+  },
+  "TP14": {
+    "uuid": "8670816f-1f3e-5bbf-8902-b1f562234c2a",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_CMD"
+    }
+  },
+  "TP15": {
+    "uuid": "11192d5e-be95-5913-ae75-9e3e92349f5e",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_CLK"
+    }
+  },
+  "TP16": {
+    "uuid": "a883e471-a179-53ac-a1ed-ff8a48f69072",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_D3"
+    }
+  },
+  "TP17": {
+    "uuid": "dbeff85d-3e68-5ff8-8672-a483f8ff2ce9",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_D2"
+    }
+  },
+  "TP18": {
+    "uuid": "d1c2d978-c652-514b-b15d-96db597c59ab",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_D1"
+    }
+  },
+  "TP19": {
+    "uuid": "8561f956-90c2-5c8c-9c27-0dc1326a70d6",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__56d55e75a0",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD1_D0"
+    }
+  },
+  "TP3": {
+    "uuid": "3b3eb977-7338-575f-a36a-f435f68869d2",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "TP4": {
+    "uuid": "8ef9ea1b-a866-5e0f-9bfe-c0c489324152",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_CMD"
+    }
+  },
+  "TP5": {
+    "uuid": "07c63278-7142-5318-a6c6-8c23535e0329",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_CLK"
+    }
+  },
+  "TP6": {
+    "uuid": "0476d8de-18b1-59be-9b10-412c36cbafb3",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      50.8,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D3"
+    }
+  },
+  "TP7": {
+    "uuid": "0d9b5939-ff35-53ee-b562-25883c88b91b",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      121.92,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D2"
+    }
+  },
+  "TP8": {
+    "uuid": "354d1598-1258-5f1f-9fd5-c70a12538e71",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      190.5,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D1"
+    }
+  },
+  "TP9": {
+    "uuid": "c022a5fd-97e4-51c0-8055-1a0f9475adde",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
+    "at": [
+      260.35,
+      220.98
+    ],
+    "value": "TEST",
+    "footprint": "TPC1_fd69f0aa__930cba657a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "SD2_D0"
+    }
+  },
+  "U8": {
+    "uuid": "58b111b0-9ed4-5030-9ec3-492df50baf18",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      86.36,
+      81.28
+    ],
+    "value": "IP101GRI",
+    "footprint": "QFN32_0P4_4_E2P75__f47c501cbc",
+    "dnp": false,
+    "mpn": "IP101GRI",
+    "nets": {
+      "1": "TXER",
+      "2": "25M_XI",
+      "3": "25M_XO",
+      "4": "COL",
+      "5": "RMII_TXEN",
+      "6": null,
+      "7": null,
+      "8": "RMII_TXD1",
+      "9": "RMII_TXD0",
+      "10": "N18267472",
+      "11": "PHY_AD0",
+      "12": "PHY_AD3",
+      "13": "PHY_3V3",
+      "14": "N18267350",
+      "15": null,
+      "16": null,
+      "17": "N18267340",
+      "18": "N18267342",
+      "19": "N18267344",
+      "20": "CRS",
+      "21": "RXER",
+      "22": "MDC",
+      "23": "MDIO",
+      "24": "PHY_TESTON",
+      "25": "PHY_ISET",
+      "26": "RD-",
+      "27": "RD+",
+      "28": "N18267444",
+      "29": "TD-",
+      "30": "TD+",
+      "31": "PHY_3V3",
+      "32": "PHY_RSTN",
+      "33": "GND"
+    }
+  },
+  "J17": {
+    "uuid": "c850c44f-bdd0-550b-b526-e80e7613450a",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "RJ45_HR913550A",
+    "footprint": "RJ45_HR913129A__4a4a06f2a3",
+    "dnp": false,
+    "mpn": "HR913550A",
+    "nets": {
+      "1": "TD+",
+      "2": "TD-",
+      "3": "RD+",
+      "4": "N18266990",
+      "5": "N18266994",
+      "6": "RD-",
+      "7": null,
+      "8": "GND",
+      "9": "PHY_AD3",
+      "10": "N18267072",
+      "11": "N18267076",
+      "12": "PHY_3V3",
+      "SHD1": "GND_RJ45_EARTH",
+      "SHD2": "GND_RJ45_EARTH"
+    }
+  },
+  "#FLG12": {
+    "uuid": "723ebdc6-4a52-5df5-be73-65f626b1cc56",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "PWR_FLAG",
+    "footprint": "",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3"
+    }
+  },
+  "C1": {
+    "uuid": "eea9d902-b549-5d34-bcd1-5a527cc47a94",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603__1e7c8298a8",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C108": {
+    "uuid": "899f1079-cc19-5541-acd5-4ab963acd187",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "GND"
+    }
+  },
+  "C109": {
+    "uuid": "3bbdfe2f-06ca-527c-8b45-27093ea7367d",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "GND"
+    }
+  },
+  "C111": {
+    "uuid": "c5022ab5-ef94-5415-a4d4-edf4413d1016",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18267444",
+      "2": "GND"
+    }
+  },
+  "C112": {
+    "uuid": "0d375cbf-415f-5c61-a6d8-db39ca6b4688",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "GND"
+    }
+  },
+  "C113": {
+    "uuid": "7c85446f-24b3-528c-9fef-877bd64af26a",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18267444",
+      "2": "GND"
+    }
+  },
+  "C114": {
+    "uuid": "6aec4249-d07c-581f-8c27-300601f28826",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "10u/10V",
+    "footprint": "C0603_1ead970f__4ff9dc89d7",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "GND"
+    }
+  },
+  "C115": {
+    "uuid": "a481921c-b83c-5719-861a-6d0c3e94f7ab",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18266990",
+      "2": "GND"
+    }
+  },
+  "C116": {
+    "uuid": "6180e0a9-a2b4-58ef-824f-3f9066db73fd",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402_097d4b0b__328ab4e626",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18266994",
+      "2": "GND"
+    }
+  },
+  "C64": {
+    "uuid": "e30371cc-6f7c-5976-9ad6-287fab04943e",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "20p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18379689",
+      "2": "GND"
+    }
+  },
+  "C68": {
+    "uuid": "86b9bae2-3c08-5d96-bc61-1a7a8638dffb",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "20p/50V",
+    "footprint": "C0402__df1ad35910",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18379734",
+      "2": "GND"
+    }
+  },
+  "Q8": {
+    "uuid": "74d98ebf-eabc-513d-a001-4cde0c0aed51",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "AO3401A",
+    "footprint": "SOT23-3__14816d8467",
+    "dnp": false,
+    "mpn": "AO3401A",
+    "nets": {
+      "1": "SD_PWRN",
+      "2": "ESP_3V3",
+      "3": "SD1_VDD"
+    }
+  },
+  "R139": {
+    "uuid": "32c383f0-3d89-5e23-bf0c-edd25252106a",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RMII_CLK",
+      "2": "N18267350"
+    }
+  },
+  "R140": {
+    "uuid": "dd002d54-5307-53b4-bc7c-72d20b0a4f43",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PHY_AD3"
+    }
+  },
+  "R141": {
+    "uuid": "ff244f38-5980-516e-b3df-0256ae25ebb1",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "PHY_AD0"
+    }
+  },
+  "R142": {
+    "uuid": "08ee8aa8-3c2d-51b2-9b25-673470f7a1fe",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RMII_CLK",
+      "2": "N18267472"
+    }
+  },
+  "R143": {
+    "uuid": "29f41c0c-d230-53e8-b1b9-e166b119465b",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RMII_RXD1",
+      "2": "N18267340"
+    }
+  },
+  "R144": {
+    "uuid": "0f9c70dc-5415-594d-8def-a17bc45f055f",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RMII_RXD0",
+      "2": "N18267342"
+    }
+  },
+  "R149": {
+    "uuid": "112a660e-4612-5534-9389-a5a96c009c0e",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "COL"
+    }
+  },
+  "R150": {
+    "uuid": "79f180a1-f87a-5047-a233-5672482f9bba",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "RMII_RXDV",
+      "2": "N18267344"
+    }
+  },
+  "R153": {
+    "uuid": "402f050b-1348-5fba-ba4f-e7b7ea2b9960",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "COL",
+      "2": "GND"
+    }
+  },
+  "R154": {
+    "uuid": "c20bd8c4-12b1-5eda-ad10-9a66a75aed4a",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "CRS",
+      "2": "GND"
+    }
+  },
+  "R155": {
+    "uuid": "ca92b7a8-0ee9-5e70-9bf5-5f3331fc136d",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "CRS"
+    }
+  },
+  "R156": {
+    "uuid": "f5a13d6a-5885-59b2-989a-3692b1d57892",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "RXER",
+      "2": "GND"
+    }
+  },
+  "R157": {
+    "uuid": "353c2c71-00d6-5a9b-91ff-321fe8ef02be",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "RXER"
+    }
+  },
+  "R158": {
+    "uuid": "cbb253e9-7249-58d4-be9f-e61986a7abc6",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "25M_XO",
+      "2": "N18379689"
+    }
+  },
+  "R159": {
+    "uuid": "27a20d0b-4c17-55d8-bc61-a03877163943",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "10M",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "N18379689",
+      "2": "N18379734"
+    }
+  },
+  "R160": {
+    "uuid": "8b06c9a2-171e-5e62-a7bc-0b802508236b",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "1.5k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "MDC"
+    }
+  },
+  "R161": {
+    "uuid": "cd7f550a-a1a8-5284-9dd8-2ec3a60c04da",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "25M_XI",
+      "2": "N18379734"
+    }
+  },
+  "R163": {
+    "uuid": "c94775c5-5dfb-5309-b91e-e04eb002e2b0",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "1.5k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "MDIO"
+    }
+  },
+  "R164": {
+    "uuid": "b5669ace-26a0-5126-b0ae-e733bc87261a",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "PHY_TESTON"
+    }
+  },
+  "R165": {
+    "uuid": "07bdbe6f-40c6-565f-87e1-37d103a4694c",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "6.19k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_ISET",
+      "2": "GND"
+    }
+  },
+  "R166": {
+    "uuid": "1b555c89-1231-540f-8cf3-b69ab7b1dfd1",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_RSTN",
+      "2": "GND"
+    }
+  },
+  "R167": {
+    "uuid": "09e931b8-1697-5c79-b23f-455083495708",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "PHY_RSTN"
+    }
+  },
+  "R168": {
+    "uuid": "609410aa-5a70-5764-9533-e54520a60da0",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PHY_3V3",
+      "2": "TXER"
+    }
+  },
+  "R169": {
+    "uuid": "417454e7-166c-5135-9d1f-fd25eaa407d1",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "TXER",
+      "2": "GND"
+    }
+  },
+  "R181": {
+    "uuid": "4f70ca8c-0af6-5e37-ae97-a1fcfd1b6c72",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      121.92,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND_RJ45_EARTH",
+      "2": "GND"
+    }
+  },
+  "R213": {
+    "uuid": "c590595b-e5c2-5bbb-ad97-b33acd26b5be",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      190.5,
+      195.58
+    ],
+    "value": "0R",
+    "footprint": "R0603_1ead970f__376db2b91e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "PHY_3V3"
+    }
+  },
+  "R222": {
+    "uuid": "1dd98b54-1c3c-5cce-9bd9-5950c09f0f98",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      260.35,
+      195.58
+    ],
+    "value": "1k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18267076",
+      "2": "PHY_AD0"
+    }
+  },
+  "R223": {
+    "uuid": "7750af54-a3df-5073-9de3-88cd38df7ae9",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      330.2,
+      195.58
+    ],
+    "value": "1k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "N18267072",
+      "2": "GND"
+    }
+  },
+  "R229": {
+    "uuid": "c13923b6-add0-5533-a09f-f2eb54a7e15e",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      401.32,
+      195.58
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "SD_PWRN"
+    }
+  },
+  "R230": {
+    "uuid": "e0ac6bd9-0235-5ad5-a17d-52e654002faf",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      469.9,
+      195.58
+    ],
+    "value": "10k",
+    "footprint": "R0402_097d4b0b__c1bfdfccc2",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "SD_PWRN",
+      "2": "ESP_3V3"
+    }
+  },
+  "Y3": {
+    "uuid": "28ec5b5c-78b2-5338-9cdd-88afb17a0996",
+    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
+    "sheet": "ethernet",
+    "at": [
+      539.75,
+      195.58
+    ],
+    "value": "25MHz+/-10ppm",
+    "footprint": "XTAL3225__b6a822609b",
+    "dnp": false,
+    "mpn": "SX32Y025000BA1T",
+    "nets": {
+      "1": "N18379689",
+      "2": "GND",
+      "3": "N18379734",
+      "4": "GND"
+    }
+  },
+  "J15": {
+    "uuid": "939ba272-8356-53f6-a700-00096470736c",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      86.36,
+      68.58
+    ],
+    "value": "USB_TYPEC_16P_F",
+    "footprint": "USB_TYPEC_16P_F__bf963333d2",
+    "dnp": false,
+    "mpn": "TYPE-C-31-M-12",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "3": "USB2_5V",
+      "4": "USB2_5V",
+      "5": null,
+      "6": "N18255493",
+      "7": "USB_DM_C",
+      "8": "USB_DP_C",
+      "9": "USB_DM_C",
+      "10": "USB_DP_C",
+      "11": null,
+      "12": "N18255499",
+      "13": "USB2_5V",
+      "14": "USB2_5V",
+      "15": "GND",
+      "16": "GND",
+      "17": "GND_EARTH",
+      "18": "GND_EARTH",
+      "19": "GND_EARTH",
+      "20": "GND_EARTH"
+    }
+  },
+  "J19": {
+    "uuid": "8d4aef25-0958-5d74-a614-aa6b133e257d",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      226.06,
+      68.58
+    ],
+    "value": "USB_TYPEC_16P_F",
+    "footprint": "USB_TYPEC_16P_F__bf963333d2",
+    "dnp": false,
+    "mpn": "TYPE-C-31-M-12",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "3": "USB1_5V",
+      "4": "USB1_5V",
+      "5": null,
+      "6": "N18256275",
+      "7": "USB1P1_N",
+      "8": "USB1P1_P",
+      "9": "USB1P1_N",
+      "10": "USB1P1_P",
+      "11": null,
+      "12": "N18256281",
+      "13": "USB1_5V",
+      "14": "USB1_5V",
+      "15": "GND",
+      "16": "GND",
+      "17": "GND_EARTH",
+      "18": "GND_EARTH",
+      "19": "GND_EARTH",
+      "20": "GND_EARTH"
+    }
+  },
+  "J20": {
+    "uuid": "3c2fbb76-5d76-5e9b-a382-462e9780fe1e",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      365.76,
+      68.58
+    ],
+    "value": "USB_TYPEC_16P_F",
+    "footprint": "USB_TYPEC_16P_F__bf963333d2",
+    "dnp": true,
+    "mpn": "TYPE-C-31-M-12",
+    "nets": {
+      "1": "GND",
+      "2": "GND",
+      "3": "USB0_5V",
+      "4": "USB0_5V",
+      "5": null,
+      "6": "N18405255",
+      "7": "USB1P1_N_2",
+      "8": "USB1P1_P_2",
+      "9": "USB1P1_N_2",
+      "10": "USB1P1_P_2",
+      "11": null,
+      "12": "N18405261",
+      "13": "USB0_5V",
+      "14": "USB0_5V",
+      "15": "GND",
+      "16": "GND",
+      "17": "GND_EARTH",
+      "18": "GND_EARTH",
+      "19": "GND_EARTH",
+      "20": "GND_EARTH"
+    }
+  },
+  "J18": {
+    "uuid": "39128726-fc71-5d6a-ae32-897b4848bd5b",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      505.46,
+      55.88
+    ],
+    "value": "USB-02",
+    "footprint": "292303-6__14239c459b",
+    "dnp": false,
+    "mpn": "901-211A1021D10100",
+    "nets": {
+      "1": "VBUS_OUT",
+      "2": "USB_DM_A",
+      "3": "USB_DP_A",
+      "4": "GND",
+      "5": "GND_EARTH",
+      "6": "GND_EARTH"
+    }
+  },
+  "D13": {
+    "uuid": "4b15f15c-0ab2-5c62-aa60-71d5346d2369",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB2_5V"
+    }
+  },
+  "D14": {
+    "uuid": "32b61f20-cc59-5f83-bec1-bfd4cd6c8413",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "ESD7951ST5G",
+    "footprint": "SOD882__b74c03d5c6",
+    "dnp": false,
+    "mpn": "ESD7951ST5G",
+    "nets": {
+      "1": "GND",
+      "2": "USB_DM_C"
+    }
+  },
+  "D16": {
+    "uuid": "70870378-590f-5c77-a0ec-a7adf45d7a32",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      50.8,
+      119.38
+    ],
+    "value": "ESD7951ST5G",
+    "footprint": "SOD882__b74c03d5c6",
+    "dnp": false,
+    "mpn": "ESD7951ST5G",
+    "nets": {
+      "1": "GND",
+      "2": "USB_DP_C"
+    }
+  },
+  "D17": {
+    "uuid": "29c50871-ae12-5c29-9732-42dedc56cb0c",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      121.92,
+      119.38
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB1P1_N"
+    }
+  },
+  "D18": {
+    "uuid": "4576b6f9-7ab9-5af6-ba45-c39449d45904",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB1P1_P"
+    }
+  },
+  "D19": {
+    "uuid": "3a82d310-fc42-5aa9-9770-9e970daf576e",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB1_5V"
+    }
+  },
+  "D20": {
+    "uuid": "98d9577a-82b5-5297-9c5b-46d669625465",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB0_5V"
+    }
+  },
+  "D21": {
+    "uuid": "46c3f00f-8716-5143-9940-0d1bd9ec167e",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "ESD7951ST5G",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "USB_DP_A"
+    }
+  },
+  "D22": {
+    "uuid": "aef67a9a-6d18-5612-b70b-ab0673c7c356",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "ESD7951ST5G",
+    "footprint": "SOD882_55527cd7__832596a649",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "USB_DM_A"
+    }
+  },
+  "D23": {
+    "uuid": "b1ec9271-261f-5bd6-90e9-97c31c8dc058",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB1P1_P_2"
+    }
+  },
+  "D24": {
+    "uuid": "59f8ea7e-bfe9-5753-99da-63b93a1da80e",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "LESD5D5.0CT1G",
+    "footprint": "SOD523__6a5b89da33",
+    "dnp": false,
+    "mpn": "LESD5D5.0CT1G",
+    "nets": {
+      "1": "GND",
+      "2": "USB1P1_N_2"
+    }
+  },
+  "R178": {
+    "uuid": "fa4c98f8-6867-5fbf-83a7-8e46250476ea",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_DM_C",
+      "2": "USB_DM_A"
+    }
+  },
+  "R179": {
+    "uuid": "7aff08d7-850d-5c76-a5a7-aa1c5b6a5c63",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_DP_C",
+      "2": "USB_DP_A"
+    }
+  },
+  "R180": {
+    "uuid": "b9f4e2fa-4f16-5e1d-b7cc-4683b0a236d4",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18255493"
+    }
+  },
+  "R182": {
+    "uuid": "27f6019a-5042-5da6-8350-a0cb723c1f7f",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18255499"
+    }
+  },
+  "R183": {
+    "uuid": "aa1303dc-4e87-5c99-8b8e-e27d74435371",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18256281"
+    }
+  },
+  "R184": {
+    "uuid": "8f268e7b-c09e-5608-9ade-5e7d4328698c",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18256275"
+    }
+  },
+  "R185": {
+    "uuid": "5d4d6634-08cf-5a82-bff8-44b11bf62ef1",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18405255"
+    }
+  },
+  "R186": {
+    "uuid": "ea8387f5-ae85-5f78-a1d2-5b41ae4a8e65",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "5.1k",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "N18405261"
+    }
+  },
+  "R187": {
+    "uuid": "7ccf2cdf-08ea-57a2-b145-f241831577bc",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0603__ca4d6f8805",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND_EARTH",
+      "2": "GND"
+    }
+  },
+  "R220": {
+    "uuid": "589535ea-0b59-55fe-8d0b-be6c80c68133",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_DP_A",
+      "2": "USB_DP"
+    }
+  },
+  "R221": {
+    "uuid": "213303f5-f8b9-54a8-ae92-20852703831f",
+    "sheet_uuid": "b03b194c-4662-56ab-b152-fc3219598831",
+    "sheet": "usb_ports",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "0R",
+    "footprint": "R0402__6ca295102a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "USB_DM_A",
+      "2": "USB_DM"
+    }
+  },
+  "J302": {
+    "uuid": "bb7e52b6-3da2-5bf7-996f-11df1570c5cb",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      86.36,
+      81.28
+    ],
+    "value": "LCD_30P_0.5mm",
+    "footprint": "FFC30P_0P5__5534a26946",
+    "dnp": false,
+    "mpn": "AFC01-S30FCA-00",
+    "nets": {
+      "1": "PANEL_LED+",
+      "2": "PANEL_LED+",
+      "3": "PANEL_LCD_VGH",
+      "4": "PANEL_LCD_VGL",
+      "5": "PANEL_UPDN",
+      "6": "PANEL_SHLR",
+      "7": "PANEL_LED-",
+      "8": "PANEL_LED-",
+      "9": "PANEL_LCD_AVDD",
+      "10": "GND",
+      "11": null,
+      "12": null,
+      "13": "GND",
+      "14": null,
+      "15": null,
+      "16": "GND",
+      "17": "DSI_A_CLKP",
+      "18": "DSI_A_CLKN",
+      "19": "GND",
+      "20": "DSI_A_DATA1P",
+      "21": "DSI_A_DATA1N",
+      "22": "GND",
+      "23": "DSI_A_DATA0P",
+      "24": "DSI_A_DATA0N",
+      "25": "GND",
+      "26": "PANEL_STBYB",
+      "27": "PANEL_RESET_LCD",
+      "28": "PANEL_LCD_VDD",
+      "29": "PANEL_LCD_VDD",
+      "30": "PANEL_LCD_VCOM",
+      "31": "GND",
+      "32": "GND"
+    }
+  },
+  "J308": {
+    "uuid": "ddf81b2b-3643-5345-bfa5-ca37d0457438",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "GT911_6P_0.5mm",
+    "footprint": "FFC6P_0P5_UP__70a24e6d71",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO23",
+      "2": "ESP_3V3",
+      "3": "GND",
+      "4": "CNN_GPIO22",
+      "5": "N18412242",
+      "6": "N18412230",
+      "7": "GND",
+      "8": "GND"
+    }
+  },
+  "U304": {
+    "uuid": "917c5d9a-6103-5a3b-a969-37c3fa85a6b8",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "SN74LVC1G07DBVR",
+    "footprint": "SOT-23-5__bb5afb5c1a",
+    "dnp": false,
+    "mpn": "SN74LVC1G07DBVR",
+    "nets": {
+      "1": null,
+      "2": "CNN_GPIO27",
+      "3": "GND",
+      "4": "PANEL_RESET_LCD",
+      "5": "ESP_3V3"
+    }
+  },
+  "C301": {
+    "uuid": "6cea593f-1aab-59b0-a5f8-90e181ca867d",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "1u / 16V",
+    "footprint": "C0402__acc3615381",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_RESET_LCD",
+      "2": "GND"
+    }
+  },
+  "C303": {
+    "uuid": "86de0600-0a08-54c7-b9ce-3275c2fcaf36",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "C328": {
+    "uuid": "cc9e2fdc-7c9b-5ccf-91eb-6daa04a27cce",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "100n / 16V",
+    "footprint": "C_0402_1005Metric__6f04051f88",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "ESP_3V3",
+      "2": "GND"
+    }
+  },
+  "R301": {
+    "uuid": "a57b3529-86ee-558f-ab1f-87302214c584",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_UPDN",
+      "2": "PANEL_LCD_VDD"
+    }
+  },
+  "R302": {
+    "uuid": "3e758f88-3579-580c-ba23-d0a54fb5973f",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_SHLR",
+      "2": "PANEL_LCD_VDD"
+    }
+  },
+  "R303": {
+    "uuid": "55d488aa-b251-5454-b31c-c77c82f56ad0",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_STBYB",
+      "2": "PANEL_LCD_VDD"
+    }
+  },
+  "R304": {
+    "uuid": "b4c01edb-c39f-50ae-9008-1d118c5f467f",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_RESET_LCD",
+      "2": "PANEL_LCD_VDD"
+    }
+  },
+  "R305": {
+    "uuid": "57595819-68b1-5867-a68b-d7503da9506f",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_UPDN"
+    }
+  },
+  "R306": {
+    "uuid": "d0a655eb-4c63-531c-9f0f-f58700df0a2b",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_SHLR"
+    }
+  },
+  "R307": {
+    "uuid": "92781f2c-9088-5ee4-ad97-a5bf2573a317",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": true,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_STBYB"
+    }
+  },
+  "R310": {
+    "uuid": "de07200c-e6c5-5b30-897d-c19ac2e86401",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO23",
+      "2": "ESP_3V3"
+    }
+  },
+  "R339": {
+    "uuid": "5ce3f51a-58a0-5617-89eb-d952c7291551",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "10k",
+    "footprint": "R_0402_1005Metric__cc00eb7537",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO27",
+      "2": "GND"
+    }
+  },
+  "R340": {
+    "uuid": "3697b437-3c97-58d0-af6b-43c3d94ed1b2",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "100k",
+    "footprint": "R_0402_1005Metric__cc00eb7537",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO22",
+      "2": "GND"
+    }
+  },
+  "U301": {
+    "uuid": "7e68b14d-3c56-582f-8f88-df9d5ece116d",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      86.36,
+      55.88
+    ],
+    "value": "ETA1611",
+    "footprint": "SOT23-6__66e143f4c2",
+    "dnp": false,
+    "mpn": "ETA1611S2G",
+    "nets": {
+      "1": "PANEL_N17127832",
+      "2": "GND",
+      "3": "PANEL_LED-",
+      "4": "PANEL_N17127878",
+      "5": "VCC_5V",
+      "6": null
+    }
+  },
+  "C304": {
+    "uuid": "613fa3f0-f276-5fb0-bb31-2644a4fd9104",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      190.5,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C305": {
+    "uuid": "07be2d08-20f9-5f73-b958-d7d2889549e7",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      260.35,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LED+",
+      "2": "GND"
+    }
+  },
+  "C306": {
+    "uuid": "d095bb16-b2aa-564e-b34f-facf23fa8fc9",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "22p/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17127878",
+      "2": "GND"
+    }
+  },
+  "D304": {
+    "uuid": "b58f8a61-613a-53f8-a905-e52778730d87",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_N17127832",
+      "2": "PANEL_LED+"
+    }
+  },
+  "L301": {
+    "uuid": "86144614-fc48-5cab-b7d7-282c7a9d3ab8",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "10uH_0.8A",
+    "footprint": "L3012S__77bc48e40c",
+    "dnp": false,
+    "mpn": "SWPA3012S100MT",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "PANEL_N17127832"
+    }
+  },
+  "R311": {
+    "uuid": "ee58e9f3-016a-5bc5-aa6d-97128b78c5a9",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17127878",
+      "2": "CNN_GPIO26"
+    }
+  },
+  "R312": {
+    "uuid": "223d71ef-37a4-5f65-acd9-465e98860bc4",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      190.5,
+      68.58
+    ],
+    "value": "1.1",
+    "footprint": "R0603__d26a16d132",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_LED-"
+    }
+  },
+  "R341": {
+    "uuid": "eaa48166-25ae-58fd-8efa-fe89d8100fee",
+    "sheet_uuid": "abb9c366-1024-5b0c-a305-e23e15820453",
+    "sheet": "backlight",
+    "at": [
+      260.35,
+      68.58
+    ],
+    "value": "10k",
+    "footprint": "R_0402_1005Metric__cc00eb7537",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "CNN_GPIO26",
+      "2": "GND"
+    }
+  },
+  "U302": {
+    "uuid": "b6ea2098-167c-59ce-bc4b-97bf0f586fce",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      86.36,
+      55.88
+    ],
+    "value": "ME6211C18M5G-N",
+    "footprint": "SOT23-5__8ed5fed8df",
+    "dnp": false,
+    "mpn": "ME6211C18M5G-N",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND",
+      "3": "PANEL_N17128822",
+      "4": null,
+      "5": "PANEL_LCD_VDD"
+    }
+  },
+  "U303": {
+    "uuid": "cbaa5463-8ab0-5d3a-8e96-a038918bd044",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      226.06,
+      55.88
+    ],
+    "value": "AP3012K",
+    "footprint": "SOT23-5__8ed5fed8df",
+    "dnp": false,
+    "mpn": "AP3012KTR-G1",
+    "nets": {
+      "1": "PANEL_N17134948",
+      "2": "GND",
+      "3": "PANEL_N17135258",
+      "4": "PANEL_N17134769",
+      "5": "VCC_5V"
+    }
+  },
+  "C307": {
+    "uuid": "130f380e-8ca6-56e1-8d45-3158bb43e332",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C308": {
+    "uuid": "f3cabd69-81ff-57e1-8bde-d94564cd663b",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C309": {
+    "uuid": "23b63be0-e02d-5953-8da9-c62cb2597fea",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      43.18
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VDD",
+      "2": "GND"
+    }
+  },
+  "C310": {
+    "uuid": "200fc483-66f9-5b92-a9c0-40e546efe6d3",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      43.18
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VDD",
+      "2": "GND"
+    }
+  },
+  "C311": {
+    "uuid": "770350a6-1803-56c5-896c-af3c614c9e24",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C312": {
+    "uuid": "3de3fed9-194c-5094-b440-4a1c63f22f8f",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      68.58
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "GND"
+    }
+  },
+  "C313": {
+    "uuid": "417513d5-e4a6-546d-a078-283e69547ddb",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      68.58
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_AVDD",
+      "2": "GND"
+    }
+  },
+  "C314": {
+    "uuid": "46f84a54-acde-52b9-9dfb-013260eaae20",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      68.58
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_AVDD",
+      "2": "GND"
+    }
+  },
+  "C315": {
+    "uuid": "221ad349-8cfe-5077-ba84-a2587da36b89",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17136021",
+      "2": "PANEL_N17134948"
+    }
+  },
+  "C316": {
+    "uuid": "b82c0461-cc0c-5329-947c-4d6dc33bf2da",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17135942",
+      "2": "PANEL_N17134948"
+    }
+  },
+  "C317": {
+    "uuid": "8b68c87a-b910-560a-ab07-1a82aad7bb64",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      93.98
+    ],
+    "value": "1u/50V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17136498",
+      "2": "GND"
+    }
+  },
+  "C318": {
+    "uuid": "03676967-e47e-56a7-b540-10f296c1846e",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      93.98
+    ],
+    "value": "1u/50V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17136250",
+      "2": "GND"
+    }
+  },
+  "C321": {
+    "uuid": "d7fa060f-da10-5678-991d-65f2834b8e7c",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      93.98
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "C322": {
+    "uuid": "8917ff7d-7c86-5b13-a257-eb2e1b925bdd",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "C323": {
+    "uuid": "33195cf0-11be-50f3-9722-4f97ae0580d0",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      93.98
+    ],
+    "value": "10u/50V",
+    "footprint": "C0805__0f85e56246",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGH",
+      "2": "GND"
+    }
+  },
+  "C324": {
+    "uuid": "1dc77831-34f5-53d8-9d99-4bfb4f751acd",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      93.98
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGH",
+      "2": "GND"
+    }
+  },
+  "C326": {
+    "uuid": "bae0f276-738e-596c-866b-b7c6cf4d9eef",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      119.38
+    ],
+    "value": "0.1u/50V",
+    "footprint": "C0402__acc3615381",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VCOM",
+      "2": "GND"
+    }
+  },
+  "C327": {
+    "uuid": "3f9e2a39-31bf-5bf0-af82-483644e08f5b",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      119.38
+    ],
+    "value": "10u/25V",
+    "footprint": "C0603__4b26f05b65",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VCOM",
+      "2": "GND"
+    }
+  },
+  "D305": {
+    "uuid": "42b90fee-eb90-5bca-adad-fbcbfb0c084d",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_N17134948",
+      "2": "PANEL_LCD_AVDD"
+    }
+  },
+  "D306": {
+    "uuid": "b7610bf7-b905-59b8-8cb2-c3ec379c219e",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_LCD_AVDD",
+      "2": "PANEL_N17136021"
+    }
+  },
+  "D307": {
+    "uuid": "a5b94d56-a3b2-5f98-8d87-eb36eac01e3a",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_N17136021",
+      "2": "PANEL_N17136250"
+    }
+  },
+  "D308": {
+    "uuid": "39030851-6a5b-53c2-9e8a-9622bfa308de",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_N17135942",
+      "2": "GND"
+    }
+  },
+  "D309": {
+    "uuid": "a3e022f9-89dd-5e18-8892-6374708aee01",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      119.38
+    ],
+    "value": "LMBR140ET1G",
+    "footprint": "SOD323HE__59fe48cfa4",
+    "dnp": false,
+    "mpn": "LMBR140ET1G",
+    "nets": {
+      "1": "PANEL_N17136498",
+      "2": "PANEL_N17135942"
+    }
+  },
+  "D310": {
+    "uuid": "25aa941e-fc08-5b17-be59-4334f50f3e6a",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      119.38
+    ],
+    "value": "LMSZ5233BT1G",
+    "footprint": "SOD123__334beb3694",
+    "dnp": false,
+    "mpn": "LMSZ5233BT1G",
+    "nets": {
+      "1": "PANEL_LCD_VGL",
+      "2": "GND"
+    }
+  },
+  "D311": {
+    "uuid": "2edbc79b-1d12-549d-990c-1c1279f34ca6",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      144.78
+    ],
+    "value": "MM1W18",
+    "footprint": "SOD123__334beb3694",
+    "dnp": false,
+    "mpn": "MM1W18",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_LCD_VGH"
+    }
+  },
+  "L302": {
+    "uuid": "ea95f3a2-1b41-5f36-a118-de711e80a8c3",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      144.78
+    ],
+    "value": "10uH_0.8A",
+    "footprint": "L3012S__77bc48e40c",
+    "dnp": false,
+    "mpn": "SWPA3012S100MT",
+    "nets": {
+      "1": "VCC_5V",
+      "2": "PANEL_N17134948"
+    }
+  },
+  "R313": {
+    "uuid": "34ab24c7-e21b-56d5-b8da-a1e3fbd1c756",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17128822",
+      "2": "VCC_5V"
+    }
+  },
+  "R314": {
+    "uuid": "02a92146-8d7a-5193-972b-a4340ef2bf57",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      144.78
+    ],
+    "value": "10k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17134769",
+      "2": "VCC_5V"
+    }
+  },
+  "R315": {
+    "uuid": "8fb23576-7655-5f41-81f2-c78110d23d48",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      144.78
+    ],
+    "value": "22k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_AVDD",
+      "2": "PANEL_N17135258"
+    }
+  },
+  "R316": {
+    "uuid": "574fd902-02e4-5006-b8c6-1e6ad2357b74",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      144.78
+    ],
+    "value": "3.3k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17135258",
+      "2": "GND"
+    }
+  },
+  "R317": {
+    "uuid": "57c6f663-c8a1-5162-8263-782b5fda96ac",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      144.78
+    ],
+    "value": "220",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17136498",
+      "2": "PANEL_LCD_VGL"
+    }
+  },
+  "R318": {
+    "uuid": "50cead9a-7f14-540d-bce7-6f912d697982",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      144.78
+    ],
+    "value": "220",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_N17136250",
+      "2": "PANEL_LCD_VGH"
+    }
+  },
+  "R319": {
+    "uuid": "6049d9bb-d765-51bb-859f-b67b8699cf9e",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_LCD_VGL"
+    }
+  },
+  "R320": {
+    "uuid": "8507b519-ee3d-5eed-a064-c19eacbcfd00",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      121.92,
+      170.18
+    ],
+    "value": "51k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_LCD_VGH"
+    }
+  },
+  "R322": {
+    "uuid": "ce3e499e-8de9-5b01-8731-d92b92a61938",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      190.5,
+      170.18
+    ],
+    "value": "1k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND",
+      "2": "PANEL_LCD_VCOM"
+    }
+  },
+  "R323": {
+    "uuid": "fa7b07b9-fc0f-5ce0-a893-da2b995bca32",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      260.35,
+      170.18
+    ],
+    "value": "2k",
+    "footprint": "R0402__4a1c38cf9e",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VCOM",
+      "2": "PANEL_LCD_AVDD"
+    }
+  },
+  "TP301": {
+    "uuid": "0613ec40-523e-53ca-90c6-7950864d4e9d",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      330.2,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__e5aa15b89a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGL"
+    }
+  },
+  "TP302": {
+    "uuid": "bb6215a8-920d-540b-b847-ba55c4c7a128",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      401.32,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__e5aa15b89a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VGH"
+    }
+  },
+  "TP303": {
+    "uuid": "966228ec-d959-5df7-ac3f-37035acfd86d",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      469.9,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__e5aa15b89a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VCOM"
+    }
+  },
+  "TP304": {
+    "uuid": "9fcf546a-cc62-5a1d-b502-8477a54b58fe",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      539.75,
+      170.18
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__e5aa15b89a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_AVDD"
+    }
+  },
+  "TP305": {
+    "uuid": "d88c2b70-e873-59db-b630-35944a7f7b36",
+    "sheet_uuid": "31710043-2583-5c7c-b573-54a0c09bf79d",
+    "sheet": "lcd_bias",
+    "at": [
+      50.8,
+      195.58
+    ],
+    "value": "TEST",
+    "footprint": "TPC1__2b9627de78",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "PANEL_LCD_VDD"
+    }
+  },
+  "H301": {
+    "uuid": "5b44ed9b-2bcd-59a6-9172-daf2d6703ccd",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      50.8,
+      254
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  },
+  "H302": {
+    "uuid": "95900a01-c70d-549d-9c98-d27d24aa7d1a",
+    "sheet_uuid": "e58f855f-9abe-5012-bb97-7604bb5f833a",
+    "sheet": "lcd_interfaces",
+    "at": [
+      152.4,
+      254
+    ],
+    "value": "M3 GND",
+    "footprint": "HOLE5_3__0f3c3a2f1a",
+    "dnp": false,
+    "mpn": "",
+    "nets": {
+      "1": "GND"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "source": "../obd-ble-node/obd_ble_node.kicad_pcb",
-  "board_sha256": "93e45e48bfb284f246f98a158f2269a51166e549786fbbd20db59629be8b78d8",
+  "board_sha256": "b04ea82fde1d7f02649d9459c881d1e914dec192270fd86957c56b20ad225dd0",
   "board_origin_mm": [
     100.0,
     100.0
@@ -9,6 +9,27 @@
     38.5,
     16.6
   ],
+  "board_revision": "A3",
   "coordinate_rule": "Top-view origin at board upper left; x right, y down. Needle face is bottom view with same top edge: x=38.5-top_x, y=top_y.",
-  "mechanical_release": "NOT_RELEASED: drill diameters, supports and physical plug fit pending"
+  "mechanical_release": "PCB pad and locator geometry verified; actual plug fit and post-solder fixture access UNVERIFIED",
+  "test_access_window_top_view_mm": [
+    14.2,
+    13.9,
+    32.2,
+    16.4
+  ],
+  "top_support_areas_mm": [
+    [
+      14.4,
+      14.4,
+      15.6,
+      15.6
+    ],
+    [
+      31.9,
+      14.4,
+      33.1,
+      15.6
+    ]
+  ]
 }

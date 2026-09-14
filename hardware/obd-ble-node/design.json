@@ -1284,8 +1284,8 @@
         "2": "LED_A"
       },
       "sch": [
-        275.59,
-        382.27
+        289.56,
+        369.57
       ],
       "pcb": [
         117,
@@ -1335,8 +1335,8 @@
         379.73
       ],
       "pcb": [
-        102.0,
-        102.0
+        115.2,
+        115.0
       ],
       "rot": 0,
       "side": "B",
@@ -1358,8 +1358,8 @@
         379.73
       ],
       "pcb": [
-        104.5,
-        101.5
+        117.2,
+        115.0
       ],
       "rot": 0,
       "side": "B",
@@ -1381,7 +1381,7 @@
         379.73
       ],
       "pcb": [
-        128.0,
+        125.2,
         115.0
       ],
       "rot": 0,
@@ -1404,7 +1404,7 @@
         379.73
       ],
       "pcb": [
-        130.1,
+        127.2,
         115.0
       ],
       "rot": 0,
@@ -1427,7 +1427,7 @@
         397.51
       ],
       "pcb": [
-        132.2,
+        129.2,
         115.0
       ],
       "rot": 0,
@@ -1450,7 +1450,7 @@
         397.51
       ],
       "pcb": [
-        134.3,
+        131.2,
         115.0
       ],
       "rot": 0,
@@ -1473,8 +1473,8 @@
         397.51
       ],
       "pcb": [
-        130.5,
-        101.5
+        121.2,
+        115.0
       ],
       "rot": 0,
       "side": "B",
@@ -1496,14 +1496,79 @@
         397.51
       ],
       "pcb": [
-        133.0,
-        101.5
+        123.2,
+        115.0
       ],
       "rot": 0,
       "side": "B",
       "angle": 0,
       "mpn": "USB_DP",
       "note": "Bench fixture pad",
+      "dnp": false
+    },
+    {
+      "ref": "TP9",
+      "value": "+5V",
+      "lib_id": "Connector:TestPoint",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "nets": {
+        "1": "+5V"
+      },
+      "sch": [
+        262.89,
+        379.73
+      ],
+      "pcb": [
+        119.2,
+        115.0
+      ],
+      "rot": 0,
+      "side": "B",
+      "angle": 0,
+      "mpn": "+5V",
+      "note": "High impedance 5 V rail sense; not a supply input",
+      "dnp": false
+    },
+    {
+      "ref": "H1",
+      "value": "D1.2 NPTH",
+      "lib_id": "Mechanical:MountingHole",
+      "footprint": "Node:Fixture_Round_D1.2mm",
+      "nets": {},
+      "sch": [
+        264.16,
+        392.43
+      ],
+      "pcb": [
+        102.0,
+        115.0
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "D1.2 NPTH",
+      "note": "Primary fixture datum, non-plated 1.2 mm round hole",
+      "dnp": false
+    },
+    {
+      "ref": "H2",
+      "value": "1.6x1.2 NPTH",
+      "lib_id": "Mechanical:MountingHole",
+      "footprint": "Node:Fixture_Slot_1.6x1.2mm",
+      "nets": {},
+      "sch": [
+        295.91,
+        392.43
+      ],
+      "pcb": [
+        134.3,
+        115.0
+      ],
+      "rot": 0,
+      "side": "F",
+      "angle": 0,
+      "mpn": "1.6x1.2 NPTH",
+      "note": "Secondary fixture datum, X-axis relief slot; not a screw mount",
       "dnp": false
     }
   ],
@@ -1817,6 +1882,10 @@
       ],
       [
         "C8",
+        "1"
+      ],
+      [
+        "TP9",
         "1"
       ]
     ],

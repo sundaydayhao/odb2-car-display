@@ -21,6 +21,8 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
     p1=next(p for p in fps[ref1].Pads() if p.GetNumber()==str(pin1));p2=next(p for p in fps[ref2].Pads() if p.GetNumber()==str(pin2))
     assert p1.GetNetname()==p2.GetNetname()
     net=p1.GetNetname();blocked=np.zeros((3,NY,NX),dtype=np.bool_);via_block=np.zeros((NY,NX),dtype=np.bool_)
+    own_vias={grid(xy(t.GetPosition())):xy(t.GetPosition()) for t in b.GetTracks()
+              if isinstance(t,k.PCB_VIA) and t.GetNetname()==net}
     track_margin=.127+trace_width/2+.012;via_margin=.327+.012
     def paint(mask,box,distance,margin):
         x0,y0,x1,y1=box
@@ -34,7 +36,7 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
         return lambda x,y:np.hypot(np.maximum(np.abs(x-cx)-(x1-x0)/2+radius,0),np.maximum(np.abs(y-cy)-(y1-y0)/2+radius,0))-radius
     for f in b.GetFootprints():
         for p in f.Pads():
-            if not p.GetNumber() or p.GetNetname()==net:continue
+            if (not p.GetNumber() and p.GetAttribute()!=k.PAD_ATTRIB_NPTH) or p.GetNetname()==net:continue
             bb=p.GetBoundingBox();box=tuple(k.ToMM(n) for n in [bb.GetLeft(),bb.GetTop(),bb.GetRight(),bb.GetBottom()])
             radius=0
             if p.GetShape() in [k.PAD_SHAPE_OVAL,k.PAD_SHAPE_CIRCLE]:radius=min(box[2]-box[0],box[3]-box[1])/2
@@ -56,7 +58,13 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
             if z.IsOnLayer(layer) and not (net=='/ANT_FEED' and layer==k.F_Cu):paint(blocked[i],box,distance,trace_width/2+.012)
         paint(via_block,box,distance,.212)
     for t in b.GetTracks():
-        if t.GetNetname()==net:continue
+        if t.GetNetname()==net:
+            if isinstance(t,k.PCB_VIA):
+                # Existing same-net holes are still drill obstacles. Do not
+                # place a second via beside/over them when connecting a tree.
+                ax,ay=xy(t.GetPosition());r=.4
+                paint(via_block,(ax,ay,ax,ay),lambda x,y,ax=ax,ay=ay:np.hypot(x-ax,y-ay),r+.012)
+            continue
         ax,ay=xy(t.GetStart());bx,by=xy(t.GetEnd());tw=width(t)
         def distance(x,y,ax=ax,ay=ay,bx=bx,by=by,tw=tw):
             den=(bx-ax)**2+(by-ay)**2
@@ -90,7 +98,7 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
         for dx,dy,extra in [(-1,0,1),(1,0,1),(0,-1,1),(0,1,1),(-1,-1,1.41421356),(-1,1,1.41421356),(1,-1,1.41421356),(1,1,1.41421356)]:
             nx=x+dx;ny=y+dy
             if 0<=nx<NX and 0<=ny<NY and not blocked[l,ny,nx]:neighbors.append((nx,ny,l,extra))
-        if allow_vias and not via_block[y,x]:
+        if allow_vias and (not via_block[y,x] or (x,y) in own_vias):
             for nl in range(3):
                 if nl!=l and not blocked[nl,y,x]:neighbors.append((x,y,nl,25))
         for nx,ny,nl,extra in neighbors:
@@ -112,7 +120,12 @@ def route(b,ref1,pin1,ref2,pin2,trace_width=.127,allow_vias=True):
     segment(xy(p1.GetPosition()),world(sx,sy),LAYERS[sl])
     for a,c in zip(simple,simple[1:]):
         if a[2]!=c[2]:
-            t=k.PCB_VIA(b);t.SetPosition(v(*world(a[0],a[1])));t.SetWidth(k.FromMM(.4));t.SetDrill(k.FromMM(.2));t.SetViaType(k.VIATYPE_THROUGH);t.SetLayerPair(k.F_Cu,k.B_Cu);t.SetNet(p1.GetNet());b.Add(t);added_vias+=1
+            existing=own_vias.get((a[0],a[1]))
+            if existing is not None:
+                segment(world(a[0],a[1]),existing,LAYERS[a[2]])
+                segment(existing,world(c[0],c[1]),LAYERS[c[2]])
+            else:
+                t=k.PCB_VIA(b);t.SetPosition(v(*world(a[0],a[1])));t.SetWidth(k.FromMM(.4));t.SetDrill(k.FromMM(.2));t.SetViaType(k.VIATYPE_THROUGH);t.SetLayerPair(k.F_Cu,k.B_Cu);t.SetNet(p1.GetNet());b.Add(t);added_vias+=1
         else:segment(world(a[0],a[1]),world(c[0],c[1]),LAYERS[a[2]])
     segment(world(gx,gy),xy(p2.GetPosition()),LAYERS[gl])
     report={'net':net,'from':ref1+'.'+str(pin1),'to':ref2+'.'+str(pin2),'vias':added_vias,'grid_steps':len(path),'search_nodes':visited}

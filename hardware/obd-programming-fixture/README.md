@@ -1,8 +1,8 @@
-# OBDNode A2 烧录与测试夹具：单工位 V1
+# OBDNode A3 烧录与测试夹具：单工位 V1
 
-ESP32-C3FH4X 焊在板上后，仍能通过芯片 ROM 中的下载程序烧录内置 Flash。**本项目已有 8 个背面测试触点，建议做专用弹簧针床、定位压盖和转接线，烧录器使用 USB 转串口成品模块，电脑负责流程与记录。V1 不需要另加夹具 MCU。**
+ESP32-C3FH4X 焊在板上后，仍能通过芯片 ROM 中的下载程序烧录内置 Flash。**A3 已集中布置 9 个背面测试触点，包含 5 V 检测点；采用专用弹簧针床、一圆一槽定位与压盖，烧录器使用 USB 转串口成品模块，电脑负责流程与记录。V1 不需要另加夹具 MCU。**
 
-本目录交付的是接线／流程设计、从实际 PCB 导出的触点坐标、定位参考图和可执行主机工具。夹具接口 PCB、机械加工件和实物尚未制作；没有进行真实烧录或 CAN／BLE／电流测试。当前主板仍是 A2 工程样机，不能因为烧录验证通过就标为产品出厂合格。
+本目录交付的是接线／流程设计、从实际 PCB 导出的触点与定位孔坐标、参考图和可执行主机工具。夹具接口 PCB、机械加工件和实物尚未制作；没有进行真实烧录或 CAN／BLE／电流测试。当前主板仍是 A3 工程原型，现有插头适配及焊后探针空间未确认，不能因文件检查通过就标为产品出厂合格。
 
 ## 1. 单工位结构
 
@@ -14,10 +14,10 @@ flowchart LR
     PS[可限流台架电源] --> SW[电源开关 / 电流测量]
     UART --> ISO[可断开调试信号的接线/继电器]
     USB --> ISO
-    ISO --> TP[背面 TP1–TP8 弹簧针]
+    ISO --> TP[背面 TP1–TP9 弹簧针]
     SW --> OBD[OBD 供电与 CAN 接触转接件]
     CAN --> OBD
-    TP --> DUT[OBDNode A2]
+    TP --> DUT[OBDNode A3]
     OBD --> DUT
     BLE[固定位置的 BLE 测试端] -.空口连接.-> DUT
 ```
@@ -29,7 +29,7 @@ V1 采用手动压盖、手动供电开关和可拔插调试线，先验证一�
 | 烧录接口 | CP2102N USB 转串口模块，**3.3 V TTL，必须引出 DTR、RTS** | ROM 下载和 UART0 日志 |
 | 自动下载 | 按 Espressif ESP32-C3-DevKitM-1 的双晶体管电路，或已核实采用同类电路的成品板 | 控制 GPIO9 与 EN；串口模块本身不一定带此电路 |
 | 原生 USB 转接 | USB 线／转接板引出 D−、D+、GND；VBUS 留在夹具侧 | 当前应用的 AT 命令入口与 USB 调试 |
-| 针床 | 8 个独立可更换弹簧针，压盖和绝缘定位底座 | 接触现有背面焊盘 |
+| 针床 | 9 个独立可更换弹簧针，压盖和绝缘定位底座 | 接触集中背面焊盘，2 mm 节距 |
 | OBD 转接 | 裸 PCBA 专用供电／CAN 接触件；成品使用配对的 OBD 母座 | 引入 16、4、5、6、14 脚 |
 | 电源 | 可限流、可关断的台架电源，功能测试初始用 13.2 V | 覆盖主板输入保护、降压、LDO |
 | CAN 测试 | 支持经典 CAN 250/500 kbit/s、11/29 位 ID 的 USB-CAN | 模拟 ECU 应答，检查收发和计数 |
@@ -44,22 +44,23 @@ V1 采用手动压盖、手动供电开关和可拔插调试线，先验证一�
 
 | 触点 | 网络 | 正面投影 x / y（mm） | 夹具连接 |
 |---|---|---|---|
-| TP1 | GND | 2.00 / 2.00 | 公共地 |
-| TP2 | +3V3 | 4.50 / 1.50 | 高阻电压检测；**不作为供电输入** |
-| TP3 | EN | 28.00 / 15.00 | 自动下载电路的开集电极复位输出 |
-| TP4 | BOOT / GPIO9 | 30.10 / 15.00 | 自动下载电路的开集电极下载输出 |
-| TP5 | U0RX / GPIO20 | 32.20 / 15.00 | 夹具 TX → 节点 RX |
-| TP6 | UART_TX / GPIO21 | 34.30 / 15.00 | 夹具 RX ← 节点 TX，板上串联 R12 499 Ω |
-| TP7 | USB_DM / GPIO18 | 30.50 / 1.50 | USB D− |
-| TP8 | USB_DP / GPIO19 | 33.00 / 1.50 | USB D+ |
+| TP1 | GND | 15.20 / 15.00 | 公共地 |
+| TP2 | +3V3 | 17.20 / 15.00 | 高阻电压检测；**不作为供电输入** |
+| TP9 | +5V | 19.20 / 15.00 | 高阻电压检测；**不作为供电输入** |
+| TP7 | USB_DM / GPIO18 | 21.20 / 15.00 | USB D− |
+| TP8 | USB_DP / GPIO19 | 23.20 / 15.00 | USB D+ |
+| TP3 | EN | 25.20 / 15.00 | 自动下载电路的开集电极复位输出 |
+| TP4 | BOOT / GPIO9 | 27.20 / 15.00 | 自动下载电路的开集电极下载输出 |
+| TP5 | U0RX / GPIO20 | 29.20 / 15.00 | 夹具 TX → 节点 RX |
+| TP6 | UART_TX / GPIO21 | 31.20 / 15.00 | 夹具 RX ← 节点 TX，板上串联 R12 499 Ω |
 
-**最小 UART 烧录连接是 TP1、TP3、TP4、TP5、TP6 加整板供电；V1 针床仍装齐 8 针，兼顾电压检测和 USB 功能测试。** UART0 用于 ROM 烧录与日志；当前固件的 AT 输入通过 `usb_serial_jtag_read_bytes()` 读取，不在 UART0 上。C3 也能从原生 USB 下载，但 UART 自动下载保留为稳定的恢复入口。[官方 USB Serial/JTAG 文档](https://docs.espressif.com/projects/esp-idf/en/v5.5/esp32c3/api-guides/usb-serial-jtag-console.html)
+**最小 UART 烧录连接是 TP1、TP3、TP4、TP5、TP6 加整板供电；V1 针床装齐 9 针，兼顾两路电压检测和 USB 功能测试。** UART0 用于 ROM 烧录与日志；当前固件的 AT 输入通过 `usb_serial_jtag_read_bytes()` 读取，不在 UART0 上。C3 也能从原生 USB 下载，但 UART 自动下载保留为稳定的恢复入口。[官方 USB Serial/JTAG 文档](https://docs.espressif.com/projects/esp-idf/en/v5.5/esp32c3/api-guides/usb-serial-jtag-console.html)
 
 供电从 OBD **16 脚输入，4/5 脚接地**，CAN_H 为 6 脚、CAN_L 为 14 脚。节点电路为 F1 → D1 → VIN_PROT → 5 V 降压 → 3.3 V LDO。直接给 TP2 注入 3.3 V 会绕开输入电路，并存在向稳压器反向供电的问题。TP7/TP8 没有 USB VBUS 输入，USB 5 V 不接任何主板测试点。
 
 初次板卡上电先断电测电源对地短路，再以限流电源观察启动；可先以约 50 mA 限流排查明显短路，再断电、提高限流重新启动。低限流下 C3 不一定能启动，不能据此判定 MCU 损坏。功能测试的初始限流上限设 500 mA，须依据样机启动峰值和板上 500 mA 保险丝实际曲线调整。**这些是台架起始设置，不是已测定的良品电流窗口。**
 
-功能测试用 13.2 V 输入是为避开当前固件的低电压休眠阈值。`ATRV` 读的是二极管后的 VIN_PROT，应另用仪表测电池端电压和 TP2；12.0 V 台架输入可能因二极管压降触发低电压休眠。A2 没有独立 5 V 测试点，可在调试时测元件焊盘，下一版布局若允许应补充专用 5 V 检测点。
+功能测试用 13.2 V 输入是为避开当前固件的低电压休眠阈值。`ATRV` 读的是二极管后的 VIN_PROT，应另用仪表测电池端电压、TP9 的 5 V 和 TP2 的 3.3 V；12.0 V 台架输入可能因二极管压降触发低电压休眠。A3 的 TP9 是专用 5 V 检测点，不与夹具 USB VBUS 相连。
 
 ### 自动进入下载模式
 
@@ -76,7 +77,9 @@ GPIO9 在复位采样时为低、GPIO8 为高，进入 ROM 下载；正常启动
 
 ## 3. 针床与装配顺序
 
-板框 38.5 × 16.6 mm、双面有器件，无定位螺丝孔。底座使用板边定位和防反装结构，压盖只压经实物确认的空白支撑区，不能压芯片、晶振或陶瓷天线。针座定位、探针有效行程与压力需要和选定探针一起确定；1 mm 焊盘可先评估约 0.5 mm 接触头，但不能把这个建议值直接当针座钻孔直径。
+板框 38.5 × 16.6 mm、双面有器件。A3 新增 H1 Ø1.2 mm 圆孔及 H2 1.6 × 1.2 mm 水平槽孔，均非金属化；中心分别为 (2.0,15.0)、(34.3,15.0) mm，中心距 32.3 mm。这是一圆一槽定位，不是螺丝紧固孔；非对称位置用于防反装。针座定位、探针有效行程与压力需要和选定探针一起确定；1 mm 焊盘可先评估约 0.5 mm 接触头，但不能把这个建议值直接当针座钻孔直径。
+
+顶面已预留两处 1.2 × 1.2 mm 支撑区，中心 (15.0,15.0)、(32.5,15.0) mm，并有禁止焊盘／过孔的原生规则。使用平面绝缘压块，不能压芯片、晶振或陶瓷天线。背面要求插头及外壳让出 x=14.2–32.2、y=13.9–16.4 mm 的探针窗口；实际是否让得出仍需该插头尺寸。详见 [焊接与定位接口](../obd-ble-node/manufacturing-interface.md)。`locators.csv` 包含从最终 PCB 导出的定位孔信息。
 
 从针尖朝 PCB 背面看，并保持 PCB 同一条上边朝上：**针床 x = 38.5 − 正面 x，针床 y = 正面 y。** `needle_face_*` 已经镜像，不得再次镜像。坐标文件来自实际 `.kicad_pcb`，不是只从原理图推断。
 
@@ -99,7 +102,7 @@ GPIO9 在复位采样时为低、GPIO8 为高，进入 ROM 下载；正常启动
 | 顺序 | 操作 | 结果判定／追溯 |
 |---|---|---|
 | 1 | 断电装板、压盖定位、录入工单 SN 与工位编号 | 未压紧不供电；V1 人工确认，V2 增加联锁 |
-| 2 | 输入与 3.3 V 检查、观察启动电流 | 异常先断电，禁止循环强行烧录 |
+| 2 | 输入、5 V 与 3.3 V 检查、观察启动电流 | 异常先断电，禁止循环强行烧录 |
 | 3 | 指定 UART COM，ROM 连接、读取芯片 MAC | `--chip esp32c3` 校验目标；没有 MAC 不写入 |
 | 4 | 写 bootloader、partition-table、app，再读回校验 | `FLASH_VERIFIED`；保存镜像 SHA256、版本、MAC、时间和完整输出 |
 | 5 | 重启，通过原生 USB 执行 ATI、ATRV、ATPOWER?、ATSTAT | 核对身份、电压、策略和错误计数 |
@@ -143,16 +146,16 @@ Python 3.10+、esptool 4.12.0。本机 ESP-IDF v5.5.5 环境已包含它；新�
 
 ```powershell
 ./firmware/obd_ble_node/build.ps1 build
-python hardware/obd-programming-fixture/station.py package --build firmware/obd_ble_node/build --out hardware/obd-programming-fixture/build/packages/A2-001 --source-revision <已核对的源码提交>
-python hardware/obd-programming-fixture/station.py inspect hardware/obd-programming-fixture/build/packages/A2-001
+python hardware/obd-programming-fixture/station.py package --build firmware/obd_ble_node/build --out hardware/obd-programming-fixture/build/packages/A3-001 --hardware A3 --source-revision <已核对的源码提交>
+python hardware/obd-programming-fixture/station.py inspect hardware/obd-programming-fixture/build/packages/A3-001
 ```
 
-包从本次构建的 `flasher_args.json` 取文件和地址，同时严格限制为当前 A2 分区布局：bootloader 0x0、partition-table 0x8000、app 0x10000；检查 C3 镜像头、内置校验、SHA256 和分区边界。若布局改变，工具拒绝执行，需要重新审查烧录流程。不会将稀疏镜像合并为会覆盖中间 NVS 的整片镜像。
+包从本次构建的 `flasher_args.json` 取文件和地址，同时严格限制为当前 A2/A3 共用的分区布局：bootloader 0x0、partition-table 0x8000、app 0x10000；检查 C3 镜像头、内置校验、SHA256 和分区边界。`--hardware` 默认 A3，旧板制包可显式选择 A2；此字段仅标识工单目标，未实现板上硬件版本检测。若布局改变，工具拒绝执行，需要重新审查烧录流程。不会将稀疏镜像合并为会覆盖中间 NVS 的整片镜像。
 
 下列是**连接并写入真实节点**的操作模板，COM 和 SN 必须由当前工位实际识别并填写；本次没有执行：
 
 ```powershell
-python hardware/obd-programming-fixture/station.py flash hardware/obd-programming-fixture/build/packages/A2-001 --port <实际UART端口> --serial <本块板SN> --station OBD-01 --reports hardware/obd-programming-fixture/build/reports
+python hardware/obd-programming-fixture/station.py flash hardware/obd-programming-fixture/build/packages/A3-001 --port <实际UART端口> --serial <本块板SN> --station OBD-01 --reports hardware/obd-programming-fixture/build/reports
 ```
 
 运行顺序为 `read_mac → write_flash → verify_flash`；每步检查退出码，身份无法读取或任何一步失败立即停止，并记录 `FAILED`。成功记录为 `FLASH_VERIFIED`、`fct_status: NOT_RUN`。输出目录应由工厂系统备份，当前本地 `build/` 不入 Git，不能作为唯一生产档案。
@@ -161,10 +164,10 @@ python hardware/obd-programming-fixture/station.py flash hardware/obd-programmin
 
 ## 6. 本次验证与下一版范围
 
-- 使用 KiCad 10 原生 API 只读实际 PCB，核对 TP1–TP8 的网络、背面可接触性、1 mm 焊盘和板框尺寸；导出 8 个测试点与 5 个 OBD 参考位置。
-- 使用现有 ESP-IDF v5.5.5 的 A2 构建产物完成离线制包与命令预览，未打开设备端口。
+- 使用 KiCad 10 原生 API 读取最终 A3 PCB，核对 TP1–TP9 的网络、背面铜／阻焊层、1 mm 焊盘和板框尺寸；导出 9 个测试点、5 个 OBD 参考位置及 2 个定位孔。插头焊后可触及性仍未实测。
+- 此前使用 ESP-IDF v5.5.5 的 A2 构建产物完成离线制包与命令预览；A3 只调整测试／定位布局，固件引脚未变。本轮未打开设备端口。
 - 14 项主机测试通过，覆盖镜像篡改、错误目标、越界／分区漂移、身份缺失、烧录／校验失败和记录状态；模拟串口输出仅验证工具控制流程，不代表硬件测试。
-- 未变更主板 PCB、固件和任何连接设备。针床机械装配、接触可靠性、下载时序、USB 信号、CAN/BLE、电流与治具节拍均待实体样机。
+- 主板 PCB 已更新为 A3，完整 ERC／DRC／连通／原理图一致性通过；固件及连接设备未变更。针床机械装配、接触可靠性、下载时序、USB 信号、CAN/BLE、电流与治具节拍均待实体样机。
 
 重新导出针位：
 
@@ -173,4 +176,4 @@ python hardware/obd-programming-fixture/station.py flash hardware/obd-programmin
 python -m unittest discover -s hardware/obd-programming-fixture -p 'test_*.py' -v
 ```
 
-若 A3 调整布局，优先评估集中背面测试点、补 5 V 点、确定插头焊后可触及性以及定位结构；不要为夹具压缩陶瓷天线净空。**建议先做这套单工位针床原型，确认良品和故障样本的实际表现，再画集成继电器／测量接口的夹具 PCB，最后考虑多工位并行。**
+A3 已集中背面测试点、补 5 V 点并加入定位／支撑结构，保留陶瓷天线净空。下一步需取得实际插头背面尺寸并试配，确认焊后探针窗口与定位销路径，再冻结底座加工图。**先做这套单工位针床原型，确认良品和故障样本的实际表现，再画集成继电器／测量接口的夹具 PCB，最后考虑多工位并行。**

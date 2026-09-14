@@ -14,7 +14,7 @@ import uuid
 ESPTOOL_VERSION = "4.12.0"
 PROJECT = "obd_ble_node"
 SETTINGS = {"flash_mode": "dio", "flash_size": "4MB", "flash_freq": "40m"}
-# A2 factory layout. Fail closed if partitions change; review the station then.
+# A2/A3 factory layout. Fail closed if partitions change; review the station then.
 REGIONS = {"bootloader": (0, 0x8000), "partition-table": (0x8000, 0x9000),
            "app": (0x10000, 0x210000)}
 
@@ -94,7 +94,7 @@ def validate(package):
     return manifest
 
 
-def make_package(build, output, revision):
+def make_package(build, output, revision, hardware="A3"):
     check_runtime()
     require(not output.exists(), "Output already exists; use a new package directory")
     desc = read_json(build / "project_description.json")
@@ -108,7 +108,7 @@ def make_package(build, output, revision):
     manifest = {"schema": 1, "project": PROJECT, "chip": "esp32c3", "created_utc": utc(),
                 "source_revision": revision, "project_version": desc.get("project_version"),
                 "idf_version": desc.get("git_revision"), "esptool_version": ESPTOOL_VERSION,
-                "flash_settings": SETTINGS, "hardware": "OBDNode A2",
+                "flash_settings": SETTINGS, "hardware": "OBDNode " + hardware,
                 "release_status": "engineering-unqualified", "images": []}
     sources = []
     for role, (start, _) in REGIONS.items():
@@ -217,6 +217,7 @@ def main():
     pack.add_argument("--build", type=Path, required=True)
     pack.add_argument("--out", type=Path, required=True)
     pack.add_argument("--source-revision", required=True, help="Audited source git revision, append -dirty if applicable")
+    pack.add_argument("--hardware",choices=["A2","A3"],default="A3",help="Audited PCB revision; firmware pin map is unchanged")
     inspect = sub.add_parser("inspect", help="Validate and print commands WITHOUT opening a port")
     inspect.add_argument("package", type=Path)
     inspect.add_argument("--port", default="COM_EXPLICIT")
@@ -229,7 +230,7 @@ def main():
     args = parser.parse_args()
     try:
         if args.action == "package":
-            make_package(args.build.resolve(), args.out.resolve(), args.source_revision)
+            make_package(args.build.resolve(), args.out.resolve(), args.source_revision,args.hardware)
             print(f"Engineering package validated: {args.out.resolve()}")
         elif args.action == "inspect":
             manifest = validate(args.package.resolve())

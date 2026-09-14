@@ -13,7 +13,10 @@ def generate():
     fp=k.FOOTPRINT(None);fp.SetReference('J1');fp.SetValue('OBD straight tails: FIT CHECK')
     fp.SetFPID(k.LIB_ID('Node',NAME));fp.SetAttributes(k.FP_THROUGH_HOLE)
     fp.Reference().SetVisible(False);fp.Value().SetVisible(False)
-    layers=k.LSET.AllCuMask();layers.AddLayer(k.F_Mask);layers.AddLayer(k.B_Mask)
+    # AllCuMask returns a shared static LSET in KiCad 10. Copy it before adding
+    # mask layers, or '*.Cu' serialization silently swallows the mask openings.
+    layers=k.LSET(k.LSET.AllCuMask());layers.AddLayer(k.F_Mask);layers.AddLayer(k.B_Mask)
+    assert not k.LSET.AllCuMask().Contains(k.F_Mask)
     for n in range(1,17):
         x=-14+4*((n-1)%8);y=-4.3 if n<=8 else 4.3
         pad=k.PAD(fp);pad.SetNumber(str(n));pad.SetAttribute(k.PAD_ATTRIB_PTH)

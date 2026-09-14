@@ -1,10 +1,12 @@
-# OBD CAN / BLE 采集节点：A2 陶瓷天线整板工程
+# OBD CAN / BLE 采集节点：A3 测试与定位结构
 
 板框 **38.5 × 16.6 mm**，四层、双面贴装。固件位于 `../../firmware/obd_ble_node`，目标为 ESP32-C3 / ESP-IDF 5.5.x；采集节点通过 BLE 直连副屏，手机仅作为调试采集工具。
 
-**请打开本目录的 `obd_ble_node.kicad_pro` 查看完整采集板。** OBD 16 个焊孔、电源保护、ESP32-C3 蓝牙、CAN 收发器及低功耗控制已整合在同一块主 PCB 内，共 61 个封装（C23 初始不贴）。J1 的 16 脚供电、4/5 脚接地、6/14 脚 CAN 均接入真实电路网络。`mechanical-reference/` 中原来的纯孔位试配件仅保留作尺寸对照，不是本产品主板。
+**请打开本目录的 `obd_ble_node.kicad_pro` 查看完整采集板。** OBD 16 个焊孔、电源保护、ESP32-C3 蓝牙、CAN 收发器及低功耗控制已整合在同一块主 PCB 内，共 64 个封装（含 9 个测试点、2 个定位孔；C23 初始不贴）。J1 的 16 脚供电、4/5 脚接地、6/14 脚 CAN 均接入真实电路网络。`mechanical-reference/` 中原来的纯孔位试配件仅保留作尺寸对照，不是本产品主板。
 
 当前采用笔直同轴尾脚的机械假设：同排 4.00 mm、两排 8.60 mm，16 个 2.40 × 1.20 mm 镀铜槽孔；槽孔是工程试配值。F.Cu 从插头背面观察，宽边朝上，上排 1–8、下排 9–16。接插件塑料本体假设位于 PCB 下方，元件避开金属焊脚；现有 MINI 插头的尾脚、板厚和壳体高度仍须实物确认。
+
+A3 将 9 个背面测试点集中为间距 2 mm 的一排，新增 +5V 检测点、一圆一槽定位孔及两处顶面支撑区，并修正 OBD 焊盘正反面阻焊开窗。完整针位、插头所需避让窗口及焊接判定见 [制造与夹具接口](manufacturing-interface.md)。**PCB 焊接结构检查通过；现有插头是否匹配、焊后是否挡住探针仍待该型号尺寸与实物试配。**
 
 ## 已实现的设计
 
@@ -18,7 +20,7 @@
 | 唤醒 | TCAN1044A RXD → C3 GPIO3，支持深睡眠低电平唤醒 |
 | 射频 | 40 MHz 晶体、C3 CLC 匹配、独立天线匹配、AANI-CH-0133-Q-T 板载陶瓷天线 |
 | 电压检测 | 1 MΩ / 100 kΩ 分压，检测 `VIN_PROT`，不是反接二极管前的电池端电压 |
-| 调试 | 8 个背面 pogo 测试点：GND、3V3、EN、BOOT、UART、USB D+/D− |
+| 调试 | 9 个集中背面 pogo 测试点：GND、3V3、5V、EN、BOOT、UART、USB D+/D− |
 
 烧录针床接线、实际触点坐标和单工位生产流程见 [烧录与测试夹具 V1](../obd-programming-fixture/README.md)。其中包含离线制包、显式端口烧录、读回校验和追溯工具；夹具实物尚未制作。
 
@@ -35,15 +37,16 @@ C20 / L2 / C21 仍是 C3 芯片端匹配。新增 L4（射频侧并联 1.8 nH）
 ## 文件与验证
 
 - `obd_ble_node.kicad_pro`：KiCad 10 工程。
-- `obd_ble_node.kicad_sch`：61 个符号的原理图。
-- `obd_ble_node.kicad_pcb`：含 J1 在内的 61 个封装及整板线路。
+- `obd_ble_node.kicad_sch`：64 个带封装元件的原理图，另有电源标志。
+- `obd_ble_node.kicad_pcb`：含 J1 在内的 64 个封装及整板线路。
 - `Node.pretty/` / `fp-lib-table`：本地 16 针直焊封装和陶瓷天线封装。
 - `antenna_footprint.py`：按原厂尺寸生成陶瓷天线焊盘、辐射铜箔及原生净空规则。
+- `fixture_footprints.py`：生成定位孔封装、探针避让图示及顶面支撑区规则。
 - `Node.3dshapes/`：按尺寸绘制的天线外形模型；不是原厂 STEP。
 - `placement.json`：整板双面布局，坐标相对于 38.5 × 16.6 mm 板框左上角。
 - `Node.kicad_sym` / `sym-lib-table`：按数据手册建立的本地符号。
 - `design.json`：器件、位置、网络及说明；`build/netlist-audit.json` 是导出网表的逐网核对结果。
-- `build/schematic.pdf`、`build/ceramic-front.png`、`build/ceramic-back.png`、`build/ceramic-3d-top.png`：本机实际 KiCad 导出的检查图（生成文件不纳入 Git）。
+- `build/a3-front.png`、`build/a3-back.png`、`build/a3-mask.png`：本机实际 KiCad 导出的 A3 检查图（生成文件不纳入 Git）；`ceramic-*` 图属于此前 A2 记录。
 - `VERIFICATION.md`：通过项与未完成项分开记录。
 
 本机 3D 库缺少 U3 的 VSON 外形模型，因此背面 3D 预览只显示其焊盘；U3 的原理图、9 个电气焊盘和 CAN 连接均已包含并通过检查。3D 预览不能用来证明现有 OBD 塑料外壳的装配兼容性。

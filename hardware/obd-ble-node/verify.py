@@ -25,9 +25,32 @@ for key,net in mapping.items():
     gpio=int(re.search(r'#define NODE_PIN_'+key+r'\s+(\d+)',pins).group(1))
     assert soc['nets'][gpio_to_pad[gpio]]==net,(key,net)
 import pcbnew as k
+import math
 board=k.LoadBoard(str(root/'obd_ble_node.kicad_pcb'))
 footprints={f.GetReference():f for f in board.GetFootprints()}
 assert set(footprints)=={p['ref'] for p in design['parts']}
+sequence=['TP1','TP2','TP9','TP7','TP8','TP3','TP4','TP5','TP6']
+expected_tp_nets=['GND','+3V3','+5V','USB_DM','USB_DP','EN','BOOT','U0RX','UART_TX']
+for index,(ref,net) in enumerate(zip(sequence,expected_tp_nets)):
+    fp=footprints[ref];pads=list(fp.Pads());assert len(pads)==1
+    p=pads[0]
+    assert fp.GetLayer()==k.B_Cu and p.GetNetname()=='/'+net
+    assert abs(k.ToMM(p.GetPosition().x)-(115.2+index*2))<.00001 and k.ToMM(p.GetPosition().y)==115.0
+    assert k.ToMM(p.GetSize().x)==k.ToMM(p.GetSize().y)==1.0
+    assert p.IsOnLayer(k.B_Mask) and not p.IsOnLayer(k.B_Paste) and not p.IsOnLayer(k.F_Cu)
+    # A drill inside a probe land can catch the needle; ordinary net DRC allows it.
+    for via in (t for t in board.GetTracks() if isinstance(t,k.PCB_VIA)):
+        gap=math.hypot(via.GetPosition().x-p.GetPosition().x,via.GetPosition().y-p.GetPosition().y)
+        assert gap>=p.GetSize().x/2+via.GetDrillValue()/2+k.FromMM(.1),('Drill too close to test land',ref)
+for ref,position,drill in [('H1',(102.0,115.0),(1.2,1.2)),('H2',(134.3,115.0),(1.6,1.2))]:
+    fp=footprints[ref];pads=list(fp.Pads());assert len(pads)==1
+    p=pads[0]
+    assert p.GetAttribute()==k.PAD_ATTRIB_NPTH and not p.GetNetname()
+    assert (k.ToMM(p.GetPosition().x),k.ToMM(p.GetPosition().y))==position
+    assert (k.ToMM(p.GetDrillSize().x),k.ToMM(p.GetDrillSize().y))==drill
+supports={z.GetZoneName():z for z in board.Zones() if z.GetIsRuleArea() and z.GetZoneName().startswith('SUPPORT_')}
+assert set(supports)=={'SUPPORT_A','SUPPORT_B'}
+assert all(z.GetDoNotAllowPads() and z.GetDoNotAllowVias() and z.IsOnLayer(k.F_Cu) for z in supports.values())
 assert 'J2' not in footprints and 'AE1' in footprints,'External antenna connector must not return'
 ant=footprints['AE1']
 assert ant.GetValue()=='AANI-CH-0133-Q'
@@ -62,6 +85,11 @@ for n,p in j1.items():
     expected=(105.25+4*((n-1)%8),104 if n<=8 else 112.6)
     actual=(k.ToMM(p.GetPosition().x),k.ToMM(p.GetPosition().y))
     assert all(abs(a-b)<.00001 for a,b in zip(actual,expected)),(n,actual)
+    assert p.GetAttribute()==k.PAD_ATTRIB_PTH and p.GetDrillShape()==k.PAD_DRILL_SHAPE_OBLONG
+    assert (k.ToMM(p.GetSize().x),k.ToMM(p.GetSize().y))==(3.2,2.0)
+    assert (k.ToMM(p.GetDrillSize().x),k.ToMM(p.GetDrillSize().y))==(2.4,1.2)
+    assert p.IsOnLayer(k.F_Mask) and p.IsOnLayer(k.B_Mask)
+    assert not p.IsOnLayer(k.F_Paste) and not p.IsOnLayer(k.B_Paste)
 for n,net in {4:'GND',5:'GND',6:'CAN_H',14:'CAN_L',16:'VBAT'}.items():
     assert j1[n].GetNetname()=='/'+net,(n,j1[n].GetNetname())
 # Native bounding boxes include the 0.05 mm drawing stroke; dimensions are
@@ -79,6 +107,10 @@ assert any(z.GetLayer()==k.In1_Cu and z.GetNetname()=='/GND' for z in board.Zone
 result={'erc_violations':len(e),'pcb_placement_violations':len(drc['violations']),
     'unconnected_items':len(drc['unconnected_items']),'schematic_parity_issues':len(parity),
     'firmware_pinmap':'PASS','components':len(footprints),'obd_physical_pads':len(j1),
+    'test_pad_row':'9 bottom pads, 2 mm pitch, +5 V sense included',
+    'fixture_datums':'H1 round 1.2 NPTH; H2 horizontal 1.6 x 1.2 NPTH; 32.3 mm centre spacing',
+    'connector_solder_lands':'16 plated slots, 0.4 mm nominal annular ring, front/back mask openings verified',
+    'existing_connector_fit':'UNVERIFIED: supplier solder-tail/body dimensions unavailable',
     'tracks':len(tracks),'electrical_layout_gate':'PASS','production_ready':False,
     'antenna':'AANI-CH-0133-Q-T; all-layer clearance and separate pi match verified',
     'blocker':'Verify actual plug fit, antenna/RF, CAN hardware, power transients and parking current on assembled prototypes.'}

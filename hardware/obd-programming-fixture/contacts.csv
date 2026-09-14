@@ -1,12 +1,13 @@
 ref,pad,net,board_abs_x_mm,board_abs_y_mm,board_top_x_mm,board_top_y_mm,needle_face_x_mm,needle_face_y_mm,copper_width_mm,copper_height_mm,contact,role
-TP1,1,GND,102.0,102.0,2.0,2.0,36.5,2.0,1.0,1.0,pogo,common ground
-TP2,1,+3V3,104.5,101.5,4.5,1.5,34.0,1.5,1.0,1.0,pogo,high-impedance voltage sense ONLY; no power injection
-TP3,1,EN,128.0,115.0,28.0,15.0,10.5,15.0,1.0,1.0,pogo,open-collector reset from automatic download circuit
-TP4,1,BOOT,130.1,115.0,30.1,15.0,8.4,15.0,1.0,1.0,pogo,GPIO9 open-collector boot from automatic download circuit
-TP5,1,U0RX,132.2,115.0,32.2,15.0,6.3,15.0,1.0,1.0,pogo,fixture 3.3V UART TX to DUT GPIO20
-TP6,1,UART_TX,134.3,115.0,34.3,15.0,4.2,15.0,1.0,1.0,pogo,fixture UART RX from DUT GPIO21 via R12
-TP7,1,USB_DM,130.5,101.5,30.5,1.5,8.0,1.5,1.0,1.0,pogo,USB D-; disconnect for sleep current measurement
-TP8,1,USB_DP,133.0,101.5,33.0,1.5,5.5,1.5,1.0,1.0,pogo,USB D+; disconnect for sleep current measurement
+TP1,1,GND,115.2,115.0,15.2,15.0,23.3,15.0,1.0,1.0,pogo,common ground
+TP2,1,+3V3,117.2,115.0,17.2,15.0,21.3,15.0,1.0,1.0,pogo,high-impedance voltage sense ONLY; no power injection
+TP3,1,EN,125.2,115.0,25.2,15.0,13.3,15.0,1.0,1.0,pogo,open-collector reset from automatic download circuit
+TP4,1,BOOT,127.2,115.0,27.2,15.0,11.3,15.0,1.0,1.0,pogo,GPIO9 open-collector boot from automatic download circuit
+TP5,1,U0RX,129.2,115.0,29.2,15.0,9.3,15.0,1.0,1.0,pogo,fixture 3.3V UART TX to DUT GPIO20
+TP6,1,UART_TX,131.2,115.0,31.2,15.0,7.3,15.0,1.0,1.0,pogo,fixture UART RX from DUT GPIO21 via R12
+TP7,1,USB_DM,121.2,115.0,21.2,15.0,17.3,15.0,1.0,1.0,pogo,USB D-; disconnect for sleep current measurement
+TP8,1,USB_DP,123.2,115.0,23.2,15.0,15.3,15.0,1.0,1.0,pogo,USB D+; disconnect for sleep current measurement
+TP9,1,+5V,119.2,115.0,19.2,15.0,19.3,15.0,1.0,1.0,pogo,high-impedance 5V rail sense ONLY; no power injection
 J1,4,GND,117.25,104.0,17.25,4.0,21.25,4.0,3.2,2.0,OBD adapter; slot center is NOT a needle location,OBD chassis ground
 J1,5,GND,121.25,104.0,21.25,4.0,17.25,4.0,3.2,2.0,OBD adapter; slot center is NOT a needle location,OBD signal ground
 J1,6,CAN_H,125.25,104.0,25.25,4.0,13.25,4.0,3.2,2.0,OBD adapter; slot center is NOT a needle location,CAN_H test bus

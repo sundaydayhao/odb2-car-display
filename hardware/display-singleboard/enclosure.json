@@ -128,14 +128,15 @@
     {
       "reference": "J9",
       "kind": "internal_camera_fpc",
-      "direction": "-X",
+      "direction": "+Z",
       "reservation_mm": [
         2.3,
         -56,
         13.1,
         -31.5
       ],
-      "note": "assemble and lock before cover; route ribbon above insulated low-profile components, not across inductors"
+      "note": "Vertical 1.0K-GT-15PB FPC connector. Insert and unlock toward +Z; reserve ribbon lift and bend space before closing cover. XY rectangle is service/ribbon-routing space, not side-entry direction.",
+      "body_height_mm": 5.4
     },
     {
       "reference": "J1",

@@ -125,15 +125,9 @@
 		(uuid "fa4b4fbc-5169-4013-b858-2d59aacfd024")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Display.3dshapes/KiCad_C_0402_1005Metric.step"
+		(offset (xyz 0.0 -0.0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
 	)
 )

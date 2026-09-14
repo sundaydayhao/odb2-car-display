@@ -113,6 +113,11 @@ for item in access:
     rect(item['reservation_mm'], color, .10)
     x,y=point(fps[item['reference']].GetPosition())
     svg.append(f'<text x="{x}" y="{y}" class="label" text-anchor="middle">{html.escape(item["reference"])}</text>')
+    if item['direction']=='+Z':
+        svg.append(f'<circle cx="{x}" cy="{y+2}" r=".8" fill="none" stroke="{color}" stroke-width=".18"/>')
+        svg.append(f'<circle cx="{x}" cy="{y+2}" r=".2" fill="{color}"/>')
+        svg.append(f'<text x="{x+1.2}" y="{y+2.5}" class="label">+Z</text>')
+        continue
     dx,dy={'-X':(-6,0),'+X':(6,0),'-Y':(0,-6),'+Y':(0,6)}.get(item['direction'],(0,0))
     x2,y2=x+dx,y+dy
     svg.append(f'<path d="M{x},{y} L{x2},{y2}" stroke="{color}" stroke-width=".35"/>')

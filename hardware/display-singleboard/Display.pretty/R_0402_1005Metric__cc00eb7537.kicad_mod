@@ -125,15 +125,9 @@
 		(uuid "0b6ca497-8ed9-4dcc-a8c7-a5fc3ace65e4")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step"
-		(offset
-			(xyz 0 0 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
+	(model "${KIPRJMOD}/Display.3dshapes/KiCad_R_0402_1005Metric.step"
+		(offset (xyz 0.0 -0.0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
 	)
 )

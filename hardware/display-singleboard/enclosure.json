@@ -1,14 +1,39 @@
 {
-  "revision": "A3",
+  "revision": "A4",
   "coordinate_system": "PCB absolute mm; component side viewed from rear of the product; +x right, +y down, +z from F.Cu toward rear cover",
-  "pcb_envelope_mm": [-31, -84.5, 89, -10.5],
+  "pcb_envelope_mm": [
+    -31,
+    -84.5,
+    89,
+    -10.5
+  ],
   "mechanical_status": "PCB layout and access reservation only; enclosure tooling dimensions require purchased components, panel assembly and tolerance stack validation",
   "rear_power": {
-    "reference": "SW3", "center_mm": [-22.5, -80.6], "angle_deg": 180,
-    "body_xy_mm": [13, 6.8], "body_height_mm": 6.4,
-    "actuator_xy_mm": [3.9, 3.9], "actuator_height_above_body_mm": 3,
+    "reference": "SW3",
+    "center_mm": [
+      -22.5,
+      -80.6
+    ],
+    "angle_deg": 180,
+    "body_xy_mm": [
+      13,
+      6.8
+    ],
+    "body_height_mm": 6.4,
+    "actuator_xy_mm": [
+      3.9,
+      3.9
+    ],
+    "actuator_height_above_body_mm": 3,
     "nominal_travel_mm": 2.2,
-    "rear_recess_plan_mm": [18, 10], "actuator_slot_plan_mm": [8, 5],
+    "rear_recess_plan_mm": [
+      18,
+      10
+    ],
+    "actuator_slot_plan_mm": [
+      8,
+      5
+    ],
     "slot_status": "starting dimensions; include molding, placement and switch tolerances before release",
     "recess_floor_nominal_z_mm": 8.0,
     "local_recess_wall_nominal_mm": 1.0,
@@ -16,36 +41,169 @@
     "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/562955152e0d35ebc194db3482640805.pdf?productCode=C319013"
   },
   "access": [
-    {"reference":"J302","kind":"internal_lcd_fpc","direction":"-Y","reservation_mm":[-12,-85.5,4,-69.5],"note":"16 mm ribbon corridor; lock access before rear cover installation; H1 screw head must not clamp ribbon"},
-    {"reference":"J308","kind":"internal_touch_fpc","direction":"-X","reservation_mm":[-36,-73.5,-23.5,-65.5],"note":"left exit into the internal shell volume, not an external user port; leave >=5 mm insertion reach beyond mouth"},
-    {"reference":"J18","kind":"external_usb_host","direction":"+Y","reservation_mm":[1,-10.5,21,9.5],"note":"initial 20 mm plug reach; opening must accommodate actual plug overmold"},
-    {"reference":"J15","kind":"external_usb_hs","direction":"+Y","reservation_mm":[19.4157,-10.5,33.4157,9.5],"note":"shares HS controller with J18; recessed port walls must not prevent full insertion"},
-    {"reference":"J19","kind":"external_power_and_debug_usb","direction":"+Y","reservation_mm":[34.4557,-10.5,48.4557,9.5],"note":"5 V / USB Serial-JTAG; reachable with cover installed; use recessed panel or thin port lip"},
-    {"reference":"J17","kind":"external_ethernet","direction":"+Y","reservation_mm":[64.529,-10.5,84.529,14.5],"note":"25 mm plug reach plus latch access; exact port height requires qualified jack"},
-    {"reference":"J21","kind":"external_microsd","direction":"+X","reservation_mm":[89,-53,109,-35],"note":"B.Cu side socket, separate z level from speaker; provide fingernail and push/eject access"},
-    {"reference":"J16","kind":"internal_speaker_harness","direction":"+X","reservation_mm":[88.4,-63,103.4,-53],"note":"Internal mating access, not final wire route. Connector is near the 15 mm antenna target; turn wire immediately toward +Y and secure below antenna region. This local exception needs RF testing"},
-    {"reference":"J9","kind":"internal_camera_fpc","direction":"-X","reservation_mm":[2.3,-56,13.1,-31.5],"note":"assemble and lock before cover; route ribbon above insulated low-profile components, not across inductors"},
-    {"reference":"J1","kind":"internal_expansion","direction":"+Z","note":"rear service lid access only; account for fitted header, mating plug and cable height"},
-    {"reference":"J2","kind":"internal_c6_programming","direction":"+Z","note":"service lid / production access; no general user opening"},
-    {"reference":"J20","kind":"dnp","direction":"none","note":"no external opening in this assembly variant"},
-    {"reference":"SW1","kind":"service_reset","direction":"+Z","note":"recessed service access, guided non-preloaded actuator; no ordinary user button"},
-    {"reference":"SW2","kind":"service_boot","direction":"+Z","note":"recessed service access, guided non-preloaded actuator; accessible during USB recovery"},
-    {"reference":"J7","kind":"microphone","direction":"+Z","note":"dedicated acoustic path through rear cover; do not seal under foam or couple directly to speaker cavity"}
+    {
+      "reference": "J302",
+      "kind": "internal_lcd_fpc",
+      "direction": "-Y",
+      "reservation_mm": [
+        -12,
+        -85.5,
+        4,
+        -69.5
+      ],
+      "note": "16 mm ribbon corridor; lock access before rear cover installation; H1 screw head must not clamp ribbon"
+    },
+    {
+      "reference": "J308",
+      "kind": "internal_touch_fpc",
+      "direction": "-X",
+      "reservation_mm": [
+        -36,
+        -73.5,
+        -23.5,
+        -65.5
+      ],
+      "note": "left exit into the internal shell volume, not an external user port; leave >=5 mm insertion reach beyond mouth"
+    },
+    {
+      "reference": "J18",
+      "kind": "external_usb_host",
+      "direction": "+Y",
+      "reservation_mm": [
+        1,
+        -10.5,
+        21,
+        9.5
+      ],
+      "note": "initial 20 mm plug reach; opening must accommodate actual plug overmold"
+    },
+    {
+      "reference": "J15",
+      "kind": "external_usb_hs",
+      "direction": "+Y",
+      "reservation_mm": [
+        19.4157,
+        -10.5,
+        33.4157,
+        9.5
+      ],
+      "note": "shares HS controller with J18; recessed port walls must not prevent full insertion"
+    },
+    {
+      "reference": "J19",
+      "kind": "external_power_and_debug_usb",
+      "direction": "+Y",
+      "reservation_mm": [
+        34.4557,
+        -10.5,
+        48.4557,
+        9.5
+      ],
+      "note": "5 V / USB Serial-JTAG; reachable with cover installed; use recessed panel or thin port lip"
+    },
+    {
+      "reference": "J21",
+      "kind": "external_microsd",
+      "direction": "+X",
+      "reservation_mm": [
+        89,
+        -53,
+        109,
+        -35
+      ],
+      "note": "B.Cu side socket, separate z level from speaker; provide fingernail and push/eject access"
+    },
+    {
+      "reference": "J16",
+      "kind": "internal_speaker_harness",
+      "direction": "+X",
+      "reservation_mm": [
+        88.4,
+        -63,
+        103.4,
+        -53
+      ],
+      "note": "Internal mating access, not final wire route. Connector is near the 15 mm antenna target; turn wire immediately toward +Y and secure below antenna region. This local exception needs RF testing"
+    },
+    {
+      "reference": "J9",
+      "kind": "internal_camera_fpc",
+      "direction": "-X",
+      "reservation_mm": [
+        2.3,
+        -56,
+        13.1,
+        -31.5
+      ],
+      "note": "assemble and lock before cover; route ribbon above insulated low-profile components, not across inductors"
+    },
+    {
+      "reference": "J1",
+      "kind": "internal_expansion",
+      "direction": "+Z",
+      "note": "rear service lid access only; account for fitted header, mating plug and cable height"
+    },
+    {
+      "reference": "J2",
+      "kind": "internal_c6_programming",
+      "direction": "+Z",
+      "note": "service lid / production access; no general user opening"
+    },
+    {
+      "reference": "J20",
+      "kind": "dnp",
+      "direction": "none",
+      "note": "no external opening in this assembly variant"
+    },
+    {
+      "reference": "SW1",
+      "kind": "service_reset",
+      "direction": "+Z",
+      "note": "recessed service access, guided non-preloaded actuator; no ordinary user button"
+    },
+    {
+      "reference": "SW2",
+      "kind": "service_boot",
+      "direction": "+Z",
+      "note": "recessed service access, guided non-preloaded actuator; accessible during USB recovery"
+    },
+    {
+      "reference": "J7",
+      "kind": "microphone",
+      "direction": "+Z",
+      "note": "dedicated acoustic path through rear cover; do not seal under foam or couple directly to speaker cavity"
+    }
   ],
   "mounting": {
-    "hole_references":["H1","H2","H3","H4","H301","H302"],
-    "pad_outer_diameter_mm":5.0,"nominal_drill_mm":3.0,
-    "maximum_local_support_or_head_diameter_mm":5.0,
-    "hardware_proposal":"M2.5 insulated small-head screws / spacers with actual OD <=5 mm in existing 3 mm holes; no standard M3 large washer substitution",
-    "note":"H1/H2 are close to J1; verify both sides and tool access. Use one fixed datum and a floating/slotted case feature to avoid overconstraint; do not widen PCB holes without a layout review"
+    "hole_references": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "H301",
+      "H302"
+    ],
+    "pad_outer_diameter_mm": 5.0,
+    "nominal_drill_mm": 3.0,
+    "maximum_local_support_or_head_diameter_mm": 5.0,
+    "hardware_proposal": "M2.5 insulated small-head screws / spacers with actual OD <=5 mm in existing 3 mm holes; no standard M3 large washer substitution",
+    "note": "H1/H2 are close to J1; verify both sides and tool access. Use one fixed datum and a floating/slotted case feature to avoid overconstraint; do not widen PCB holes without a layout review"
   },
   "antenna": {
-    "reference":"U1","antenna_region_mm":[83.5024,-81.4832,88.9024,-68.2831],"added_object_clearance_target_mm":15,
-    "note":"Identify actual C6 antenna region from footprint/module drawing; no panel metal, conductive coating, screws, speaker magnet or wiring within target region. The inherited PCB is not certified by this enclosure target",
-    "guideline":"https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c6/pcb-layout-design.html"
+    "reference": "U1",
+    "antenna_region_mm": [
+      83.5024,
+      -81.4832,
+      88.9024,
+      -68.2831
+    ],
+    "added_object_clearance_target_mm": 15,
+    "note": "Identify actual C6 antenna region from footprint/module drawing; no panel metal, conductive coating, screws, speaker magnet or wiring within target region. The inherited PCB is not certified by this enclosure target",
+    "guideline": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c6/pcb-layout-design.html"
   },
   "z_clearance": {
-    "front_faces":"rear cover","back_faces":"screen metal backplate",
-    "note":"All z values apart from SW3 datasheet dimensions are pending measured maximum component and mating-plug heights. Keep insulated clearance to screen backplate, shorten through-hole leads and provide thermal path without loading the glass"
+    "front_faces": "rear cover",
+    "back_faces": "screen metal backplate",
+    "note": "All z values apart from SW3 datasheet dimensions are pending measured maximum component and mating-plug heights. Keep insulated clearance to screen backplate, shorten through-hole leads and provide thermal path without loading the glass"
   }
 }

@@ -881,11 +881,11 @@
       "54": "N18792940",
       "55": "GPIO26",
       "56": "GPIO27",
-      "57": "GPIO28",
-      "58": "GPIO29",
+      "57": null,
+      "58": null,
       "59": "ESP_LDO_VO2",
-      "60": "GPIO30",
-      "61": "GPIO31",
+      "60": null,
+      "61": null,
       "62": "ESP_3V3",
       "63": "GPIO32",
       "64": "GPIO33",
@@ -916,10 +916,10 @@
       "89": "GPIO47",
       "90": "GPIO48",
       "91": "ESP_VDD_HP",
-      "92": "GPIO49",
-      "93": "GPIO50",
-      "94": "GPIO51",
-      "95": "GPIO52",
+      "92": null,
+      "93": null,
+      "94": null,
+      "95": null,
       "96": "ESP_3V3",
       "97": "GPIO53",
       "98": "GPIO54",
@@ -2250,40 +2250,6 @@
       "2": "USB1P1_N_2"
     }
   },
-  "R114": {
-    "uuid": "25029357-6cf1-5dac-adfd-a8e59efec83f",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      190.5,
-      68.58
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO28",
-      "2": "RMII_RXDV"
-    }
-  },
-  "R115": {
-    "uuid": "650bf20e-b6f1-5404-898e-e8cf6b116d42",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      260.35,
-      68.58
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO30",
-      "2": "RMII_RXD1"
-    }
-  },
   "R116": {
     "uuid": "4c9d1d06-059b-5455-9335-da4b078cc033",
     "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
@@ -2299,23 +2265,6 @@
     "nets": {
       "1": "GPIO32",
       "2": "CNN_GPIO32"
-    }
-  },
-  "R117": {
-    "uuid": "0a37c9bd-c50f-548c-8b60-2576210a0ebc",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      401.32,
-      68.58
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO34",
-      "2": "RMII_TXD0"
     }
   },
   "R118": {
@@ -2386,40 +2335,6 @@
       "2": "USB1P1_P_2"
     }
   },
-  "R132": {
-    "uuid": "28e8262f-aa40-5196-83f6-a79ccde59b00",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      190.5,
-      93.98
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO29",
-      "2": "RMII_RXD0"
-    }
-  },
-  "R133": {
-    "uuid": "01b5d0f0-658c-5e3e-9726-23c064d92969",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      260.35,
-      93.98
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO31",
-      "2": "MDC"
-    }
-  },
   "R134": {
     "uuid": "13c84e2c-c120-5e36-9d4f-4986bbe00d12",
     "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
@@ -2435,23 +2350,6 @@
     "nets": {
       "1": "GPIO33",
       "2": "CNN_GPIO33"
-    }
-  },
-  "R135": {
-    "uuid": "e8921d62-5f07-5b1f-a6c2-a4a3bee70347",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      401.32,
-      93.98
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO35",
-      "2": "RMII_TXD1"
     }
   },
   "R136": {
@@ -3474,23 +3372,6 @@
       "2": "CSI_A_CLKN"
     }
   },
-  "R87": {
-    "uuid": "30ca74b2-db95-53d1-b054-8d880e6f38c3",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      190.5,
-      297.18
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO52",
-      "2": "MDIO"
-    }
-  },
   "R88": {
     "uuid": "1bbcf444-735c-56f8-98f9-22e51e33fcf8",
     "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
@@ -3508,23 +3389,6 @@
       "2": "CSI_A_DATA1N"
     }
   },
-  "R89": {
-    "uuid": "cf2dd448-d95e-51fb-bd43-9c3bf2065c4d",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      330.2,
-      297.18
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO51",
-      "2": "PHY_RSTN"
-    }
-  },
   "R90": {
     "uuid": "98ae7620-c960-5d14-8477-98a4dcc22e22",
     "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
@@ -3540,40 +3404,6 @@
     "nets": {
       "1": "CSI_DATA1P",
       "2": "CSI_A_DATA1P"
-    }
-  },
-  "R91": {
-    "uuid": "434708bb-fa50-555f-8c79-a84ed8737f18",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      469.9,
-      297.18
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO50",
-      "2": "RMII_CLK"
-    }
-  },
-  "R92": {
-    "uuid": "eb86e567-fa94-5056-9396-639708b11632",
-    "sheet_uuid": "dbac483e-e638-5adf-b762-6791f86e7bfa",
-    "sheet": "gpio_routing",
-    "at": [
-      539.75,
-      297.18
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GPIO49",
-      "2": "RMII_TXEN"
     }
   },
   "R93": {
@@ -6184,106 +6014,13 @@
       "1": "SD2_D0"
     }
   },
-  "U8": {
-    "uuid": "58b111b0-9ed4-5030-9ec3-492df50baf18",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      86.36,
-      81.28
-    ],
-    "value": "IP101GRI",
-    "footprint": "QFN32_0P4_4_E2P75__f47c501cbc",
-    "dnp": false,
-    "mpn": "IP101GRI",
-    "nets": {
-      "1": "TXER",
-      "2": "25M_XI",
-      "3": "25M_XO",
-      "4": "COL",
-      "5": "RMII_TXEN",
-      "6": null,
-      "7": null,
-      "8": "RMII_TXD1",
-      "9": "RMII_TXD0",
-      "10": "N18267472",
-      "11": "PHY_AD0",
-      "12": "PHY_AD3",
-      "13": "PHY_3V3",
-      "14": "N18267350",
-      "15": null,
-      "16": null,
-      "17": "N18267340",
-      "18": "N18267342",
-      "19": "N18267344",
-      "20": "CRS",
-      "21": "RXER",
-      "22": "MDC",
-      "23": "MDIO",
-      "24": "PHY_TESTON",
-      "25": "PHY_ISET",
-      "26": "RD-",
-      "27": "RD+",
-      "28": "N18267444",
-      "29": "TD-",
-      "30": "TD+",
-      "31": "PHY_3V3",
-      "32": "PHY_RSTN",
-      "33": "GND"
-    }
-  },
-  "J17": {
-    "uuid": "c850c44f-bdd0-550b-b526-e80e7613450a",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      226.06,
-      55.88
-    ],
-    "value": "RJ45_HR913550A",
-    "footprint": "RJ45_HR913129A__4a4a06f2a3",
-    "dnp": false,
-    "mpn": "HR913550A",
-    "nets": {
-      "1": "TD+",
-      "2": "TD-",
-      "3": "RD+",
-      "4": "N18266990",
-      "5": "N18266994",
-      "6": "RD-",
-      "7": null,
-      "8": "GND",
-      "9": "PHY_AD3",
-      "10": "N18267072",
-      "11": "N18267076",
-      "12": "PHY_3V3",
-      "SHD1": "GND_RJ45_EARTH",
-      "SHD2": "GND_RJ45_EARTH"
-    }
-  },
-  "#FLG12": {
-    "uuid": "723ebdc6-4a52-5df5-be73-65f626b1cc56",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      43.18
-    ],
-    "value": "PWR_FLAG",
-    "footprint": "",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3"
-    }
-  },
   "C1": {
     "uuid": "eea9d902-b549-5d34-bcd1-5a527cc47a94",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
     "at": [
-      401.32,
-      43.18
+      260.35,
+      246.38
     ],
     "value": "10u/10V",
     "footprint": "C0603__1e7c8298a8",
@@ -6294,183 +6031,13 @@
       "2": "GND"
     }
   },
-  "C108": {
-    "uuid": "899f1079-cc19-5541-acd5-4ab963acd187",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      469.9,
-      43.18
-    ],
-    "value": "10u/10V",
-    "footprint": "C0603_1ead970f__4ff9dc89d7",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "GND"
-    }
-  },
-  "C109": {
-    "uuid": "3bbdfe2f-06ca-527c-8b45-27093ea7367d",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      43.18
-    ],
-    "value": "0.1u/50V",
-    "footprint": "C0402_097d4b0b__328ab4e626",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "GND"
-    }
-  },
-  "C111": {
-    "uuid": "c5022ab5-ef94-5415-a4d4-edf4413d1016",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      68.58
-    ],
-    "value": "0.1u/50V",
-    "footprint": "C0402_097d4b0b__328ab4e626",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18267444",
-      "2": "GND"
-    }
-  },
-  "C112": {
-    "uuid": "0d375cbf-415f-5c61-a6d8-db39ca6b4688",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      401.32,
-      68.58
-    ],
-    "value": "0.1u/50V",
-    "footprint": "C0402_097d4b0b__328ab4e626",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "GND"
-    }
-  },
-  "C113": {
-    "uuid": "7c85446f-24b3-528c-9fef-877bd64af26a",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      469.9,
-      68.58
-    ],
-    "value": "10u/10V",
-    "footprint": "C0603_1ead970f__4ff9dc89d7",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18267444",
-      "2": "GND"
-    }
-  },
-  "C114": {
-    "uuid": "6aec4249-d07c-581f-8c27-300601f28826",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      68.58
-    ],
-    "value": "10u/10V",
-    "footprint": "C0603_1ead970f__4ff9dc89d7",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "GND"
-    }
-  },
-  "C115": {
-    "uuid": "a481921c-b83c-5719-861a-6d0c3e94f7ab",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      190.5,
-      93.98
-    ],
-    "value": "0.1u/50V",
-    "footprint": "C0402_097d4b0b__328ab4e626",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18266990",
-      "2": "GND"
-    }
-  },
-  "C116": {
-    "uuid": "6180e0a9-a2b4-58ef-824f-3f9066db73fd",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      260.35,
-      93.98
-    ],
-    "value": "0.1u/50V",
-    "footprint": "C0402_097d4b0b__328ab4e626",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18266994",
-      "2": "GND"
-    }
-  },
-  "C64": {
-    "uuid": "e30371cc-6f7c-5976-9ad6-287fab04943e",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      93.98
-    ],
-    "value": "20p/50V",
-    "footprint": "C0402__df1ad35910",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18379689",
-      "2": "GND"
-    }
-  },
-  "C68": {
-    "uuid": "86b9bae2-3c08-5d96-bc61-1a7a8638dffb",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      401.32,
-      93.98
-    ],
-    "value": "20p/50V",
-    "footprint": "C0402__df1ad35910",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18379734",
-      "2": "GND"
-    }
-  },
   "Q8": {
     "uuid": "74d98ebf-eabc-513d-a001-4cde0c0aed51",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
     "at": [
-      469.9,
-      93.98
+      50.8,
+      246.38
     ],
     "value": "AO3401A",
     "footprint": "SOT23-3__14816d8467",
@@ -6482,489 +6049,13 @@
       "3": "SD1_VDD"
     }
   },
-  "R139": {
-    "uuid": "32c383f0-3d89-5e23-bf0c-edd25252106a",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      93.98
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "RMII_CLK",
-      "2": "N18267350"
-    }
-  },
-  "R140": {
-    "uuid": "dd002d54-5307-53b4-bc7c-72d20b0a4f43",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      190.5,
-      119.38
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GND",
-      "2": "PHY_AD3"
-    }
-  },
-  "R141": {
-    "uuid": "ff244f38-5980-516e-b3df-0256ae25ebb1",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      260.35,
-      119.38
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "PHY_AD0"
-    }
-  },
-  "R142": {
-    "uuid": "08ee8aa8-3c2d-51b2-9b25-673470f7a1fe",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      119.38
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "RMII_CLK",
-      "2": "N18267472"
-    }
-  },
-  "R143": {
-    "uuid": "29f41c0c-d230-53e8-b1b9-e166b119465b",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      401.32,
-      119.38
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "RMII_RXD1",
-      "2": "N18267340"
-    }
-  },
-  "R144": {
-    "uuid": "0f9c70dc-5415-594d-8def-a17bc45f055f",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      469.9,
-      119.38
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "RMII_RXD0",
-      "2": "N18267342"
-    }
-  },
-  "R149": {
-    "uuid": "112a660e-4612-5534-9389-a5a96c009c0e",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      119.38
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "COL"
-    }
-  },
-  "R150": {
-    "uuid": "79f180a1-f87a-5047-a233-5672482f9bba",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      50.8,
-      144.78
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "RMII_RXDV",
-      "2": "N18267344"
-    }
-  },
-  "R153": {
-    "uuid": "402f050b-1348-5fba-ba4f-e7b7ea2b9960",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      121.92,
-      144.78
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "COL",
-      "2": "GND"
-    }
-  },
-  "R154": {
-    "uuid": "c20bd8c4-12b1-5eda-ad10-9a66a75aed4a",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      190.5,
-      144.78
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "CRS",
-      "2": "GND"
-    }
-  },
-  "R155": {
-    "uuid": "ca92b7a8-0ee9-5e70-9bf5-5f3331fc136d",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      260.35,
-      144.78
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "CRS"
-    }
-  },
-  "R156": {
-    "uuid": "f5a13d6a-5885-59b2-989a-3692b1d57892",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      144.78
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "RXER",
-      "2": "GND"
-    }
-  },
-  "R157": {
-    "uuid": "353c2c71-00d6-5a9b-91ff-321fe8ef02be",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      401.32,
-      144.78
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "RXER"
-    }
-  },
-  "R158": {
-    "uuid": "cbb253e9-7249-58d4-be9f-e61986a7abc6",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      469.9,
-      144.78
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "25M_XO",
-      "2": "N18379689"
-    }
-  },
-  "R159": {
-    "uuid": "27a20d0b-4c17-55d8-bc61-a03877163943",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      144.78
-    ],
-    "value": "10M",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "N18379689",
-      "2": "N18379734"
-    }
-  },
-  "R160": {
-    "uuid": "8b06c9a2-171e-5e62-a7bc-0b802508236b",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      50.8,
-      170.18
-    ],
-    "value": "1.5k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "MDC"
-    }
-  },
-  "R161": {
-    "uuid": "cd7f550a-a1a8-5284-9dd8-2ec3a60c04da",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      121.92,
-      170.18
-    ],
-    "value": "0R",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "25M_XI",
-      "2": "N18379734"
-    }
-  },
-  "R163": {
-    "uuid": "c94775c5-5dfb-5309-b91e-e04eb002e2b0",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      190.5,
-      170.18
-    ],
-    "value": "1.5k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "MDIO"
-    }
-  },
-  "R164": {
-    "uuid": "b5669ace-26a0-5126-b0ae-e733bc87261a",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      260.35,
-      170.18
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "PHY_TESTON"
-    }
-  },
-  "R165": {
-    "uuid": "07bdbe6f-40c6-565f-87e1-37d103a4694c",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      170.18
-    ],
-    "value": "6.19k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_ISET",
-      "2": "GND"
-    }
-  },
-  "R166": {
-    "uuid": "1b555c89-1231-540f-8cf3-b69ab7b1dfd1",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      401.32,
-      170.18
-    ],
-    "value": "10k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_RSTN",
-      "2": "GND"
-    }
-  },
-  "R167": {
-    "uuid": "09e931b8-1697-5c79-b23f-455083495708",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      469.9,
-      170.18
-    ],
-    "value": "10k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "PHY_RSTN"
-    }
-  },
-  "R168": {
-    "uuid": "609410aa-5a70-5764-9533-e54520a60da0",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      170.18
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": true,
-    "mpn": "",
-    "nets": {
-      "1": "PHY_3V3",
-      "2": "TXER"
-    }
-  },
-  "R169": {
-    "uuid": "417454e7-166c-5135-9d1f-fd25eaa407d1",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      50.8,
-      195.58
-    ],
-    "value": "5.1k",
-    "footprint": "R0402__6ca295102a",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "TXER",
-      "2": "GND"
-    }
-  },
-  "R181": {
-    "uuid": "4f70ca8c-0af6-5e37-ae97-a1fcfd1b6c72",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      121.92,
-      195.58
-    ],
-    "value": "0R",
-    "footprint": "R0603__ca4d6f8805",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "GND_RJ45_EARTH",
-      "2": "GND"
-    }
-  },
-  "R213": {
-    "uuid": "c590595b-e5c2-5bbb-ad97-b33acd26b5be",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      190.5,
-      195.58
-    ],
-    "value": "0R",
-    "footprint": "R0603_1ead970f__376db2b91e",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "ESP_3V3",
-      "2": "PHY_3V3"
-    }
-  },
-  "R222": {
-    "uuid": "1dd98b54-1c3c-5cce-9bd9-5950c09f0f98",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      260.35,
-      195.58
-    ],
-    "value": "1k",
-    "footprint": "R0402_097d4b0b__c1bfdfccc2",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18267076",
-      "2": "PHY_AD0"
-    }
-  },
-  "R223": {
-    "uuid": "7750af54-a3df-5073-9de3-88cd38df7ae9",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      330.2,
-      195.58
-    ],
-    "value": "1k",
-    "footprint": "R0402_097d4b0b__c1bfdfccc2",
-    "dnp": false,
-    "mpn": "",
-    "nets": {
-      "1": "N18267072",
-      "2": "GND"
-    }
-  },
   "R229": {
     "uuid": "c13923b6-add0-5533-a09f-f2eb54a7e15e",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
     "at": [
-      401.32,
-      195.58
+      120.65,
+      246.38
     ],
     "value": "10k",
     "footprint": "R0402_097d4b0b__c1bfdfccc2",
@@ -6977,11 +6068,11 @@
   },
   "R230": {
     "uuid": "e0ac6bd9-0235-5ad5-a17d-52e654002faf",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
+    "sheet_uuid": "2586014c-0d8f-5911-9da1-b7b6001a0a63",
+    "sheet": "wifi_sd",
     "at": [
-      469.9,
-      195.58
+      190.5,
+      246.38
     ],
     "value": "10k",
     "footprint": "R0402_097d4b0b__c1bfdfccc2",
@@ -6990,25 +6081,6 @@
     "nets": {
       "1": "SD_PWRN",
       "2": "ESP_3V3"
-    }
-  },
-  "Y3": {
-    "uuid": "28ec5b5c-78b2-5338-9cdd-88afb17a0996",
-    "sheet_uuid": "ec547c14-989d-5430-a81c-0345025579c8",
-    "sheet": "ethernet",
-    "at": [
-      539.75,
-      195.58
-    ],
-    "value": "25MHz+/-10ppm",
-    "footprint": "XTAL3225__b6a822609b",
-    "dnp": false,
-    "mpn": "SX32Y025000BA1T",
-    "nets": {
-      "1": "N18379689",
-      "2": "GND",
-      "3": "N18379734",
-      "4": "GND"
     }
   },
   "J15": {

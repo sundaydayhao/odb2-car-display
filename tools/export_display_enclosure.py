@@ -9,7 +9,7 @@ import pcbnew as k
 repo = Path(__file__).resolve().parent.parent
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--project', type=Path, default=repo/'hardware/display-singleboard')
-ap.add_argument('--output', type=Path, default=repo/'build/display-enclosure-a3/mechanical')
+ap.add_argument('--output', type=Path, default=repo/'build/display-enclosure/mechanical')
 a = ap.parse_args()
 cfg = json.loads((a.project/'enclosure.json').read_text(encoding='utf8'))
 pcb = a.project/'display_singleboard.kicad_pcb'
@@ -79,7 +79,7 @@ result = {'pcb_sha256': hashlib.sha256(pcb.read_bytes()).hexdigest(),
 svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1575" viewBox="-43 -107 160 140">',
        '<rect x="-43" y="-107" width="160" height="140" fill="#f8fafc"/>',
        '<style>text{font-family:Arial,sans-serif;fill:#1f2937}.label{font-size:1.45px}.small{font-size:1.2px}</style>',
-       '<text x="-37" y="-102" font-size="3">A3 / REAR ENCLOSURE ACCESS</text>',
+       f'<text x="-37" y="-102" font-size="3">{html.escape(cfg["revision"])} / REAR ENCLOSURE ACCESS</text>',
        '<text x="-37" y="-98.5" font-size="1.5">120 x 74 mm PCB / component side faces rear cover / coordinates in mm</text>',
        '<text x="-37" y="-95.7" font-size="1.3">Colored areas reserve case and cable space. Prototype clearances; not tooling dimensions.</text>',
        ]
@@ -140,7 +140,7 @@ clear=cfg['antenna']['added_object_clearance_target_mm']
 rect([ant[0]-clear,ant[1]-clear,ant[2]+clear,ant[3]+clear],'#a21caf',.025)
 svg.append('<text x="91" y="-81" class="label">ANTENNA</text><text x="91" y="-78" class="small">15 mm target</text><text x="91" y="-75" class="small">new metal / wiring</text>')
 svg.append('<text x="-30" y="21" class="label">Internal FPCs: assemble before rear cover. Screen metal must clear RF region.</text>')
-svg.append('<text x="-30" y="24" class="label">USB / RJ45: bottom openings. microSD: right opening on B.Cu side.</text>')
+svg.append('<text x="-30" y="24" class="label">USB: bottom openings. microSD: right opening on B.Cu side.</text>')
 svg.append('<text x="-30" y="27" class="label">SW1 / SW2: recessed service access. Small insulated mounting hardware, OD &lt;= 5 mm.</text>')
 svg.append('<text x="-30" y="30" class="label">Switch: 13 x 6.8 body, 6.4 body height + 3 handle; verify slot and detents on sample.</text>')
 svg.append('</svg>')

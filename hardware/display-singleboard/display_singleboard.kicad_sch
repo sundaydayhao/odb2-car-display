@@ -14,7 +14,7 @@
 	(title_block
 		(title "7 inch integrated P4 display controller")
 		(date "2026-09-14")
-		(rev "A3")
+		(rev "A4")
 		(company "OBD2 Car Display")
 	)
 	(text "7 INCH SINGLE BOARD / P4X + C6 + LCD + GT911"
@@ -60,7 +60,7 @@
 		)
 		(uuid "107c1902-d10b-52e2-a8b1-2d7366e71576")
 		(property "Sheetname" "5 V input / power distribution"
-			(at 20.32 49.529999999999994 0)
+			(at 20.32 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86,7 +86,7 @@
 		)
 	)
 	(text "47 symbols / global net labels"
-		(at 24.13 58.419999999999995 0)
+		(at 24.13 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -108,7 +108,7 @@
 		)
 		(uuid "1afcc05b-b6be-53ed-953e-55a0f5de3545")
 		(property "Sheetname" "ESP32-P4X core / clocks / supplies"
-			(at 208.28 49.529999999999994 0)
+			(at 208.28 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -134,7 +134,7 @@
 		)
 	)
 	(text "69 symbols / global net labels"
-		(at 212.09 58.419999999999995 0)
+		(at 212.09 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -156,7 +156,7 @@
 		)
 		(uuid "dbac483e-e638-5adf-b762-6791f86e7bfa")
 		(property "Sheetname" "GPIO routing / configuration links"
-			(at 396.24 49.529999999999994 0)
+			(at 396.24 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -181,8 +181,8 @@
 			)
 		)
 	)
-	(text "91 symbols / global net labels"
-		(at 400.05 58.419999999999995 0)
+	(text "81 symbols / global net labels"
+		(at 400.05 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -325,7 +325,7 @@
 			)
 		)
 	)
-	(text "45 symbols / global net labels"
+	(text "49 symbols / global net labels"
 		(at 400.05 121.92 0)
 		(effects
 			(font
@@ -346,8 +346,8 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "ec547c14-989d-5430-a81c-0345025579c8")
-		(property "Sheetname" "Ethernet PHY / magnetics"
+		(uuid "b03b194c-4662-56ab-b152-fc3219598831")
+		(property "Sheetname" "USB connectors / ESD"
 			(at 20.32 176.53 0)
 			(effects
 				(font
@@ -356,8 +356,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 20.32 204.47000000000003 0)
+		(property "Sheetfile" "usb_ports.kicad_sch"
+			(at 20.32 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -373,15 +373,15 @@
 			)
 		)
 	)
-	(text "46 symbols / global net labels"
-		(at 24.13 185.42000000000002 0)
+	(text "26 symbols / global net labels"
+		(at 24.13 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "b16e10a6-f5f6-5b0e-8169-beaed4dca53d")
+		(uuid "3d415de5-c917-55d2-92d6-0c9303266928")
 	)
 	(sheet
 		(at 208.28 177.8)
@@ -394,8 +394,8 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "b03b194c-4662-56ab-b152-fc3219598831")
-		(property "Sheetname" "USB connectors / ESD"
+		(uuid "e58f855f-9abe-5012-bb97-7604bb5f833a")
+		(property "Sheetname" "On-board LCD / GT911 / reset level adaptation"
 			(at 208.28 176.53 0)
 			(effects
 				(font
@@ -404,8 +404,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "usb_ports.kicad_sch"
-			(at 208.28 204.47000000000003 0)
+		(property "Sheetfile" "lcd_interfaces.kicad_sch"
+			(at 208.28 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -421,15 +421,15 @@
 			)
 		)
 	)
-	(text "26 symbols / global net labels"
-		(at 212.09 185.42000000000002 0)
+	(text "18 symbols / global net labels"
+		(at 212.09 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "3d415de5-c917-55d2-92d6-0c9303266928")
+		(uuid "c6214816-6379-51d8-b4e0-b8ef8b7123b4")
 	)
 	(sheet
 		(at 396.24 177.8)
@@ -442,8 +442,8 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "e58f855f-9abe-5012-bb97-7604bb5f833a")
-		(property "Sheetname" "On-board LCD / GT911 / reset level adaptation"
+		(uuid "abb9c366-1024-5b0c-a305-e23e15820453")
+		(property "Sheetname" "On-board backlight / default OFF / 182 mA"
 			(at 396.24 176.53 0)
 			(effects
 				(font
@@ -452,8 +452,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "lcd_interfaces.kicad_sch"
-			(at 396.24 204.47000000000003 0)
+		(property "Sheetfile" "backlight.kicad_sch"
+			(at 396.24 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -469,15 +469,15 @@
 			)
 		)
 	)
-	(text "16 symbols / global net labels"
-		(at 400.05 185.42000000000002 0)
+	(text "9 symbols / global net labels"
+		(at 400.05 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "c6214816-6379-51d8-b4e0-b8ef8b7123b4")
+		(uuid "afcbf2b3-f3ae-5cf2-b1b2-7b77586101f8")
 	)
 	(sheet
 		(at 20.32 241.3)
@@ -490,8 +490,8 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "abb9c366-1024-5b0c-a305-e23e15820453")
-		(property "Sheetname" "On-board backlight / default OFF / 182 mA"
+		(uuid "31710043-2583-5c7c-b573-54a0c09bf79d")
+		(property "Sheetname" "On-board LCD bias rails / 1.8 V logic supply"
 			(at 20.32 240.03 0)
 			(effects
 				(font
@@ -500,7 +500,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "backlight.kicad_sch"
+		(property "Sheetfile" "lcd_bias.kicad_sch"
 			(at 20.32 267.97 0)
 			(effects
 				(font
@@ -517,56 +517,8 @@
 			)
 		)
 	)
-	(text "9 symbols / global net labels"
-		(at 24.13 248.92000000000002 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "afcbf2b3-f3ae-5cf2-b1b2-7b77586101f8")
-	)
-	(sheet
-		(at 208.28 241.3)
-		(size 160.02 25.4)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.254)
-			(type default)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "31710043-2583-5c7c-b573-54a0c09bf79d")
-		(property "Sheetname" "On-board LCD bias rails / 1.8 V logic supply"
-			(at 208.28 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "lcd_bias.kicad_sch"
-			(at 208.28 267.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
-					(page "12")
-				)
-			)
-		)
-	)
 	(text "43 symbols / global net labels"
-		(at 212.09 248.92000000000002 0)
+		(at 24.13 248.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -574,5 +526,15 @@
 			(justify left top)
 		)
 		(uuid "e0d51db7-32bf-5376-aab5-7d5e9169350c")
+	)
+	(text "A4: Ethernet connector and PHY removed. Networking uses the retained ESP32-C6 Wi-Fi / BLE."
+		(at 20.32 304.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d0ad2093-04fb-427f-a649-5a5ee2264033")
 	)
 )

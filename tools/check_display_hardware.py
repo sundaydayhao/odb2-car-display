@@ -50,10 +50,17 @@ duplicates=[ref for ref,n in collections.Counter(refs).items() if n!=1]
 required={('J302','17'):'DSI_A_CLKP',('J302','18'):'DSI_A_CLKN',('J302','20'):'DSI_A_DATA1P',('J302','21'):'DSI_A_DATA1N',('J302','23'):'DSI_A_DATA0P',('J302','24'):'DSI_A_DATA0N',
           ('J302','27'):'PANEL_RESET_LCD',('J302','28'):'PANEL_LCD_VDD',('U304','2'):'CNN_GPIO27',('U304','4'):'PANEL_RESET_LCD',('U304','5'):'ESP_3V3',
           ('J308','1'):'CNN_GPIO23',('J308','2'):'ESP_3V3',('J308','3'):'GND',('J308','4'):'CNN_GPIO22',('J308','5'):'N18412242',('J308','6'):'N18412230',('R341','1'):'CNN_GPIO26',('R341','2'):'GND'}
+# These parts originally shared the Ethernet sheet but are essential to Wi-Fi / SD.
+required.update({('Q8','1'):'SD_PWRN',('Q8','2'):'ESP_3V3',('Q8','3'):'SD1_VDD',
+                 ('R229','1'):'GND',('R229','2'):'SD_PWRN',('R231','2'):'SD_PWRN',
+                 ('J21','4'):'SD1_VDD',('C1','1'):'ESP_3V3',('C1','2'):'GND'})
 for key,value in required.items():
     if expected.get(key)!=value:errors.append(['integrated interface changed',key,expected.get(key),value])
 for ref in ['J5','J301','J303','J305','J306','J307']:
     if ref in refs:errors.append(['obsolete inter-board / alternative connector',ref])
+for ref in ['J17','U8','Y3','R87','R89','R91','R92','R114','R115','R117','R132','R133','R135']:
+    if ref in refs:errors.append(['obsolete Ethernet component',ref])
+if (a.project/'ethernet.kicad_sch').exists():errors.append(['obsolete Ethernet schematic sheet'])
 
 # Assembly data must name the same exact local footprint variants as the CAD.
 with (a.project/'assembly.csv').open(encoding='utf-8-sig',newline='') as f:

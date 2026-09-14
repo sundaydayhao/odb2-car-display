@@ -17,3 +17,7 @@ A3 结构复核：
 
 - [XKB SS-12D10L3 厂家机械图 A1](https://datasheet.lcsc.com/datasheet/pdf/562955152e0d35ebc194db3482640805.pdf?productCode=C319013)：13 × 6.8 mm 本体、6.4 mm 本体高度、3 mm 柄、2.2 mm 行程、4.7 mm 引脚间距。
 - [Espressif C6 整机天线布置指南](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c6/pcb-layout-design.html)：外壳内天线净空与整机无线测试。
+
+## A4 以太网删除记录
+
+以 A3（`5c00310`）为基线，删除以太网接口、PHY、25 MHz 晶振和专用外围。原官方参考图及旧双板目录作为来源检查点保留；本目录 A4 原理图和 PCB 是当前装配依据。原归入以太网页的 SD 电源开关和 C6 去耦依据原生逐引脚网络与 PCB 位置识别后保留，不随页整体删除。

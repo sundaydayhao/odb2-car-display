@@ -1,5 +1,7 @@
 # 7 寸显示主板 A4：单板方案
 
+**2026-09-15 选型变更：用户指定改用淘宝商品 983165147604 的 SKU 5946336205446。新屏资料与适配状态见 [PANEL_TARGET.md](PANEL_TARGET.md)。下文 A4 的屏幕接口、电源和机械位置描述是旧屏电路基线，尚未验证适用于新屏。**
+
 本工程把 **ESP32-P4X + ESP32-C6、LCD 电源、背光驱动和 GT911 触摸接口**合并到一块 120 × 74 mm、4 层、名义厚度 1.6 mm 的 PCB。打开 `display_singleboard.kicad_pro`；原理图入口为 `display_singleboard.kicad_sch`。
 
 这是当前显示端的主方案。A4 删除 J17 以太网口、U8 IP101GRI、Y3 25 MHz 晶振及专用外围，共减少 51 个物理器件；网络连接由 C6 Wi-Fi / BLE 承担。原以太网页中混放的 microSD 电源开关 Q8 / R229 / R230 和 C6 去耦 C1 已归入 Wi-Fi / SD 页并保留。A3 把电源开关放在左上板边，配合背壳上沿凹槽；触摸 FPC 改为向左出线，补充外壳开口、装配和维修空间约束。A2 将 A1 左侧屏电路向主控收拢 14 mm，面积减少约 10.4%；尺寸依据和安装孔变更见 [MECHANICAL.md](MECHANICAL.md)。旧 `display-mainboard` / `display-lcd-adapter` 是电路来源检查点，不需要制作旧双板；前期软件和屏幕验证使用官方 ESP32-P4 Function EV Board。
@@ -26,7 +28,7 @@ ESP32-P4 ── 板内 MIPI 差分线 ── J302 FPC 座 ── 屏幕自带排
 | 音频 | ES8311、麦克风、NS4150B 扬声器功放 |
 | 扩展与调试 | MIPI 摄像头、microSD、USB、BOOT / RESET、C6 下载排针 |
 
-目标屏为启明云端 / Wireless-Tag **WTP4C5MP07S（ZX7D00C1060M002A）**：7 寸、1024 × 600、EK79007AD + EK73217、GT911。公开参数为 400 nit、−20～70 °C。供货、报价及车内高温和阳光可视性需要用样品与供应商确认，尚未锁定量产屏幕。
+旧目标屏为启明云端 / Wireless-Tag **WTP4C5MP07S（ZX7D00C1060M002A）**：7 寸、1024 × 600、EK79007AD + EK73217、GT911。它现为电路来源与对照对象，新目标以 [PANEL_TARGET.md](PANEL_TARGET.md) 的指定 SKU 为准。
 
 J302 沿用参考 BOM 的 AFC01-S30FCA-00。J308 沿用参考设计的 `FFC6P_0P5_UP` 焊盘，尚未把未经机械尺寸核验的替代料写成确定 MPN。装配前核对 FPC 接触面、排线厚度、焊脚尺寸和锁扣方向。
 

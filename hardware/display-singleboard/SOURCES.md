@@ -12,3 +12,8 @@
 - [TI SN74LVC1G07 数据手册](https://www.ti.com/lit/ds/symlink/sn74lvc1g07.pdf)：开漏输出 LCD 复位电平适配。
 
 符号来源包括 [KiCad 官方库](https://www.kicad.org/libraries/license/) 与 [Espressif KiCad Libraries](https://github.com/espressif/kicad-libraries)。项目局部修改保留来源说明；`symbol-provenance.json` 追溯到被整合的工程。Espressif 库许可文本见 `LIBRARY_LICENSE.md`；KiCad 库许可包含对使用库设计的电路板的例外。参考设计本身的权利与使用条件以源文件和原发布者说明为准。
+
+A3 结构复核：
+
+- [XKB SS-12D10L3 厂家机械图 A1](https://datasheet.lcsc.com/datasheet/pdf/562955152e0d35ebc194db3482640805.pdf?productCode=C319013)：13 × 6.8 mm 本体、6.4 mm 本体高度、3 mm 柄、2.2 mm 行程、4.7 mm 引脚间距。
+- [Espressif C6 整机天线布置指南](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c6/pcb-layout-design.html)：外壳内天线净空与整机无线测试。

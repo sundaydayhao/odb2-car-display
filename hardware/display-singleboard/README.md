@@ -1,8 +1,8 @@
-# 7 寸显示主板 A1：单板方案
+# 7 寸显示主板 A2：单板方案
 
-本工程把 **ESP32-P4X + ESP32-C6、LCD 电源、背光驱动和 GT911 触摸接口**合并到一块 134 × 74 mm、4 层、名义厚度 1.6 mm 的 PCB。打开 `display_singleboard.kicad_pro`；原理图入口为 `display_singleboard.kicad_sch`。
+本工程把 **ESP32-P4X + ESP32-C6、LCD 电源、背光驱动和 GT911 触摸接口**合并到一块 120 × 74 mm、4 层、名义厚度 1.6 mm 的 PCB。打开 `display_singleboard.kicad_pro`；原理图入口为 `display_singleboard.kicad_sch`。
 
-这是当前显示端的主方案。旧 `display-mainboard` / `display-lcd-adapter` 是电路来源检查点，不需要制作旧双板；前期软件和屏幕验证使用官方 ESP32-P4 Function EV Board。
+这是当前显示端的主方案。A2 将 A1 左侧屏电路向主控收拢 14 mm，面积减少约 10.4%；尺寸依据和安装孔变更见 [MECHANICAL.md](MECHANICAL.md)。旧 `display-mainboard` / `display-lcd-adapter` 是电路来源检查点，不需要制作旧双板；前期软件和屏幕验证使用官方 ESP32-P4 Function EV Board。
 
 ## 屏幕怎样连接
 
@@ -51,6 +51,6 @@ J302 沿用参考 BOM 的 AFC01-S30FCA-00。J308 沿用参考设计的 `FFC6P_0P
 
 L2 保留接地参考；新增屏电源主干在 L3。差分线的布线目标为 MIPI 100 Ω、USB 90 Ω；实际阻抗需要板厂结合外层约 0.08 mm 介质、铜厚、材料与阻焊求解。工程中的线宽和等长检查不等于实测阻抗、眼图或 EMC 合格。
 
-本工程交付的是可编辑原理图和 PCB，尚未进行本板打样、实板点亮、热测试和生产放行。保留参考板的 4 个安装孔，并在左侧增加 H301 / H302 两个 M3 支撑孔；外壳、屏幕 FPC 可达性和金属背板距离仍需与整机结构一起确认。
+本工程交付的是可编辑原理图和 PCB，尚未进行本板打样、实板点亮、热测试和生产放行。保留 H1 / H2 / H4，调整 H3 位置，并保留左侧 H301 / H302 两个 M3 支撑孔；外壳、屏幕 FPC 可达性和金属背板距离仍需与整机结构一起确认。
 
 最终检查结果见 `VERIFICATION.md`，接口逐针定义见 `INTERFACES.md`。逐器件装配状态见 `assembly.csv`；参考设计来源及库授权见 `SOURCES.md`。

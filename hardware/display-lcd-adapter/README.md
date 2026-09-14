@@ -1,6 +1,6 @@
 # 7 寸 LCD / GT911 转接板 A0
 
-> 已整合进 [A1 单板工程](../display-singleboard/README.md)。本目录仅保留参考来源；屏幕和触摸排线现在直接插入 A1 主板的 J302 / J308，不需要制作本转接板。
+> 已整合进 [A2 单板工程](../display-singleboard/README.md)。本目录仅保留参考来源；屏幕和触摸排线现在直接插入 A2 主板的 J302 / J308，不需要制作本转接板。
 
 打开 `display_lcd_adapter.kicad_pro`。工程包含 4 页原理图、已布线双面 PCB、本地符号 / 封装库及 `assembly.csv`。
 

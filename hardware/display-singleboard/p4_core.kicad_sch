@@ -3254,7 +3254,7 @@
 	(title_block
 		(title "ESP32-P4X core / clocks / supplies")
 		(date "2026-09-14")
-		(rev "A1")
+		(rev "A2")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -3268,7 +3268,7 @@
 		)
 		(uuid "c4aa6fc9-e53a-5387-ad8e-88ea6b083b11")
 	)
-	(text "A1 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A2 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font

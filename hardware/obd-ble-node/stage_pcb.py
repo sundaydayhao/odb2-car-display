@@ -31,7 +31,7 @@ for name,members in config['expected_nets'].items():
     assert actual==set(map(tuple,members)), (name,actual.symmetric_difference(set(map(tuple,members))))
 board=k.BOARD();board.SetCopperLayerCount(4)
 settings=board.GetDesignSettings();settings.SetCopperLayerCount(4)
-settings.m_TrackMinWidth=k.FromMM(.15);settings.m_MinClearance=k.FromMM(.15)
+settings.m_TrackMinWidth=k.FromMM(.127);settings.m_MinClearance=k.FromMM(.127)
 settings.m_CopperEdgeClearance=k.FromMM(.25)
 def v(x,y): return k.VECTOR2I(round(x*1_000_000),round(y*1_000_000))
 for a,b in [((100,100),(138.5,100)),((138.5,100),(138.5,116.6)),((138.5,116.6),(100,116.6)),((100,116.6),(100,100))]:

@@ -9,7 +9,7 @@ ESP32-P4 Function EV Board **v1.4**，原配 **7 寸 1024×600 触屏与 MIPI �
 
 2026-09-14：Android 采集 App 更新至 0.2.0，提供采集／记录／设置三页、浅深色主题和大屏分类设置，验证范围见 [App 说明](android-app/README.md)。
 另有独立的 [OBDNode-C3 采集固件](firmware/obd_ble_node/README.md) 和 [38.5 × 16.6 mm KiCad 硬件草案](hardware/obd-ble-node/README.md)，包含停车低功耗策略。
-主采集板尚未完成布线；[16 针直焊试配板](hardware/obd-ble-node/mechanical-reference/README.md) 采用笔直同轴尾脚假设，现有插头适配及停车电流仍待实物验证，不能直接用于量产。
+主采集板 A1 已把 16 针直焊孔、蓝牙、CAN 和电源电路整合并完成布线，ERC／DRC／未连接项／原理图一致性均为 0；[完整 KiCad 工程与验证记录](hardware/obd-ble-node/README.md)。现有插头适配、射频和停车电流仍待实物验证，不能直接用于量产；`mechanical-reference/` 只保留早期孔位对照件。
 
 2026-09-11 / 固件 0.2.6：底部新增第六页「多媒体」，提供联网 MP3 音乐、网络电台、播放暂停、切换曲目/电台、停止与音量控制。
 「设置 → 多媒体」保存自定义音乐/电台直链；开机不自动播放，广播通过网络收听，功能与音源说明见 [联网多媒体](docs/MEDIA.md)。

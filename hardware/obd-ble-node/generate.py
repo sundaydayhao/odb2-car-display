@@ -197,7 +197,7 @@ for p in parts:
     x,y,angle,side=integrated[p['ref']]
     p.update(pcb=[100+x,100+y],angle=angle,side=side)
 doc=build.empty_sheet(uid('root'),'A2'); segments=[]; pins=[]; expected={}
-doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A1 - INTEGRATED PROTOTYPE"))'))
+doc.insert(7,parse('(title_block (title "OBD CAN / BLE Node") (date "2026-09-14") (rev "A1 PROTOTYPE"))'))
 for p in parts:
     definition=p['symbol']; libpins=list(sexp.walk(definition,'pin'))
     names=[atoms(find(n,'number'))[0] for n in libpins]
@@ -281,10 +281,10 @@ assert parts[0]['ref']=='J1' and parts[0]['footprint'].startswith('Node:OBD_')
 sexp.save_file(str(ROOT/(NAME+'.kicad_sch')),doc)
 project=ROOT/(NAME+'.kicad_pro')
 project_data=json.loads(project.read_text()) if project.exists() else {'meta':{'filename':project.name,'version':1}}
-project_data.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update({'min_clearance':0.15,'min_track_width':0.15,'min_copper_edge_clearance':0.25,'min_text_height':0.6,'min_text_thickness':0.1,'min_through_hole_diameter':0.2,'min_via_diameter':0.45})
-project_data['net_settings']={'classes':[{'name':'Default','clearance':0.15,'track_width':0.15,'via_diameter':0.45,'via_drill':0.2,'pcb_color':'rgba(0, 0, 0, 0.000)','schematic_color':'rgba(0, 0, 0, 0.000)'}],'meta':{'version':3}}
+project_data.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update({'min_clearance':0.127,'min_track_width':0.127,'min_copper_edge_clearance':0.25,'min_text_height':0.6,'min_text_thickness':0.1,'min_through_hole_diameter':0.2,'min_via_diameter':0.4,'min_hole_clearance':0.2})
+project_data['net_settings']={'classes':[{'name':'Default','clearance':0.127,'track_width':0.127,'via_diameter':0.4,'via_drill':0.2,'pcb_color':'rgba(0, 0, 0, 0.000)','schematic_color':'rgba(0, 0, 0, 0.000)'}],'meta':{'version':3}}
 project.write_text(json.dumps(project_data,indent=2))
-(ROOT/(NAME+'.kicad_dru')).write_text('(version 1)\n(rule "Core copper clearance" (constraint clearance (min 0.15)))\n')
+(ROOT/(NAME+'.kicad_dru')).write_text('(version 1)\n(rule "Core copper clearance" (constraint clearance (min 0.127)))\n')
 libtree=parse('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor"))')
 for name,definition in custom.items():
     definition=copy.deepcopy(definition); definition[1]=q(name); libtree.append(definition)

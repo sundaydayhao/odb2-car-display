@@ -25,8 +25,8 @@ def main():
         for x,y in zip(points,points[1:]):
             if x==y:continue
             t=k.PCB_TRACK(b);t.SetStart(v(*x));t.SetEnd(v(*y));t.SetWidth(k.FromMM(width));t.SetLayer(layer);t.SetNet(b.FindNet('/'+name));t.SetLocked(True);b.Add(t)
-    def via(name,pt):
-        t=k.PCB_VIA(b);t.SetPosition(v(*pt));t.SetWidth(k.FromMM(.45));t.SetDrill(k.FromMM(.2));t.SetViaType(k.VIATYPE_THROUGH);t.SetLayerPair(k.F_Cu,k.B_Cu);t.SetNet(b.FindNet('/'+name));t.SetLocked(True);b.Add(t)
+    def via(name,pt,diameter=.45):
+        t=k.PCB_VIA(b);t.SetPosition(v(*pt));t.SetWidth(k.FromMM(diameter));t.SetDrill(k.FromMM(.2));t.SetViaType(k.VIATYPE_THROUGH);t.SetLayerPair(k.F_Cu,k.B_Cu);t.SetNet(b.FindNet('/'+name));t.SetLocked(True);b.Add(t)
     def pt(ref,n):return xy(pads[(ref,str(n))].GetPosition())
     # RF is kept on F.Cu over the dedicated In1 ground reference.
     track('RF_SOC',[pt('U5',1),(123.1,106.55),(122.77,106.22),pt('C20',1),(121.64,106.22),pt('L2',1)],width=.18)
@@ -41,7 +41,8 @@ def main():
     track('+5V',[pt('L1',2),(114.1,108.3),pt('C4',1)],width=.5)
     # Ground fanout: each pad gets a local through via without crossing another
     # net's pad on either outer layer. KiCad DRC remains authoritative.
-    nonground=[p for f in b.GetFootprints() for p in f.Pads() if p.GetNumber() and p.GetNetname()!='/GND']
+    allpads=[p for f in b.GetFootprints() for p in f.Pads() if p.GetNumber()]
+    nonground=[p for p in allpads if p.GetNetname()!='/GND']
     keepouts=[z.GetBoundingBox() for f in b.GetFootprints() for z in f.Zones() if z.GetIsRuleArea()]
     critical=[t for t in b.GetTracks() if t.GetNetname()!='/GND']
     def track_width(t):return k.ToMM(t.GetWidth(k.F_Cu) if isinstance(t,k.PCB_VIA) else t.GetWidth())
@@ -52,6 +53,31 @@ def main():
         return math.hypot(x-ax-u*(bx-ax),y-ay-u*(by-ay))
     def dist_box(x,y,bb):
         return math.hypot(max(k.ToMM(bb.GetLeft())-x,0,x-k.ToMM(bb.GetRight())),max(k.ToMM(bb.GetTop())-y,0,y-k.ToMM(bb.GetBottom())))
+    fanout=[];fanout_deferred=[]
+    for p in fps['U5'].Pads():
+        if not p.GetNumber():continue
+        n=int(p.GetNumber());name=p.GetNetname()
+        if n in [1,2,3,33] or name.startswith('unconnected-'):continue
+        sx,sy=xy(p.GetPosition());options=[]
+        if 4<=n<=8:options=[(x,sy+dy) for x in [123.1,122.9,122.7,123.7] for dy in [0,.05,-.05,.12,-.12]]
+        elif 9<=n<=16:options=[(sx+dx,y) for y in [111.08,111.25,110.58] for dx in [0,.05,-.05,.12,-.12]]
+        elif n in [17,18]:options=[(x,sy+dy) for x in [128.95,129.2,128.2] for dy in [0,.15,-.15,.22,-.22]]
+        else:options=[(sx+dx,y) for y in [105.35,105.55,106.02] for dx in [0,.05,-.05,.12,-.12]]
+        obstacles=[o for o in allpads if o.GetNetname()!=name]
+        for end in options:
+            if any(dist_box(*end,o.GetBoundingBox())<.350001 for o in obstacles):continue
+            if any(dist_box(*end,bb)<.25 for bb in keepouts):continue
+            others=[t for t in b.GetTracks() if t.GetNetname()!=name]
+            if any(dist_segment(*end,t)<.327001+track_width(t)/2 for t in others):continue
+            steps=max(1,math.ceil(math.dist((sx,sy),end)/.025));good=True
+            for i in range(steps+1):
+                x=sx+(end[0]-sx)*i/steps;y=sy+(end[1]-sy)*i/steps
+                if any(o.IsOnLayer(k.F_Cu) and dist_box(x,y,o.GetBoundingBox())<.202001 for o in obstacles):good=False;break
+                if any(t.IsOnLayer(k.F_Cu) and dist_segment(x,y,t)<.202001+track_width(t)/2 for t in others):good=False;break
+            if good:
+                track(name[1:],[(sx,sy),end],width=.15);via(name[1:],end,.4);fanout.append(n);break
+        else:fanout_deferred.append(n)
+    critical=[t for t in b.GetTracks() if t.GetNetname()!='/GND']
     def clear_point(x,y,r=.375):
         return 100.5<x<138 and 100.5<y<116.1 and all(dist_box(x,y,p.GetBoundingBox())>=r for p in nonground) and all(dist_box(x,y,bb)>=.25 for bb in keepouts) and all(dist_segment(x,y,t)>=r+track_width(t)/2 for t in critical)
     def clear_stub(start,end,layer):
@@ -88,6 +114,6 @@ def main():
     source='(layer In1.Cu\n      (type signal)'
     assert dsn.count(source)==1
     (out/'integrated.dsn').write_text(dsn.replace(source,'(layer In1.Cu\n      (type power)',1))
-    (out/'routing-preparation.json').write_text(json.dumps({'ground_vias':len(ground_vias),'ground_fanout_deferred':omitted,'ground_reference':'In1.Cu','critical_tracks_locked':True},indent=2))
-    print('Routing prepared; ground fanout deferred:',omitted)
+    (out/'routing-preparation.json').write_text(json.dumps({'ground_vias':len(ground_vias),'ground_fanout_deferred':omitted,'mcu_fanout_pads':fanout,'mcu_fanout_deferred':fanout_deferred,'ground_reference':'In1.Cu','critical_tracks_locked':True},indent=2))
+    print('Routing prepared; ground fanout deferred:',omitted,'MCU fanout deferred:',fanout_deferred)
 if __name__=='__main__':main()

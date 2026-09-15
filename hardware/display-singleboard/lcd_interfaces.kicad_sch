@@ -953,7 +953,7 @@
 				(pin passive line
 					(at -20.32 6.35 0)
 					(length 5.08)
-					(name "RESET_TP"
+					(name "SHUTDOWN_CTRL"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -971,7 +971,7 @@
 				(pin passive line
 					(at -20.32 2.54 0)
 					(length 5.08)
-					(name "VDD_3V3"
+					(name "CTP_VCC"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1355,13 +1355,13 @@
 	)
 	(embedded_fonts no)
 	(title_block
-		(title "On-board LCD / GT911 / reset level adaptation")
-		(date "2026-09-14")
-		(rev "A4")
+		(title "On-board LCD / I2C CTP / reset level adaptation")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
-	(text "On-board LCD / GT911 / reset level adaptation"
+	(text "On-board LCD / I2C CTP / reset level adaptation"
 		(at 15.24 12.7 0)
 		(effects
 			(font
@@ -1371,7 +1371,7 @@
 		)
 		(uuid "1c5c91db-53f8-5142-b96e-57a4c4d646b8")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font
@@ -1402,7 +1402,7 @@
 				)
 			)
 		)
-		(property "Value" "LCD_30P_0.5mm"
+		(property "Value" "JD9165_MIPI_2L_30P"
 			(at 86.36 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2427,7 +2427,7 @@
 				)
 			)
 		)
-		(property "Value" "GT911_6P_0.5mm"
+		(property "Value" "CTP_I2C_6P_0.5mm"
 			(at 226.06 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4933,5 +4933,32 @@
 			(justify left)
 		)
 		(uuid "02f5d110-f67c-5676-ba7e-441802b45037")
+	)
+	(text "JD9165 target: MIPI DSI. Module must be configured for 2 lanes (D0/D1).\nJ302 CLK 17/18, D1 20/21, D0 23/24. D2/D3 pins are NC; no RGB interface.\nLANSEL is not exposed by this 30-pin FPC; default driver does not select panel lane count."
+		(at 288 164 0)
+		(effects
+			(font
+				(size 1.7 1.7)
+			)
+		)
+		(uuid "e579ab27-a9ba-4390-8c5e-2bfef96c4dee")
+	)
+	(text "CTP J308: 1 Shutdown/control, 2 VCC, 3 GND, 4 INT, 5 SDA, 6 SCL.\nPin 1 polarity and touch IC require the selected module specification. GPIO23 is retained."
+		(at 288 182 0)
+		(effects
+			(font
+				(size 1.7 1.7)
+			)
+		)
+		(uuid "210dc094-79d2-4ab8-901f-cc91b18c02dd")
+	)
+	(text "The listed RGB 3.3 V supply is not a MIPI voltage specification.\nPanel rail targets and backlight current remain unqualified until the module data is supplied."
+		(at 288 201 0)
+		(effects
+			(font
+				(size 1.7 1.7)
+			)
+		)
+		(uuid "b3bf81c7-153e-4b44-b37a-06a244084258")
 	)
 )

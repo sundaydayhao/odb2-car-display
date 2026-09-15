@@ -13,11 +13,11 @@
 	(embedded_fonts no)
 	(title_block
 		(title "7 inch integrated P4 display controller")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 	)
-	(text "7 INCH SINGLE BOARD / P4X + C6 + LCD + GT911"
+	(text "7 INCH SINGLE BOARD / P4X + C6 + LCD + I2C CTP"
 		(at 20.32 15.24 0)
 		(effects
 			(font
@@ -85,7 +85,7 @@
 			)
 		)
 	)
-	(text "47 symbols / global net labels"
+	(text "38 symbols / global net labels"
 		(at 24.13 58.42 0)
 		(effects
 			(font
@@ -133,7 +133,7 @@
 			)
 		)
 	)
-	(text "69 symbols / global net labels"
+	(text "76 symbols / global net labels"
 		(at 212.09 58.42 0)
 		(effects
 			(font
@@ -181,7 +181,7 @@
 			)
 		)
 	)
-	(text "81 symbols / global net labels"
+	(text "77 symbols / global net labels"
 		(at 400.05 58.42 0)
 		(effects
 			(font
@@ -373,7 +373,7 @@
 			)
 		)
 	)
-	(text "26 symbols / global net labels"
+	(text "7 symbols / global net labels"
 		(at 24.13 185.42 0)
 		(effects
 			(font
@@ -395,7 +395,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "e58f855f-9abe-5012-bb97-7604bb5f833a")
-		(property "Sheetname" "On-board LCD / GT911 / reset level adaptation"
+		(property "Sheetname" "On-board LCD / I2C CTP / reset level adaptation"
 			(at 208.28 176.53 0)
 			(effects
 				(font

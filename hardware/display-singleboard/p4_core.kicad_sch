@@ -3253,8 +3253,8 @@
 	(embedded_fonts no)
 	(title_block
 		(title "ESP32-P4X core / clocks / supplies")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -3268,7 +3268,7 @@
 		)
 		(uuid "c4aa6fc9-e53a-5387-ad8e-88ea6b083b11")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font
@@ -5188,66 +5188,6 @@
 		(uuid "e2e843bb-0c6a-5ed1-b29b-4a4f0110cace")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 48.26 236.22 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 55.88 240.03) (xy 48.26 240.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5da90a97-05e8-4d73-98b6-77799d58c012")
-	)
-	(global_label "GPIO24"
-		(shape bidirectional)
-		(at 48.26 240.03 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(uuid "b56cb25c-0f84-5fbc-9954-8efc65b04f3d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 48.26 240.03 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 55.88 243.84) (xy 48.26 243.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "99e1dd7f-c790-4ed5-8344-fe51e86ef0f6")
-	)
-	(global_label "GPIO25"
-		(shape bidirectional)
-		(at 48.26 243.84 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(uuid "e162ec90-b0bb-51e5-97d4-337b21b73c1b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 48.26 243.84 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -15789,5 +15729,817 @@
 			(justify left top)
 		)
 		(uuid "fe1b283f-7f8a-4cdf-87b2-9b5a30cfcdd2")
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 50.8 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fc970fee-d439-48df-942b-43807ca9a6d3")
+		(property "Reference" "TP401"
+			(at 36.83 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 36.83 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 50.8 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6f038354-dddb-473d-a2aa-15a23b59b73e")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP401")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 50.8 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 378.46) (xy 50.8 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59c64976-1e9d-4e34-ba01-3b9caf57a4cb")
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "99a4c74b-82e9-4b4d-b3cc-34bd68ad839a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 86.36 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "77f42741-16bb-4a6e-807a-33db35efae13")
+		(property "Reference" "TP402"
+			(at 72.39 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 72.39 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 86.36 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "81c000fb-44e0-4c9f-88c3-2a4611863566")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP402")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 86.36 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 86.36 378.46) (xy 86.36 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08e699f1-9896-45d1-b1c4-e0a0edac0974")
+	)
+	(global_label "VIN_5V"
+		(shape bidirectional)
+		(at 86.36 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "befdebf6-3f8f-4aea-a361-ce8b396978be")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 86.36 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 121.92 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "47599a49-fb21-4473-9687-be1771140764")
+		(property "Reference" "TP403"
+			(at 107.95 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 107.95 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 121.92 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3840836-7ddf-49ef-866d-fa59383209a4")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP403")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 121.92 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 121.92 378.46) (xy 121.92 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fd01f25-ec6e-4b2b-b53f-b2783af95583")
+	)
+	(global_label "ESP_3V3"
+		(shape bidirectional)
+		(at 121.92 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "d7b19582-3023-42be-bbac-c7020f74c4c5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 121.92 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 157.48 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d1c1e7c3-7ca5-4225-ac12-3baf5f1d0ae0")
+		(property "Reference" "TP404"
+			(at 143.51 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 143.51 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 157.48 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2c02525e-c1cc-4841-9e4b-523d424b1b90")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP404")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 157.48 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 157.48 378.46) (xy 157.48 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a13c25e-4e99-4177-9b71-d1cd7cb5d559")
+	)
+	(global_label "GPIO37"
+		(shape bidirectional)
+		(at 157.48 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "ca40d7fa-54b5-47e6-b35c-01e6e2371a86")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 193.04 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "00766f61-1f8e-4474-be3d-35fbb79540e6")
+		(property "Reference" "TP405"
+			(at 179.07 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 179.07 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 193.04 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f4f1864-cbcd-4303-a850-5064a8d210c9")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP405")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 193.04 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 193.04 378.46) (xy 193.04 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f771842a-2be8-4a27-9783-7986a8a88038")
+	)
+	(global_label "GPIO38"
+		(shape bidirectional)
+		(at 193.04 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "7085459e-63c3-473f-887d-068537dac08d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 193.04 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 228.6 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8ead32f3-65d8-43d9-9da7-b44b865f1323")
+		(property "Reference" "TP406"
+			(at 214.63 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 214.63 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 228.6 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "445a0a77-f603-4f20-8805-d5783d1a68ca")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP406")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 228.6 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 228.6 378.46) (xy 228.6 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e84e4b59-0064-4b33-9a46-266f23951f2c")
+	)
+	(global_label "ESP_EN"
+		(shape bidirectional)
+		(at 228.6 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "39741374-eec6-41bd-a229-36e3f0493071")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Connector_TestPoint")
+		(at 264.16 378.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "65e61bb6-56f7-43fa-96be-da47ba1af5be")
+		(property "Reference" "TP407"
+			(at 250.19 374.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "TEST"
+			(at 250.19 377.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:TPC1__56d55e75a0"
+			(at 264.16 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91875ff2-1198-4f8f-bed1-ee9e368ecd20")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/1afcc05b-b6be-53ed-953e-55a0f5de3545"
+					(reference "TP407")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 264.16 378.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 264.16 378.46) (xy 264.16 382.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02991e71-bbff-4705-870b-7fbed1170cd2")
+	)
+	(global_label "GPIO35_BOOTMODE"
+		(shape bidirectional)
+		(at 264.16 382.27 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "dcf7fb5f-4f74-41da-97f6-b6e17d402310")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 264.16 382.27 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(text "A5: UART0 factory pads: TX=GPIO37, RX=GPIO38. 3.3 V logic. BOOT low during EN reset; power through VIN_5V."
+		(at 15.24 363.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "671cc9cf-7494-4d5b-892c-c5a69308c3aa")
+	)
+	(wire
+		(pts
+			(xy 55.88 240.03) (xy 48.26 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5da90a97-05e8-4d73-98b6-77799d58c012")
+	)
+	(global_label "GPIO24"
+		(shape bidirectional)
+		(at 48.26 240.03 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "b56cb25c-0f84-5fbc-9954-8efc65b04f3d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 48.26 240.03 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 55.88 243.84) (xy 48.26 243.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99e1dd7f-c790-4ed5-8344-fe51e86ef0f6")
+	)
+	(global_label "GPIO25"
+		(shape bidirectional)
+		(at 48.26 243.84 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "e162ec90-b0bb-51e5-97d4-337b21b73c1b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 48.26 243.84 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
 	)
 )

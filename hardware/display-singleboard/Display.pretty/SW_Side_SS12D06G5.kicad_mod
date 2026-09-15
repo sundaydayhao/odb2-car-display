@@ -1,0 +1,85 @@
+(footprint "SW_Side_SS12D06G5"
+	(version 20260206)
+	(generator "pcbnew")
+	(layer "F.Cu")
+	(attr through_hole)
+	(property "Reference" "REF**"
+		(at 0 3 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness .15)
+			)
+		)
+	)
+	(property "Value" "SS-12D06G5"
+		(at 0 -7.3 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness .15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -4.7 0)
+		(size 2.7 2.7)
+		(drill 1.8)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "2" thru_hole circle
+		(at 0 0)
+		(size 2.7 2.7)
+		(drill 1.8)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "3" thru_hole circle
+		(at 4.7 0)
+		(size 2.7 2.7)
+		(drill 1.8)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_rect
+		(start -6.35 -10.5)
+		(end 6.35 -4.1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -6.35 -10.5)
+		(end 6.35 -4.1)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+	)
+	(fp_rect
+		(start -6.6 -10.75)
+		(end 6.6 1.6)
+		(stroke
+			(width .05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(model "${KIPRJMOD}/Display.3dshapes/Mechanical_SS12D06G5.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

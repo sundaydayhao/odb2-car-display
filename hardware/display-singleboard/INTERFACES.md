@@ -1,49 +1,55 @@
-# A4 单板接口
+# A6 单板接口
 
-连接器编号是本工程编号。旧 LCD 转接板器件编号加 300，例如旧 U1 → U301、旧 J2 → J302；主控电路编号保持不变。
-
-> 新屏选型已变更。下列 LCD / 触摸针序及偏压描述为旧屏电路基线，尚未验证适用于新 SKU；见 [PANEL_TARGET.md](PANEL_TARGET.md)。
+LCD 按指定 JD9165 屏的 MIPI 针表接线，触摸按通用 I²C 针表定义。供电、两通道配置和接触面尚需对应成品模组确认，见 [PANEL_TARGET.md](PANEL_TARGET.md)。
 
 ## LCD：J302
 
-30 针、0.5 mm LCD FPC，AFC01-S30FCA-00。针号以 PCB / 原理图焊盘编号为准，不能按俯视图左右方向猜测。
+30 针、0.5 mm，朝屏幕的 B 面。现有 AFC01-S30FCA-00 几何为候选，最终接触面与 FPC 厚度须确认。
 
 | 针号 | 信号 | 针号 | 信号 |
 | --- | --- | --- | --- |
-| 1 / 2 | LED+ | 17 | MIPI CLK+ |
-| 3 | VGH | 18 | MIPI CLK− |
+| 1 / 2 | LED+ | 17 | CLK+ |
+| 3 | VGH | 18 | CLK− |
 | 4 | VGL | 19 | GND |
-| 5 | UPDN，1.8 V 侧配置 | 20 | MIPI DATA1+ |
-| 6 | SHLR，1.8 V 侧配置 | 21 | MIPI DATA1− |
+| 5 | UPDN，LCD VDD 域 | 20 | D1+ |
+| 6 | SHLR，LCD VDD 域 | 21 | D1− |
 | 7 / 8 | LED− | 22 | GND |
-| 9 | AVDD | 23 | MIPI DATA0+ |
-| 10 | GND | 24 | MIPI DATA0− |
-| 11 / 12 | 未用 DATA3 | 25 | GND |
-| 13 | GND | 26 | STBYB，1.8 V 侧配置 |
-| 14 / 15 | 未用 DATA2 | 27 | LCD RESET，1.8 V 开漏 |
-| 16 | GND | 28 / 29 | LCD VDD 1.8 V |
+| 9 | AVDD | 23 | D0+ |
+| 10 | GND | 24 | D0− |
+| 11 / 12 | D3，未连接 | 25 | GND |
+| 13 | GND | 26 | STBYB，LCD VDD 域 |
+| 14 / 15 | D2，未连接 | 27 | LCD RESET，开漏上拉到 LCD VDD |
+| 16 | GND | 28 / 29 | LCD VDD，电路现为 1.8 V |
 | — | — | 30 | VCOM |
 
-焊盘 31 / 32 是连接器固定焊脚，接地，不是屏幕排线信号针。
+31 / 32 为接地安装焊盘，不是屏幕排线信号针。板内使用 CLK、D0、D1 三对，成品屏需支持相同的两数据通道配置。
 
-## GT911：J308
+## 触摸：J308
 
-6 针、0.5 mm、上接触，焊盘几何来自参考 `FFC6P_0P5_UP`；具体采购 MPN 尚需机械核验。
+6 针、0.5 mm，B 面。封装来自参考 `FFC6P_0P5_UP`，采购前核对接触面；“B 面”不等于连接器内部下接触。
 
-| 针号 | 信号 | P4 GPIO / 电源 |
+| 针号 | 信号 | 连接 |
 | --- | --- | --- |
-| 1 | RESET_TP | GPIO23 |
-| 2 | VCC | ESP_3V3 |
+| 1 | Shutdown / control | GPIO23；有效电平待确认 |
+| 2 | VCC | ESP_3V3；模组额定电压待确认 |
 | 3 | GND | GND |
-| 4 | INT_TP | GPIO22 |
-| 5 | SDA | GPIO7，经原有 I²C 选路电阻 |
-| 6 | SCL | GPIO8，经原有 I²C 选路电阻 |
+| 4 | INT | GPIO22 |
+| 5 | SDA | GPIO7，经 R8 选路 |
+| 6 | SCL | GPIO8，经 R9 选路 |
 
-焊盘 7 / 8 是接地固定焊脚。GT911 通过复位期间的 INT 电平选择 0x5D / 0x14 地址；R340 的 100 kΩ 下拉不能替代固件时序，也不能保证压过屏模组内部上拉。
+7 / 8 为接地固定焊脚。尚未确认触摸 IC，不能套用 GT911 的地址选择或复位时序。
 
-## 屏幕电源测量点
+## 摄像头、USB 与电源
 
-| 测量点 | 目标电压 |
+- J9 保留 MIPI CSI，F 面竖插；接线延续参考相机接口，移动后重布 CSI 差分线。
+- J18 是唯一 USB HS A 母座，作为 Host 使用，由 U9 控制 VBUS。该外形不提供 Type-C 角色协商。
+- J19 是独立 USB Serial/JTAG 调试口；GPIO24 / GPIO25 接 P4 原生调试 USB。UART 备用下载接触点与 BOOT / RESET 保留。
+- J22 输入稳压 5 V，经输入汇流与 U401 受控供电。SW3 是上侧壁可操作的大拨杆开关。不要将车载 12 V 直接接本板。
+- 移除额外 HS 端口、备用 FS 端口及其专用外围；以太网口、PHY 和晶振已移除。Wi-Fi / BLE、microSD、音频功能保留。
+
+## 屏电源测量点
+
+| 测量点 | 当前电路名义值 |
 | --- | --- |
 | TP301 | VGL，约 −6 V |
 | TP302 | VGH，约 18 V |
@@ -51,8 +57,8 @@
 | TP304 | AVDD，约 9.6 V |
 | TP305 | LCD VDD，1.8 V |
 
-以上为参考目标，实际值按目标屏规格与实板测量判定。屏幕供电直接来自本板的稳压 5 V 输入，不再需要两板之间的辅助供电线束。
+这些是现有电路设置，不是已获厂家确认的新屏工作电压。背光 R312=1.1 Ω 对应约 182 mA，同样需要按新屏额定值核定。
 
-## 无线网络与移除以太网后的 GPIO
+## USB HS protection population
 
-A4 无 RJ45 或外置以太网 PHY。ESP32-C6 的 Wi-Fi / BLE 及与 P4 相连的 SDIO 接口保持不变。U4 的 GPIO28～31、GPIO49～52 原只连接以太网，现明确标注 NC；GPIO34 / GPIO35 的原有扩展选路仍保留。microSD 电源开关 Q8、下拉 R229、备用不装 R230 和 GPIO45 控制线均保留；C1 是 C6 输入去耦，也继续装配。
+D21/D22 are fitted TI TPD1E05U06DPYR (C436349). D21.1=USB_DP_A, D22.1=USB_DM_A; both pin 2=GND. Dedicated TI DPY0002A lands and matching model are used; USB routing is unchanged. See ESD_PROTECTION.md.

@@ -2322,8 +2322,8 @@
 	(embedded_fonts no)
 	(title_block
 		(title "ESP32-C6 Wi-Fi + BLE / microSD")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -2337,7 +2337,7 @@
 		)
 		(uuid "2eb2d117-28b0-5731-8f5f-aebc329fea28")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font

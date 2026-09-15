@@ -1,0 +1,18 @@
+(version 1)
+# Preserve at least 0.5 mm of L3 GND beyond DSI B copper edges.
+(rule "DSI B ground reference CONNECTOR"
+ (layer In2.Cu)
+ (condition "A.NetName != 'GND' && !(A.Type == 'Via' && A.NetName == 'DSI_A_*') && A.intersectsArea('DSI_B_GND_CONNECTOR')")
+ (constraint disallow track via pad zone))
+(rule "DSI B ground reference SOURCE"
+ (layer In2.Cu)
+ (condition "A.NetName != 'GND' && !(A.Type == 'Via' && A.NetName == 'DSI_A_*') && A.intersectsArea('DSI_B_GND_SOURCE')")
+ (constraint disallow track via pad zone))
+(rule "CSI B ground reference 1"
+ (layer In2.Cu)
+ (condition "A.NetName != 'GND' && !(A.Type == 'Via' && A.NetName == 'CSI_A_*') && A.intersectsArea('CSI_B_GND_1')")
+ (constraint disallow track via pad zone))
+(rule "CSI B ground reference 2"
+ (layer In2.Cu)
+ (condition "A.NetName != 'GND' && !(A.Type == 'Via' && A.NetName == 'CSI_A_*') && A.intersectsArea('CSI_B_GND_2')")
+ (constraint disallow track via pad zone))

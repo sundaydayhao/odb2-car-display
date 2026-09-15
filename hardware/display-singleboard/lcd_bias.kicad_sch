@@ -1198,8 +1198,8 @@
 	(embedded_fonts no)
 	(title_block
 		(title "On-board LCD bias rails / 1.8 V logic supply")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -1213,7 +1213,7 @@
 		)
 		(uuid "e5b75391-829d-534e-9828-af03e9ceb3bf")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font

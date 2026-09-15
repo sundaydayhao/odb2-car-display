@@ -1457,8 +1457,8 @@
 	(embedded_fonts no)
 	(title_block
 		(title "ES8311 codec / microphone / speaker")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -1472,7 +1472,7 @@
 		)
 		(uuid "c7a7090d-118e-523b-9599-289d3540ca42")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font
@@ -1748,7 +1748,7 @@
 		)
 		(uuid "d40d9ca2-59dc-48c4-824b-2cd03feb1206")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 48.26 64.77 0)
 		(effects
@@ -1898,7 +1898,7 @@
 		)
 		(uuid "29de4527-f272-47d2-b535-4c416ee4e4a2")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 48.26 83.82 0)
 		(effects
@@ -2228,7 +2228,7 @@
 		)
 		(uuid "67486c2a-c7df-4670-a6c3-35b8ba3e47a4")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 124.46 83.82 180)
 		(effects
@@ -2535,7 +2535,7 @@
 		)
 		(uuid "6874dc31-eebb-4e45-81f2-d3d658612062")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 254.0 57.15 180)
 		(effects
@@ -2789,114 +2789,6 @@
 		(uuid "51849ea0-c516-5dad-9ff5-66aeaf898e94")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 393.7 55.88 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display:power_PWR_FLAG")
-		(at 469.9 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c46e1c8b-81be-5b33-a4f6-bc28b3f1859e")
-		(property "Reference" "#FLG1"
-			(at 455.93 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 455.93 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" ""
-			(at 469.9 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 469.9 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "246a6ded-988b-4f14-a3e0-89ea287113e4")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/9bc17746-3e47-589e-a952-45ded0514815"
-					(reference "#FLG1")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 469.9 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 469.9 43.18) (xy 469.9 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc2738c6-84b9-461b-bc45-50c299bcea0d")
-	)
-	(global_label "AGND"
-		(shape bidirectional)
-		(at 469.9 46.99 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "81cb83c1-bc80-5394-adb9-b6aad7432701")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 469.9 46.99 180)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -3348,7 +3240,7 @@
 		)
 		(uuid "77c34907-546c-496b-b464-1ca355606070")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 190.5 101.6 180)
 		(effects
@@ -3487,7 +3379,7 @@
 		)
 		(uuid "ce0890ff-2e19-49fa-b6bd-35f875bf65f2")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 260.35 101.6 180)
 		(effects
@@ -3626,7 +3518,7 @@
 		)
 		(uuid "b00d5f38-8eb7-4763-b42a-bc2481ac5daf")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 330.2 101.6 180)
 		(effects
@@ -3765,7 +3657,7 @@
 		)
 		(uuid "360f5c6f-9651-4c0a-bc0e-4b31f1d01bbe")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 401.32 101.6 180)
 		(effects
@@ -3904,7 +3796,7 @@
 		)
 		(uuid "9b72eecb-03ec-4160-8bd3-bf2a015db11b")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 469.9 101.6 180)
 		(effects
@@ -4043,7 +3935,7 @@
 		)
 		(uuid "eda8e34f-9393-4eb6-a212-b8fea6ce983e")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 539.75 101.6 180)
 		(effects
@@ -4182,7 +4074,7 @@
 		)
 		(uuid "cac827f0-375a-4d1b-a53b-bb161daa601f")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 50.8 127.0 180)
 		(effects
@@ -4847,7 +4739,7 @@
 		)
 		(uuid "e6291aa1-4863-4bd4-a53d-94185a830f3c")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 401.32 111.76 180)
 		(effects
@@ -4986,7 +4878,7 @@
 		)
 		(uuid "f411dd2b-0486-41e5-83fc-5d353b31c438")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 469.9 111.76 180)
 		(effects
@@ -5125,7 +5017,7 @@
 		)
 		(uuid "838df93c-6bfc-47a7-bbc9-39f119fd487e")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 539.75 111.76 180)
 		(effects
@@ -5294,7 +5186,7 @@
 		)
 		(uuid "20df8f93-dfe5-4a06-9b84-7ac9215cbb78")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 50.8 152.4 180)
 		(effects
@@ -5711,7 +5603,7 @@
 		)
 		(uuid "f9bc9cc7-0dc6-4585-bf8f-563310baffff")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 260.35 152.4 180)
 		(effects
@@ -5820,7 +5712,7 @@
 		)
 		(uuid "4b714e32-8b45-42ec-a477-d52ac8fd6641")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 330.2 137.16 180)
 		(effects
@@ -5989,7 +5881,7 @@
 		)
 		(uuid "bc472db1-ef3a-420f-831c-7f17208ac1a4")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 401.32 152.4 180)
 		(effects
@@ -6406,7 +6298,7 @@
 		)
 		(uuid "0b817601-05ac-49a8-84e5-f28c4185ea9c")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 50.8 177.8 180)
 		(effects
@@ -6823,7 +6715,7 @@
 		)
 		(uuid "a8e08d27-eb22-4fff-9c33-7402e52992dd")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 260.35 177.8 180)
 		(effects
@@ -6962,7 +6854,7 @@
 		)
 		(uuid "c4f4ec9b-c1b9-496c-93af-a6ca14e6115b")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 330.2 177.8 180)
 		(effects
@@ -7101,7 +6993,7 @@
 		)
 		(uuid "c25a6060-354d-4d73-9085-424a5cc60c0c")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 401.32 177.8 180)
 		(effects
@@ -7240,7 +7132,7 @@
 		)
 		(uuid "287bdebe-194a-404c-acff-fe1ac6cf197a")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 469.9 177.8 180)
 		(effects
@@ -7349,7 +7241,7 @@
 		)
 		(uuid "82511409-2117-40d5-a448-62f3cdde7481")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 539.75 162.56 180)
 		(effects
@@ -7488,7 +7380,7 @@
 		)
 		(uuid "8d55c0f1-8ec6-460a-a19d-2b04fcd5b4a8")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 50.8 187.96 180)
 		(effects
@@ -7796,7 +7688,7 @@
 		)
 		(uuid "1f05af67-827c-4a35-aeff-276bd45a19df")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 190.5 203.2 180)
 		(effects
@@ -7971,7 +7863,7 @@
 		)
 		(uuid "453cde14-6526-4ebd-83d1-419a649bc5fe")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 288.29 194.31 180)
 		(effects
@@ -8001,7 +7893,7 @@
 		)
 		(uuid "7a934201-fe52-49fb-8d8b-96e46ed31106")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 288.29 198.12 180)
 		(effects
@@ -8835,7 +8727,7 @@
 		)
 		(uuid "41ccc7eb-6464-4ef4-b235-c41177029f20")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 121.92 228.6 180)
 		(effects
@@ -9500,7 +9392,7 @@
 		)
 		(uuid "ddc2f218-b6f7-40c7-914d-c1c83f963250")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 469.9 213.36 180)
 		(effects
@@ -10364,7 +10256,7 @@
 		)
 		(uuid "5067aedb-d9b7-4a27-b24e-3bf1bca3192b")
 	)
-	(global_label "AGND"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 330.2 254.0 180)
 		(effects
@@ -10941,145 +10833,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Display:Device_R")
-		(at 121.92 271.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3a7716d3-baa9-5c50-83a6-9bddce3cdbbd")
-		(property "Reference" "R99"
-			(at 107.95 267.97 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "0R"
-			(at 107.95 270.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Display:R0603__ca4d6f8805"
-			(at 121.92 271.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 271.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f37e7199-d391-4f36-a798-67bdcf32f4b1")
-		)
-		(pin "2"
-			(uuid "d2ad578d-2e24-4e04-a115-54cabc71d3a7")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/9bc17746-3e47-589e-a952-45ded0514815"
-					(reference "R99")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 121.92 271.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 267.97) (xy 121.92 264.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2baf5ee9-9ff5-4326-be80-2be8b8e57502")
-	)
-	(global_label "AGND"
-		(shape bidirectional)
-		(at 121.92 264.16 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "203930b4-c477-57b8-991b-86e6a4647389")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 264.16 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 275.59) (xy 121.92 279.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58019084-a211-45dd-9773-ba0916643129")
-	)
-	(global_label "GND"
-		(shape bidirectional)
-		(at 121.92 279.4 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "879c3cc7-40ac-5f11-9a2b-a12fa0c763ba")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 279.4 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Display:Connector_TestPoint")
 		(at 190.5 271.78 0)
 		(unit 1)
@@ -11502,5 +11255,15 @@
 				(hide yes)
 			)
 		)
+	)
+	(text "A5: common continuous GND reference. R99 0-ohm split-ground link removed; keep amplifier/power return currents local."
+		(at 15.24 393.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "292a2b28-a119-46ff-add9-eb8b31a4dc17")
 	)
 )

@@ -1,0 +1,130 @@
+(footprint "WSON8_TI_DSG_2x2_EP"
+	(version 20260206)
+	(generator "pcbnew")
+	(layer "F.Cu")
+	(attr smd)
+	(property "Reference" "REF**"
+		(at 0 -2.5 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness .15)
+			)
+		)
+	)
+	(property "Value" "TPS22965DSGR"
+		(at 0 2.5 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness .15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.95 -0.75)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "2" smd roundrect
+		(at -0.95 -0.25)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "3" smd roundrect
+		(at -0.95 0.25)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "4" smd roundrect
+		(at -0.95 0.75)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "5" smd roundrect
+		(at 0.95 0.75)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "6" smd roundrect
+		(at 0.95 0.25)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "7" smd roundrect
+		(at 0.95 -0.25)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "8" smd roundrect
+		(at 0.95 -0.75)
+		(size .5 .25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+	)
+	(pad "9" smd roundrect
+		(at 0 0)
+		(size .9 1.6)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(roundrect_rratio .15)
+		(solder_paste_margin -0.05)
+	)
+	(fp_rect
+		(start -1.5 -1.25)
+		(end 1.5 1.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_rect
+		(start -1 -1)
+		(end 1 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -.7 -1.12)
+		(end .7 -1.12)
+		(stroke
+			(width .12)
+			(type default)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -.7 1.12)
+		(end .7 1.12)
+		(stroke
+			(width .12)
+			(type default)
+		)
+		(layer "F.SilkS")
+	)
+	(model "${KIPRJMOD}/Display.3dshapes/LCSC_C122837_TPS22965.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

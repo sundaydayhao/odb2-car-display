@@ -154,8 +154,8 @@
 	(embedded_fonts no)
 	(title_block
 		(title "GPIO routing / configuration links")
-		(date "2026-09-14")
-		(rev "A4")
+		(date "2026-09-15")
+		(rev "A6 MIPI")
 		(company "OBD2 Car Display")
 		(comment 1 "Integrated P4X + LCD circuits; validate with production panel sample")
 	)
@@ -169,7 +169,7 @@
 		)
 		(uuid "2cf18442-24b2-5d5c-946d-7371dd93c7fd")
 	)
-	(text "A4 SINGLE PCB - Regulated 5 V only. LCD / GT911 connect directly. GPIO labels are global."
+	(text "A6 MIPI SINGLE PCB - Regulated 5 V only. LCD / I2C CTP connect directly. GPIO labels are global."
 		(at 15.24 20.32 0)
 		(effects
 			(font
@@ -588,284 +588,6 @@
 		(uuid "bdd89026-734b-51fe-8af1-81dfd0c36659")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 190.5 50.8 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display:Device_R")
-		(at 260.35 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "77f5c3d6-0f87-59ff-a058-b46716bfb413")
-		(property "Reference" "R104"
-			(at 246.38 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "33"
-			(at 246.38 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Display:R0402__6ca295102a"
-			(at 260.35 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 260.35 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a3fdf698-5eaf-4045-8031-656104b3352c")
-		)
-		(pin "2"
-			(uuid "2c71a01a-ebad-4b97-a88a-18e1e7c11407")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
-					(reference "R104")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 260.35 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 260.35 39.37) (xy 260.35 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6248d1ee-9329-45b7-a9a8-3a2eed9ee3bb")
-	)
-	(global_label "GPIO24"
-		(shape bidirectional)
-		(at 260.35 35.56 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "a7ac3a67-5eca-53b0-93f2-eea04d25f17f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 260.35 35.56 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 260.35 46.99) (xy 260.35 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da68a0a2-b452-41b1-bad4-c3ecfcaeee38")
-	)
-	(global_label "USB1P1_N"
-		(shape bidirectional)
-		(at 260.35 50.8 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "77b950ab-6cdc-5a53-8687-9ae76dd48451")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 260.35 50.8 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display:Device_R")
-		(at 330.2 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "910942a7-8a44-581f-bb6c-0733cd3e4853")
-		(property "Reference" "R105"
-			(at 316.23 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "33"
-			(at 316.23 41.91 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Display:R0402__6ca295102a"
-			(at 330.2 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 330.2 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "772fc43b-9065-4729-a55e-399041ad526a")
-		)
-		(pin "2"
-			(uuid "185cd31e-1fac-4c19-957f-7543813b8a9f")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
-					(reference "R105")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 330.2 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 330.2 39.37) (xy 330.2 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "021254b9-9688-497f-a993-a7ea12179f54")
-	)
-	(global_label "GPIO25"
-		(shape bidirectional)
-		(at 330.2 35.56 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "98881000-11db-5171-adf0-b4d915d41e50")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 35.56 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 330.2 46.99) (xy 330.2 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f19ab5a-173e-4d89-9243-d3090c766ab3")
-	)
-	(global_label "USB1P1_P"
-		(shape bidirectional)
-		(at 330.2 50.8 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "6f4f504a-798f-5559-be5b-2a9e643db389")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 330.2 50.8 180)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -1432,145 +1154,6 @@
 	)
 	(symbol
 		(lib_id "Display:Device_R")
-		(at 121.92 68.58 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "51069ae4-d613-5c01-ab2a-bc05fb5cc998")
-		(property "Reference" "R113"
-			(at 107.95 64.77 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "33"
-			(at 107.95 67.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Display:R0402__6ca295102a"
-			(at 121.92 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df1b180a-f0de-41cb-98e0-9ead38e1e95f")
-		)
-		(pin "2"
-			(uuid "56e07123-5fde-4d18-aafc-79751ed578af")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
-					(reference "R113")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 121.92 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 64.77) (xy 121.92 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "154eb118-574a-4a95-a91e-5a851c52681e")
-	)
-	(global_label "GPIO26"
-		(shape bidirectional)
-		(at 121.92 60.96 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "3fddfe3d-615f-59c4-ac1c-42c3e924c215")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 60.96 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 72.39) (xy 121.92 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f1cb406-0771-4057-a469-6a5e2decfd1a")
-	)
-	(global_label "USB1P1_N_2"
-		(shape bidirectional)
-		(at 121.92 76.2 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "6b2c0de6-c4b4-5d9d-814b-84893c06e368")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 76.2 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display:Device_R")
 		(at 330.2 68.58 0)
 		(unit 1)
 		(body_style 1)
@@ -2117,145 +1700,6 @@
 		(uuid "e2900973-7ea8-5ac5-b1b1-2b08c70f0c79")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 50.8 101.6 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display:Device_R")
-		(at 121.92 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "c1e7f019-423a-53fc-a818-b44b3a17356f")
-		(property "Reference" "R131"
-			(at 107.95 90.17 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "33"
-			(at 107.95 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Display:R0402__6ca295102a"
-			(at 121.92 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f8fc6626-3917-411e-b7ca-a0741c5eaf5e")
-		)
-		(pin "2"
-			(uuid "1c71922a-21c6-4d06-8509-5aae6e3e611a")
-		)
-		(instances
-			(project "display_singleboard"
-				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
-					(reference "R131")
-					(unit 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 121.92 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 90.17) (xy 121.92 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3424ccc2-c481-4d0c-aa6e-54deb09a2508")
-	)
-	(global_label "GPIO27"
-		(shape bidirectional)
-		(at 121.92 86.36 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "a0fcfff9-63f1-511c-b862-a885ad5ef362")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 86.36 180)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 121.92 97.79) (xy 121.92 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dc423d33-6f95-457a-a6be-4cb05c30c43b")
-	)
-	(global_label "USB1P1_P_2"
-		(shape bidirectional)
-		(at 121.92 101.6 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid "f840ab8a-bbc4-5eab-b5e9-4a51c611ef6a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.92 101.6 180)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -11447,5 +10891,293 @@
 			(justify left top)
 		)
 		(uuid "d2287148-569a-4148-9d78-81dcb2079b0f")
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 260.35 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "77f5c3d6-0f87-59ff-a058-b46716bfb413")
+		(property "Reference" "R104"
+			(at 246.38 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "33"
+			(at 246.38 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__6ca295102a"
+			(at 260.35 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 260.35 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a3fdf698-5eaf-4045-8031-656104b3352c")
+		)
+		(pin "2"
+			(uuid "2c71a01a-ebad-4b97-a88a-18e1e7c11407")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
+					(reference "R104")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 260.35 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 39.37) (xy 260.35 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6248d1ee-9329-45b7-a9a8-3a2eed9ee3bb")
+	)
+	(wire
+		(pts
+			(xy 260.35 46.99) (xy 260.35 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da68a0a2-b452-41b1-bad4-c3ecfcaeee38")
+	)
+	(global_label "GPIO24"
+		(shape bidirectional)
+		(at 260.35 35.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "a7ac3a67-5eca-53b0-93f2-eea04d25f17f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 35.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "USB1P1_N"
+		(shape bidirectional)
+		(at 260.35 50.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "77b950ab-6cdc-5a53-8687-9ae76dd48451")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 260.35 50.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Display:Device_R")
+		(at 330.2 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "910942a7-8a44-581f-bb6c-0733cd3e4853")
+		(property "Reference" "R105"
+			(at 316.23 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "33"
+			(at 316.23 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Display:R0402__6ca295102a"
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "772fc43b-9065-4729-a55e-399041ad526a")
+		)
+		(pin "2"
+			(uuid "185cd31e-1fac-4c19-957f-7543813b8a9f")
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76/dbac483e-e638-5adf-b762-6791f86e7bfa"
+					(reference "R105")
+					(unit 1)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 330.2 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 330.2 39.37) (xy 330.2 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "021254b9-9688-497f-a993-a7ea12179f54")
+	)
+	(wire
+		(pts
+			(xy 330.2 46.99) (xy 330.2 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f19ab5a-173e-4d89-9243-d3090c766ab3")
+	)
+	(global_label "GPIO25"
+		(shape bidirectional)
+		(at 330.2 35.56 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "98881000-11db-5171-adf0-b4d915d41e50")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 35.56 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "USB1P1_P"
+		(shape bidirectional)
+		(at 330.2 50.8 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "6f4f504a-798f-5559-be5b-2a9e643db389")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 50.8 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(text "A5: GPIO24/25 retained for USB Serial/JTAG. GPIO26/27 remain LCD backlight/reset."
+		(at 15.24 391.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c0ad26ce-17f9-49b6-a2e6-30d61612d7ba")
 	)
 )

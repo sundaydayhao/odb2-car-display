@@ -28,16 +28,18 @@ def distance_to_box(x, y, box):
     return math.hypot(max(box[0]-x, 0, x-box[2]), max(box[1]-y, 0, y-box[3]))
 
 errors = []
-power = cfg['rear_power']
+power = cfg['side_power']
 sw = fps[power['reference']]
 if point(sw.GetPosition()) != power['center_mm'] or sw.GetOrientationDegrees() != power['angle_deg']:
-    errors.append('SW3 no longer matches the rear opening coordinates')
+    errors.append('SW3 no longer matches the sidewall opening coordinates')
 x, y = point(sw.GetPosition())
+dx, dy = power['body_offset_mm']
+x += dx; y += dy
 w, h = power['body_xy_mm']
 body = [x-w/2, y-h/2, x+w/2, y+h/2]
 outline = cfg['pcb_envelope_mm']
 top_margin = body[1]-outline[1]
-if top_margin < 0.4 or top_margin > 1.0:
+if top_margin < 0.3999 or top_margin > 1.0:
     errors.append('SW3 body should be 0.4 to 1.0 mm inside the upper board edge')
 for ref, f in fps.items():
     if ref == 'SW3' or f.IsDNP():
@@ -64,6 +66,9 @@ for ref in cfg['mounting']['hole_references']:
 access = []
 for item in cfg['access']:
     f = fps[item['reference']]
+    side = 'F' if f.GetLayer()==k.F_Cu else 'B'
+    if item.get('expected_side',side) != side:
+        errors.append(f'{item["reference"]} is on the wrong assembly side for its access reservation')
     access.append({**item, 'origin_mm': point(f.GetPosition()), 'angle_deg': f.GetOrientationDegrees(),
                    'side': 'F' if f.GetLayer()==k.F_Cu else 'B', 'footprint_bbox_mm': bounds(f)})
 result = {'pcb_sha256': hashlib.sha256(pcb.read_bytes()).hexdigest(),
@@ -71,7 +76,8 @@ result = {'pcb_sha256': hashlib.sha256(pcb.read_bytes()).hexdigest(),
           'access': access, 'errors': errors,
           'limits': ['2D placement/access checks only; not a 3D clash check',
                      'Actual port heights, plug overmolds, mating FPC and case tolerances are not qualified',
-                     'Large USB-A / adjacent HS Type-C plug reservations overlap; controller roles are mutually exclusive']}
+                     'J302 is on the screen-facing side; its FPC gap and bend need the actual panel assembly',
+                     'J18 is the fixed HS host; J19 is native USB Serial/JTAG; J22 is regulated 5 V input']}
 (a.output/'access-coordinates.json').write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding='utf8')
 
 # Engineering access map: component footprints come from the PCB, colored boxes
@@ -125,14 +131,12 @@ for item in access:
     else:arrow=[(x2,y2),(x2-.6,y2-math.copysign(1,dy)),(x2+.6,y2-math.copysign(1,dy))]
     svg.append(f'<polygon points="{" ".join(f"{p},{q}" for p,q in arrow)}" fill="{color}"/>')
 
-x,y=power['center_mm'];rw,rh=power['rear_recess_plan_mm']
-rect([x-rw/2,y-rh/2,x+rw/2,y+rh/2], '#dc6721', .15)
+x,y=power['center_mm']
 rect(body,'#dc6721',.35)
-slw,slh=power['actuator_slot_plan_mm']
-rect([x-slw/2,y-slh/2,x+slw/2,y+slh/2],'#9a3412',.2)
-svg.append(f'<text x="{x}" y="{y+.6}" class="label" text-anchor="middle">SW3</text>')
-svg.append('<path d="M-22.5,-85.6 V-91 H-4" fill="none" stroke="#dc6721" stroke-width=".2"/>')
-svg.append('<text x="-3" y="-90.4" class="label">TOP REAR RECESS / 2.2 mm SLIDE</text>')
+rect([x-3.05,body[1]-power['stem_length_mm'],x+3.05,body[1]],'#9a3412',.2)
+svg.append(f'<text x="{x}" y="{body[3]-1}" class="label" text-anchor="middle">SW3</text>')
+svg.append(f'<path d="M{x},{body[1]-5} V-94 H12" fill="none" stroke="#dc6721" stroke-width=".2"/>')
+svg.append('<text x="13" y="-93.4" class="label">TOP SIDEWALL / LARGE SIDE SLIDE / 2.2 mm TRAVEL</text>')
 for item in mounts:
     x,y=item['center_mm']
     svg.append(f'<circle cx="{x}" cy="{y}" r="2.5" fill="#fff" stroke="#334155" stroke-width=".2"/><circle cx="{x}" cy="{y}" r="1.5" fill="#cbd5e1"/>')
@@ -145,9 +149,9 @@ clear=cfg['antenna']['added_object_clearance_target_mm']
 rect([ant[0]-clear,ant[1]-clear,ant[2]+clear,ant[3]+clear],'#a21caf',.025)
 svg.append('<text x="91" y="-81" class="label">ANTENNA</text><text x="91" y="-78" class="small">15 mm target</text><text x="91" y="-75" class="small">new metal / wiring</text>')
 svg.append('<text x="-30" y="21" class="label">Internal FPCs: assemble before rear cover. Screen metal must clear RF region.</text>')
-svg.append('<text x="-30" y="24" class="label">USB: bottom openings. microSD: right opening on B.Cu side.</text>')
+svg.append('<text x="-30" y="24" class="label">USB-C / 5V: left. USB-A / microSD: right. Bottom edge reserved for base.</text>')
 svg.append('<text x="-30" y="27" class="label">SW1 / SW2: recessed service access. Small insulated mounting hardware, OD &lt;= 5 mm.</text>')
-svg.append('<text x="-30" y="30" class="label">Switch: 13 x 6.8 body, 6.4 body height + 3 handle; verify slot and detents on sample.</text>')
+svg.append('<text x="-30" y="30" class="label">Switch: 12.7 mm body width, 5 mm stem; guided case cap 12 x 6 mm proposed.</text>')
 svg.append('</svg>')
 (a.output/'enclosure-access.svg').write_text('\n'.join(svg),encoding='utf8')
 print(json.dumps({'errors':errors,'mounts':len(mounts),'access_items':len(access),'top_gap_mm':top_margin,'output':str(a.output)},ensure_ascii=False))

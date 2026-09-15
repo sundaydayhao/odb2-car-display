@@ -1,62 +1,43 @@
-# 7 寸显示主板 A4：单板方案
+# 7 寸显示主板 A6：MIPI 单板方案
 
-**2026-09-15 选型变更：用户指定改用淘宝商品 983165147604 的 SKU 5946336205446。新屏资料与适配状态见 [PANEL_TARGET.md](PANEL_TARGET.md)。下文 A4 的屏幕接口、电源和机械位置描述是旧屏电路基线，尚未验证适用于新屏。**
+本工程将 ESP32-P4X、ESP32-C6、LCD 电源、背光、I²C 触摸、音频和接口集成在一块 120×74 mm、4 层 PCB 上。打开 `display_singleboard.kicad_pro`，原理图入口为 `display_singleboard.kicad_sch`。
 
-本工程把 **ESP32-P4X + ESP32-C6、LCD 电源、背光驱动和 GT911 触摸接口**合并到一块 120 × 74 mm、4 层、名义厚度 1.6 mm 的 PCB。打开 `display_singleboard.kicad_pro`；原理图入口为 `display_singleboard.kicad_sch`。
+新屏采用用户指定的淘宝商品 983165147604 / SKU 5946336205446，JD9165、1024×600、P+G 电容触摸左出线。主板选择 MIPI DSI 接法；详细引脚、供电与机械确认项见 [PANEL_TARGET.md](PANEL_TARGET.md)。A6 已完成原理图与 PCB 布线，ERC / DRC / 未连接检查均为 0，逐引脚网络一致；见 [VERIFICATION.md](VERIFICATION.md)。所选屏幕模组的电气与机械参数仍需厂家确认后再放行打样。
 
-这是当前显示端的主方案。A4 删除 J17 以太网口、U8 IP101GRI、Y3 25 MHz 晶振及专用外围，共减少 51 个物理器件；网络连接由 C6 Wi-Fi / BLE 承担。原以太网页中混放的 microSD 电源开关 Q8 / R229 / R230 和 C6 去耦 C1 已归入 Wi-Fi / SD 页并保留。A3 把电源开关放在左上板边，配合背壳上沿凹槽；触摸 FPC 改为向左出线，补充外壳开口、装配和维修空间约束。A2 将 A1 左侧屏电路向主控收拢 14 mm，面积减少约 10.4%；尺寸依据和安装孔变更见 [MECHANICAL.md](MECHANICAL.md)。旧 `display-mainboard` / `display-lcd-adapter` 是电路来源检查点，不需要制作旧双板；前期软件和屏幕验证使用官方 ESP32-P4 Function EV Board。
-
-## 屏幕怎样连接
-
-```text
-ESP32-P4 ── 板内 MIPI 差分线 ── J302 FPC 座 ── 屏幕自带排线 ── LCD
-    │
-    └──── I²C、复位、中断 ──── J308 FPC 座 ── 触摸屏排线 ── GT911
-```
-
-屏幕排线仍然保留。去掉的是旧主控板到转接板的 15 针 MIPI 排线和 8 针辅助线束；J302 和 J308 都在同一块 PCB 上。
-
-| 功能 | 实现 |
+| 功能 | 当前设计 |
 | --- | --- |
-| 主控 | ESP32-P4NRW32X，32 MB 封装内 PSRAM、16 MB 外置 Flash |
-| 无线 | ESP32-C6-MINI-1，经 SDIO 提供 Wi-Fi / BLE |
-| LCD | J302：30 针、0.5 mm，2 lane MIPI DSI |
-| 触摸 | J308：6 针、0.5 mm、上接触，GT911 |
-| 屏电源 | U302：1.8 V；U303 及电荷泵：AVDD / VGH / VGL / VCOM |
-| 背光 | U301 ETA1611，R312=1.1 Ω，初始名义电流约 182 mA |
-| 复位电平 | U304 SN74LVC1G07，3.3 V 输入、1.8 V 开漏 LCD 复位输出 |
-| 音频 | ES8311、麦克风、NS4150B 扬声器功放 |
-| 扩展与调试 | MIPI 摄像头、microSD、USB、BOOT / RESET、C6 下载排针 |
+| 主控 / 无线 | ESP32-P4NRW32X、ESP32-C6-MINI-1，SDIO 互联 |
+| LCD | J302，30 针、0.5 mm，2 数据通道 MIPI DSI，B 面朝屏幕 |
+| 触摸 | J308，6 针、0.5 mm，I²C / INT / Shutdown；具体 IC 待确认 |
+| LCD 电源 / 背光 | 独立 VDD、AVDD、VGH、VGL、VCOM；ETA1611 恒流背光 |
+| 音频 | ES8311、麦克风、NS4150B 功放和扬声器接口 |
+| 摄像头 | J9 MIPI CSI，F 面朝背壳竖插 |
+| USB | 一个 USB HS A 母座 Host；另保留 USB Serial/JTAG 调试口 |
+| 供电 / 开关 | J22 稳压 5 V，大尺寸上侧壁拨杆 SW3 控制 U401 |
+| 其他 | microSD、BOOT / RESET、UART 备用下载接触点、C6 下载排针 |
 
-旧目标屏为启明云端 / Wireless-Tag **WTP4C5MP07S（ZX7D00C1060M002A）**：7 寸、1024 × 600、EK79007AD + EK73217、GT911。它现为电路来源与对照对象，新目标以 [PANEL_TARGET.md](PANEL_TARGET.md) 的指定 SKU 为准。
+以太网口、PHY 及专用外围、额外 HS 口、备用 FS 口已从本版移除。OBD 采集节点和烧录夹具是不同功能的独立工程，不合并到本显示板目录。
 
-J302 沿用参考 BOM 的 AFC01-S30FCA-00。J308 沿用参考设计的 `FFC6P_0P5_UP` 焊盘，尚未把未经机械尺寸核验的替代料写成确定 MPN。装配前核对 FPC 接触面、排线厚度、焊脚尺寸和锁扣方向。
+屏幕仍通过自带排线接入主板：P4 → 板内 MIPI 走线 → J302 → LCD 排线。触摸排线单独接 J308。前期验证可以使用官方 ESP32-P4 Function EV Board；旧 `display-mainboard` / `display-lcd-adapter` 保留为电路来源。
 
-## 供电、启动和固件
+## 装配与外壳
 
-输入为**稳压 5 V**；没有车载 12 V 反接、抛负载、冷启动电源前端。整车安装可使用合适的车载 5 V 电源，不能把车上 12 V 直接接入本板。
+F 面朝背壳，B 面朝屏幕。LCD 位于 B 面中下部；从屏幕正面看左出线的触摸，在背面视图位于右侧。摄像头位于 F 面左上区域。左右边和上边提供外部操作口，下侧壳体留给底座。
 
-- GPIO26 经原有串联电阻控制背光，R341 下拉使启动时默认关闭。
-- GPIO27 经 U304 控制 LCD 复位；R304 上拉到 LCD 1.8 V，不把 3.3 V 直接加到面板复位脚。
-- GPIO22 / GPIO23 分别接 GT911 INT / RESET；R340 是弱下拉，固件仍应执行 GT911 地址选择与复位时序。
-- I²C 为 GPIO7 SDA / GPIO8 SCL，复用板上 I²C 总线。
-- R113、R131、J20 默认不装，避免备用 USB FS 支路占用 GPIO26 / GPIO27。
-- J19 为 USB Serial/JTAG。J15 / J18 共用 USB HS 控制器，固件选择设备或主机用途，不能当成两个独立 USB 端口。
+大拨杆位于上侧板边，侧向拨动，配合背壳上沿开口。USB-C 调试和 5 V 输入在左侧；USB-A、microSD 在右侧。内部 FPC 先插入并锁紧，再固定主板和后盖。排线、锁扣、配套插头、线束弯折以及天线周围的金属净空均须用实际器件和外壳检查。
 
-现有官方板的固件和烧录设置保持原样。本板采用 P4X rev ≥ 3.0 参考电路，上新板时要核对 ESP-IDF 5.5 的实际芯片修订版支持、LCD 初始化和触摸引脚。官方板验证不能替代本单板的供电、点亮和信号完整性验证。
+`enclosure.json` 记录接口操作空间，`FPC_PLACEMENT_PROPOSAL.svg` 说明三个 FPC 的板面与方向。可用 KiCad Python 执行 `tools/export_display_enclosure.py --project hardware/display-singleboard` 导出坐标。平面包络检查不替代三维装配验证，也不构成开模尺寸放行。
 
-首次上电先关闭背光，检查 5 V / 3.3 V / 1.8 V 及 LCD 偏压；确认复位与触摸时序后再点亮，逐步提高背光。182 mA 是初始设置，需根据目标屏样品的功耗、温升和亮度实测调整。
+## 电气与验证边界
 
-## PCB 和检查
+输入为稳压 5 V，本板没有车载 12 V 反接、抛负载和冷启动前端。SW3 控制输入汇流后的供电；从扩展口 VCC_5V 反向供电会绕过开关，整机线束不得这样连接。
 
-已补齐实际装配器件的 3D 模型，文件随工程保存，PCB 和封装库均使用项目相对路径。354 个装配器件可显示，27 个选装器件保留模型；裸铜测试点和安装孔不加实体。模型精度、刷新方法、J9 竖插修正，以及 J18 / U2 采购与封装待核对项见 [3D_MODELS.md](3D_MODELS.md)。部分连接器和按钮使用暂定高度，尚不能据其直接确定外壳开模尺寸。
+LCD 电路现有名义值为 VDD 1.8 V、AVDD 9.6 V、VGH 18 V、VGL −6 V、VCOM 3.2 V，背光约 182 mA。它们来自参考电路，尚未获得所选 MIPI 模组确认；不得将 RGB 参数表的 3.3 V 直接套用。先取得模组额定值及上电时序，测量电源后再连接屏幕。
 
-主控的核心电源、晶振、Flash、SDIO、USB 和无线布局来自官方参考；屏幕电源区位于左侧。DSI 在本板内重新布线，C6 天线位于右侧缺口，附近不能被 LCD 金属背板或外壳金属遮挡。
+GPIO26 控制背光并保留默认关闭下拉；GPIO27 经 U304 的开漏输出控制 LCD 复位，上拉到 LCD VDD 域。GPIO22 / GPIO23 接触摸 INT / Shutdown，需按实际触摸 IC 实现时序。原 GT911 假设已经移除。
 
-L2 保留接地参考；新增屏电源主干在 L3。差分线的布线目标为 MIPI 100 Ω、USB 90 Ω；实际阻抗需要板厂结合外层约 0.08 mm 介质、铜厚、材料与阻焊求解。工程中的线宽和等长检查不等于实测阻抗、眼图或 EMC 合格。
+L2 保留完整地参考，L3 为电源和部分信号。MIPI 目标 100 Ω，USB 目标 90 Ω，需用板厂确认的叠层计算；1.6 mm 名义总板厚不能确定阻抗。完整链路长度、连续参考地、返回过孔和原生 DRC 是相互独立的检查项。
 
-本工程交付的是可编辑原理图和 PCB，尚未进行本板打样、实板点亮、热测试和生产放行。保留 H1 / H2 / H4，调整 H3 位置，并保留左侧 H301 / H302 两个 M3 支撑孔；外壳配合方案和坐标见 `MECHANICAL.md` / `enclosure.json`；PCB 机械图层 `User.3` 显示操作与排线空间。最终外壳开模尺寸和金属背板距离仍需与实物样品一起确认。
+`tools/check_display_hardware.py` 检查 ERC、DRC、未连接、SCH / PCB 网表、装配表、对象身份以及 MIPI / CSI 长度；`tools/check_display_panel.py` 单独核对新屏 40 项针脚对应。检查结果不代表新屏实机点亮、热测试、EMC 或量产放行。
 
-最终检查结果见 `VERIFICATION.md`，接口逐针定义见 `INTERFACES.md`。逐器件装配状态见 `assembly.csv`；参考设计来源及库授权见 `SOURCES.md`。
-
-外壳配合图可用 KiCad Python 运行 `tools/export_display_enclosure.py` 生成，输出到 `build/display-enclosure/mechanical/`。SW3 断开 USB 输入汇流后的供电；若从 J1 的 VCC_5V 针脚反向供电，会绕过开关，装机线束不得把该针脚当作未经开关的主电源入口。
+原有项目相对路径 3D 库保留。新开关、连接器及采购几何仍需实物复核；模型显示完整不代表外壳公差和零件型号已经批准。器件与参考设计授权见 `SOURCES.md`，逐针定义见 [INTERFACES.md](INTERFACES.md)。

@@ -1,0 +1,113 @@
+{
+  "target": {
+    "seller_item": "983165147604",
+    "sku": "5946336205446",
+    "driver_family": "JD9165",
+    "resolution": [
+      1024,
+      600
+    ],
+    "touch_variant": "Front-view left cable, P+G"
+  },
+  "interface": "MIPI DSI",
+  "data_lanes": 2,
+  "rgb_fitted": false,
+  "qualification": "A7 F0 screen-facing flex route via lower/side board edge; final electrical routing and real-module qualification pending",
+  "lcd_connector": {
+    "reference": "J302",
+    "pins": 30,
+    "pitch_mm": 0.5,
+    "board_side": "F",
+    "pin_nets": {
+      "1": "PANEL_LED+",
+      "2": "PANEL_LED+",
+      "3": "PANEL_LCD_VGH",
+      "4": "PANEL_LCD_VGL",
+      "5": "PANEL_UPDN",
+      "6": "PANEL_SHLR",
+      "7": "PANEL_LED-",
+      "8": "PANEL_LED-",
+      "9": "PANEL_LCD_AVDD",
+      "10": "GND",
+      "11": null,
+      "12": null,
+      "13": "GND",
+      "14": null,
+      "15": null,
+      "16": "GND",
+      "17": "DSI_A_CLKP",
+      "18": "DSI_A_CLKN",
+      "19": "GND",
+      "20": "DSI_A_DATA1P",
+      "21": "DSI_A_DATA1N",
+      "22": "GND",
+      "23": "DSI_A_DATA0P",
+      "24": "DSI_A_DATA0N",
+      "25": "GND",
+      "26": "PANEL_STBYB",
+      "27": "PANEL_RESET_LCD",
+      "28": "PANEL_LCD_VDD",
+      "29": "PANEL_LCD_VDD",
+      "30": "PANEL_LCD_VCOM",
+      "31": "GND",
+      "32": "GND"
+    },
+    "cad_pose": {
+      "position_mm": [
+        29.0,
+        -17.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F",
+      "status": "A7 frozen mechanical candidate: F0 mouth +Y verified; actual flex contact face remains unqualified"
+    }
+  },
+  "touch_connector": {
+    "reference": "J308",
+    "pins": 6,
+    "pitch_mm": 0.5,
+    "board_side": "F",
+    "controller": null,
+    "pin_nets": {
+      "1": "CNN_GPIO23",
+      "2": "ESP_3V3",
+      "3": "GND",
+      "4": "CNN_GPIO22",
+      "5": "N18412242",
+      "6": "N18412230",
+      "7": "GND",
+      "8": "GND"
+    },
+    "cad_pose": {
+      "position_mm": [
+        69.0,
+        -19.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F",
+      "status": "A7 frozen mechanical candidate: F0 mouth +Y verified; actual flex contact face remains unqualified"
+    }
+  },
+  "existing_circuit_nominal_not_confirmed_panel_ratings": {
+    "lcd_vdd_V": 1.8,
+    "avdd_V": 9.6,
+    "vgh_V": 18,
+    "vgl_V": -6,
+    "vcom_V": 3.2,
+    "backlight_mA": 182,
+    "vdd_regulator": "ME6211C18M5G-N",
+    "backlight_feedback_resistor": "R312, 1.1 ohm"
+  },
+  "required_vendor_confirmation": [
+    "MIPI module configured for two data lanes D0/D1 and lane/polarity mapping",
+    "LCD module VDD and all bias nominal voltages, tolerances and sequencing",
+    "LED string arrangement and rated voltage/current",
+    "Touch controller, VCC and Shutdown polarity",
+    "FPC pin 1, contact side and selected left-exit touch assembly dimensions"
+  ],
+  "sources": [
+    "User-supplied selected SKU and local MIPI 30-pin / touch 6-pin tables",
+    "https://dl.espressif.com/AE/esp-iot-solution/JD9165A-A_DS_V0.0.1-0621.pdf",
+    "https://components.espressif.com/components/espressif/esp_lcd_jd9165/versions/2.0.2"
+  ]
+}

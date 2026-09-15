@@ -120,7 +120,7 @@ class LabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             strict_json('{"size":1,"size":2}')
 
-    @unittest.skipUnless((Path(__file__).resolve().parents[1] / "build" / "odb2_dash.bin").exists(), "Build P4 firmware first")
+    @unittest.skipUnless((Path(__file__).resolve().parents[1] / "display_board" / "build" / "odb2_dash.bin").exists(), "Build P4 firmware first")
     def test_real_firmware_signed_release(self):
         binary = Path(__file__).resolve().parents[1] / "build" / "odb2_dash.bin"
         manifest = publish(self.root, binary, f"https://localhost:{self.server.server_port}")

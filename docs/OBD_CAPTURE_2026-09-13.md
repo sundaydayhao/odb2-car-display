@@ -9,7 +9,7 @@
 - App 0.1.3；有效采样窗口 60 秒；192,280 字节。
 - SHA-256：`19928041ff6c0b61649b8a36e8f2c603cbe6bb5d57031b501ff142b5eab3d228`，与手机原件一致。
 - 文件结构、连续序号和尾部计数检查通过；会话按时结束并释放蓝牙。
-- 共 151 个有效实时参数样本，使用本项目 `main/elm327_protocol.c` 和 `main/obd2_decode.c` 在主机上解析和换算。
+- 共 151 个有效实时参数样本，使用本项目 `display_board/main/elm327_protocol.c` 和 `display_board/main/obd2_decode.c` 在主机上解析和换算。
 
 | 参数 | 有效样本 | 实测范围 |
 | --- | ---: | --- |

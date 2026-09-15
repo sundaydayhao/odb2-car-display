@@ -1,8 +1,23 @@
-build/
-managed_components/
-__pycache__/
+# Shared repository outputs
+/build/
+/captures/
+**/__pycache__/
 *.pyc
-android-app/.gradle/
-android-app/local.properties
-android-app/**/build/
-captures/
+/.easyeda_cache/
+
+# ESP-IDF display-board generated outputs.
+# The display-board project configuration remains tracked.
+/display_board/build/
+/display_board/managed_components/
+
+# ESP-IDF OBD-interface generated outputs and local configuration.
+/obd_interface/build/
+/obd_interface/managed_components/
+/obd_interface/sdkconfig
+/obd_interface/sdkconfig.old
+/obd_interface/dependencies.lock
+
+# Android generated files
+/android-app/.gradle/
+/android-app/local.properties
+/android-app/**/build/

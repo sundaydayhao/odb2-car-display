@@ -24,7 +24,7 @@ def binding(model):
 def main():
     repo = Path(__file__).resolve().parent.parent
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--project', type=Path, default=repo / 'hardware/display-singleboard')
+    ap.add_argument('--project', type=Path, default=repo / 'display_board/hardware/display-singleboard')
     ap.add_argument('--output', type=Path, default=repo / 'build/display-3d-verification.json')
     args = ap.parse_args()
     project = args.project.resolve()

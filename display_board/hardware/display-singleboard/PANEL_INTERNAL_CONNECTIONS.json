@@ -1,0 +1,1829 @@
+{
+  "source": "Native KiCad candidate.net export",
+  "J302": {
+    "18": "DSI_A_CLKN",
+    "17": "DSI_A_CLKP",
+    "24": "DSI_A_DATA0N",
+    "23": "DSI_A_DATA0P",
+    "21": "DSI_A_DATA1N",
+    "20": "DSI_A_DATA1P",
+    "10": "GND",
+    "13": "GND",
+    "16": "GND",
+    "19": "GND",
+    "22": "GND",
+    "25": "GND",
+    "31": "GND",
+    "32": "GND",
+    "9": "PANEL_LCD_AVDD",
+    "30": "PANEL_LCD_VCOM",
+    "28": "PANEL_LCD_VDD",
+    "29": "PANEL_LCD_VDD",
+    "3": "PANEL_LCD_VGH",
+    "4": "PANEL_LCD_VGL",
+    "1": "PANEL_LED+",
+    "2": "PANEL_LED+",
+    "7": "PANEL_LED-",
+    "8": "PANEL_LED-",
+    "27": "PANEL_RESET_LCD",
+    "6": "PANEL_SHLR",
+    "26": "PANEL_STBYB",
+    "5": "PANEL_UPDN",
+    "11": "unconnected-(J302-NC-Pad11)",
+    "12": "unconnected-(J302-NC-Pad12)",
+    "14": "unconnected-(J302-NC-Pad14)",
+    "15": "unconnected-(J302-NC-Pad15)"
+  },
+  "J308": {
+    "4": "CNN_GPIO22",
+    "1": "CNN_GPIO23",
+    "2": "ESP_3V3",
+    "3": "GND",
+    "7": "GND",
+    "8": "GND",
+    "6": "N18412230",
+    "5": "N18412242"
+  },
+  "U304": {
+    "uuid": "917c5d9a-6103-5a3b-a969-37c3fa85a6b8",
+    "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+    "sheet": "lcd_interfaces",
+    "at": [
+      365.76,
+      55.88
+    ],
+    "value": "SN74LVC1G07DBVR",
+    "footprint": "SOT-23-5__bb5afb5c1a",
+    "dnp": false,
+    "mpn": "SN74LVC1G07DBVR",
+    "nets": {
+      "2": "CNN_GPIO27",
+      "5": "ESP_3V3",
+      "3": "GND",
+      "4": "PANEL_RESET_LCD",
+      "1": "unconnected-(U304-NC-Pad1)"
+    },
+    "pcb_placement": {
+      "position_mm": [
+        10.0,
+        -18.0
+      ],
+      "angle_deg": 0.0,
+      "side": "B"
+    }
+  },
+  "by_net": {
+    "CNN_GPIO22": [
+      {
+        "ref": "J1",
+        "pin": "12"
+      },
+      {
+        "ref": "J308",
+        "pin": "4"
+      },
+      {
+        "ref": "R32",
+        "pin": "1"
+      },
+      {
+        "ref": "R340",
+        "pin": "1"
+      }
+    ],
+    "CNN_GPIO23": [
+      {
+        "ref": "J1",
+        "pin": "7"
+      },
+      {
+        "ref": "J308",
+        "pin": "1"
+      },
+      {
+        "ref": "R310",
+        "pin": "1"
+      },
+      {
+        "ref": "R38",
+        "pin": "1"
+      }
+    ],
+    "CNN_GPIO26": [
+      {
+        "ref": "J1",
+        "pin": "31"
+      },
+      {
+        "ref": "R228",
+        "pin": "2"
+      },
+      {
+        "ref": "R311",
+        "pin": "2"
+      },
+      {
+        "ref": "R341",
+        "pin": "1"
+      }
+    ],
+    "CNN_GPIO27": [
+      {
+        "ref": "J1",
+        "pin": "38"
+      },
+      {
+        "ref": "R227",
+        "pin": "2"
+      },
+      {
+        "ref": "R339",
+        "pin": "1"
+      },
+      {
+        "ref": "U304",
+        "pin": "2"
+      }
+    ],
+    "ESP_3V3": [
+      {
+        "ref": "C1",
+        "pin": "1"
+      },
+      {
+        "ref": "C10",
+        "pin": "1"
+      },
+      {
+        "ref": "C103",
+        "pin": "1"
+      },
+      {
+        "ref": "C2",
+        "pin": "1"
+      },
+      {
+        "ref": "C303",
+        "pin": "1"
+      },
+      {
+        "ref": "C328",
+        "pin": "1"
+      },
+      {
+        "ref": "C46",
+        "pin": "1"
+      },
+      {
+        "ref": "C47",
+        "pin": "1"
+      },
+      {
+        "ref": "C7",
+        "pin": "1"
+      },
+      {
+        "ref": "C83",
+        "pin": "1"
+      },
+      {
+        "ref": "C85",
+        "pin": "1"
+      },
+      {
+        "ref": "C87",
+        "pin": "1"
+      },
+      {
+        "ref": "C88",
+        "pin": "1"
+      },
+      {
+        "ref": "C90",
+        "pin": "1"
+      },
+      {
+        "ref": "C95",
+        "pin": "1"
+      },
+      {
+        "ref": "C96",
+        "pin": "1"
+      },
+      {
+        "ref": "C97",
+        "pin": "1"
+      },
+      {
+        "ref": "J1",
+        "pin": "1"
+      },
+      {
+        "ref": "J1",
+        "pin": "17"
+      },
+      {
+        "ref": "J308",
+        "pin": "2"
+      },
+      {
+        "ref": "J9",
+        "pin": "15"
+      },
+      {
+        "ref": "Q8",
+        "pin": "2"
+      },
+      {
+        "ref": "R1",
+        "pin": "1"
+      },
+      {
+        "ref": "R10",
+        "pin": "2"
+      },
+      {
+        "ref": "R109",
+        "pin": "1"
+      },
+      {
+        "ref": "R11",
+        "pin": "1"
+      },
+      {
+        "ref": "R111",
+        "pin": "1"
+      },
+      {
+        "ref": "R12",
+        "pin": "1"
+      },
+      {
+        "ref": "R123",
+        "pin": "1"
+      },
+      {
+        "ref": "R127",
+        "pin": "1"
+      },
+      {
+        "ref": "R174",
+        "pin": "2"
+      },
+      {
+        "ref": "R198",
+        "pin": "1"
+      },
+      {
+        "ref": "R208",
+        "pin": "2"
+      },
+      {
+        "ref": "R209",
+        "pin": "2"
+      },
+      {
+        "ref": "R230",
+        "pin": "2"
+      },
+      {
+        "ref": "R233",
+        "pin": "2"
+      },
+      {
+        "ref": "R3",
+        "pin": "1"
+      },
+      {
+        "ref": "R310",
+        "pin": "2"
+      },
+      {
+        "ref": "R35",
+        "pin": "1"
+      },
+      {
+        "ref": "R4",
+        "pin": "2"
+      },
+      {
+        "ref": "R5",
+        "pin": "1"
+      },
+      {
+        "ref": "R51",
+        "pin": "1"
+      },
+      {
+        "ref": "R6",
+        "pin": "1"
+      },
+      {
+        "ref": "R60",
+        "pin": "2"
+      },
+      {
+        "ref": "R98",
+        "pin": "1"
+      },
+      {
+        "ref": "TP403",
+        "pin": "1"
+      },
+      {
+        "ref": "U1",
+        "pin": "3"
+      },
+      {
+        "ref": "U304",
+        "pin": "5"
+      },
+      {
+        "ref": "U4",
+        "pin": "101"
+      },
+      {
+        "ref": "U4",
+        "pin": "21"
+      },
+      {
+        "ref": "U4",
+        "pin": "62"
+      },
+      {
+        "ref": "U4",
+        "pin": "75"
+      },
+      {
+        "ref": "U4",
+        "pin": "77"
+      },
+      {
+        "ref": "U4",
+        "pin": "9"
+      },
+      {
+        "ref": "U4",
+        "pin": "96"
+      }
+    ],
+    "GND": [
+      {
+        "ref": "C1",
+        "pin": "2"
+      },
+      {
+        "ref": "C10",
+        "pin": "2"
+      },
+      {
+        "ref": "C100",
+        "pin": "2"
+      },
+      {
+        "ref": "C101",
+        "pin": "2"
+      },
+      {
+        "ref": "C102",
+        "pin": "2"
+      },
+      {
+        "ref": "C103",
+        "pin": "2"
+      },
+      {
+        "ref": "C104",
+        "pin": "2"
+      },
+      {
+        "ref": "C105",
+        "pin": "2"
+      },
+      {
+        "ref": "C107",
+        "pin": "2"
+      },
+      {
+        "ref": "C110",
+        "pin": "2"
+      },
+      {
+        "ref": "C117",
+        "pin": "2"
+      },
+      {
+        "ref": "C118",
+        "pin": "2"
+      },
+      {
+        "ref": "C14",
+        "pin": "2"
+      },
+      {
+        "ref": "C15",
+        "pin": "2"
+      },
+      {
+        "ref": "C16",
+        "pin": "2"
+      },
+      {
+        "ref": "C18",
+        "pin": "2"
+      },
+      {
+        "ref": "C19",
+        "pin": "2"
+      },
+      {
+        "ref": "C2",
+        "pin": "2"
+      },
+      {
+        "ref": "C20",
+        "pin": "2"
+      },
+      {
+        "ref": "C21",
+        "pin": "2"
+      },
+      {
+        "ref": "C22",
+        "pin": "2"
+      },
+      {
+        "ref": "C23",
+        "pin": "2"
+      },
+      {
+        "ref": "C24",
+        "pin": "2"
+      },
+      {
+        "ref": "C25",
+        "pin": "2"
+      },
+      {
+        "ref": "C26",
+        "pin": "2"
+      },
+      {
+        "ref": "C27",
+        "pin": "2"
+      },
+      {
+        "ref": "C28",
+        "pin": "2"
+      },
+      {
+        "ref": "C29",
+        "pin": "2"
+      },
+      {
+        "ref": "C30",
+        "pin": "2"
+      },
+      {
+        "ref": "C301",
+        "pin": "2"
+      },
+      {
+        "ref": "C303",
+        "pin": "2"
+      },
+      {
+        "ref": "C304",
+        "pin": "2"
+      },
+      {
+        "ref": "C305",
+        "pin": "2"
+      },
+      {
+        "ref": "C306",
+        "pin": "2"
+      },
+      {
+        "ref": "C307",
+        "pin": "2"
+      },
+      {
+        "ref": "C308",
+        "pin": "2"
+      },
+      {
+        "ref": "C309",
+        "pin": "2"
+      },
+      {
+        "ref": "C31",
+        "pin": "2"
+      },
+      {
+        "ref": "C310",
+        "pin": "2"
+      },
+      {
+        "ref": "C311",
+        "pin": "2"
+      },
+      {
+        "ref": "C312",
+        "pin": "2"
+      },
+      {
+        "ref": "C313",
+        "pin": "2"
+      },
+      {
+        "ref": "C314",
+        "pin": "2"
+      },
+      {
+        "ref": "C317",
+        "pin": "2"
+      },
+      {
+        "ref": "C318",
+        "pin": "2"
+      },
+      {
+        "ref": "C321",
+        "pin": "2"
+      },
+      {
+        "ref": "C322",
+        "pin": "2"
+      },
+      {
+        "ref": "C323",
+        "pin": "2"
+      },
+      {
+        "ref": "C324",
+        "pin": "2"
+      },
+      {
+        "ref": "C326",
+        "pin": "2"
+      },
+      {
+        "ref": "C327",
+        "pin": "2"
+      },
+      {
+        "ref": "C328",
+        "pin": "2"
+      },
+      {
+        "ref": "C33",
+        "pin": "2"
+      },
+      {
+        "ref": "C35",
+        "pin": "1"
+      },
+      {
+        "ref": "C36",
+        "pin": "1"
+      },
+      {
+        "ref": "C37",
+        "pin": "1"
+      },
+      {
+        "ref": "C38",
+        "pin": "2"
+      },
+      {
+        "ref": "C401",
+        "pin": "2"
+      },
+      {
+        "ref": "C402",
+        "pin": "2"
+      },
+      {
+        "ref": "C403",
+        "pin": "2"
+      },
+      {
+        "ref": "C41",
+        "pin": "2"
+      },
+      {
+        "ref": "C42",
+        "pin": "1"
+      },
+      {
+        "ref": "C43",
+        "pin": "2"
+      },
+      {
+        "ref": "C44",
+        "pin": "2"
+      },
+      {
+        "ref": "C45",
+        "pin": "2"
+      },
+      {
+        "ref": "C46",
+        "pin": "2"
+      },
+      {
+        "ref": "C47",
+        "pin": "2"
+      },
+      {
+        "ref": "C48",
+        "pin": "2"
+      },
+      {
+        "ref": "C49",
+        "pin": "2"
+      },
+      {
+        "ref": "C50",
+        "pin": "2"
+      },
+      {
+        "ref": "C51",
+        "pin": "2"
+      },
+      {
+        "ref": "C54",
+        "pin": "2"
+      },
+      {
+        "ref": "C55",
+        "pin": "2"
+      },
+      {
+        "ref": "C56",
+        "pin": "2"
+      },
+      {
+        "ref": "C57",
+        "pin": "2"
+      },
+      {
+        "ref": "C60",
+        "pin": "2"
+      },
+      {
+        "ref": "C61",
+        "pin": "2"
+      },
+      {
+        "ref": "C62",
+        "pin": "2"
+      },
+      {
+        "ref": "C63",
+        "pin": "2"
+      },
+      {
+        "ref": "C65",
+        "pin": "2"
+      },
+      {
+        "ref": "C66",
+        "pin": "2"
+      },
+      {
+        "ref": "C67",
+        "pin": "1"
+      },
+      {
+        "ref": "C7",
+        "pin": "2"
+      },
+      {
+        "ref": "C70",
+        "pin": "2"
+      },
+      {
+        "ref": "C71",
+        "pin": "2"
+      },
+      {
+        "ref": "C77",
+        "pin": "1"
+      },
+      {
+        "ref": "C79",
+        "pin": "2"
+      },
+      {
+        "ref": "C8",
+        "pin": "2"
+      },
+      {
+        "ref": "C80",
+        "pin": "2"
+      },
+      {
+        "ref": "C81",
+        "pin": "2"
+      },
+      {
+        "ref": "C82",
+        "pin": "2"
+      },
+      {
+        "ref": "C83",
+        "pin": "2"
+      },
+      {
+        "ref": "C84",
+        "pin": "2"
+      },
+      {
+        "ref": "C85",
+        "pin": "2"
+      },
+      {
+        "ref": "C86",
+        "pin": "2"
+      },
+      {
+        "ref": "C87",
+        "pin": "2"
+      },
+      {
+        "ref": "C88",
+        "pin": "2"
+      },
+      {
+        "ref": "C89",
+        "pin": "2"
+      },
+      {
+        "ref": "C90",
+        "pin": "2"
+      },
+      {
+        "ref": "C91",
+        "pin": "2"
+      },
+      {
+        "ref": "C92",
+        "pin": "2"
+      },
+      {
+        "ref": "C93",
+        "pin": "2"
+      },
+      {
+        "ref": "C94",
+        "pin": "2"
+      },
+      {
+        "ref": "C95",
+        "pin": "2"
+      },
+      {
+        "ref": "C96",
+        "pin": "2"
+      },
+      {
+        "ref": "C97",
+        "pin": "2"
+      },
+      {
+        "ref": "C98",
+        "pin": "2"
+      },
+      {
+        "ref": "C99",
+        "pin": "2"
+      },
+      {
+        "ref": "D10",
+        "pin": "1"
+      },
+      {
+        "ref": "D11",
+        "pin": "1"
+      },
+      {
+        "ref": "D12",
+        "pin": "2"
+      },
+      {
+        "ref": "D17",
+        "pin": "1"
+      },
+      {
+        "ref": "D18",
+        "pin": "1"
+      },
+      {
+        "ref": "D19",
+        "pin": "1"
+      },
+      {
+        "ref": "D25",
+        "pin": "1"
+      },
+      {
+        "ref": "D3",
+        "pin": "1"
+      },
+      {
+        "ref": "D308",
+        "pin": "2"
+      },
+      {
+        "ref": "D310",
+        "pin": "2"
+      },
+      {
+        "ref": "D311",
+        "pin": "1"
+      },
+      {
+        "ref": "D4",
+        "pin": "1"
+      },
+      {
+        "ref": "D5",
+        "pin": "1"
+      },
+      {
+        "ref": "D6",
+        "pin": "1"
+      },
+      {
+        "ref": "D7",
+        "pin": "1"
+      },
+      {
+        "ref": "D8",
+        "pin": "1"
+      },
+      {
+        "ref": "H1",
+        "pin": "1"
+      },
+      {
+        "ref": "H2",
+        "pin": "1"
+      },
+      {
+        "ref": "H3",
+        "pin": "1"
+      },
+      {
+        "ref": "H4",
+        "pin": "1"
+      },
+      {
+        "ref": "J1",
+        "pin": "14"
+      },
+      {
+        "ref": "J1",
+        "pin": "20"
+      },
+      {
+        "ref": "J1",
+        "pin": "25"
+      },
+      {
+        "ref": "J1",
+        "pin": "30"
+      },
+      {
+        "ref": "J1",
+        "pin": "34"
+      },
+      {
+        "ref": "J1",
+        "pin": "39"
+      },
+      {
+        "ref": "J1",
+        "pin": "6"
+      },
+      {
+        "ref": "J1",
+        "pin": "9"
+      },
+      {
+        "ref": "J16",
+        "pin": "3"
+      },
+      {
+        "ref": "J16",
+        "pin": "4"
+      },
+      {
+        "ref": "J19",
+        "pin": "1"
+      },
+      {
+        "ref": "J19",
+        "pin": "15"
+      },
+      {
+        "ref": "J19",
+        "pin": "16"
+      },
+      {
+        "ref": "J19",
+        "pin": "17"
+      },
+      {
+        "ref": "J19",
+        "pin": "18"
+      },
+      {
+        "ref": "J19",
+        "pin": "19"
+      },
+      {
+        "ref": "J19",
+        "pin": "2"
+      },
+      {
+        "ref": "J19",
+        "pin": "20"
+      },
+      {
+        "ref": "J2",
+        "pin": "4"
+      },
+      {
+        "ref": "J21",
+        "pin": "10"
+      },
+      {
+        "ref": "J21",
+        "pin": "11"
+      },
+      {
+        "ref": "J21",
+        "pin": "12"
+      },
+      {
+        "ref": "J21",
+        "pin": "13"
+      },
+      {
+        "ref": "J21",
+        "pin": "6"
+      },
+      {
+        "ref": "J22",
+        "pin": "2"
+      },
+      {
+        "ref": "J302",
+        "pin": "10"
+      },
+      {
+        "ref": "J302",
+        "pin": "13"
+      },
+      {
+        "ref": "J302",
+        "pin": "16"
+      },
+      {
+        "ref": "J302",
+        "pin": "19"
+      },
+      {
+        "ref": "J302",
+        "pin": "22"
+      },
+      {
+        "ref": "J302",
+        "pin": "25"
+      },
+      {
+        "ref": "J302",
+        "pin": "31"
+      },
+      {
+        "ref": "J302",
+        "pin": "32"
+      },
+      {
+        "ref": "J308",
+        "pin": "3"
+      },
+      {
+        "ref": "J308",
+        "pin": "7"
+      },
+      {
+        "ref": "J308",
+        "pin": "8"
+      },
+      {
+        "ref": "J7",
+        "pin": "MP"
+      },
+      {
+        "ref": "J9",
+        "pin": "1"
+      },
+      {
+        "ref": "J9",
+        "pin": "10"
+      },
+      {
+        "ref": "J9",
+        "pin": "4"
+      },
+      {
+        "ref": "J9",
+        "pin": "7"
+      },
+      {
+        "ref": "R138",
+        "pin": "2"
+      },
+      {
+        "ref": "R148",
+        "pin": "2"
+      },
+      {
+        "ref": "R170",
+        "pin": "2"
+      },
+      {
+        "ref": "R183",
+        "pin": "1"
+      },
+      {
+        "ref": "R184",
+        "pin": "1"
+      },
+      {
+        "ref": "R202",
+        "pin": "2"
+      },
+      {
+        "ref": "R203",
+        "pin": "2"
+      },
+      {
+        "ref": "R216",
+        "pin": "1"
+      },
+      {
+        "ref": "R217",
+        "pin": "1"
+      },
+      {
+        "ref": "R224",
+        "pin": "1"
+      },
+      {
+        "ref": "R225",
+        "pin": "1"
+      },
+      {
+        "ref": "R229",
+        "pin": "1"
+      },
+      {
+        "ref": "R305",
+        "pin": "1"
+      },
+      {
+        "ref": "R306",
+        "pin": "1"
+      },
+      {
+        "ref": "R307",
+        "pin": "1"
+      },
+      {
+        "ref": "R312",
+        "pin": "1"
+      },
+      {
+        "ref": "R316",
+        "pin": "2"
+      },
+      {
+        "ref": "R319",
+        "pin": "1"
+      },
+      {
+        "ref": "R320",
+        "pin": "1"
+      },
+      {
+        "ref": "R322",
+        "pin": "1"
+      },
+      {
+        "ref": "R339",
+        "pin": "2"
+      },
+      {
+        "ref": "R340",
+        "pin": "2"
+      },
+      {
+        "ref": "R341",
+        "pin": "2"
+      },
+      {
+        "ref": "R401",
+        "pin": "2"
+      },
+      {
+        "ref": "R57",
+        "pin": "1"
+      },
+      {
+        "ref": "R66",
+        "pin": "2"
+      },
+      {
+        "ref": "SW1",
+        "pin": "1"
+      },
+      {
+        "ref": "SW1",
+        "pin": "3"
+      },
+      {
+        "ref": "SW1",
+        "pin": "MP"
+      },
+      {
+        "ref": "SW2",
+        "pin": "1"
+      },
+      {
+        "ref": "SW2",
+        "pin": "3"
+      },
+      {
+        "ref": "SW2",
+        "pin": "MP"
+      },
+      {
+        "ref": "SW3",
+        "pin": "3"
+      },
+      {
+        "ref": "TP1",
+        "pin": "1"
+      },
+      {
+        "ref": "TP12",
+        "pin": "1"
+      },
+      {
+        "ref": "TP3",
+        "pin": "1"
+      },
+      {
+        "ref": "TP401",
+        "pin": "1"
+      },
+      {
+        "ref": "U1",
+        "pin": "1"
+      },
+      {
+        "ref": "U1",
+        "pin": "11"
+      },
+      {
+        "ref": "U1",
+        "pin": "14"
+      },
+      {
+        "ref": "U1",
+        "pin": "2"
+      },
+      {
+        "ref": "U1",
+        "pin": "36"
+      },
+      {
+        "ref": "U1",
+        "pin": "37"
+      },
+      {
+        "ref": "U1",
+        "pin": "38"
+      },
+      {
+        "ref": "U1",
+        "pin": "39"
+      },
+      {
+        "ref": "U1",
+        "pin": "40"
+      },
+      {
+        "ref": "U1",
+        "pin": "41"
+      },
+      {
+        "ref": "U1",
+        "pin": "42"
+      },
+      {
+        "ref": "U1",
+        "pin": "43"
+      },
+      {
+        "ref": "U1",
+        "pin": "44"
+      },
+      {
+        "ref": "U1",
+        "pin": "45"
+      },
+      {
+        "ref": "U1",
+        "pin": "46"
+      },
+      {
+        "ref": "U1",
+        "pin": "47"
+      },
+      {
+        "ref": "U1",
+        "pin": "48"
+      },
+      {
+        "ref": "U1",
+        "pin": "49"
+      },
+      {
+        "ref": "U1",
+        "pin": "50"
+      },
+      {
+        "ref": "U1",
+        "pin": "51"
+      },
+      {
+        "ref": "U1",
+        "pin": "52"
+      },
+      {
+        "ref": "U1",
+        "pin": "53"
+      },
+      {
+        "ref": "U10",
+        "pin": "7"
+      },
+      {
+        "ref": "U11",
+        "pin": "2"
+      },
+      {
+        "ref": "U2",
+        "pin": "4"
+      },
+      {
+        "ref": "U2",
+        "pin": "9"
+      },
+      {
+        "ref": "U3",
+        "pin": "10"
+      },
+      {
+        "ref": "U3",
+        "pin": "21"
+      },
+      {
+        "ref": "U3",
+        "pin": "5"
+      },
+      {
+        "ref": "U301",
+        "pin": "2"
+      },
+      {
+        "ref": "U302",
+        "pin": "2"
+      },
+      {
+        "ref": "U303",
+        "pin": "2"
+      },
+      {
+        "ref": "U304",
+        "pin": "3"
+      },
+      {
+        "ref": "U4",
+        "pin": "105"
+      },
+      {
+        "ref": "U401",
+        "pin": "5"
+      },
+      {
+        "ref": "U401",
+        "pin": "9"
+      },
+      {
+        "ref": "U5",
+        "pin": "2"
+      },
+      {
+        "ref": "U7",
+        "pin": "2"
+      },
+      {
+        "ref": "Y2",
+        "pin": "2"
+      },
+      {
+        "ref": "Y2",
+        "pin": "4"
+      }
+    ],
+    "N18412230": [
+      {
+        "ref": "J308",
+        "pin": "6"
+      },
+      {
+        "ref": "R9",
+        "pin": "2"
+      }
+    ],
+    "N18412242": [
+      {
+        "ref": "J308",
+        "pin": "5"
+      },
+      {
+        "ref": "R8",
+        "pin": "2"
+      }
+    ],
+    "PANEL_BL_A": [],
+    "PANEL_RESET_LCD": [
+      {
+        "ref": "C301",
+        "pin": "1"
+      },
+      {
+        "ref": "J302",
+        "pin": "27"
+      },
+      {
+        "ref": "R304",
+        "pin": "1"
+      },
+      {
+        "ref": "U304",
+        "pin": "4"
+      }
+    ],
+    "VCC_5V": [
+      {
+        "ref": "C304",
+        "pin": "1"
+      },
+      {
+        "ref": "C307",
+        "pin": "1"
+      },
+      {
+        "ref": "C308",
+        "pin": "1"
+      },
+      {
+        "ref": "C311",
+        "pin": "1"
+      },
+      {
+        "ref": "C312",
+        "pin": "1"
+      },
+      {
+        "ref": "C402",
+        "pin": "1"
+      },
+      {
+        "ref": "C48",
+        "pin": "1"
+      },
+      {
+        "ref": "C49",
+        "pin": "1"
+      },
+      {
+        "ref": "C65",
+        "pin": "1"
+      },
+      {
+        "ref": "C71",
+        "pin": "1"
+      },
+      {
+        "ref": "J1",
+        "pin": "2"
+      },
+      {
+        "ref": "J1",
+        "pin": "4"
+      },
+      {
+        "ref": "L301",
+        "pin": "1"
+      },
+      {
+        "ref": "L302",
+        "pin": "1"
+      },
+      {
+        "ref": "R171",
+        "pin": "2"
+      },
+      {
+        "ref": "R173",
+        "pin": "1"
+      },
+      {
+        "ref": "R175",
+        "pin": "2"
+      },
+      {
+        "ref": "R226",
+        "pin": "2"
+      },
+      {
+        "ref": "R313",
+        "pin": "2"
+      },
+      {
+        "ref": "R314",
+        "pin": "2"
+      },
+      {
+        "ref": "U11",
+        "pin": "4"
+      },
+      {
+        "ref": "U301",
+        "pin": "5"
+      },
+      {
+        "ref": "U302",
+        "pin": "1"
+      },
+      {
+        "ref": "U303",
+        "pin": "5"
+      },
+      {
+        "ref": "U401",
+        "pin": "7"
+      },
+      {
+        "ref": "U401",
+        "pin": "8"
+      },
+      {
+        "ref": "U5",
+        "pin": "1"
+      }
+    ]
+  },
+  "bridge_parts": {
+    "R311": {
+      "uuid": "ee58e9f3-016a-5bc5-aa6d-97128b78c5a9",
+      "sheet_uuid": "ef7e7da2-a69e-572e-b809-3cbbedf4a33b",
+      "sheet": "backlight",
+      "at": [
+        539.75,
+        43.18
+      ],
+      "value": "10k",
+      "footprint": "R0402__4a1c38cf9e",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "2": "CNN_GPIO26",
+        "1": "PANEL_N17127878"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          55.7353,
+          -56.7261
+        ],
+        "angle_deg": 180.0,
+        "side": "F"
+      }
+    },
+    "R341": {
+      "uuid": "eaa48166-25ae-58fd-8efa-fe89d8100fee",
+      "sheet_uuid": "ef7e7da2-a69e-572e-b809-3cbbedf4a33b",
+      "sheet": "backlight",
+      "at": [
+        260.35,
+        68.58
+      ],
+      "value": "10k",
+      "footprint": "R_0402_1005Metric__cc00eb7537",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "1": "CNN_GPIO26",
+        "2": "GND"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          58.0,
+          -53.0
+        ],
+        "angle_deg": 0.0,
+        "side": "F"
+      }
+    },
+    "R227": {
+      "uuid": "52527001-d57b-5504-a95e-b9f93479a345",
+      "sheet_uuid": "91111fa5-dfa3-508b-aeed-fb4d058d506f",
+      "sheet": "gpio_routing",
+      "at": [
+        260.35,
+        144.78
+      ],
+      "value": "33",
+      "footprint": "R0402_097d4b0b__c1bfdfccc2",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "2": "CNN_GPIO27",
+        "1": "GPIO27"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          21.209,
+          -39.6113
+        ],
+        "angle_deg": 90.0,
+        "side": "B"
+      }
+    },
+    "R228": {
+      "uuid": "b85a198f-78c4-5cd7-9854-4185c5b8dbda",
+      "sheet_uuid": "91111fa5-dfa3-508b-aeed-fb4d058d506f",
+      "sheet": "gpio_routing",
+      "at": [
+        330.2,
+        144.78
+      ],
+      "value": "33",
+      "footprint": "R0402_097d4b0b__c1bfdfccc2",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "2": "CNN_GPIO26",
+        "1": "GPIO26"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          20.3454,
+          -39.6113
+        ],
+        "angle_deg": 90.0,
+        "side": "B"
+      }
+    },
+    "J302": {
+      "uuid": "bb7e52b6-3da2-5bf7-996f-11df1570c5cb",
+      "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+      "sheet": "lcd_interfaces",
+      "at": [
+        86.36,
+        81.28
+      ],
+      "value": "JD9165_MIPI_2L_30P",
+      "footprint": "FFC30P_0P5__5534a26946",
+      "dnp": false,
+      "mpn": "AFC01-S30FCA-00",
+      "nets": {
+        "18": "DSI_A_CLKN",
+        "17": "DSI_A_CLKP",
+        "24": "DSI_A_DATA0N",
+        "23": "DSI_A_DATA0P",
+        "21": "DSI_A_DATA1N",
+        "20": "DSI_A_DATA1P",
+        "10": "GND",
+        "13": "GND",
+        "16": "GND",
+        "19": "GND",
+        "22": "GND",
+        "25": "GND",
+        "31": "GND",
+        "32": "GND",
+        "9": "PANEL_LCD_AVDD",
+        "30": "PANEL_LCD_VCOM",
+        "28": "PANEL_LCD_VDD",
+        "29": "PANEL_LCD_VDD",
+        "3": "PANEL_LCD_VGH",
+        "4": "PANEL_LCD_VGL",
+        "1": "PANEL_LED+",
+        "2": "PANEL_LED+",
+        "7": "PANEL_LED-",
+        "8": "PANEL_LED-",
+        "27": "PANEL_RESET_LCD",
+        "6": "PANEL_SHLR",
+        "26": "PANEL_STBYB",
+        "5": "PANEL_UPDN",
+        "11": "unconnected-(J302-NC-Pad11)",
+        "12": "unconnected-(J302-NC-Pad12)",
+        "14": "unconnected-(J302-NC-Pad14)",
+        "15": "unconnected-(J302-NC-Pad15)"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          29.0,
+          -17.0
+        ],
+        "angle_deg": 0.0,
+        "side": "F"
+      }
+    },
+    "U304": {
+      "uuid": "917c5d9a-6103-5a3b-a969-37c3fa85a6b8",
+      "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+      "sheet": "lcd_interfaces",
+      "at": [
+        365.76,
+        55.88
+      ],
+      "value": "SN74LVC1G07DBVR",
+      "footprint": "SOT-23-5__bb5afb5c1a",
+      "dnp": false,
+      "mpn": "SN74LVC1G07DBVR",
+      "nets": {
+        "2": "CNN_GPIO27",
+        "5": "ESP_3V3",
+        "3": "GND",
+        "4": "PANEL_RESET_LCD",
+        "1": "unconnected-(U304-NC-Pad1)"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          10.0,
+          -18.0
+        ],
+        "angle_deg": 0.0,
+        "side": "B"
+      }
+    },
+    "C301": {
+      "uuid": "6cea593f-1aab-59b0-a5f8-90e181ca867d",
+      "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+      "sheet": "lcd_interfaces",
+      "at": [
+        469.9,
+        43.18
+      ],
+      "value": "1u / 16V",
+      "footprint": "C0402__acc3615381",
+      "dnp": true,
+      "mpn": "",
+      "nets": {
+        "2": "GND",
+        "1": "PANEL_RESET_LCD"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          18.0,
+          -27.0
+        ],
+        "angle_deg": 0.0,
+        "side": "B"
+      }
+    },
+    "R304": {
+      "uuid": "b4c01edb-c39f-50ae-9008-1d118c5f467f",
+      "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+      "sheet": "lcd_interfaces",
+      "at": [
+        330.2,
+        93.98
+      ],
+      "value": "10k",
+      "footprint": "R0402__4a1c38cf9e",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "2": "PANEL_LCD_VDD",
+        "1": "PANEL_RESET_LCD"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          18.0,
+          -29.0
+        ],
+        "angle_deg": 0.0,
+        "side": "B"
+      }
+    },
+    "R339": {
+      "uuid": "5ce3f51a-58a0-5617-89eb-d952c7291551",
+      "sheet_uuid": "288bf0cc-67de-540c-beb0-aaa05b3c8723",
+      "sheet": "lcd_interfaces",
+      "at": [
+        260.35,
+        119.38
+      ],
+      "value": "10k",
+      "footprint": "R_0402_1005Metric__cc00eb7537",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "1": "CNN_GPIO27",
+        "2": "GND"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          70.0,
+          -32.0
+        ],
+        "angle_deg": 0.0,
+        "side": "B"
+      }
+    },
+    "J1": {
+      "uuid": "92550491-7904-5b52-88b2-170ca7e344d2",
+      "sheet_uuid": "200efa87-31f4-52af-b6bf-da70c171b994",
+      "sheet": "mipi_io",
+      "at": [
+        86.36,
+        81.28
+      ],
+      "value": "CON20X2",
+      "footprint": "CON20X2_2P54__b2870a8640",
+      "dnp": false,
+      "mpn": "",
+      "nets": {
+        "23": "CNN_GPIO0",
+        "22": "CNN_GPIO1",
+        "21": "CNN_GPIO2",
+        "19": "CNN_GPIO3",
+        "18": "CNN_GPIO4",
+        "16": "CNN_GPIO5",
+        "15": "CNN_GPIO6",
+        "3": "CNN_GPIO7",
+        "5": "CNN_GPIO8",
+        "13": "CNN_GPIO20",
+        "11": "CNN_GPIO21",
+        "12": "CNN_GPIO22",
+        "7": "CNN_GPIO23",
+        "31": "CNN_GPIO26",
+        "38": "CNN_GPIO27",
+        "26": "CNN_GPIO32",
+        "29": "CNN_GPIO33",
+        "24": "CNN_GPIO36",
+        "8": "CNN_GPIO37",
+        "10": "CNN_GPIO38",
+        "40": "CNN_GPIO45",
+        "36": "CNN_GPIO46",
+        "37": "CNN_GPIO47",
+        "33": "CNN_GPIO48",
+        "35": "CNN_GPIO53",
+        "32": "CNN_GPIO54",
+        "1": "ESP_3V3",
+        "17": "ESP_3V3",
+        "14": "GND",
+        "20": "GND",
+        "25": "GND",
+        "30": "GND",
+        "34": "GND",
+        "39": "GND",
+        "6": "GND",
+        "9": "GND",
+        "2": "VCC_5V",
+        "4": "VCC_5V",
+        "27": "unconnected-(J1-NC-Pad27)",
+        "28": "unconnected-(J1-NC-Pad28)"
+      },
+      "pcb_placement": {
+        "position_mm": [
+          2.0,
+          -23.5
+        ],
+        "angle_deg": 0.0,
+        "side": "F"
+      }
+    }
+  }
+}

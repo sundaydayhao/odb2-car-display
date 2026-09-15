@@ -10,11 +10,16 @@ import pcbnew as k
 
 repo=Path(__file__).resolve().parent.parent
 ap=argparse.ArgumentParser(description=__doc__)
-ap.add_argument('--project',type=Path,default=repo/'hardware/display-singleboard')
+ap.add_argument('--project',type=Path,default=repo/'display_board/hardware/display-singleboard')
 ap.add_argument('--output',type=Path,default=repo/'build/display-singleboard-verification')
 ap.add_argument('--cli',type=Path,default=Path(sys.executable).with_name('kicad-cli.exe' if sys.platform=='win32' else 'kicad-cli'))
 a=ap.parse_args();a.output.mkdir(parents=True,exist_ok=True)
 name='display_singleboard';sch=a.project/(name+'.kicad_sch');pcb=a.project/(name+'.kicad_pcb')
+enclosure_path=a.project/'enclosure.json'
+enclosure=json.loads(enclosure_path.read_text(encoding='utf-8')) if enclosure_path.exists() else {}
+a7=enclosure.get('revision','').startswith('A7')
+removed_otg_refs={'J18','D21','D22','R220','R221','R234','U9','C72','C73','C74','C75','D15','R145','R151','R152','TP28','R187'}
+removed_otg_nets={'USB_DM','USB_DP','USB_DM_A','USB_DP_A','VBUS_EN','VBUS_OUT','N18248775','GND_EARTH'}
 def run(*args):
     p=subprocess.run([str(a.cli),*map(str,args)],text=True,encoding='utf-8',errors='replace',capture_output=True)
     if p.returncode:raise RuntimeError(p.stdout+'\n'+p.stderr)
@@ -85,8 +90,52 @@ required.update({('J18','1'):'VBUS_OUT',('J18','2'):'USB_DM_A',('J18','3'):'USB_
                  ('R234','1'):'USB_DP',('R234','2'):'GND',('U4','52'):'GPIO24',('U4','53'):'GPIO25',
                  ('R209','1'):'GPIO36_BOOTMODE',('R209','2'):'ESP_3V3',
                  ('R204','1'):'GPIO36',('R204','2'):'GPIO36_BOOTMODE'})
+# Keep the P4X core supply connection and compensation while removing the
+# external USB host branch; pin 54 is not a spare on this silicon revision.
+required.update({('U4','54'):'N18792940',('R232','1'):'N18792940',('R232','2'):'ESP_VDD_HP',
+                 ('C118','1'):'N18792940',('C118','2'):'GND',
+                 ('R128','1'):'ESP_VDD_HP',('R128','2'):'FB_DCDC',
+                 ('C53','1'):'ESP_VDD_HP',('C53','2'):'FB_DCDC'})
+# 1S battery charger and 5 V boost power path.  Keep these pin/net
+# assertions here so a future Update PCB from Schematic cannot silently
+# disconnect the battery socket, charger, boost converter, or USB power OR.
+required.update({
+    ('J23','1'):'BAT_PACK',('J23','2'):'GND',('J23','3'):'BAT_NTC',
+    ('F1','1'):'BAT_PACK',('F1','2'):'BAT_RAW',
+    ('U402','1'):'CHG_SW',('U402','2'):'CHG_STAT',('U402','3'):'CHG_CV',
+    ('U402','4'):'CHG_CC',('U402','5'):'BAT_RAW',('U402','6'):'BAT_NTC',
+    ('U402','7'):'USB_DBG_5V',('U402','8'):'GND',('U402','9'):'GND',
+    ('L5','1'):'CHG_SW',('L5','2'):'BAT_RAW',
+    ('C420','1'):'BAT_RAW',('C420','2'):'GND',('R421','1'):'CHG_CC',('R421','2'):'GND',
+    ('R422','1'):'CHG_CV',('R422','2'):'GND',('R423','1'):'BAT_NTC',('R423','2'):'USB_DBG_5V',
+    ('R424','1'):'CHG_STAT',('R424','2'):'GND',
+    ('U403','1'):'BAT_RAW',('U403','2'):'BAT_RAW',('U403','3'):'BOOST_FSW',
+    ('U403','4'):'BOOST_SW',('U403','5'):'BOOST_SW',('U403','6'):'BOOST_SW',('U403','7'):'BOOST_SW',
+    ('U403','8'):'BOOST_BOOT',('U403','9'):'BAT_RAW',('U403','10'):'BOOST_SS',
+    ('U403','11'):'GND',('U403','12'):'GND',('U403','13'):'GND',
+    ('U403','14'):'BAT_5V',('U403','15'):'BAT_5V',('U403','16'):'BAT_5V',
+    ('U403','17'):'BOOST_FB',('U403','18'):'BOOST_COMP',('U403','19'):'BOOST_ILIM',
+    ('U403','20'):'GND',('U403','21'):'GND',
+    ('L6','1'):'BOOST_SW',('L6','2'):'BAT_5V',
+    ('C430','1'):'BAT_RAW',('C430','2'):'GND',('C431','1'):'BAT_5V',('C431','2'):'GND',
+    ('C432','1'):'BOOST_BOOT',('C432','2'):'BOOST_SW',('C433','1'):'BOOST_COMP',('C433','2'):'GND',
+    ('C434','1'):'BOOST_SS',('C434','2'):'GND',('C435','1'):'BAT_RAW',('C435','2'):'GND',
+    ('R430','1'):'BOOST_FSW',('R430','2'):'BOOST_SW',('R431','1'):'BOOST_ILIM',('R431','2'):'GND',
+    ('R432','1'):'BAT_5V',('R432','2'):'BOOST_FB',('R433','1'):'BOOST_FB',('R433','2'):'GND',
+    ('Q10','1'):'POWER_OR_GATE',('Q10','2'):'BAT_5V',('Q10','3'):'INPUT_5V',
+    ('Q11','1'):'POWER_OR_GATE',('Q11','2'):'USB_DBG_5V',('Q11','3'):'INPUT_5V'})
 for number,net in enumerate(['GND','VIN_5V','ESP_3V3','GPIO37','GPIO38','ESP_EN','GPIO35_BOOTMODE'],401):
     required[(f'TP{number}','1')]=net
+if a7:
+    required={key:value for key,value in required.items() if key[0] not in removed_otg_refs}
+    required.update({('U4','49'):None,('U4','50'):None})
+    for ref in sorted(removed_otg_refs & set(refs)):
+        errors.append(['removed USB OTG component remains',ref])
+    for net in sorted(removed_otg_nets & set(value for value in expected.values() if value)):
+        errors.append(['removed USB OTG net remains in schematic',net])
+    stale=[t.m_Uuid.AsString() for t in raw_board.GetTracks() if t.GetNetname() in removed_otg_nets]
+    stale += [z.m_Uuid.AsString() for z in raw_board.Zones() if z.GetNetname() in removed_otg_nets]
+    if stale:errors.append(['removed USB OTG copper remains',stale])
 for key,value in required.items():
     if expected.get(key)!=value:errors.append(['integrated interface changed',key,expected.get(key),value])
 for ref in ['J5','J301','J303','J305','J306','J307']:
@@ -99,7 +148,37 @@ for ref in ['J15','J20','R113','R131','Q2','Q3',
             'D13','D14','D16','D20','D23','D24','R176','R177','C76']:
     if ref in refs:errors.append(['obsolete USB branch component',ref])
 fpmap={f.GetReference():f for f in b.GetFootprints()}
-for ref in ('D21','D22'):
+enclosure_path=a.project/'enclosure.json'
+enclosure=json.loads(enclosure_path.read_text(encoding='utf-8')) if enclosure_path.exists() else {}
+if enclosure.get('revision','').startswith('A7'):
+    # The mechanical redesign must retain the analog mic bias and active-low
+    # recovery buttons.  A connector footprint swap is not a pin-number swap.
+    enclosure_pins={('J7','1'):'MICP',('J7','2'):'N18300564',
+                    ('R66','2'):'GND',
+                    ('J16','1'):'N18423897',('J16','2'):'N18423915',
+                    ('SW1','1'):'GND',('SW1','2'):'ESP_EN',('SW1','MP'):'GND',
+                    ('SW2','1'):'GND',('SW2','2'):'GPIO35_BOOTMODE',('SW2','MP'):'GND'}
+    for key,value in enclosure_pins.items():
+        if expected.get(key)!=value:errors.append(['enclosure interface pin changed',key,expected.get(key),value])
+    for ref in ('SW1','SW2'):
+        if ref not in fpmap or fpmap[ref].GetValue()!='SKRTLBE010':
+            errors.append(['side-actuated recovery switch required',ref])
+    if 'J7' not in fpmap or fpmap['J7'].GetValue()!='SM02B-GHS-TB(LF)(SN)':
+        errors.append(['wired microphone locking connector required','J7'])
+    for ref in ('J1','J2'):
+        if ref in fpmap and fpmap[ref].GetPosition().y <= (b.GetBoardEdgesBoundingBox().GetTop()+b.GetBoardEdgesBoundingBox().GetBottom())/2:
+            errors.append(['internal header must be in lower half',ref])
+    if 'U1' in fpmap and abs((fpmap['U1'].GetOrientationDegrees()+180)%360-180)>.01:
+        errors.append(['C6 antenna must face upper edge','U1'])
+    if 'J9' in fpmap:
+        box9=fpmap['J9'].GetBoundingBox(False,False)
+        if box9.GetWidth() <= box9.GetHeight():errors.append(['camera FPC must be horizontal','J9'])
+    for ref in ('J302','J308'):
+        if ref in fpmap and fpmap[ref].GetLayer()!=k.F_Cu:
+            errors.append(['panel FPC must be accessible through rear service cover',ref])
+    holes={ref for ref in refs if re.fullmatch(r'H\d+',ref)}
+    if holes!={'H1','H2','H3','H4'}:errors.append(['four-corner mounting reference set',sorted(holes)])
+for ref in (() if a7 else ('D21','D22')):
     fp=fpmap.get(ref)
     if fp is None or fp.IsDNP() or fp.GetValue()!='TPD1E05U06DPYR' or str(fp.GetFPID().GetLibItemName())!='TPD1E05U06_DPY0002A_TI':
         errors.append(['HS USB requires fitted TI ESD with matching DPY footprint',ref])
@@ -153,7 +232,13 @@ def node(pt,layer,net):return (layer,pt.x,pt.y,net)
 thickness=k.ToMM(b.GetDesignSettings().GetBoardThickness())
 for track in b.GetTracks():
     if isinstance(track,k.PCB_VIA):
-        edge(node(track.GetPosition(),k.F_Cu,track.GetNetCode()),node(track.GetPosition(),k.B_Cu,track.GetNetCode()),thickness)
+        # A plated through-via can join signals on the power layer as well.
+        # Until the stackup is qualified, charge one nominal board thickness
+        # for each transition; this is a conservative length proxy, not delay.
+        layers=[layer for layer in (k.F_Cu,k.In1_Cu,k.In2_Cu,k.B_Cu) if track.IsOnLayer(layer)]
+        for i,layer in enumerate(layers):
+            for other in layers[i+1:]:
+                edge(node(track.GetPosition(),layer,track.GetNetCode()),node(track.GetPosition(),other,track.GetNetCode()),thickness)
     else:
         edge(node(track.GetStart(),track.GetLayer(),track.GetNetCode()),node(track.GetEnd(),track.GetLayer(),track.GetNetCode()),k.ToMM(track.GetLength()))
 by_net=collections.defaultdict(list)
@@ -224,12 +309,15 @@ if panel_profile:
          'within_pair_limit_mm':.254,'pair_mean_spread_limit_mm':.762,
          'source':'https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32p4/pcb-layout-design-esp32p4.html#mipi'}
     (a.output/'csi-lengths.json').write_text(json.dumps(csi,indent=2),encoding='utf-8')
+
+usb={'port_present':False,'removed_references':sorted(removed_otg_refs),'retained_debug_connector':'J19'} if a7 else None
 erc_items=[v for sheet in erc.get('sheets',[]) for v in sheet.get('violations',[])]
 summary={'engine':version,'physical_components':len(refs),'unique_numbered_pads':len(actual),'native_netlist_nodes':len(expected),
          'erc_violations':len(erc_items),'drc_violations':len(drc['violations']),'unconnected_items':len(drc['unconnected_items']),
          'duplicate_refs':duplicates,'connectivity_errors':errors,'drc_ignored_checks':drc.get('ignored_checks',[]),
          'mipi':mipi,'pcb_sha256':hashlib.sha256(pcb.read_bytes()).hexdigest(),'schematic_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(a.project.glob('*.kicad_sch'))}}
 if panel_profile:summary.update(panel_qualification=panel_profile['qualification'],csi=csi)
+if usb is not None:summary['usb_hs']=usb
 (a.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps({key:val for key,val in summary.items() if key not in ['drc_ignored_checks','schematic_sha256']},ensure_ascii=False,indent=2))
 sys.exit(1 if erc_items or drc['violations'] or drc['unconnected_items'] or errors or duplicates else 0)

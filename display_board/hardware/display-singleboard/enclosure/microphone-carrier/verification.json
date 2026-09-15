@@ -1,0 +1,24 @@
+{
+  "status": "CAD_CHECKS_PASS_SAMPLE_UNTESTED",
+  "erc": 0,
+  "drc": 0,
+  "unconnected": 0,
+  "schematic_parity": 0,
+  "electrical_nodes": 4,
+  "nets": {
+    "/MICP": [
+      "MIC1.1",
+      "J1.1"
+    ],
+    "/MIC_RETURN": [
+      "MIC1.2",
+      "J1.2"
+    ]
+  },
+  "files_sha256": {
+    "microphone_carrier.kicad_pcb": "97dce025ecd3e7ff26fbce709b1480bc0c7bb525e1e6dc822df9661b4ebac1be",
+    "microphone_carrier.kicad_sch": "f1e0d49b10e82959d1e96942f3694cf5d5f50ae97717c79ce000737308e2c969",
+    "microphone_carrier.step": "790108f7ce0fbd4d2588ff8243cba883448c74b9e79b880cad82b2edfc20d9ac"
+  },
+  "required_process": "Central via resin filled and copper capped; not merely tented"
+}

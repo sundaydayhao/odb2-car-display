@@ -1,0 +1,22 @@
+{
+  "schematic_geometry_errors": [],
+  "mic_copper_land_mm": {
+    "center_diameter": 0.9,
+    "inner_ring_inner": 1.8,
+    "inner_ring_outer": 2.7,
+    "outer_ring_inner": 3.4,
+    "outer_ring_outer": 3.8,
+    "four_bridges_width": 0.2
+  },
+  "paste": {
+    "thickness_mm": 0.1,
+    "radial_gaps": 3,
+    "gap_mm": 0.8
+  },
+  "pcb": {
+    "diameter_mm": 8,
+    "thickness_mm": 0.8,
+    "center_via_drill_mm": 0.2,
+    "required_process": "Resin filled and copper capped, planarized to prevent paste loss/wicking under MIC1"
+  }
+}

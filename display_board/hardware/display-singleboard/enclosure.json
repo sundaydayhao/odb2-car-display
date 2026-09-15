@@ -1,0 +1,457 @@
+{
+  "revision": "A7 enclosure assembly prototype",
+  "coordinate_system": "Planning PCB XY: +X right, +Y down; F toward removable rear cover. STEP/STL right-handed coordinates X=PCB X,Y=-PCB Y,Z toward rear cover.",
+  "pcb_envelope_mm": [
+    -31,
+    -109.5,
+    89,
+    -10.5
+  ],
+  "mechanical_status": "A7 no USB host; actual545solidPCB/14criticalrefs/8representative envelopes checked; prototype C3012621 audio and panel/plug/material/vehicle qualification pending",
+  "access": [
+    {
+      "reference": "J302",
+      "kind": "internal_lcd_fpc",
+      "direction": "+Y",
+      "reservation_mm": [
+        19,
+        -14.8,
+        39,
+        26.48
+      ],
+      "note": "F0, root (29,-17); actual STEP mouth near (29,-14.8). Central lower-edge flex path; actual tail/contact face unqualified.",
+      "expected_side": "F"
+    },
+    {
+      "reference": "J308",
+      "kind": "internal_touch_fpc",
+      "direction": "+Y",
+      "reservation_mm": [
+        64,
+        -17.3,
+        74,
+        -6.5
+      ],
+      "note": "F0 (69,-19), mouth toward +Y. Front-view left touch tail; actual tail root and length unqualified.",
+      "expected_side": "F"
+    },
+    {
+      "reference": "J21",
+      "kind": "external_microsd",
+      "direction": "+X",
+      "reservation_mm": [
+        89,
+        -53,
+        109,
+        -35
+      ],
+      "note": "B.Cu side socket, separate z level from speaker; provide fingernail and push/eject access",
+      "expected_side": "B"
+    },
+    {
+      "reference": "J16",
+      "kind": "internal_speaker_harness",
+      "direction": "-X",
+      "reservation_mm": [
+        -46,
+        -54.3,
+        -20,
+        -46.2
+      ],
+      "note": "Unmoved speaker connector; closed internal harness pocket in carrier/rear cover gives plug and wire-bend room.",
+      "expected_side": "F"
+    },
+    {
+      "reference": "J9",
+      "kind": "internal_camera_fpc",
+      "direction": "+Z",
+      "reservation_mm": [
+        1,
+        -81,
+        25,
+        -65
+      ],
+      "note": "Original vertical 1-1734248-5 at F(13,-75)/0; body long axis X. No substitution with a side-entry connector.",
+      "body_height_mm": 5.4,
+      "expected_side": "F"
+    },
+    {
+      "reference": "J1",
+      "kind": "internal_expansion",
+      "direction": "+Z",
+      "note": "Lower-left internal expansion header F(2,-23.5). Rear service access, no bottom public port; mated IDC housing is representative only.",
+      "expected_side": "F",
+      "reservation_mm": [
+        -25,
+        -28,
+        29,
+        -12
+      ]
+    },
+    {
+      "reference": "J2",
+      "kind": "internal_c6_programming",
+      "direction": "+Z",
+      "note": "Lower internal C6 service header F(50,-17); separated from LCD/CTP lower flex corridors.",
+      "expected_side": "F",
+      "reservation_mm": [
+        44.5,
+        -22.5,
+        55.5,
+        -9.5
+      ]
+    },
+    {
+      "reference": "SW1",
+      "kind": "service_reset",
+      "direction": "-Y",
+      "note": "SKRTLBE010 side-actuated, 0.2 mm travel. Recessed insulated-tool service hole; no large button cap or preload.",
+      "expected_side": "F",
+      "reservation_mm": [
+        6,
+        -92,
+        10,
+        -79.5
+      ]
+    },
+    {
+      "reference": "SW2",
+      "kind": "service_boot",
+      "direction": "-Y",
+      "note": "SKRTLBE010 side-actuated, 0.2 mm travel. Recessed insulated-tool service hole; no large button cap or preload.",
+      "expected_side": "F",
+      "reservation_mm": [
+        16,
+        -92,
+        20,
+        -79.5
+      ]
+    },
+    {
+      "reference": "J7",
+      "kind": "internal_microphone_harness",
+      "direction": "-X",
+      "note": "GH 1.25 mm two-wire microphone harness: pin 1 signal/bias, pin 2 dedicated analog return. Capsule mounts to case through insulated daughterboard or qualified wired equivalent.",
+      "expected_side": "F",
+      "reservation_mm": [
+        -33,
+        -61,
+        -18,
+        -54
+      ]
+    },
+    {
+      "reference": "J22",
+      "kind": "external_regulated_5v",
+      "direction": "-X",
+      "reservation_mm": [
+        -54,
+        -72.4,
+        -31,
+        -57.6
+      ],
+      "expected_side": "F",
+      "note": "Regulated 5 V at left F(-23,-65)/90; not direct vehicle 12 V."
+    },
+    {
+      "reference": "TP401",
+      "kind": "p4_uart_factory_pads",
+      "direction": "+Z",
+      "reservation_mm": [
+        -21,
+        -17,
+        0,
+        -11
+      ],
+      "note": "TP401..407 moved below-left; separated from central LCD flex corridor.",
+      "expected_side": "F"
+    },
+    {
+      "reference": "J19",
+      "kind": "external_usb_serial_jtag",
+      "direction": "-X",
+      "reservation_mm": [
+        -59,
+        -45.2,
+        -31,
+        -31.8
+      ],
+      "expected_side": "F",
+      "note": "Native USB Serial/JTAG left, user-accessible; adjacent internal audio pocket remains enclosed."
+    }
+  ],
+  "mounting": {
+    "hole_references": [
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "pad_outer_diameter_mm": 5.0,
+    "nominal_drill_mm": 3.0,
+    "maximum_local_support_or_head_diameter_mm": 6,
+    "hardware_proposal": "3 mm PCB holes, nominal M2.5 insulated support/head OD <=6 mm; actual fastening hardware and materials to qualify",
+    "note": "Four corner pattern 110 x 64 mm, 5 mm inset. Checked two-sided component envelopes and rear-open 8 mm tool cylinders; not a tolerance/strength approval.",
+    "corner_inset_mm": 5,
+    "tool_diameter_mm": 8
+  },
+  "antenna": {
+    "reference": "U1",
+    "antenna_region_mm": [
+      45,
+      -84.3,
+      58.2,
+      -78.9
+    ],
+    "added_object_clearance_target_mm": 15,
+    "note": "A7 C6 points -Y. PCB 24 mm above LCM centre; nominal 6 mm screen envelope yields 15.386 mm 3D separation. Update with real panel metal and case hardware.",
+    "guideline": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c6/pcb-layout-design.html"
+  },
+  "z_clearance": {
+    "front_faces": "removable rear service cover",
+    "back_faces": "screen metal backplate",
+    "pcb_b_z_mm": 20,
+    "pcb_f_z_mm": 21.6,
+    "case_rear_inside_z_mm": 35.2,
+    "screen_thickness_assumed_mm": 6,
+    "note": "All STEP output is right-handed; actual connector bodies checked, but unqualified panel/plug/harness heights remain parameterized."
+  },
+  "side_power": {
+    "reference": "SW3",
+    "center_mm": [
+      -7,
+      -73.6
+    ],
+    "angle_deg": 0,
+    "body_offset_mm": [
+      0,
+      -7.3
+    ],
+    "body_xy_mm": [
+      12.7,
+      6.4
+    ],
+    "body_height_mm": 6.6,
+    "stem_length_mm": 5,
+    "nominal_travel_mm": 2.2,
+    "actuator_xy_mm": [
+      3.9,
+      3.9
+    ],
+    "direction": "-Y",
+    "suggested_case_cap_xz_mm": [
+      12,
+      6
+    ],
+    "suggested_case_slot_xz_mm": [
+      15.5,
+      6.8
+    ],
+    "sidewall_z_center_mm": 3.3,
+    "slot_status": "A7 cap matched to actual STEP left detent, stem axis F+3.3; 2.2 mm travel clear in nominal model. Fit and stops not tolerance-qualified.",
+    "power_path": "J22 VIN_5V / J19 USB_DBG_5V -> independent Q6/Q7 or Q4/Q5 isolation -> INPUT_5V -> U401 TPS22965 -> VCC_5V. SW3 selects U401 ON high/low; J1 VCC_5V injection bypasses the switch.",
+    "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/aaff8f05897d2097c317cf69ddd8d82f.pdf?productCode=C22355761"
+  },
+  "bottom_base": {
+    "edge_y_mm": -10.5,
+    "external_port_openings": false,
+    "note": "No external user PCB ports on bottom. Narrow lower carrier pod holds speaker and base force path; PCB does not carry base load."
+  },
+  "component_poses": {
+    "J302": {
+      "position_mm": [
+        29.0,
+        -17.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "J308": {
+      "position_mm": [
+        69.0,
+        -19.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "J9": {
+      "position_mm": [
+        13.0,
+        -75.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "J19": {
+      "position_mm": [
+        -25.35,
+        -38.5
+      ],
+      "angle_deg": -90.0,
+      "side": "F"
+    },
+    "J21": {
+      "position_mm": [
+        85.0012,
+        -44.6824
+      ],
+      "angle_deg": 180.0,
+      "side": "B"
+    },
+    "J22": {
+      "position_mm": [
+        -23.0,
+        -65.0
+      ],
+      "angle_deg": 90.0,
+      "side": "F"
+    },
+    "J1": {
+      "position_mm": [
+        2.0,
+        -23.5
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "J2": {
+      "position_mm": [
+        50.0,
+        -17.0
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "J7": {
+      "position_mm": [
+        -22.0,
+        -57.5
+      ],
+      "angle_deg": -90.0,
+      "side": "F"
+    },
+    "J16": {
+      "position_mm": [
+        -22.3238,
+        -49.4822
+      ],
+      "angle_deg": -90.0,
+      "side": "F"
+    },
+    "SW1": {
+      "position_mm": [
+        8.0,
+        -82.46
+      ],
+      "angle_deg": 180.0,
+      "side": "F"
+    },
+    "SW2": {
+      "position_mm": [
+        18.0,
+        -82.46
+      ],
+      "angle_deg": 180.0,
+      "side": "F"
+    },
+    "SW3": {
+      "position_mm": [
+        -7.0,
+        -73.6
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "U1": {
+      "position_mm": [
+        45.0,
+        -67.7
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "H1": {
+      "position_mm": [
+        -26.0,
+        -79.5
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "H2": {
+      "position_mm": [
+        84.0,
+        -79.5
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "H3": {
+      "position_mm": [
+        -26.0,
+        -15.5
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    },
+    "H4": {
+      "position_mm": [
+        84.0,
+        -15.5
+      ],
+      "angle_deg": 0.0,
+      "side": "F"
+    }
+  },
+  "case_profile": "enclosure/case-parameters.json",
+  "microphone_carrier": {
+    "project": "enclosure/microphone-carrier/microphone_carrier.kicad_pro",
+    "diameter_mm": 8,
+    "thickness_mm": 0.8,
+    "fixing": "independent two-M2x4 clamp and insulating grommet",
+    "mainboard_bias_unchanged": true
+  },
+  "speaker": {
+    "center_xy": [
+      29,
+      11
+    ],
+    "body_xy_assumed": [
+      40,
+      20
+    ],
+    "body_depth_assumed": 8,
+    "gasket_border": 2,
+    "rear_volume_depth": 6,
+    "status": "PROTOTYPE_CANDIDATE",
+    "part": "GSPK4020057TN-4R3W",
+    "supplier_code": "C3012621",
+    "rated_power_w": 3,
+    "maximum_power_w": 4,
+    "impedance_ohm": 4,
+    "front_z": 20,
+    "front_gasket_thickness": 0.7,
+    "rear_plenum_z": [
+      28,
+      30.25
+    ],
+    "outlet": "Left lower-pod side, toward driver; sealed front duct, no rear grille",
+    "conflicts": [
+      "Datasheet p2 and distributor say height5.7; cover and drawing p6 say total8.0. Model uses8.0 until confirmed.",
+      "Datasheet p2 operation-40..85C/storage-30..70C; p4 storage85C/96h and incomplete operating-duration cells. Written manufacturer confirmation and assembled thermal tests required."
+    ],
+    "spl_condition": "111+-3dB at0.5W/0.1m/1.05kHz with specified baffle; not broadband1m sensitivity",
+    "rear_chamber": "Nominal basket/magnet model subtracted:5.0315cc; 40x20x8 conservative body, actual displaced volume/thermal data unconfirmed. Adjustable insert.",
+    "volume_insert_front_z_mm": 30.25,
+    "nominal_model_net_rear_chamber_cc": 5.0315
+  },
+  "mechanical_geometry_sha256": "b68c083ffe200db9005e6bcdaa3ebb39ada156bbe1a9232333b935f808f08d74",
+  "battery_power_wing": {
+    "enabled": true,
+    "extension_mm": 25.0,
+    "assembly_side": "B",
+    "battery_connector": "J23 JST_PH3",
+    "access": "rear service cover / battery lead strain relief",
+    "note": "Power wing is a provisional electrical placement envelope; final pack clearance is qualified with the actual 3.7 V 5000 mAh PCM+NTC pack."
+  }
+}

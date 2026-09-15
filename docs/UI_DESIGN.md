@@ -79,12 +79,12 @@ UI 通过有界动作队列提交保存请求，网络重连、闪存写入和�
 
 ## 文件职责
 
-- `main/ui.c`：屏幕、触摸驱动、任务锁以及车辆数据到显示模型的映射。
-- `main/dashboard.c`：五页 LVGL 布局、三套配色、手动导航、状态栏与独立演示数据。
-- `main/service_panel.c`：唯一设置入口、分类页面、屏幕配网与服务操作；`ui.c` 执行持久保存。
-- `main/dashboard.h`：不依赖车辆协议或硬件驱动的显示数据模型。
-- `main/dashboard_text.h`：全部中文界面文案。
-- `main/fonts/`：生成后直接编入固件的字体及 OFL 授权。
+- `display_board/main/ui.c`：屏幕、触摸驱动、任务锁以及车辆数据到显示模型的映射。
+- `display_board/main/dashboard.c`：五页 LVGL 布局、三套配色、手动导航、状态栏与独立演示数据。
+- `display_board/main/service_panel.c`：唯一设置入口、分类页面、屏幕配网与服务操作；`ui.c` 执行持久保存。
+- `display_board/main/dashboard.h`：不依赖车辆协议或硬件驱动的显示数据模型。
+- `display_board/main/dashboard_text.h`：全部中文界面文案。
+- `display_board/main/fonts/`：生成后直接编入固件的字体及 OFL 授权。
 
 ## 中文字体
 
@@ -125,7 +125,7 @@ cmake -S tools/ui_preview -B build/ui_preview -G Ninja `
   -DCMAKE_C_COMPILER_ARG1=cc -DCMAKE_BUILD_TYPE=Debug
 ```
 
-固件仍使用原来的 `idf.py -B build build` 和 `idf.py -B build -p COM9 flash`。
+固件现在由独立显示板工程使用 `idf.py -B display_board/build build` 和 `idf.py -B display_board/build -p COM9 flash`。
 
 原 `build` 绑定了用户目录下的 Python 环境。若安装器 profile 指向另一套 Python，
 使用以下环境激活方式，不要为此清空构建目录：
@@ -134,13 +134,13 @@ cmake -S tools/ui_preview -B build/ui_preview -G Ninja `
 $env:IDF_TOOLS_PATH = 'C:\Users\zhang\.espressif'
 $env:IDF_PYTHON_ENV_PATH = 'C:\Users\zhang\.espressif\python_env\idf5.5_py3.11_env'
 . 'C:\esp\v5.5.5\esp-idf\export.ps1'
-idf.py -B build build
-idf.py -B build -p COM9 flash
+idf.py -B display_board/build build
+idf.py -B display_board/build -p COM9 flash
 ```
 
 ## 历史烧录：彩色 UI 版本（BLE 接入前）
 
-- 应用：`build/odb2_dash.bin`，821968 字节，原 1 MiB 应用分区剩余 22%。
+- 应用：`display_board/build/odb2_dash.bin`，821968 字节，原 1 MiB 应用分区剩余 22%。
 - SHA-256：`67c498f5569e531c15d3d9c9d3fc56dd81d1e201913b206e6933210c5b9102fd`。
 - 写入和校验成功；未清空 NVS，未修改分区布局。
 - 启动日志确认 GT911 ID 911、触摸注册成功、五页三配色界面启动以及车辆采集启动。

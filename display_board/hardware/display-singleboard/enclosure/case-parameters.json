@@ -1,0 +1,364 @@
+{
+  "revision": "A7 PARAMETRIC FIT PROTOTYPE",
+  "status": "PROTOTYPE_CANDIDATE_REGENERATED_FOR_NO_USB_HOST_AND_3W_SPEAKER",
+  "coordinate_system": "Planning PCB absolute XY in mm, +Y downward in rear view; exported STEP/STL use right-handed X=PCB X,Y=-PCB Y,Z display-to-rear",
+  "front": {
+    "center_xy": [
+      29,
+      -29.5
+    ],
+    "outer_xy": [
+      178,
+      126
+    ],
+    "corner_radius": 5,
+    "join_z": 10,
+    "lip_thickness": 1.2,
+    "wall": 2,
+    "window_xy_assumed": [
+      154,
+      86
+    ]
+  },
+  "screen": {
+    "center_xy": [
+      29,
+      -23.5
+    ],
+    "lcm_xy": [
+      164.86,
+      99.96
+    ],
+    "lcm_xy_tolerance": 0.3,
+    "thickness_assumed": 6,
+    "front_z": 1.2,
+    "pocket_side_clearance": 0.4,
+    "cover_glass_xy": null,
+    "actual_total_thickness": null,
+    "active_area_xy": null
+  },
+  "pcb": {
+    "outline": [
+      -31,
+      -109.5,
+      89,
+      -10.5
+    ],
+    "b_z": 20,
+    "thickness": 1.6,
+    "holes": [
+      [
+        -26,
+        -79.5
+      ],
+      [
+        84,
+        -79.5
+      ],
+      [
+        -26,
+        -15.5
+      ],
+      [
+        84,
+        -15.5
+      ]
+    ],
+    "hole_diameter": 3,
+    "boss_outer_diameter": 6,
+    "boss_pilot_diameter": 2.1,
+    "tool_clear_diameter": 8,
+    "source": "Frozen A7 interface poses confirmed from build/a7-ordinary-routing; not electrical routing release",
+    "power_wing_extension_mm": 25.0
+  },
+  "carrier": {
+    "upper_center_xy": [
+      29,
+      -47.5
+    ],
+    "upper_outer_xy": [
+      128,
+      82
+    ],
+    "lower_pod_center_xy": [
+      29,
+      13
+    ],
+    "lower_pod_outer_xy": [
+      60,
+      41
+    ],
+    "wall": 2,
+    "flange_thickness": 2,
+    "rear_cover_inner_z": 35.2,
+    "rear_cover_thickness": 2,
+    "panel_join_screws": [
+      [
+        -55,
+        -87.5
+      ],
+      [
+        113,
+        -87.5
+      ],
+      [
+        -55,
+        30
+      ],
+      [
+        113,
+        30
+      ]
+    ],
+    "rear_cover_screws": [
+      [
+        -31,
+        -84.5
+      ],
+      [
+        89,
+        -84.5
+      ],
+      [
+        -31,
+        -10.5
+      ],
+      [
+        89,
+        -10.5
+      ],
+      [
+        3,
+        28.5
+      ],
+      [
+        55,
+        28.5
+      ]
+    ],
+    "case_insert_pilot": 3.5,
+    "case_screw_clearance": 2.8,
+    "audio_harness_pocket": {
+      "outer_xy": [
+        -48,
+        -56.3,
+        -30,
+        -43.3
+      ],
+      "inner_xy": [
+        -46,
+        -54.3,
+        -30,
+        -46.2
+      ],
+      "function": "Closed internal speaker mating plug and wire-bend pocket; no public audio opening",
+      "minimum_web_to_usb_debug_aperture_mm": 1.0,
+      "status": "Prototype wall web; strength and actual harness validation pending"
+    }
+  },
+  "rf": {
+    "reference": "U1",
+    "antenna_xy": [
+      45,
+      -84.3,
+      58.2,
+      -78.9
+    ],
+    "plane_z_offset_from_f": 0,
+    "metal_clearance_target": 15,
+    "method": "Exact rectangular metal-envelope versus antenna-plane solid distance; screen thickness is provisional",
+    "extra_metal_objects": []
+  },
+  "ports": [
+    {
+      "ref": "J22",
+      "label": "5V INPUT",
+      "wall": "left",
+      "center_along": -65,
+      "center_z_offset_from_f": 3.8,
+      "window_wh": [
+        14.8,
+        9
+      ],
+      "status": "Nominal 5 V plug/lock envelope; qualify actual mating harness"
+    },
+    {
+      "ref": "J19",
+      "label": "USB DEBUG",
+      "wall": "left",
+      "center_along": -38.5,
+      "center_z_offset_from_f": 1.6,
+      "window_wh": [
+        13.4,
+        8
+      ],
+      "status": "Recess includes USB-C plug overmold; qualify actual shell and cable"
+    },
+    {
+      "ref": "J21",
+      "label": "microSD",
+      "wall": "right",
+      "center_along": -41.6,
+      "center_z_absolute": 19.0,
+      "window_wh": [
+        18,
+        4
+      ],
+      "status": "Asymmetric finger/card opening shifted downward; card path remains at Y-44.0824. Body model nominal, actual card travel unqualified."
+    },
+    {
+      "ref": "SW3",
+      "label": "POWER",
+      "wall": "top",
+      "center_along": -7,
+      "center_z_offset_from_f": 3.3,
+      "window_wh": [
+        15.5,
+        6.8
+      ],
+      "status": "Existing large side slide; guided cap and 2.2 mm travel"
+    },
+    {
+      "ref": "SW1",
+      "label": "RST",
+      "wall": "top",
+      "center_along": 8,
+      "center_z_offset_from_f": 1.7,
+      "window_wh": [
+        3,
+        3
+      ],
+      "status": "SKRTLBE010 0.2 mm travel; recessed insulated-tool service access, no pressing cap"
+    },
+    {
+      "ref": "SW2",
+      "label": "BOOT",
+      "wall": "top",
+      "center_along": 18,
+      "center_z_offset_from_f": 1.7,
+      "window_wh": [
+        2.5,
+        2.5
+      ],
+      "status": "SKRTLBE010 0.2 mm travel; recessed insulated-tool recovery access, no pressing cap"
+    }
+  ],
+  "fpc": {
+    "lcd": {
+      "connector_ref": "J302",
+      "mouth_xy": [
+        29,
+        -14.8
+      ],
+      "connector_contact_z_offset_from_f": 0.75,
+      "tail_root_xy": [
+        29,
+        26.48
+      ],
+      "tail_root_z_offset_from_screen_back": 0,
+      "bend_radius": 2,
+      "board_edge_clearance": 1,
+      "flex_width": 15.5,
+      "flex_thickness_assumed": 0.15,
+      "engagement_allowance": 3,
+      "assembly_slack": 4,
+      "reference_length": 66.54,
+      "actual_usable_length": null,
+      "contact_face": null,
+      "status": "Geometry estimate only; seller reference length origin not established",
+      "connector_origin_xy": [
+        29,
+        -17
+      ],
+      "connector_angle_deg": 0
+    },
+    "touch": {
+      "connector_ref": "J308",
+      "mouth_xy": [
+        69,
+        -19
+      ],
+      "tail_root_xy": null,
+      "actual_usable_length": null,
+      "bend_radius": 2,
+      "flex_width_assumed": 3.5,
+      "contact_face": null,
+      "status": "Cannot determine fit until left-exit touch drawing and usable tail length are known",
+      "connector_origin_xy": [
+        69,
+        -19
+      ],
+      "connector_angle_deg": 0
+    }
+  },
+  "audio": {
+    "microphone": {
+      "center_xy": [
+        -45,
+        -83
+      ],
+      "capsule_diameter_assumed": 4,
+      "capsule_depth_assumed": 1.3,
+      "grommet_pocket_diameter": 4.6,
+      "outer_mount_diameter": 16,
+      "acoustic_hole_diameter": 1.2,
+      "status": "B4013AM422-042 on supplied 8 mm carrier, acoustic face toward front, two-wire harness to main J7; two M2 screws retain independent clamp. Assembly and acoustic tests pending.",
+      "carrier_diameter": 8,
+      "carrier_thickness": 0.8,
+      "carrier_pocket_diameter": 8.4
+    },
+    "speaker": {
+      "center_xy": [
+        29,
+        11
+      ],
+      "body_xy_assumed": [
+        40,
+        20
+      ],
+      "body_depth_assumed": 8,
+      "gasket_border": 2,
+      "rear_volume_depth": 6,
+      "status": "PROTOTYPE_CANDIDATE",
+      "part": "GSPK4020057TN-4R3W",
+      "supplier_code": "C3012621",
+      "rated_power_w": 3,
+      "maximum_power_w": 4,
+      "impedance_ohm": 4,
+      "front_z": 20,
+      "front_gasket_thickness": 0.7,
+      "rear_plenum_z": [
+        28,
+        30.25
+      ],
+      "outlet": "Left lower-pod side, toward driver; sealed front duct, no rear grille",
+      "conflicts": [
+        "Datasheet p2 and distributor say height5.7; cover and drawing p6 say total8.0. Model uses8.0 until confirmed.",
+        "Datasheet p2 operation-40..85C/storage-30..70C; p4 storage85C/96h and incomplete operating-duration cells. Written manufacturer confirmation and assembled thermal tests required."
+      ],
+      "spl_condition": "111+-3dB at0.5W/0.1m/1.05kHz with specified baffle; not broadband1m sensitivity",
+      "rear_chamber": "Nominal basket/magnet model subtracted:5.0315cc; 40x20x8 conservative body, actual displaced volume/thermal data unconfirmed. Adjustable insert.",
+      "volume_insert_front_z_mm": 30.25,
+      "nominal_model_net_rear_chamber_cc": 5.0315
+    }
+  },
+  "base": {
+    "bottom_y": 33.5,
+    "boss_center_z": 25,
+    "hole_center_x": [
+      14,
+      44
+    ],
+    "pilot_diameter": 3.4,
+    "reinforcement_width": 44,
+    "status": "Two M3 through-fixings at 30 mm centres, prototype interface; base and fastening hardware not selected"
+  },
+  "unqualified": [
+    "Touch cover glass outline/thickness and active display aperture",
+    "Panel total thickness and complete sheet-metal envelope",
+    "LCD/CTP usable flex length, root location, contact side and permissible bend radius",
+    "Actual USB, 5 V and microSD mating connectors and insertion travel",
+    "Plastic grade, print/mould tolerances, inserts, gasket, heat and vehicle load tests",
+    "Speaker total height and temperature conflicts, actual acoustic volume/response, harness fit and sealing"
+  ]
+}

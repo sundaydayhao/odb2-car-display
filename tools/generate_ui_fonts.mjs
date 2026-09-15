@@ -4,13 +4,14 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const lvgl = resolve(root, 'managed_components/lvgl__lvgl');
-const output = resolve(root, 'main/fonts');
-const source = readFileSync(resolve(root, 'main/dashboard_text.h'), 'utf8');
+const displayMain = resolve(root, 'display_board/main');
+const lvgl = resolve(root, 'display_board/managed_components/lvgl__lvgl');
+const output = resolve(displayMain, 'fonts');
+const source = readFileSync(resolve(displayMain, 'dashboard_text.h'), 'utf8');
 const strings = [...source.matchAll(/^#define\s+TXT_\w+\s+(".*")$/gm)]
     .map(match => JSON.parse(match[1]));
-const serviceText = readdirSync(resolve(root, 'main')).filter(name => /\.[ch]$/.test(name))
-    .map(name => readFileSync(resolve(root, 'main', name), 'utf8')).join('');
+const serviceText = readdirSync(displayMain).filter(name => /\.[ch]$/.test(name))
+    .map(name => readFileSync(resolve(displayMain, name), 'utf8')).join('');
 const symbols = [...new Set(strings.join('') + '°' + [...serviceText].filter(char => char.charCodeAt(0) > 127).join(''))]
     .sort().join('');
 mkdirSync(output, { recursive: true });
@@ -36,6 +37,6 @@ convert('dashboard_digits_72', 72,
 // Scanned SSIDs are user text, not a fixed UI vocabulary. Two-bit CJK keeps the font within the OTA slot.
 convert('dashboard_wifi_18', 18,
     resolve(lvgl, 'tests/src/test_files/fonts/noto/NotoSansSC-Regular.ttf'),
-    ['--range', '0x20-0x024f,0x3000-0x30ff,0x4e00-0x9fff'], 2);
+    ['--range', '0x20-0x024f,0x3000-0x30ff,0x4e00-0x9fff,0xff00-0xffef', '--symbols', symbols], 2);
 copyFileSync(resolve(lvgl, 'tests/src/test_files/fonts/noto/OFL.txt'), resolve(output, 'Noto-OFL.txt'));
 console.log(`Generated UI fonts with ${symbols.length} non-ASCII characters and printable ASCII.`);

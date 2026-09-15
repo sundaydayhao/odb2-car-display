@@ -1,0 +1,540 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "74a4daa0-4a9d-5fb0-bdc1-182f5224ed76")
+	(paper "A2")
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(title_block
+		(title "7 inch integrated P4 display controller")
+		(date "2026-09-15")
+		(rev "A7 enclosure")
+		(company "OBD2 Car Display")
+	)
+	(text "7 INCH SINGLE BOARD / P4X + C6 + LCD + I2C CTP"
+		(at 20.32 15.24 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+			)
+			(justify left top)
+		)
+		(uuid "523fef16-f831-5d5d-9b0b-a09f9092eaf4")
+	)
+	(text "Integrated 120 x 74 mm / 4-layer PCB. J302 LCD / J308 touch. No inter-board FFC or AUX harness."
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "c6319e1b-ec31-523f-9706-389ea55669cd")
+	)
+	(text "Prototype uses a regulated 5 V supply. Do not connect directly to vehicle 12 V."
+		(at 20.32 33.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "f8813c6c-718d-577b-b1ed-8133207a3b48")
+	)
+	(sheet
+		(at 20.32 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "107c1902-d10b-52e2-a8b1-2d7366e71576")
+		(property "Sheetname" "5 V input / power distribution"
+			(at 20.32 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_usb.kicad_sch"
+			(at 20.32 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "2")
+				)
+			)
+		)
+	)
+	(text "38 symbols / global net labels"
+		(at 24.13 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "8c23bf27-c2ed-5c99-8035-27ba172a7036")
+	)
+	(sheet
+		(at 208.28 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "1afcc05b-b6be-53ed-953e-55a0f5de3545")
+		(property "Sheetname" "ESP32-P4X core / clocks / supplies"
+			(at 208.28 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p4_core.kicad_sch"
+			(at 208.28 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "3")
+				)
+			)
+		)
+	)
+	(text "76 symbols / global net labels"
+		(at 212.09 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "dea823cf-e301-5a68-b5f9-73937495a2d1")
+	)
+	(sheet
+		(at 396.24 50.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "dbac483e-e638-5adf-b762-6791f86e7bfa")
+		(property "Sheetname" "GPIO routing / configuration links"
+			(at 396.24 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "gpio_routing.kicad_sch"
+			(at 396.24 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "4")
+				)
+			)
+		)
+	)
+	(text "77 symbols / global net labels"
+		(at 400.05 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "dc96253f-7194-5fb6-9de2-ae86f757464b")
+	)
+	(sheet
+		(at 20.32 114.3)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8b0ef5e5-492e-5a5e-9d0f-385b6c430372")
+		(property "Sheetname" "MIPI CSI / expansion / DSI series links"
+			(at 20.32 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mipi_io.kicad_sch"
+			(at 20.32 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "5")
+				)
+			)
+		)
+	)
+	(text "30 symbols / global net labels"
+		(at 24.13 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "378f7623-4349-5bfb-b961-a24b6ee4d2a3")
+	)
+	(sheet
+		(at 208.28 114.3)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9bc17746-3e47-589e-a952-45ded0514815")
+		(property "Sheetname" "ES8311 codec / microphone / speaker"
+			(at 208.28 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "audio.kicad_sch"
+			(at 208.28 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "6")
+				)
+			)
+		)
+	)
+	(text "67 symbols / global net labels"
+		(at 212.09 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "6621635e-814f-5007-b570-cb1aa3e465f9")
+	)
+	(sheet
+		(at 396.24 114.3)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2586014c-0d8f-5911-9da1-b7b6001a0a63")
+		(property "Sheetname" "ESP32-C6 Wi-Fi + BLE / microSD"
+			(at 396.24 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "wifi_sd.kicad_sch"
+			(at 396.24 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "7")
+				)
+			)
+		)
+	)
+	(text "49 symbols / global net labels"
+		(at 400.05 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "34e51b7d-74f0-59d8-8fce-bad88015598f")
+	)
+	(sheet
+		(at 20.32 177.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b03b194c-4662-56ab-b152-fc3219598831")
+		(property "Sheetname" "USB connectors / ESD"
+			(at 20.32 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb_ports.kicad_sch"
+			(at 20.32 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "8")
+				)
+			)
+		)
+	)
+	(text "7 symbols / global net labels"
+		(at 24.13 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "3d415de5-c917-55d2-92d6-0c9303266928")
+	)
+	(sheet
+		(at 208.28 177.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e58f855f-9abe-5012-bb97-7604bb5f833a")
+		(property "Sheetname" "On-board LCD / I2C CTP / reset level adaptation"
+			(at 208.28 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lcd_interfaces.kicad_sch"
+			(at 208.28 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "9")
+				)
+			)
+		)
+	)
+	(text "18 symbols / global net labels"
+		(at 212.09 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c6214816-6379-51d8-b4e0-b8ef8b7123b4")
+	)
+	(sheet
+		(at 396.24 177.8)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "abb9c366-1024-5b0c-a305-e23e15820453")
+		(property "Sheetname" "On-board backlight / default OFF / 182 mA"
+			(at 396.24 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "backlight.kicad_sch"
+			(at 396.24 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "10")
+				)
+			)
+		)
+	)
+	(text "9 symbols / global net labels"
+		(at 400.05 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "afcbf2b3-f3ae-5cf2-b1b2-7b77586101f8")
+	)
+	(sheet
+		(at 20.32 241.3)
+		(size 160.02 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "31710043-2583-5c7c-b573-54a0c09bf79d")
+		(property "Sheetname" "On-board LCD bias rails / 1.8 V logic supply"
+			(at 20.32 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lcd_bias.kicad_sch"
+			(at 20.32 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_singleboard"
+				(path "/74a4daa0-4a9d-5fb0-bdc1-182f5224ed76"
+					(page "11")
+				)
+			)
+		)
+	)
+	(text "43 symbols / global net labels"
+		(at 24.13 248.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e0d51db7-32bf-5376-aab5-7d5e9169350c")
+	)
+	(text "A4: Ethernet connector and PHY removed. Networking uses the retained ESP32-C6 Wi-Fi / BLE."
+		(at 20.32 304.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d0ad2093-04fb-427f-a649-5a5ee2264033")
+	)
+)

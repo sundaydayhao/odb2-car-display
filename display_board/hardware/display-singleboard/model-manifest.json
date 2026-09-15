@@ -1,0 +1,1864 @@
+{
+  "schema": 1,
+  "base_commit": "e27ecde",
+  "scope": "A7 USB HS host interface removed; other assembly models retained.",
+  "total_footprints": 399,
+  "with_body": 350,
+  "fitted_with_body": 330,
+  "bare_footprints": 49,
+  "footprints": [
+    {
+      "footprint": "C0402_097d4b0b__328ab4e626",
+      "count": 36,
+      "populated": 36,
+      "refs": [
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104",
+        "C105",
+        "C107",
+        "C110",
+        "C117",
+        "C118",
+        "C14",
+        "C402",
+        "C47",
+        "C50",
+        "C51",
+        "C55",
+        "C56",
+        "C80",
+        "C82",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95",
+        "C96",
+        "C97",
+        "C98",
+        "C99"
+      ],
+      "values": [
+        "0.1u/50V",
+        "10nF/50V",
+        "10u/6.3V",
+        "1u/16V",
+        "4.7uF/6.3V"
+      ],
+      "model": {
+        "file": "KiCad_C_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "03e44c4b2b727b8d4b6b1fd598cbd12dd5e614f1dfeefa96a92a07e3a3b312a2"
+      }
+    },
+    {
+      "footprint": "C0402__acc3615381",
+      "count": 12,
+      "populated": 11,
+      "refs": [
+        "C301",
+        "C303",
+        "C306",
+        "C308",
+        "C309",
+        "C311",
+        "C313",
+        "C315",
+        "C316",
+        "C322",
+        "C324",
+        "C326"
+      ],
+      "values": [
+        "0.1u/50V",
+        "1u / 16V",
+        "22p/50V"
+      ],
+      "model": {
+        "file": "KiCad_C_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "03e44c4b2b727b8d4b6b1fd598cbd12dd5e614f1dfeefa96a92a07e3a3b312a2"
+      }
+    },
+    {
+      "footprint": "C0402__df1ad35910",
+      "count": 46,
+      "populated": 41,
+      "refs": [
+        "C10",
+        "C16",
+        "C18",
+        "C19",
+        "C2",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C403",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C48",
+        "C53",
+        "C54",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C66",
+        "C69",
+        "C77",
+        "C78",
+        "C8",
+        "C81"
+      ],
+      "values": [
+        "0.1u/50V",
+        "100n / 50V",
+        "10n/50V",
+        "1u / 16V",
+        "1u/16V",
+        "22p / 50V",
+        "22p/50V",
+        "22uF/6.3V",
+        "330p / 50V",
+        "4.7uF/6.3V"
+      ],
+      "model": {
+        "file": "KiCad_C_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "03e44c4b2b727b8d4b6b1fd598cbd12dd5e614f1dfeefa96a92a07e3a3b312a2"
+      }
+    },
+    {
+      "footprint": "C0603_1ead970f__4ff9dc89d7",
+      "count": 3,
+      "populated": 3,
+      "refs": [
+        "C15",
+        "C46",
+        "C79"
+      ],
+      "values": [
+        "10u/10V",
+        "22uF/10V"
+      ],
+      "model": {
+        "file": "KiCad_C_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1"
+      }
+    },
+    {
+      "footprint": "C0603__1e7c8298a8",
+      "count": 9,
+      "populated": 8,
+      "refs": [
+        "C1",
+        "C31",
+        "C401",
+        "C49",
+        "C65",
+        "C67",
+        "C7",
+        "C70",
+        "C71"
+      ],
+      "values": [
+        "10u / 10V",
+        "10u/10V"
+      ],
+      "model": {
+        "file": "KiCad_C_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1"
+      }
+    },
+    {
+      "footprint": "C0603__4b26f05b65",
+      "count": 10,
+      "populated": 10,
+      "refs": [
+        "C304",
+        "C305",
+        "C307",
+        "C310",
+        "C312",
+        "C314",
+        "C317",
+        "C318",
+        "C321",
+        "C327"
+      ],
+      "values": [
+        "10u/25V",
+        "1u/50V"
+      ],
+      "model": {
+        "file": "KiCad_C_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1"
+      }
+    },
+    {
+      "footprint": "C0805__0f85e56246",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "C323"
+      ],
+      "values": [
+        "10u/50V"
+      ],
+      "model": {
+        "file": "KiCad_C_0805_2012Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "9a669c1a2f1ea25b88b401acef6efeaa80a067bd7da9db6993de719a7fbe155c"
+      }
+    },
+    {
+      "footprint": "C1206__8afc8bf708",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "C63"
+      ],
+      "values": [
+        "100u/10V"
+      ],
+      "model": {
+        "file": "KiCad_C_1206_3216Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "11e948c72c90e2b6322436b72745f40ff4e8ba0da64fb2a0df943dfa61e89c1a"
+      }
+    },
+    {
+      "footprint": "CON20X2_2P54__b2870a8640",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J1"
+      ],
+      "values": [
+        "CON20X2"
+      ],
+      "model": {
+        "file": "KiCad_PinHeader_2x20_P2.54mm_Vertical.step",
+        "offset_mm": [
+          -24.13,
+          -1.27,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          270
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x20_P2.54mm_Vertical.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "3e3ee5e050716acbc8e6e4fc2778dce66ea1c9b17bdf6583ec399dabef67e264"
+      }
+    },
+    {
+      "footprint": "CON2X1_2P0_SMT_PH2A-S-A__738bdc5895",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J16"
+      ],
+      "values": [
+        "A2001WR-S-2P"
+      ],
+      "model": {
+        "file": "A2001WR-S-2P.step",
+        "offset_mm": [
+          1,
+          -5.7,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "part-linked-step",
+        "source": "https://www.lcsc.com/product-detail/C225233.html",
+        "note": "SMD right-angle CJT connector; centre shifted to native 2 mm contact pitch and shell pads.",
+        "sha256": "212ec5141fdc75e8077e16df6f6e938c470d93ede165c3f6f8c4739ee90fac34"
+      }
+    },
+    {
+      "footprint": "CON3X2_2P54__5709bcd3ab",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J2"
+      ],
+      "values": [
+        "CON3X2"
+      ],
+      "model": {
+        "file": "KiCad_PinHeader_2x03_P2.54mm_Vertical.step",
+        "offset_mm": [
+          -2.54,
+          -1.27,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          270
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x03_P2.54mm_Vertical.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "30c87dd7aa515b02055124826d8c4054084971d49d819c644cd6b21295ac52c8"
+      }
+    },
+    {
+      "footprint": "C_0402_1005Metric__6f04051f88",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "C328"
+      ],
+      "values": [
+        "100n / 16V"
+      ],
+      "model": {
+        "file": "KiCad_C_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "03e44c4b2b727b8d4b6b1fd598cbd12dd5e614f1dfeefa96a92a07e3a3b312a2"
+      }
+    },
+    {
+      "footprint": "ESP32-C6-MINI-1__12b1335637",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U1"
+      ],
+      "values": [
+        "ESP32-C6-MINI-1"
+      ],
+      "model": {
+        "file": "ESP32-C6-MINI-1.step",
+        "offset_mm": [
+          0.0445,
+          0,
+          0.0171
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "manufacturer-step",
+        "source": "https://www.espressif.com/sites/default/files/3dmodel/ESP32-C6-MINI-1.STEP",
+        "note": "Official Espressif STEP; 13.2 x 16.6 mm PCB envelope, origin shifted to imported land pattern. Retains detailed module construction.",
+        "sha256": "18025a7cf3822ea4867ac87a3cdb687954a42d259b8f7ca36976ceafe0685afa"
+      }
+    },
+    {
+      "footprint": "FFC30P_0P5__5534a26946",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J302"
+      ],
+      "values": [
+        "JD9165_MIPI_2L_30P"
+      ],
+      "model": {
+        "file": "AFC01-S30FCA-00.step",
+        "offset_mm": [
+          0,
+          -0.12,
+          2
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "part-linked-step",
+        "source": "https://www.lcsc.com/product-detail/C262671.html",
+        "note": "Raw STEP seating plane was z=-2 mm. Translate to z=0 and align pin-foot centres to y=-2.68 native pads; no physical scaling.",
+        "sha256": "ae7b6a1a9b0b71227e23a08e82590d614351e22dda5f4714dead4d918e8cde9d"
+      }
+    },
+    {
+      "footprint": "FFC6P_0P5_UP__70a24e6d71",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J308"
+      ],
+      "values": [
+        "CTP_I2C_6P_0.5mm"
+      ],
+      "model": {
+        "file": "FFC6P_upper_contact_nominal.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "provisional-envelope",
+        "source": "project:Display.pretty/FFC6P_0P5_UP__70a24e6d71.kicad_mod",
+        "note": "No qualified MPN. 7.2 x 4.5 outline follows PCB; 2 mm height and latch shape assumed. Upper-contact slot indicated.",
+        "sha256": "72eccc639b668b55cba1db9814969588a9eee9a1f7ac8c684604b7cca71bdbe6"
+      }
+    },
+    {
+      "footprint": "FFC_15P_1_MIPI__e4ede50f2f",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J9"
+      ],
+      "values": [
+        "DSI_1-1734248-5"
+      ],
+      "model": {
+        "file": "1.0K-GT-15PB.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "part-linked-step",
+        "source": "https://dl.espressif.com/dl/schematics/1.0K-GT-15PB_specification.pdf",
+        "note": "Vertical FPC, 22.1 x 4.5 x 5.4 mm. Each contact has front/back solder tails. Model is not a side-entry connector.",
+        "sha256": "efb97e8d0257bd776e4f3b329384ec52a2f1d231be61055df6771191d4b6e38a"
+      }
+    },
+    {
+      "footprint": "HOLE5_3__0f3c3a2f1a",
+      "count": 4,
+      "populated": 4,
+      "refs": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "values": [
+        "M3 GND"
+      ],
+      "category": "bare-copper-or-mounting-hole",
+      "model": null
+    },
+    {
+      "footprint": "JST_GH_SM02B_GHS_TB_MIC",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J7"
+      ],
+      "values": [
+        "SM02B-GHS-TB(LF)(SN)"
+      ],
+      "model": {
+        "file": "JST_GH_SM02B-GHS-TB_1x02-1MP_P1.25mm_Horizontal.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "official-kicad",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D",
+        "note": "Official KiCad GH2 model paired with official footprint; original JST eGH.pdf checked.",
+        "sha256": "5a6b7dc9f24b3e12dafe0a70189e9b9102689f2fb2b2866ad35fa8605756ca8a"
+      }
+    },
+    {
+      "footprint": "L2520__31a445bbcb",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "L1",
+        "L4"
+      ],
+      "values": [
+        "2.2uH"
+      ],
+      "model": {
+        "file": "KiCad_L_Cenker_CKCS252010.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_Cenker_CKCS252010.step",
+        "note": "Nominal 2.5 x 2.0 x 1.0 envelope for WPN252010; representative vendor geometry, not substitution approval.",
+        "sha256": "c7b6c261a0853897ce7ea9acedbe95a43d437c1530957b04bad3e0952d205032"
+      }
+    },
+    {
+      "footprint": "L3012S__77bc48e40c",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "L301",
+        "L302"
+      ],
+      "values": [
+        "10uH_0.8A"
+      ],
+      "model": {
+        "file": "KiCad_L_Sunlord_SWPA3012S.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_Sunlord_SWPA3012S.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "49ef5ac15c41171002430ca6a9ad3254dddc55d33ba465af09cf88aef1b608dc"
+      }
+    },
+    {
+      "footprint": "LED0603__d3163388a4",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "D12"
+      ],
+      "values": [
+        "RED LED"
+      ],
+      "model": {
+        "file": "KiCad_LED_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+        "note": "Native pad 1 is anode (+X), pad 2 cathode (-X); KiCad LED model cathode follows -X, so mapping is by polarity, not identical pad number.",
+        "sha256": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d"
+      }
+    },
+    {
+      "footprint": "Molex_Micro-Fit_3.0_43650-0200_1x02_P3.00mm_Horizontal",
+      "model": {
+        "file": "LCSC_C192562_Molex_436500200.step",
+        "offset_mm": [
+          1.5,
+          8.88,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "supplier-part",
+        "source": "https://www.lcsc.com/product-detail/C192562.html",
+        "note": "Molex 436500200 model fetched by LCSC ID. STEP pin centres (+/-1.5,8.88), unlike WRL origin; rotate 180 degrees and translate (1.5,8.88,0) to match official KiCad lands. Peg centre differs by about 0.04 mm in the supplier visualization. Confirm supplier drawing and mating harness before tooling.",
+        "sha256": "aa4a301b27dec67d5ea3518f00b3ff7f47a1c9cd0868220041af84d97946a14e"
+      },
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J22"
+      ],
+      "values": [
+        "5V_IN_3A"
+      ]
+    },
+    {
+      "footprint": "QFN104_0P35_10_E7P5_A__4ff47e723c",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U4"
+      ],
+      "values": [
+        "ESP32-P4NRW32X"
+      ],
+      "model": {
+        "file": "ESP32-P4_QFN104.step",
+        "offset_mm": [
+          0,
+          0,
+          0.02
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "part-linked-step",
+        "source": "https://www.lcsc.com/product-detail/C22375751.html",
+        "note": "QFN104, 10 x 10, pitch .35, EP7.5; dimensions checked against Espressif package drawing.",
+        "sha256": "665a528d2d3cb1a9aa8b1bd52244397ab32d2d562c95f5103c4c4fe988941e0c"
+      }
+    },
+    {
+      "footprint": "QFN20_0P4_3__5af107f985",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U3"
+      ],
+      "values": [
+        "ES8311"
+      ],
+      "model": {
+        "file": "KiCad_UQFN-20-1EP_3x3mm_P0.4mm_EP1.85x1.85mm.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/UQFN-20-1EP_3x3mm_P0.4mm_EP1.85x1.85mm.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "0ee4e1082236390795238cd34b082d96efd160d6292c636cc40201a5a30cdc63"
+      }
+    },
+    {
+      "footprint": "R0201__aad23a0937",
+      "count": 12,
+      "populated": 12,
+      "refs": [
+        "R69",
+        "R71",
+        "R72",
+        "R74",
+        "R75",
+        "R77",
+        "R78",
+        "R81",
+        "R82",
+        "R86",
+        "R88",
+        "R90"
+      ],
+      "values": [
+        "0R",
+        "100"
+      ],
+      "model": {
+        "file": "KiCad_R_0201_0603Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0201_0603Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "33893da67f0e1d523ba6096fc78c9fb67e7770efb072fcf51f480f9365706a1d"
+      }
+    },
+    {
+      "footprint": "R0402_097d4b0b__c1bfdfccc2",
+      "count": 39,
+      "populated": 33,
+      "refs": [
+        "R100",
+        "R101",
+        "R106",
+        "R109",
+        "R111",
+        "R123",
+        "R16",
+        "R17",
+        "R19",
+        "R190",
+        "R194",
+        "R196",
+        "R197",
+        "R198",
+        "R199",
+        "R200",
+        "R202",
+        "R203",
+        "R204",
+        "R205",
+        "R206",
+        "R207",
+        "R208",
+        "R209",
+        "R21",
+        "R212",
+        "R216",
+        "R217",
+        "R224",
+        "R225",
+        "R227",
+        "R228",
+        "R229",
+        "R230",
+        "R232",
+        "R233",
+        "R34",
+        "R36",
+        "R98"
+      ],
+      "values": [
+        "0R",
+        "10k",
+        "2.2k",
+        "33",
+        "4.02k",
+        "51k"
+      ],
+      "model": {
+        "file": "KiCad_R_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb"
+      }
+    },
+    {
+      "footprint": "R0402__4a1c38cf9e",
+      "count": 19,
+      "populated": 16,
+      "refs": [
+        "R301",
+        "R302",
+        "R303",
+        "R304",
+        "R305",
+        "R306",
+        "R307",
+        "R310",
+        "R311",
+        "R313",
+        "R314",
+        "R315",
+        "R316",
+        "R317",
+        "R318",
+        "R319",
+        "R320",
+        "R322",
+        "R323"
+      ],
+      "values": [
+        "10k",
+        "1k",
+        "220",
+        "22k",
+        "2k",
+        "3.3k",
+        "51k"
+      ],
+      "model": {
+        "file": "KiCad_R_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb"
+      }
+    },
+    {
+      "footprint": "R0402__6ca295102a",
+      "count": 94,
+      "populated": 90,
+      "refs": [
+        "R1",
+        "R10",
+        "R102",
+        "R103",
+        "R104",
+        "R105",
+        "R107",
+        "R108",
+        "R11",
+        "R110",
+        "R112",
+        "R116",
+        "R118",
+        "R12",
+        "R122",
+        "R128",
+        "R134",
+        "R136",
+        "R138",
+        "R146",
+        "R147",
+        "R148",
+        "R170",
+        "R172",
+        "R173",
+        "R175",
+        "R18",
+        "R183",
+        "R184",
+        "R22",
+        "R226",
+        "R23",
+        "R231",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R3",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R35",
+        "R37",
+        "R38",
+        "R39",
+        "R4",
+        "R40",
+        "R401",
+        "R41",
+        "R42",
+        "R43",
+        "R44",
+        "R45",
+        "R46",
+        "R47",
+        "R48",
+        "R49",
+        "R5",
+        "R50",
+        "R51",
+        "R52",
+        "R53",
+        "R54",
+        "R55",
+        "R56",
+        "R57",
+        "R58",
+        "R59",
+        "R6",
+        "R60",
+        "R61",
+        "R62",
+        "R63",
+        "R64",
+        "R65",
+        "R66",
+        "R67",
+        "R68",
+        "R70",
+        "R73",
+        "R76",
+        "R79",
+        "R8",
+        "R80",
+        "R83",
+        "R84",
+        "R85",
+        "R9",
+        "R93",
+        "R94",
+        "R97"
+      ],
+      "values": [
+        "0R",
+        "100k",
+        "10M",
+        "10k",
+        "150k",
+        "2.2k",
+        "200",
+        "22.1k",
+        "33",
+        "499k",
+        "5.1k",
+        "51k"
+      ],
+      "model": {
+        "file": "KiCad_R_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb"
+      }
+    },
+    {
+      "footprint": "R0603__ca4d6f8805",
+      "count": 5,
+      "populated": 5,
+      "refs": [
+        "L2",
+        "L3",
+        "R127",
+        "R171",
+        "R174"
+      ],
+      "values": [
+        "0R"
+      ],
+      "model": {
+        "file": "KiCad_R_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "1875571c326d0d9e96f36b4efeb8094068ef7619f0a449c781caf0b49c2e5861"
+      }
+    },
+    {
+      "footprint": "R0603__d26a16d132",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "R312"
+      ],
+      "values": [
+        "1.1"
+      ],
+      "model": {
+        "file": "KiCad_R_0603_1608Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "1875571c326d0d9e96f36b4efeb8094068ef7619f0a449c781caf0b49c2e5861"
+      }
+    },
+    {
+      "footprint": "R_0402_1005Metric__cc00eb7537",
+      "count": 3,
+      "populated": 3,
+      "refs": [
+        "R339",
+        "R340",
+        "R341"
+      ],
+      "values": [
+        "100k",
+        "10k"
+      ],
+      "model": {
+        "file": "KiCad_R_0402_1005Metric.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb"
+      }
+    },
+    {
+      "footprint": "SKRTLBE010_SIDE_PUSH",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "SW1",
+        "SW2"
+      ],
+      "values": [
+        "SKRTLBE010"
+      ],
+      "model": {
+        "file": "LCSC_C127481_SKRTLBE010.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "supplier-package",
+        "source": "https://www.lcsc.com/product-detail/C127481.html",
+        "note": "C127481 supplier STEP. Measured total envelope 4.6 x 3.56 x 3.35 mm; model zmin 0, no guide bosses; top z 3.35. Official nominal 4.5 x 3.4 x 3.3; supplier model is a visual assembly aid, not tolerance qualification. Pin land uses ALPS original drawing and official KiCad geometry separately.",
+        "sha256": "51b7a240098c7decc8fcc9dac2b1a9e7a9b76764f9676e3fdf3ebb92175110c9"
+      }
+    },
+    {
+      "footprint": "SOD123__334beb3694",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "D310",
+        "D311"
+      ],
+      "values": [
+        "LMSZ5233BT1G",
+        "MM1W18"
+      ],
+      "model": {
+        "file": "KiCad_D_SOD-123.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SOD-123.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "b3dc4065573abc72e3d5b4cca0e908f72a24205a41b6284b1f75ccacbe99adf8"
+      }
+    },
+    {
+      "footprint": "SOD323HE__59fe48cfa4",
+      "count": 6,
+      "populated": 6,
+      "refs": [
+        "D304",
+        "D305",
+        "D306",
+        "D307",
+        "D308",
+        "D309"
+      ],
+      "values": [
+        "LMBR140ET1G"
+      ],
+      "model": {
+        "file": "KiCad_D_SOD-323F.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SOD-323F.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "be5930ed2efe5eca953bd400465c68e8d6fe18bbed65f5a40cb96114f48e8ca0"
+      }
+    },
+    {
+      "footprint": "SOD523__6a5b89da33",
+      "count": 4,
+      "populated": 4,
+      "refs": [
+        "D17",
+        "D18",
+        "D19",
+        "D25"
+      ],
+      "values": [
+        "LESD5D5.0CT1G"
+      ],
+      "model": {
+        "file": "KiCad_D_SOD-523.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SOD-523.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "b525222377930c32abea58606bffba3aaf171cc66ac292b82d28a82d646d995d"
+      }
+    },
+    {
+      "footprint": "SOD882_55527cd7__832596a649",
+      "count": 8,
+      "populated": 8,
+      "refs": [
+        "D10",
+        "D11",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8"
+      ],
+      "values": [
+        "BSDFN2C031U"
+      ],
+      "model": {
+        "file": "KiCad_D_SOD-882.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SOD-882.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "b109a9e50feebcf8bae5a230cf805dc06e2eb2b9d976f1922b195c16710c5415"
+      }
+    },
+    {
+      "footprint": "SOT-23-5__bb5afb5c1a",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U304"
+      ],
+      "values": [
+        "SN74LVC1G07DBVR"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23-5.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7"
+      }
+    },
+    {
+      "footprint": "SOT-363__92e478113d",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "Q5",
+        "Q6"
+      ],
+      "values": [
+        "LMBT3906DW1T1G"
+      ],
+      "model": {
+        "file": "KiCad_SOT-363_SC-70-6.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "045cc95e18ee7a13d1623c3ce6604fc833049bdb4f952f68c26e3c5767d122e4"
+      }
+    },
+    {
+      "footprint": "SOT23-3__14816d8467",
+      "count": 3,
+      "populated": 3,
+      "refs": [
+        "Q4",
+        "Q7",
+        "Q8"
+      ],
+      "values": [
+        "AO3401A"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23.step",
+        "offset_mm": [
+          0.07087,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0"
+      }
+    },
+    {
+      "footprint": "SOT23-5__8ed5fed8df",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "U302",
+        "U303"
+      ],
+      "values": [
+        "AP3012K",
+        "ME6211C18M5G-N"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23-5.step",
+        "offset_mm": [
+          -0.08752,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7"
+      }
+    },
+    {
+      "footprint": "SOT23-5__f216817d34",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U5"
+      ],
+      "values": [
+        "ME6211C33M5G-N"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23-5.step",
+        "offset_mm": [
+          -0.08752,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7"
+      }
+    },
+    {
+      "footprint": "SOT23-6__66e143f4c2",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U301"
+      ],
+      "values": [
+        "ETA1611"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23-6.step",
+        "offset_mm": [
+          -0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "c9fe686b4d1b56927a41fa84a9bc1efb61d8a45a123a3db43bcaa05c2891d635"
+      }
+    },
+    {
+      "footprint": "SOT23_0P95_2P6__29960399d6",
+      "count": 2,
+      "populated": 2,
+      "refs": [
+        "U11",
+        "U7"
+      ],
+      "values": [
+        "TLV62569"
+      ],
+      "model": {
+        "file": "KiCad_SOT-23-5.step",
+        "offset_mm": [
+          -0.0325,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7"
+      }
+    },
+    {
+      "footprint": "SSOP8_0P65_5__7dc9ef4a12",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U10"
+      ],
+      "values": [
+        "NS4150B"
+      ],
+      "model": {
+        "file": "KiCad_MSOP-8_3x3mm_P0.65mm.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "847c4c5023fe1603fbd36900a5dcc4bd3901ba473f71d42c9a469f0236eaadf3"
+      }
+    },
+    {
+      "footprint": "SW_Side_SS12D06G5",
+      "model": {
+        "file": "Mechanical_SS12D06G5.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "nominal-envelope",
+        "source": "https://datasheet.lcsc.com/datasheet/pdf/aaff8f05897d2097c317cf69ddd8d82f.pdf?productCode=C22355761",
+        "note": "SS-12D06G5 dimensioned bent-lead mechanical envelope, 12.7 mm body width / 5 mm stem / 2.2 mm travel; no claim of detailed supplier geometry.",
+        "sha256": "a6cec2b9a65b79a6d6fcc99da95699449e3e7e3fdd954850f171414c427f51ec"
+      },
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "SW3"
+      ],
+      "values": [
+        "SS-12D06G5"
+      ]
+    },
+    {
+      "footprint": "TF_CARDA__9ea14d9044",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J21"
+      ],
+      "values": [
+        "TF_CARD"
+      ],
+      "model": {
+        "file": "TF-1007F_outline_nominal.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "provisional-envelope",
+        "source": "project:Display.pretty/TF_CARDA__9ea14d9044.kicad_mod",
+        "note": "Body XY follows imported outline; 1.85 mm height assumed, exact TF-1007F drawing unavailable. Do not freeze SD opening height from this model.",
+        "sha256": "de59ea03cd54aedad172d8008dfd58a1f0f899721b9abbf387ed08e5791d9674"
+      }
+    },
+    {
+      "footprint": "TPC1__2b9627de78",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "TP305"
+      ],
+      "values": [
+        "TEST"
+      ],
+      "category": "bare-copper-or-mounting-hole",
+      "model": null
+    },
+    {
+      "footprint": "TPC1__56d55e75a0",
+      "count": 22,
+      "populated": 22,
+      "refs": [
+        "TP10",
+        "TP11",
+        "TP12",
+        "TP14",
+        "TP15",
+        "TP16",
+        "TP17",
+        "TP18",
+        "TP19",
+        "TP20",
+        "TP22",
+        "TP23",
+        "TP30",
+        "TP31",
+        "TP32",
+        "TP401",
+        "TP402",
+        "TP403",
+        "TP404",
+        "TP405",
+        "TP406",
+        "TP407"
+      ],
+      "values": [
+        "TEST"
+      ],
+      "category": "bare-copper-or-mounting-hole",
+      "model": null
+    },
+    {
+      "footprint": "TPC1__e5aa15b89a",
+      "count": 4,
+      "populated": 4,
+      "refs": [
+        "TP301",
+        "TP302",
+        "TP303",
+        "TP304"
+      ],
+      "values": [
+        "TEST"
+      ],
+      "category": "bare-copper-or-mounting-hole",
+      "model": null
+    },
+    {
+      "footprint": "TPC1_fd69f0aa__930cba657a",
+      "count": 18,
+      "populated": 18,
+      "refs": [
+        "TP1",
+        "TP13",
+        "TP2",
+        "TP24",
+        "TP25",
+        "TP26",
+        "TP27",
+        "TP3",
+        "TP33",
+        "TP34",
+        "TP35",
+        "TP36",
+        "TP4",
+        "TP5",
+        "TP6",
+        "TP7",
+        "TP8",
+        "TP9"
+      ],
+      "values": [
+        "TEST"
+      ],
+      "category": "bare-copper-or-mounting-hole",
+      "model": null
+    },
+    {
+      "footprint": "USB_TYPEC_16P_F__bf963333d2",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "J19"
+      ],
+      "values": [
+        "USB_TYPEC_16P_F"
+      ],
+      "model": {
+        "file": "TYPE-C-31-M-12.step",
+        "offset_mm": [
+          0,
+          -3.68,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "part-linked-step",
+        "source": "https://www.lcsc.com/product-detail/C165948.html",
+        "note": "Raw STEP seating plane retained: through-hole shell legs extend below PCB. Front/back leg centres registered to native slotted pads; mouth toward local +Y.",
+        "sha256": "b083e67ce4d06850a2c3835a6366f4012b2def64f8f2781636381ebcaa33e9a0"
+      }
+    },
+    {
+      "footprint": "WSON6X8__20e6c1659c",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U2"
+      ],
+      "values": [
+        "FLASH-3V3"
+      ],
+      "model": {
+        "file": "KiCad_SOIC-8_5.3x5.3mm_P1.27mm.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          270
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_5.3x5.3mm_P1.27mm.step",
+        "note": "BOM GD25Q128ESIG is SOP8-208mil. Imported land is named WSON6X8 with a ground EP. Model follows BOM; EP paste/dual-footprint assembly remains to qualify.",
+        "sha256": "121aee742692bb7bc9ef49972786ecb89d1b2d62ab089ed278651a884c800331"
+      }
+    },
+    {
+      "footprint": "WSON8_TI_DSG_2x2_EP",
+      "model": {
+        "file": "LCSC_C122837_TPS22965.step",
+        "offset_mm": [
+          0,
+          0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "supplier-part",
+        "source": "https://www.ti.com/lit/ds/symlink/tps22965.pdf",
+        "note": "TPS22965DSGR supplier STEP; 2 x 2 mm body and pin-1 orientation checked.",
+        "sha256": "ac34beedac9bd34f6757b0aa816e5e1f8d086f9a6918a706e41aa1345cac1a3a"
+      },
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "U401"
+      ],
+      "values": [
+        "TPS22965DSGR"
+      ]
+    },
+    {
+      "footprint": "XTAL3215__6c6f8c0a53",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "Y1"
+      ],
+      "values": [
+        "32.768kHz"
+      ],
+      "model": {
+        "file": "KiCad_Crystal_SMD_3215-2Pin_3.2x1.5mm.step",
+        "offset_mm": [
+          0.0,
+          -0.0,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          180
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Crystal.3dshapes/Crystal_SMD_3215-2Pin_3.2x1.5mm.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "70191ff5204d0ce50e154f75b1186923e3123cfdb58d647b5cce319de5485701"
+      }
+    },
+    {
+      "footprint": "XTAL3225__30de0c1c1f",
+      "count": 1,
+      "populated": 1,
+      "refs": [
+        "Y2"
+      ],
+      "values": [
+        "40MHz"
+      ],
+      "model": {
+        "file": "KiCad_Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+        "offset_mm": [
+          -2e-05,
+          2e-05,
+          0
+        ],
+        "rotation_deg": [
+          0,
+          0,
+          0
+        ],
+        "category": "standard-package",
+        "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Crystal.3dshapes/Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+        "note": "Standard package visualization; component-specific tolerances not represented.",
+        "sha256": "d2a89df82ee5f0f56ef23ee59c8161b8d4e92af2b21959d72778316dde3f9f22"
+      }
+    }
+  ]
+}

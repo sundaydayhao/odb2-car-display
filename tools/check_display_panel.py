@@ -68,7 +68,7 @@ def check(project: Path, output: Path, cli: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--project', type=Path, default=Path('hardware/display-singleboard'))
+    parser.add_argument('--project', type=Path, default=Path('display_board/hardware/display-singleboard'))
     parser.add_argument('--output', type=Path, default=Path('build/display-panel-check'))
     parser.add_argument('--cli', default=shutil.which('kicad-cli') or str(Path(sys.executable).with_name('kicad-cli.exe')))
     args = parser.parse_args()

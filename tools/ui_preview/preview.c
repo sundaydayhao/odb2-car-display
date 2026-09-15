@@ -5,6 +5,7 @@
 #include <math.h>
 
 #include "dashboard.h"
+#include "feature_config.h"
 #include "service_panel.h"
 #include "media_panel.h"
 #include "dashboard_text.h"
@@ -21,7 +22,23 @@ static unsigned s_actions[PANEL_ACTION_COUNT];
 static panel_request_t s_last_request;
 static bool s_accept = true;
 static media_request_t s_last_media;
-static unsigned s_media_actions[MEDIA_CUSTOM_SAVE + 1];
+static unsigned s_media_actions[MEDIA_ACTION_COUNT];
+static av_status_t s_av;
+static unsigned s_av_actions[AV_VOICE_END + 1], s_av_value;
+static bool av_action(av_action_t action, unsigned value, uint32_t revision) {
+    if (!s_accept) return false;
+    assert(revision == s_av.library.revision);
+    ++s_av_actions[action]; s_av_value=value; return true;
+}
+static size_t av_files(av_file_kind_t kind,unsigned first,av_file_t *files,size_t capacity,uint32_t revision) {
+    if (revision!=s_av.library.revision || !s_av.library.storage) return 0;
+    unsigned count=kind==AV_FILES_MUSIC?s_av.library.music_count:s_av.library.photo_count;
+    size_t n=0;
+    while (n<capacity && first+n<count) {
+        snprintf(files[n].name,sizeof(files[n].name),kind==AV_FILES_MUSIC?"Music-%02u.mp3":"img-%02u.bmp",(unsigned)(first+n)); ++n;
+    }
+    return n;
+}
 static bool media_action(const media_request_t *request) {
     if (!s_accept) return false;
     s_last_media = *request; ++s_media_actions[request->action]; return true;
@@ -52,6 +69,7 @@ static void check_glyphs(const char *text, const lv_font_t *font)
     uint32_t offset = 0;
     while (text[offset]) {
         uint32_t codepoint = lv_text_encoded_next(text, &offset);
+        if (codepoint=='\n' || codepoint=='\r') continue;
         lv_font_glyph_dsc_t glyph;
         if (!lv_font_get_glyph_dsc(font, &glyph, codepoint, 0) || glyph.is_placeholder) {
             fprintf(stderr, "Missing glyph U+%04lX in %s\n", (unsigned long)codepoint, text);
@@ -131,11 +149,12 @@ static void snapshot(lv_display_t *display, const char *dir, const char *state, 
     lv_obj_update_layout(screen);
     lv_obj_t *toolbar = dashboard_service_toolbar();
     assert(lv_obj_get_child_count(toolbar) == 7);
+    if (!DEVICE_CAMERA_AVAILABLE) assert(lv_obj_has_flag(lv_obj_get_child(toolbar,2),LV_OBJ_FLAG_HIDDEN));
     assert(!lv_obj_has_flag(toolbar, LV_OBJ_FLAG_CLICKABLE));
     int visible=0, left=SCREEN_WIDTH, right=0;
     for (int i = 0; i < 7; ++i) {
         lv_obj_t *symbol = lv_obj_get_child(toolbar, i);
-        assert(lv_obj_check_type(symbol, &lv_label_class));
+        assert(lv_obj_check_type(symbol, i == 2 ? &lv_obj_class : &lv_label_class));
         assert(!lv_obj_has_flag(symbol, LV_OBJ_FLAG_CLICKABLE));
         if (!lv_obj_has_flag(symbol,LV_OBJ_FLAG_HIDDEN)) {
             lv_area_t bounds; lv_obj_get_coords(symbol,&bounds);
@@ -158,7 +177,8 @@ static void snapshot(lv_display_t *display, const char *dir, const char *state, 
         assert(lv_obj_get_width(body) <= 680);
         assert(body_bounds.x1 >= side_bounds.x2 + 24);
         assert(body_bounds.x2 < SCREEN_WIDTH);
-        assert(lv_obj_get_child_count(sidebar) == 10); /* Title, subtitle, eight categories. */
+        assert(lv_obj_get_child_count(sidebar) == 8+DEVICE_CAMERA_AVAILABLE);
+        if (!DEVICE_CAMERA_AVAILABLE) assert(!count_text(sidebar,"摄像头"));
     }
     inspect(screen);
     lv_draw_buf_t *buf = lv_snapshot_take(screen, LV_COLOR_FORMAT_RGB888);
@@ -218,7 +238,9 @@ static lv_obj_t *find_label(lv_obj_t *parent,const char *value)
 static void tap_category(lv_indev_t *pointer,const char *value)
 {
     lv_obj_update_layout(lv_screen_active());
-    lv_obj_t *label=find_label(lv_screen_active(),value); assert(label);
+    lv_obj_t *label=find_label(lv_screen_active(),value);
+    if (!label) fprintf(stderr,"Tap target missing: %s\n",value);
+    assert(label);
     lv_area_t bounds; lv_obj_get_coords(label,&bounds);
     tap_raw(pointer,(bounds.x1+bounds.x2)/2,(bounds.y1+bounds.y2)/2);
 }
@@ -335,8 +357,8 @@ int main(int argc, char **argv)
     lv_obj_set_size(root, SCREEN_WIDTH, SCREEN_HEIGHT);
     dashboard_create_on(lv_obj_create(root), SCREEN_WIDTH, DASH_HEIGHT);
     service_panel_create(root, dashboard_service_toolbar(), panel_action);
-    media_panel_handlers(media_action, service_panel_open_media);
-    service_panel_media_handler(media_action);
+    media_panel_handlers(media_action);
+    media_panel_av_handlers(av_action,av_files);
     panel_preferences_t defaults = PANEL_PREFERENCES_DEFAULT;
     assert(sizeof(defaults) == 6 && service_panel_preferences_valid(&defaults));
     service_panel_preferences(&defaults);
@@ -409,18 +431,41 @@ int main(int argc, char **argv)
     tap_at(pointer,760,28);
     snapshot(display,argv[1],"settings-home",0);
     tap_category(pointer,"蓝牙设置");
-    snapshot(display,argv[1],"settings-bluetooth-scanning",0);
+    service_panel_bluetooth(true,true,1,"等待选择设备连接","");
+    ble_devices_t bluetooth={.revision=1};
+    service_panel_bluetooth_devices(&bluetooth);
+    snapshot(display,argv[1],"settings-bluetooth-idle",0);
     tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_OFF]==1);
     service_panel_bluetooth(true,false,0,"蓝牙已关闭","");
     snapshot(display,argv[1],"settings-bluetooth-off",0);
-    tap_category(pointer,"重新连接"); assert(s_actions[PANEL_BLUETOOTH_RECONNECT]==0);
+    tap_category(pointer,"扫描设备"); assert(s_actions[PANEL_BLUETOOTH_SCAN]==0);
     s_accept=false; tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_ON]==0);
     s_accept=true; tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_ON]==1);
+    service_panel_bluetooth(true,true,1,"等待选择设备连接","");
+    tap_category(pointer,"扫描设备"); assert(s_actions[PANEL_BLUETOOTH_SCAN]==1);
+    bluetooth.scanning=true; bluetooth.revision=2; bluetooth.count=2;
+    bluetooth.items[0]=(ble_device_t){.type=0,.address={1,2,3,4,5,6},.name="OBD BLE",.rssi=-40};
+    bluetooth.items[1]=(ble_device_t){.type=1,.address={7,8,9,10,11,12},.name="OBD BLE",.rssi=-55};
+    service_panel_bluetooth_devices(&bluetooth);
+    service_panel_bluetooth(true,true,2,"正在查找适配器","");
+    snapshot(display,argv[1],"settings-bluetooth-scanning",0);
+    tap_category(pointer,"扫描设备"); assert(s_actions[PANEL_BLUETOOTH_SCAN]==1);
+    assert(s_actions[PANEL_BLUETOOTH_CONNECT]==0); /* Merely discovering devices never connects. */
+    tap_category(pointer,"0C:0B:0A:09:08:07");
+    assert(s_actions[PANEL_BLUETOOTH_CONNECT]==1);
+    assert(ble_device_same(&s_last_request.data.bluetooth,&bluetooth.items[1]));
+    bluetooth.scanning=false; bluetooth.has_saved=true; bluetooth.saved=bluetooth.items[1]; ++bluetooth.revision;
+    service_panel_bluetooth_devices(&bluetooth);
+    service_panel_bluetooth(true,true,1,"等待选择设备连接","");
+    snapshot(display,argv[1],"settings-bluetooth-saved",0);
+    tap_category(pointer,"连接"); assert(s_actions[PANEL_BLUETOOTH_RECONNECT]==1);
     service_panel_bluetooth(true,true,3,"已连接适配器","AA:BB:CC:DD:EE:FF");
     snapshot(display,argv[1],"settings-bluetooth-connected",0);
-    tap_category(pointer,"重新连接"); assert(s_actions[PANEL_BLUETOOTH_RECONNECT]==1);
+    tap_category(pointer,"断开连接"); assert(s_actions[PANEL_BLUETOOTH_DISCONNECT]==1);
+    tap_category(pointer,"忘记"); assert(s_actions[PANEL_BLUETOOTH_FORGET]==1);
     service_panel_bluetooth(false,true,1,"蓝牙尚未就绪","");
     tap_toggle(pointer,"蓝牙车辆连接"); assert(s_actions[PANEL_BLUETOOTH_OFF]==1);
+    tap_category(pointer,"0C:0B:0A:09:08:07"); assert(s_actions[PANEL_BLUETOOTH_CONNECT]==1);
     service_panel_bluetooth(true,true,2,"正在查找适配器","");
 
     tap_category(pointer,"显示与外观"); /* Display category. */
@@ -565,22 +610,22 @@ int main(int argc, char **argv)
     snapshot(display,argv[1],"network-error",0);
     tap_category(pointer,"语音助手");
     snapshot(display,argv[1],"settings-voice",0);
-    tap_category(pointer,"按住说话");
-    assert(s_actions[PANEL_VOICE_DOWN]==1 && s_actions[PANEL_VOICE_UP]==1);
-    lv_obj_t *voice = lv_obj_get_parent(find_label(screen,"按住说话"));
-    lv_obj_send_event(voice,LV_EVENT_PRESSED,NULL);
-    lv_obj_send_event(voice,LV_EVENT_PRESS_LOST,NULL);
-    assert(s_actions[PANEL_VOICE_DOWN]==2 && s_actions[PANEL_VOICE_UP]==2);
-    lv_obj_send_event(voice,LV_EVENT_PRESSED,NULL);
-     tap_category(pointer,"摄像头");
-    assert(s_actions[PANEL_VOICE_DOWN]==3 && s_actions[PANEL_VOICE_UP]==3);
+    assert(find_label(screen,"唤醒词：你好小智"));
+    assert(!find_label(screen,"按住说话"));
+    static uint16_t camera[AV_PREVIEW_WIDTH*AV_PREVIEW_HEIGHT];
+    for (int y=0;y<AV_PREVIEW_HEIGHT;++y) for (int x=0;x<AV_PREVIEW_WIDTH;++x) camera[y*AV_PREVIEW_WIDTH+x]=x<160?0xf800:x<320?0x07e0:0x001f;
+    if (DEVICE_CAMERA_AVAILABLE) {
+    tap_category(pointer,"摄像头");
     snapshot(display,argv[1],"settings-camera",0);
     tap_category(pointer,"打开本地预览"); assert(s_actions[PANEL_CAMERA_ON]==1);
     snapshot(display,argv[1],"camera-waiting",0);
-    static uint16_t camera[320*240];
-    for (int y=0;y<240;++y) for (int x=0;x<320;++x) camera[y*320+x]=x<106?0xf800:x<213?0x07e0:0x001f;
     service_panel_camera_frame(camera); snapshot(display,argv[1],"camera-test-pattern",0);
-    tap_raw(pointer,660,160); assert(s_actions[PANEL_CAMERA_OFF]==1);
+    tap_raw(pointer,738,144); assert(s_actions[PANEL_CAMERA_OFF]==1);
+    } else {
+        assert(!find_label(screen,"摄像头"));
+        service_panel_camera_visible(true); service_panel_camera_frame(camera); service_panel_camera_clear();
+        assert(!find_label(screen,"本地预览"));
+    }
      tap_category(pointer,"记录与同步");
     snapshot(display,argv[1],"settings-record",0);
     tap_toggle(pointer,"允许上传车辆记录"); assert(s_actions[PANEL_UPLOAD_ON]==1);
@@ -596,7 +641,7 @@ int main(int argc, char **argv)
     tap_category(pointer,LV_SYMBOL_CLOSE);
     for (int i=0;i<100;++i) {
         static const char *categories[]={"网络与连接","蓝牙设置","显示与外观","语音助手","摄像头","记录与同步","系统更新"};
-        tap_at(pointer,760,28); tap_category(pointer,categories[i%7]);
+        tap_at(pointer,760,28); tap_category(pointer,!DEVICE_CAMERA_AVAILABLE && i%7==4?"记录与同步":categories[i%7]);
         service_panel_status(i%6,0,"等待车辆");
         tap_category(pointer,LV_SYMBOL_CLOSE);
         dashboard_select_theme(i%DASHBOARD_THEME_COUNT); dashboard_select_page(i%DASHBOARD_PAGE_COUNT);
@@ -610,48 +655,117 @@ int main(int argc, char **argv)
     snapshot(display,argv[1],"all-status-icons-day",0);
     for (unsigned day = 0; day < 2; ++day) {
         dashboard_set_daylight(day);
-        for (unsigned theme = 0; theme < DASHBOARD_THEME_COUNT; ++theme) {
-            dashboard_select_theme(theme); dashboard_select_page(5);
-            media_status_t media = {.network = true, .state = MEDIA_PLAYING, .source = 0,
-                .volume = 35, .played_ms = 71000, .custom_music = true};
-            strcpy(media.title, media_sources[0].title); strcpy(media.detail, "正在播放音乐");
-            media_panel_update(&media);
-            tap_category(pointer, LV_SYMBOL_PREV);
-            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 2);
-            tap_category(pointer, LV_SYMBOL_NEXT);
-            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 1);
-            tap_category(pointer, LV_SYMBOL_STOP);
-            assert(s_last_media.action == MEDIA_STOP);
-            snapshot(display, argv[1], day ? "media-music-light" : "media-music-dark", theme);
-            tap_category(pointer, "网络电台");
-            snapshot(display, argv[1], day ? "media-radio-light" : "media-radio-dark", theme);
-            tap_category(pointer, media_sources[3].title);
-            assert(s_last_media.action == MEDIA_SELECT && s_last_media.value == 3);
-            tap_category(pointer, LV_SYMBOL_PAUSE);
-            assert(s_last_media.action == MEDIA_TOGGLE);
-            media.state = MEDIA_PAUSED; strcpy(media.detail, "已暂停"); media_panel_update(&media);
-            snapshot(display, argv[1], "media-paused", theme);
-            media.state = MEDIA_ERROR; strcpy(media.detail, "音源格式不支持，请使用 MP3 直链"); media_panel_update(&media);
-            snapshot(display, argv[1], "media-error", theme);
-            s_accept = false; tap_category(pointer, media_sources[3].title);
-            assert(count_text(root, "操作未提交，请稍后重试") == 1); s_accept = true;
-            tap_category(pointer, "我的电台");
-            assert(count_text(root, "电台播放地址") == 1);
-            snapshot(display, argv[1], "settings-media", theme);
-            tap_category(pointer, "电台播放地址");
-            lv_obj_t *url = find_class(root, &lv_textarea_class);
-            assert(url); lv_textarea_set_text(url, "not-a-url");
-            tap_category(pointer, "保存地址");
-            assert(count_text(root, "请输入完整的 HTTP 或 HTTPS 音频地址") == 1);
-            lv_textarea_set_text(url, "https://example.com/live.mp3");
-            tap_category(pointer, "保存地址");
-            assert(s_last_media.action == MEDIA_CUSTOM_SAVE && s_last_media.value == 1);
-            assert(!strcmp(s_last_media.url, "https://example.com/live.mp3"));
-            snapshot(display, argv[1], "settings-media-url", theme);
-            tap_category(pointer, "清除地址"); assert(!*s_last_media.url);
-            tap_category(pointer, LV_SYMBOL_CLOSE);
-            tap_category(pointer, "在线音乐");
+        lv_obj_t *sd = lv_obj_get_child(dashboard_service_toolbar(), 3);
+        service_panel_status(3,0,"未检测到存储卡");
+        lv_color_t absent = lv_obj_get_style_text_color(sd,0);
+        assert(!lv_obj_has_flag(sd,LV_OBJ_FLAG_HIDDEN));
+        snapshot(display,argv[1],day ? "sd-absent-light" : "sd-absent-dark",0);
+        service_panel_status(3,3,"存储卡已就绪");
+        lv_color_t ready = lv_obj_get_style_text_color(sd,0);
+        assert(!lv_color_eq(absent,ready));
+        snapshot(display,argv[1],day ? "sd-ready-light" : "sd-ready-dark",0);
+        service_panel_status(3,4,"存储卡不可用");
+        lv_color_t error = lv_obj_get_style_text_color(sd,0);
+        assert(!lv_color_eq(error,ready) && !lv_color_eq(error,absent));
+        snapshot(display,argv[1],day ? "sd-error-light" : "sd-error-dark",0);
+        service_panel_status(3,0,"未检测到存储卡");
+        assert(lv_color_eq(absent,lv_obj_get_style_text_color(sd,0)));
+        assert(!lv_obj_has_flag(sd,LV_OBJ_FLAG_HIDDEN));
+        service_panel_status(4,0,"上传已关闭");
+        tap_at(pointer,760,28);
+        tap_category(pointer,"记录与同步");
+        snapshot(display,argv[1],day ? "sd-settings-absent-light" : "sd-settings-absent-dark",0);
+        service_panel_status(3,3,"存储卡已就绪");
+        snapshot(display,argv[1],day ? "sd-settings-ready-light" : "sd-settings-ready-dark",0);
+        tap_category(pointer,LV_SYMBOL_CLOSE);
+    }
+    for (unsigned day=0;day<2;++day) {
+        dashboard_set_daylight(day);
+        for (unsigned theme=0;theme<DASHBOARD_THEME_COUNT;++theme) {
+            dashboard_select_theme(theme); dashboard_select_page(5); media_panel_select(AV_MUSIC);
+            s_av=(av_status_t){.voice_enabled=true,.library={.revision=100+day*3+theme,.storage=true,.music_count=12}};
+            media_panel_av_update(&s_av);
+            media_status_t media={.network=false,.state=MEDIA_PLAYING,.selected=true,.volume=35,.played_ms=71000};
+            strcpy(media.title,"Music-00.mp3"); strcpy(media.detail,"正在播放音乐"); media_panel_update(&media);
+            assert(!find_label(root,"在线音乐") && !find_label(root,"网络电台"));
+            tap_category(pointer,LV_SYMBOL_PREV); assert(s_last_media.action==MEDIA_PREVIOUS);
+            tap_category(pointer,LV_SYMBOL_NEXT); assert(s_last_media.action==MEDIA_NEXT);
+            tap_category(pointer,LV_SYMBOL_STOP); assert(s_last_media.action==MEDIA_STOP);
+            tap_category(pointer,LV_SYMBOL_PAUSE); assert(s_last_media.action==MEDIA_TOGGLE);
+            snapshot(display,argv[1],day?"media-sd-playing-light":"media-sd-playing-dark",theme);
+            media.state=MEDIA_PAUSED; strcpy(media.detail,"已暂停"); media_panel_update(&media);
+            snapshot(display,argv[1],day?"media-sd-paused-light":"media-sd-paused-dark",theme);
+            media.state=MEDIA_ERROR; strcpy(media.detail,"SD 卡音乐读取失败，请重新选择"); media_panel_update(&media);
+            snapshot(display,argv[1],day?"media-sd-error-light":"media-sd-error-dark",theme);
+            s_accept=false; tap_category(pointer,LV_SYMBOL_PLAY);
+            assert(count_text(root,"操作未提交，请稍后重试")==1); s_accept=true;
+            unsigned before[MEDIA_ACTION_COUNT]; memcpy(before,s_media_actions,sizeof(before));
+            tap_category(pointer,"FM 电台");
+            media_panel_update(&media); ++s_av.library.revision; media_panel_av_update(&s_av);
+            assert(!find_label(root,"播放器") && !find_class(root,&lv_slider_class));
+            assert(!find_label(root,"拍照保存") && !find_label(root,"开始对话"));
+            assert(!memcmp(before,s_media_actions,sizeof(before)));
+            snapshot(display,argv[1],day?"av-fm-light":"av-fm-dark",theme);
+            service_panel_open();
+            assert(!find_label(root,"音乐播放地址") && !find_label(root,"电台播放地址") && !find_label(root,"多媒体"));
+            snapshot(display,argv[1],day?"settings-sd-only-light":"settings-sd-only-dark",theme);
+            tap_category(pointer,LV_SYMBOL_CLOSE);
         }
+    }
+    /* Actual LVGL input dispatch across the new center, including disabled controls and hotplug. */
+    for (unsigned day=0;day<2;++day) {
+        dashboard_set_daylight(day); dashboard_select_page(5); media_panel_select(AV_MUSIC);
+        media_status_t media={.network=true,.volume=35}; media_panel_update(&media);
+        s_av=(av_status_t){.voice_enabled=true,.library={.revision=1,.storage=true,.music_count=12,.photo_count=7}};
+        strcpy(s_av.voice_detail,"请说“你好小智”唤醒"); media_panel_av_update(&s_av);
+        tap_category(pointer,"Music-00.mp3");
+        assert(s_last_media.action==MEDIA_SELECT_LOCAL && s_last_media.value==0 && s_last_media.revision==1);
+        tap_category(pointer,"下一页"); tap_category(pointer,"Music-05.mp3");
+        assert(s_last_media.action==MEDIA_SELECT_LOCAL && s_last_media.value==5);
+        snapshot(display,argv[1],day?"av-sd-light":"av-sd-dark",0);
+        s_av.library.storage=false; s_av.library.music_count=0; ++s_av.library.revision; media_panel_av_update(&s_av);
+        snapshot(display,argv[1],day?"av-sd-removed-light":"av-sd-removed-dark",0);
+        assert(!find_label(root,"Music-05.mp3"));
+        s_av.library.storage=true; s_av.library.music_count=12; ++s_av.library.revision; media_panel_av_update(&s_av);
+        if (DEVICE_CAMERA_AVAILABLE) {
+        tap_category(pointer,"摄像头");
+        /* Previous iteration may have left the album selected. */
+        tap_category(pointer,"实时预览");
+        unsigned photos=s_av_actions[AV_TAKE_PHOTO];
+        tap_category(pointer,"拍照保存"); assert(s_av_actions[AV_TAKE_PHOTO]==photos);
+        tap_category(pointer,"开启摄像头"); assert(s_av_actions[AV_CAMERA_ON]>0);
+        s_av.camera_enabled=true; s_av.camera_state=3; strcpy(s_av.camera_detail,"本地预览中");
+        media_panel_av_update(&s_av); media_panel_frame(camera,false);
+        tap_category(pointer,"拍照保存"); assert(s_av_actions[AV_TAKE_PHOTO]==photos+1);
+        snapshot(display,argv[1],day?"av-camera-light":"av-camera-dark",0);
+        tap_category(pointer,"相册");
+        if (!find_label(root,"img-00.bmp")) tap_category(pointer,"上一页");
+        tap_category(pointer,"img-00.bmp"); assert(s_av_actions[AV_VIEW_PHOTO]>0 && s_av_value==0);
+        media_panel_frame(camera,true);
+        snapshot(display,argv[1],day?"av-album-light":"av-album-dark",0);
+        tap_category(pointer,"下一页"); tap_category(pointer,"img-04.bmp"); assert(s_av_value==4);
+        } else {
+            assert(!find_label(root,"摄像头"));
+            lv_obj_update_layout(root);
+            lv_obj_t *sd_heading=find_label(root,"SD 卡音乐");
+            assert(sd_heading);
+            media_panel_select(AV_CAMERA);
+            assert(find_label(root,"SD 卡音乐")==sd_heading && !find_label(root,"拍照保存"));
+            snapshot(display,argv[1],day?"av-camera-disabled-light":"av-camera-disabled-dark",0);
+        }
+        tap_category(pointer,"语音助手");
+        unsigned starts=s_av_actions[AV_VOICE_START],ends=s_av_actions[AV_VOICE_END];
+        tap_category(pointer,"结束对话"); assert(s_av_actions[AV_VOICE_END]==ends);
+        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
+        s_av.voice_active=true; strcpy(s_av.voice_detail,"正在聆听"); media_panel_av_update(&s_av);
+        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
+        tap_category(pointer,"结束对话"); assert(s_av_actions[AV_VOICE_END]==ends+1);
+        snapshot(display,argv[1],day?"av-voice-light":"av-voice-dark",0);
+        tap_category(pointer,"关闭助手"); assert(s_av_actions[AV_VOICE_OFF]>0);
+        s_av.voice_active=false; s_av.voice_enabled=false; strcpy(s_av.voice_detail,"语音助手已关闭"); media_panel_av_update(&s_av);
+        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
+        snapshot(display,argv[1],day?"av-voice-off-light":"av-voice-off-dark",0);
+        tap_category(pointer,"开启助手"); assert(s_av_actions[AV_VOICE_ON]>0);
     }
     printf("Inspected %d rendered labels; %d errors. Dashboard and P4 service controls passed.\n", s_labels, s_errors);
     return s_errors ? 1 : 0;

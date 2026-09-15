@@ -2,7 +2,7 @@
 
 These are visual envelopes, not vendor-certified assembly models. All dimensions
 are millimetres, with KiCad's model coordinates (+Y opposite footprint Y).
-See hardware/display-singleboard/3D_MODELS.md before enclosure tooling.
+See display_board/hardware/display-singleboard/3D_MODELS.md before enclosure tooling.
 """
 import argparse
 import os

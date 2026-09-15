@@ -8,7 +8,7 @@ import pcbnew as k
 
 repo = Path(__file__).resolve().parent.parent
 ap = argparse.ArgumentParser(description=__doc__)
-ap.add_argument('--project', type=Path, default=repo/'hardware/display-singleboard')
+ap.add_argument('--project', type=Path, default=repo/'display_board/hardware/display-singleboard')
 ap.add_argument('--output', type=Path, default=repo/'build/display-enclosure/mechanical')
 a = ap.parse_args()
 cfg = json.loads((a.project/'enclosure.json').read_text(encoding='utf8'))
@@ -28,6 +28,21 @@ def distance_to_box(x, y, box):
     return math.hypot(max(box[0]-x, 0, x-box[2]), max(box[1]-y, 0, y-box[3]))
 
 errors = []
+# A revision can freeze enclosure-critical poses without tying the check to a
+# particular board revision.  This catches a later PCB move before an old case
+# is printed; matching a pose alone does not qualify the purchased connector.
+for ref, pose in cfg.get('component_poses', {}).items():
+    f = fps.get(ref)
+    if f is None:
+        errors.append(f'{ref} required by enclosure is missing')
+        continue
+    angle_error = (f.GetOrientationDegrees()-pose['angle_deg']+180)%360-180
+    if math.dist(point(f.GetPosition()), pose['position_mm']) > .01 or abs(angle_error) > .01:
+        errors.append(f'{ref} no longer matches the enclosure pose')
+    side = 'F' if f.GetLayer() == k.F_Cu else 'B'
+    if side != pose['side']:
+        errors.append(f'{ref} no longer matches the enclosure assembly side')
+
 power = cfg['side_power']
 sw = fps[power['reference']]
 if point(sw.GetPosition()) != power['center_mm'] or sw.GetOrientationDegrees() != power['angle_deg']:
@@ -50,6 +65,15 @@ for ref, f in fps.items():
 
 mounts = []
 radius = cfg['mounting']['maximum_local_support_or_head_diameter_mm']/2
+corner_inset = cfg['mounting'].get('corner_inset_mm')
+if corner_inset is not None:
+    expected_corners = [(outline[0]+corner_inset, outline[1]+corner_inset),
+                        (outline[2]-corner_inset, outline[1]+corner_inset),
+                        (outline[0]+corner_inset, outline[3]-corner_inset),
+                        (outline[2]-corner_inset, outline[3]-corner_inset)]
+    actual_centres = [point(fps[ref].GetPosition()) for ref in cfg['mounting']['hole_references']]
+    if len(actual_centres) != 4 or any(min(math.dist(p, q) for q in actual_centres) > .01 for p in expected_corners):
+        errors.append('Four corner mounting holes do not match the enclosure bosses')
 for ref in cfg['mounting']['hole_references']:
     f = fps[ref]
     x, y = point(f.GetPosition())
@@ -61,7 +85,8 @@ for ref in cfg['mounting']['hole_references']:
         errors.append(f'{ref} has insufficient clearance for the proposed support/head')
     mounts.append({'reference': ref, 'center_mm': [x, y],
                    'relative_to_upper_left_mm': [round(x-outline[0],4),round(y-outline[1],4)],
-                   'nearest_component': neighbor, 'clearance_from_5mm_support_mm': round(clearance-radius,4)})
+                   'nearest_component': neighbor, 'support_diameter_mm': radius*2,
+                   'clearance_from_support_mm': round(clearance-radius,4)})
 
 access = []
 for item in cfg['access']:
@@ -76,7 +101,7 @@ result = {'pcb_sha256': hashlib.sha256(pcb.read_bytes()).hexdigest(),
           'access': access, 'errors': errors,
           'limits': ['2D placement/access checks only; not a 3D clash check',
                      'Actual port heights, plug overmolds, mating FPC and case tolerances are not qualified',
-                     'J302 is on the screen-facing side; its FPC gap and bend need the actual panel assembly',
+                     'FPC contact face, latch access and bend lengths require the actual panel assembly',
                      'J18 is the fixed HS host; J19 is native USB Serial/JTAG; J22 is regulated 5 V input']}
 (a.output/'access-coordinates.json').write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding='utf8')
 

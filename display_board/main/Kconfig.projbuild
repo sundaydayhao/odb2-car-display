@@ -1,0 +1,95 @@
+menu "ELM327 BLE Dashboard"
+    config OBD2_TRANSPORT_ELM327_BLE
+        bool
+        default y
+
+    config OBD2_ELM327_BLE_NAME
+        string
+        default ""
+        help
+            Legacy configuration, no longer used. Select a device from the
+            Bluetooth settings scan list instead.
+
+    config OBD2_ELM327_BLE_ADDRESS
+        string
+        default ""
+        help
+            Legacy configuration, no longer used. A successfully initialized
+            adapter is remembered in NVS for one automatic reconnect attempt.
+
+    config OBD2_ELM327_SERVICE_UUID
+        string "Custom UART service UUID (optional)"
+        default ""
+    config OBD2_ELM327_WRITE_UUID
+        string "Custom writable characteristic UUID (optional)"
+        default ""
+    config OBD2_ELM327_NOTIFY_UUID
+        string "Custom notify/indicate characteristic UUID (optional)"
+        default ""
+        help
+            Set all three UUIDs together, or leave all empty for FFF0/FFF2/FFF1,
+            FFE0/FFE1/FFE1 and Nordic UART Service. UUIDs can be 16 or 128 bits.
+
+    config OBD2_ELM327_BLE_REQUIRE_PAIRING
+        bool "Pair before discovery (for encrypted UART adapters)"
+        default n
+    config OBD2_ELM327_BLE_PASSKEY
+        int "BLE passkey (-1: Just Works/no input)"
+        range -1 999999
+        default -1
+        help
+            This is a BLE SMP passkey, not a Classic Bluetooth serial PIN.
+            A configured passkey enables pairing before service discovery.
+
+    config OBD2_POLL_INTERVAL_MS
+        int "Minimum delay between PID commands (ms)"
+        default 50
+        range 20 1000
+    config OBD2_RESPONSE_TIMEOUT_MS
+        int "ELM response prompt timeout (ms)"
+        default 1500
+        range 500 5000
+    config OBD2_ELM327_SEARCH_TIMEOUT_MS
+        int "Initial vehicle protocol search timeout (ms)"
+        default 20000
+        range 5000 30000
+endmenu
+
+menu "Vehicle P4 services"
+    config DEVICE_WIFI_SSID
+        string "Initial phone hotspot SSID (prefer serial provisioning)"
+        default ""
+    config DEVICE_WIFI_PASSWORD
+        string "Initial phone hotspot password"
+        default ""
+    config DEVICE_RECORD_MAX_FILES
+        int "Maximum sealed diagnostic files"
+        default 16
+        range 2 64
+    config DEVICE_RECORD_FILE_KB
+        int "Maximum diagnostic segment size (KiB)"
+        default 256
+        range 32 1024
+    config DEVICE_TRUST_DIR
+        string "Directory containing service_ca.pem and ota_public.pem (empty: OTA disabled)"
+        default ""
+        help
+            Public trust files only. Never put private signing keys in firmware.
+            Run tools/lab_server.py init to create a development trust directory.
+    config DEVICE_BENCH_MAINTENANCE
+        bool "Allow explicit bench OTA confirmation without valid vehicle speed"
+        default n
+        help
+            Laboratory builds only. Still requires an explicit local confirmation.
+    config DEVICE_CAMERA_ENABLED
+        bool "Enable camera feature and UI"
+        default n
+        help
+            Include camera preview, photo capture and album controls. Disabled
+            builds hide camera UI and do not start the camera service.
+    config DEVICE_CAMERA_PREVIEW_FPS
+        int "Maximum camera preview updates per second"
+        depends on DEVICE_CAMERA_ENABLED
+        default 8
+        range 1 15
+endmenu

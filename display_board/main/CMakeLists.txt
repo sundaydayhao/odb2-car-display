@@ -22,6 +22,7 @@ idf_component_register(
         "wifi_networks.c"
         "device_console.c"
         "voice_service.c"
+        "xiaozhi_avatar.c"
         "voice_codec_memory.c"
         "voice_frontend.c"
         "camera_service.c"

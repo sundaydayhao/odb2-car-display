@@ -50,8 +50,8 @@ static bool s_has_live, s_demo, s_daylight = true, s_turbo = true;
 static uint8_t s_page, s_theme, s_period, s_pressure;
 static int s_fuel_price = 815;
 static const dashboard_palette_t *s_p = &s_palettes[1][0];
-static const char *s_names[] = {TXT_DRIVE, TXT_HEALTH, TXT_TIRES, TXT_TRIP, TXT_POWER, "影音中心"};
-static const char *s_titles[] = {TXT_DRIVE_TITLE, TXT_HEALTH_TITLE, TXT_TIRES_TITLE, TXT_TRIP_TITLE, TXT_POWER_TITLE, "影音中心"};
+static const char *s_names[] = {TXT_DRIVE, TXT_HEALTH, TXT_TIRES, TXT_TRIP, TXT_POWER, "影音中心", TXT_MAP_TRACK};
+static const char *s_titles[] = {TXT_DRIVE_TITLE, TXT_HEALTH_TITLE, TXT_TIRES_TITLE, TXT_TRIP_TITLE, TXT_POWER_TITLE, "影音中心", TXT_MAP_TRACK_TITLE};
 static const char *s_units[] = {"bar", "kPa", "psi"};
 static int s_width = 800, s_height = 480;
 static int sx(int x) { return x * s_width / 800; }
@@ -152,6 +152,18 @@ static void small_metric(dashboard_metric_t id, const char *title, const char *u
     label(s_content, unit, x + 108, y + 38, 80, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
 }
 
+static void dhx30_inline(int x, int y)
+{
+    rect(s_content, x, y, 3, 27, s_p->secondary, 0);
+    label(s_content, TXT_DHX30, x + 12, y, 130, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    label(s_content, TXT_DHX30_TEMPERATURE, x + 152, y, 36, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    label(s_content, "--", x + 192, y, 32, &dashboard_text_18, s_p->ink, LV_TEXT_ALIGN_LEFT);
+    label(s_content, "°C", x + 228, y, 28, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    label(s_content, TXT_DHX30_HUMIDITY, x + 262, y, 36, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    label(s_content, "--", x + 302, y, 32, &dashboard_text_18, s_p->ink, LV_TEXT_ALIGN_LEFT);
+    label(s_content, "%", x + 338, y, 20, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+}
+
 static void create_drive(void)
 {
     label(s_content, TXT_ENGINE " / rpm", 28, 12, 132, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
@@ -162,6 +174,7 @@ static void create_drive(void)
     s_gear_bg = rect(s_content, 344, 126, 50, 44, s_p->accent, 3);
     value(DASH_GEAR, 348, 136, 43, &lv_font_montserrat_24, s_p->on_accent);
     label(s_content, "km/h", 30, 224, 160, &dashboard_text_22, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    dhx30_inline(28, 250);
 
     rect(s_content, 418, 56, 354, 209, s_p->tint, 0);
     rect(s_content, 418, 56, 2, 209, s_p->accent, 0);
@@ -341,6 +354,21 @@ static void create_performance(void)
     label(obj, TXT_RECORDS, 0, 5, 122, &dashboard_text_18, s_p->accent, LV_TEXT_ALIGN_RIGHT);
 }
 
+static void create_map_track(void)
+{
+    /* The first map/track surface stays independent from the future GNSS and
+     * map services; GPS state is presented in the top toolbar. */
+    rect(s_content, 28, 14, 744, 342, s_p->panel, 16);
+    label(s_content, TXT_MAP_TRACK, 48, 29, 220, &dashboard_text_22, s_p->ink, LV_TEXT_ALIGN_LEFT);
+    label(s_content, TXT_MAP_TRACK_SUBTITLE, 48, 60, 320, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_LEFT);
+    rect(s_content, 48, 92, 704, 246, s_p->tint, 12);
+    for (int i = 1; i < 8; ++i) rect(s_content, 48 + i * 88, 92, 1, 246, s_p->line, 0);
+    for (int i = 1; i < 4; ++i) rect(s_content, 48, 92 + i * 61, 704, 1, s_p->line, 0);
+    label(s_content, LV_SYMBOL_GPS, 48, 139, 704, &lv_font_montserrat_32, s_p->accent, LV_TEXT_ALIGN_CENTER);
+    label(s_content, TXT_MAP_TRACK_WAIT, 70, 198, 660, &dashboard_text_22, s_p->ink, LV_TEXT_ALIGN_CENTER);
+    label(s_content, TXT_MAP_TRACK_DATA_WAIT, 70, 240, 660, &dashboard_text_18, s_p->muted, LV_TEXT_ALIGN_CENTER);
+}
+
 static void sample_data(dashboard_data_t *data)
 {
     *data = (dashboard_data_t){.value = {
@@ -495,7 +523,8 @@ static void rebuild(void)
         case 2: create_tires(); break;
         case 3: create_trip(); break;
         case 4: create_performance(); break;
-        case 5: media_panel_create(s_content, s_p); break;
+        case DASHBOARD_PAGE_MEDIA: media_panel_create(s_content, s_p); break;
+        case DASHBOARD_PAGE_MAP_TRACK: create_map_track(); break;
     }
     lv_obj_update_layout(s_content);
     refresh();
@@ -619,11 +648,18 @@ void dashboard_create_on(lv_obj_t *parent, int width, int height)
     s_settings_icon = label(settings,LV_SYMBOL_SETTINGS,0,11,44,&lv_font_montserrat_24,s_p->muted,LV_TEXT_ALIGN_CENTER);
     s_content = surface(s_screen,0,54,800,366);
     s_nav = rect(s_screen,0,420,800,60,s_p->panel,0);
-    const char *icons[] = {LV_SYMBOL_HOME,LV_SYMBOL_BARS,LV_SYMBOL_REFRESH,LV_SYMBOL_GPS,LV_SYMBOL_CHARGE,LV_SYMBOL_AUDIO};
+    const char *icons[] = {LV_SYMBOL_HOME,LV_SYMBOL_BARS,LV_SYMBOL_REFRESH,LV_SYMBOL_GPS,LV_SYMBOL_CHARGE,LV_SYMBOL_AUDIO,LV_SYMBOL_GPS};
+    const int nav_start = PAGE_COUNT > 6 ? 7 : 22;
+    const int nav_step = PAGE_COUNT > 6 ? 113 : 126;
+    const int nav_width = PAGE_COUNT > 6 ? 110 : 122;
+    const int icon_x = PAGE_COUNT > 6 ? 6 : 14;
+    const int icon_width = PAGE_COUNT > 6 ? 24 : 20;
+    const int text_x = PAGE_COUNT > 6 ? 34 : 43;
+    const int text_width = nav_width - text_x - 4;
     for (int i = 0; i < PAGE_COUNT; ++i) {
-        s_tabs[i] = button(s_nav,22+i*126,6,122,48,i,s_p->panel);
-        s_tab_icons[i] = label(s_tabs[i],icons[i],14,16,20,&lv_font_montserrat_14,s_p->muted,LV_TEXT_ALIGN_CENTER);
-        s_tab_labels[i] = label(s_tabs[i],s_names[i],43,13,72,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_LEFT);
+        s_tabs[i] = button(s_nav,nav_start+i*nav_step,6,nav_width,48,i,s_p->panel);
+        s_tab_icons[i] = label(s_tabs[i],icons[i],icon_x,16,icon_width,&lv_font_montserrat_14,s_p->muted,LV_TEXT_ALIGN_CENTER);
+        s_tab_labels[i] = label(s_tabs[i],s_names[i],text_x,13,text_width,&dashboard_text_18,s_p->muted,LV_TEXT_ALIGN_LEFT);
     }
     s_overlay = rect(s_screen,0,0,800,480,0x000000,0);
     lv_obj_set_style_bg_opa(s_overlay,LV_OPA_50,0);

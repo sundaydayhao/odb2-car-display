@@ -9,7 +9,7 @@
     "speaker_baffle_duct",
     "speaker_volume_insert"
   ],
-  "source_pcb_sha256": "a41204aa84d4ccdde57b0342530d9fda6df87ebfbc9dac728f5bc6d0018cd141",
+  "source_pcb_sha256": "94f690322ae01e29ead37bb7ace5549f6c721c399ae81aa6e6eabb1872090152",
   "geometry_sha256": "b68c083ffe200db9005e6bcdaa3ebb39ada156bbe1a9232333b935f808f08d74",
   "speaker": "GSPK4020057TN-4R3W / C3012621 PROTOTYPE_CANDIDATE",
   "known_open_items": [
@@ -21,16 +21,16 @@
     "Speaker total height and temperature conflicts, actual acoustic volume/response, harness fit and sealing"
   ],
   "files_sha256": {
-    "case-parameters.json": "d516bf2da9ed0b5ff445925ae913c0319b893b1c1b992a98eee693157495d505",
+    "case-parameters.json": "3b2723e8db0347f4713d873e578473c11f4c8441fa9d13e193ad7e3a69fea5a4",
     "check_actual_case.py": "80d5cc3096f1a6a47ce962f2fd7aa02b3e01d6f18715108593c1796dd30ee0f4",
     "create_mic_carrier.py": "be54a6a9747808edf00cd2c8a61c69e76565b5e5c4e40a8015b2202e41dfdfd8",
     "export_actual_pcb.py": "975d46997988c92067d5b31c8b7e784fd4a6a1b5f8b36bf934658a0658a23de6",
     "generate_case.py": "f718150aa79e236921e7c458bebdd45b84376a3df76186cb0879d5360eeaa595",
     "generate_mic_model.py": "31c31692ad7fd5d4bd2067fcc5dc826921a64e5dba0c85715101227d6a7a20b1",
     "lcd_section.py": "e2b39168486ebe2471784143d9c5eabbe84649796daffe6390c6bb7226661518",
-    "make_mechanical_diagram.py": "eef86314633690857bd84236cab37b8e874e6d94aab0d9c585a24bf8843b010e",
+    "make_mechanical_diagram.py": "1f21aada73d66fcfc7f9674fa1043a86fd7bb8f5f1f63a6c0f1bc7c136636b4f",
     "mechanical-fingerprint.json": "a8d6e43ed2bd284bc3e2f07a24e432693dd8199a2b0bafacc08f0e9c098051ad",
-    "MECHANICAL-PROPOSAL.md": "9f311e43c32eca3069f166d9fcb5ea2a3753fea625506960e85988cc5f9b2220",
+    "MECHANICAL-PROPOSAL.md": "e974b1b5c563dc3ce2f3c53bb9a4fd4d873fcfb55d070d10555d6dab3c215ef0",
     "mechanical_fingerprint.py": "3c73c50e0e69e6f36f9489f6fec8e91029862ba41eea71eca8ad10080bdb51a9",
     "microphone-carrier/drc.json": "a72302d40d3bc405e3f7e755ac045bb216d0a3825bc55138e8748205a90faf0c",
     "microphone-carrier/erc.json": "906f815513c1c21151742d7866dab90a6ca06080d15829a9a26e5e1b6ca8657d",
@@ -85,7 +85,7 @@
     "models/speaker_volume_insert.step": "67a28f5ec902cb3ad0f46d5c0833d22ccedafa47584932d1aed14877e2331cdd",
     "models/speaker_volume_insert.stl": "5f8e09719a0f0191b075d90bd97f1026bf22a748968c43bde872d44ada50c5bd",
     "models/top.png": "11eb05414b5fd2138ee459fec21d66b8b08f36a151dbc0eea8844e1d58e02280",
-    "README.md": "a065d19b8dbf7868b60de24b3eb211b09ad9401d83527245949ed004da560c5f",
+    "README.md": "1e7611081d61d06d2617ed2ab5e30103b7fa424601dfe7f7ede18fea1cb5bc5e",
     "render_case.py": "510257c72ad03417ccb6de244148cfa62e90c00345ab2013fcb8221f9f1d9fb6",
     "render_speaker.py": "9d364ca69d02665e78841ecacceb680a17b217bd65aee72b8166ef372287f408",
     "render_svgs.cjs": "d1222c68dbf3997640adb94d904ac59b4fc8923e1ed4ff80a35d4a6ffd0f2b2c",
@@ -94,6 +94,7 @@
     "sources/NS4150B.pdf": "61812f56feefc64f799d60b1807b5411ffe2c338687163f3b81ba1ccf6ced2f1",
     "sources/speaker-source-provenance.json": "1d17d36fbc9351fa4e1b3a46810ad616fde24d353eefd985e651515398119fe3",
     "SPEAKER_ASSEMBLY.md": "5f397fedf0844c8db90e53bc4b2e8a7b1348b1e5109f771aebb061493cfe5f70",
-    "VISUAL_REVIEW.md": "c6f4b97d46107b04aff52b5416abbcf055e945154e64fd3d8dd469c07d3dab34"
+    "VISUAL_REVIEW.md": "c6f4b97d46107b04aff52b5416abbcf055e945154e64fd3d8dd469c07d3dab34",
+    "../PANEL_DATASHEET_REVIEW.md": "0652b58c5234a1fb539f9018ac55cb645de279690ebff17fb616be27e7d290eb"
   }
 }

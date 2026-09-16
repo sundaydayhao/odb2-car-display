@@ -20,7 +20,8 @@ add_executable(dashboard_preview preview.c
     "${DISPLAY_MAIN}/fonts/dashboard_text_22.c"
     "${DISPLAY_MAIN}/fonts/dashboard_wifi_18.c"
     "${DISPLAY_MAIN}/fonts/dashboard_digits_144.c"
-    "${DISPLAY_MAIN}/fonts/dashboard_digits_72.c")
+    "${DISPLAY_MAIN}/fonts/dashboard_digits_72.c"
+    "${DISPLAY_MAIN}/xiaozhi_avatar.c")
 target_include_directories(dashboard_preview PRIVATE "${DISPLAY_MAIN}")
 target_compile_definitions(dashboard_preview PRIVATE CONFIG_DEVICE_CAMERA_ENABLED=$<BOOL:${ENABLE_CAMERA}>)
 target_link_libraries(dashboard_preview PRIVATE lvgl_host)

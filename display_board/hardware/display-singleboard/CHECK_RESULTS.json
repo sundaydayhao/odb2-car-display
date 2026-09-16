@@ -1,11 +1,11 @@
 {
   "revision": "A7",
-  "status": "PENDING_POWER_WING_ROUTING_AND_PRODUCTION_ACCEPTANCE",
-  "pcb_sha256": "162ca8d8436f87e850e83e728a90d2921de25a1a50fe1e581e11de373e6db4fd",
+  "status": "PENDING_PANEL_SEQUENCE_FPC_POWER_WING_AND_PRODUCTION_ACCEPTANCE",
+  "pcb_sha256": "94f690322ae01e29ead37bb7ace5549f6c721c399ae81aa6e6eabb1872090152",
   "erc": 0,
   "drc": 184,
   "unconnected": 119,
-  "reason": "Native ERC is clean and schematic/PCB connectivity is consistent. The existing A7 board has 184 legacy silk/track-dangling violations; the new battery wing intentionally retains 59 additional ratsnest items until the battery pack, stackup and high-current routes are frozen. Do not release this snapshot for production without power-wing routing, reverse-current, thermal and vehicle tests.",
+  "reason": "Native ERC is clean and schematic/PCB connectivity is consistent. The existing A7 board has 184 legacy silk/track-dangling violations; the new battery wing intentionally retains 59 additional ratsnest items until the battery pack, stackup and high-current routes are frozen. The LCM-070--A0 review also finds that STBYB is not independently sequenced and the candidate FPC path is about 5.17 mm longer than the 56.54 mm datasheet dimension. Do not release this snapshot for production without panel power-sequence, FPC, power-wing, reverse-current, thermal and vehicle tests.",
   "verification_report": "tools/check_display_hardware.py (KiCad 10.0.5)",
   "mechanical_report": "enclosure/models/actual-component-check.json"
 }

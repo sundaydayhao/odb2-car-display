@@ -4,7 +4,12 @@
 #include <stdint.h>
 #include "lvgl.h"
 
-enum { DASHBOARD_THEME_COUNT = 3, DASHBOARD_PAGE_COUNT = 6 };
+enum {
+    DASHBOARD_THEME_COUNT = 3,
+    DASHBOARD_PAGE_MEDIA = 5,
+    DASHBOARD_PAGE_MAP_TRACK = 6,
+    DASHBOARD_PAGE_COUNT = 7
+};
 typedef struct {
     uint32_t bg, ink, muted, line, track, panel, accent, hero, secondary, green, amber, red, on_accent, tint;
 } dashboard_palette_t;

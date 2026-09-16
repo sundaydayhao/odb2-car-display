@@ -13,9 +13,9 @@ static bool s_status_ready, s_av_ready;
 static av_tab_t s_tab;
 static unsigned s_music_page, s_photo_page;
 static bool s_album, s_have_frame, s_frame_photo;
-static lv_obj_t *s_parent, *s_title, *s_detail, *s_time, *s_play, *s_volume, *s_volume_text, *s_context;
+static lv_obj_t *s_parent, *s_title, *s_detail, *s_time, *s_play, *s_volume, *s_volume_text;
 static lv_obj_t *s_rows[5], *s_marks[5], *s_canvas, *s_canvas_note, *s_cam_toggle, *s_photo_button;
-static lv_obj_t *s_voice_toggle, *s_voice_start, *s_voice_stop, *s_voice_heading, *s_notice;
+static lv_obj_t *s_notice;
 static uint16_t *s_pixels;
 static dashboard_palette_t s_palette;
 static int s_width, s_height;
@@ -74,7 +74,7 @@ static void choose_tab(lv_event_t *event)
 }
 void media_panel_select(av_tab_t tab)
 {
-    if (tab>AV_FM || (!DEVICE_CAMERA_AVAILABLE && tab==AV_CAMERA)) return;
+    if (tab > AV_FM || tab == AV_VOICE || (!DEVICE_CAMERA_AVAILABLE && tab == AV_CAMERA)) return;
     if (s_tab==AV_CAMERA && tab!=AV_CAMERA) emit_av(AV_CAMERA_OFF,0);
     s_tab=tab; if (s_parent) rebuild();
 }
@@ -126,11 +126,6 @@ static void choose_photo(lv_event_t *event)
     if (s_canvas_note) { lv_label_set_text(s_canvas_note,"正在读取照片"); lv_obj_remove_flag(s_canvas_note,LV_OBJ_FLAG_HIDDEN); }
     emit_av(AV_VIEW_PHOTO,(unsigned)(uintptr_t)lv_event_get_user_data(event));
 }
-static void voice_control(lv_event_t *event)
-{
-    unsigned action=(uintptr_t)lv_event_get_user_data(event);
-    emit_av(action==0?(s_av.voice_enabled?AV_VOICE_OFF:AV_VOICE_ON):action==1?AV_VOICE_START:AV_VOICE_END,0);
-}
 static void pager(lv_obj_t *parent,int x,int y,int w,unsigned page,unsigned count,unsigned per)
 {
     lv_obj_t *prev=button(parent,"上一页",x,y,82,42,false,change_page,0);
@@ -142,8 +137,7 @@ static void pager(lv_obj_t *parent,int x,int y,int w,unsigned page,unsigned coun
 }
 static void music_page(void)
 {
-    label(s_parent,"SD 卡音乐",28,80,330,&dashboard_text_22,s_palette.ink);
-    button(s_parent,"刷新文件",858,70,138,42,false,refresh_files,0);
+    button(s_parent,"刷新文件",220,70,138,42,false,refresh_files,0);
     av_file_t files[5];
     unsigned max_page=s_av.library.music_count?(s_av.library.music_count-1)/5:0;
     if (s_music_page>max_page) s_music_page=max_page;
@@ -157,12 +151,12 @@ static void music_page(void)
     }
     if (!n) {
         lv_obj_t *empty=box(s_parent,28,128,330,244,s_palette.panel,14);
-        label(empty,s_av.library.scanning?"正在查找音乐":"暂无 SD 卡音乐",20,52,290,&dashboard_text_22,s_palette.ink);
+        label(empty,s_av.library.scanning?"正在查找音乐":"暂无音乐",20,52,290,&dashboard_text_22,s_palette.ink);
         lv_obj_t *hint=label(empty,s_av.library.storage?"将 MP3 放入卡根目录\n或 music 文件夹，再点刷新":"插入 SD 卡后可离线播放",20,105,290,&dashboard_text_18,s_palette.muted);
         lv_label_set_long_mode(hint,LV_LABEL_LONG_WRAP); lv_obj_set_height(hint,py(88));
     }
     pager(s_parent,28,388,330,s_music_page,s_av.library.music_count,5);
-    lv_obj_t *player=box(s_parent,382,128,614,300,s_palette.panel,18);
+    lv_obj_t *player=box(s_parent,382,84,614,344,s_palette.panel,18);
     lv_obj_t *cover=box(player,22,22,140,124,s_palette.tint,16);
     lv_obj_t *disc=box(cover,18,10,104,104,s_palette.accent,LV_RADIUS_CIRCLE);
     lv_obj_t *ring=box(disc,25,25,54,54,s_palette.panel,LV_RADIUS_CIRCLE);
@@ -228,31 +222,13 @@ static void camera_page(void)
         s_notice=label(controls,"",18,310,284,&dashboard_wifi_18,s_palette.muted);
     }
 }
-static void voice_page(void)
-{
-    lv_obj_t *panel=box(s_parent,28,84,968,344,s_palette.panel,18);
-    lv_obj_t *disc=box(panel,40,58,184,184,s_palette.tint,LV_RADIUS_CIRCLE);
-    lv_obj_t *name=label(disc,"小智",12,78,160,&dashboard_text_22,s_palette.accent);
-    lv_obj_set_style_text_align(name,LV_TEXT_ALIGN_CENTER,0);
-    label(panel,"语音助手",40,266,184,&dashboard_text_18,s_palette.muted);
-    s_voice_heading=label(panel,"",280,26,660,&dashboard_text_22,s_palette.ink);
-    s_detail=label(panel,"",280,76,660,&dashboard_text_22,s_palette.accent); s_notice=s_detail;
-    s_voice_toggle=button(panel,"关闭助手",280,140,202,52,true,voice_control,0);
-    s_voice_start=button(panel,"开始对话",502,140,202,52,false,voice_control,1);
-    s_voice_stop=button(panel,"结束对话",724,140,202,52,false,voice_control,2);
-    lv_obj_t *hint=label(panel,"开启后说“你好小智”，或点击开始对话。\n回复结束后可以直接追问，无需再次唤醒。",280,222,660,&dashboard_text_18,s_palette.muted);
-    lv_label_set_long_mode(hint,LV_LABEL_LONG_WRAP); lv_obj_set_height(hint,py(58));
-    label(panel,"关闭助手后停止唤醒监听；开启状态会自动保存",280,298,660,&dashboard_text_18,s_palette.muted);
-}
 static void refresh(void)
 {
     if (!s_parent) return;
-    char context[96]; snprintf(context,sizeof(context),"%s  ·  %s",s_av.library.storage?"SD 卡已就绪":"未检测到 SD 卡",s_status.network?"Wi-Fi 已连接":"Wi-Fi 未连接");
-    lv_label_set_text(s_context,context);
     if (s_tab==AV_MUSIC) {
         bool active=s_status.state==MEDIA_PLAYING || s_status.state==MEDIA_BUFFERING || s_status.state==MEDIA_CONNECTING;
-        lv_label_set_text(s_title,*s_status.title?s_status.title:"请选择 SD 卡音乐");
-        lv_label_set_text(s_detail,*s_status.detail?s_status.detail:"选择 SD 卡音乐开始播放");
+        lv_label_set_text(s_title,*s_status.title?s_status.title:"请选择音乐");
+        lv_label_set_text(s_detail,*s_status.detail?s_status.detail:"选择音乐开始播放");
         lv_obj_set_style_text_color(s_detail,lv_color_hex(s_status.state==MEDIA_ERROR?s_palette.red:s_palette.muted),0);
         lv_label_set_text(s_play,active?LV_SYMBOL_PAUSE:LV_SYMBOL_PLAY);
         char time[64]; unsigned seconds=s_status.played_ms/1000;
@@ -275,12 +251,6 @@ static void refresh(void)
             enabled(s_photo_button,s_av.camera_enabled && s_av.camera_state==3 && s_av.library.storage);
             lv_label_set_text(s_notice,*s_av.library.photo_detail?s_av.library.photo_detail:s_av.library.storage?"照片保存在 SD 卡 photos 文件夹":"拍照需要插入 SD 卡");
         } else lv_label_set_text(s_notice,*s_av.library.photo_detail?s_av.library.photo_detail:"选择照片后在左侧查看");
-    } else if (s_tab==AV_VOICE) {
-        lv_label_set_text(s_voice_heading,s_av.voice_enabled?"助手已开启":"助手已关闭");
-        lv_label_set_text(s_detail,*s_av.voice_detail?s_av.voice_detail:"正在准备语音助手");
-        button_text(s_voice_toggle,s_av.voice_enabled?"关闭助手":"开启助手");
-        enabled(s_voice_start,s_av.voice_enabled && !s_av.voice_active && s_status.network);
-        enabled(s_voice_stop,s_av.voice_active);
     }
 }
 static void rebuild(void)
@@ -289,18 +259,16 @@ static void rebuild(void)
     lv_obj_clean(s_parent);
     memset(s_rows,0,sizeof(s_rows)); memset(s_marks,0,sizeof(s_marks));
     s_title=s_detail=s_time=s_play=s_volume=s_volume_text=s_canvas=s_canvas_note=NULL;
-    s_cam_toggle=s_photo_button=s_voice_toggle=s_voice_start=s_voice_stop=s_voice_heading=s_notice=NULL;
-    const char *tabs[]={"音乐","FM 电台","摄像头","语音助手"};
-    const av_tab_t ids[]={AV_MUSIC,AV_FM,AV_CAMERA,AV_VOICE};
+    s_cam_toggle=s_photo_button=s_notice=NULL;
+    const char *tabs[]={"音乐","FM 电台","摄像头"};
+    const av_tab_t ids[]={AV_MUSIC,AV_FM,AV_CAMERA};
     unsigned visible_tab=0;
-    int step=DEVICE_CAMERA_AVAILABLE?124:156;
-    for (unsigned i=0;i<4;++i) {
+    int step=DEVICE_CAMERA_AVAILABLE?124:190;
+    for (unsigned i=0;i<3;++i) {
         if (!DEVICE_CAMERA_AVAILABLE && ids[i]==AV_CAMERA) continue;
         button(s_parent,tabs[i],28+visible_tab++*step,10,step-8,44,s_tab==ids[i],choose_tab,ids[i]);
     }
-    s_context=label(s_parent,"",530,22,466,&dashboard_text_18,s_palette.muted);
-    lv_obj_set_style_text_align(s_context,LV_TEXT_ALIGN_RIGHT,0);
-    if (s_tab==AV_MUSIC) music_page(); else if (s_tab==AV_CAMERA) camera_page(); else if (s_tab==AV_VOICE) voice_page();
+    if (s_tab==AV_MUSIC) music_page(); else if (s_tab==AV_CAMERA) camera_page();
     else if (s_tab==AV_FM) box(s_parent,28,84,968,344,s_palette.panel,18);
     refresh();
 }
@@ -331,10 +299,8 @@ void media_panel_av_update(const av_status_t *status)
     if (!status) return;
     bool library_changed=status->library.revision!=s_av.library.revision;
     bool changed=!s_av_ready || library_changed ||
-        status->camera_enabled!=s_av.camera_enabled || status->voice_enabled!=s_av.voice_enabled ||
-        status->voice_active!=s_av.voice_active || status->camera_state!=s_av.camera_state ||
-        status->voice_state!=s_av.voice_state || strcmp(status->camera_detail,s_av.camera_detail) ||
-        strcmp(status->voice_detail,s_av.voice_detail) ||
+        status->camera_enabled!=s_av.camera_enabled || status->camera_state!=s_av.camera_state ||
+        strcmp(status->camera_detail,s_av.camera_detail) ||
         status->library.storage!=s_av.library.storage || status->library.scanning!=s_av.library.scanning ||
         status->library.music_count!=s_av.library.music_count || status->library.photo_count!=s_av.library.photo_count ||
         strcmp(status->library.detail,s_av.library.detail) || strcmp(status->library.photo_detail,s_av.library.photo_detail);

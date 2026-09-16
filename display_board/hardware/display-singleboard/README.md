@@ -2,7 +2,7 @@
 
 ESP32-P4NRW32X、ESP32-C6-MINI-1、LCD 电源/背光、触摸、音频和接口集成在四层板上；加入电池电源翼后板框约 **120 × 99 mm**（原核心区约 120 × 74 mm）。打开 `display_singleboard.kicad_pro`；原理图入口为 `display_singleboard.kicad_sch`。本轮按整机装配重新排列器件与接口，提供 178 × 126 × 37.2 mm 可参数化外壳样件。
 
-目标屏为用户选定的淘宝商品 983165147604 / SKU 5946336205446，JD9165、1024 × 600、P+G 电容触摸左出线，选择两通道 MIPI。屏幕电气参数、触摸 IC、接触面和实物装配仍有待确认项，见 [PANEL_TARGET.md](PANEL_TARGET.md)。**A7 电气验收以最终冻结 PCB 的 [VERIFICATION.md](VERIFICATION.md) 为准；旧版检查通过记录不适用于重布后的板。**
+目标屏为用户选定的淘宝商品 983165147604 / SKU 5946336205446，JD9165、1024 × 600、P+G 电容触摸左出线，选择两通道 MIPI。屏幕电气参数、触摸 IC、接触面和实物装配仍有待确认项，见 [PANEL_TARGET.md](PANEL_TARGET.md) 和 [PANEL_DATASHEET_REVIEW.md](PANEL_DATASHEET_REVIEW.md)。**A7 电气验收以最终冻结 PCB 的 [VERIFICATION.md](VERIFICATION.md) 为准；旧版检查通过记录不适用于重布后的板。**
 
 | 功能 | A7 布置 |
 | --- | --- |
@@ -30,7 +30,7 @@ F 面朝背盖，B 面朝屏幕；F 面不是产品显示正面。屏幕尾线�
 
 电池与 USB-C 复用、充电电流、续航估算和量产前验证项目见 [BATTERY_POWER.md](BATTERY_POWER.md)。J19 是唯一 USB-C 口，同时保留 USB-UART/JTAG 调试并接收 5 V 充电输入；电池翼的高电流铜线仍需按板厂叠层和实际电池包冻结后完成布线与温升验证。
 
-LCD 现有名义值 VDD 1.8 V、AVDD 9.6 V、VGH 18 V、VGL −6 V、VCOM 3.2 V，背光约 182 mA，均待所选 MIPI 模组确认，不能直接套用 RGB 参数表。GPIO26 背光默认关闭，GPIO27 经开漏输出控制 LCD 复位；触摸 INT / Shutdown 为 GPIO22 / GPIO23，按实际 IC 定时序。
+LCD 目标值按 `docs/LCM-070--A0 规格书.pdf` 第 7 页更新为 VDD 1.8 V、AVDD 9.8 V、VGH 18–20 V、VGL −8.2 V、VCOM 3.3 V，背光约 180 mA；首板仍须在测试点实测并按成品模组确认。D310 已改用 LMSZ5237BT1G，R315 已改为 22.6 kΩ。GPIO26 背光默认关闭，GPIO27 经开漏输出控制 LCD 复位；触摸 INT / Shutdown 为 GPIO22 / GPIO23，按实际 IC 定时序。STBYB 目前没有独立 MCU 控制，电源时序尚未达到量产证据要求。
 
 MIPI 目标 100 Ω、USB 目标 90 Ω，应由板厂叠层求解。CAD 网表、原生 ERC/DRC、路径长度、参考地和实机测试是不同检查；名义板厚不能确定阻抗。新屏点亮、热、振动、EMC、射频和长期车载验证尚未完成。
 

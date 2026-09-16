@@ -145,7 +145,7 @@ static void command(const media_request_t *request)
         close_session(); s_selected=true; s_local_index=request->value; s_storage_generation=generation;
         strcpy(s_local_path,path); strcpy(s_local_title,title); s_play=true;
         s_played_us=0; s_frames=s_bad_frames=0;
-        publish(MEDIA_CONNECTING,"正在读取 SD 卡音乐");
+        publish(MEDIA_CONNECTING,"正在读取音乐");
         break;
     }
     case MEDIA_PREVIOUS:
@@ -190,7 +190,7 @@ static void command(const media_request_t *request)
 static bool open_session(void)
 {
     if (atomic_load(&s_fetch_busy)) return false;
-    if (!s_selected || !*s_local_path) { s_play=false; publish(MEDIA_ERROR,"请先选择 SD 卡音乐"); return false; }
+    if (!s_selected || !*s_local_path) { s_play=false; publish(MEDIA_ERROR,"请先选择音乐"); return false; }
     if (!media_codec_memory_begin()) {
         s_play=false; publish(MEDIA_ERROR,"音乐解码资源繁忙，请重试"); return false;
     }
@@ -210,7 +210,7 @@ static bool open_session(void)
         s_play = false; publish(MEDIA_ERROR, "播放任务繁忙，请重试"); return false;
     }
     s_session = true; s_buffering = true; s_used = s_skip = s_junk = 0; s_bad_frames = 0;
-    publish(MEDIA_CONNECTING, "正在读取 SD 卡音乐");
+    publish(MEDIA_CONNECTING, "正在读取音乐");
     return true;
 }
 static void failed(const char *detail)
@@ -291,7 +291,7 @@ static void playback_step(void)
     }
     if (done && !xStreamBufferBytesAvailable(s_stream)) {
         int error = atomic_load(&s_fetch_error);
-        if (error) failed("SD 卡音乐读取失败，请重新选择");
+        if (error) failed("音乐读取失败，请重新选择");
         else {
             s_play = false; close_session();
             publish(s_frames ? MEDIA_FINISHED : MEDIA_ERROR, s_frames ? "播放结束" : "没有可播放的 MP3 音频");
@@ -344,7 +344,7 @@ esp_err_t media_service_start(void)
     if (!s_commands || !s_jobs || !s_stream_storage) return ESP_ERR_NO_MEM;
     s_stream = xStreamBufferCreateStatic(STREAM_CAPACITY + 1, 1, s_stream_storage, &s_stream_control);
     if (!s_stream) return ESP_ERR_NO_MEM;
-    publish(MEDIA_IDLE, "选择 SD 卡音乐开始播放");
+    publish(MEDIA_IDLE, "选择音乐开始播放");
     if (xTaskCreate(fetch_task, "media_sd", 8192, NULL, 3, NULL) != pdPASS) return ESP_ERR_NO_MEM;
     if (xTaskCreateWithCaps(playback_task, "media_play", 8192, NULL, 4, NULL,
                            MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA | MALLOC_CAP_8BIT) != pdPASS) return ESP_ERR_NO_MEM;

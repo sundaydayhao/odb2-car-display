@@ -35,6 +35,10 @@ A3 结构复核：
 
 所选淘宝 SKU、MIPI 和触摸针表、JD9165 芯片及两通道限制见 [PANEL_TARGET.md](PANEL_TARGET.md)。采用两数据通道 MIPI 接法，RGB 不增加独立并行电路。商品私人账户 HTML 不随工程提交。
 
+- [LCM-070--A0 规格书（项目本地副本）](../../../docs/LCM-070--A0%20规格书.pdf)：第 5 页机械尺寸/FPC，第 6 页 30 针表，第 7 页电源与背光，第 8–10 页上/下电及 MIPI 时序，第 15 页装配建议。该 PDF 的第 4 页文字尺寸与第 5 页机械图有 1 mm 矛盾，以机械图为当前布置依据并要求供应商书面确认。
+- [LRC LMSZ5237BT1G（LCSC C32646）](https://www.lcsc.com/product-detail/C32646.html)：8.2 V、500 mW、SOD-123 齐纳，作为 VGL 样件替代；量产前仍按温度和负载测量确认。
+- [Diodes AP3012 数据手册](https://www.diodes.com/datasheet/download/AP3012.pdf)：FB 典型约 1.25 V；R315=22.6 kΩ、R316=3.3 kΩ 的 9.8 V 目标由此估算，首板仍须实测。
+
 ## A6 历史 USB HS ESD：A7 已随 J18 删除 D21/D22
 
 TI TPD1E05U06DPYR (ACTIVE orderable): https://www.ti.com/product/TPD1E05U06/part-details/TPD1E05U06DPYR . Pin map and DPY0002A land pattern: https://www.ti.com/lit/ds/symlink/tpd1e05u06.pdf (SLVSBO7O, Table 4-1 and pp.34–36). Supplier STEP: https://www.lcsc.com/product-detail/C436349.html . See ESD_PROTECTION.md for independent land/pin verification.

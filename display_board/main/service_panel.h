@@ -8,7 +8,8 @@ typedef enum { PANEL_CAMERA_ON, PANEL_CAMERA_OFF,
     PANEL_SEAL, PANEL_UPLOAD_ON, PANEL_UPLOAD_OFF, PANEL_UPLOAD_NOW, PANEL_OTA_CHECK, PANEL_OTA_INSTALL,
     PANEL_WIFI_SAVE, PANEL_PREFERENCES_SAVE, PANEL_BLUETOOTH_ON, PANEL_BLUETOOTH_OFF,
     PANEL_BLUETOOTH_RECONNECT, PANEL_WIFI_SCAN, PANEL_BLUETOOTH_SCAN,
-    PANEL_BLUETOOTH_CONNECT, PANEL_BLUETOOTH_DISCONNECT, PANEL_BLUETOOTH_FORGET, PANEL_ACTION_COUNT } panel_action_t;
+    PANEL_BLUETOOTH_CONNECT, PANEL_BLUETOOTH_DISCONNECT, PANEL_BLUETOOTH_FORGET,
+    PANEL_VOICE_ON, PANEL_VOICE_OFF, PANEL_VOICE_START, PANEL_VOICE_END, PANEL_ACTION_COUNT } panel_action_t;
 /* Versioned byte-only NVS format. Demo mode is transient. */
 typedef struct { uint8_t version, theme, pressure, brightness, daylight, turbo; } panel_preferences_t;
 #define PANEL_PREFERENCES_DEFAULT {1, 0, 0, 100, 1, 1}
@@ -24,11 +25,14 @@ typedef struct {
 typedef bool (*panel_action_cb_t)(const panel_request_t *request);
 void service_panel_create(lv_obj_t *screen, lv_obj_t *toolbar, panel_action_cb_t action);
 void service_panel_open(void);
+void service_panel_open_voice(void);
 void service_panel_status(unsigned id, unsigned state, const char *detail);
+void service_panel_voice(bool enabled, bool active);
 void service_panel_upload_enabled(bool enabled);
 void service_panel_network_config(const char *ssid, const char *password);
 void service_panel_network_scan(const wifi_networks_t *networks);
 void service_panel_bluetooth(bool available, bool enabled, unsigned state, const char *detail, const char *address);
+void service_panel_gps(bool available, unsigned state, const char *detail);
 void service_panel_bluetooth_devices(const ble_devices_t *devices);
 void service_panel_preferences(const panel_preferences_t *preferences);
 bool service_panel_preferences_valid(const panel_preferences_t *preferences);

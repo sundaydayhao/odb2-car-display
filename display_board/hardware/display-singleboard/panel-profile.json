@@ -90,13 +90,14 @@
   },
   "existing_circuit_nominal_not_confirmed_panel_ratings": {
     "lcd_vdd_V": 1.8,
-    "avdd_V": 9.6,
-    "vgh_V": 18,
-    "vgl_V": -6,
-    "vcom_V": 3.2,
-    "backlight_mA": 182,
+    "avdd_V": 9.8,
+    "vgh_V": 19.0,
+    "vgl_V": -8.2,
+    "vcom_V": 3.3,
+    "backlight_mA": 180,
     "vdd_regulator": "ME6211C18M5G-N",
-    "backlight_feedback_resistor": "R312, 1.1 ohm"
+    "backlight_feedback_resistor": "R312, 1.1 ohm",
+    "design_target_source": "docs/LCM-070--A0 规格书.pdf pages 7-8; values remain to be measured on the purchased module"
   },
   "required_vendor_confirmation": [
     "MIPI module configured for two data lanes D0/D1 and lane/polarity mapping",

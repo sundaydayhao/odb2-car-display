@@ -86,6 +86,10 @@ static void action_task(void *arg)
             else err=elm_ble_set_enabled(action==PANEL_BLUETOOTH_ON);
             atomic_store(&s_save_result,err==ESP_OK ? 1 : -1);
         }
+        else if (action == PANEL_VOICE_ON) voice_set_enabled(true);
+        else if (action == PANEL_VOICE_OFF) voice_set_enabled(false);
+        else if (action == PANEL_VOICE_START) voice_begin_conversation();
+        else if (action == PANEL_VOICE_END) voice_end_conversation();
         else if (action == PANEL_WIFI_SAVE) {
             device_settings_t settings;
             device_settings_get(&settings);
@@ -116,6 +120,7 @@ static void service_tick(lv_timer_t *timer)
     device_status_t status;
     device_status_get(&status);
     for (int i = 0; i < SERVICE_COUNT; ++i) service_panel_status(i, status.state[i], status.detail[i]);
+    service_panel_voice(voice_is_enabled(), voice_is_active());
     elm_ble_status_t bt=elm_ble_status();
     unsigned bt_state=SERVICE_BUSY;
     const char *bt_detail="正在查找适配器";
@@ -213,15 +218,20 @@ bool ui_healthy(void)
 bool ui_open_media(void)
 {
     if (!s_ready || !bsp_display_lock(1000)) return false;
-    dashboard_select_page(DASHBOARD_PAGE_COUNT - 1);
+    dashboard_select_page(DASHBOARD_PAGE_MEDIA);
     bsp_display_unlock();
     return true;
 }
 
 bool ui_open_av(av_tab_t tab)
 {
-    if (tab>AV_FM || (!DEVICE_CAMERA_AVAILABLE && tab==AV_CAMERA) || !s_ready || !bsp_display_lock(1000)) return false;
-    dashboard_select_page(DASHBOARD_PAGE_COUNT - 1);
+    if (tab > AV_FM || (!DEVICE_CAMERA_AVAILABLE && tab == AV_CAMERA) || !s_ready || !bsp_display_lock(1000)) return false;
+    if (tab == AV_VOICE) {
+        service_panel_open_voice();
+        bsp_display_unlock();
+        return true;
+    }
+    dashboard_select_page(DASHBOARD_PAGE_MEDIA);
     media_panel_select(tab);
     bsp_display_unlock(); return true;
 }

@@ -7,7 +7,7 @@ ESP32-P4 Function EV Board **v1.4**，原配 **7 寸 1024×600 触屏与 MIPI �
 完整接线、C6 配套固件、配网、语音绑定、日志回放和本地服务器使用见 **[P4 上板与联调](docs/P4_BRINGUP.md)**。
 尚无云服务器时，默认不上传、不自动升级；摄像头功能默认不编入，启用配置后还需本地操作开启；麦克风开机后在本机识别唤醒词，唤醒后才向小智上传本轮语音。
 
-当前固件 **0.4.0**：底部「影音中心」默认提供音乐、FM 电台、语音助手。音乐只保留 SD 卡根目录或 `music` 文件夹中的 MP3 播放、暂停、停止和切换，已删除联网音乐/网络电台及地址设置；FM 硬件未接入，页面留空。摄像头可通过 `CONFIG_DEVICE_CAMERA_ENABLED` 配置，默认关闭并隐藏全部入口。助手可手动开关、开始及结束对话，保留官方唤醒与连续对话流程。见 [影音中心](docs/MEDIA.md)。
+当前固件 **0.4.0**：底部七页包含仪表、影音中心和地图轨迹。影音中心默认提供音乐、FM 电台、语音助手。音乐只保留 SD 卡根目录或 `music` 文件夹中的 MP3 播放、暂停、停止和切换，已删除联网音乐/网络电台及地址设置；FM 硬件未接入，页面留空。地图轨迹当前仅提供地图/轨迹占位，GPS 状态显示在顶部状态栏，DHX30 温湿度空值显示在驾驶页面。摄像头可通过 `CONFIG_DEVICE_CAMERA_ENABLED` 配置，默认关闭并隐藏全部入口。助手可手动开关、开始及结束对话，保留官方唤醒与连续对话流程。见 [影音中心](docs/MEDIA.md)。
 
 0.3.15：顶部 SD 卡图标随识别状态更新，未检测到卡为灰色、可用为绿色、存储异常或记录已满为红色；运行中插卡会重新识别，拔卡后停止记录并更新状态。保留已有记录，不自动格式化或清空。
 
@@ -143,7 +143,7 @@ NVS 不会在失败时自动擦除；没有卡时记录状态为不可用，SD �
 | `display_board/main/obd2.c` | AT 会话、能力发现、参数调度与快照发布 |
 | `display_board/main/obd2_decode.c` | 数值换算和逐字段过期策略，不依赖硬件 |
 | `display_board/main/ui.c` | 官方 BSP 屏幕/触摸、线程锁及显示模型映射 |
-| `display_board/main/dashboard.c` | 五页彩色界面、主题、手动导航、显式演示模式 |
+| `display_board/main/dashboard.c` | 七页彩色界面、主题、手动导航、显式演示模式 |
 | `display_board/main/service_panel.c` | 唯一齿轮入口、分类设置、屏幕配网、外观、语音/摄像头/上传/更新交互 |
 | `display_board/main/voice_service.c`、`display_board/main/camera_service.c` | 小智音频链路与本地摄像头预览 |
 | `display_board/main/recorder.c`、`display_board/main/cloud_service.c` | SD 记录、HTTPS 上传、签名 OTA |

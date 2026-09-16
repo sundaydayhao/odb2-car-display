@@ -7,6 +7,22 @@
     89,
     -10.5
   ],
+  "screen_spec": {
+    "datasheet": "docs/LCM-070--A0 规格书.pdf",
+    "lcm_od_mm": [
+      164.86,
+      99.96
+    ],
+    "lcm_od_tolerance_mm": 0.3,
+    "bare_lcm_thickness_mm": 2.8,
+    "bare_lcm_thickness_tolerance_mm": 0.3,
+    "active_area_mm": [
+      154.21,
+      85.92
+    ],
+    "fpc_exit": "bottom-centre; 30-pin 0.5 mm pitch",
+    "qualification": "Page 4 text has a 163.86 mm OCR conflict; page 5 drawing and supplier confirmation control tooling"
+  },
   "mechanical_status": "A7 no USB host; actual545solidPCB/14criticalrefs/8representative envelopes checked; prototype C3012621 audio and panel/plug/material/vehicle qualification pending",
   "access": [
     {

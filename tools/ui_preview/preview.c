@@ -148,11 +148,11 @@ static void snapshot(lv_display_t *display, const char *dir, const char *state, 
     lv_obj_t *screen = lv_display_get_screen_active(display);
     lv_obj_update_layout(screen);
     lv_obj_t *toolbar = dashboard_service_toolbar();
-    assert(lv_obj_get_child_count(toolbar) == 7);
+    assert(lv_obj_get_child_count(toolbar) == 8);
     if (!DEVICE_CAMERA_AVAILABLE) assert(lv_obj_has_flag(lv_obj_get_child(toolbar,2),LV_OBJ_FLAG_HIDDEN));
     assert(!lv_obj_has_flag(toolbar, LV_OBJ_FLAG_CLICKABLE));
     int visible=0, left=SCREEN_WIDTH, right=0;
-    for (int i = 0; i < 7; ++i) {
+    for (int i = 0; i < 8; ++i) {
         lv_obj_t *symbol = lv_obj_get_child(toolbar, i);
         assert(lv_obj_check_type(symbol, i == 2 ? &lv_obj_class : &lv_label_class));
         assert(!lv_obj_has_flag(symbol, LV_OBJ_FLAG_CLICKABLE));
@@ -304,9 +304,12 @@ static void tap_service(lv_indev_t *pointer, unsigned id)
 
 static void inspect_all(lv_display_t *display, lv_indev_t *pointer, const char *dir, const char *state)
 {
+    const int nav_start = DASHBOARD_PAGE_COUNT > 6 ? 7 : 22;
+    const int nav_step = DASHBOARD_PAGE_COUNT > 6 ? 113 : 126;
+    const int nav_width = DASHBOARD_PAGE_COUNT > 6 ? 110 : 122;
     for (int page = 0; page < DASHBOARD_PAGE_COUNT; ++page) {
         lv_obj_update_layout(lv_display_get_screen_active(display));
-        tap_at(pointer, 83 + page * 126, 450);
+        tap_at(pointer, nav_start + page * nav_step + nav_width / 2, 450);
         assert(dashboard_active_page() == page);
         snapshot(display, dir, state, page);
     }
@@ -366,6 +369,13 @@ int main(int argc, char **argv)
     const char *details[] = {"热点已连接", "语音待命", "摄像头已关闭", "正在记录车况", "上传已关闭", "尚未配置升级密钥"};
     for (int i = 0; i < 6; ++i) service_panel_status(i, i == 0 || i == 3 ? 3 : 0, details[i]);
     service_panel_bluetooth(true,true,2,"正在查找适配器","");
+    service_panel_gps(false,0,"GPS 未接入");
+    lv_obj_t *gps_symbol = lv_obj_get_child(dashboard_service_toolbar(), 7);
+    assert(gps_symbol && !lv_obj_has_flag(gps_symbol, LV_OBJ_FLAG_HIDDEN));
+    lv_color_t gps_off = lv_obj_get_style_text_color(gps_symbol, 0);
+    service_panel_gps(true,3,"GPS 已定位");
+    assert(!lv_color_eq(gps_off, lv_obj_get_style_text_color(gps_symbol, 0)));
+    service_panel_gps(false,0,"GPS 未接入");
     dashboard_data_t link_state={.link_state=DASH_LINK_SCANNING};
     dashboard_update(&link_state);
     assert(count_text(lv_screen_active(),TXT_SCANNING)==0);
@@ -382,6 +392,11 @@ int main(int argc, char **argv)
     link_state.link_state=DASH_LINK_WAITING;
     dashboard_update(&link_state);
     inspect_all(display, pointer, argv[1], "waiting");
+    assert(find_label(root, TXT_MAP_TRACK));
+    assert(find_label(root, TXT_MAP_TRACK_WAIT));
+    assert(find_label(root, TXT_MAP_TRACK_DATA_WAIT));
+    assert(!find_label(root, TXT_DHX30));
+    snapshot(display, argv[1], "map-track-placeholder", 0);
 
     dashboard_data_t sample = {
         .value = {86, 2450, 68, 89, 14200, 36, 24},
@@ -418,11 +433,14 @@ int main(int argc, char **argv)
     dashboard_data_t stopped = {.value = {0}, .valid = {[DASH_SPEED] = true}};
     dashboard_update(&stopped);
     dashboard_select_page(0);
+    assert(find_label(screen, TXT_DHX30));
+    assert(find_label(screen, TXT_DHX30_TEMPERATURE));
+    assert(find_label(screen, TXT_DHX30_HUMIDITY));
     assert(count_text(screen, "0") == 1);
     assert(count_text(screen, "--") >= 6);
     assert(count_text(screen, TXT_LIVE) == 0);
     /* All settings are reached through the single gear. Status taps do nothing. */
-    for (unsigned i = 0; i < 7; ++i) {
+    for (unsigned i = 0; i < 8; ++i) {
         if (!lv_obj_has_flag(lv_obj_get_child(dashboard_service_toolbar(),i),LV_OBJ_FLAG_HIDDEN)) tap_service(pointer,i);
     }
     for (unsigned i = 0; i < PANEL_ACTION_COUNT; ++i) assert(s_actions[i] == 0);
@@ -608,10 +626,14 @@ int main(int argc, char **argv)
     snprintf(empty.message,sizeof(empty.message),"扫描失败，请稍后重新扫描");
     service_panel_network_scan(&empty);
     snapshot(display,argv[1],"network-error",0);
+    service_panel_status(0,3,"已连接 Wi-Fi");
+    service_panel_status(1,1,"等待唤醒");
+    service_panel_voice(true,false);
     tap_category(pointer,"语音助手");
     snapshot(display,argv[1],"settings-voice",0);
     assert(find_label(screen,"唤醒词：你好小智"));
     assert(!find_label(screen,"按住说话"));
+    assert(find_class(screen,&lv_image_class));
     static uint16_t camera[AV_PREVIEW_WIDTH*AV_PREVIEW_HEIGHT];
     for (int y=0;y<AV_PREVIEW_HEIGHT;++y) for (int x=0;x<AV_PREVIEW_WIDTH;++x) camera[y*AV_PREVIEW_WIDTH+x]=x<160?0xf800:x<320?0x07e0:0x001f;
     if (DEVICE_CAMERA_AVAILABLE) {
@@ -682,12 +704,14 @@ int main(int argc, char **argv)
     for (unsigned day=0;day<2;++day) {
         dashboard_set_daylight(day);
         for (unsigned theme=0;theme<DASHBOARD_THEME_COUNT;++theme) {
-            dashboard_select_theme(theme); dashboard_select_page(5); media_panel_select(AV_MUSIC);
+            dashboard_select_theme(theme); dashboard_select_page(DASHBOARD_PAGE_MEDIA); media_panel_select(AV_MUSIC);
             s_av=(av_status_t){.voice_enabled=true,.library={.revision=100+day*3+theme,.storage=true,.music_count=12}};
             media_panel_av_update(&s_av);
             media_status_t media={.network=false,.state=MEDIA_PLAYING,.selected=true,.volume=35,.played_ms=71000};
             strcpy(media.title,"Music-00.mp3"); strcpy(media.detail,"正在播放音乐"); media_panel_update(&media);
             assert(!find_label(root,"在线音乐") && !find_label(root,"网络电台"));
+            assert(!find_label(root,"SD 卡已就绪") && !find_label(root,"未检测到 SD 卡"));
+            assert(!find_label(root,"Wi-Fi 已连接") && !find_label(root,"Wi-Fi 未连接"));
             tap_category(pointer,LV_SYMBOL_PREV); assert(s_last_media.action==MEDIA_PREVIOUS);
             tap_category(pointer,LV_SYMBOL_NEXT); assert(s_last_media.action==MEDIA_NEXT);
             tap_category(pointer,LV_SYMBOL_STOP); assert(s_last_media.action==MEDIA_STOP);
@@ -695,7 +719,7 @@ int main(int argc, char **argv)
             snapshot(display,argv[1],day?"media-sd-playing-light":"media-sd-playing-dark",theme);
             media.state=MEDIA_PAUSED; strcpy(media.detail,"已暂停"); media_panel_update(&media);
             snapshot(display,argv[1],day?"media-sd-paused-light":"media-sd-paused-dark",theme);
-            media.state=MEDIA_ERROR; strcpy(media.detail,"SD 卡音乐读取失败，请重新选择"); media_panel_update(&media);
+            media.state=MEDIA_ERROR; strcpy(media.detail,"音乐读取失败，请重新选择"); media_panel_update(&media);
             snapshot(display,argv[1],day?"media-sd-error-light":"media-sd-error-dark",theme);
             s_accept=false; tap_category(pointer,LV_SYMBOL_PLAY);
             assert(count_text(root,"操作未提交，请稍后重试")==1); s_accept=true;
@@ -714,7 +738,7 @@ int main(int argc, char **argv)
     }
     /* Actual LVGL input dispatch across the new center, including disabled controls and hotplug. */
     for (unsigned day=0;day<2;++day) {
-        dashboard_set_daylight(day); dashboard_select_page(5); media_panel_select(AV_MUSIC);
+        dashboard_set_daylight(day); dashboard_select_page(DASHBOARD_PAGE_MEDIA); media_panel_select(AV_MUSIC);
         media_status_t media={.network=true,.volume=35}; media_panel_update(&media);
         s_av=(av_status_t){.voice_enabled=true,.library={.revision=1,.storage=true,.music_count=12,.photo_count=7}};
         strcpy(s_av.voice_detail,"请说“你好小智”唤醒"); media_panel_av_update(&s_av);
@@ -747,25 +771,29 @@ int main(int argc, char **argv)
         } else {
             assert(!find_label(root,"摄像头"));
             lv_obj_update_layout(root);
-            lv_obj_t *sd_heading=find_label(root,"SD 卡音乐");
-            assert(sd_heading);
+            assert(!find_label(root,"SD 卡音乐"));
             media_panel_select(AV_CAMERA);
-            assert(find_label(root,"SD 卡音乐")==sd_heading && !find_label(root,"拍照保存"));
+            assert(!find_label(root,"SD 卡音乐") && !find_label(root,"拍照保存"));
             snapshot(display,argv[1],day?"av-camera-disabled-light":"av-camera-disabled-dark",0);
         }
+        tap_at(pointer,760,28);
+        service_panel_status(0,3,"已连接 Wi-Fi");
+        service_panel_status(1,1,"等待唤醒");
+        service_panel_voice(true,false);
         tap_category(pointer,"语音助手");
-        unsigned starts=s_av_actions[AV_VOICE_START],ends=s_av_actions[AV_VOICE_END];
-        tap_category(pointer,"结束对话"); assert(s_av_actions[AV_VOICE_END]==ends);
-        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
-        s_av.voice_active=true; strcpy(s_av.voice_detail,"正在聆听"); media_panel_av_update(&s_av);
-        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
-        tap_category(pointer,"结束对话"); assert(s_av_actions[AV_VOICE_END]==ends+1);
-        snapshot(display,argv[1],day?"av-voice-light":"av-voice-dark",0);
-        tap_category(pointer,"关闭助手"); assert(s_av_actions[AV_VOICE_OFF]>0);
-        s_av.voice_active=false; s_av.voice_enabled=false; strcpy(s_av.voice_detail,"语音助手已关闭"); media_panel_av_update(&s_av);
-        tap_category(pointer,"开始对话"); assert(s_av_actions[AV_VOICE_START]==starts+1);
-        snapshot(display,argv[1],day?"av-voice-off-light":"av-voice-off-dark",0);
-        tap_category(pointer,"开启助手"); assert(s_av_actions[AV_VOICE_ON]>0);
+        unsigned starts=s_actions[PANEL_VOICE_START],ends=s_actions[PANEL_VOICE_END];
+        tap_category(pointer,"结束对话"); assert(s_actions[PANEL_VOICE_END]==ends);
+        tap_category(pointer,"开始对话"); assert(s_actions[PANEL_VOICE_START]==starts+1);
+        service_panel_voice(true,true);
+        tap_category(pointer,"开始对话"); assert(s_actions[PANEL_VOICE_START]==starts+1);
+        tap_category(pointer,"结束对话"); assert(s_actions[PANEL_VOICE_END]==ends+1);
+        snapshot(display,argv[1],day?"settings-voice-light":"settings-voice-dark",0);
+        tap_category(pointer,"关闭助手"); assert(s_actions[PANEL_VOICE_OFF]>0);
+        service_panel_voice(false,false);
+        tap_category(pointer,"开始对话"); assert(s_actions[PANEL_VOICE_START]==starts+1);
+        snapshot(display,argv[1],day?"settings-voice-off-light":"settings-voice-off-dark",0);
+        tap_category(pointer,"开启助手"); assert(s_actions[PANEL_VOICE_ON]>0);
+        tap_category(pointer,LV_SYMBOL_CLOSE);
     }
     printf("Inspected %d rendered labels; %d errors. Dashboard and P4 service controls passed.\n", s_labels, s_errors);
     return s_errors ? 1 : 0;

@@ -30,12 +30,18 @@
       99.96
     ],
     "lcm_xy_tolerance": 0.3,
+    "panel_thickness_spec_mm": 2.8,
+    "panel_thickness_tolerance_mm": 0.3,
     "thickness_assumed": 6,
+    "thickness_assumed_note": "P+G/adhesive stack placeholder; bare LCM datasheet is 2.8 ±0.3 mm",
     "front_z": 1.2,
     "pocket_side_clearance": 0.4,
     "cover_glass_xy": null,
     "actual_total_thickness": null,
-    "active_area_xy": null
+    "active_area_xy": [
+      154.21,
+      85.92
+    ]
   },
   "pcb": {
     "outline": [
@@ -262,7 +268,8 @@
       "flex_thickness_assumed": 0.15,
       "engagement_allowance": 3,
       "assembly_slack": 4,
-      "reference_length": 66.54,
+      "reference_length": 56.54,
+      "reference_source": "LCM-070--A0 规格书.pdf page 5 drawing; dimension is panel edge to FPC contact region, not guaranteed usable flex length",
       "actual_usable_length": null,
       "contact_face": null,
       "status": "Geometry estimate only; seller reference length origin not established",

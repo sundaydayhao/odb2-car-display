@@ -122,7 +122,7 @@ static void scan_files(void)
     s_status.storage=ready; s_status.scanning=false; s_status.truncated=truncated;
     s_status.music_count=ready?music:0; s_status.photo_count=ready?photos:0; ++s_status.revision;
     snprintf(s_status.detail,sizeof(s_status.detail),"%s",!entries?"文件列表内存不足":!ready?"请插入 SD 卡":
-             truncated?"列表最多显示各 128 个文件":music?"已找到 SD 卡音乐":"将 MP3 放入卡根目录或 music 文件夹");
+             truncated?"列表最多显示各 128 个文件":music?"已找到音乐":"将 MP3 放入卡根目录或 music 文件夹");
     xSemaphoreGive(s_lock); free(old);
     ESP_LOGI("library","Scan: ready=%d generation=%lu music=%u photos=%u",ready,(unsigned long)generation,music,photos);
 }

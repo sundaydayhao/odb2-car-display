@@ -24,14 +24,14 @@
 22,31,TOUCH_INT,proposed,3V3 candidate,触摸总成资料未提供，待核定电压
 23,32,TOUCH_RESET,proposed,3V3 candidate,触摸总成资料未提供，待核定时序
 24,50,MODEM_USB_VBUS_EN,optional_4g,3V3 control,控制独立5V检测开关至ML307A pin61；默认关且防反灌；不再用于USB-FS维修
-25,51,GNSS_ANT_POWER_EN,optional_4g,3V3 control,GNSS有源天线低噪声限流偏置使能；默认关；经馈电/隔直网络，不能直连RF；不再用于USB-FS维修
+25,51,GNSS_ANT_POWER_EN,optional_4g,3V3 control,预留GNSS有源天线低噪声限流偏置使能；R0仅实现可关断3.3V至测试点，尚无RF馈电
 26,53,CAMERA_RESET,proposed,3V3 -> camera IO,按 SC2336 模块复位电压转换
 27,54,BACKLIGHT_PWM,proposed,3V3,上电默认关闭
 28,55,LCD_VDD_EN,proposed,3V3 control,1.8 V 屏逻辑电源开关
 29,56,LCD_BIAS_EN,proposed,3V3 control,硬件产生 AVDD/VGL/VGH 顺序及放电
 30,57,POWER_HOLD,proposed,3V3 control,受控关机保持；45s为整机设计预算而非ML307A厂家时限，按固件和实测核定
 31,58,POWER_OFF_REQUEST,proposed,3V3,电源侧滑开关请求；避免超出输入域
-32,59,SYSTEM_I2C_SDA,proposed,3V3,I2C1；Codec/充电/CC/FM/电量计；校验全部地址
+32,59,SYSTEM_I2C_SDA,proposed,3V3,I2C1：已接 Codec/充电/FM；CC改为GPIO模式；电量计尚未实现
 33,60,SYSTEM_I2C_SCL,proposed,3V3,常开器件与断电 P4 间需隔离反灌
 34,61,STRAP_RESERVED,reserved,3V3,遵循芯片及核心板启动要求，不挂动态负载
 35,62,P4_BOOT,boot,3V3,外部上拉；BOOT 侧按到地，自动下载控制
@@ -52,5 +52,5 @@
 50,78,CHARGER_INT,proposed,3V3,常开域中断，上拉不得反灌断电 P4
 51,79,FM_POWER_EN,proposed,3V3 control,外接 FM 断电时隔离 I2C/模拟端
 52,80,AUDIO_SOURCE_SELECT,proposed,3V3,模拟切换 Codec/FM；先静音再切换
-53,81,TYPEC_INT,proposed,3V3,电流能力变化；弱电源启动需硬件默认限制
+53,81,TYPEC_HIGH_CURRENT_N,draft_schematic,3V3,TUSB320 GPIO 模式经 MOS 隔离；低=Type-C 至少1.5A；3A保守按1.5A，非I2C中断
 54,82,RF_CHIP_PU,module_internal,3V3,无线 EN 内连；RF 维修时 P4 复位，避免 GPIO 驱动争用

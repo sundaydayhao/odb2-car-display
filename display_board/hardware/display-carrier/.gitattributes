@@ -1,0 +1,8 @@
+# Use the normalized line endings recorded in VERIFICATION.json.
+*.kicad_sch text eol=lf
+*.kicad_pcb text eol=lf
+*.kicad_pro text eol=lf
+*.kicad_sym text eol=lf
+*.kicad_mod text eol=lf
+# CAD model payloads are vendor assets; keep their exact bytes.
+*.step binary

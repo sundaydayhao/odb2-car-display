@@ -1,0 +1,111 @@
+{
+  "status": "DRAFT_ONLY_NOT_FAB_APPROVED",
+  "kicad": "10.0.5",
+  "schematic_symbols": 268,
+  "circuit_footprints": 262,
+  "mounting_holes": 4,
+  "schematic_sheets_including_root": 14,
+  "geometric_violations": 0,
+  "duplicate_references": 0,
+  "pcb_pad_net_mismatches": 0,
+  "erc_errors": 0,
+  "erc_warnings": 22,
+  "pending_interface_nets": [
+    "AMP_EN",
+    "BACKLIGHT_PWM",
+    "CAMERA_RESET",
+    "CAM_POWER_EN",
+    "CSI_CLK_N",
+    "CSI_CLK_P",
+    "CSI_D0_N",
+    "CSI_D0_P",
+    "CSI_D1_N",
+    "CSI_D1_P",
+    "DSI_CLK_N",
+    "DSI_CLK_P",
+    "DSI_D0_N",
+    "DSI_D0_P",
+    "DSI_D1_N",
+    "DSI_D1_P",
+    "LCD_BIAS_EN",
+    "LCD_RESET",
+    "LCD_STBYB",
+    "LCD_VDD_EN",
+    "TOUCH_INT",
+    "TOUCH_RESET"
+  ],
+  "pcb_physical_violations": 0,
+  "schematic_parity_violations": 0,
+  "pcb_unconnected_items": 499,
+  "tracks": 0,
+  "zones": 0,
+  "ts_temperature_threshold_ranges_C": {
+    "cold_inhibit": [
+      2.011,
+      3.992
+    ],
+    "cold_derate": [
+      7.508,
+      9.307
+    ],
+    "warm_derate": [
+      30.303,
+      31.934
+    ],
+    "hot_inhibit": [
+      41.024,
+      43.085
+    ]
+  },
+  "ts_open_ratio": 0.953644,
+  "usb_current_limit_calculation": {
+    "legacy_tps2553_max_mA": 438.83,
+    "qualified_typec_tps2553_max_mA": 1252.27
+  },
+  "notes": [
+    "0 physical DRC violations applies to an UNROUTED placement only.",
+    "Native default ignored checks are retained, not counted as passing.",
+    "NTC sensor thermal contact, aging, and IC comparator dynamics are not included in this calculation."
+  ],
+  "native_ignored_drc_checks": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ],
+  "hash_normalization": "CRLF converted to LF before SHA-256",
+  "design_file_sha256": {
+    "01_core.kicad_sch": "7762d9d0dd08c0b64868fa48321f001fffdba97d615202398f579f448095ddbe",
+    "02_usb.kicad_sch": "2025d2f7d6bed79d50155264f1a78a9694d182070000a510083c4efc7e849428",
+    "03_usb_current.kicad_sch": "78f6efaff990c772e89ebf3298eba6fc47aa6cd636245f1ec4a7c420cfa5bb2e",
+    "04_charger.kicad_sch": "c406a08ea3e2972a2ef337836b731caadc9932ee2fc7c8ca2f913b8609adb48c",
+    "05_system_switch.kicad_sch": "eeb8461a8a5aadd96f99845f4848fd2ce86c143d8b15fa63fe65cdc7079859ce",
+    "06_main_power.kicad_sch": "d1f126f55a01db331723b3f35b6cb9e59ed41e3debeab2b32d64b52ba3802cba",
+    "07_sd.kicad_sch": "7c7e13f999cdb25ba56f191163cd3df5180dfb3105d0f160dade0f4f6d6fa752",
+    "08_modem.kicad_sch": "ca6df4332e0284282c2277a91eb1c2b170d32aa4a30da4cfdc73ed14d80b8aa4",
+    "09_modem_power.kicad_sch": "e180e5f244fa2901d676bc5689f2353d8d231301ce4f5ef46afc81b7829a2736",
+    "10_sim_rf.kicad_sch": "e01a6097080d7ccf6565472b9cb8fabe8c958303820ab08321e4598a16f1c0ce",
+    "11_codec.kicad_sch": "6b974487330cb6434b2b3f8202c0618869d214d4c94ea347fd589c7c0551f37f",
+    "12_fm_audio.kicad_sch": "b42a8f9e333ae604a2dddadac2548879e5aac12f19e59731a474f9aa1c372aa0",
+    "13_release_holds.kicad_sch": "6c8285101d3ba3821d2174f0160f521374e4c03385c05080395b55b4c988e07a",
+    "display_carrier.kicad_pcb": "f556a46ae9a9316216256900fd631f20c27efe08a7165c5a555655c90a1048a2",
+    "display_carrier.kicad_pro": "05102bebe271e3d70b9a2d21c46846e976a466af9163073e1ef29b26f30d88b5",
+    "display_carrier.kicad_sch": "b3c4af0006a5ecc815a96c106a4964595f1b0031f55d078b347e13e676fd715d"
+  }
+}

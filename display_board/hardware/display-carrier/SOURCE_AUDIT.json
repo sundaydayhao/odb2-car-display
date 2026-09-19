@@ -1,7 +1,7 @@
 {
   "plan_date": "2026-09-19",
-  "revision": "D_factory_folded_LCD_FPC_datum_and_fit_review",
-  "phase": "planning_only_no_cad_created_or_verified",
+  "revision": "E_R0_schematic_and_unrouted_placement",
+  "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
       "path": "C:\\projects\\osptek\\esp32-p4c5-core-board",
@@ -47,10 +47,14 @@
     "ML307A GNSS hardware manual pins/power/control and rendered pinout",
     "ML307 compatibility V3.1.0 page 10 GCLN supply/footprint compared with older manual",
     "P4 USB RNDIS documented support boundary",
-    "existing Wi-Fi-only network_service.c and HTTP consumers"
+    "existing Wi-Fi-only network_service.c and HTTP consumers",
+    "88 numbered nominal pad rectangles imported from both vendor PcbLibs and compared to common land pattern",
+    "14-page native schematic ERC and geometric stub verification",
+    "262 circuit footprint pad sets and nets compared with native schematic XML",
+    "native PCB schematic parity and unrouted physical DRC",
+    "native schematic page and bottom assembly rendering reviewed"
   ],
   "not_yet_verified": [
-    "PcbLib footprint overlay and pad coordinates",
     "internal module netlist and high-speed trace length",
     "STEP clearance and assembled enclosure",
     "panel two-lane initialization/timing",
@@ -58,7 +62,6 @@
     "exact purchasable BOM/stock/price",
     "battery pack mechanical drawing/discharge/NTC",
     "NS4814 full design and measured clean output",
-    "electrical schematic/ERC/PCB/DRC",
     "physical bring-up with both module variants",
     "ML307A-GCLN current AT/GNSS firmware and production LGA94 land pattern",
     "ML307A-GCLN RNDIS descriptors/ports and GNSS concurrency with P4",
@@ -66,7 +69,10 @@
     "4G/GNSS on/off and sleep currents including USB disconnect/reconnect",
     "20 W simultaneous-load and 3.8 V burst/inrush/thermal tests",
     "440 uF bulk stability and active discharge below 1.8 V for at least 100 ms",
-    "optional 4G mechanical/radio coexistence"
+    "optional 4G mechanical/radio coexistence",
+    "core assembly tolerances/stencil/real solder joints despite nominal land coverage",
+    "remaining LCD/touch/camera/amplifier/active GNSS/protection circuits",
+    "power-loop/decoupling placement and complete routing/impedance/thermal verification"
   ],
   "sources": [
     {
@@ -638,5 +644,86 @@
         17
       ]
     }
-  ]
+  ],
+  "cad_verification_summary": "VERIFICATION.json",
+  "design_status": "DESIGN_STATUS.md",
+  "core_footprint_nominal_check": {
+    "c5_ESP32P4C5模组": {
+      "numbered_pads": 88,
+      "nominal_land_containment_failures": [],
+      "minimum_margin_mm": 0.0
+    },
+    "c6_ESP32P4模组封装": {
+      "numbered_pads": 88,
+      "nominal_land_containment_failures": [],
+      "minimum_margin_mm": 0.0
+    },
+    "scope": "Nominal vendor land rectangles only; no solder tolerance/assembly/thermal/production approval.",
+    "modified_core_land_size_mm": [
+      1.4,
+      0.7
+    ]
+  },
+  "datasheet_file_fingerprints": {
+    "bq25896": {
+      "sha256": "f45ec93b7e7dbcd1b1df3997283474f6d2b7ada65c0332af09dcd356dbbb0bc2",
+      "bytes": 1675426,
+      "local_evidence": "build/carrier-design/bq25896.pdf"
+    },
+    "tps61088": {
+      "sha256": "9806d6caa5e6f6d5ae01e10359ff86bf27fac85e383d0a471e29f6d25d6acc53",
+      "bytes": 1847930,
+      "local_evidence": "build/carrier-design/tps61088.pdf"
+    },
+    "tlv62569": {
+      "sha256": "1ba6f55dfe678d06d563acd6632f1f950a497d812270806021097b55cd81d3c4",
+      "bytes": 1357133,
+      "local_evidence": "build/carrier-design/tlv62569.pdf"
+    },
+    "tlv62585": {
+      "sha256": "b86da7682db78a2b2264d893249126b6a4c78adbf48c4f6d43227628d4d7b1a0",
+      "bytes": 1658293,
+      "local_evidence": "build/carrier-design/tlv62585.pdf"
+    },
+    "tusb320lai": {
+      "sha256": "62f7b3f65338e25ebd6fd46ef04474ba806b06b1cc04bc0b3d7b8191b01ca87d",
+      "bytes": 1313743,
+      "local_evidence": "build/carrier-design/tusb320lai.pdf"
+    },
+    "txu0202": {
+      "sha256": "f8e3f51edcccf12c7e991bec54cf1747a7fd84dccd23b875f326a3e631241ef2",
+      "bytes": 1705432,
+      "local_evidence": "build/carrier-design/txu0202.pdf"
+    },
+    "tps22990": {
+      "sha256": "ea198776524544eb3e4a130f1f6a6e5c8e80ca8164eebf387a8fd6b4b7dde2a3",
+      "bytes": 4760542,
+      "local_evidence": "build/carrier-design/tps22990.pdf"
+    },
+    "tps2553": {
+      "sha256": "88e453700cea2b263cdb5b44fce1e883e0f6d3b975457f879ac1423eeea42071",
+      "bytes": 2091666,
+      "local_evidence": "build/carrier-design/tps2553.pdf"
+    },
+    "tps22918": {
+      "sha256": "1b28eb58003d28b18bf919a15734056f296a499bebee2bd493a1e4358c4dfb1c",
+      "bytes": 1072926,
+      "local_evidence": "build/carrier-design/tps22918.pdf"
+    },
+    "sgm3157": {
+      "sha256": "47a62f5a6203ed6ee1796bf989db1b526d34490fbeed7258ac796647a79ccb41",
+      "bytes": 668987,
+      "local_evidence": "build/carrier-design/sgm3157.pdf"
+    },
+    "es8311": {
+      "sha256": "be42a2cb09093378feaccf55c227be579edc5a17786a11cc34254ea91264538a",
+      "bytes": 729315,
+      "local_evidence": "build/carrier-design/es8311.pdf"
+    },
+    "ch343": {
+      "sha256": "d1dba2658f17b842a14a1911e65ce1a19fa8d1fdb8f777183e4cde4febb34865",
+      "bytes": 277847,
+      "local_evidence": "build/carrier-design/ch343.pdf"
+    }
+  }
 }

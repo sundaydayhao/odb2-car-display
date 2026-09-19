@@ -83,12 +83,12 @@
 <circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
 <circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
 <circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<rect x="404" y="573" width="169" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
-<text x="488.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD FPC · F 面朝屏</text>
+<rect x="423.5" y="573" width="158" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
+<text x="502.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD · F（Y 待定）</text>
 <rect x="586" y="573" width="125" height="30" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
 <text x="648.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">触摸 FPC · F</text>
-<line x1="488.5" y1="640" x2="488.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
-<path d="M 483.5 618 L 488.5 609 L 493.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
+<line x1="502.5" y1="640" x2="502.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
+<path d="M 497.5 618 L 502.5 609 L 507.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
 <line x1="648.5" y1="640" x2="648.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
 <path d="M 643.5 618 L 648.5 609 L 653.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
 <text x="460" y="663" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">两座入口同朝下 / 从下向上插入</text>
@@ -113,13 +113,13 @@
 <text x="1060" y="448" font-size="14" fill="#607487" font-weight="400" text-anchor="start">GNSS 优先朝天空，预留后壳上沿出线；</text>
 <text x="1060" y="472" font-size="14" fill="#607487" font-weight="400" text-anchor="start">与 Wi-Fi 天线、电池、屏幕金属分隔。</text>
 <text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LCD / 触摸接口同向</text>
-<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">两个座在朝屏面、横向、入口同朝下；</text>
-<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">触摸座左右位置和接触面仍待实际图。</text>
+<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">朝屏面、入口朝下；保留出厂折法；</text>
+<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">LCD 预留约 30×40 mm；Y 待实测。</text>
 <text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">ML307A 供电就近布置</text>
 <text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">3.8 V / 至少 2 × 220 µF 储能；</text>
 <text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">USB 检测及天线偏置分别关断。</text>
 <rect x="55" y="775" width="1329" height="116" rx="12" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
 <text x="80" y="810" font-size="20" fill="#263e51" font-weight="600" text-anchor="start">本图用于讨论功能布局，不是元件坐标、PCB 布线、阻抗验算或最终外壳图。</text>
 <text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：两 lane / 触摸资料 → LGA94 封装与固件 → RNDIS＋GNSS 并发及功率验证 → SCH → PCB。</text>
-<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 C · 2026-09-19    ·    ML307A-GCLN 已选定    ·    本体缩小，仍保留电源 / RF / SIM 操作空间</text>
+<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 D · 2026-09-19    ·    LCD 横向基准已校正；出厂已预折，Y / 接触面待实物核定</text>
 </svg>

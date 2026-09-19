@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-19",
-  "revision": "C_ML307A_GCLN_local_power_RNDIS_and_independent_gating",
+  "revision": "D_factory_folded_LCD_FPC_datum_and_fit_review",
   "phase": "planning_only_no_cad_created_or_verified",
   "repositories": [
     {
@@ -560,6 +560,40 @@
       "layers": 4,
       "size_status": "planning envelope, physical fit not yet verified",
       "usb_fs_service_gpio24_25": "reassigned to modem USB detect and GNSS bias; external CH343P retained"
+    },
+    "lcd_fpc_fit_review": {
+      "state": "NOT_VERIFIED_FOR_PHYSICAL_ASSEMBLY",
+      "user_confirmed": "LCD FPC is factory-folded onto rear of display; preserve factory fold",
+      "lcd_drawing_page": 5,
+      "datum": "LCD front projection; rear view mirrors X",
+      "tail_left_reference_mm": 72.68,
+      "tail_width_mm": 15.5,
+      "tail_center_front_reference_mm": 80.43,
+      "centered_pcb_tail_center_front_reference_mm": 70.5,
+      "tail_end_thickness_mm": [
+        0.25,
+        0.35
+      ],
+      "flat_extension_reference_mm": 56.54,
+      "flat_extension_is_usable_folded_length": false,
+      "entry_y_formula_mm": "92.48 - E + I; E must be measured at assembly height",
+      "pending": [
+        "factory-folded free-end position E",
+        "exposed contact face",
+        "actual connector insertion depth I",
+        "screen/PCB stackup and free-tail lift",
+        "touch FPC drawing"
+      ],
+      "FH12A_comparison": "Candidate only, not selected. Exposed length, width tolerances and FPC conductor recommendation do not fully match panel drawing.",
+      "report": "FPC_FIT_REVIEW.md",
+      "user_margin_request": "not measured yet; leave assembly margin",
+      "F_side_space_reserve_mm": {
+        "x": 55.5,
+        "y": 40,
+        "width": 30,
+        "height": 40
+      },
+      "reserve_status": "pre-layout adjustment area plus tail corridor; does not prove fit or allow sliding after soldering"
     }
   },
   "source_conflicts": [
@@ -577,7 +611,8 @@
     "https://components.espressif.com/components/espressif/iot_usbh_rndis/versions/0.3.0/readme?language=en",
     "https://www.ti.com/product/BQ25896",
     "https://www.ti.com/product/TLV62585",
-    "https://www.jst-mfg.com/product/index.php?lang=2&series=262"
+    "https://www.jst-mfg.com/product/index.php?lang=2&series=262",
+    "https://www.hirose.com/en/product/document?clcode=CL0586-0556-5-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-30S-0.5SH%2855%29&series=FH12"
   ],
   "downloaded_manual_fingerprints": [
     {
@@ -591,6 +626,17 @@
       "sha256": "f5fd85c16efe01ece7a2b1e0f576742b25af18910c507ab5a9d3a35fca10e293",
       "bytes": 2645314,
       "local_scratch": "build\\osptek-plan\\ml307-compatibility-v3.1.0.pdf"
+    },
+    {
+      "url": "https://www.hirose.com/en/product/document?clcode=CL0586-0556-5-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-30S-0.5SH%2855%29&series=FH12",
+      "sha256": "71ee7e624d8db9ee105c477a89cf6b1b38edb580639f0ab6c29c90acedf43a7f",
+      "bytes": 864017,
+      "local_scratch": "build\\osptek-plan\\FH12-official.pdf",
+      "reviewed_pages": [
+        6,
+        10,
+        17
+      ]
     }
   ]
 }

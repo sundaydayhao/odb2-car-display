@@ -4,21 +4,22 @@
 
 | 目录 | 用途 |
 | --- | --- |
-| [`display-singleboard/`](display-singleboard/README.md) | 当前 7 寸单板方案，包含 P4 + C6、LCD 电源/背光、触摸、音频、SD、连接器、PCB 和 `enclosure/` 3D 外壳工程 |
+| [`display-carrier/`](display-carrier/README.md) | 当前方向：兼容 OSPTEK P4C5 / P4C6 核心板的 7 寸显示底板；2026-09-19 完成方案规划，尚未创建 SCH/PCB |
+| [`display-singleboard/`](display-singleboard/README.md) | 已放弃的裸 P4 + C6 单板方案，保留原 SCH/PCB 和 `enclosure/` 供追溯，不作为新板投产依据 |
 | [`display-mainboard/`](display-mainboard/README.md) | 合板前的主控板参考检查点 |
 | [`display-lcd-adapter/`](display-lcd-adapter/README.md) | 合板前的 LCD / 触摸转接板参考检查点 |
 
-当前制作与外壳验证以 `display-singleboard/` 为准；另外两个目录仅用于追溯早期双板设计。显示屏自带的 LCD 和触摸排线直接连接单板，前期实机验证可继续使用官方 ESP32-P4 Function EV Board。
+新设计以 `display-carrier/` 的规划为准。先确认核心板封装、现有屏幕两通道 MIPI 配置、触摸排线和电源预算，再开始 SCH/PCB；前期实机验证可继续使用官方 ESP32-P4 Function EV Board。其余三个目录仅用于追溯，旧板检查通过不能证明新底板可用。
 
 ## 文件关系
 
 - `../main/`：显示板固件源码。
 - `display-singleboard/*.kicad_sch`：原理图入口及分层原理图。
-- `display-singleboard/*_singleboard.kicad_pcb`：当前显示板 PCB。
+- `display-singleboard/*_singleboard.kicad_pcb`：历史显示板 PCB。
 - `display-singleboard/enclosure/`：参数化外壳脚本、结构检查、渲染和交付说明。
 - `display-singleboard/Display.pretty/`、`Display.3dshapes/`：项目本地封装和 3D 模型。
 
-从仓库根目录运行显示板硬件检查时，默认工程路径已经指向 `display_board/hardware/display-singleboard`，例如：
+以下现有检查命令仍指向历史 `display_board/hardware/display-singleboard` 工程；新底板目前只有方案文档，不适用这些 ERC/DRC/结构检查：
 
 ```powershell
 python tools/check_display_hardware.py

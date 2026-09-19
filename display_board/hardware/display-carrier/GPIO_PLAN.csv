@@ -1,0 +1,56 @@
+﻿p4_gpio,core_pad,planned_signal,status,voltage_domain,notes
+0,88,RESERVED_LP,reserved,3V3,不装外部 32 kHz 晶体；暂留
+1,16,RESERVED_LP,reserved,3V3,不装外部 32 kHz 晶体；暂留
+2,17,JTAG_TCK,service,3V3,内部维修点
+3,18,JTAG_TDI,service,3V3,内部维修点
+4,19,JTAG_TMS,service,3V3,内部维修点
+5,20,JTAG_TDO,service,3V3,内部维修点
+6,21,RF_INTERNAL_GPIO2,module_internal,3V3,模组内部连接；底板不得占用
+7,22,CAM_TOUCH_I2C_SDA,proposed,3V3 / shifted to camera IO,摄像头端隔离电平和断电反灌；触摸地址待定
+8,23,CAM_TOUCH_I2C_SCL,proposed,3V3 / shifted to camera IO,I2C0；按总电容选择上拉
+9,24,I2S_DOUT,proposed,3V3,P4 输出到 ES8311 DSDIN
+10,25,I2S_LRCK,proposed,3V3,Codec 帧时钟
+11,26,I2S_DIN,proposed,3V3,ES8311 ASDOUT 到 P4 输入
+12,27,I2S_BCLK,proposed,3V3,Codec 位时钟
+13,28,I2S_MCLK,proposed,3V3,Codec 主时钟
+14,internal_only,RF_SDIO_D0,module_internal,3V3,内部无线 SDIO；不得接外设
+15,internal_only,RF_SDIO_D1,module_internal,3V3,内部无线 SDIO；不得接外设
+16,internal_only,RF_SDIO_D2,module_internal,3V3,内部无线 SDIO；不得接外设
+17,internal_only,RF_SDIO_D3,module_internal,3V3,内部无线 SDIO；不得接外设
+18,internal_only,RF_SDIO_CLK,module_internal,3V3,内部无线 SDIO；不得接外设
+19,internal_only,RF_SDIO_CMD,module_internal,3V3,内部无线 SDIO；不得接外设
+20,29,LCD_RESET,proposed,3V3 -> 1V8,隔离电平，断电不反灌；默认复位
+21,30,LCD_STBYB,proposed,3V3 -> 1V8,屏幕启停时序独立控制
+22,31,TOUCH_INT,proposed,3V3 candidate,触摸总成资料未提供，待核定电压
+23,32,TOUCH_RESET,proposed,3V3 candidate,触摸总成资料未提供，待核定时序
+24,50,USB_SERVICE_N_RESERVED,reserved,USB,内部 USB 调试位置暂留；功能矩阵核定前不接插座
+25,51,USB_SERVICE_P_RESERVED,reserved,USB,内部 USB 调试位置暂留；不与 CH343 USB 数据线相连
+26,53,CAMERA_RESET,proposed,3V3 -> camera IO,按 SC2336 模块复位电压转换
+27,54,BACKLIGHT_PWM,proposed,3V3,上电默认关闭
+28,55,LCD_VDD_EN,proposed,3V3 control,1.8 V 屏逻辑电源开关
+29,56,LCD_BIAS_EN,proposed,3V3 control,硬件产生 AVDD/VGL/VGH 顺序及放电
+30,57,POWER_HOLD,proposed,3V3 control,受控关机保持；独立硬件超时释放
+31,58,POWER_OFF_REQUEST,proposed,3V3,电源侧滑开关请求；避免超出输入域
+32,59,SYSTEM_I2C_SDA,proposed,3V3,I2C1；Codec/充电/CC/FM/电量计；校验全部地址
+33,60,SYSTEM_I2C_SCL,proposed,3V3,常开器件与断电 P4 间需隔离反灌
+34,61,STRAP_RESERVED,reserved,3V3,遵循芯片及核心板启动要求，不挂动态负载
+35,62,P4_BOOT,boot,3V3,外部上拉；BOOT 侧按到地，自动下载控制
+36,63,P4_BOOT_MODE_HIGH,boot,3V3,核心板无上拉；底板保持高
+37,64,P4_UART_TX,service,3V3,P4 TX -> CH343 RX
+38,65,P4_UART_RX,service,3V3,CH343 TX -> P4 RX；断电防反灌
+39,67,SD_D0,proposed,3V3,SDMMC 4 bit；按规范上拉
+40,68,SD_D1,proposed,3V3,SDMMC 4 bit；按规范上拉
+41,69,SD_D2,proposed,3V3,SDMMC 4 bit；按规范上拉
+42,70,SD_D3,proposed,3V3,SDMMC 4 bit；按规范上拉
+43,71,SD_CLK,proposed,3V3,源端串阻位置，完整参考地
+44,72,SD_CMD,proposed,3V3,上拉及 ESD
+45,73,SD_POWER_EN,proposed,3V3 control,写入完成后关电；防反灌
+46,74,SD_CARD_DETECT,proposed,3V3,卡座检测开关去抖
+47,75,CAM_POWER_EN,proposed,3V3 control,摄像头多电源顺序由硬件约束
+48,76,AMP_EN,proposed,3V3 control,上电/切音源/关机静音；按功放时序核定
+49,77,BOARD_TEMP_ADC,proposed,ADC2,板温 NTC；电池 NTC 独立进入充电器
+50,78,CHARGER_INT,proposed,3V3,常开域中断，上拉不得反灌断电 P4
+51,79,FM_POWER_EN,proposed,3V3 control,外接 FM 断电时隔离 I2C/模拟端
+52,80,AUDIO_SOURCE_SELECT,proposed,3V3,模拟切换 Codec/FM；先静音再切换
+53,81,TYPEC_INT,proposed,3V3,电流能力变化；弱电源启动需硬件默认限制
+54,82,RF_CHIP_PU,module_internal,3V3,无线 EN 内连；RF 维修时 P4 复位，避免 GPIO 驱动争用

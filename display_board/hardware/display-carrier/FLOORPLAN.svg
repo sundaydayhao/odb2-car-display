@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950"><style>text{font-family:Microsoft YaHei,Segoe UI,Arial,sans-serif}</style>
+<rect x="0" y="0" width="1440" height="950" rx="0" fill="#f5f7fb" stroke="#f5f7fb" stroke-width="1.5"/>
+<text x="55" y="62" font-size="32" fill="#162f40" font-weight="700" text-anchor="start">OSPTEK P4C5 / P4C6 · 显示底板规划</text>
+<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 两种核心板装配版本 / 外围功能集成在同一底板</text>
+<rect x="1118" y="38" width="270" height="43" rx="21" fill="#fff1ce" stroke="#ebcd82" stroke-width="1.5"/>
+<text x="1253" y="66" font-size="16" fill="#715017" font-weight="600" text-anchor="middle">方案草图 · 尚未绘制 PCB</text>
+<rect x="100.35" y="172.6" width="824.3" height="499.8" rx="5" fill="#e4e9ef" stroke="#8a9aa7" stroke-width="1.5" stroke-dasharray="8 5"/>
+<text x="104" y="155" font-size="17" fill="#526a7c" font-weight="400" text-anchor="start">屏幕裸 LCM 外形 164.86 × 99.96 mm（触摸盖板待定）</text>
+<rect x="150" y="210" width="725" height="425" rx="14" fill="#fafffc" stroke="#3f8269" stroke-width="1.5"/>
+<text x="183" y="245" font-size="16" fill="#3b6d5b" font-weight="400" text-anchor="start">B 面：核心 / 电源 / 音频；F 面：屏幕和触摸 FPC</text>
+<circle cx="170" cy="230" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="170" cy="230" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<circle cx="855" cy="230" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="855" cy="230" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<circle cx="170" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<rect x="185" y="278" width="175" height="218" rx="10" fill="#e1eefb" stroke="#83a8cb" stroke-width="1.5"/>
+<text x="204" y="311" font-size="21" fill="#315e87" font-weight="700" text-anchor="start">电源区 · B</text>
+<text x="199" y="346" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">CC / 充电 / 电池口</text>
+<text x="199" y="379" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS 受控开关</text>
+<text x="199" y="412" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">5 V 升压</text>
+<text x="199" y="445" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">3.3 V 主供电</text>
+<text x="199" y="478" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">输入 / 电池短回路</text>
+<rect x="131" y="327" width="38" height="86" rx="5" fill="#354e62" stroke="#354e62" stroke-width="1.5"/>
+<text x="58" y="439" font-size="18" fill="#354e62" font-weight="700" text-anchor="start">USB-C</text>
+<text x="58" y="463" font-size="15" fill="#354e62" font-weight="400" text-anchor="start">充电 + UART</text>
+<line x1="132" y1="413" x2="106" y2="423" stroke="#7a8c98" stroke-width="1.5"/>
+<rect x="182" y="517" width="181" height="62" rx="10" fill="#eff4f8" stroke="#a3b4bf" stroke-width="1.5"/>
+<text x="198" y="544" font-size="18" fill="#354e62" font-weight="600" text-anchor="start">USB 桥 / ESD</text>
+<text x="198" y="566" font-size="15" fill="#244052" font-weight="400" text-anchor="start">左边插线，壳侧可达</text>
+<rect x="399" y="267" width="257" height="316" rx="12" fill="#e9f6ee" stroke="#98bfa9" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="418" y="296" font-size="18" fill="#477658" font-weight="600" text-anchor="start">MIPI 预留走线区域</text>
+<rect x="468" y="340" width="125" height="125" rx="10" fill="#a7d3b6" stroke="#528466" stroke-width="1.5"/>
+<text x="530.5" y="374" font-size="23" fill="#234e38" font-weight="700" text-anchor="middle">P4C5</text>
+<text x="530.5" y="401" font-size="21" fill="#234e38" font-weight="700" text-anchor="middle">或 P4C6</text>
+<text x="530.5" y="431" font-size="15" fill="#234e38" font-weight="500" text-anchor="middle">25 × 25 mm</text>
+<text x="530.5" y="453" font-size="13" fill="#234e38" font-weight="400" text-anchor="middle">同位贴装 · B 面</text>
+<text x="420" y="491" font-size="14" fill="#477658" font-weight="400" text-anchor="start">核心板角度由 DSI / CSI 出线决定</text>
+<rect x="421" y="513" width="216" height="56" rx="10" fill="#d6eee2" stroke="#79ac8b" stroke-width="1.5"/>
+<text x="435" y="539" font-size="18" fill="#305f45" font-weight="600" text-anchor="start">LCD 偏置 / 背光 · B</text>
+<text x="435" y="560" font-size="14" fill="#305f45" font-weight="400" text-anchor="start">1.8 V / AVDD / VGH / VGL</text>
+<rect x="439" y="200" width="163" height="32" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
+<text x="520.5" y="221" font-size="15" fill="#6e5623" font-weight="600" text-anchor="middle">摄像头 FPC · F</text>
+<line x1="520" y1="197" x2="520" y2="170" stroke="#b88b37" stroke-width="2"/>
+<text x="439" y="190" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">横向座 / 出线向上</text>
+<rect x="692" y="277" width="141" height="155" rx="10" fill="#f1e7f8" stroke="#b39bc6" stroke-width="1.5"/>
+<text x="707" y="307" font-size="19" fill="#71538c" font-weight="700" text-anchor="start">音频输入 · B</text>
+<text x="707" y="339" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">ES8311 / MIC</text>
+<text x="707" y="369" font-size="16" fill="#71538c" font-weight="400" text-anchor="start">FM 模块接口</text>
+<text x="707" y="400" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">远离电感热区</text>
+<rect x="841" y="453" width="45" height="77" rx="4" fill="#586b80" stroke="#586b80" stroke-width="1.5"/>
+<text x="904" y="474" font-size="17" fill="#354e62" font-weight="600" text-anchor="start">microSD</text>
+<text x="904" y="499" font-size="15" fill="#244052" font-weight="400" text-anchor="start">右侧取卡</text>
+<rect x="695" y="518" width="135" height="60" rx="10" fill="#fae1dc" stroke="#ce9a8c" stroke-width="1.5"/>
+<text x="710" y="544" font-size="17" fill="#955c4c" font-weight="600" text-anchor="start">功放 / 喇叭 · B</text>
+<text x="710" y="566" font-size="14" fill="#955c4c" font-weight="400" text-anchor="start">分隔电池与咪头</text>
+<rect x="651" y="201" width="40" height="26" rx="3" fill="#7d8ca1" stroke="#7d8ca1" stroke-width="1.5"/>
+<rect x="702" y="201" width="40" height="26" rx="3" fill="#7d8ca1" stroke="#7d8ca1" stroke-width="1.5"/>
+<rect x="764" y="199" width="65" height="29" rx="3" fill="#526b87" stroke="#526b87" stroke-width="1.5"/>
+<text x="670" y="188" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">RST</text>
+<text x="722" y="171" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">BOOT</text>
+<text x="806" y="188" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">侧滑电源</text>
+<rect x="150" y="595" width="725" height="40" rx="0" fill="#edf0f2" stroke="#d7dee3" stroke-width="1.5"/>
+<text x="350" y="620" font-size="15" fill="#617180" font-weight="400" text-anchor="start">底边约 8 mm：底座 / 低件区，不设用户插拔口</text>
+<circle cx="170" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
+<circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
+<rect x="412" y="577" width="167" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
+<text x="495.5" y="598" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD FPC · F 面朝屏</text>
+<line x1="492" y1="610" x2="492" y2="658" stroke="#bb8c3f" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="595" y="656" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">屏尾折入：长度 / 接触面待核</text>
+<rect x="153" y="484" width="27" height="85" rx="3" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
+<text x="55" y="540" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">触摸 FPC</text>
+<text x="55" y="563" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">左右位置待定</text>
+<line x1="150" y1="699" x2="875" y2="699" stroke="#7a8c98" stroke-width="1.5"/>
+<line x1="150" y1="683" x2="150" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
+<line x1="875" y1="683" x2="875" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
+<text x="512.5" y="726" font-size="18" fill="#526a7c" font-weight="600" text-anchor="middle">PCB 145 mm</text>
+<line x1="962" y1="210" x2="962" y2="635" stroke="#7a8c98" stroke-width="1.5"/>
+<line x1="949" y1="210" x2="975" y2="210" stroke="#7a8c98" stroke-width="1.5"/>
+<line x1="949" y1="635" x2="975" y2="635" stroke="#7a8c98" stroke-width="1.5"/>
+<text x="973" y="408" font-size="17" fill="#526a7c" font-weight="600" text-anchor="start">85</text>
+<text x="970" y="430" font-size="14" fill="#526a7c" font-weight="400" text-anchor="start">mm</text>
+<rect x="1036" y="152" width="348" height="561" rx="14" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
+<text x="1060" y="187" font-size="22" fill="#263e51" font-weight="700" text-anchor="start">装配和电气边界</text>
+<text x="1060" y="228" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">F 面朝屏 / B 面朝后盖</text>
+<text x="1060" y="252" font-size="14" fill="#607487" font-weight="400" text-anchor="start">功能投影不表示两面器件可以重叠；</text>
+<text x="1060" y="276" font-size="14" fill="#607487" font-weight="400" text-anchor="start">去耦、电感和散热按局部电气要求放置。</text>
+<text x="1060" y="326" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">四角固定，外壳承载电池和喇叭</text>
+<text x="1060" y="350" font-size="14" fill="#607487" font-weight="400" text-anchor="start">M2.5 孔中心暂定距边 4 mm；</text>
+<text x="1060" y="374" font-size="14" fill="#607487" font-weight="400" text-anchor="start">屏幕由前框承载，PCB 固定在后壳。</text>
+<text x="1060" y="424" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">外接天线放在塑料窗口</text>
+<text x="1060" y="448" font-size="14" fill="#607487" font-weight="400" text-anchor="start">避开 LCD 金属背板、电池和扬声器；</text>
+<text x="1060" y="472" font-size="14" fill="#607487" font-weight="400" text-anchor="start">IPEX 线从核心板引到后壳。</text>
+<text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">先确认屏，再冻结连接器</text>
+<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">现有 PDF 未确认两 lane 初始化；</text>
+<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">触摸针序、屏尾朝向及弯折空间待核。</text>
+<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">整机供电：1S 5000 mAh 初算</text>
+<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">USB-C 充电与 UART 共口；</text>
+<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">输入不足时限充电、背光与音量。</text>
+<rect x="55" y="775" width="1329" height="116" rx="12" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
+<text x="80" y="810" font-size="20" fill="#263e51" font-weight="600" text-anchor="start">本图用于讨论功能布局，不是元件坐标、PCB 布线、阻抗验算或最终外壳图。</text>
+<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：屏幕两 lane / 触摸资料 → 核心板封装重叠核对 → 实际连接器与电源计算 → SCH → PCB。</text>
+<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">日期 2026-09-19    ·    两种装配版本只装一块核心板    ·    电池、喇叭、摄像头安装在壳体，通过线缆连接底板</text>
+</svg>

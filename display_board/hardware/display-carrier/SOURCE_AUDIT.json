@@ -1,5 +1,6 @@
 {
   "plan_date": "2026-09-19",
+  "revision": "B_same_direction_fpc_and_optional_lte_gnss",
   "phase": "planning_only_no_cad_created_or_verified",
   "repositories": [
     {
@@ -54,7 +55,12 @@
     "battery pack mechanical drawing/discharge/NTC",
     "NS4814 full design and measured clean output",
     "electrical schematic/ERC/PCB/DRC",
-    "physical bring-up with both module variants"
+    "physical bring-up with both module variants",
+    "EC200U-CN GNSS ordering code and standard AT firmware",
+    "USB PPP descriptors/ports with P4",
+    "4G/GNSS on/off and sleep currents",
+    "20 W simultaneous-load and 3.8 V burst transient/thermal tests",
+    "optional 4G mechanical/radio coexistence"
   ],
   "sources": [
     {
@@ -470,6 +476,57 @@
       "bytes": 835792,
       "sha256": "5c1c5d475678b057fc09aed4b49899c7ec38aa3d90bb4238d10295ac1e80a2de",
       "status": "electrical_text_and_pages_5_to_10_reviewed"
+    }
+  ],
+  "planning_decisions": {
+    "lcd_and_touch_fpc": {
+      "side": "screen_facing_F",
+      "long_axis": "horizontal",
+      "entry_edge": "bottom_for_both",
+      "touch_x_and_contact_side": "pending_actual_touch_drawing",
+      "source_boundary": "LCD bottom tail confirmed by LCM PDF page 5; touch direction is user design requirement, not proven by this PDF"
+    },
+    "optional_modem": {
+      "family": "Quectel EC200U-CN GNSS variant",
+      "ordering_code": "pending_supplier_confirmation",
+      "assembly": "same_PCB_optional_population",
+      "core_usb_pads": {
+        "DM": 48,
+        "DP": 49
+      },
+      "gpio": {
+        "enable": 0,
+        "pwrkey": 1,
+        "uart_tx": 2,
+        "uart_rx": 3,
+        "dtr": 4,
+        "status": 5
+      }
+    },
+    "power_candidates": {
+      "charger": "BQ25896",
+      "main_5V": "TPS61088, 4 A peak design target",
+      "modem_3V8": "TLV62585, 3 A design target",
+      "battery": "1S 5000 mAh, >=10 A pack/PCM capability",
+      "peak_load_W": 20,
+      "low_battery_current_A_estimate": 7.352941176470588,
+      "all_values": "planning_targets_not_measured_ratings"
+    }
+  },
+  "web_sources_reviewed": [
+    "https://www.quectel.com/product/lte-ec200u-series/",
+    "https://www.quectel.com/content/uploads/2024/02/Quectel_EC200U_Series_Hardware_Design_V1.2.pdf",
+    "https://quectel.com/content/uploads/2024/04/Quectel_EC200U_SeriesEG912U-GL_GNSS_Application_Note_V1.2.pdf",
+    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_ppp.html",
+    "https://www.ti.com/product/BQ25896",
+    "https://www.ti.com/product/TLV62585",
+    "https://www.jst-mfg.com/product/index.php?lang=2&series=262"
+  ],
+  "downloaded_manual_fingerprints": [
+    {
+      "url": "https://www.quectel.com/content/uploads/2024/02/Quectel_EC200U_Series_Hardware_Design_V1.2.pdf",
+      "sha256": "b404aea4db0ba705846ba82bb524ef81a4c7e0d78783697d6de69642c37bdbf2",
+      "bytes": 2149866
     }
   ]
 }

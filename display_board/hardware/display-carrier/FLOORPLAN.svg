@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950"><style>text{font-family:Microsoft YaHei,Segoe UI,Arial,sans-serif}</style>
 <rect x="0" y="0" width="1440" height="950" rx="0" fill="#f5f7fb" stroke="#f5f7fb" stroke-width="1.5"/>
 <text x="55" y="62" font-size="32" fill="#162f40" font-weight="700" text-anchor="start">OSPTEK P4C5 / P4C6 · 显示底板规划</text>
-<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 两种核心板装配版本 / 外围功能集成在同一底板</text>
+<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 同向 LCD＋触摸排线 / 可选 4G＋GPS·北斗</text>
 <rect x="1118" y="38" width="270" height="43" rx="21" fill="#fff1ce" stroke="#ebcd82" stroke-width="1.5"/>
 <text x="1253" y="66" font-size="16" fill="#715017" font-weight="600" text-anchor="middle">方案草图 · 尚未绘制 PCB</text>
 <rect x="100.35" y="172.6" width="824.3" height="499.8" rx="5" fill="#e4e9ef" stroke="#8a9aa7" stroke-width="1.5" stroke-dasharray="8 5"/>
@@ -16,40 +16,48 @@
 <circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
 <circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
 <circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<rect x="185" y="278" width="175" height="218" rx="10" fill="#e1eefb" stroke="#83a8cb" stroke-width="1.5"/>
+<rect x="185" y="278" width="175" height="163" rx="10" fill="#e1eefb" stroke="#83a8cb" stroke-width="1.5"/>
 <text x="204" y="311" font-size="21" fill="#315e87" font-weight="700" text-anchor="start">电源区 · B</text>
-<text x="199" y="346" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">CC / 充电 / 电池口</text>
-<text x="199" y="379" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS 受控开关</text>
-<text x="199" y="412" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">5 V 升压</text>
-<text x="199" y="445" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">3.3 V 主供电</text>
-<text x="199" y="478" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">输入 / 电池短回路</text>
+<text x="199" y="341" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">CC / 充电 / UART</text>
+<text x="199" y="370" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS / 5 V 主升压</text>
+<text x="199" y="399" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">3.3 V / 可选 3.8 V</text>
+<text x="199" y="428" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">峰值与热设计需核定</text>
 <rect x="131" y="327" width="38" height="86" rx="5" fill="#354e62" stroke="#354e62" stroke-width="1.5"/>
 <text x="58" y="439" font-size="18" fill="#354e62" font-weight="700" text-anchor="start">USB-C</text>
 <text x="58" y="463" font-size="15" fill="#354e62" font-weight="400" text-anchor="start">充电 + UART</text>
 <line x1="132" y1="413" x2="106" y2="423" stroke="#7a8c98" stroke-width="1.5"/>
-<rect x="182" y="517" width="181" height="62" rx="10" fill="#eff4f8" stroke="#a3b4bf" stroke-width="1.5"/>
-<text x="198" y="544" font-size="18" fill="#354e62" font-weight="600" text-anchor="start">USB 桥 / ESD</text>
-<text x="198" y="566" font-size="15" fill="#244052" font-weight="400" text-anchor="start">左边插线，壳侧可达</text>
-<rect x="399" y="267" width="257" height="316" rx="12" fill="#e9f6ee" stroke="#98bfa9" stroke-width="1.5" stroke-dasharray="6 5"/>
+<rect x="185" y="518" width="195" height="57" rx="10" fill="#f1e7f8" stroke="#b39bc6" stroke-width="1.5"/>
+<text x="198" y="544" font-size="17" fill="#71538c" font-weight="600" text-anchor="start">Codec / MIC / FM · B</text>
+<text x="198" y="565" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">与电感 / RF 留间距</text>
+<rect x="399" y="267" width="242" height="300" rx="12" fill="#e9f6ee" stroke="#98bfa9" stroke-width="1.5" stroke-dasharray="6 5"/>
 <text x="418" y="296" font-size="18" fill="#477658" font-weight="600" text-anchor="start">MIPI 预留走线区域</text>
 <rect x="468" y="340" width="125" height="125" rx="10" fill="#a7d3b6" stroke="#528466" stroke-width="1.5"/>
 <text x="530.5" y="374" font-size="23" fill="#234e38" font-weight="700" text-anchor="middle">P4C5</text>
 <text x="530.5" y="401" font-size="21" fill="#234e38" font-weight="700" text-anchor="middle">或 P4C6</text>
 <text x="530.5" y="431" font-size="15" fill="#234e38" font-weight="500" text-anchor="middle">25 × 25 mm</text>
 <text x="530.5" y="453" font-size="13" fill="#234e38" font-weight="400" text-anchor="middle">同位贴装 · B 面</text>
-<text x="420" y="491" font-size="14" fill="#477658" font-weight="400" text-anchor="start">核心板角度由 DSI / CSI 出线决定</text>
-<rect x="421" y="513" width="216" height="56" rx="10" fill="#d6eee2" stroke="#79ac8b" stroke-width="1.5"/>
-<text x="435" y="539" font-size="18" fill="#305f45" font-weight="600" text-anchor="start">LCD 偏置 / 背光 · B</text>
-<text x="435" y="560" font-size="14" fill="#305f45" font-weight="400" text-anchor="start">1.8 V / AVDD / VGH / VGL</text>
+<text x="412" y="491" font-size="14" fill="#477658" font-weight="400" text-anchor="start">DSI / CSI / 内部 USB 留通道</text>
+<text x="419" y="526" font-size="16" fill="#477658" font-weight="400" text-anchor="start">基础版空贴 4G 功能区</text>
+<text x="419" y="550" font-size="14" fill="#477658" font-weight="400" text-anchor="start">同一板框 / 两套选装 BOM</text>
+<rect x="185" y="455" width="190" height="48" rx="10" fill="#d6eee2" stroke="#79ac8b" stroke-width="1.5"/>
+<text x="199" y="477" font-size="17" fill="#305f45" font-weight="600" text-anchor="start">LCD 偏置 / 背光 · B</text>
+<text x="199" y="495" font-size="13" fill="#305f45" font-weight="400" text-anchor="start">避开 MIPI 与 MIC 输入</text>
 <rect x="439" y="200" width="163" height="32" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
 <text x="520.5" y="221" font-size="15" fill="#6e5623" font-weight="600" text-anchor="middle">摄像头 FPC · F</text>
 <line x1="520" y1="197" x2="520" y2="170" stroke="#b88b37" stroke-width="2"/>
 <text x="439" y="190" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">横向座 / 出线向上</text>
-<rect x="692" y="277" width="141" height="155" rx="10" fill="#f1e7f8" stroke="#b39bc6" stroke-width="1.5"/>
-<text x="707" y="307" font-size="19" fill="#71538c" font-weight="700" text-anchor="start">音频输入 · B</text>
-<text x="707" y="339" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">ES8311 / MIC</text>
-<text x="707" y="369" font-size="16" fill="#71538c" font-weight="400" text-anchor="start">FM 模块接口</text>
-<text x="707" y="400" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">远离电感热区</text>
+<rect x="650" y="267" width="200" height="220" rx="10" fill="#e8ebfa" stroke="#8e9ace" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="664" y="290" font-size="17" fill="#505c91" font-weight="700" text-anchor="start">可选 4G / GNSS · B</text>
+<text x="664" y="313" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">LTE 天线  /  GNSS 天线</text>
+<rect x="674" y="327" width="140" height="155" rx="5" fill="#c5cbed" stroke="#8491bd" stroke-width="1.5"/>
+<text x="744" y="359" font-size="17" fill="#3e497a" font-weight="700" text-anchor="middle">EC200U-CN</text>
+<text x="744" y="387" font-size="18" fill="#3e497a" font-weight="700" text-anchor="middle">GNSS 版本</text>
+<text x="744" y="416" font-size="15" fill="#3e497a" font-weight="400" text-anchor="middle">28 × 31 mm</text>
+<text x="744" y="445" font-size="16" fill="#3e497a" font-weight="600" text-anchor="middle">GPS / 北斗</text>
+<text x="744" y="469" font-size="14" fill="#3e497a" font-weight="400" text-anchor="middle">标准 AT 固件</text>
+<rect x="841" y="330" width="45" height="71" rx="4" fill="#6e77a0" stroke="#6e77a0" stroke-width="1.5"/>
+<text x="902" y="354" font-size="16" fill="#505c91" font-weight="600" text-anchor="start">Nano-SIM</text>
+<text x="902" y="380" font-size="14" fill="#505c91" font-weight="400" text-anchor="start">右侧选装</text>
 <rect x="841" y="453" width="45" height="77" rx="4" fill="#586b80" stroke="#586b80" stroke-width="1.5"/>
 <text x="904" y="474" font-size="17" fill="#354e62" font-weight="600" text-anchor="start">microSD</text>
 <text x="904" y="499" font-size="15" fill="#244052" font-weight="400" text-anchor="start">右侧取卡</text>
@@ -63,18 +71,20 @@
 <text x="722" y="171" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">BOOT</text>
 <text x="806" y="188" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">侧滑电源</text>
 <rect x="150" y="595" width="725" height="40" rx="0" fill="#edf0f2" stroke="#d7dee3" stroke-width="1.5"/>
-<text x="350" y="620" font-size="15" fill="#617180" font-weight="400" text-anchor="start">底边约 8 mm：底座 / 低件区，不设用户插拔口</text>
+<text x="191" y="620" font-size="14" fill="#617180" font-weight="400" text-anchor="start">底边 8 mm：底座 / 低件区</text>
 <circle cx="170" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
 <circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
 <circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
 <circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<rect x="412" y="577" width="167" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
-<text x="495.5" y="598" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD FPC · F 面朝屏</text>
-<line x1="492" y1="610" x2="492" y2="658" stroke="#bb8c3f" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="595" y="656" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">屏尾折入：长度 / 接触面待核</text>
-<rect x="153" y="484" width="27" height="85" rx="3" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
-<text x="55" y="540" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">触摸 FPC</text>
-<text x="55" y="563" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">左右位置待定</text>
+<rect x="404" y="573" width="169" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
+<text x="488.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD FPC · F 面朝屏</text>
+<rect x="586" y="573" width="125" height="30" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
+<text x="648.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">触摸 FPC · F</text>
+<line x1="488.5" y1="640" x2="488.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
+<path d="M 483.5 618 L 488.5 609 L 493.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
+<line x1="648.5" y1="640" x2="648.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
+<path d="M 643.5 618 L 648.5 609 L 653.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
+<text x="460" y="663" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">两座入口同朝下 / 从下向上插入</text>
 <line x1="150" y1="699" x2="875" y2="699" stroke="#7a8c98" stroke-width="1.5"/>
 <line x1="150" y1="683" x2="150" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
 <line x1="875" y1="683" x2="875" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
@@ -92,17 +102,17 @@
 <text x="1060" y="326" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">四角固定，外壳承载电池和喇叭</text>
 <text x="1060" y="350" font-size="14" fill="#607487" font-weight="400" text-anchor="start">M2.5 孔中心暂定距边 4 mm；</text>
 <text x="1060" y="374" font-size="14" fill="#607487" font-weight="400" text-anchor="start">屏幕由前框承载，PCB 固定在后壳。</text>
-<text x="1060" y="424" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">外接天线放在塑料窗口</text>
-<text x="1060" y="448" font-size="14" fill="#607487" font-weight="400" text-anchor="start">避开 LCD 金属背板、电池和扬声器；</text>
-<text x="1060" y="472" font-size="14" fill="#607487" font-weight="400" text-anchor="start">IPEX 线从核心板引到后壳。</text>
-<text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">先确认屏，再冻结连接器</text>
-<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">现有 PDF 未确认两 lane 初始化；</text>
-<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">触摸针序、屏尾朝向及弯折空间待核。</text>
-<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">整机供电：1S 5000 mAh 初算</text>
-<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">USB-C 充电与 UART 共口；</text>
-<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">输入不足时限充电、背光与音量。</text>
+<text x="1060" y="424" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LTE 与 GNSS 独立天线</text>
+<text x="1060" y="448" font-size="14" fill="#607487" font-weight="400" text-anchor="start">GNSS 优先朝天空，预留后壳上沿出线；</text>
+<text x="1060" y="472" font-size="14" fill="#607487" font-weight="400" text-anchor="start">与 Wi-Fi 天线、电池、屏幕金属分隔。</text>
+<text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LCD / 触摸接口同向</text>
+<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">两个座在朝屏面、横向、入口同朝下；</text>
+<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">触摸座左右位置和接触面仍待实际图。</text>
+<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">电源按新增蜂窝负载调整</text>
+<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">BQ25896 / 电池与线束 10 A 等级；</text>
+<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">模组独立供电，正常退网后再断电。</text>
 <rect x="55" y="775" width="1329" height="116" rx="12" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
 <text x="80" y="810" font-size="20" fill="#263e51" font-weight="600" text-anchor="start">本图用于讨论功能布局，不是元件坐标、PCB 布线、阻抗验算或最终外壳图。</text>
-<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：屏幕两 lane / 触摸资料 → 核心板封装重叠核对 → 实际连接器与电源计算 → SCH → PCB。</text>
-<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">日期 2026-09-19    ·    两种装配版本只装一块核心板    ·    电池、喇叭、摄像头安装在壳体，通过线缆连接底板</text>
+<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：两 lane / 触摸资料 → 模组封装与 GNSS 订货版本 → 4G 联机与功率验证 → SCH → PCB。</text>
+<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 B · 2026-09-19    ·    触摸座水平偏移可调整    ·    GPS/北斗提供定位数据，地图与路线导航另由软件实现</text>
 </svg>

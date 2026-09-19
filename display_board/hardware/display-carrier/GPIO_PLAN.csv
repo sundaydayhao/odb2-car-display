@@ -1,10 +1,10 @@
 ﻿p4_gpio,core_pad,planned_signal,status,voltage_domain,notes
-0,88,RESERVED_LP,reserved,3V3,不装外部 32 kHz 晶体；暂留
-1,16,RESERVED_LP,reserved,3V3,不装外部 32 kHz 晶体；暂留
-2,17,JTAG_TCK,service,3V3,内部维修点
-3,18,JTAG_TDI,service,3V3,内部维修点
-4,19,JTAG_TMS,service,3V3,内部维修点
-5,20,JTAG_TDO,service,3V3,内部维修点
+0,88,MODEM_POWER_EN,optional_4g,3V3 control,可选 3.8V 与 USB检测支路；默认关闭，不装外部 32k 晶体
+1,16,MODEM_PWRKEY,optional_4g,open collector to modem VBAT domain,仅开漏拉低；正常退网后断电，不直接推挽连接
+2,17,MODEM_AT_TX,optional_4g,3V3 -> 1V8,P4 UART TX -> EC200U pin68 MAIN_RXD；不并行用作 JTAG
+3,18,MODEM_AT_RX,optional_4g,1V8 -> 3V3,EC200U pin67 MAIN_TXD -> P4 RX；控制/定位用，与 USB PPP 独立
+4,19,MODEM_DTR,optional_4g,3V3 -> 1V8,EC200U pin66；配合 USB suspend 休眠，不并行用作 JTAG
+5,20,MODEM_STATUS,optional_4g,1V8 -> 3V3,EC200U pin61；正常关机完成后再切电，不并行用作 JTAG
 6,21,RF_INTERNAL_GPIO2,module_internal,3V3,模组内部连接；底板不得占用
 7,22,CAM_TOUCH_I2C_SDA,proposed,3V3 / shifted to camera IO,摄像头端隔离电平和断电反灌；触摸地址待定
 8,23,CAM_TOUCH_I2C_SCL,proposed,3V3 / shifted to camera IO,I2C0；按总电容选择上拉
@@ -29,7 +29,7 @@
 27,54,BACKLIGHT_PWM,proposed,3V3,上电默认关闭
 28,55,LCD_VDD_EN,proposed,3V3 control,1.8 V 屏逻辑电源开关
 29,56,LCD_BIAS_EN,proposed,3V3 control,硬件产生 AVDD/VGL/VGH 顺序及放电
-30,57,POWER_HOLD,proposed,3V3 control,受控关机保持；独立硬件超时释放
+30,57,POWER_HOLD,proposed,3V3 control,受控关机保持；含 4G 退网最长45s设计窗口，异常硬件超时释放
 31,58,POWER_OFF_REQUEST,proposed,3V3,电源侧滑开关请求；避免超出输入域
 32,59,SYSTEM_I2C_SDA,proposed,3V3,I2C1；Codec/充电/CC/FM/电量计；校验全部地址
 33,60,SYSTEM_I2C_SCL,proposed,3V3,常开器件与断电 P4 间需隔离反灌

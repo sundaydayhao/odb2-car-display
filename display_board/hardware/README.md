@@ -4,7 +4,7 @@
 
 | 目录 | 用途 |
 | --- | --- |
-| [`display-carrier/`](display-carrier/README.md) | 当前方向：兼容 OSPTEK P4C5 / P4C6 核心板的 7 寸显示底板；2026-09-19 完成方案规划，尚未创建 SCH/PCB |
+| [`display-carrier/`](display-carrier/README.md) | 当前方向：兼容 OSPTEK P4C5 / P4C6 核心板的 7 寸显示底板；LCD/触摸 FPC 同向，可选 4G＋GPS/北斗；2026-09-19 修订 B，尚未创建 SCH/PCB |
 | [`display-singleboard/`](display-singleboard/README.md) | 已放弃的裸 P4 + C6 单板方案，保留原 SCH/PCB 和 `enclosure/` 供追溯，不作为新板投产依据 |
 | [`display-mainboard/`](display-mainboard/README.md) | 合板前的主控板参考检查点 |
 | [`display-lcd-adapter/`](display-lcd-adapter/README.md) | 合板前的 LCD / 触摸转接板参考检查点 |

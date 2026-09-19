@@ -686,7 +686,7 @@ static int write_cb(uint16_t conn, const struct ble_gatt_error *error, struct bl
 
 esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_t timeout_ms)
 {
-    if (!command || !response || strlen(command)>18 || strchr(command,'\r') || strchr(command,'\n')) return ESP_ERR_INVALID_ARG;
+    if (!command || !response || strlen(command)>19 || strchr(command,'\r') || strchr(command,'\n')) return ESP_ERR_INVALID_ARG;
     elm_response_reset(response);
     if (!s_command_lock || xSemaphoreTake(s_command_lock,pdMS_TO_TICKS(1000))!=pdTRUE) return ESP_ERR_INVALID_STATE;
     esp_err_t result=ESP_ERR_INVALID_STATE;
@@ -695,7 +695,7 @@ esp_err_t elm_ble_command(const char *command, elm_response_t *response, uint32_
     rx_chunk_t chunk;
     while (xQueueReceive(s_rx,&chunk,0)==pdTRUE) {}
     portENTER_CRITICAL(&s_lock); s_link.overflow=false; portEXIT_CRITICAL(&s_lock);
-    char wire[20];
+    char wire[21];
     int length=snprintf(wire,sizeof(wire),"%s\r",command);
     atomic_store(&s_transaction, atomic_fetch_add(&s_transaction_counter, 1) + 1);
     recorder_wire(RECORD_TX, link.generation, atomic_load(&s_transaction), 0, 0, length, wire, length, 0);

@@ -71,6 +71,15 @@ void device_status_get(device_status_t *out)
     xSemaphoreGive(s_lock);
 }
 
+bool device_ui_snapshot(device_status_t *status, device_settings_t *settings)
+{
+    if (!status || !settings || !s_lock || xSemaphoreTake(s_lock, 0) != pdTRUE) return false;
+    *status = s_status;
+    *settings = s_settings;
+    xSemaphoreGive(s_lock);
+    return true;
+}
+
 void device_settings_get(device_settings_t *out)
 {
     xSemaphoreTake(s_lock, portMAX_DELAY);

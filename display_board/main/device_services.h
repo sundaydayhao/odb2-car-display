@@ -22,6 +22,8 @@ typedef struct {
 esp_err_t device_services_init(void);
 void device_status_set(service_id_t id, service_state_t state, const char *detail);
 void device_status_get(device_status_t *out);
+/* Nonblocking snapshots for the display task; false leaves both outputs untouched. */
+bool device_ui_snapshot(device_status_t *status, device_settings_t *settings);
 void device_settings_get(device_settings_t *out);
 esp_err_t device_settings_save(const device_settings_t *settings);
 bool device_url_valid(const char *url);

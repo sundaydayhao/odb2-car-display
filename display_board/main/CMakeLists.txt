@@ -10,11 +10,20 @@ idf_component_register(
         "lvgl_memory.c"
         "audio_device.c"
         "media_model.c"
+        "rda5807.c"
+        "fm_service.c"
         "media_panel.c"
         "media_service.c"
         "media_library.c"
         "photo_bmp.c"
         "dashboard.c"
+        "gps_model.c"
+        "gps_service.c"
+        "map_model.c"
+        "map_render.c"
+        "map_geometry.c"
+        "map_panel.c"
+        "ui_assets.c"
         "service_panel.c"
         "device_services.c"
         "network_service.c"
@@ -22,6 +31,10 @@ idf_component_register(
         "wifi_networks.c"
         "device_console.c"
         "voice_service.c"
+        "voice_tools.c"
+        "vehicle_metrics.c"
+        "alarm_model.c"
+        "alarm_service.c"
         "xiaozhi_avatar.c"
         "voice_codec_memory.c"
         "voice_frontend.c"
@@ -41,6 +54,7 @@ idf_component_register(
     PRIV_REQUIRES
         bt
         esp_driver_gpio
+        esp_driver_uart
         esp_event
         esp_lcd
         esp_timer

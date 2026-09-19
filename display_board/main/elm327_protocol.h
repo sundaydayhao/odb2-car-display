@@ -26,5 +26,8 @@ void elm_response_feed(elm_response_t *response, const uint8_t *bytes, size_t le
 bool elm_response_is_ok(const elm_response_t *response);
 bool elm_response_is_adapter(const elm_response_t *response);
 bool elm_response_is_can_protocol(const elm_response_t *response);
+/* 0: ordinary adapter; 1: identified B02-Z challenge; -1: unsafe/invalid challenge.
+ * Output capacity includes the NUL: 19 command bytes + NUL. */
+int elm_adapter_handshake(const elm_response_t *response, char command[20]);
 bool elm_decode_pid(const elm_response_t *response, uint8_t pid, uint32_t ecu, elm_pid_reply_t *reply);
 bool elm_supported_pid(const elm_pid_reply_t *reply, uint8_t base, uint8_t pid);

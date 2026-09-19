@@ -1,4 +1,5 @@
 #include "service_panel.h"
+#include "media_panel.h"
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -9,11 +10,18 @@
 #include "dashboard_text.h"
 #include "fonts/dashboard_fonts.h"
 #include "xiaozhi_avatar.h"
+#include "ui_assets.h"
+#include "ui_update.h"
 
-enum { PAGE_HOME, PAGE_NETWORK, PAGE_DISPLAY, PAGE_VOICE, PAGE_CAMERA, PAGE_RECORD, PAGE_UPDATE, PAGE_CONFIRM, PAGE_BLUETOOTH, PAGE_THEMES, PAGE_WIFI_CONNECT };
+enum { PAGE_HOME, PAGE_NETWORK, PAGE_DISPLAY, PAGE_VOICE, PAGE_CAMERA, PAGE_RECORD, PAGE_UPDATE, PAGE_CONFIRM, PAGE_BLUETOOTH, PAGE_THEMES, PAGE_WIFI_CONNECT, PAGE_SOUND, PAGE_ALARMS };
 static panel_action_cb_t s_action;
 static lv_obj_t *s_screen, *s_overlay, *s_sidebar, *s_body, *s_camera, *s_canvas, *s_placeholder;
-static lv_obj_t *s_symbols[8], *s_more[8], *s_upload, *s_notice, *s_password, *s_keyboard, *s_brightness_text;
+static lv_obj_t *s_symbols[10], *s_more[8], *s_upload, *s_notice, *s_password, *s_keyboard, *s_brightness_text;
+static lv_obj_t *s_volume_slider, *s_volume_text, *s_music_text;
+static media_status_t s_media = {.volume=35};
+static fm_status_t s_radio;
+static alarm_status_t s_alarms;
+static lv_obj_t *s_alarm_list,*s_alarm_hour,*s_alarm_minute,*s_alarm_daily,*s_alarm_banner,*s_alarm_banner_text;
 static lv_obj_t *s_network_list, *s_network_name, *s_network_forget, *s_scan_button;
 static wifi_networks_t s_networks;
 static wifi_network_t s_selected_network;
@@ -24,7 +32,7 @@ static bool s_bt_available, s_bt_enabled = true;
 static char s_bt_address[18];
 static uint16_t *s_pixels;
 static char s_full_detail[8][96], s_saved_ssid[33], s_saved_password[65];
-static unsigned s_states[8];
+static unsigned s_states[10];
 static bool s_upload_enabled;
 static bool s_voice_enabled, s_voice_active;
 static lv_obj_t *s_voice_toggle, *s_voice_start, *s_voice_stop, *s_voice_heading;
@@ -32,16 +40,16 @@ static panel_preferences_t s_preferences = PANEL_PREFERENCES_DEFAULT;
 static int s_width, s_height, s_body_width;
 static unsigned s_category = PAGE_DISPLAY;
 static uint32_t s_bg, s_card, s_tint, s_ink, s_muted, s_accent;
-static const char *s_titles[] = {"设置", "网络与连接", "显示与外观", "语音助手", "摄像头", "记录与同步", "系统更新", "安装更新", "蓝牙设置", "界面主题", "连接 Wi-Fi"};
+static const char *s_titles[] = {"设置", "网络与连接", "显示与外观", "语音助手", "摄像头", "记录与同步", "系统更新", "安装更新", "蓝牙设置", "界面主题", "连接 Wi-Fi", "声音", "闹钟"};
 /* Keep the v1 theme/daylight NVS mapping, including existing dark selections. */
 static const char *s_theme_names[2][DASHBOARD_THEME_COUNT] = {
     {TXT_NEON, TXT_LAVA, TXT_ACID}, {"清爽白", "晴空蓝", "暖沙米"},
 };
 static const char *s_theme_notes[2][DASHBOARD_THEME_COUNT] = {
-    {"墨黑 · 薄荷绿", "墨黑 · 珊瑚橙", "墨黑 · 荧光黄"},
-    {"亮白 · 简洁清晰", "浅蓝 · 清凉通透", "暖米 · 柔和温润"},
+    {"石墨 · 薄荷青", "深蓝 · 冷静清晰", "深棕 · 温暖柔和"},
+    {"云白 · 清晰舒适", "雾蓝 · 轻盈通透", "暖白 · 柔和温润"},
 };
-static const char *s_icons[] = {LV_SYMBOL_WIFI, LV_SYMBOL_AUDIO, NULL, LV_SYMBOL_SD_CARD, LV_SYMBOL_UPLOAD, LV_SYMBOL_DOWNLOAD, LV_SYMBOL_BLUETOOTH, LV_SYMBOL_GPS};
+static const char *s_icons[] = {LV_SYMBOL_WIFI, LV_SYMBOL_AUDIO, NULL, LV_SYMBOL_SD_CARD, LV_SYMBOL_UPLOAD, LV_SYMBOL_DOWNLOAD, LV_SYMBOL_BLUETOOTH, LV_SYMBOL_GPS, LV_SYMBOL_AUDIO, LV_SYMBOL_VOLUME_MID};
 static const uint32_t s_colors[2][5] = {
     {0x7F918F, 0xF7C776, 0x70D9FF, 0x61EDBF, 0xFF7F92},
     {0x5E666B, 0x8F5700, 0x0A679B, 0x007E6D, 0xC62727},
@@ -138,6 +146,7 @@ static lv_obj_t *button(lv_obj_t *parent, const char *title, int x, int y, int w
 {
     lv_obj_t *obj = box(parent, x, y, w, 52, s_card);
     lv_obj_set_style_radius(obj, 10, 0);
+    lv_obj_set_style_bg_opa(obj, LV_OPA_70, LV_STATE_PRESSED);
     lv_obj_set_style_opa(obj, LV_OPA_40, LV_STATE_DISABLED);
     text(obj, title, 16, 14, w - 32, &dashboard_text_18, s_accent);
     lv_obj_add_event_cb(obj, cb, LV_EVENT_CLICKED, (void *)id);
@@ -291,10 +300,7 @@ void service_panel_preferences(const panel_preferences_t *p)
 {
     if (!service_panel_preferences_valid(p)) return;
     s_preferences = *p;
-    dashboard_select_theme(p->theme);
-    dashboard_set_pressure_unit(p->pressure);
-    dashboard_set_turbo(p->turbo);
-    dashboard_set_daylight(p->daylight);
+    dashboard_set_appearance(p->theme,p->daylight,p->turbo,p->pressure);
 }
 static void preference_event(lv_event_t *event)
 {
@@ -419,6 +425,44 @@ static void render_networks(void)
     }
     if (s_notice) lv_label_set_text(s_notice, *s_networks.message ? s_networks.message : "选择一个热点连接");
 }
+static void volume_event(lv_event_t *event)
+{
+    unsigned volume=lv_slider_get_value(lv_event_get_target(event));
+    if (s_volume_text) lv_label_set_text_fmt(s_volume_text,"%u%%",volume);
+    if (lv_event_get_code(event)!=LV_EVENT_RELEASED) return;
+    panel_request_t request={.action=PANEL_VOLUME,.data.volume=volume};
+    if (!s_action || !s_action(&request)) {
+        lv_slider_set_value(s_volume_slider,s_media.volume,LV_ANIM_OFF);
+        lv_label_set_text_fmt(s_volume_text,"%u%%",s_media.volume);
+        if (s_notice) lv_label_set_text(s_notice,"音量设置失败，请重试");
+    }
+}
+static void alarm_delete_event(lv_event_t *event)
+{
+    panel_request_t request={.action=PANEL_ALARM_DELETE,.data.alarm.id=(uint32_t)(uintptr_t)lv_event_get_user_data(event)};
+    if(!s_action || !s_action(&request))if(s_notice)lv_label_set_text(s_notice,"闹钟操作失败，请重试");
+}
+static void alarm_add_event(lv_event_t *event)
+{
+    (void)event;panel_request_t request={.action=PANEL_ALARM_ADD};
+    request.data.alarm.hour=lv_dropdown_get_selected(s_alarm_hour);
+    request.data.alarm.minute=lv_dropdown_get_selected(s_alarm_minute);
+    request.data.alarm.daily=lv_obj_has_state(s_alarm_daily,LV_STATE_CHECKED);
+    if(!s_action || !s_action(&request))if(s_notice)lv_label_set_text(s_notice,"闹钟操作失败，请重试");
+}
+static void alarm_dismiss_event(lv_event_t *event){(void)event;emit(PANEL_ALARM_DISMISS);}
+static void render_alarms(void)
+{
+    if(!s_alarm_list)return;
+    lv_obj_clean(s_alarm_list);
+    unsigned row=0;for(unsigned i=0;i<ALARM_LIMIT;++i){const alarm_item_t *a=&s_alarms.store.items[i];if(!a->id)continue;
+        lv_obj_t *card=box(s_alarm_list,0,row++*72,s_body_width-40,68,s_card);lv_obj_set_style_radius(card,12,0);
+        char time[48];snprintf(time,sizeof(time),"%02u:%02u · %s",a->hour,a->minute,a->enabled?(a->daily?"每天":"单次"):"已结束");
+        text(card,time,16,3,250,&dashboard_text_18,s_ink);text(card,a->label,16,32,s_body_width-180,&dashboard_wifi_18,s_muted);
+        button(card,"删除",s_body_width-140,5,90,alarm_delete_event,a->id);
+    }
+    if(!row)text(s_alarm_list,"暂无闹钟，可用小智语音或下方控件添加",0,20,s_body_width-40,&dashboard_text_18,s_muted);
+}
 static void show_page(unsigned page)
 {
     if (s_keyboard) lv_keyboard_set_textarea(s_keyboard, NULL);
@@ -427,6 +471,8 @@ static void show_page(unsigned page)
     s_network_list = s_network_name = s_network_forget = s_scan_button = NULL;
     s_bt_switch = s_bt_peer = s_bt_reconnect = s_bt_name = s_bt_forget = s_bt_scan = s_bt_list = NULL;
     s_voice_toggle = s_voice_start = s_voice_stop = s_voice_heading = NULL;
+    s_volume_slider = s_volume_text = s_music_text = NULL;
+    s_alarm_list=s_alarm_hour=s_alarm_minute=s_alarm_daily=NULL;
     lv_obj_clean(s_overlay);
     lv_obj_remove_flag(s_overlay, LV_OBJ_FLAG_HIDDEN);
     if (page == PAGE_HOME) page = s_category;
@@ -442,13 +488,13 @@ static void show_page(unsigned page)
     s_sidebar = box(s_overlay, 0, 0, 272, s_height, s_card);
     text(s_sidebar, "设置", 36, 30, 196, &dashboard_text_22, s_ink);
     text(s_sidebar, "设备与偏好", 36, 72, 196, &dashboard_text_18, s_muted);
-    const unsigned pages[] = {PAGE_NETWORK, PAGE_BLUETOOTH, PAGE_DISPLAY, PAGE_VOICE, PAGE_CAMERA, PAGE_RECORD, PAGE_UPDATE};
-    const char *icons[] = {LV_SYMBOL_WIFI, LV_SYMBOL_BLUETOOTH, LV_SYMBOL_SETTINGS, LV_SYMBOL_AUDIO, NULL, LV_SYMBOL_SD_CARD, LV_SYMBOL_DOWNLOAD};
+    const unsigned pages[] = {PAGE_NETWORK, PAGE_BLUETOOTH, PAGE_DISPLAY, PAGE_SOUND, PAGE_VOICE, PAGE_CAMERA, PAGE_ALARMS, PAGE_RECORD, PAGE_UPDATE};
+    const ui_asset_t icons[] = {UI_WIFI,UI_BLUETOOTH,UI_SETTINGS,UI_VOLUME,UI_VOICE,UI_SETTINGS,UI_SETTINGS,UI_SD,UI_UPDATE};
     unsigned visible_row=0;
     for (unsigned i = 0; i < sizeof(pages)/sizeof(*pages); ++i) {
         if (!DEVICE_CAMERA_AVAILABLE && pages[i]==PAGE_CAMERA) continue;
         bool selected = pages[i] == s_category;
-        lv_obj_t *row = box(s_sidebar, 20, 116 + visible_row++ * 60, 232, 52, selected ? p->tint : s_card);
+        lv_obj_t *row = box(s_sidebar, 20, 112 + visible_row++ * 52, 232, 46, selected ? p->tint : s_card);
         lv_obj_set_style_radius(row, 12, 0);
         if (selected) {
             lv_obj_t *mark = box(row, 0, 14, 3, 24, s_accent);
@@ -456,7 +502,8 @@ static void show_page(unsigned page)
         }
         if (pages[i] == PAGE_CAMERA) camera_icon(row, 18, 14, 26, selected ? s_accent : s_muted);
         else if (pages[i] == PAGE_VOICE) voice_icon(row, 18, 10, selected ? s_accent : s_muted);
-        else text(row, icons[i], 18, 14, 26, &lv_font_montserrat_24, selected ? s_accent : s_muted);
+        else if(pages[i]==PAGE_ALARMS)text(row,LV_SYMBOL_BELL,18,12,32,&lv_font_montserrat_24,selected?s_accent:s_muted);
+        else ui_asset_create(row,icons[i],18,12,selected ? s_accent : s_muted);
         text(row, s_titles[pages[i]], 56, 14, 156, &dashboard_text_18, selected ? s_accent : s_ink);
         lv_obj_add_event_cb(row, navigation, LV_EVENT_CLICKED, (void *)(uintptr_t)pages[i]);
     }
@@ -572,6 +619,25 @@ static void show_page(unsigned page)
             theme_card(i, false, 20 + i * (card_width + 12), 350, card_width);
         }
         s_notice = text(s_body, "点击卡片立即应用并保存；数字仅为配色预览", 20, 550, width, &dashboard_text_18, s_muted);
+    } else if (page == PAGE_SOUND) {
+        lv_obj_t *card=box(s_body,20,108,width,200,s_card);
+        lv_obj_set_style_radius(card,16,0);
+        text(card,"全局音量",24,26,width-130,&dashboard_text_22,s_ink);
+        s_volume_text=text(card,"",width-100,28,76,&lv_font_montserrat_24,s_accent);
+        lv_label_set_text_fmt(s_volume_text,"%u%%",s_media.volume);
+        s_volume_slider=lv_slider_create(card);
+        lv_obj_set_ext_click_area(s_volume_slider,12);
+        lv_obj_set_pos(s_volume_slider,32,102); lv_obj_set_size(s_volume_slider,width-64,16);
+        lv_slider_set_range(s_volume_slider,0,100); lv_slider_set_value(s_volume_slider,s_media.volume,LV_ANIM_OFF);
+        lv_obj_set_style_bg_color(s_volume_slider,lv_color_hex(s_accent),LV_PART_INDICATOR);
+        lv_obj_set_style_bg_color(s_volume_slider,lv_color_hex(s_accent),LV_PART_KNOB);
+        lv_obj_add_event_cb(s_volume_slider,volume_event,LV_EVENT_VALUE_CHANGED,NULL);
+        lv_obj_add_event_cb(s_volume_slider,volume_event,LV_EVENT_RELEASED,NULL);
+        text(card,"音乐与语音助手共用；调到 0 即静音",24,154,width-48,&dashboard_text_18,s_muted);
+        s_music_text=text(s_body,"",20,350,width,&dashboard_wifi_18,s_ink);
+        lv_label_set_long_mode(s_music_text,LV_LABEL_LONG_DOT);
+        s_notice=text(s_body,"音量自动保存，重启后恢复",20,410,width,&dashboard_text_18,s_muted);
+        service_panel_media(&s_media);
     } else if (page == PAGE_VOICE) {
         lv_obj_t *card = box(s_body, 20, 88, width, 430, s_card);
         lv_obj_set_style_radius(card, 16, 0);
@@ -595,6 +661,29 @@ static void show_page(unsigned page)
         text(card, "联网后才会上传语音并生成回复", 220, 348, width - 252, &dashboard_text_18, s_muted);
         s_notice = text(s_body, "", 20, 550, width, &dashboard_text_18, s_accent);
         service_panel_voice(s_voice_enabled, s_voice_active);
+    } else if(page==PAGE_ALARMS){
+        text(s_body,s_alarms.clock_ready?"北京时间 · 设备通电时生效":"等待联网校时，校时后可设置闹钟",20,104,width,&dashboard_text_18,s_muted);
+        s_alarm_list=box(s_body,20,145,width,288,s_bg);render_alarms();
+        s_alarm_hour=lv_dropdown_create(s_body);s_alarm_minute=lv_dropdown_create(s_body);
+        char hours[72],minutes[180];unsigned n=0;
+        for(unsigned i=0;i<24;++i)n+=(unsigned)snprintf(hours+n,sizeof(hours)-n,i==23?"%02u":"%02u\n",i);
+        n=0;for(unsigned i=0;i<60;++i)n+=(unsigned)snprintf(minutes+n,sizeof(minutes)-n,i==59?"%02u":"%02u\n",i);
+        lv_dropdown_set_options(s_alarm_hour,hours);lv_dropdown_set_options(s_alarm_minute,minutes);
+        lv_obj_set_pos(s_alarm_hour,20,434);lv_obj_set_width(s_alarm_hour,88);
+        lv_obj_set_pos(s_alarm_minute,120,434);lv_obj_set_width(s_alarm_minute,88);
+        lv_obj_t *selectors[]={s_alarm_hour,s_alarm_minute};
+        for(unsigned i=0;i<2;++i){
+            lv_obj_set_style_bg_color(selectors[i],lv_color_hex(s_card),0);
+            lv_obj_set_style_text_color(selectors[i],lv_color_hex(s_ink),0);
+            lv_obj_set_style_border_color(selectors[i],lv_color_hex(s_tint),0);
+            lv_obj_set_style_radius(selectors[i],10,0);
+        }
+        s_alarm_daily=lv_switch_create(s_body);lv_obj_set_pos(s_alarm_daily,230,443);
+        text(s_body,"每天",296,446,64,&dashboard_text_18,s_ink);
+        lv_obj_t *add=button(s_body,"添加闹钟",390,429,width-390,alarm_add_event,0);
+        if(!s_alarms.clock_ready)lv_obj_add_state(add,LV_STATE_DISABLED);
+        text(s_body,"也可以说：十分钟后提醒我",20,500,width,&dashboard_text_18,s_muted);
+        s_notice=text(s_body,s_alarms.detail,20,550,width,&dashboard_text_18,s_accent);
     } else if (page == PAGE_CAMERA) {
         detail(2, 102);
         text(s_body, "影音中心支持预览、拍照和查看相册", 20, 190, width, &dashboard_text_22, s_ink);
@@ -633,14 +722,18 @@ void service_panel_open_voice(void)
 }
 static void toolbar_style(lv_event_t *event)
 {
-    (void)event;
+    static bool cached, last_day;
+    static unsigned last_states[10];
     bool day = dashboard_daylight_enabled();
-    const unsigned order[]={1,2,4,5,3,0,6,7};
+    if (!event && cached && day==last_day && !memcmp(last_states,s_states,sizeof(s_states))) return;
+    cached=true;last_day=day;memcpy(last_states,s_states,sizeof(s_states));
+    const unsigned order[]={1,2,4,5,8,3,0,6,7,9};
     unsigned count=0;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 10; ++i) {
         if (!s_symbols[i]) continue;
         lv_obj_set_style_text_color(s_symbols[i], lv_color_hex(s_colors[day][s_states[i]]), 0);
-        bool visible = i == 0 || i == 3 || i == 6 || i == 7 || s_states[i] == 2 || s_states[i] == 4 ||
+        if (i==1) lv_obj_set_style_image_recolor(s_symbols[i],lv_color_hex(s_colors[day][s_states[i]]),0);
+        bool visible = i == 0 || i == 3 || i == 6 || i == 7 || i == 9 || (i == 8 && s_states[i]) || s_states[i] == 2 || s_states[i] == 4 ||
                        (i == 2 && s_states[i] == 3) || (i == 5 && s_states[i] == 3);
         if (i==2 && !DEVICE_CAMERA_AVAILABLE) visible=false;
         if (visible) { lv_obj_remove_flag(s_symbols[i], LV_OBJ_FLAG_HIDDEN); ++count; }
@@ -649,11 +742,73 @@ static void toolbar_style(lv_event_t *event)
     /* Pack visible symbols against the gear; hidden services leave no gaps. */
     if (!s_symbols[0]) return;
     lv_obj_t *toolbar=lv_obj_get_parent(s_symbols[0]);
-    int slot=s_width*32/800, x=lv_obj_get_width(toolbar)-(int)count*slot;
-    for (unsigned i=0;i<8;++i) {
+    int slot=s_width*26/800, x=lv_obj_get_width(toolbar)-(int)count*slot;
+    for (unsigned i=0;i<10;++i) {
         lv_obj_t *symbol=s_symbols[order[i]];
         if (lv_obj_has_flag(symbol,LV_OBJ_FLAG_HIDDEN)) continue;
         lv_obj_set_x(symbol,x); lv_obj_set_width(symbol,slot); x+=slot;
+    }
+}
+static void audio_shortcut(lv_event_t *event)
+{
+    if ((uintptr_t)lv_event_get_user_data(event)==9) show_page(PAGE_SOUND);
+    else {
+        dashboard_select_page(DASHBOARD_PAGE_MEDIA);
+        if (s_radio.listening) media_panel_select(AV_FM);
+    }
+}
+void service_panel_media(const media_status_t *status)
+{
+    if (!status) return;
+    s_media=*status;
+    s_states[8]=status->state==MEDIA_PLAYING ? 3 : status->state==MEDIA_PAUSED ? 1 :
+        status->state==MEDIA_CONNECTING || status->state==MEDIA_BUFFERING ? 2 : status->state==MEDIA_ERROR ? 4 : 0;
+    if (s_radio.listening) s_states[8]=s_radio.state==FM_READY?3:2;
+    s_states[9]=status->volume ? 3 : 0;
+    ui_label_text(s_symbols[8],!s_radio.listening && status->state==MEDIA_PAUSED ? LV_SYMBOL_PAUSE : LV_SYMBOL_AUDIO);
+    ui_label_text(s_symbols[9],!status->volume ? LV_SYMBOL_MUTE : status->volume<60 ? LV_SYMBOL_VOLUME_MID : LV_SYMBOL_VOLUME_MAX);
+    char text[MEDIA_TITLE_SIZE+48];
+    if (s_volume_slider && !lv_obj_has_state(s_volume_slider,LV_STATE_PRESSED)) {
+        lv_slider_set_value(s_volume_slider,status->volume,LV_ANIM_OFF);
+        snprintf(text,sizeof(text),"%u%%",status->volume);ui_label_text(s_volume_text,text);
+    }
+    if (s_music_text) {
+        if (s_radio.listening) snprintf(text,sizeof(text),"正在收听：FM %u.%u MHz",s_radio.frequency/10,s_radio.frequency%10);
+        else snprintf(text,sizeof(text),"%s%s",status->state==MEDIA_PLAYING ? "正在播放：" : status->state==MEDIA_PAUSED ? "已暂停：" : "音乐：",status->selected ? status->title : "未选择音乐");
+        ui_label_text(s_music_text,text);
+    }
+    toolbar_style(NULL);
+}
+void service_panel_fm(const fm_status_t *status)
+{ if (status) { s_radio=*status; service_panel_media(&s_media); } }
+void service_panel_close(void)
+{
+    if(!s_overlay || lv_obj_has_flag(s_overlay,LV_OBJ_FLAG_HIDDEN))return;
+    show_page(PAGE_HOME);lv_obj_add_flag(s_overlay,LV_OBJ_FLAG_HIDDEN);
+}
+void service_panel_open_alarms(void){if(s_overlay)show_page(PAGE_ALARMS);}
+void service_panel_alarms(const alarm_status_t *status)
+{
+    if(!status)return;
+    bool changed=status->revision!=s_alarms.revision || status->clock_ready!=s_alarms.clock_ready;
+    s_alarms=*status;
+    if(changed && s_alarm_list && s_current_page==PAGE_ALARMS && !lv_obj_has_flag(s_overlay,LV_OBJ_FLAG_HIDDEN))show_page(PAGE_ALARMS);
+    if(!s_screen)return;
+    if(!s_alarm_banner && status->ringing){
+        const dashboard_palette_t *p=dashboard_palette(dashboard_active_theme(),dashboard_daylight_enabled());
+        s_alarm_banner=box(s_screen,16,72,s_width-32,66,p->panel);lv_obj_set_style_radius(s_alarm_banner,12,0);
+        s_alarm_banner_text=text(s_alarm_banner,"闹钟响铃",20,20,s_width-290,&dashboard_wifi_18,p->ink);
+        button(s_alarm_banner,"停止提醒",s_width-240,7,192,alarm_dismiss_event,0);
+    }
+    if(s_alarm_banner){
+        if(status->ringing){
+            const dashboard_palette_t *p=dashboard_palette(dashboard_active_theme(),dashboard_daylight_enabled());
+            ui_bg_color(s_alarm_banner,lv_color_hex(p->panel));
+            ui_text_color(s_alarm_banner_text,lv_color_hex(p->ink));
+            const char *name="提醒";for(unsigned i=0;i<ALARM_LIMIT;++i)if(status->store.items[i].id==status->ringing_id)name=status->store.items[i].label;
+            char text[96];snprintf(text,sizeof(text),"闹钟响铃 · %s",name);ui_label_text(s_alarm_banner_text,text);
+            lv_obj_remove_flag(s_alarm_banner,LV_OBJ_FLAG_HIDDEN);lv_obj_move_foreground(s_alarm_banner);
+        } else lv_obj_add_flag(s_alarm_banner,LV_OBJ_FLAG_HIDDEN);
     }
 }
 static void camera_close(lv_event_t *event)
@@ -668,10 +823,16 @@ void service_panel_create(lv_obj_t *screen, lv_obj_t *toolbar, panel_action_cb_t
     s_width = lv_obj_get_width(screen); s_height = lv_obj_get_height(screen);
     int th = lv_obj_get_height(toolbar);
     lv_obj_remove_flag(toolbar, LV_OBJ_FLAG_CLICKABLE);
-    for (int i = 0; i < 8; ++i) {
-        s_symbols[i] = i == 2 ? camera_icon(toolbar, 0, (th - 24) / 2, s_width*32/800, s_colors[0][0]) :
+    for (int i = 0; i < 10; ++i) {
+        s_symbols[i] = i == 1 ? ui_asset_create(toolbar,UI_VOICE,0,(th-28)/2,s_colors[0][0]) :
+            i == 2 ? camera_icon(toolbar, 0, (th - 24) / 2, s_width*32/800, s_colors[0][0]) :
             text(toolbar, s_icons[i], 0, (th - 24) / 2, s_width*32/800, &lv_font_montserrat_24, s_colors[0][0]);
         lv_obj_set_style_text_align(s_symbols[i], LV_TEXT_ALIGN_CENTER, 0);
+        if (i>=8) {
+            lv_obj_add_flag(s_symbols[i],LV_OBJ_FLAG_CLICKABLE);
+            lv_obj_set_ext_click_area(s_symbols[i],4);
+            lv_obj_add_event_cb(s_symbols[i],audio_shortcut,LV_EVENT_CLICKED,(void *)(uintptr_t)i);
+        }
     }
     lv_obj_add_event_cb(toolbar, toolbar_style, LV_EVENT_STYLE_CHANGED, NULL);
     toolbar_style(NULL);
@@ -715,8 +876,8 @@ void service_panel_voice(bool on, bool active)
     s_voice_enabled = on;
     s_voice_active = active;
     if (!s_voice_heading) return;
-    lv_label_set_text(s_voice_heading, !on ? "助手已关闭" : active ? "正在对话" : "等待唤醒");
-    if (s_voice_toggle) lv_label_set_text(lv_obj_get_child(s_voice_toggle, 0), on ? "关闭助手" : "开启助手");
+    ui_label_text(s_voice_heading, !on ? "助手已关闭" : active ? "正在对话" : "等待唤醒");
+    if (s_voice_toggle) ui_label_text(lv_obj_get_child(s_voice_toggle, 0), on ? "关闭助手" : "开启助手");
     bool network_ready = s_states[0] == 3; /* SERVICE_READY */
     if (s_voice_start) {
         if (on && !active && network_ready) lv_obj_remove_state(s_voice_start, LV_STATE_DISABLED);

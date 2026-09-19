@@ -1,6 +1,17 @@
 #include "media_model.h"
 #include <string.h>
 
+bool media_url_valid(const char *url)
+{
+    if(!url || strlen(url)>=MEDIA_URL_SIZE)return false;
+    unsigned prefix=!strncmp(url,"https://",8)?8:!strncmp(url,"http://",7)?7:0;
+    if(!prefix || !url[prefix] || url[prefix]=='/' || url[prefix]==':')return false;
+    const char *end=strchr(url+prefix,'/');if(!end)end=url+strlen(url);
+    for(const char *p=url;*p;++p)if((unsigned char)*p<=32 || (unsigned char)*p>=127 || *p=='#' || *p=='\\')return false;
+    for(const char *p=url+prefix;p<end;++p)if(*p=='@' || *p=='?')return false;
+    return true;
+}
+
 int media_mp3_frame_size(const uint8_t *p, size_t length)
 {
     if (length < 4) return 0;

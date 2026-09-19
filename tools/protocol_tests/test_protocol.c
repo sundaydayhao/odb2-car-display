@@ -84,7 +84,7 @@ int main(void)
     assert(elm_supported_pid(&bitmap,32,64));
     bitmap.length=3; assert(!elm_supported_pid(&bitmap,0,1));
     obd_cache_t cache={0};
-    const uint8_t values[][2]={{86,0},{0x26,0x48},{255,0},{255,0},{0,0},{255,0},{0x37,0x78},{72,0},{138,0},{84,0}};
+    const uint8_t values[][2]={{86,0},{0x26,0x48},{255,0},{255,0},{0,0},{255,0},{0x37,0x78},{72,0},{138,0},{84,0},{100,0},{0,72}};
     for (unsigned i=0;i<OBD_PARAMETER_COUNT;++i) {
         elm_pid_reply_t reply={.length=obd_parameters[i].bytes};
         memcpy(reply.data,values[i],2);
@@ -94,6 +94,8 @@ int main(void)
     assert(cache.data.speed_kph==86 && cache.data.rpm==2450);
     assert(cache.data.coolant_temp_c==-40 && cache.data.oil_temp_c==98 && cache.data.intake_temp_c==32);
     assert(cache.data.control_voltage_mv==14200 && cache.data.manifold_pressure_kpa==84);
+    assert(cache.data.barometric_pressure_kpa==100 && cache.data.fuel_rate_20_lph==72);
+    assert(cache.data.boost_valid && cache.data.boost_kpa==-16);
     assert(cache.data.engine_load_percent==100 && cache.data.throttle_percent==100 && cache.data.fuel_percent==100);
     obd_cache_expire(&cache,2100);
     assert(!cache.data.speed_valid && !cache.data.rpm_valid);

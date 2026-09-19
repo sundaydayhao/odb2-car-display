@@ -5,6 +5,9 @@
 #include "media_library.h"
 #include "voice_codec_memory.h"
 #include "recorder.h"
+#include "alarm_service.h"
+#include "esp_http_client.h"
+#include "esp_crt_bundle.h"
 #include <stdatomic.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,9 +24,10 @@
 #include "freertos/idf_additions.h"
 
 enum { STREAM_CAPACITY = 192 * 1024, INPUT_CAPACITY = 4096, PCM_CAPACITY = 4608 };
-typedef struct { unsigned generation; uint32_t storage_generation; char path[AV_FILE_PATH_SIZE]; } fetch_job_t;
+typedef struct { unsigned generation; uint32_t storage_generation; bool online; char path[MEDIA_URL_SIZE]; } fetch_job_t;
 static const char *TAG = "media";
 static QueueHandle_t s_commands, s_jobs;
+static StaticQueue_t s_commands_control;
 static StreamBufferHandle_t s_stream;
 static StaticStreamBuffer_t s_stream_control;
 static uint8_t *s_stream_storage;
@@ -35,9 +39,11 @@ static media_status_t s_status = {.volume = 35};
 /* Only the playback task owns the following session fields and decoder. */
 static unsigned s_volume = 35, s_frames, s_bad_frames;
 static bool s_selected;
+static bool s_online;
+static char s_saved_url[MEDIA_URL_SIZE],s_saved_title[MEDIA_TITLE_SIZE];
 static unsigned s_local_index;
 static uint32_t s_storage_generation;
-static char s_local_path[AV_FILE_PATH_SIZE], s_local_title[MEDIA_TITLE_SIZE];
+static char s_local_path[MEDIA_URL_SIZE], s_local_title[MEDIA_TITLE_SIZE];
 static bool s_play, s_session, s_audio_owned, s_buffering;
 static void *s_decoder;
 static uint8_t *s_input, *s_pcm;
@@ -51,6 +57,7 @@ static void publish(media_state_t state, const char *detail)
     portENTER_CRITICAL(&s_lock);
     s_status.state = state;
     s_status.selected=s_selected; s_status.local_index=s_local_index;
+    s_status.online=s_online;
     s_status.storage_generation=s_storage_generation;
     s_status.volume = s_volume;
     s_status.played_ms = (uint32_t)(s_played_us / 1000);
@@ -76,13 +83,22 @@ bool media_service_request(const media_request_t *request)
     if (!request || !s_commands || request->action >= MEDIA_ACTION_COUNT) return false;
     if (request->action == MEDIA_SELECT_LOCAL && request->value >= AV_FILE_LIMIT) return false;
     if (request->action == MEDIA_VOLUME && request->value > 100) return false;
+    if (request->action==MEDIA_VOLUME_DELTA && (request->delta < -100 || request->delta>100))return false;
+    if (request->action==MEDIA_SELECT_ONLINE &&
+        (!memchr(request->url,0,sizeof(request->url)) || !memchr(request->title,0,sizeof(request->title)) || (*request->url && !media_url_valid(request->url))))return false;
     return xQueueSend(s_commands, request, 0) == pdTRUE;
 }
 
-static bool cancelled(unsigned generation, uint32_t storage_generation)
+bool media_service_online_saved(char *url,size_t url_size,char *title,size_t title_size)
 {
-    return atomic_load(&s_generation) != generation || cloud_ota_busy() ||
-           !recorder_storage_ready() || recorder_storage_generation()!=storage_generation;
+    portENTER_CRITICAL(&s_lock);
+    snprintf(url,url_size,"%s",s_saved_url);snprintf(title,title_size,"%s",s_saved_title);
+    bool saved=*s_saved_url!=0;portEXIT_CRITICAL(&s_lock);return saved;
+}
+static bool cancelled(const fetch_job_t *job)
+{
+    return atomic_load(&s_generation) != job->generation || cloud_ota_busy() ||
+           (job->online?!device_network_ready():!recorder_storage_ready() || recorder_storage_generation()!=job->storage_generation);
 }
 static void fetch_task(void *arg)
 {
@@ -93,16 +109,26 @@ static void fetch_task(void *arg)
         int error = 0;
         uint32_t offset=0;
         if (!block) error=1;
-        while (!error && !cancelled(job.generation,job.storage_generation)) {
-            int n=media_library_read(job.path,job.storage_generation,offset,block,2048);
+        esp_http_client_handle_t http=NULL;
+        if(!error && job.online && !cancelled(&job)) {
+            esp_http_client_config_t cfg={.url=job.path,.timeout_ms=2000,.buffer_size=2048,
+                .disable_auto_redirect=true,.crt_bundle_attach=esp_crt_bundle_attach};
+            http=esp_http_client_init(&cfg);
+            if(!http || esp_http_client_open(http,0)!=ESP_OK || esp_http_client_fetch_headers(http)<0 || esp_http_client_get_status_code(http)!=200)error=5;
+        }
+        while (!error && !cancelled(&job)) {
+            int n=job.online?esp_http_client_read(http,(char *)block,2048):media_library_read(job.path,job.storage_generation,offset,block,2048);
             if (n<0) { error=4; break; }
-            if (!n) break;
+            if (!n) {if(job.online && !esp_http_client_is_complete_data_received(http))error=5;break;}
             offset+=(unsigned)n; atomic_fetch_add(&s_received,(unsigned)n);
+            if(job.online && offset>128*1024*1024){error=5;break;}
             size_t sent=0;
-            while (sent<(size_t)n && !cancelled(job.generation,job.storage_generation))
+            while (sent<(size_t)n && !cancelled(&job))
                 sent+=xStreamBufferSend(s_stream,block+sent,n-sent,pdMS_TO_TICKS(50));
         }
-        if (!recorder_storage_ready() || recorder_storage_generation()!=job.storage_generation) error=4;
+        if(http){esp_http_client_close(http);esp_http_client_cleanup(http);}
+        if (!job.online && (!recorder_storage_ready() || recorder_storage_generation()!=job.storage_generation)) error=4;
+        if(job.online && !device_network_ready())error=5;
         atomic_store(&s_fetch_error, error);
         atomic_store(&s_fetch_done, true);
         atomic_store(&s_fetch_busy, false);
@@ -142,11 +168,34 @@ static void command(const media_request_t *request)
         if (!media_library_music(request->value,request->revision,path,sizeof(path),title,sizeof(title),&generation)) {
             publish(s_status.state,"文件列表已变化，请刷新后选择"); break;
         }
-        close_session(); s_selected=true; s_local_index=request->value; s_storage_generation=generation;
+        audio_device_radio_priority(false);
+        close_session(); s_selected=true; s_online=false; s_local_index=request->value; s_storage_generation=generation;
         strcpy(s_local_path,path); strcpy(s_local_title,title); s_play=true;
         s_played_us=0; s_frames=s_bad_frames=0;
         publish(MEDIA_CONNECTING,"正在读取音乐");
         break;
+    }
+    case MEDIA_SELECT_ONLINE: {
+        if(!*request->url){
+            media_request_t saved={.action=MEDIA_SELECT_ONLINE};
+            if(media_service_online_saved(saved.url,sizeof(saved.url),saved.title,sizeof(saved.title)))command(&saved);
+            else publish(s_status.state,"尚未设置在线音源，请通过小智或串口设置");
+            break;
+        }
+        if(!device_network_ready()){publish(MEDIA_ERROR,"在线音乐需要连接网络");break;}
+        audio_device_radio_priority(false);close_session();s_selected=true;s_online=true;s_play=true;
+        snprintf(s_local_path,sizeof(s_local_path),"%s",request->url);
+        snprintf(s_local_title,sizeof(s_local_title),"%s",*request->title?request->title:"在线音乐");
+        s_played_us=0;s_frames=s_bad_frames=0;
+        nvs_handle_t nvs;
+        if(nvs_open("media",NVS_READWRITE,&nvs)==ESP_OK){
+            esp_err_t saved=nvs_set_str(nvs,"online_url",s_local_path);
+            if(saved==ESP_OK)saved=nvs_set_str(nvs,"online_title",s_local_title);
+            if(saved==ESP_OK)saved=nvs_commit(nvs);
+            if(saved==ESP_OK){portENTER_CRITICAL(&s_lock);strcpy(s_saved_url,s_local_path);strcpy(s_saved_title,s_local_title);portEXIT_CRITICAL(&s_lock);}
+            nvs_close(nvs);
+        }
+        publish(MEDIA_CONNECTING,"正在连接在线音乐");break;
     }
     case MEDIA_PREVIOUS:
     case MEDIA_NEXT: {
@@ -154,9 +203,15 @@ static void command(const media_request_t *request)
         av_library_status_t library; media_library_status(&library);
         if (!library.storage || !library.music_count) { s_play=false; close_session(); publish(MEDIA_ERROR,"SD 卡没有可播放的音乐"); break; }
         next.action=MEDIA_SELECT_LOCAL; next.revision=library.revision;
-        next.value=s_selected?(s_local_index+library.music_count+(request->action==MEDIA_NEXT?1:-1))%library.music_count:0;
+        next.value=s_selected && !s_online?(s_local_index+library.music_count+(request->action==MEDIA_NEXT?1:-1))%library.music_count:0;
         command(&next); break;
     }
+    case MEDIA_PAUSE:
+        if(!s_play)break;
+        /* fall through */
+    case MEDIA_RESUME:
+        if(request->action==MEDIA_RESUME && s_play)break;
+        /* fall through */
     case MEDIA_TOGGLE:
         if (!s_selected) {
             av_library_status_t library; media_library_status(&library);
@@ -165,6 +220,7 @@ static void command(const media_request_t *request)
             command(&first); break;
         }
         s_play = !s_play;
+        if (s_play) audio_device_radio_priority(false);
         if (s_play && !s_session) { s_played_us = 0; s_frames = s_bad_frames = 0; }
         if (!s_play) {
             if (s_audio_owned) { audio_device_release(AUDIO_OWNER_MEDIA); s_audio_owned = false; }
@@ -175,14 +231,17 @@ static void command(const media_request_t *request)
         s_play = false; close_session(); s_played_us = 0;
         publish(MEDIA_IDLE, "播放已停止");
         break;
-    case MEDIA_VOLUME:
-        s_volume = request->value;
-        if (s_audio_owned) audio_device_volume(AUDIO_OWNER_MEDIA, s_volume);
+    case MEDIA_VOLUME_DELTA:
+    case MEDIA_VOLUME: {
+        int volume=request->action==MEDIA_VOLUME?(int)request->value:(int)s_volume+request->delta;
+        s_volume=volume<0?0:volume>100?100:(unsigned)volume;
+        audio_device_set_volume(s_volume);
         s_volume_save_at = esp_timer_get_time() + 1000000;
         portENTER_CRITICAL(&s_lock);
         s_status.volume = s_volume; ++s_status.revision;
         portEXIT_CRITICAL(&s_lock);
         break;
+    }
     default: break;
     }
 }
@@ -200,7 +259,7 @@ static bool open_session(void)
         s_play = false; publish(MEDIA_ERROR, "音乐解码资源不足"); return false;
     }
     fetch_job_t job = {.generation = atomic_fetch_add(&s_generation, 1) + 1,
-                      .storage_generation=s_storage_generation};
+                      .storage_generation=s_storage_generation,.online=s_online};
     snprintf(job.path, sizeof(job.path), "%s", s_local_path);
     xStreamBufferReset(s_stream);
     atomic_store(&s_fetch_done, false); atomic_store(&s_fetch_error, 0); atomic_store(&s_received, 0);
@@ -210,7 +269,7 @@ static bool open_session(void)
         s_play = false; publish(MEDIA_ERROR, "播放任务繁忙，请重试"); return false;
     }
     s_session = true; s_buffering = true; s_used = s_skip = s_junk = 0; s_bad_frames = 0;
-    publish(MEDIA_CONNECTING, "正在读取音乐");
+    publish(MEDIA_CONNECTING, s_online?"正在连接在线音乐":"正在读取音乐");
     return true;
 }
 static void failed(const char *detail)
@@ -273,7 +332,7 @@ static void playback_step(void)
         if (!s_audio_owned) { failed("音频正在被语音使用，请稍后播放"); return; }
         /* Fractional-rate conversion has separate, lazily allocated workspaces. */
         if (!media_codec_memory_begin()) { failed("音乐解码资源繁忙，请重试"); return; }
-        bool output_ok=audio_device_configure(AUDIO_OWNER_MEDIA,false,info.sample_rate,s_volume) &&
+        bool output_ok=audio_device_configure(AUDIO_OWNER_MEDIA,false,info.sample_rate) &&
                        audio_device_write(AUDIO_OWNER_MEDIA,pcm,samples*2);
         media_codec_memory_end();
         if (!output_ok) { failed("扬声器不可用，请检查音频连接"); return; }
@@ -291,7 +350,7 @@ static void playback_step(void)
     }
     if (done && !xStreamBufferBytesAvailable(s_stream)) {
         int error = atomic_load(&s_fetch_error);
-        if (error) failed("音乐读取失败，请重新选择");
+        if (error) failed(s_online?"在线音乐连接或读取失败，请检查直链":"音乐读取失败，请重新选择");
         else {
             s_play = false; close_session();
             publish(s_frames ? MEDIA_FINISHED : MEDIA_ERROR, s_frames ? "播放结束" : "没有可播放的 MP3 音频");
@@ -314,17 +373,22 @@ static void playback_task(void *arg)
     }
     media_request_t request;
     for (;;) {
+        alarm_service_tick();
         while (xQueueReceive(s_commands, &request, 0) == pdTRUE) command(&request);
         if (s_volume_save_at && esp_timer_get_time() >= s_volume_save_at) save_volume();
-        if ((s_session || s_play) &&
+        if (!s_online && (s_session || s_play) &&
             (!recorder_storage_ready() || recorder_storage_generation()!=s_storage_generation)) {
             s_play=false; close_session(); publish(MEDIA_ERROR,"SD 卡已移除，请重新选择音乐");
         }
-        if ((s_session || s_play) && (audio_device_voice_waiting() || cloud_ota_busy())) {
+        if (s_online && (s_session || s_play) && !device_network_ready()) {failed("网络已断开，请重新播放");}
+        if ((s_session || s_play) && (audio_device_voice_waiting() || audio_device_radio_waiting() || audio_device_alarm_waiting() || cloud_ota_busy())) {
             s_play = false; close_session();
-            publish(MEDIA_PAUSED, "语音或更新使用中，结束后可重新播放");
+            publish(MEDIA_PAUSED, "其他音源使用中，可重新播放音乐");
         }
+        alarm_service_audio();
         if (!s_play) { vTaskDelay(pdMS_TO_TICKS(25)); continue; }
+        /* Wait for the radio worker to mute its analog output before SD starts. */
+        if (audio_device_radio_owned()) { vTaskDelay(pdMS_TO_TICKS(25)); continue; }
         if (!s_session && !open_session()) { vTaskDelay(pdMS_TO_TICKS(100)); continue; }
         playback_step();
     }
@@ -336,9 +400,14 @@ esp_err_t media_service_start(void)
     if (nvs_open("media", NVS_READONLY, &handle) == ESP_OK) {
         uint8_t volume;
         if (nvs_get_u8(handle, "volume", &volume) == ESP_OK && volume <= 100) s_volume = volume;
+        size_t length=sizeof(s_saved_url);
+        if(nvs_get_str(handle,"online_url",s_saved_url,&length)!=ESP_OK || !media_url_valid(s_saved_url))*s_saved_url=0;
+        length=sizeof(s_saved_title);if(nvs_get_str(handle,"online_title",s_saved_title,&length)!=ESP_OK)*s_saved_title=0;
         nvs_close(handle);
     }
-    s_commands = xQueueCreate(8, sizeof(media_request_t));
+    audio_device_set_volume(s_volume);
+    uint8_t *commands=heap_caps_malloc(8*sizeof(media_request_t),MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
+    if(commands)s_commands=xQueueCreateStatic(8,sizeof(media_request_t),commands,&s_commands_control);
     s_jobs = xQueueCreate(1, sizeof(fetch_job_t));
     s_stream_storage = heap_caps_malloc(STREAM_CAPACITY + 1, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     if (!s_commands || !s_jobs || !s_stream_storage) return ESP_ERR_NO_MEM;

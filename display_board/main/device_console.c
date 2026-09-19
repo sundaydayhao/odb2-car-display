@@ -14,9 +14,22 @@
 #include "elm327_ble.h"
 #include "media_service.h"
 #include "media_library.h"
+#include "gps_service.h"
+#include "fm_service.h"
+#include "alarm_service.h"
+#include "esp_timer.h"
+#include "map_panel.h"
 #include "feature_config.h"
 #include "ui.h"
 #include <stdlib.h>
+
+static void fm_print_status(void)
+{
+    fm_status_t radio; fm_service_status(&radio);
+    printf("fm available=%d state=%u frequency=%u.%u listening=%d volume=%u rssi=%u stereo=%d station=%d\n",
+        radio.available,radio.state,radio.frequency/10,radio.frequency%10,radio.listening,
+        radio.volume,radio.rssi,radio.stereo,radio.station);
+}
 
 static int command(int argc, char **argv)
 {
@@ -34,6 +47,11 @@ static int command(int argc, char **argv)
         for (int i = 0; i < SERVICE_COUNT; ++i) printf("service[%d]=%d %s\n", i, status.state[i], status.detail[i]);
         elm_ble_status_t bt=elm_ble_status();
         printf("bluetooth available=%d enabled=%d state=%d peer=%s\n",bt.available,bt.enabled,bt.state,*bt.address?bt.address:"none");
+        gps_fix_t gps; gps_service_get(&gps);
+        uint32_t now=(uint32_t)(esp_timer_get_time()/1000);
+        printf("gps enabled=%d error=%d positioned=%d rmc_sequence=%lu age_ms=%lu\n",gps.enabled,gps.error,
+            gps_fix_current(&gps,now),(unsigned long)gps.sequence,(unsigned long)(now-gps.received_ms));
+        fm_print_status();
         const uint32_t dram_caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_DMA | MALLOC_CAP_8BIT;
         printf("dram free=%u largest=%u\n", (unsigned)heap_caps_get_free_size(dram_caps),
                (unsigned)heap_caps_get_largest_free_block(dram_caps));
@@ -43,6 +61,56 @@ static int command(int argc, char **argv)
                media.state, media.local_index, media.volume, (unsigned long)media.decoded_frames,
                (unsigned long)media.played_ms, (unsigned long)media.received_bytes, (unsigned long)media.buffered_bytes);
         err = ESP_OK;
+    } else if(!strcmp(cmd,"map") && argc==2){
+        if(!strcmp(argv[1],"open")){
+            int64_t started=esp_timer_get_time();
+            err=ui_open_map()?ESP_OK:ESP_ERR_INVALID_STATE;
+            printf("map open_us=%lld\n",(long long)(esp_timer_get_time()-started));
+        } else if(!strcmp(argv[1],"status")){
+            map_panel_stats_t map;
+            if(ui_map_status(&map)){
+                printf("map visible=%d busy=%d jobs=%lu frames=%lu cache_hits=%lu cancelled=%lu slices=%lu max_slice_ms=%lu last_render_ms=%lu ui_stack_min_bytes=%lu\n",
+                    map.visible,map.busy,(unsigned long)map.jobs,(unsigned long)map.frames,(unsigned long)map.cache_hits,
+                    (unsigned long)map.cancelled,(unsigned long)map.slices,(unsigned long)map.max_slice_ms,(unsigned long)map.last_render_ms,
+                    (unsigned long)map.ui_stack_min_bytes);
+                err=ESP_OK;
+            }else err=ESP_ERR_TIMEOUT;
+        }
+    } else if(!strcmp(cmd,"alarm") && argc>=2){
+        if(argc==2 && !strcmp(argv[1],"status")){
+            alarm_status_t alarms;alarm_service_status(&alarms);
+            printf("alarm clock_ready=%d ringing=%d id=%lu\n",alarms.clock_ready,alarms.ringing,(unsigned long)alarms.ringing_id);
+            for(unsigned i=0;i<ALARM_LIMIT;++i){alarm_item_t *a=&alarms.store.items[i];if(a->id)
+                printf("alarm id=%lu time=%02u:%02u daily=%d enabled=%d label=%s\n",(unsigned long)a->id,a->hour,a->minute,a->daily,a->enabled,a->label);}
+            err=ESP_OK;
+        } else if(argc==2 && !strcmp(argv[1],"dismiss")){alarm_service_dismiss();err=ESP_OK;}
+        else if((argc==3 || (argc==4 && !strcmp(argv[3],"daily"))) && !strcmp(argv[1],"at")){
+            unsigned h,m;char extra;if(sscanf(argv[2],"%u:%u%c",&h,&m,&extra)==2 && h<24 && m<60){
+                int id=alarm_service_set(h,m,argc==4,0,"提醒");printf("alarm id=%d\n",id);err=id>0?ESP_OK:ESP_FAIL;}
+        } else if(argc==3 && (!strcmp(argv[1],"after") || !strcmp(argv[1],"delete"))){
+            char *end;unsigned long n=strtoul(argv[2],&end,10);
+            if(*argv[2] && !*end && n>0 && n<=0x7ffffffe){
+                if(!strcmp(argv[1],"delete"))err=alarm_service_delete(n)?ESP_OK:ESP_FAIL;
+                else if(n<=10080){int id=alarm_service_set(0,0,false,n,"提醒");printf("alarm id=%d\n",id);err=id>0?ESP_OK:ESP_FAIL;}
+            }
+        }
+    } else if (!strcmp(cmd,"fm") && argc>=2) {
+        fm_request_t request={0}; bool valid=false;
+        fm_status_t radio; fm_service_status(&radio); request.frequency=radio.frequency;
+        if (argc==2 && !strcmp(argv[1],"status")) { fm_print_status(); err=ESP_OK; }
+        else if (argc==2) {
+            if (!strcmp(argv[1],"listen")) { request.action=FM_LISTEN; valid=true; }
+            else if (!strcmp(argv[1],"stop")) { request.action=FM_STOP; valid=true; }
+            else if (!strcmp(argv[1],"seek")) { request.action=FM_SEEK; valid=true; }
+            else if (!strcmp(argv[1],"retry")) { request.action=FM_RETRY; valid=true; }
+        } else if (argc==3 && !strcmp(argv[1],"tune")) {
+            char *end; unsigned long mhz=strtoul(argv[2],&end,10);
+            if (mhz>=87 && mhz<=108 && *end=='.' && end[1]>='0' && end[1]<='9' && !end[2]) {
+                request.action=FM_TUNE; request.frequency=(uint16_t)(mhz*10+end[1]-'0');
+                valid=request.frequency>=FM_MIN_FREQUENCY && request.frequency<=FM_MAX_FREQUENCY;
+            }
+        }
+        if (valid) err=fm_service_request(&request)?ESP_OK:ESP_ERR_INVALID_STATE;
     } else if (!strcmp(cmd, "media") && argc >= 2) {
         if (argc==2 && !strcmp(argv[1],"files")) {
             av_library_status_t library; media_library_status(&library);
@@ -59,7 +127,11 @@ static int command(int argc, char **argv)
         }
         media_request_t request = {0};
         bool valid = false;
-        if (argc==3 && (!strcmp(argv[1],"local") || !strcmp(argv[1],"photo"))) {
+        if((argc==2 || argc==3 || argc==4) && !strcmp(argv[1],"online")){
+            request.action=MEDIA_SELECT_ONLINE;valid=true;
+            if(argc>=3){valid=strlen(argv[2])<sizeof(request.url);if(valid)strcpy(request.url,argv[2]);}
+            if(argc==4){valid=valid && strlen(argv[3])<sizeof(request.title);if(valid)strcpy(request.title,argv[3]);}
+        } else if (argc==3 && (!strcmp(argv[1],"local") || !strcmp(argv[1],"photo"))) {
             unsigned index; char extra;
             av_library_status_t library; media_library_status(&library);
             if (sscanf(argv[2],"%u%c",&index,&extra)==1 && index<AV_FILE_LIMIT) {
@@ -186,7 +258,7 @@ esp_err_t device_console_start(void)
     esp_console_repl_t *repl = NULL;
     esp_console_repl_config_t config = ESP_CONSOLE_REPL_CONFIG_DEFAULT();
     config.prompt = "vehicle>";
-    config.max_cmdline_length = 512;
+    config.max_cmdline_length = 1024;
     config.task_stack_size = 8192;
     config.history_save_path = NULL;
 #if CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG
@@ -197,12 +269,15 @@ esp_err_t device_console_start(void)
     esp_err_t err = esp_console_new_repl_uart(&dev, &config, &repl);
 #endif
     if (err != ESP_OK) return err;
-    const char *names[] = {"status", "wifi", "endpoint", "token", "upload", "record", "ota", "voice", "camera", "bluetooth", "wifi-scan", "media"};
+    const char *names[] = {"status", "wifi", "endpoint", "token", "upload", "record", "ota", "voice", "camera", "bluetooth", "wifi-scan", "media", "fm", "alarm", "map"};
     const char *help[] = {"Show redacted device status", "wifi status | wifi retry | wifi \"SSID\" \"password\" (local console echoes input)",
         "endpoint upload|ota https://...", "token <bearer> (local console echoes input)", "upload on|off|now",
         "record seal", "ota check | ota install parked-confirmed", "voice status|on|off|start|end", "camera on|off|photo", "bluetooth on|off|scan|list|connect INDEX|reconnect|disconnect|forget",
         "wifi-scan | wifi-scan status (redacted scan summary)",
-        "media open | tab music|fm|voice | files | refresh | local INDEX | toggle | stop | prev | next | volume 0..100"};
+        "media open | tab music|fm|camera|voice | files | local INDEX | online [URL [TITLE]] | toggle | stop | prev | next | volume 0..100",
+        "fm status | tune 87.5..108.0 | listen | stop | seek | retry (queued, check fm status)",
+        "alarm status | at HH:MM [daily] | after MINUTES | delete ID | dismiss (Beijing time, powered on)",
+        "map open | status (page dispatch and cooperative renderer timing)"};
     for (unsigned i = 0; i < sizeof(names) / sizeof(names[0]); ++i) {
         if (!DEVICE_CAMERA_AVAILABLE && !strcmp(names[i],"camera")) continue;
         esp_console_cmd_t entry = {.command = names[i], .help = help[i], .func = command};

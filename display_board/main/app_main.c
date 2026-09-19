@@ -10,6 +10,9 @@
 
 #include "obd2.h"
 #include "ui.h"
+#include "gps_service.h"
+#include "fm_service.h"
+#include "alarm_service.h"
 #include "device_services.h"
 #include "recorder.h"
 #include "cloud_service.h"
@@ -78,10 +81,15 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     ESP_ERROR_CHECK(device_services_init());
     ESP_ERROR_CHECK(ui_init() ? ESP_OK : ESP_FAIL);
+    err=gps_service_start();
+    if (err!=ESP_OK) ESP_LOGW(TAG,"GPS receiver unavailable: %s",esp_err_to_name(err));
     ESP_ERROR_CHECK(recorder_start());
     ESP_ERROR_CHECK(media_library_start());
     ESP_ERROR_CHECK(voice_service_start());
+    ESP_ERROR_CHECK(alarm_service_start());
     ESP_ERROR_CHECK(media_service_start());
+    err=fm_service_start();
+    if (err!=ESP_OK) ESP_LOGW(TAG,"FM receiver unavailable: %s",esp_err_to_name(err));
     ESP_ERROR_CHECK(camera_service_start());
     ESP_ERROR_CHECK(cloud_service_start());
     ESP_ERROR_CHECK(device_console_start());

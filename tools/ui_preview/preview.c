@@ -8,8 +8,11 @@
 #include "feature_config.h"
 #include "service_panel.h"
 #include "media_panel.h"
+#include "map_panel.h"
 #include "dashboard_text.h"
 #include "fonts/dashboard_fonts.h"
+#include "ui_assets.h"
+#include "ui_update.h"
 #include "src/libs/lodepng/lodepng.h"
 #include "src/misc/lv_text_private.h"
 
@@ -17,12 +20,32 @@ static int s_errors;
 static int s_labels;
 static lv_point_t s_touch_point;
 static lv_indev_state_t s_touch_state;
+static unsigned long long s_flushed_pixels;
+static unsigned s_fast_clicks;
+static void count_fast_click(lv_event_t *event) { (void)event; ++s_fast_clicks; }
+static void advance_input(unsigned milliseconds)
+{
+    for (unsigned i=0;i<milliseconds;++i) { lv_tick_inc(1); lv_timer_handler(); }
+}
 enum { SCREEN_WIDTH = 1024, SCREEN_HEIGHT = 600, DASH_HEIGHT = SCREEN_HEIGHT };
 static unsigned s_actions[PANEL_ACTION_COUNT];
 static panel_request_t s_last_request;
 static bool s_accept = true;
 static media_request_t s_last_media;
 static unsigned s_media_actions[MEDIA_ACTION_COUNT];
+static fm_presets_t s_fm_requested;
+static unsigned s_fm_saves;
+static fm_request_t s_last_fm;
+static unsigned s_fm_actions[FM_ACTION_COUNT];
+static bool fm_action(const fm_request_t *request) {
+    if (!s_accept) return false;
+    assert(request->action<FM_ACTION_COUNT);
+    s_last_fm=*request; ++s_fm_actions[request->action]; return true;
+}
+static bool fm_save(const fm_presets_t *presets) {
+    if (!s_accept) return false;
+    s_fm_requested=*presets; ++s_fm_saves; return true;
+}
 static av_status_t s_av;
 static unsigned s_av_actions[AV_VOICE_END + 1], s_av_value;
 static bool av_action(av_action_t action, unsigned value, uint32_t revision) {
@@ -52,7 +75,7 @@ static bool panel_action(const panel_request_t *request) {
 
 static void flush(lv_display_t *display, const lv_area_t *area, uint8_t *pixels)
 {
-    (void)area;
+    s_flushed_pixels += (unsigned long long)lv_area_get_width(area) * lv_area_get_height(area);
     (void)pixels;
     lv_display_flush_ready(display);
 }
@@ -90,6 +113,11 @@ static void inspect(lv_obj_t *obj)
         (!scroll_child && (bounds.y1 < 0 || bounds.y2 >= SCREEN_HEIGHT))) {
         fprintf(stderr, "Object outside screen: %ld,%ld..%ld,%ld\n",
                 (long)bounds.x1, (long)bounds.y1, (long)bounds.x2, (long)bounds.y2);
+        if (lv_obj_check_type(obj,&lv_canvas_class)) {
+            const lv_draw_buf_t *canvas=lv_canvas_get_draw_buf(obj);
+            fprintf(stderr,"Canvas source %u x %u, object %ld x %ld\n",canvas->header.w,canvas->header.h,
+                (long)lv_obj_get_width(obj),(long)lv_obj_get_height(obj));
+        }
         ++s_errors;
     }
     if (lv_obj_check_type(obj, &lv_label_class)) {
@@ -139,23 +167,32 @@ static unsigned count_text(lv_obj_t *obj, const char *text)
     for (uint32_t i = 0; i < lv_obj_get_child_count(obj); ++i) count += count_text(lv_obj_get_child(obj, i), text);
     return count;
 }
+static unsigned count_asset(lv_obj_t *obj, ui_asset_t asset)
+{
+    if (lv_obj_has_flag(obj,LV_OBJ_FLAG_HIDDEN)) return 0;
+    unsigned count=lv_obj_check_type(obj,&lv_image_class) && lv_image_get_src(obj)==&ui_assets[asset];
+    for (uint32_t i=0;i<lv_obj_get_child_count(obj);++i) count+=count_asset(lv_obj_get_child(obj,i),asset);
+    return count;
+}
 
 static void snapshot(lv_display_t *display, const char *dir, const char *state, int page)
 {
     /* Let state transitions finish before inspecting their visible appearance. */
     lv_tick_inc(200);
     lv_timer_handler();
+    for(unsigned i=0;map_panel_busy() && i<500;++i){lv_tick_inc(8);lv_timer_handler();}
+    assert(!map_panel_busy());
     lv_obj_t *screen = lv_display_get_screen_active(display);
     lv_obj_update_layout(screen);
     lv_obj_t *toolbar = dashboard_service_toolbar();
-    assert(lv_obj_get_child_count(toolbar) == 8);
+    assert(lv_obj_get_child_count(toolbar) == 10);
     if (!DEVICE_CAMERA_AVAILABLE) assert(lv_obj_has_flag(lv_obj_get_child(toolbar,2),LV_OBJ_FLAG_HIDDEN));
     assert(!lv_obj_has_flag(toolbar, LV_OBJ_FLAG_CLICKABLE));
     int visible=0, left=SCREEN_WIDTH, right=0;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 10; ++i) {
         lv_obj_t *symbol = lv_obj_get_child(toolbar, i);
-        assert(lv_obj_check_type(symbol, i == 2 ? &lv_obj_class : &lv_label_class));
-        assert(!lv_obj_has_flag(symbol, LV_OBJ_FLAG_CLICKABLE));
+        assert(lv_obj_check_type(symbol, i == 2 ? &lv_obj_class : i==1 ? &lv_image_class : &lv_label_class));
+        assert(lv_obj_has_flag(symbol, LV_OBJ_FLAG_CLICKABLE)==(i>=8));
         if (!lv_obj_has_flag(symbol,LV_OBJ_FLAG_HIDDEN)) {
             lv_area_t bounds; lv_obj_get_coords(symbol,&bounds);
             if (bounds.x1<left) left=bounds.x1;
@@ -165,7 +202,7 @@ static void snapshot(lv_display_t *display, const char *dir, const char *state, 
     }
     lv_area_t toolbar_bounds; lv_obj_get_coords(toolbar,&toolbar_bounds);
     assert(right==toolbar_bounds.x2);
-    assert(right-left+1==visible*(SCREEN_WIDTH*32/800));
+    assert(right-left+1==visible*(SCREEN_WIDTH*26/800));
     assert(left>SCREEN_WIDTH/2);
     lv_obj_t *settings = lv_obj_get_child(screen, 1);
     if (!lv_obj_has_flag(settings, LV_OBJ_FLAG_HIDDEN)) {
@@ -177,10 +214,12 @@ static void snapshot(lv_display_t *display, const char *dir, const char *state, 
         assert(lv_obj_get_width(body) <= 680);
         assert(body_bounds.x1 >= side_bounds.x2 + 24);
         assert(body_bounds.x2 < SCREEN_WIDTH);
-        assert(lv_obj_get_child_count(sidebar) == 8+DEVICE_CAMERA_AVAILABLE);
+        assert(lv_obj_get_child_count(sidebar) == 10+DEVICE_CAMERA_AVAILABLE);
         if (!DEVICE_CAMERA_AVAILABLE) assert(!count_text(sidebar,"摄像头"));
     }
+    int errors_before=s_errors;
     inspect(screen);
+    if (s_errors!=errors_before) fprintf(stderr,"Layout errors in %s page %d\n",state,page);
     lv_draw_buf_t *buf = lv_snapshot_take(screen, LV_COLOR_FORMAT_RGB888);
     assert(buf != NULL);
     unsigned char *rgb = malloc(SCREEN_WIDTH * SCREEN_HEIGHT * 3);
@@ -218,6 +257,9 @@ static void tap_raw(lv_indev_t *pointer, int x, int y)
     lv_tick_inc(50);
     s_touch_state = LV_INDEV_STATE_RELEASED;
     lv_indev_read(pointer);
+    /* A click can rebuild the page. Resolve label sizes before assertions;
+     * LV_LABEL_LONG_DOT temporarily rewrites text until layout completes. */
+    lv_obj_update_layout(lv_screen_active());
 }
 
 static void tap_at(lv_indev_t *pointer, int x, int y)
@@ -342,18 +384,20 @@ static void check_light_contrast(void)
 
 int main(int argc, char **argv)
 {
+    setvbuf(stdout,NULL,_IONBF,0);
     assert(argc == 2);
     check_light_contrast();
     lv_init();
     lv_display_t *display = lv_display_create(SCREEN_WIDTH, SCREEN_HEIGHT);
-    static uint8_t buffer[SCREEN_WIDTH * 48 * 2];
+    static uint8_t buffer[SCREEN_WIDTH * UI_DRAW_LINES * 2], buffer2[sizeof(buffer)];
     lv_display_set_color_format(display, LV_COLOR_FORMAT_RGB565);
-    lv_display_set_buffers(display, buffer, NULL, sizeof(buffer), LV_DISPLAY_RENDER_MODE_PARTIAL);
+    lv_display_set_buffers(display, buffer, buffer2, sizeof(buffer), LV_DISPLAY_RENDER_MODE_PARTIAL);
     lv_display_set_flush_cb(display, flush);
     lv_indev_t *pointer = lv_indev_create();
     lv_indev_set_type(pointer, LV_INDEV_TYPE_POINTER);
     lv_indev_set_display(pointer, display);
     lv_indev_set_read_cb(pointer, read_pointer);
+    ui_display_timing(display,pointer);
     lv_obj_t *root = lv_screen_active();
     lv_obj_remove_style_all(root);
     lv_obj_remove_flag(root, LV_OBJ_FLAG_SCROLLABLE);
@@ -362,6 +406,8 @@ int main(int argc, char **argv)
     service_panel_create(root, dashboard_service_toolbar(), panel_action);
     media_panel_handlers(media_action);
     media_panel_av_handlers(av_action,av_files);
+    media_panel_fm_handler(fm_save);
+    media_panel_fm_control(fm_action);
     panel_preferences_t defaults = PANEL_PREFERENCES_DEFAULT;
     assert(sizeof(defaults) == 6 && service_panel_preferences_valid(&defaults));
     service_panel_preferences(&defaults);
@@ -393,10 +439,38 @@ int main(int argc, char **argv)
     dashboard_update(&link_state);
     inspect_all(display, pointer, argv[1], "waiting");
     assert(find_label(root, TXT_MAP_TRACK));
-    assert(find_label(root, TXT_MAP_TRACK_WAIT));
-    assert(find_label(root, TXT_MAP_TRACK_DATA_WAIT));
+    assert(find_label(root, "中国离线地图"));
+    assert(find_label(root, "等待卫星定位"));
     assert(!find_label(root, TXT_DHX30));
-    snapshot(display, argv[1], "map-track-placeholder", 0);
+    snapshot(display, argv[1], "map-china-light", 0);
+    dashboard_set_daylight(false);
+    snapshot(display, argv[1], "map-china-dark", 0);
+    tap_category(pointer,"+"); tap_category(pointer,"-");
+    s_touch_point=(lv_point_t){350,280}; s_touch_state=LV_INDEV_STATE_PRESSED; lv_indev_read(pointer);
+    s_touch_point.x+=70; lv_tick_inc(100); lv_indev_read(pointer);
+    s_touch_state=LV_INDEV_STATE_RELEASED; lv_indev_read(pointer);
+    snapshot(display,argv[1],"map-panned",0);
+    tap_category(pointer,"全国视图");
+    tap_category(pointer,"隐藏轨迹"); assert(find_label(root,"显示轨迹"));
+    tap_category(pointer,"显示轨迹");
+    /* Host-only synthetic route: never linked into the device firmware. */
+    gps_fix_t gps={.enabled=true,.valid=true,.speed_valid=true,.speed_kph=36,.latitude=22.61,.longitude=114.14};
+    for (unsigned i=0;i<90;++i) {
+        gps.sequence=i+1; gps.received_ms=1000*(i+1);
+        gps.longitude+=.00012; gps.latitude+=i<45?.00006:-.00006;
+        map_panel_update(&gps,gps.received_ms);
+    }
+    service_panel_gps(true,3,"卫星定位正常");
+    snapshot(display,argv[1],"map-track-fixture-dark",0);
+    assert(find_label(root,"卫星定位正常") && find_label(root,"正在跟随"));
+    tap_category(pointer,"全国视图"); assert(find_label(root,"跟随位置"));
+    tap_category(pointer,"跟随位置"); assert(find_label(root,"正在跟随"));
+    dashboard_set_daylight(true);
+    snapshot(display,argv[1],"map-track-fixture-light",0);
+    map_panel_update(&gps,gps.received_ms+GPS_FIX_TTL_MS);
+    assert(find_label(root,"定位信号中断"));
+    service_panel_gps(true,1,"等待卫星定位");
+    snapshot(display,argv[1],"map-position-expired",0);
 
     dashboard_data_t sample = {
         .value = {86, 2450, 68, 89, 14200, 36, 24},
@@ -444,7 +518,7 @@ int main(int argc, char **argv)
         if (!lv_obj_has_flag(lv_obj_get_child(dashboard_service_toolbar(),i),LV_OBJ_FLAG_HIDDEN)) tap_service(pointer,i);
     }
     for (unsigned i = 0; i < PANEL_ACTION_COUNT; ++i) assert(s_actions[i] == 0);
-    assert(count_text(screen, LV_SYMBOL_SETTINGS) == 1);
+    assert(count_asset(screen,UI_SETTINGS)==1);
     assert(count_text(screen, LV_SYMBOL_TINT) == 0);
     tap_at(pointer,760,28);
     snapshot(display,argv[1],"settings-home",0);
@@ -709,6 +783,13 @@ int main(int argc, char **argv)
             media_panel_av_update(&s_av);
             media_status_t media={.network=false,.state=MEDIA_PLAYING,.selected=true,.volume=35,.played_ms=71000};
             strcpy(media.title,"Music-00.mp3"); strcpy(media.detail,"正在播放音乐"); media_panel_update(&media);
+            service_panel_media(&media);
+            assert(!find_label(root,"刷新文件"));
+            lv_obj_t *music_status=lv_obj_get_child(dashboard_service_toolbar(),8);
+            assert(!lv_obj_has_flag(music_status,LV_OBJ_FLAG_HIDDEN));
+            assert(!strcmp(lv_label_get_text(music_status),LV_SYMBOL_AUDIO));
+            dashboard_select_page(0); tap_service(pointer,8);
+            assert(dashboard_active_page()==DASHBOARD_PAGE_MEDIA);
             assert(!find_label(root,"在线音乐") && !find_label(root,"网络电台"));
             assert(!find_label(root,"SD 卡已就绪") && !find_label(root,"未检测到 SD 卡"));
             assert(!find_label(root,"Wi-Fi 已连接") && !find_label(root,"Wi-Fi 未连接"));
@@ -718,22 +799,138 @@ int main(int argc, char **argv)
             tap_category(pointer,LV_SYMBOL_PAUSE); assert(s_last_media.action==MEDIA_TOGGLE);
             snapshot(display,argv[1],day?"media-sd-playing-light":"media-sd-playing-dark",theme);
             media.state=MEDIA_PAUSED; strcpy(media.detail,"已暂停"); media_panel_update(&media);
+            service_panel_media(&media);
+            assert(!strcmp(lv_label_get_text(music_status),LV_SYMBOL_PAUSE));
             snapshot(display,argv[1],day?"media-sd-paused-light":"media-sd-paused-dark",theme);
             media.state=MEDIA_ERROR; strcpy(media.detail,"音乐读取失败，请重新选择"); media_panel_update(&media);
+            service_panel_media(&media);
             snapshot(display,argv[1],day?"media-sd-error-light":"media-sd-error-dark",theme);
             s_accept=false; tap_category(pointer,LV_SYMBOL_PLAY);
             assert(count_text(root,"操作未提交，请稍后重试")==1); s_accept=true;
             unsigned before[MEDIA_ACTION_COUNT]; memcpy(before,s_media_actions,sizeof(before));
             tap_category(pointer,"FM 电台");
             media_panel_update(&media); ++s_av.library.revision; media_panel_av_update(&s_av);
-            assert(!find_label(root,"播放器") && !find_class(root,&lv_slider_class));
+            assert(find_label(root,"接收器未接入") && find_label(root,"电台频率"));
+            lv_obj_t *fm_slider=find_class(lv_obj_get_child(root,0),&lv_slider_class); assert(fm_slider);
+            assert(!lv_obj_has_state(lv_obj_get_parent(find_label(root,"重试连接")),LV_STATE_DISABLED));
+            assert(lv_obj_has_state(lv_obj_get_parent(find_label(root,"自动搜台")),LV_STATE_DISABLED));
             assert(!find_label(root,"拍照保存") && !find_label(root,"开始对话"));
+            unsigned seeks=s_fm_actions[FM_SEEK];
+            tap_category(pointer,"重试连接"); assert(s_last_fm.action==FM_RETRY);
+            tap_category(pointer,"自动搜台"); assert(s_fm_actions[FM_SEEK]==seeks);
             assert(!memcmp(before,s_media_actions,sizeof(before)));
+            fm_presets_t empty={0}; assert(media_panel_fm_restore(&empty));
+            fm_presets_t invalid={.frequency={874}}; assert(!media_panel_fm_restore(&invalid));
+            invalid.frequency[0]=1081; assert(!media_panel_fm_restore(&invalid));
+            invalid.frequency[0]=invalid.frequency[1]=900; assert(!media_panel_fm_restore(&invalid));
+            lv_obj_update_layout(fm_slider);
+            lv_area_t fm_bounds; lv_obj_get_coords(fm_slider,&fm_bounds);
+            int fy=(fm_bounds.y1+fm_bounds.y2)/2;
+            tap_raw(pointer,fm_bounds.x1,fy); assert(lv_slider_get_value(fm_slider)==875);
+            tap_category(pointer,"− 0.1"); assert(lv_slider_get_value(fm_slider)==875);
+            tap_category(pointer,"+ 0.1"); assert(lv_slider_get_value(fm_slider)==876);
+            tap_raw(pointer,fm_bounds.x2,fy); assert(lv_slider_get_value(fm_slider)==1080);
+            tap_category(pointer,"+ 0.1"); assert(lv_slider_get_value(fm_slider)==1080);
+            tap_category(pointer,"− 0.1"); assert(lv_slider_get_value(fm_slider)==1079);
+            tap_raw(pointer,fm_bounds.x1,fy);
+            /* Failed async commits and queue rejection leave the prior bookmarks intact. */
+            tap_category(pointer,"01"); assert(s_fm_requested.frequency[0]==875);
+            assert(find_label(root,"正在保存收藏"));
+            unsigned saves=s_fm_saves; tap_category(pointer,"02"); assert(s_fm_saves==saves);
+            media_panel_fm_save_result(false); assert(find_label(root,"收藏保存失败，请重试"));
+            assert(count_text(root,"收藏当前")==6);
+            s_accept=false; tap_category(pointer,"01"); assert(s_fm_saves==saves); s_accept=true;
+            tap_category(pointer,"01"); media_panel_fm_save_result(true);
+            assert(count_text(root,"收藏当前")==5 && find_label(root,"1 / 6"));
+            saves=s_fm_saves; tap_category(pointer,"02"); assert(s_fm_saves==saves);
+            assert(find_label(root,"此频率已收藏"));
+            tap_raw(pointer,(fm_bounds.x1+fm_bounds.x2)/2,fy);
+            int chosen=lv_slider_get_value(fm_slider); assert(chosen>875 && chosen<1080);
+            tap_category(pointer,"02"); assert(s_fm_requested.frequency[1]==chosen);
+            /* Finish a queued save after leaving FM; rebuild must recover the result. */
+            tap_category(pointer,"音乐"); media_panel_fm_save_result(true); tap_category(pointer,"FM 电台");
+            fm_slider=find_class(lv_obj_get_child(root,0),&lv_slider_class); assert(fm_slider);
+            assert(find_label(root,"2 / 6"));
+            tap_category(pointer,"01"); assert(lv_slider_get_value(fm_slider)==875);
+            tap_category(pointer,"02"); assert(lv_slider_get_value(fm_slider)==chosen);
             snapshot(display,argv[1],day?"av-fm-light":"av-fm-dark",theme);
+            /* A long press removes one bookmark and does not trigger a short-click save. */
+            lv_obj_t *slot=lv_obj_get_parent(find_label(root,"02"));
+            lv_area_t sb; lv_obj_get_coords(slot,&sb);
+            s_touch_point=(lv_point_t){(sb.x1+sb.x2)/2,(sb.y1+sb.y2)/2};
+            s_touch_state=LV_INDEV_STATE_PRESSED; lv_indev_read(pointer);
+            lv_tick_inc(700); lv_indev_read(pointer);
+            s_touch_state=LV_INDEV_STATE_RELEASED; lv_indev_read(pointer);
+            assert(s_fm_requested.frequency[1]==0);
+            media_panel_fm_save_result(true); assert(find_label(root,"1 / 6"));
+            assert(!memcmp(before,s_media_actions,sizeof(before)));
+            /* Hardware status fixtures: real input dispatch, pending frequency,
+             * seek cancellation, station feedback and toolbar navigation. */
+            fm_status_t radio={.state=FM_READY,.available=true,.frequency=987,.volume=35,
+                .rssi=52,.stereo=true,.station=true};
+            media_panel_fm_update(&radio); service_panel_fm(&radio);
+            assert(lv_slider_get_value(fm_slider)==987 && find_label(root,"接收器就绪"));
+            tap_category(pointer,"+ 0.1");
+            assert(s_last_fm.action==FM_TUNE && s_last_fm.frequency==988);
+            media_panel_fm_update(&radio); assert(lv_slider_get_value(fm_slider)==988);
+            radio.frequency=988; radio.completed_id=s_last_fm.id; media_panel_fm_update(&radio);
+            /* An interrupted tune reports its completion even without reaching
+             * the requested frequency; the view must return to actual RX. */
+            tap_category(pointer,"+ 0.1"); assert(s_last_fm.frequency==989);
+            radio.completed_id=s_last_fm.id; media_panel_fm_update(&radio);
+            assert(lv_slider_get_value(fm_slider)==988);
+            s_accept=false; tap_category(pointer,"开始收听");
+            assert(find_label(root,"操作未成功，请重试")); s_accept=true;
+            tap_category(pointer,"开始收听"); assert(s_last_fm.action==FM_LISTEN);
+            radio.state=FM_TUNING; media_panel_fm_update(&radio);
+            tap_category(pointer,"停止"); assert(s_last_fm.action==FM_STOP);
+            radio.state=FM_READY; radio.listening=true;
+            media_panel_fm_update(&radio); service_panel_fm(&radio);
+            assert(find_label(root,"正在收听"));
+            assert(!lv_obj_has_flag(music_status,LV_OBJ_FLAG_HIDDEN));
+            dashboard_select_page(0); tap_service(pointer,8);
+            assert(dashboard_active_page()==DASHBOARD_PAGE_MEDIA && find_label(root,"正在收听"));
+            fm_slider=find_class(lv_obj_get_child(root,0),&lv_slider_class); assert(fm_slider);
+            snapshot(display,argv[1],day?"fm-receiver-fixture-light":"fm-receiver-fixture-dark",theme);
+            tap_category(pointer,"自动搜台"); assert(s_last_fm.action==FM_SEEK);
+            radio.state=FM_SEEKING; media_panel_fm_update(&radio);
+            assert(find_label(root,"正在搜台"));
+            assert(lv_obj_has_state(lv_obj_get_parent(find_label(root,"自动搜台")),LV_STATE_DISABLED));
+            tap_category(pointer,"停止"); assert(s_last_fm.action==FM_STOP);
+            radio.state=FM_READY; radio.frequency=1017; radio.volume=0;
+            media_panel_fm_update(&radio); service_panel_fm(&radio);
+            assert(lv_slider_get_value(fm_slider)==1017 && find_label(root,"已静音"));
+            tap_category(pointer,"停止收听"); assert(s_last_fm.action==FM_STOP);
+            radio=(fm_status_t){.state=FM_ERROR,.frequency=1017};
+            media_panel_fm_update(&radio); service_panel_fm(&radio);
+            assert(find_label(root,"接收器异常"));
+            tap_category(pointer,"重试连接"); assert(s_last_fm.action==FM_RETRY);
+            radio.state=FM_ABSENT; media_panel_fm_update(&radio); service_panel_fm(&radio);
             service_panel_open();
             assert(!find_label(root,"音乐播放地址") && !find_label(root,"电台播放地址") && !find_label(root,"多媒体"));
             snapshot(display,argv[1],day?"settings-sd-only-light":"settings-sd-only-dark",theme);
             tap_category(pointer,LV_SYMBOL_CLOSE);
+            tap_service(pointer,9);
+            assert(find_label(root,"全局音量"));
+            lv_obj_t *settings=lv_obj_get_child(root,1);
+            lv_obj_t *slider=find_class(settings,&lv_slider_class);
+            assert(slider && lv_slider_get_value(slider)==35);
+            lv_obj_update_layout(slider);
+            lv_area_t bounds; lv_obj_get_coords(slider,&bounds);
+            tap_raw(pointer,bounds.x1+(bounds.x2-bounds.x1)*3/4,(bounds.y1+bounds.y2)/2);
+            assert(s_last_request.action==PANEL_VOLUME && s_last_request.data.volume>=70 && s_last_request.data.volume<=80);
+            media.volume=s_last_request.data.volume; service_panel_media(&media); media_panel_update(&media);
+            snapshot(display,argv[1],day?"sound-settings-light":"sound-settings-dark",theme);
+            media.volume=0; service_panel_media(&media);
+            assert(!strcmp(lv_label_get_text(lv_obj_get_child(dashboard_service_toolbar(),9)),LV_SYMBOL_MUTE));
+            assert(lv_slider_get_value(slider)==0);
+            s_accept=false;
+            tap_raw(pointer,bounds.x1+(bounds.x2-bounds.x1)/2,(bounds.y1+bounds.y2)/2);
+            assert(lv_slider_get_value(slider)==0 && find_label(root,"音量设置失败，请重试"));
+            s_accept=true;
+            tap_category(pointer,LV_SYMBOL_CLOSE);
+            media.state=MEDIA_IDLE; service_panel_media(&media);
+            assert(lv_obj_has_flag(music_status,LV_OBJ_FLAG_HIDDEN));
         }
     }
     /* Actual LVGL input dispatch across the new center, including disabled controls and hotplug. */
@@ -755,6 +952,7 @@ int main(int argc, char **argv)
         tap_category(pointer,"摄像头");
         /* Previous iteration may have left the album selected. */
         tap_category(pointer,"实时预览");
+        snapshot(display,argv[1],day?"camera-controls-light":"camera-controls-dark",0);
         unsigned photos=s_av_actions[AV_TAKE_PHOTO];
         tap_category(pointer,"拍照保存"); assert(s_av_actions[AV_TAKE_PHOTO]==photos);
         tap_category(pointer,"开启摄像头"); assert(s_av_actions[AV_CAMERA_ON]>0);
@@ -795,6 +993,118 @@ int main(int argc, char **argv)
         tap_category(pointer,"开启助手"); assert(s_actions[PANEL_VOICE_ON]>0);
         tap_category(pointer,LV_SYMBOL_CLOSE);
     }
+    for(unsigned day=0;day<2;++day){
+        dashboard_set_daylight(day);dashboard_select_theme(0);
+        alarm_status_t alarms={.clock_ready=false,.revision=1};service_panel_alarms(&alarms);service_panel_open_alarms();
+        assert(find_label(root,"等待联网校时，校时后可设置闹钟"));
+        unsigned added=s_actions[PANEL_ALARM_ADD];tap_category(pointer,"添加闹钟");assert(s_actions[PANEL_ALARM_ADD]==added);
+        alarms.clock_ready=true;++alarms.revision;
+        alarms.store.items[0]=(alarm_item_t){.id=1,.hour=7,.minute=30,.enabled=true,.daily=true};
+        strcpy(alarms.store.items[0].label,"提醒");service_panel_alarms(&alarms);
+        for(unsigned i=1;i<ALARM_LIMIT;++i){alarms.store.items[i]=(alarm_item_t){.id=i+1,.hour=8+i*3,.minute=15,.enabled=true};strcpy(alarms.store.items[i].label,"提醒");}
+        ++alarms.revision;service_panel_alarms(&alarms);
+        tap_category(pointer,"添加闹钟");assert(s_actions[PANEL_ALARM_ADD]==added+1);
+        tap_category(pointer,"删除");assert(s_last_request.action==PANEL_ALARM_DELETE&&s_last_request.data.alarm.id==1);
+        snapshot(display,argv[1],day?"alarms-light":"alarms-dark",0);
+        service_panel_close();dashboard_select_page(0);
+        alarms.ringing=true;alarms.ringing_id=1;++alarms.revision;service_panel_alarms(&alarms);
+        tap_category(pointer,"停止提醒");assert(s_last_request.action==PANEL_ALARM_DISMISS);
+        snapshot(display,argv[1],day?"alarm-ringing-light":"alarm-ringing-dark",0);
+        alarms.ringing=false;++alarms.revision;service_panel_alarms(&alarms);
+        dashboard_select_page(DASHBOARD_PAGE_MEDIA);media_panel_select(AV_MUSIC);
+        tap_category(pointer,"在线播放");assert(s_last_media.action==MEDIA_SELECT_ONLINE);
+        media_status_t online={.online=true,.selected=true,.state=MEDIA_PLAYING,.volume=35,.revision=100+day};
+        strcpy(online.title,"Online MP3");strcpy(online.detail,"正在播放音乐");media_panel_update(&online);service_panel_media(&online);
+        snapshot(display,argv[1],day?"online-music-fixture-light":"online-music-fixture-dark",0);
+    }
+    /* Map opening must yield before rasterizing, and navigating away must
+     * cancel pending work without keeping deleted LVGL objects alive. */
+    service_panel_close();dashboard_select_page(0);
+    dashboard_set_daylight(false);dashboard_select_theme(1);
+    map_panel_stats_t map_before,map_after;
+    map_panel_stats(&map_before);
+    dashboard_select_page(DASHBOARD_PAGE_MAP_TRACK);
+    lv_obj_update_layout(root);
+    assert(map_panel_busy() && find_label(root,"正在加载地图"));
+    inspect(root);
+    map_panel_stats(&map_after);
+    assert(map_after.jobs==map_before.jobs && map_after.frames==map_before.frames);
+    tap_category(pointer,TXT_DRIVE);
+    advance_input(24);
+    map_panel_stats(&map_after);
+    assert(!map_after.visible && !map_after.busy && map_after.jobs==map_before.jobs);
+    dashboard_select_page(DASHBOARD_PAGE_MAP_TRACK);
+    advance_input(9);assert(map_panel_busy());
+    dashboard_set_daylight(true); /* Invalidate the incomplete dark frame. */
+    snapshot(display,argv[1],"map-cancelled-dark-to-light",0);
+    map_panel_stats(&map_before);
+    assert(!map_before.busy && map_before.frames>map_after.frames);
+    dashboard_select_page(0);dashboard_select_page(DASHBOARD_PAGE_MAP_TRACK);
+    map_panel_stats(&map_after);
+    assert(!map_after.busy && map_after.jobs==map_before.jobs && map_after.cache_hits==map_before.cache_hits+1);
+    /* Several input requests before the timer fires collapse into one job. */
+    for(unsigned i=0;i<3;++i)tap_category(pointer,"+");
+    map_panel_stats(&map_after);assert(map_after.jobs==map_before.jobs);
+    snapshot(display,argv[1],"map-coalesced-zoom",0);
+    map_panel_stats(&map_after);assert(map_after.jobs==map_before.jobs+1 && !map_after.busy);
+    printf("Map: deferred first paint, navigation cancellation, theme replacement, cache reuse and coalesced zoom passed.\n");
+
+    /* Exercise the real status update path, including unchanged telemetry.
+     * Flush area measures avoid host wall-clock claims about P4 frame rate. */
+    for (unsigned day=0;day<2;++day) {
+        service_panel_close();dashboard_set_daylight(day);dashboard_set_demo(false);
+        media_status_t idle={.volume=35}; fm_status_t radio={0};
+        alarm_status_t alarms={.clock_ready=true};
+        dashboard_data_t vehicle={0};
+        for (unsigned page=0;page<3;++page) {
+            dashboard_select_page(page?DASHBOARD_PAGE_MEDIA:0);
+            if(page)media_panel_select(page==1?AV_MUSIC:AV_FM);
+            media_panel_update(&idle);media_panel_fm_update(&radio);
+            service_panel_media(&idle);service_panel_fm(&radio);service_panel_alarms(&alarms);
+            dashboard_update(&vehicle);
+            lv_tick_inc(500);lv_timer_handler();lv_refr_now(display);
+            unsigned long long before=s_flushed_pixels;
+            for(unsigned i=0;i<10;++i){
+                service_panel_media(&idle);service_panel_fm(&radio);service_panel_alarms(&alarms);
+                media_panel_update(&idle);media_panel_fm_update(&radio);dashboard_update(&vehicle);
+                lv_tick_inc(100);lv_timer_handler();lv_refr_now(display);
+            }
+            printf("Idle redraw day=%u page=%u: %llu pixels / 10 polls\n",day,page,s_flushed_pixels-before);
+            assert(s_flushed_pixels==before);
+        }
+    }
+    /* Read via the actual periodic input timer, without manually forcing
+     * lv_indev_read: short taps still press and release exactly once. */
+    media_panel_select(AV_FM);
+    lv_obj_update_layout(root);
+    lv_obj_t *up_label=find_label(root,"+ 0.1"),*down_label=find_label(root,"− 0.1");
+    assert(up_label && down_label);
+    lv_obj_t *up=lv_obj_get_parent(up_label);
+    lv_obj_t *down=lv_obj_get_parent(down_label);
+    lv_obj_add_event_cb(up,count_fast_click,LV_EVENT_CLICKED,NULL);
+    lv_obj_add_event_cb(down,count_fast_click,LV_EVENT_CLICKED,NULL);
+    lv_obj_update_layout(root);
+    for(unsigned i=0;i<50;++i) {
+        lv_obj_t *target=i%2?down:up;
+        lv_area_t bounds;lv_obj_get_coords(target,&bounds);
+        s_touch_point=(lv_point_t){(bounds.x1+bounds.x2)/2,(bounds.y1+bounds.y2)/2};
+        s_touch_state=LV_INDEV_STATE_PRESSED;
+        advance_input(UI_TOUCH_PERIOD_MS+1);
+        assert(lv_obj_has_state(target,LV_STATE_PRESSED));
+        advance_input(24-(UI_TOUCH_PERIOD_MS+1));
+        s_touch_state=LV_INDEV_STATE_RELEASED;advance_input(24);
+        assert(!lv_obj_has_state(target,LV_STATE_PRESSED));
+        assert(s_fast_clicks==i+1);
+    }
+    printf("Periodic input: 50 short taps (24ms down / 24ms up), 50 clicks; no duplicates.\n");
+    /* Re-selecting a page or reapplying unchanged appearance must not tear
+     * down its controls (or stop a camera preview) just to draw them again. */
+    lv_obj_t *same_up=up;
+    dashboard_select_page(DASHBOARD_PAGE_MEDIA);
+    panel_preferences_t current={.theme=dashboard_active_theme(),.daylight=dashboard_daylight_enabled(),
+        .turbo=dashboard_turbo_enabled(),.pressure=dashboard_pressure_unit(),.brightness=70};
+    service_panel_preferences(&current);
+    assert(lv_obj_get_parent(find_label(root,"+ 0.1"))==same_up);
     printf("Inspected %d rendered labels; %d errors. Dashboard and P4 service controls passed.\n", s_labels, s_errors);
     return s_errors ? 1 : 0;
 }

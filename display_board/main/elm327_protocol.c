@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <string.h>
+#include <stdio.h>
 
 void elm_response_reset(elm_response_t *r) { memset(r, 0, sizeof(*r)); }
 
@@ -64,6 +65,55 @@ static int hex(char c)
     if (c >= '0' && c <= '9') return c - '0';
     if (c >= 'A' && c <= 'F') return c - 'A' + 10;
     return -1;
+}
+
+int elm_adapter_handshake(const elm_response_t *r, char command[20])
+{
+    command[0]=0;
+    if (!r->complete || r->invalid) return -1;
+    if (!strstr(r->text,"CRYPT:")) return 0;
+    bool maker=false, model=false;
+    unsigned challenges=0;
+    uint32_t challenge=0;
+    const char *p=r->text;
+    while (*p) {
+        while (*p=='\r' || *p=='\n') ++p;
+        const char *end=p;
+        while (*end && *end!='\r' && *end!='\n') ++end;
+        const char *trim=end;
+        while (trim>p && isspace((unsigned char)trim[-1])) --trim;
+        size_t n=trim-p;
+        const char *name="SHENZHEN YUMING ELECTRONICS CO., LTD.";
+        if (n==strlen(name) && !memcmp(p,name,n)) maker=true;
+        const char *type=NULL;
+        if (n>=12 && !memcmp(p,"DEVICE TYPE:",12)) type=p+12;
+        else if (n>=11 && !memcmp(p,"DEVICETYPE:",11)) type=p+11;
+        if (type) {
+            while (type<trim && isspace((unsigned char)*type)) ++type;
+            if (trim-type==5 && !memcmp(type,"B02-Z",5)) model=true;
+            else return -1;
+        }
+        if (n>=6 && !memcmp(p,"CRYPT:",6)) {
+            if (n!=14 || ++challenges!=1) return -1;
+            for (unsigned i=6;i<14;++i) {
+                int digit=hex(p[i]);
+                if (digit<0) return -1;
+                challenge=(challenge<<4)|(unsigned)digit;
+            }
+        }
+        p=end;
+    }
+    if (!maker || !model || challenges!=1) return -1;
+    /* Same per-session adapter algorithm as the tested Android capture client. */
+    const uint32_t key=0x263D9A7E;
+    unsigned a=challenge&255,b=(challenge>>8)&255,c=(challenge>>16)&255,d=challenge>>24;
+    uint32_t low=(c>>(a/50))|((b<<2)^(key<<(d/12)));
+    uint32_t next=(a>>(b/63))|((key<<(d/11))^(c>>1));
+    uint32_t third=(a>>(b/46))|((key<<(a/34))^d);
+    uint32_t high=(b<<(d/35))|((key<<(a/49))&(key>>18));
+    uint32_t result=((high&255)<<24)|((third&255)<<16)|((next&255)<<8)|(low&255);
+    snprintf(command,20,"AT+SETCRYPT%08lX",(unsigned long)result);
+    return 1;
 }
 
 static bool frame(const char *line, size_t length, uint32_t *ecu, uint8_t *bytes, size_t *count)

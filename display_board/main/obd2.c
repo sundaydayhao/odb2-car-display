@@ -44,6 +44,14 @@ static esp_err_t configure_adapter(void)
     }
     static const char *commands[]={"ATE0","ATL0","ATS1","ATH1","ATCAF1","ATCFC1","ATAT1","ATST64","ATSP0"};
     for (unsigned i=0;i<sizeof(commands)/sizeof(commands[0]);++i) {
+        if (i==4) {
+            if (command("AT+VERSION",2000)!=ESP_OK) return ESP_FAIL;
+            char handshake[20];
+            int required=elm_adapter_handshake(&s_response,handshake);
+            if (required<0) return ESP_ERR_NOT_SUPPORTED;
+            if (required && (command(handshake,2000)!=ESP_OK || !elm_response_is_ok(&s_response))) return ESP_FAIL;
+            if (required) ESP_LOGI(TAG,"B02-Z adapter session handshake complete");
+        }
         if (command(commands[i],2000)!=ESP_OK || !elm_response_is_ok(&s_response)) {
             ESP_LOGW(TAG,"Required adapter command rejected: %s",commands[i]);
             return ESP_ERR_NOT_SUPPORTED;
@@ -84,7 +92,8 @@ static void worker(void *arg)
     (void)arg;
     uint32_t generation=0, ecu=ELM_ECU_ANY;
     bool initialized=false, vehicle=false, supported[OBD_PARAMETER_COUNT]={0};
-    unsigned turn=0, slow=2, failures=0;
+    unsigned failures=0;
+    obd_poll_t poll={0};
     int64_t probe_after=0;
     for (;;) {
         elm_ble_status_t link=elm_ble_status();
@@ -117,15 +126,11 @@ static void worker(void *arg)
             if (now_ms()<probe_after) { vTaskDelay(pdMS_TO_TICKS(100)); continue; }
             vehicle=discover_vehicle(supported,&ecu);
             if (!vehicle) { probe_after=now_ms()+3000; continue; }
-            failures=0; turn=0; slow=2;
+            failures=0; memset(&poll,0,sizeof(poll));
             state(OBD_LINK_ACTIVE,false);
         }
-        /* Two fast readings for each rotating secondary reading, without starving slow PIDs. */
-        unsigned index;
-        if (turn%3<2) index=turn%3;
-        else { index=slow++; if (slow==OBD_PARAMETER_COUNT) slow=2; }
-        ++turn;
-        if (!supported[index]) { vTaskDelay(pdMS_TO_TICKS(10)); continue; }
+        int index=obd_poll_next(&poll,supported,now_ms());
+        if (index<0) { vTaskDelay(pdMS_TO_TICKS(20)); continue; }
         char request[8]; snprintf(request,sizeof(request),"01%02X",obd_parameters[index].pid);
         esp_err_t err=command(request,CONFIG_OBD2_RESPONSE_TIMEOUT_MS);
         elm_pid_reply_t reply;
@@ -135,6 +140,7 @@ static void worker(void *arg)
         if (!valid) obd_cache_invalidate(&s_cache,index);
         obd_cache_expire(&s_cache,now_ms());
         portEXIT_CRITICAL(&s_cache_lock);
+        obd_poll_result(&poll,index,valid,now_ms());
         if (valid) failures=0; else ++failures;
         if (failures>=12) { vehicle=false; probe_after=now_ms()+3000; state(OBD_LINK_WAITING,true); }
         vTaskDelay(pdMS_TO_TICKS(CONFIG_OBD2_POLL_INTERVAL_MS));

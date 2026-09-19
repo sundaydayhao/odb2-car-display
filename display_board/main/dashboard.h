@@ -78,4 +78,6 @@ bool dashboard_turbo_enabled(void);
 uint8_t dashboard_pressure_unit(void);
 void dashboard_set_turbo(bool enabled);
 void dashboard_set_pressure_unit(uint8_t unit);
+/* Apply a settings transaction with at most one content rebuild. */
+void dashboard_set_appearance(uint8_t theme, bool daylight, bool turbo, uint8_t pressure);
 void dashboard_set_settings_handler(void (*handler)(void));

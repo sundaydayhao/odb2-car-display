@@ -21,13 +21,23 @@
 #include "ui.h"
 #include "media_library.h"
 
-static atomic_bool s_enabled, s_photo_pending, s_saving;
-void camera_set_enabled(bool enabled) { atomic_store(&s_enabled, enabled); if (!enabled) atomic_store(&s_photo_pending,false); }
+static atomic_bool s_enabled;
+static atomic_uint s_photo_state;
+unsigned camera_photo_state(void){return atomic_load(&s_photo_state);}
+void camera_set_enabled(bool enabled) {
+    atomic_store(&s_enabled, enabled);
+    unsigned queued=1;
+    if(!enabled)atomic_compare_exchange_strong(&s_photo_state,&queued,4);
+}
 bool camera_is_enabled(void) { return atomic_load(&s_enabled); }
 bool camera_take_photo(void)
 {
-    if (!camera_is_enabled() || atomic_load(&s_saving)) return false;
-    return !atomic_exchange(&s_photo_pending,true);
+    if (!camera_is_enabled()) return false;
+    unsigned state=atomic_load(&s_photo_state);
+    do {if(state==1 || state==2)return false;}
+    while(!atomic_compare_exchange_weak(&s_photo_state,&state,1));
+    if(!camera_is_enabled()){state=1;atomic_compare_exchange_strong(&s_photo_state,&state,4);return false;}
+    return true;
 }
 
 static bool camera_ioctl(int fd, int command, void *argument, const char *stage)
@@ -117,11 +127,11 @@ static bool preview_stream(uint16_t *preview)
         }
         ++received;
         if ((buf.flags & V4L2_BUF_FLAG_DONE) && buf.bytesused >= stride * height && esp_timer_get_time() >= next) {
-            if (atomic_exchange(&s_photo_pending,false)) {
-                atomic_store(&s_saving,true);
+            unsigned queued=1;
+            if (atomic_compare_exchange_strong(&s_photo_state,&queued,2)) {
                 device_status_set(SERVICE_CAMERA,SERVICE_BUSY,"正在保存照片");
-                media_library_save_photo(buffers[buf.index],width,height,stride);
-                atomic_store(&s_saving,false);
+                bool saved=media_library_save_photo(buffers[buf.index],width,height,stride);
+                atomic_store(&s_photo_state,saved?3:4);
             }
             memset(preview, 0, CAMERA_PREVIEW_WIDTH * CAMERA_PREVIEW_HEIGHT * 2);
             for (unsigned y = 0; y < out_h; ++y) {
@@ -171,6 +181,7 @@ static void camera_task(void *arg)
             }
             bool ok = initialized && preview_stream(preview);
             atomic_store(&s_enabled, false);
+            unsigned queued=1;atomic_compare_exchange_strong(&s_photo_state,&queued,4);
             ui_camera_clear();
             device_status_set(SERVICE_CAMERA, ok ? SERVICE_OFF : SERVICE_ERROR,
                               ok ? "摄像头已关闭" : "摄像头连接或格式异常");
@@ -188,5 +199,6 @@ esp_err_t camera_service_start(void)
 void camera_set_enabled(bool enabled) { (void)enabled; }
 bool camera_is_enabled(void) { return false; }
 bool camera_take_photo(void) { return false; }
+unsigned camera_photo_state(void){return 0;}
 esp_err_t camera_service_start(void) { return ESP_OK; }
 #endif

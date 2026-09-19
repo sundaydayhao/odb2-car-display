@@ -18,6 +18,7 @@
 #include "audio_device.h"
 #include "voice_frontend.h"
 #include "voice_codec_memory.h"
+#include "voice_tools.h"
 #include "esp_heap_caps.h"
 #include "esp_random.h"
 #include "nvs.h"
@@ -32,7 +33,7 @@ static atomic_uint s_epoch;
 static esp_xiaozhi_chat_handle_t s_chat;
 /* esp_xiaozhi 0.1.2 requires an MCP engine even for audio-only sessions.
  * Keep ownership here so failed chat initialization and normal teardown share
- * the same cleanup path; no device-control tools are registered. */
+ * the same cleanup path. Device tools are registered before the transport starts. */
 static esp_mcp_t *s_mcp;
 static atomic_uintptr_t s_voice_task_handle;
 static bool s_output_owned;
@@ -259,6 +260,7 @@ static bool prepare_control(bool foreground)
         ESP_LOGI("voice","Selected official transport: %s",config.has_mqtt_config ? "mqtt+udp" : "websocket");
         esp_xiaozhi_chat_free_info(&info);
         err = esp_mcp_create(&s_mcp);
+        if(err==ESP_OK)err=voice_tools_register(s_mcp);
         if (err != ESP_OK) {
             ESP_LOGE("voice", "MCP initialization failed: %s", esp_err_to_name(err));
             device_status_set(SERVICE_VOICE, SERVICE_ERROR, "语音会话启动失败");
@@ -430,7 +432,7 @@ static bool acquire_output(void)
             vTaskDelay(pdMS_TO_TICKS(20));
         }
     }
-    return s_output_owned && audio_device_configure(AUDIO_OWNER_VOICE,false,16000,55);
+    return s_output_owned && audio_device_configure(AUDIO_OWNER_VOICE,false,16000);
 }
 static void release_output(void)
 {
@@ -521,6 +523,7 @@ static void voice_task(void *arg)
         }
         if (!voice_is_enabled()) {
             if (!disabled) {
+                voice_tools_cancel();
                 end_chat(); voice_frontend_set_enabled(false); listening=false; invoking_wake=false; disabled=true;
                 device_status_set(SERVICE_VOICE,SERVICE_OFF,"语音助手已关闭");
                 ESP_LOGI("voice","Assistant disabled; wake detection and microphone processing stopped");
@@ -533,6 +536,7 @@ static void voice_task(void *arg)
             device_status_set(SERVICE_VOICE,SERVICE_READY,"请说：" VOICE_WAKE_WORD);
         }
         if (atomic_exchange(&s_manual_end,false)) {
+            voice_tools_cancel();
             end_chat(); listening=false; invoking_wake=false; warm_attempted=false;
             device_status_set(SERVICE_VOICE,SERVICE_READY,"对话已结束，等待唤醒");
             continue;
@@ -541,6 +545,7 @@ static void voice_task(void *arg)
         if (!device_network_ready()) warm_attempted=false;
         if (cloud_ota_busy()) {
             if (!paused) {
+                voice_tools_cancel();
                 end_chat(); voice_frontend_pause(); paused = true; listening = false;
                 device_status_set(SERVICE_VOICE, SERVICE_WAITING, "更新期间暂停语音唤醒");
             }
@@ -554,11 +559,13 @@ static void voice_task(void *arg)
             ESP_LOGI("voice","Server ended conversation; returning to wake standby");
             bool was_active=voice_is_active();
             end_chat(); listening=false; warm_attempted=!was_active;
+            voice_tools_run_pending();
             device_status_set(SERVICE_VOICE,SERVICE_READY,"请说：" VOICE_WAKE_WORD);
             continue;
         }
         if (fault || (s_chat && (!device_network_ready() || !atomic_load(&s_connected) ||
                                  (voice_is_active() && !atomic_load(&s_channel))))) {
+            voice_tools_cancel();
             end_chat(); listening = false;
             device_status_set(SERVICE_VOICE, SERVICE_ERROR, "语音连接中断，请重新唤醒");
             continue;
@@ -661,6 +668,12 @@ static void voice_task(void *arg)
             if (atomic_load(&s_tts_stopped) && !uxQueueMessagesWaiting(s_audio) && now-last_activity>600000) {
                 voice_log_diagnostics();
                 release_output();
+                if(voice_tools_pending()){
+                    end_chat();listening=false;invoking_wake=false;warm_attempted=false;
+                    voice_tools_run_pending();
+                    device_status_set(SERVICE_VOICE,SERVICE_READY,"请说：" VOICE_WAKE_WORD);
+                    continue;
+                }
                 if (atomic_load(&s_server_goodbye) || !device_network_ready() || !atomic_load(&s_channel)) continue;
                 /* DMA drain yields to callbacks; preserve any new reply that
                  * began during it instead of clearing its start and packets. */

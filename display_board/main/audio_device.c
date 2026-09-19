@@ -15,11 +15,26 @@
 #define OUT_CAP 1600
 static atomic_int s_owner;
 static atomic_bool s_voice_wanted, s_ready;
+static atomic_bool s_radio_wanted;
+static atomic_bool s_alarm_wanted;
 static esp_codec_dev_handle_t s_codec;
 static esp_ae_rate_cvt_handle_t s_converter;
 static unsigned s_rate;
 static int s_volume = -1;
+static atomic_uint s_master_volume = 35;
 static int16_t *s_mono, *s_stereo;
+
+void audio_device_set_volume(unsigned volume)
+{ if (volume <= 100) atomic_store(&s_master_volume, volume); }
+unsigned audio_device_get_volume(void) { return atomic_load(&s_master_volume); }
+static bool apply_volume(void)
+{
+    unsigned volume = audio_device_get_volume();
+    if (s_volume == (int)volume) return true;
+    if (esp_codec_dev_set_out_vol(s_codec, volume) != ESP_CODEC_DEV_OK) return false;
+    s_volume = volume;
+    return true;
+}
 
 bool audio_device_init(void)
 {
@@ -81,16 +96,24 @@ fail:
 
 void audio_device_voice_priority(bool wanted) { atomic_store(&s_voice_wanted, wanted); }
 bool audio_device_voice_waiting(void) { return atomic_load(&s_voice_wanted); }
+void audio_device_radio_priority(bool wanted) { atomic_store(&s_radio_wanted,wanted); }
+bool audio_device_radio_waiting(void) { return atomic_load(&s_radio_wanted); }
+bool audio_device_radio_owned(void) { return atomic_load(&s_owner)==AUDIO_OWNER_RADIO; }
+void audio_device_alarm_priority(bool wanted) { atomic_store(&s_alarm_wanted,wanted); }
+bool audio_device_alarm_waiting(void) { return atomic_load(&s_alarm_wanted); }
 bool audio_device_acquire(audio_owner_t owner)
 {
-    if (!atomic_load(&s_ready) || owner == AUDIO_OWNER_NONE ||
-        (owner == AUDIO_OWNER_MEDIA && audio_device_voice_waiting())) return false;
+    if ((owner!=AUDIO_OWNER_RADIO && !atomic_load(&s_ready)) || owner == AUDIO_OWNER_NONE ||
+        (owner != AUDIO_OWNER_VOICE && audio_device_voice_waiting()) ||
+        (owner == AUDIO_OWNER_MEDIA && audio_device_radio_waiting()) ||
+        ((owner==AUDIO_OWNER_MEDIA || owner==AUDIO_OWNER_RADIO) && audio_device_alarm_waiting())) return false;
     int empty = AUDIO_OWNER_NONE;
     return atomic_compare_exchange_strong(&s_owner, &empty, owner);
 }
 void audio_device_release(audio_owner_t owner)
 {
     if (atomic_load(&s_owner) != owner) return;
+    if (owner==AUDIO_OWNER_RADIO) { atomic_store(&s_owner,AUDIO_OWNER_NONE); return; }
     /* Drain the 60 ms DMA queue before disabling the amp. */
     int16_t silence[480 * 2] = {0};
     for (int i = 0; i < 7; ++i) esp_codec_dev_write(s_codec, silence, sizeof(silence));
@@ -99,9 +122,9 @@ void audio_device_release(audio_owner_t owner)
     s_converter = NULL; s_rate = 0; s_volume = -1;
     atomic_store(&s_owner, AUDIO_OWNER_NONE);
 }
-bool audio_device_configure(audio_owner_t owner, bool input, unsigned rate, unsigned volume)
+bool audio_device_configure(audio_owner_t owner, bool input, unsigned rate)
 {
-    if (atomic_load(&s_owner) != owner || input || rate < 8000 || rate > HW_RATE) return false;
+    if (owner==AUDIO_OWNER_RADIO || atomic_load(&s_owner) != owner || input || rate < 8000 || rate > HW_RATE) return false;
     if (s_rate != rate) {
         if (s_converter) esp_ae_rate_cvt_close(s_converter);
         s_converter = NULL; s_rate = 0;
@@ -112,15 +135,7 @@ bool audio_device_configure(audio_owner_t owner, bool input, unsigned rate, unsi
         }
         s_rate = rate;
     }
-    return audio_device_volume(owner, volume);
-}
-bool audio_device_volume(audio_owner_t owner, unsigned volume)
-{
-    if (atomic_load(&s_owner) != owner || !atomic_load(&s_ready) || volume > 100) return false;
-    if (s_volume == (int)volume) return true;
-    if (esp_codec_dev_set_out_vol(s_codec, volume) != ESP_CODEC_DEV_OK) return false;
-    s_volume = volume;
-    return true;
+    return apply_volume();
 }
 bool audio_device_capture(int16_t *pcm, size_t frames)
 {
@@ -130,10 +145,11 @@ bool audio_device_capture(int16_t *pcm, size_t frames)
 }
 bool audio_device_write(audio_owner_t owner, const void *pcm, size_t bytes)
 {
-    if (atomic_load(&s_owner) != owner || !s_rate || !pcm || bytes % 2) return false;
+    if (owner==AUDIO_OWNER_RADIO || atomic_load(&s_owner) != owner || !s_rate || !pcm || bytes % 2) return false;
     const int16_t *samples = pcm;
-    gpio_set_level(BSP_POWER_AMP_IO, 1);
     for (size_t left = bytes / 2; left;) {
+        if (!apply_volume()) return false;
+        gpio_set_level(BSP_POWER_AMP_IO, s_volume > 0);
         uint32_t count = left > 240 ? 240 : left, converted = count;
         const int16_t *out = samples;
         if (s_converter) {

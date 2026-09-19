@@ -38,6 +38,8 @@ int main(int argc, char **argv)
         case 0x0F: parameter="intake_temp_c"; unit="degC"; value=cache.data.intake_temp_c; break;
         case 0x5C: parameter="oil_temp_c"; unit="degC"; value=cache.data.oil_temp_c; break;
         case 0x0B: parameter="manifold_pressure_kpa"; unit="kPa"; value=cache.data.manifold_pressure_kpa; break;
+        case 0x33: parameter="barometric_pressure_kpa"; unit="kPa"; value=cache.data.barometric_pressure_kpa; break;
+        case 0x5E: parameter="fuel_rate_20_lph"; unit="0.05 L/h"; value=cache.data.fuel_rate_20_lph; break;
         }
         if (parameter) printf(",\"parameter\":\"%s\",\"value\":%d,\"unit\":\"%s\"",parameter,value,unit);
         break;

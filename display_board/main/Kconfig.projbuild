@@ -56,6 +56,32 @@ menu "ELM327 BLE Dashboard"
 endmenu
 
 menu "Vehicle P4 services"
+    config DEVICE_FM_SDA_GPIO
+        int "RDA5807M I2C0 SDA GPIO"
+        default 2
+        range 2 6
+        help
+            EV Board v1.4: GPIO2 is J1 pin 21. Use external pull-ups to 3.3 V.
+            Keep distinct from the GPS RX and FM SCL GPIOs.
+    config DEVICE_FM_SCL_GPIO
+        int "RDA5807M I2C0 SCL GPIO"
+        default 3
+        range 2 6
+        help
+            EV Board v1.4: GPIO3 is J1 pin 19. Board devices use I2C1 at GPIO7/8.
+    config DEVICE_GPS_RX_GPIO
+        int "GPS UART1 RX GPIO (module TX connects here)"
+        default 4
+        range 2 6
+        help
+            EV Board v1.4: GPIO4 is J1 pin 18. Receive-only at 3.3 V logic.
+            These pins are unused by the default BSP; check external wiring.
+    config DEVICE_GPS_BAUD
+        int "GPS UART baud rate (8N1)"
+        default 9600
+        range 4800 115200
+        help
+            ATGM336H-5N factory default is 9600. Match the module configuration.
     config DEVICE_WIFI_SSID
         string "Initial phone hotspot SSID (prefer serial provisioning)"
         default ""
@@ -83,7 +109,7 @@ menu "Vehicle P4 services"
             Laboratory builds only. Still requires an explicit local confirmation.
     config DEVICE_CAMERA_ENABLED
         bool "Enable camera feature and UI"
-        default n
+        default y
         help
             Include camera preview, photo capture and album controls. Disabled
             builds hide camera UI and do not start the camera service.

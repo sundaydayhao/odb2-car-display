@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(dashboard_preview C)
-option(ENABLE_CAMERA "Include optional camera UI" OFF)
+option(ENABLE_CAMERA "Include optional camera UI" ON)
 set(CMAKE_C_STANDARD 99)
 get_filename_component(ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
 set(DISPLAY_MAIN "${ROOT}/display_board/main")
@@ -11,6 +11,12 @@ target_include_directories(lvgl_host PUBLIC "${LVGL}" "${CMAKE_CURRENT_SOURCE_DI
 target_compile_definitions(lvgl_host PUBLIC LV_CONF_INCLUDE_SIMPLE LV_KCONFIG_IGNORE)
 add_executable(dashboard_preview preview.c
     "${DISPLAY_MAIN}/dashboard.c"
+    "${DISPLAY_MAIN}/gps_model.c"
+    "${DISPLAY_MAIN}/map_model.c"
+    "${DISPLAY_MAIN}/map_render.c"
+    "${DISPLAY_MAIN}/map_geometry.c"
+    "${DISPLAY_MAIN}/map_panel.c"
+    "${DISPLAY_MAIN}/ui_assets.c"
     "${DISPLAY_MAIN}/media_model.c"
     "${DISPLAY_MAIN}/media_panel.c"
     "${DISPLAY_MAIN}/service_panel.c"

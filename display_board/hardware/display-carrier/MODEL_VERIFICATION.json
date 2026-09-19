@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "footprints": 266,
+  "physical_components": 237,
+  "physical_components_with_resolvable_models": 237,
+  "intentional_bare_features": 29,
+  "dnp_footprints": 66,
+  "repaired_references": [
+    "J1000",
+    "J200",
+    "J300",
+    "L400",
+    "U1000",
+    "U200",
+    "U210",
+    "U310",
+    "U400",
+    "U800"
+  ],
+  "reference_models": [
+    "U310",
+    "U400",
+    "L400",
+    "J300"
+  ],
+  "unchanged_cad_geometry_and_electrical_files": [
+    "display_carrier.kicad_pcb",
+    "01_core.kicad_sch",
+    "02_usb.kicad_sch",
+    "03_usb_current.kicad_sch",
+    "04_charger.kicad_sch",
+    "05_system_switch.kicad_sch",
+    "06_main_power.kicad_sch",
+    "07_sd.kicad_sch",
+    "08_modem.kicad_sch",
+    "09_modem_power.kicad_sch",
+    "10_sim_rf.kicad_sch",
+    "11_codec.kicad_sch",
+    "12_fm_audio.kicad_sch",
+    "13_release_holds.kicad_sch",
+    "display_carrier.kicad_sch"
+  ],
+  "failures": [],
+  "date": "2026-09-19",
+  "baseline_commit": "ac89443d06b999a4f905610e4dc11c689f115181",
+  "scope": "3D model completion only; engineering draft remains incomplete/unrouted",
+  "step_solid_validation": "All ten repaired model assets imported as valid STEP solids",
+  "visual_review": [
+    "10-footprint inspection coupon",
+    "IC pin-1 close-up",
+    "default rear assembly",
+    "all optional parts populated scratch preview"
+  ],
+  "electrical_and_copper_geometry_changed": false,
+  "dnp_attributes_changed": false,
+  "erc_existing_warnings": 22,
+  "erc_new_violations": 0,
+  "drc_physical_violations": 0,
+  "schematic_parity_violations": 0,
+  "unconnected_items": 499,
+  "limits": [
+    "Four dimensioned reference models are not manufacturer CAD",
+    "No enclosure collision or production tolerance signoff",
+    "Unimplemented circuits are outside the 237 placed physical components"
+  ],
+  "default_3d_pixel_diff": {
+    "image_size": [
+      1568,
+      984
+    ],
+    "bbox": [
+      412,
+      207,
+      1267,
+      711
+    ],
+    "changed_pixels": 12543
+  },
+  "generator_regression": "PASS: full scratch regeneration retained all 237 physical component models and all ten checked bindings",
+  "existing_local_footprint_uuid_preservation": "PASS: four edited library footprints retain all original UUIDs and non-model CAD nodes"
+}

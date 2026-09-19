@@ -10,7 +10,7 @@
 | `ML307A_GCLN_LGA94` | easyeda2kicad，LCSC C48982535 | 94 脚编号集合已核对；**完整几何尚未签核**。必须与中移 GCLN 当前生产版推荐焊盘逐项对照；不能因网表一致就按供应商下载库直接量产 |
 | `USB_C_HRO_TYPE_C_31_M_12_Edge` | KiCad 官方 `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | 焊盘/钻孔未改，仅把伸出板边的丝印收至板内，完整结构保留在 Fab 层；独立保存避免库更新恢复板外丝印 |
 
-其余封装来自本机 KiCad 10.0.5 标准库。TPS22918 的 DBV 引脚明确为 1=VIN、2=GND、3=ON、4=CT、5=QOD、6=VOUT，不能使用其他引脚顺序。
+其余封装来自本机 KiCad 10.0.5 标准库。其中 SIM8060、JST B2P-VH、SRP1038C、TI RHL20、ES8311 QFN20、WCH QFN16 已复制到 `Carrier.pretty`，仅补充模型绑定，焊盘和几何不变；SCH/PCB 同步使用这些本地库名称。详见 [3D 模型记录](3D_MODELS.md)。TPS22918 的 DBV 引脚明确为 1=VIN、2=GND、3=ON、4=CT、5=QOD、6=VOUT，不能使用其他引脚顺序。
 
 ## 核心板共用封装
 

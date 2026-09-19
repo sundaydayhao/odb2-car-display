@@ -1,0 +1,362 @@
+{
+  "schema": 1,
+  "scope": "display_carrier model repair; electrical and mechanical placement unchanged",
+  "models": [
+    {
+      "reference": "U1000",
+      "original_footprint": "Carrier:ML307A_GCLN_LGA94",
+      "footprint": "Carrier:ML307A_GCLN_LGA94",
+      "file": "ML307A_GCLN_LGA94.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C48982535.html",
+      "note": "Repair stale WRL URI; retained imported 270-degree orientation. Model package reference only.",
+      "sha256": "ab751d2b2014c6a8c370687f0077ee45b06b554c4e9fe91cdaab75f5767edf09",
+      "raw_model_bounds_mm": [
+        -8.85,
+        8.85,
+        -7.9,
+        7.9,
+        -0.01,
+        2.31
+      ],
+      "step_solids": 1,
+      "step_valid": true
+    },
+    {
+      "reference": "U210",
+      "original_footprint": "Carrier:TUSB320_RWB12",
+      "footprint": "Carrier:TUSB320_RWB12",
+      "file": "TUSB320_RWB12.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C132554.html",
+      "note": "Repair stale WRL URI; 1.6 x 1.6 x 0.4 mm.",
+      "sha256": "6a4387df221fa6c89a57d63a77a0a9a035a77980841c085ffe1c794b9b254fab",
+      "raw_model_bounds_mm": [
+        -0.8,
+        0.8,
+        -0.8,
+        0.8,
+        0.0,
+        0.401
+      ],
+      "step_solids": 38,
+      "step_valid": true
+    },
+    {
+      "reference": "J200",
+      "original_footprint": "Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge",
+      "footprint": "Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge",
+      "file": "TYPE-C-31-M-12.step",
+      "offset_mm": [
+        0,
+        -1.05,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C165948.html",
+      "note": "Raw shell-leg Y=-4.175/0; rotate 180 then offset Y=-1.05 gives native pad Y=-3.125/+1.05. Locators align at (+/-2.89,-2.60); no scaling.",
+      "sha256": "b083e67ce4d06850a2c3835a6366f4012b2def64f8f2781636381ebcaa33e9a0",
+      "raw_model_bounds_mm": [
+        -4.47,
+        4.47,
+        -5.3,
+        2.6,
+        -0.85,
+        3.251
+      ],
+      "step_solids": 14,
+      "step_valid": true
+    },
+    {
+      "reference": "J1000",
+      "original_footprint": "Connector_Card:nanoSIM_GCT_SIM8060-6-1-14-00",
+      "footprint": "Carrier:nanoSIM_GCT_SIM8060-6-1-14-00",
+      "file": "SIM8060-6-1-14-00-A.step",
+      "offset_mm": [
+        0,
+        0.35,
+        0.03
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C2943124.html",
+      "note": "0.35 mm model-Y correction from supplier footprint origin to official KiCad pad origin; 0.03 mm seating correction. Hinged lid, not slide-in socket.",
+      "sha256": "10afda79f40532d790a5f6529fd2998c563a779d8eb17335fcf4997ca4212aaf",
+      "raw_model_bounds_mm": [
+        -6.2,
+        6.2,
+        -7.0,
+        7.1,
+        -0.03,
+        1.4
+      ],
+      "step_solids": 29,
+      "step_valid": true
+    },
+    {
+      "reference": "U800",
+      "original_footprint": "Package_DFN_QFN:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm",
+      "footprint": "Carrier:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm",
+      "file": "ES8311_QFN20.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C962342.html",
+      "note": "Supplier package:3x3,20 pins,0.4 pitch,H0.75. Rotate pin-1 mark from raw SW to native NW. EP rendering1.7 vs footprint1.65 is illustrative; footprint not modified.",
+      "sha256": "c1a5d3ee4d1e5f60bf95f2dd90e28f7f2642873eaa0ff3d31db1758dcf2c39b9",
+      "raw_model_bounds_mm": [
+        -1.5,
+        1.5,
+        -1.5,
+        1.5,
+        0.0,
+        0.751
+      ],
+      "step_solids": 56,
+      "step_valid": true
+    },
+    {
+      "reference": "U200",
+      "original_footprint": "Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
+      "footprint": "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
+      "file": "CH343P_QFN16.step",
+      "offset_mm": [
+        0,
+        0,
+        0.01
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C2846043.html",
+      "note": "Supplier package:3x3,0.5 pitch,H0.8; rotate pin-1 mark to native NW, lift0.01 to seating plane. EP rendering1.7 vs footprint1.8 is illustrative.",
+      "sha256": "c0e4ce7826ec0071788b135da6de58398c5b0234ba8922dcfc7fc0d2f292a219",
+      "raw_model_bounds_mm": [
+        -1.51,
+        1.51,
+        -1.51,
+        1.51,
+        -0.01,
+        0.801
+      ],
+      "step_solids": 14,
+      "step_valid": true
+    },
+    {
+      "reference": "U310",
+      "original_footprint": "Carrier:TPS22990_DML10",
+      "footprint": "Carrier:TPS22990_DML10",
+      "file": "TPS22990_DML10_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/pdf/MPDS574",
+      "note": "3x2x0.8mm,7 small contacts plus merged8-10 output bar,EP2.6x1.1.",
+      "sha256": "4d2df7bd7fff0c4a0c9d4bcefdedb6a01d89dea0a987e557fc35455a6b4abfca",
+      "raw_model_bounds_mm": [
+        -1.5,
+        1.5,
+        -1.0,
+        1.0,
+        0.0,
+        0.8
+      ],
+      "step_solids": 11,
+      "step_valid": true
+    },
+    {
+      "reference": "U400",
+      "original_footprint": "Package_DFN_QFN:Texas_VQFN-RHL-20",
+      "footprint": "Carrier:Texas_VQFN-RHL-20",
+      "file": "TPS61088_RHL20_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/ds/symlink/tps61088.pdf",
+      "note": "RHL0020A:3.5x4.5x1,20 leads+EP2.05x3.05. Downloaded C87357 model rejected:24 peripheral contacts.",
+      "sha256": "66a289780cc3c0dc0cfed3437e0c040f4433e21b99c504b9f485801290e24e78",
+      "raw_model_bounds_mm": [
+        -1.75,
+        1.75,
+        -2.25,
+        2.25,
+        0.0,
+        1.0
+      ],
+      "step_solids": 27,
+      "step_valid": true
+    },
+    {
+      "reference": "L400",
+      "original_footprint": "Inductor_SMD:L_Bourns_SRP1038C_10.0x10.0mm",
+      "footprint": "Carrier:L_Bourns_SRP1038C_10.0x10.0mm",
+      "file": "SRP1038C_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.bourns.com/docs/technical-documents/obsolete-parts/SRP1038C_obsolete.pdf",
+      "note": "10x10 body,11mm across terminals,H3.8. SRP1038C obsolete; present footprint envelope only, not BOM approval.",
+      "sha256": "029e2bf6f5e58c31cbb385b5d2a8389b6ea2dd42a86dd76451fc15eb26b45b7b",
+      "raw_model_bounds_mm": [
+        -5.5,
+        5.5,
+        -5.0,
+        5.0,
+        0.0,
+        3.8
+      ],
+      "step_solids": 3,
+      "step_valid": true
+    },
+    {
+      "reference": "J300",
+      "original_footprint": "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
+      "footprint": "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
+      "file": "JST_B2P_VH_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/eVH.pdf",
+      "note": "7.86x8.5,H10.9,tail3.7,pitch3.96. Downloaded VH3.96-2A rejected as exact JST model:body7.92x8.7 and H10.4 after seating adjustment. Latch detail simplified.",
+      "sha256": "a0c5f5a5439129d8daab284383fbb477d2df507502f66ff7a9acdbdf6447e88f",
+      "raw_model_bounds_mm": [
+        -1.95,
+        5.91,
+        -4.8,
+        3.7,
+        -3.7,
+        10.9
+      ],
+      "step_solids": 6,
+      "step_valid": true
+    }
+  ],
+  "intentional_no_model": {
+    "test_points": "bare copper; no mounted object",
+    "mounting_holes": "NPTH only; screws belong to enclosure assembly"
+  },
+  "all_dimensions_mm": true,
+  "rotation_convention": "KiCad model rotation; preserve scale1"
+}

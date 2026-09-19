@@ -53,11 +53,14 @@ for folder,name in imports:
         continue
     path=next((srcdir/'easyeda2kicad.pretty').glob('*.kicad_mod'))
     fp=k.FootprintLoad(str(path.parent),path.stem)
-    for m in fp.Models():
+    models=list(fp.Models())
+    for m in models:
         stem=Path(m.m_Filename).stem
         original=srcdir/'easyeda2kicad.3dshapes'/(stem+'.step')
         if original.exists():
             shutil.copy2(original,MD/(name+'.step'));m.m_Filename='${KIPRJMOD}/Carrier.3dshapes/'+name+'.step'
+    fp.Models().clear()
+    for m in models:fp.Add3DModel(m)
     writefp(fp,name)
 
 # Manufacturer pad geometry is unchanged; only the projecting nose's silkscreen
@@ -74,6 +77,11 @@ for graphic in usb.GraphicalItems():
         if a.y>limit:graphic.SetStart(cut)
         else:graphic.SetEnd(cut)
 writefp(usb,'USB_C_HRO_TYPE_C_31_M_12_Edge')
+
+# The reviewed project library owns all repaired 3D bindings; re-importing a
+# supplier/global footprint must not restore broken URIs or erase a model.
+from models import stage_library
+stage_library(OUT)
 
 (OUT/'fp-lib-table').write_text('(fp_lib_table (version 7) (lib (name "Carrier") (type "KiCad") (uri "${KIPRJMOD}/Carrier.pretty") (options "") (descr "R0 checked identity, see footprint release holds")))\n',encoding='utf-8')
 

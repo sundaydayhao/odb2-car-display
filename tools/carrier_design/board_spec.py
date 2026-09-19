@@ -365,5 +365,8 @@ for p in d.parts:
     if p['sheet'] in ['08_modem','09_modem_power','10_sim_rf'] and not p['ref'].startswith('#'):
         p['dnp']=True
 
+from models import remap_footprints
+remap_footprints(d.parts)
+
 if __name__=='__main__':
     d.write();print('Generated',len(d.parts),'parts in',len(d.sheets),'sheets:',OUT)

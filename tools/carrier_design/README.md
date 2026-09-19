@@ -39,3 +39,16 @@ Review all rendered schematic sheets, board faces and mechanical interfaces
 after editing. Recheck project locks before promoting files. Copy only reviewed
 CAD, local libraries and concise evidence into the formal project; raw render,
 netlist and report outputs stay under `build/`.
+
+`models.py` stages reviewed project-local footprints and 3D bindings from
+`model-manifest.json`; do not replace these with the supplier footprints during
+regeneration. `check_models.py --project <dir> --output <report.json>` checks
+physical-component coverage, project/library bindings, transforms and hashes.
+Optional `--baseline <dir>` proves all native CAD geometry/electrical nodes are
+unchanged except model bindings and the documented footprint-library remaps.
+The checker requires the same native KiCad Python and local KiSkill parser.
+
+`generate_reference_models.py --output <scratch-dir>` runs with CadQuery 2.6+
+to rebuild the four explicitly marked dimensioned reference models. Their
+source dimensions and limitations are in the project's `3D_MODELS.md`.
+Supplier model files and the existing OSPTEK model are not regenerated.

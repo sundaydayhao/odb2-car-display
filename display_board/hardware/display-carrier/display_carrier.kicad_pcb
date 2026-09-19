@@ -13705,7 +13705,7 @@
 			)
 		)
 	)
-	(footprint "Connector_Card:nanoSIM_GCT_SIM8060-6-1-14-00"
+	(footprint "Carrier:nanoSIM_GCT_SIM8060-6-1-14-00"
 		(layer "B.Cu")
 		(uuid "3b459ab1-860a-4c8e-bba4-d6a22c763bb6")
 		(at 187 79 -90)
@@ -14243,9 +14243,9 @@
 			)
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_Card.3dshapes/nanoSIM_GCT_SIM8060-6-1-14-00.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/SIM8060-6-1-14-00-A.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0.35 0.03)
 			)
 			(scale
 				(xyz 1 1 1)
@@ -17857,7 +17857,7 @@
 			)
 		)
 	)
-	(footprint "Inductor_SMD:L_Bourns_SRP1038C_10.0x10.0mm"
+	(footprint "Carrier:L_Bourns_SRP1038C_10.0x10.0mm"
 		(layer "B.Cu")
 		(uuid "4e7a0e9b-e8d7-44d6-8dfb-1d29e3c41df1")
 		(at 71 97)
@@ -18289,7 +18289,7 @@
 			(uuid "77a330d5-a63e-4014-9169-c9484fbea8c5")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Bourns_SRP1038C_10.0x10.0mm.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/SRP1038C_reference.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -23848,7 +23848,7 @@
 			)
 		)
 	)
-	(footprint "Package_DFN_QFN:Texas_VQFN-RHL-20"
+	(footprint "Carrier:Texas_VQFN-RHL-20"
 		(layer "B.Cu")
 		(uuid "6fc19285-7a83-49c4-aff0-884fb70c89c2")
 		(at 81 97)
@@ -24373,7 +24373,7 @@
 			(uuid "e53b6fb3-3e87-49ee-b87b-9c5f8f07e8c2")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Texas_VQFN-RHL-20_ThermalVias.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/TPS61088_RHL20_reference.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -24787,15 +24787,15 @@
 			(uuid "504baee1-cad3-4a9f-a9ab-6f6d54050891")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-12.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/TYPE-C-31-M-12.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 -1.05 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 0 0 180)
 			)
 		)
 	)
@@ -27223,7 +27223,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Package_DFN_QFN:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm"
+	(footprint "Carrier:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm"
 		(layer "B.Cu")
 		(uuid "7d9caeb8-500a-4e69-b7d6-0f2a3d59c0cf")
 		(at 72 115)
@@ -27823,7 +27823,7 @@
 			(uuid "e4455447-f07a-4ec9-961a-4d35ca64f623")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/ES8311_QFN20.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -27831,7 +27831,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 0 0 90)
 			)
 		)
 	)
@@ -30726,7 +30726,7 @@
 			(uuid "78ba77cb-d5e7-4e13-9559-1fb22dffae7a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libs/easyeda2kicad.3dshapes/LCC-LGA-94_L17.7-W15.8-P1.10-TL.wrl"
+		(model "${KIPRJMOD}/Carrier.3dshapes/ML307A_GCLN_LGA94.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -30738,7 +30738,7 @@
 			)
 		)
 	)
-	(footprint "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical"
+	(footprint "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical"
 		(layer "B.Cu")
 		(uuid "833ef834-ba71-49cb-bfe9-fdd2afc05595")
 		(at 80 55.5)
@@ -31038,7 +31038,7 @@
 			(uuid "01e59972-1b19-4553-bc7b-29131cf24a49")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_VH_B2P-VH_1x02_P3.96mm_Vertical.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/JST_B2P_VH_reference.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -39638,7 +39638,7 @@
 			)
 		)
 	)
-	(footprint "Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm"
+	(footprint "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm"
 		(layer "B.Cu")
 		(uuid "ad11a8cc-520a-4cf9-bb8f-bc4feb84bffd")
 		(at 65 81)
@@ -40206,15 +40206,15 @@
 			(uuid "33344a39-9770-4486-984a-d662118657b3")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm.step"
+		(model "${KIPRJMOD}/Carrier.3dshapes/CH343P_QFN16.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 0.01)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 0 0 90)
 			)
 		)
 	)
@@ -43067,6 +43067,17 @@
 			(uuid "36d43bf8-42b0-4e5d-ae6a-f2476dbb27ae")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Carrier.3dshapes/TPS22990_DML10_reference.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "B.Cu")
@@ -43570,7 +43581,7 @@
 			(uuid "c5f0aacd-5c69-429f-80fa-e1d01e8349c4")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libs/easyeda2kicad.3dshapes/X2QFN-12_L1.6-W1.6-H0.4-P0.40-TL.wrl"
+		(model "${KIPRJMOD}/Carrier.3dshapes/TUSB320_RWB12.step"
 			(offset
 				(xyz 0 0 0)
 			)

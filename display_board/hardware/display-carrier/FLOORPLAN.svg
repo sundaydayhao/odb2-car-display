@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950"><style>text{font-family:Microsoft YaHei,Segoe UI,Arial,sans-serif}</style>
 <rect x="0" y="0" width="1440" height="950" rx="0" fill="#f5f7fb" stroke="#f5f7fb" stroke-width="1.5"/>
 <text x="55" y="62" font-size="32" fill="#162f40" font-weight="700" text-anchor="start">OSPTEK P4C5 / P4C6 · 显示底板规划</text>
-<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 同向 LCD＋触摸排线 / 可选 4G＋GPS·北斗</text>
+<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 同向 LCD＋触摸排线 / ML307A-GCLN 可选 4G＋定位</text>
 <rect x="1118" y="38" width="270" height="43" rx="21" fill="#fff1ce" stroke="#ebcd82" stroke-width="1.5"/>
 <text x="1253" y="66" font-size="16" fill="#715017" font-weight="600" text-anchor="middle">方案草图 · 尚未绘制 PCB</text>
 <rect x="100.35" y="172.6" width="824.3" height="499.8" rx="5" fill="#e4e9ef" stroke="#8a9aa7" stroke-width="1.5" stroke-dasharray="8 5"/>
@@ -19,9 +19,9 @@
 <rect x="185" y="278" width="175" height="163" rx="10" fill="#e1eefb" stroke="#83a8cb" stroke-width="1.5"/>
 <text x="204" y="311" font-size="21" fill="#315e87" font-weight="700" text-anchor="start">电源区 · B</text>
 <text x="199" y="341" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">CC / 充电 / UART</text>
-<text x="199" y="370" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS / 5 V 主升压</text>
-<text x="199" y="399" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">3.3 V / 可选 3.8 V</text>
-<text x="199" y="428" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">峰值与热设计需核定</text>
+<text x="199" y="370" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">电池 10 A / NTC</text>
+<text x="199" y="399" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS / 主 5 V / 3.3 V</text>
+<text x="199" y="428" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">5 V 馈线送右侧降压</text>
 <rect x="131" y="327" width="38" height="86" rx="5" fill="#354e62" stroke="#354e62" stroke-width="1.5"/>
 <text x="58" y="439" font-size="18" fill="#354e62" font-weight="700" text-anchor="start">USB-C</text>
 <text x="58" y="463" font-size="15" fill="#354e62" font-weight="400" text-anchor="start">充电 + UART</text>
@@ -46,15 +46,22 @@
 <text x="520.5" y="221" font-size="15" fill="#6e5623" font-weight="600" text-anchor="middle">摄像头 FPC · F</text>
 <line x1="520" y1="197" x2="520" y2="170" stroke="#b88b37" stroke-width="2"/>
 <text x="439" y="190" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">横向座 / 出线向上</text>
-<rect x="650" y="267" width="200" height="220" rx="10" fill="#e8ebfa" stroke="#8e9ace" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="664" y="290" font-size="17" fill="#505c91" font-weight="700" text-anchor="start">可选 4G / GNSS · B</text>
-<text x="664" y="313" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">LTE 天线  /  GNSS 天线</text>
-<rect x="674" y="327" width="140" height="155" rx="5" fill="#c5cbed" stroke="#8491bd" stroke-width="1.5"/>
-<text x="744" y="359" font-size="17" fill="#3e497a" font-weight="700" text-anchor="middle">EC200U-CN</text>
-<text x="744" y="387" font-size="18" fill="#3e497a" font-weight="700" text-anchor="middle">GNSS 版本</text>
-<text x="744" y="416" font-size="15" fill="#3e497a" font-weight="400" text-anchor="middle">28 × 31 mm</text>
-<text x="744" y="445" font-size="16" fill="#3e497a" font-weight="600" text-anchor="middle">GPS / 北斗</text>
-<text x="744" y="469" font-size="14" fill="#3e497a" font-weight="400" text-anchor="middle">标准 AT 固件</text>
+<rect x="650" y="267" width="180" height="200" rx="10" fill="#e8ebfa" stroke="#8e9ace" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="662" y="289" font-size="14" fill="#505c91" font-weight="700" text-anchor="start">可选蜂窝区 36 × 40 mm</text>
+<text x="662" y="312" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">LTE / GNSS 独立天线 ↑</text>
+<rect x="666" y="326" width="88.5" height="79" rx="5" fill="#c5cbed" stroke="#8491bd" stroke-width="1.5"/>
+<text x="710.25" y="346" font-size="14" fill="#3e497a" font-weight="700" text-anchor="middle">ML307A</text>
+<text x="710.25" y="364" font-size="14" fill="#3e497a" font-weight="700" text-anchor="middle">GCLN</text>
+<text x="710.25" y="381" font-size="12" fill="#3e497a" font-weight="400" text-anchor="middle">LGA94</text>
+<text x="710.25" y="397" font-size="11" fill="#3e497a" font-weight="400" text-anchor="middle">17.7 × 15.8</text>
+<rect x="777" y="326" width="40" height="32" rx="4" fill="#e5d4f0" stroke="#aa91bf" stroke-width="1.5"/>
+<text x="797" y="346" font-size="10" fill="#705080" font-weight="600" text-anchor="middle">220µF</text>
+<rect x="777" y="368" width="40" height="32" rx="4" fill="#e5d4f0" stroke="#aa91bf" stroke-width="1.5"/>
+<text x="797" y="388" font-size="10" fill="#705080" font-weight="600" text-anchor="middle">220µF</text>
+<rect x="661" y="416" width="158" height="43" rx="5" fill="#dbe6f7" stroke="#8e9ace" stroke-width="1.5"/>
+<text x="740" y="435" font-size="12" fill="#3e497a" font-weight="600" text-anchor="middle">局部 3.8 V / 放电 / 电平</text>
+<text x="740" y="451" font-size="11" fill="#3e497a" font-weight="400" text-anchor="middle">USB 检测 / GNSS 偏置可关断</text>
+<text x="651" y="492" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">USB 网卡 + 独立 AT UART</text>
 <rect x="841" y="330" width="45" height="71" rx="4" fill="#6e77a0" stroke="#6e77a0" stroke-width="1.5"/>
 <text x="902" y="354" font-size="16" fill="#505c91" font-weight="600" text-anchor="start">Nano-SIM</text>
 <text x="902" y="380" font-size="14" fill="#505c91" font-weight="400" text-anchor="start">右侧选装</text>
@@ -108,11 +115,11 @@
 <text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LCD / 触摸接口同向</text>
 <text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">两个座在朝屏面、横向、入口同朝下；</text>
 <text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">触摸座左右位置和接触面仍待实际图。</text>
-<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">电源按新增蜂窝负载调整</text>
-<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">BQ25896 / 电池与线束 10 A 等级；</text>
-<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">模组独立供电，正常退网后再断电。</text>
+<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">ML307A 供电就近布置</text>
+<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">3.8 V / 至少 2 × 220 µF 储能；</text>
+<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">USB 检测及天线偏置分别关断。</text>
 <rect x="55" y="775" width="1329" height="116" rx="12" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
 <text x="80" y="810" font-size="20" fill="#263e51" font-weight="600" text-anchor="start">本图用于讨论功能布局，不是元件坐标、PCB 布线、阻抗验算或最终外壳图。</text>
-<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：两 lane / 触摸资料 → 模组封装与 GNSS 订货版本 → 4G 联机与功率验证 → SCH → PCB。</text>
-<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 B · 2026-09-19    ·    触摸座水平偏移可调整    ·    GPS/北斗提供定位数据，地图与路线导航另由软件实现</text>
+<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：两 lane / 触摸资料 → LGA94 封装与固件 → RNDIS＋GNSS 并发及功率验证 → SCH → PCB。</text>
+<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 C · 2026-09-19    ·    ML307A-GCLN 已选定    ·    本体缩小，仍保留电源 / RF / SIM 操作空间</text>
 </svg>

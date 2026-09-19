@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-19",
-  "revision": "B_same_direction_fpc_and_optional_lte_gnss",
+  "revision": "C_ML307A_GCLN_local_power_RNDIS_and_independent_gating",
   "phase": "planning_only_no_cad_created_or_verified",
   "repositories": [
     {
@@ -43,7 +43,11 @@
     "module connection and dimension images",
     "module dev board V1.5 schematic in 20260910 guide",
     "camera specification",
-    "LCM mechanical/power/pinout/timing data"
+    "LCM mechanical/power/pinout/timing data",
+    "ML307A GNSS hardware manual pins/power/control and rendered pinout",
+    "ML307 compatibility V3.1.0 page 10 GCLN supply/footprint compared with older manual",
+    "P4 USB RNDIS documented support boundary",
+    "existing Wi-Fi-only network_service.c and HTTP consumers"
   ],
   "not_yet_verified": [
     "PcbLib footprint overlay and pad coordinates",
@@ -56,10 +60,12 @@
     "NS4814 full design and measured clean output",
     "electrical schematic/ERC/PCB/DRC",
     "physical bring-up with both module variants",
-    "EC200U-CN GNSS ordering code and standard AT firmware",
-    "USB PPP descriptors/ports with P4",
-    "4G/GNSS on/off and sleep currents",
-    "20 W simultaneous-load and 3.8 V burst transient/thermal tests",
+    "ML307A-GCLN current AT/GNSS firmware and production LGA94 land pattern",
+    "ML307A-GCLN RNDIS descriptors/ports and GNSS concurrency with P4",
+    "current vendor clarification of conflicting GCLN supply tables",
+    "4G/GNSS on/off and sleep currents including USB disconnect/reconnect",
+    "20 W simultaneous-load and 3.8 V burst/inrush/thermal tests",
+    "440 uF bulk stability and active discharge below 1.8 V for at least 100 ms",
     "optional 4G mechanical/radio coexistence"
   ],
   "sources": [
@@ -487,20 +493,41 @@
       "source_boundary": "LCD bottom tail confirmed by LCM PDF page 5; touch direction is user design requirement, not proven by this PDF"
     },
     "optional_modem": {
-      "family": "Quectel EC200U-CN GNSS variant",
-      "ordering_code": "pending_supplier_confirmation",
+      "family": "China Mobile ML307A",
+      "ordering_code": "ML307A-GCLN",
+      "selection_status": "user_selected",
+      "firmware": "standard AT plus GNSS, exact version pending",
       "assembly": "same_PCB_optional_population",
+      "package": "LGA94",
+      "body_mm": [
+        17.7,
+        15.8,
+        2.4
+      ],
+      "functional_reserve_mm": [
+        36,
+        40
+      ],
+      "reserve_scope": "modem_power_bulk_capacitors_level_shifters_RF_matching; SIM seat separate",
       "core_usb_pads": {
         "DM": 48,
         "DP": 49
       },
+      "modem_usb_pads": {
+        "DM": 60,
+        "DP": 59,
+        "VBUS": 61
+      },
+      "transport": "USB RNDIS preferred, sample validation pending; no assumed PPP compatibility",
       "gpio": {
         "enable": 0,
         "pwrkey": 1,
         "uart_tx": 2,
         "uart_rx": 3,
         "dtr": 4,
-        "status": 5
+        "state": 5,
+        "usb_vbus_enable": 24,
+        "gnss_antenna_enable": 25
       }
     },
     "power_candidates": {
@@ -510,23 +537,60 @@
       "battery": "1S 5000 mAh, >=10 A pack/PCM capability",
       "peak_load_W": 20,
       "low_battery_current_A_estimate": 7.352941176470588,
-      "all_values": "planning_targets_not_measured_ratings"
+      "all_values": "planning_targets_not_measured_ratings",
+      "modem_supply_allowed_V": [
+        3.4,
+        4.3
+      ],
+      "modem_supply_target_V": 3.8,
+      "modem_peak_current_A_from_manual": 2,
+      "modem_bulk_capacitors_minimum_uF": [
+        220,
+        220
+      ],
+      "modem_supply_location": "B side adjacent to modem, not in left power block",
+      "shutdown_hold_budget_s": 45,
+      "shutdown_budget_status": "board target, not vendor maximum shutdown time"
+    },
+    "board": {
+      "size_mm": [
+        145,
+        85
+      ],
+      "layers": 4,
+      "size_status": "planning envelope, physical fit not yet verified",
+      "usb_fs_service_gpio24_25": "reassigned to modem USB detect and GNSS bias; external CH343P retained"
     }
   },
+  "source_conflicts": [
+    {
+      "topic": "ML307A-GCLN VBAT maximum",
+      "older_GNSS_hardware_manual": "V1.0.0 operating max 4.5 V, absolute max table 4.3 V",
+      "later_compatibility_manual": "V3.1.0 page 10 GCLN/GSLN operating max 4.3 V",
+      "design_decision": "use regulated 3.8 V within 3.4-4.3 V; request current manufacturer clarification before production"
+    }
+  ],
   "web_sources_reviewed": [
-    "https://www.quectel.com/product/lte-ec200u-series/",
-    "https://www.quectel.com/content/uploads/2024/02/Quectel_EC200U_Series_Hardware_Design_V1.2.pdf",
-    "https://quectel.com/content/uploads/2024/04/Quectel_EC200U_SeriesEG912U-GL_GNSS_Application_Note_V1.2.pdf",
-    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_ppp.html",
+    "https://market-isv-1258344699.cos.ap-shanghai.myqcloud.com/20220104/document/202304/eee1d27f-802d-42fa-915f-d2945028eb9d/ML307A%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C.pdf",
+    "https://whycan.com/files/202412/ML307/2_%E7%A1%AC%E4%BB%B6%E5%85%BC%E5%AE%B9%E6%80%A7%E6%89%8B%E5%86%8C_ML307%E7%B3%BB%E5%88%97%E9%80%82%E7%94%A8_V3.1.0.pdf",
+    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_rndis.html",
+    "https://components.espressif.com/components/espressif/iot_usbh_rndis/versions/0.3.0/readme?language=en",
     "https://www.ti.com/product/BQ25896",
     "https://www.ti.com/product/TLV62585",
     "https://www.jst-mfg.com/product/index.php?lang=2&series=262"
   ],
   "downloaded_manual_fingerprints": [
     {
-      "url": "https://www.quectel.com/content/uploads/2024/02/Quectel_EC200U_Series_Hardware_Design_V1.2.pdf",
-      "sha256": "b404aea4db0ba705846ba82bb524ef81a4c7e0d78783697d6de69642c37bdbf2",
-      "bytes": 2149866
+      "url": "https://market-isv-1258344699.cos.ap-shanghai.myqcloud.com/20220104/document/202304/eee1d27f-802d-42fa-915f-d2945028eb9d/ML307A%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C.pdf",
+      "sha256": "e9f0ca23eb5cfcc53ab81fcde5f3d936da3c134f1a8d5fce5764eff6dbc9d63c",
+      "bytes": 2699034,
+      "local_scratch": "build\\osptek-plan\\ml307a-gnss-hardware-v1.0.0.pdf"
+    },
+    {
+      "url": "https://whycan.com/files/202412/ML307/2_%E7%A1%AC%E4%BB%B6%E5%85%BC%E5%AE%B9%E6%80%A7%E6%89%8B%E5%86%8C_ML307%E7%B3%BB%E5%88%97%E9%80%82%E7%94%A8_V3.1.0.pdf",
+      "sha256": "f5fd85c16efe01ece7a2b1e0f576742b25af18910c507ab5a9d3a35fca10e293",
+      "bytes": 2645314,
+      "local_scratch": "build\\osptek-plan\\ml307-compatibility-v3.1.0.pdf"
     }
   ]
 }

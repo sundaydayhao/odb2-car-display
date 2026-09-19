@@ -238,10 +238,10 @@ pas('05_system_switch','R313','10k','+3V3','MAIN_PG')
 tp('05_system_switch','TP310','MAIN_PG')
 cap('03_usb_current','C216','100n','CHARGE_INPUT_EN')
 
-page('08_modem','08 Optional ML307A-GCLN',(98,17),[
+page('08_modem','08 ML307A-GCLN fitted',(98,17),[
  'ML307A-GCLN only; all 94 pads including central grounds are explicit.',
  'UART control is 1.8 V. VDD_EXT is a module OUTPUT, never driven externally.',
- 'Optional assembly. RF layout, USB RNDIS firmware and GNSS coexistence need sample validation.'
+ 'Fitted full-feature assembly. RF layout, USB RNDIS firmware and GNSS coexistence need validation.'
 ])
 mp={n:None for n in range(1,95)};pn={n:'RSV_'+str(n) for n in range(1,95)};pt={n:'passive' for n in range(1,95)}
 for row in csv.DictReader((ROOT/'display_board/hardware/display-carrier/MODEM_PIN_PLAN.csv').open(encoding='utf-8-sig')):
@@ -252,7 +252,7 @@ for row in csv.DictReader((ROOT/'display_board/hardware/display-carrier/MODEM_PI
         mp[n]=sig;pn[n]=row['ml307_signal'] if ';' not in row['ml307_pad'] else sig
         pt[n]='power_in' if sig in ['GND','MODEM_3V8','MODEM_VBUS5'] else 'power_out' if n in [14,24] else 'output' if n in [18,20,22,25,39,49] else 'input' if n in [7,12,13,15,17,19,23,38,79,82] else 'bidirectional'
 box('ML307A_GCLN',[(n,pn[n],pt[n]) for n in range(1,95)],25.4)
-item('08_modem','U1000','ML307A_GCLN','ML307A-GCLN',mp,'Carrier:ML307A_GCLN_LGA94',xy=(76.2,142.24),pcb=(116,28),angle=90,source='https://openluat.com/ml307a/',status='optional; footprint and interface verification pending')
+item('08_modem','U1000','ML307A_GCLN','ML307A-GCLN',mp,'Carrier:ML307A_GCLN_LGA94',xy=(76.2,142.24),pcb=(116,28),angle=90,source='https://openluat.com/ml307a/',status='fitted full-feature build; footprint and interface verification pending')
 for i,(outa,ina,inb,outb) in enumerate([('MODEM_AT_RX','MODEM_AT_TX','MODEM_UART_TX_1V8','MODEM_UART_RX_1V8'),('MODEM_STATE','MODEM_DTR','MODEM_STATE_1V8','MODEM_DTR_1V8')]):
     item('08_modem','U'+str(1001+i),'TXU0202_DCU','TXU0202DCUR',{1:inb,2:'GND',3:'+3V3',4:outa,5:ina,6:'+3V3',7:'MODEM_1V8',8:outb},'Package_SO:VSSOP-8_2.3x2mm_P0.5mm',xy=(215.9+i*114.3,60.96),pcb=(96+i*8,39),source=TI+'txu0202.pdf')
 cursor['08_modem']=8
@@ -344,14 +344,17 @@ tp('12_fm_audio','TP810','AMP_INPUT_P');tp('12_fm_audio','TP811','AMP_INPUT_N')
 
 # A visible hold sheet prevents an interface reservation being mistaken for a populated circuit.
 page('13_release_holds','13 Pending interface closure',(0,0),[
- 'NOT IMPLEMENTED: LCD bias/backlight, final LCD/touch sockets, camera support and NS4814 amplifier.',
+ 'NOT IMPLEMENTED: LCD bias/backlight, camera power/clock/level conversion and NS4814 amplifier.',
  'LCD: vendor 2-lane initialization / legal timing required; FPC contact side and folded tip Y unmeasured.',
- 'CAMERA: SC2336 connector pinout known; sequencing, 24MHz source and connector match remain to close.',
+ 'FPC sockets J1200/J1210/J1220 are fitted on F side. Touch pinout and folded LCD fit are not verified.',
  'GNSS: passive RF path drawn. Active antenna current-limit/bias feed is not implemented.',
  'BATTERY: hardware 0..45C cutoff, reverse connection, exact pack/NTC/fuse still need closure.',
- 'PCB reservations are KEEP-FREE planning areas, not dummy sockets or finished circuits.',
+ 'FPC adjustment areas are mechanical notes; they are not proof of cable reach or finished circuits.',
  'Do not fabricate or call this a commercial-ready design. See DESIGN_STATUS.md for next gates.'
 ])
+from fpc_interfaces import add_interfaces
+add_interfaces(d, page, box, item, pas, cap)
+
 # Correct modem-driven SIM output types, and make optional assembly explicit.
 for sym in d.symbols['ML307A_GCLN']['tree']:
     if isinstance(sym,list) and sym and str(sym[0])=='symbol':
@@ -362,8 +365,8 @@ for p in d.parts:
     if p['kind']=='TPS22918':
         old=p['nets'].copy()
         p['nets'].update({'2':old['4'],'3':old['2'],'4':old['3']})
-    if p['sheet'] in ['08_modem','09_modem_power','10_sim_rf'] and not p['ref'].startswith('#'):
-        p['dnp']=True
+    # Full-feature assembly: modem, SIM and antenna circuitry are fitted.
+    # Keep explicit mutually exclusive straps and untuned RF shunt capacitors DNP.
 
 from models import remap_footprints
 remap_footprints(d.parts)

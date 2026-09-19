@@ -281,7 +281,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid 86feebf6-5efb-5957-a32d-8102fb1b7e5c)
-		(property "Sheetname" "08 Optional ML307A-GCLN"
+		(property "Sheetname" "08 ML307A-GCLN fitted"
 			(at 316.23 80.01 0)
 			(effects
 				(font
@@ -488,6 +488,117 @@
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4"
 					(page "14")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 5a29d953-1065-555e-8cd0-bb4470599f58)
+		(property "Sheetname" "14 LCD FPC and 1V8 controls"
+			(at 115.57 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "14_lcd_fpc.kicad_sch"
+			(at 115.57 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "15")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 20544a2a-ca9e-51e9-96af-01e705d4b644)
+		(property "Sheetname" "15 Touch FPC reference interface"
+			(at 215.9 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "15_touch_fpc.kicad_sch"
+			(at 215.9 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "16")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 316.23 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 74b401f8-fd0a-5de2-8205-7b8fba3e18c8)
+		(property "Sheetname" "16 Camera FPC pin map"
+			(at 316.23 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "16_camera_fpc.kicad_sch"
+			(at 316.23 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "17")
 				)
 			)
 		)

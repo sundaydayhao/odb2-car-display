@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-19",
-  "revision": "E_R0_schematic_and_unrouted_placement",
+  "revision": "F_populated_FPC_and_full_feature_assembly",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -503,7 +503,7 @@
       "ordering_code": "ML307A-GCLN",
       "selection_status": "user_selected",
       "firmware": "standard AT plus GNSS, exact version pending",
-      "assembly": "same_PCB_optional_population",
+      "assembly": "fitted_by_default_user_requested_full_feature_assembly",
       "package": "LGA94",
       "body_mm": [
         17.7,
@@ -725,5 +725,44 @@
       "bytes": 277847,
       "local_evidence": "build/carrier-design/ch343.pdf"
     }
+  },
+  "implemented_fpc_interfaces": {
+    "status": "populated_unrouted_prototype_interfaces_not_mating_approved",
+    "J1200": {
+      "part": "FPC-05FB-30PH20",
+      "pins": 30,
+      "xy_mm": [
+        70.5,
+        57.5
+      ],
+      "side": "F",
+      "rotation_deg": 0,
+      "source": "user LCM PDF page6"
+    },
+    "J1210": {
+      "part": "FPC-05FB-6PH20",
+      "pins": 6,
+      "xy_mm": [
+        96,
+        67
+      ],
+      "side": "F",
+      "rotation_deg": 0,
+      "source": "previous 6-pin reference only; actual touch drawing absent"
+    },
+    "J1220": {
+      "part": "FPC-05FB-24PH20",
+      "pins": 24,
+      "xy_mm": [
+        76.5,
+        7
+      ],
+      "side": "F",
+      "rotation_deg": 180,
+      "source": "OSPTEK ESP32-P4-Camera PDF page3"
+    },
+    "manufacturer_family_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+    "manufacturer_family_drawing_sha256": "87cd1aeadad6c8470a8dab79031fa5bf586697a19952f892e5f74781d8892605",
+    "lcd_connector_fit": "not qualified: family recommended thickness 0.30+/-0.02 vs LCM 0.30+/-0.05; width +/-0.05 vs LCM +/-0.10; 6mm reinforcement vs LCM 4.8+/-0.3"
   }
 }

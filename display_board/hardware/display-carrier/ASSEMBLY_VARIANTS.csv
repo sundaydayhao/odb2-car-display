@@ -1,13 +1,14 @@
-reference,P4C6_base,P4C5_base,LTE_option,reason
-U100,OSPTEK P4C6-Core,OSPTEK P4C5-Core,unchanged,one core module only
-R104,FIT 0R,DNP,unchanged,RF BOOT to C6 pad9
-R105,DNP,FIT 0R,unchanged,RF BOOT to C5 pad6
-R106,FIT 10k,DNP,unchanged,C6 pad10 strap high
-R107,DNP,FIT 10k,unchanged,C5 pad7 strap high
-R303,FIT 0R,FIT 0R,unchanged,R0 charger CE held high - charging disabled
-R304,DNP,DNP,unchanged,mutually exclusive with R303 - qualify battery before enabling
-08_modem_all,DNP,DNP,FIT per qualified BOM,all parts on modem interface sheet
-09_modem_power_all,DNP,DNP,FIT per qualified BOM,all parts on modem power sheet
-10_sim_rf_all,DNP,DNP,FIT except RF tune shunt capacitors,all parts on SIM RF sheet
-C1040;C1041;C1042;C1043,DNP,DNP,DNP until RF tuning,shunt matching placeholders
-F300,HOLD exact 8A fuse,HOLD exact 8A fuse,unchanged,fuse I2t and pack protection not qualified
+reference,P4C6_full_feature,P4C5_full_feature,reason
+U100,OSPTEK P4C6-Core,OSPTEK P4C5-Core,one core module only
+R104,FIT 0R,DNP,RF BOOT to C6 pad9
+R105,DNP,FIT 0R,RF BOOT to C5 pad6
+R106,FIT 10k,DNP,C6 pad10 strap high
+R107,DNP,FIT 10k,C5 pad7 strap high
+R303,FIT 0R,FIT 0R,R0 charger CE held high - charging disabled
+R304,DNP,DNP,mutually exclusive with R303 - qualify battery before enabling
+08_modem_all,FIT,FIT,full-feature default assembly
+09_modem_power_all,FIT,FIT,full-feature default assembly
+10_sim_rf_all,FIT except RF tune caps,FIT except RF tune caps,full-feature default assembly
+C1040;C1041;C1042;C1043,DNP until RF tuning,DNP until RF tuning,unvalued shunt matching placeholders
+J1200;J1210;J1220,FIT,FIT,FPC interfaces populated - mating and functional holds remain
+F300,FIT candidate - qualification HOLD,FIT candidate - qualification HOLD,fuse I2t and pack protection not qualified

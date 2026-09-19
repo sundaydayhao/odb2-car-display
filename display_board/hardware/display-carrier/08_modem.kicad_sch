@@ -4,7 +4,7 @@
 	(uuid ece650ee-0e69-5588-a853-d070a0d808fb)
 	(paper "A3")
 	(title_block
-		(title "08 Optional ML307A-GCLN")
+		(title "08 ML307A-GCLN fitted")
 		(date "2026-09-19")
 		(rev "R0 ENGINEERING")
 		(company "OBD Car Display")
@@ -2663,7 +2663,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid edf3f668-e46f-5ab8-b76a-072ec4d7c3cb)
 		(property "Reference" "U1000"
 			(at 76.2 76.2 0)
@@ -2699,7 +2699,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "optional; footprint and interface verification pending"
+		(property "DesignStatus" "fitted full-feature build; footprint and interface verification pending"
 			(at 76.2 142.24 0)
 			(effects
 				(font
@@ -4214,7 +4214,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 9f83e021-ce61-503d-9eb8-0e490f954119)
 		(property "Reference" "U1001"
 			(at 215.9 49.53 0)
@@ -4466,7 +4466,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid fc9decaf-ccbb-5320-8b0d-e9587d629c68)
 		(property "Reference" "U1002"
 			(at 330.2 49.53 0)
@@ -4718,7 +4718,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 6cf72f4a-674c-53c7-950c-fba79f65737e)
 		(property "Reference" "C1000"
 			(at 195.58 110.49 0)
@@ -4831,7 +4831,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 0775f75c-df19-5978-a3c1-884fae97ff59)
 		(property "Reference" "C1001"
 			(at 251.46 110.49 0)
@@ -4944,7 +4944,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 87d856b1-a001-5ae7-bbbc-1319956ff6e1)
 		(property "Reference" "C1002"
 			(at 307.34 110.49 0)
@@ -5057,7 +5057,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid f969675a-9a00-58c1-a9cf-92faddbc6a45)
 		(property "Reference" "C1003"
 			(at 363.22 110.49 0)
@@ -5170,7 +5170,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 0f3a8388-9701-5fb0-89ed-0b0982b2b9d8)
 		(property "Reference" "Q1000"
 			(at 195.58 138.43 0)
@@ -5307,7 +5307,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 05fe2d63-b837-558d-832f-42abdf2e696c)
 		(property "Reference" "R1000"
 			(at 251.46 138.43 0)
@@ -5420,7 +5420,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid e5184f69-f9f8-5af9-8d44-18039af6860a)
 		(property "Reference" "R1001"
 			(at 307.34 138.43 0)
@@ -5533,7 +5533,7 @@
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid e6eddab0-e2b0-59af-bb22-89a9bdcb83e2)
 		(property "Reference" "C1004"
 			(at 363.22 138.43 0)
@@ -5646,7 +5646,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 0b918aad-849a-53a6-b219-5d7f69055548)
 		(property "Reference" "TP1000"
 			(at 190.5 157.48 0)
@@ -5730,7 +5730,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid cb5791f2-b55b-5c8a-9c08-c6bdd3ba45bf)
 		(property "Reference" "TP1001"
 			(at 246.38 157.48 0)
@@ -5814,7 +5814,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 00f64c6d-fb30-56e1-81de-7bd20a9f699f)
 		(property "Reference" "TP1002"
 			(at 302.26 157.48 0)
@@ -5898,7 +5898,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid b0cc9758-97a4-5677-91af-534f2771b204)
 		(property "Reference" "TP1003"
 			(at 358.14 157.48 0)
@@ -5982,7 +5982,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 98dcc6ff-ab91-51f6-8b4a-9869aab5ea97)
 		(property "Reference" "TP1004"
 			(at 190.5 185.42 0)
@@ -6066,7 +6066,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid ec96bb80-e404-5a03-b7f2-90ae92cc016d)
 		(property "Reference" "TP1005"
 			(at 246.38 185.42 0)
@@ -6150,7 +6150,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid 9a8a9e7d-865e-517f-999b-89363e53a6bb)
 		(property "Reference" "TP1006"
 			(at 302.26 185.42 0)
@@ -6234,7 +6234,7 @@
 		(unit 1)
 		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid ff8aba83-e447-5d32-90b8-447460884e04)
 		(property "Reference" "TP1007"
 			(at 358.14 185.42 0)
@@ -6332,7 +6332,7 @@
 		)
 		(uuid 47a96360-e8c1-5661-80f2-2f83ef809172)
 	)
-	(text "Optional assembly. RF layout, USB RNDIS firmware and GNSS coexistence need sample validation."
+	(text "Fitted full-feature assembly. RF layout, USB RNDIS firmware and GNSS coexistence need validation."
 		(at 20.32 30.48 0)
 		(effects
 			(font

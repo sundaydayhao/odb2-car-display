@@ -4,12 +4,16 @@ Run with KiCad Python after pcb.py and native ERC/DRC exports. The audit compare
 the native schematic XML against actual PCB pads, including no-connect nets.
 """
 from pathlib import Path
-import collections, hashlib, itertools, json, math, xml.etree.ElementTree as ET
+import argparse, collections, hashlib, itertools, json, math, xml.etree.ElementTree as ET
 import pcbnew as k
 
 ROOT=Path(__file__).resolve().parents[2]
 BUILD=ROOT/'build/carrier-design'
 OUT=BUILD/'project'
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--project',type=Path,default=OUT)
+ap.add_argument('--evidence',type=Path,default=BUILD)
+args=ap.parse_args();OUT=args.project;BUILD=args.evidence
 intent=json.loads((OUT/'design-intent.json').read_text(encoding='utf-8'))
 parts=intent['parts'];refs=[p['ref'] for p in parts]
 assert len(refs)==len(set(refs)) and all('?' not in r for r in refs)
@@ -35,14 +39,37 @@ erc=json.loads((BUILD/'erc-final.json').read_text(encoding='utf-8'))
 er=[v for s in erc['sheets'] for v in s['violations']]
 assert all(v['severity']=='warning' and v['type']=='isolated_pin_label' for v in er)
 pending=sorted(v['items'][0]['description'].split("'")[1] for v in er)
-hold_nets=sorted(['LCD_RESET','LCD_STBYB','TOUCH_INT','TOUCH_RESET','DSI_D1_P','DSI_D1_N',
- 'DSI_CLK_N','DSI_CLK_P','DSI_D0_P','DSI_D0_N','CSI_D0_N','CSI_D0_P','CSI_CLK_P','CSI_CLK_N',
- 'CSI_D1_N','CSI_D1_P','CAMERA_RESET','BACKLIGHT_PWM','LCD_VDD_EN','LCD_BIAS_EN','CAM_POWER_EN','AMP_EN'])
+hold_nets=sorted(['CAMERA_RESET','BACKLIGHT_PWM','LCD_BIAS_EN','CAM_POWER_EN','AMP_EN',
+ 'LCD_VGH','LCD_VGL','LCD_AVDD_9V8','LCD_VCOM','CAM_MCLK_1V8','CAM_DOVDD_1V8',
+ 'CAM_RESET_1V8','CAM_SDA_1V8','CAM_SCL_1V8'])
 assert pending==hold_nets,(pending,hold_nets)
 drc=json.loads((BUILD/'drc-final.json').read_text(encoding='utf-8'))
 assert not drc['schematic_parity'],drc['schematic_parity']
 assert not drc['violations'],drc['violations']
 assert len(board.GetTracks())==0 and len(drc['unconnected_items'])>0
+connectivity=board.GetConnectivity();connectivity.Build(board)
+unrouted=connectivity.GetUnconnectedCount(False)
+assert unrouted>=len(drc['unconnected_items'])
+assert {r for r,f in fps.items() if f.IsDNP()}=={'R105','R107','R304','C1040','C1041','C1042','C1043'}
+for ref,xy,angle in [('J1200',(70.5,57.5),0),('J1210',(96,67),0),('J1220',(76.5,7),180)]:
+    fp=fps[ref]
+    assert fp.GetLayer()==k.F_Cu and not fp.IsDNP()
+    assert abs(fp.GetOrientationDegrees()-angle)<.01
+    assert abs(k.ToMM(fp.GetPosition().x)-50-xy[0])<.01
+    assert abs(k.ToMM(fp.GetPosition().y)-50-xy[1])<.01
+# LCD PDF p6 and OSPTEK camera PDF p3: independently guard differential polarity.
+for ref,mapping in {
+ 'J1200':{'17':'DSI_CLK_P','18':'DSI_CLK_N','20':'DSI_D1_P','21':'DSI_D1_N','23':'DSI_D0_P','24':'DSI_D0_N'},
+ 'J1220':{'3':'CSI_D1_N','4':'CSI_D1_P','6':'CSI_CLK_N','7':'CSI_CLK_P','9':'CSI_D0_N','10':'CSI_D0_P'}
+}.items():
+    for pin,net in mapping.items():assert sch[(ref,pin)]==net
+# A passive connector with duplicate power pins does not necessarily cause an
+# isolated-label warning. Report these open supply boundaries independently.
+power_holds=['LCD_LEDA','LCD_LEDK','LCD_AVDD_9V8','LCD_VGH','LCD_VGL','LCD_VCOM',
+             'CAM_AVDD_2V8','CAM_DOVDD_1V8']
+for net in power_holds:
+    members={ref for (ref,pin),name in sch.items() if name==net}
+    assert members<= {'J1200','J1220'} and members,(net,members)
 
 # Compute TS thresholds with resistor and NTC R25/B tolerances. Uses the IC's
 # specified threshold extremes, not the temperature labels for its default NTC.
@@ -68,7 +95,13 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'duplicate_references':0,'pcb_pad_net_mismatches':0,'erc_errors':0,'erc_warnings':len(er),
  'pending_interface_nets':pending,'pcb_physical_violations':len(drc['violations']),
  'schematic_parity_violations':len(drc['schematic_parity']),
- 'pcb_unconnected_items':len(drc['unconnected_items']),'tracks':len(board.GetTracks()),
+ 'pcb_unconnected_items':unrouted,
+ 'drc_reported_unconnected_items':len(drc['unconnected_items']),
+ 'unconnected_count_source':'native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated',
+ 'open_peripheral_power_boundaries':power_holds,
+ 'fitted_physical_components':sum(not f.IsDNP() and not r.startswith(('TP','H')) for r,f in fps.items()),
+ 'dnp_exceptions':['R105','R107','R304','C1040','C1041','C1042','C1043'],
+ 'tracks':len(board.GetTracks()),
  'zones':len(board.Zones()),'ts_temperature_threshold_ranges_C':temps,
  'ts_open_ratio':round(187000/(187000+9090),6),'usb_current_limit_calculation':current,
  'notes':['0 physical DRC violations applies to an UNROUTED placement only.',

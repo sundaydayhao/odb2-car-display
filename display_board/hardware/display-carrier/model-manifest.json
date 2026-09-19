@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "display_carrier model repair; electrical and mechanical placement unchanged",
+  "scope": "display_carrier model bindings including the three populated FPC connectors; source and dimensional limitations are documented",
   "models": [
     {
       "reference": "U1000",
@@ -351,6 +351,114 @@
       ],
       "step_solids": 6,
       "step_valid": true
+    },
+    {
+      "reference": "J1200",
+      "part": "FPC-05FB-30PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_30PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_30PH20",
+      "file": "FPC-SMD_30P-P0.50_FPC-05FB-30PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856833.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "9131bcc2a5a84f7307e973d6b8c53d6bbdab1aaba0b09621ca94cdff34169e07",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -9.250000100000001,
+        9.250000100000001,
+        -5.150000100000005,
+        0.25000009999999956,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "J1210",
+      "part": "FPC-05FB-6PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_6PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_6PH20",
+      "file": "FPC-SMD_6P-P0.50_FPC-05FB-6PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856827.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "8322418ae83b7f688049310820f28cb3ffbc25ad667634314787e67d4c3b2f63",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -3.2500000999999994,
+        3.2500000999999994,
+        -5.150000100000005,
+        0.250000099999999,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "J1220",
+      "part": "FPC-05FB-24PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_24PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_24PH20",
+      "file": "FPC-SMD_24P-P0.50_FPC-05FB-24PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856831.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "4e01fab2673707bedcd6dbd64474e96b3d243a05de26dff4baeaa22be8be68f5",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -7.750000100000001,
+        7.750000100000001,
+        -5.150000100000004,
+        0.250000099999999,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
     }
   ],
   "intentional_no_model": {

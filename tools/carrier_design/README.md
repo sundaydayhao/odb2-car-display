@@ -29,9 +29,10 @@ at `C:/projects/kicad-projects/tools/KiSkill-main` remain runtime requirements;
 this script is not a platform-independent packaging tool.
 
 `verify.py` independently compares the generated intent, native schematic XML
-and actual PCB pads; checks all references and pad sets; verifies that the 22
-pending-interface warnings have not changed unexpectedly; and computes USB and
-NTC tolerance bounds. It deliberately records 499 unconnected items and a
+and actual PCB pads; checks all references and pad sets; verifies the explicitly
+listed pending-interface warnings; and computes USB and NTC tolerance bounds.
+It counts unrouted connections with the native connectivity API (the CLI DRC
+report list can truncate at 499 entries) and records a
 non-release status. A passing script does **not** mean ERC/DRC or product release
 has passed in full.
 
@@ -52,3 +53,20 @@ The checker requires the same native KiCad Python and local KiSkill parser.
 to rebuild the four explicitly marked dimensioned reference models. Their
 source dimensions and limitations are in the project's `3D_MODELS.md`.
 Supplier model files and the existing OSPTEK model are not regenerated.
+
+`fpc_interfaces.py` adds the three actual FPC sockets and their documented pin
+maps. LCD logic voltage conversion is implemented; panel bias/backlight and
+camera support remain explicit open boundaries, not fabricated connections.
+The six-pin touch interface is a reference pending the actual touch drawing.
+
+For additive changes, pass `pcb.py --preserve-placement <existing.kicad_pcb>`
+to keep old positions while placing new parts. Use `--library-source <dir>` to
+stage a reviewed library before promotion. A generated board still has new
+internal footprint IDs, so do not promote it wholesale over an existing board.
+`stage_additions.py --baseline <project> --generated <scratch> --output <stage>`
+keeps existing PCB identities/geometry/copper, adds new footprints, and allows
+only assembly flags and sheet/status metadata to change on old footprints.
+It refuses deleted refs, moved parts or changed existing pad nets. Verify that
+staged project with `verify.py --project <stage> --evidence <reports>`, after
+exporting `netlist.xml`, `erc-final.json` and `drc-final.json` into the report
+directory. Keep the user's project settings when promoting.

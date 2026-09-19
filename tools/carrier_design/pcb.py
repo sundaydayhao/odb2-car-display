@@ -5,9 +5,20 @@ plausible-looking copper. Native DRC evidence is retained separately.
 """
 from pathlib import Path
 import copy,json,shutil,math,sys,subprocess,xml.etree.ElementTree as ET
+import argparse
 import pcbnew as k
 from cad import ROOT,OUT,LIBS,PROJECT,ROOT_ID,uid
 from board_spec import d
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--preserve-placement',type=Path,
+    help='Keep existing reference positions while adding new footprints; does not preserve routing/UUIDs.')
+ap.add_argument('--library-source',type=Path,
+    help='Reviewed project library in a scratch directory, before promotion.')
+args=ap.parse_args()
+previous={}
+if args.preserve_placement:
+    previous_board=k.LoadBoard(str(args.preserve_placement.resolve()))
+    previous={fp.GetReference():fp for fp in previous_board.GetFootprints()}
 print('PCB: circuit loaded',len(d.parts),flush=True)
 d.write()
 xml_path=ROOT/'build/carrier-design/netlist.xml'
@@ -81,7 +92,7 @@ writefp(usb,'USB_C_HRO_TYPE_C_31_M_12_Edge')
 # The reviewed project library owns all repaired 3D bindings; re-importing a
 # supplier/global footprint must not restore broken URIs or erase a model.
 from models import stage_library
-stage_library(OUT)
+stage_library(OUT, args.library_source or FORMAL)
 
 (OUT/'fp-lib-table').write_text('(fp_lib_table (version 7) (lib (name "Carrier") (type "KiCad") (uri "${KIPRJMOD}/Carrier.pretty") (options "") (descr "R0 checked identity, see footprint release holds")))\n',encoding='utf-8')
 
@@ -104,15 +115,18 @@ rect(0,0,145,85,k.Edge_Cuts)
 text('R0 PLACEMENT STUDY - UNROUTED / NOT FOR FAB',72.5,89,size=1.8)
 text('F = SCREEN SIDE   B = REAR COVER',72.5,-8,size=1.3)
 # Explicit design reservations, not fabricated sockets / false connections.
-for x,y,w,h,label in [(55.5,40,30,40,'LCD FPC HOLD\nF face / entry from bottom'),(87,60,20,18,'TOUCH HOLD\nF face / same entry'),(62,0,29,12,'CAMERA FPC HOLD\nF face / horizontal'),(96,61,19,17,'NS4814 / SPEAKER\nCIRCUIT HOLD')]:
+for x,y,w,h,label in [(55.5,40,30,40,'LCD FPC ADJUSTMENT AREA\nJ1200 / cable fit unverified'),(87,60,20,18,'TOUCH FPC ADJUSTMENT\nJ1210 / pinout unverified'),(62,0,29,12,'CAMERA FPC\nJ1220 / support pending'),(96,61,19,17,'NS4814 / SPEAKER\nCIRCUIT HOLD')]:
     rect(x,y,w,h);text(label,x+w/2,y+h/2,size=.85)
 rect(0,77,145,8);text('BASE / STAND ZONE - NO USER CONNECTOR',72.5,82,size=1)
+text('LCD / J1200',70.5,53.4,k.F_SilkS,1)
+text('TOUCH / J1210',96,62.8,k.F_SilkS,1)
+text('CAMERA / J1220',76.5,11.6,k.F_SilkS,1)
 
 netnames=sorted({n for p in d.parts for n in p['nets'].values() if n is not None}|set(native_pads.values()))
 nets={}
 for i,name in enumerate(netnames,1):
     n=k.NETINFO_ITEM(b,name,i);b.Add(n);nets[name]=n
-occupied=[];audit=[]
+occupied={k.F_Cu:[],k.B_Cu:[]};audit=[]
 def bb(fp):
     z=fp.GetBoundingBox(False,False)
     return (k.ToMM(z.GetX())-O[0],k.ToMM(z.GetY())-O[1],k.ToMM(z.GetRight())-O[0],k.ToMM(z.GetBottom())-O[1])
@@ -123,7 +137,7 @@ for i,(x,y) in enumerate([(4,4),(141,4),(4,81),(141,81)],1):
     fp.SetReference('H'+str(i));fp.SetValue('M2.5 NPTH');fp.SetPosition(pos(x,y));b.Add(fp)
     fp.SetAttributes(fp.GetAttributes()|k.FP_BOARD_ONLY|k.FP_EXCLUDE_FROM_BOM|k.FP_EXCLUDE_FROM_POS_FILES)
     fp.Reference().SetVisible(False);fp.Value().SetVisible(False)
-    occupied.append((x-3.5,y-3.5,x+3.5,y+3.5))
+    for obstacles in occupied.values():obstacles.append((x-3.5,y-3.5,x+3.5,y+3.5))
 
 loaded=[]
 print('PCB: loading footprints',flush=True)
@@ -159,22 +173,29 @@ for p in d.parts:
 
 # Keep geometry of major interfaces/modules, then stage local small parts without
 # courtyard overlap. This is an initial placement, not a routed electrical layout.
-fixed={'U100','U1000','J200','J300','J301','J500','SW101','SW102','SW310','J1000','J1010','J1011','J800','J810','L400','U400','U300','L300','U310','U410','L410','U1010','L1010','C1012','C1013','U800'}
+fixed={'U100','U1000','J200','J300','J301','J500','SW101','SW102','SW310','J1000','J1010','J1011','J800','J810','L400','U400','U300','L300','U310','U410','L410','U1010','L1010','C1012','C1013','U800','J1200','J1210','J1220'}
+fixed.update(previous)
 overrides={'J200':(3.6,31,90),'SW310':(128,11,0),'J800':(8,66,90),'J810':(43,73,90),'J500':(135.5,56,270),'J1000':(137,29,270),
            'L400':(21,47,0),'U400':(31,47,0),'L410':(53,44,0),'U1010':(110,50,0),'L1010':(114,50,0),
            'L300':(40,15,0),'C1012':(116,43,90),'C1013':(123,43,90),'J1010':(94,12,0),'J1011':(101,17,0),'SW101':(101,3.5,180),'SW102':(112,3.5,180),'J300':(30,5.5,0)}
 for p,fp in loaded:
+    if p['ref'] in previous:
+        old=previous[p['ref']]
+        assert old.GetLayer()==fp.GetLayer(),p['ref']
+        fp.SetPosition(old.GetPosition());fp.SetOrientation(old.GetOrientation())
+        continue
     if p['ref'] in overrides:
         x,y,a=overrides[p['ref']];fp.SetPosition(pos(x,y));fp.SetOrientationDegrees(a)
 for p,fp in loaded:
     if p['ref'] in fixed:
-        z=bb(fp);occupied.append(z);audit.append({'ref':p['ref'],'bbox_mm':z,'fixed':True})
+        z=bb(fp);occupied[fp.GetLayer()].append(z);audit.append({'ref':p['ref'],'bbox_mm':z,'fixed':True})
 
 regions={
  '01_core':(53,13,96,60),'02_usb':(5,26,27,43),'03_usb_current':(5,7,27,26),
  '04_charger':(27,5,51,24),'05_system_switch':(36,25,55,39),'06_main_power':(9,36,55,60),
  '07_sd':(115,48,141,76),'08_modem':(93,17,131,50),'09_modem_power':(94,8,133,61),
- '10_sim_rf':(105,5,141,47),'11_codec':(5,59,32,77),'12_fm_audio':(30,57,66,77)
+ '10_sim_rf':(105,5,141,47),'11_codec':(5,59,32,77),'12_fm_audio':(30,57,66,77),
+ '14_lcd_fpc':(66,61,88,77),'15_touch_fpc':(88,61,96,77)
 }
 for p,fp in sorted(loaded,key=lambda q:-((bb(q[1])[2]-bb(q[1])[0])*(bb(q[1])[3]-bb(q[1])[1]))):
     if p['ref'] in fixed:continue
@@ -187,10 +208,10 @@ for p,fp in sorted(loaded,key=lambda q:-((bb(q[1])[2]-bb(q[1])[0])*(bb(q[1])[3]-
     for x,y in candidates:
         fp.SetPosition(pos(x,y));z=bb(fp)
         if z[0]<area[0] or z[1]<area[1] or z[2]>area[2] or z[3]>area[3]:continue
-        if any(overlap(z,q) for q in occupied):continue
+        if any(overlap(z,q) for q in occupied[fp.GetLayer()]):continue
         chosen=(x,y,z);break
     if chosen is None:raise RuntimeError(('No collision-free position',p['ref'],area))
-    occupied.append(chosen[2]);audit.append({'ref':p['ref'],'bbox_mm':chosen[2],'fixed':False,'position_mm':chosen[:2]})
+    occupied[fp.GetLayer()].append(chosen[2]);audit.append({'ref':p['ref'],'bbox_mm':chosen[2],'fixed':False,'position_mm':chosen[:2]})
 
 # Serialize every pad's actual net and identity; later compare to native SCH XML.
 padmap={fp.GetReference():{'path':fp.GetPath().AsString(),'pads':{p.GetNumber():p.GetNetname() for p in fp.Pads() if p.GetNumber()}} for _,fp in loaded}

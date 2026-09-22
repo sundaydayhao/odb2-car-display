@@ -287,13 +287,16 @@ flag('09_modem_power',1010,'MODEM_3V8',(50.8,251.46))
 
 page('10_sim_rf','10 SIM and antenna interfaces',(124,16),[
  'SIM voltage is supplied by modem. Do not connect 3.3 V to SIM0_VCC.',
+ 'J1000 SIM8066 push-push: side insertion and press-to-eject. CD-GND closed without card, open with card.',
+ 'SIM0_DET HIGH = card present, LOW = absent, matching ML307A default. 10k pull-up to MODEM_1V8.',
  'RF traces require 50 ohm controlled impedance and antenna matching validation.',
  'GNSS connector is DC-blocked. Active-antenna bias is a separate release hold.'
 ])
 box('NANOSIM',[(1,'VCC','power_in'),(2,'RST','input'),(3,'CLK','input'),(5,'GND','power_in'),(6,'VPP_NC','no_connect'),(7,'DATA','bidirectional'),('SH','SHIELD','passive'),('SW','DETECT','passive')])
-item('10_sim_rf','J1000','NANOSIM','GCT SIM8060-6-1-14-00',{1:'SIM0_VCC',2:'SIM_RST_SOCKET',3:'SIM_CLK_SOCKET',5:'GND',6:None,7:'SIM_DATA_SOCKET','SH':'GND','SW':'SIM0_DET'},'Connector_Card:nanoSIM_GCT_SIM8060-6-1-14-00',xy=(63.5,73.66),pcb=(136,28),angle=90)
+item('10_sim_rf','J1000','NANOSIM','GCT SIM8066-6-1-14-01-A',{1:'SIM0_VCC',2:'SIM_RST_SOCKET',3:'SIM_CLK_SOCKET',5:'GND',6:None,7:'SIM_DATA_SOCKET','SH':'GND','SW':'SIM0_DET'},'Carrier:nanoSIM_GCT_SIM8066_PushPush',xy=(63.5,73.66),pcb=(136.8,29),angle=270,source='https://gct.co/connector/sim8066',status='Push-push nano-SIM; CD normally closed to shield; HIGH means card present')
 for i,(n,t) in enumerate([('SIM0_DATA','SIM_DATA_SOCKET'),('SIM0_RST','SIM_RST_SOCKET'),('SIM0_CLK','SIM_CLK_SOCKET')]):pas('10_sim_rf','R'+str(1030+i),'22R',n,t)
-cap('10_sim_rf','C1030','100n','SIM0_VCC');pas('10_sim_rf','R1033','47k','MODEM_1V8','SIM0_DET');cap('10_sim_rf','C1031','10n','SIM0_DET')
+cap('10_sim_rf','C1030','1u 10V','SIM0_VCC');pas('10_sim_rf','R1033','10k','MODEM_1V8','SIM0_DET');cap('10_sim_rf','C1031','10n','SIM0_DET')
+pas('10_sim_rf','R1034','10k','SIM0_VCC','SIM_DATA_SOCKET',pcb=(127.2,33))
 item('10_sim_rf','U1030','USBLC6','USBLC6-2SC6',{1:'SIM_DATA_SOCKET',2:'GND',3:'SIM_CLK_SOCKET',4:'SIM_CLK_SOCKET',5:'SIM0_VCC',6:'SIM_DATA_SOCKET'},SOT6,xy=(63.5,127),pcb=(132,35))
 item('10_sim_rf','U1031','USBLC6','USBLC6-2SC6',{1:'SIM_RST_SOCKET',2:'GND',3:'GND',4:'GND',5:'SIM0_VCC',6:'SIM_RST_SOCKET'},SOT6,xy=(63.5,177.8),pcb=(135,37))
 box('RF_CONN',[(1,'RF','passive'),(2,'GND','passive')],5.08)

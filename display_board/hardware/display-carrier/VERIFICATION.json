@@ -1,8 +1,8 @@
 {
   "status": "DRAFT_ONLY_NOT_FAB_APPROVED",
   "kicad": "10.0.5",
-  "schematic_symbols": 358,
-  "circuit_footprints": 349,
+  "schematic_symbols": 359,
+  "circuit_footprints": 350,
   "mounting_holes": 4,
   "schematic_sheets_including_root": 20,
   "geometric_violations": 0,
@@ -27,7 +27,7 @@
   ],
   "pcb_physical_violations": 0,
   "schematic_parity_violations": 0,
-  "pcb_unconnected_items": 845,
+  "pcb_unconnected_items": 848,
   "drc_reported_unconnected_items": 499,
   "unconnected_count_source": "native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated",
   "open_peripheral_power_boundaries": [
@@ -40,7 +40,7 @@
     "CAM_AVDD_2V8",
     "CAM_DOVDD_1V8"
   ],
-  "fitted_physical_components": 319,
+  "fitted_physical_components": 320,
   "dnp_exceptions": [
     "R105",
     "R107",
@@ -114,7 +114,7 @@
     "07_sd.kicad_sch": "7c7e13f999cdb25ba56f191163cd3df5180dfb3105d0f160dade0f4f6d6fa752",
     "08_modem.kicad_sch": "cc82d6a849a35f72f470f2f9def84d26f46a30623be970398bbafdbbc20a3b55",
     "09_modem_power.kicad_sch": "06633a69c91ee4dae56ecd49e6cb07f4fe9209f1404b6e0f2215e89ea408995c",
-    "10_sim_rf.kicad_sch": "b06ce9b9c536b7fa8539348235bd29c6a206b8139fc6122e270eada482a05bc1",
+    "10_sim_rf.kicad_sch": "e1da2a585d4188fa2e576b99d2d5f709beed920e42334535d11d2c2c8c4eee15",
     "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
     "12_fm_audio.kicad_sch": "4879e8e7c200fc62f746f0fe06c7583d102f96f6e27bf008c1c4da33832cb523",
     "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
@@ -124,9 +124,9 @@
     "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
     "18_dual_mic.kicad_sch": "7dfd7a7ad516cc94e3185fd69f7c5e37b9f9993ff20fe1f0c9843bb5fbbf1a36",
     "19_stereo_pa.kicad_sch": "35da773e6cb42624e78cd38be18b37874b5262a49a7503ae20832c4e251b2f28",
-    "display_carrier.kicad_pcb": "53516f24d9f54f15b846ebc04f4856906e01e0c377becebc588742b5cdee0233",
+    "display_carrier.kicad_pcb": "f8bd6f1277f305c704e89129a6d1326ba9616f23dfa49d47e40db954e1e78fb7",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "4f7266682fa0fdcb3b60787632cedb226855a62cba02590c891a54acf02c9302"
+    "display_carrier.kicad_sch": "3615d07719cc54602b49de12aa7f17a0c288b3b6782938540eda62100857a227"
   },
   "stereo_audio": {
     "ES8389_7bit_address": "0x12",
@@ -144,5 +144,19 @@
     ],
     "amplifier_nominal_gain_V_V": 2.4,
     "firmware_and_physical_audio_validation": "NOT_RUN"
+  },
+  "push_push_sim": {
+    "socket": "GCT SIM8066-6-1-14-01-A",
+    "mechanism": "push-push",
+    "entry": "right edge in screen-front projection",
+    "detect_polarity": "HIGH=card present; normally closed CD-to-GND when empty",
+    "ML307A_default_polarity_match": true,
+    "NPTH_peg_holes_mm": [
+      0.75,
+      0.75
+    ],
+    "four_shell_tabs_grounded": true,
+    "component_side_contact_copper_keepout": true,
+    "manufacturing_and_enclosure_mating": "NOT_VALIDATED"
   }
 }

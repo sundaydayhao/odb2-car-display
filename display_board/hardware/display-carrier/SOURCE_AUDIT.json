@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-23",
-  "revision": "H_onboard_FM_dual_mic_stereo_audio",
+  "revision": "I_side_entry_push_push_SIM",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -817,5 +817,23 @@
     }
   ],
   "revision_H_review": "AUDIO_REVIEW.json",
-  "revision_H_firmware": "ES8311 application remains unchanged; ES8389 BSP/TDM/dual-mic migration not yet implemented"
+  "revision_H_firmware": "ES8311 application remains unchanged; ES8389 BSP/TDM/dual-mic migration not yet implemented",
+  "push_push_SIM": {
+    "part": "GCT SIM8066-6-1-14-01-A",
+    "official_product": "https://gct.co/connector/sim8066",
+    "drawing": {
+      "source": "https://www1.futureelectronics.com/doc/Global%20Connector%20Technology/SIM8066.pdf",
+      "revision": "A1 2021-09-22",
+      "sha256": "20c56183afd501b03b663d620b6eb7a071a007db998a1d3e32320c689dd2cd75"
+    },
+    "specification": {
+      "source": "https://media.digikey.com/pdf/Data%20Sheets/GCT%20PDFs/SIM8066-spec.pdf",
+      "revision": "A 2021-03-19",
+      "sha256": "db6a28e5d1b120eff61f1ea909ad765fb459031da7589065039cbe76eb34c7cf"
+    },
+    "current_revision_boundary": "Official page lists Rev B PCN 2025-03-13; file not retrieved; manufacturing comparison pending",
+    "modem_source": "Local ML307A-GNSS hardware V1.0.0 page 32; compatibility manual V3.1.0",
+    "evidence": "build/carrier-sim/",
+    "review": "SIM_REVIEW.json"
+  }
 }

@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1480" height="850" viewBox="0 0 1480 850">
 <style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .small{font-size:13px}</style>
 <rect width="1480" height="850" fill="#f5f7fb"/>
-<text x="60" y="53" font-size="30" fill="#20324a" font-weight="700">显示载板 · FM 与双麦双扬声器布局</text>
-<text x="60" y="87" font-size="18" fill="#20324a" font-weight="400">2026-09-23 / 修订 H / 实际 PCB 坐标投影；尚未布线</text>
+<text x="60" y="53" font-size="30" fill="#20324a" font-weight="700">显示载板 · 侧插自锁 SIM / FM / 双麦双扬声器</text>
+<text x="60" y="87" font-size="18" fill="#20324a" font-weight="400">2026-09-23 / 修订 I / 实际 PCB 坐标投影；尚未布线</text>
 <text x="60" y="117" font-size="16" fill="#20324a" font-weight="400">正视投影：F 面朝屏幕，B 面朝后壳；与用户背面照片左右镜像。</text>
 <rect x="70.0" y="145.0" width="923.216" height="559.776" fill="#e4e9f0" stroke="#a5b0c0" stroke-width="1.5" stroke-dasharray="7 5"/>
 <rect x="125.608" y="159.0" width="812.0" height="475.99999999999994" fill="#fbfffc" stroke="#43866b" stroke-width="1.5" />
@@ -87,7 +87,7 @@
 <rect x="810.3480000000001" y="483.772" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="458.78000000000003" y="307.092" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="335.58" y="303.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
-<rect x="848.4279999999999" y="280.38" width="86.52" height="82.03999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="848.988" y="281.5" width="87.91999999999999" height="79.8" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="883.2599999999999" y="244.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="156.38" y="275.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="784.6999999999999" y="255.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
@@ -333,6 +333,7 @@
 <rect x="706.8599999999999" y="523.952" width="35.896" height="20.188" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="684.3480000000001" y="482.736" width="13.72" height="12.235999999999999" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="343.86799999999994" y="544.4200000000001" width="22.679999999999996" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="833.6999999999999" y="335.372" width="8.456" height="16.855999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
 <rect x="293.60799999999995" y="203.8" width="67.19999999999999" height="431.2" fill="#cde9f5" fill-opacity="0.75" stroke="#8697a6" stroke-dasharray="4 3"/>
 <rect x="456.00800000000004" y="418.28" width="128.79999999999998" height="216.72" fill="#ffebcc" fill-opacity="0.75" stroke="#8697a6" stroke-dasharray="4 3"/>
 <rect x="477.9992" y="287.3912" width="146.4176" height="146.4176" fill="none" stroke="#64758b" stroke-width="1.5" />
@@ -359,6 +360,8 @@
 <text x="605.808" y="513.2" font-size="14" fill="#a75221" font-weight="600">PA L / F</text>
 <rect x="706.8599999999999" y="523.952" width="35.896" height="20.188" fill="#ffffff" stroke="#a75221" stroke-width="1.5" />
 <text x="689.808" y="513.2" font-size="14" fill="#a75221" font-weight="600">PA R / F</text>
+<rect x="848.988" y="281.5" width="87.91999999999999" height="79.8" fill="#ffffff" stroke="#315ace" stroke-width="1.5" />
+<text x="856.6880000000001" y="300.4" font-size="14" fill="#315ace" font-weight="600">SIM / B</text>
 <path d="M 495.408 145 H 507.408 V 403.15999999999997 H 533.408" fill="none" stroke="#b33b51" stroke-width="1.5"/>
 <text x="537.408" y="400.15999999999997" font-size="14" fill="#b33b51" font-weight="600">尖端 Y=46.1</text>
 <path d="M 302.20799999999997 145 H 314.20799999999997 V 187.0 H 340.20799999999997" fill="none" stroke="#b33b51" stroke-width="1.5"/>
@@ -368,8 +371,10 @@
 <path d="M 237.60799999999998 596.4 V 606.4 M 237.60799999999998 601.4 H 573.608 M 573.608 596.4 V 606.4" stroke="#ad496b" fill="none"/>
 <text x="355.60799999999995" y="623.4" font-size="14" fill="#ad496b" font-weight="400">双麦间距 60 mm</text>
 <text x="680.008" y="668.6" font-size="14" fill="#0c8d76" font-weight="400">隔热槽 + 全层禁铺铜</text>
+<path d="M 981.608 321.4 H 940.608 l 10 -6 m -10 6 l 10 6" stroke="#315ace" stroke-width="2.5" fill="none"/>
+<text x="935.608" y="382.4" font-size="14" fill="#315ace" font-weight="600">右侧推入</text>
 <text x="1030" y="159" font-size="16" fill="#20324a" font-weight="700">PCB</text>
-<text x="1030" y="182" font-size="14" fill="#20324a" font-weight="400">145 × 85 mm / 四层 / 251 个非音频封装保留</text>
+<text x="1030" y="182" font-size="14" fill="#20324a" font-weight="400">145 × 85 mm / 四层 / 排线及音频位置保持</text>
 <text x="1030" y="216" font-size="16" fill="#20324a" font-weight="700">排线位置保持</text>
 <text x="1030" y="239" font-size="14" fill="#20324a" font-weight="400">触摸 Y=7.5；LCD Y=46.1 mm（尖端）</text>
 <text x="1030" y="273" font-size="16" fill="#20324a" font-weight="700">双板载麦克风 · B</text>
@@ -380,12 +385,12 @@
 <text x="1030" y="410" font-size="14" fill="#20324a" font-weight="400">RDA5807M / 3.0 V / 晶体；J810 天线接口</text>
 <text x="1030" y="444" font-size="16" fill="#20324a" font-weight="700">双扬声器</text>
 <text x="1030" y="467" font-size="14" fill="#20324a" font-weight="400">NS4150B ×2 / 独立 BTL；J820 左、J821 右</text>
-<text x="1030" y="501" font-size="16" fill="#20324a" font-weight="700">功放电源</text>
-<text x="1030" y="524" font-size="14" fill="#20324a" font-weight="400">独立 4.788 V；两路共用 AMP_EN 静音控制</text>
+<text x="1030" y="501" font-size="16" fill="#20324a" font-weight="700">侧插自锁 Nano-SIM</text>
+<text x="1030" y="524" font-size="14" fill="#20324a" font-weight="400">GCT SIM8066；右侧推入，再按弹出</text>
 <text x="1030" y="558" font-size="16" fill="#20324a" font-weight="700">车内传感器</text>
 <text x="1030" y="581" font-size="14" fill="#20324a" font-weight="400">OPT3001 / SHT40 与隔热槽保持</text>
-<text x="1030" y="615" font-size="16" fill="#20324a" font-weight="700">验证边界</text>
-<text x="1030" y="638" font-size="14" fill="#20324a" font-weight="400">网表/间距通过；固件、声学、RF 待验证</text>
+<text x="1030" y="615" font-size="16" fill="#20324a" font-weight="700">卡口装配待实测</text>
+<text x="1030" y="638" font-size="14" fill="#20324a" font-weight="400">追加按压 0.85 mm；弹出行程 2.70 mm</text>
 <text x="60" y="770" font-size="18" fill="#91364a" font-weight="400">触摸横向位置按照片估算；7.5 / 46.1 mm 为用户更正后的尖端测量值。</text>
 <text x="60" y="802" font-size="16" fill="#91364a" font-weight="400">连接器名义插深、屏板堆叠、触摸针序和外壳光窗/通风仍须样件核对。0 条走线，不能据此投板。</text>
 </svg>

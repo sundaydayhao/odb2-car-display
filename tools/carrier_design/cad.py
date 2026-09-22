@@ -106,7 +106,7 @@ class Design:
         # One mutation check ensures the verifier rejects an actual cross-net short.
         assert verify([Seg('A',(0,1.27),(2.54,1.27)),Seg('B',(1.27,0),(1.27,2.54))],[],[],False)
         root=[f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {ROOT_ID}) (paper "A3") (lib_symbols)',
-              '(title_block (title "OSPTEK P4C5 / P4C6 Display Carrier") (date "2026-09-23") (rev "R0H STEREO") (company "OBD Car Display") (comment 1 "NOT FOR FABRICATION - assembly and validation holds apply"))']
+              '(title_block (title "OSPTEK P4C5 / P4C6 Display Carrier") (date "2026-09-23") (rev "R0I SIM") (company "OBD Car Display") (comment 1 "NOT FOR FABRICATION - assembly and validation holds apply"))']
         for i,(name,title) in enumerate(self.sheets.items()):
             sid=uid('sheet:'+name);x=15.24+(i%4)*100.33;y=35.56+(i//4)*45.72
             root.append(f'(sheet (at {x} {y}) (size 91.44 33.02) (stroke (width 0.254) (type default)) (fill (color 0 0 0 0)) (uuid {sid}) (property "Sheetname" {q(title)} (at {x} {y-1.27} 0) (effects (font (size 1.27 1.27)) (justify left bottom))) (property "Sheetfile" {q(name+".kicad_sch")} (at {x} {y+34.29} 0) (effects (font (size 1.016 1.016)) (justify left top))) (instances (project {q(PROJECT)} (path {q("/"+ROOT_ID)} (page {q(i+2)})))))')
@@ -124,7 +124,7 @@ class Design:
         for kind in sorted(used):
             d=copy.deepcopy(self.symbols[kind]['tree']);d[1]=sexp.QStr.of('Carrier:'+kind);defs.append(sexp.dumps(d))
         sheetid=uid('doc:'+name)
-        date='2026-09-23' if name in ['11_codec','12_fm_audio','13_release_holds','17_cabin_sensors','18_dual_mic','19_stereo_pa'] else '2026-09-19'
+        date='2026-09-23' if name in ['10_sim_rf','11_codec','12_fm_audio','13_release_holds','17_cabin_sensors','18_dual_mic','19_stereo_pa'] else '2026-09-19'
         b=[f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {sheetid}) (paper "A3")',
            f'(title_block (title {q(title)}) (date "{date}") (rev "R0 ENGINEERING") (company "OBD Car Display") (comment 1 "Prototype drawing; see DESIGN_STATUS.md"))',
            '(lib_symbols\n'+'\n'.join(defs)+')']

@@ -14,7 +14,7 @@ SIM0_DATA,-,-,11,SIM0_DATA,1V8_or_3V0,planned,直达Nano-SIM及近座ESD；不�
 SIM0_RST,-,-,12,SIM0_RST,1V8_or_3V0,planned,由模组控制
 SIM0_CLK,-,-,13,SIM0_CLK,1V8_or_3V0,planned,短线及串阻位置按参考电路
 SIM0_VCC,-,-,14,SIM0_VCC,1V8_or_3V0_output,planned,模组提供SIM电源；局部去耦
-SIM0_DET,-,-,79,SIM0_DET,1V8_input,planned,卡座机械检测及去抖；不默认支持运行时热拔
+SIM0_DET,-,-,79,SIM0_DET,1V8_input,planned,SIM8066 常闭 CD；10k 上拉 VDD_EXT；高=有卡；需去抖且不默认支持运行时热拔
 LTE_RF,-,-,35,ANT_MAIN,RF_50ohm,planned,独立LTE天线及匹配；无分支
 GNSS_RF,-,-,2,ANT_GNSS,RF_50ohm,planned,GPS_L1及北斗B1天线；偏置经隔直馈电网络
 MODEM_RESET_TP,-,-,15,RESET,1V8_active_low,test_point_only,至少300ms低；短线滤波；主机故障恢复走电源循环

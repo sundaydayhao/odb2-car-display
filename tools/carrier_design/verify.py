@@ -87,6 +87,27 @@ if 'U1300' in fps:
        'CABIN_I2C_SCL':{('U1300','4'),('U1301','2'),('R1301','2')}
     }.items():assert {rp for rp,n in sch.items() if n==net}==expected_nodes
     assert all(not fps[r].IsDNP() for r in ['U1300','U1301','R1300','R1301','C1300','C1301','C1302'])
+sim_checks=None
+if 'SIM8066' in fps['J1000'].GetValue():
+    for pin,net in {'1':'SIM0_VCC','2':'SIM_RST_SOCKET','3':'SIM_CLK_SOCKET','5':'GND',
+                    '7':'SIM_DATA_SOCKET','SH':'GND','SW':'SIM0_DET'}.items():assert sch[('J1000',pin)]==net
+    assert sch[('J1000','6')].startswith('unconnected-')
+    assert sch[('R1033','1')]=='MODEM_1V8' and sch[('R1033','2')]=='SIM0_DET'
+    assert sch[('R1034','1')]=='SIM0_VCC' and sch[('R1034','2')]=='SIM_DATA_SOCKET'
+    assert fps['R1033'].GetValue()==fps['R1034'].GetValue()=='10k'
+    assert fps['C1030'].GetValue()=='1u 10V'
+    f=fps['J1000'];pads=list(f.Pads());holes=[p for p in pads if not p.GetNumber()]
+    assert len(holes)==2 and all(p.GetAttribute()==k.PAD_ATTRIB_NPTH and abs(k.ToMM(p.GetDrillSize().x)-.75)<.001 for p in holes)
+    assert len([p for p in pads if p.GetNumber()=='SH'])==4
+    assert f.GetLayer()==k.B_Cu and abs(f.GetOrientationDegrees()%360-270)<.001
+    assert len(list(f.Zones()))==1
+    # In this bottom-side rotation, shell-front tabs must be nearer +X than signal tails.
+    assert max(p.GetPosition().x for p in pads if p.GetNumber()=='SH')>max(p.GetPosition().x for p in pads if p.GetNumber()=='1')
+    sim_checks={'socket':'GCT SIM8066-6-1-14-01-A','mechanism':'push-push','entry':'right edge in screen-front projection',
+        'detect_polarity':'HIGH=card present; normally closed CD-to-GND when empty',
+        'ML307A_default_polarity_match':True,'NPTH_peg_holes_mm':[.75,.75],
+        'four_shell_tabs_grounded':True,'component_side_contact_copper_keepout':True,
+        'manufacturing_and_enclosure_mating':'NOT_VALIDATED'}
 audio_checks=None
 if 'U820' in fps:
     # Independent pin map from S31-Korvo-1 p4 / ES8389 p6 and RDA5807M p14.
@@ -183,5 +204,6 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'hash_normalization':'CRLF converted to LF before SHA-256',
  'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro']}}
 if audio_checks:report['stereo_audio']=audio_checks
+if sim_checks:report['push_push_sim']=sim_checks
 (BUILD/'verification-summary.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k not in ['design_file_sha256','native_ignored_drc_checks','pending_interface_nets']},indent=2,ensure_ascii=False))

@@ -9,6 +9,7 @@ def render(project):
     m=json.loads((project/'MECHANICAL_LAYOUT.json').read_text(encoding='utf-8'))
     fps={f.GetReference():f for f in b.GetFootprints()}
     audio='U820' in fps
+    push_sim='SIM8066' in fps['J1000'].GetValue()
     ox,oy=70,145;scale=5.6
     def pt(x,y):return ox+x*scale,oy+y*scale
     s=['<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="850" viewBox="0 0 1480 850">',
@@ -18,8 +19,8 @@ def render(project):
         s.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{weight}">{html.escape(t)}</text>')
     def rect(x,y,w,h,fill,stroke,dash=''):
         px,py=pt(x,y);s.append(f'<rect x="{px}" y="{py}" width="{w*scale}" height="{h*scale}" fill="{fill}" stroke="{stroke}" stroke-width="1.5" '+(f'stroke-dasharray="{dash}"' if dash else '')+'/>')
-    text(60,53,'显示载板 · FM 与双麦双扬声器布局' if audio else '显示载板 · 折后排线与车内传感器布局',30,weight='700')
-    text(60,87,'2026-09-23 / 修订 '+('H' if audio else 'G')+' / 实际 PCB 坐标投影；尚未布线',18)
+    text(60,53,'显示载板 · 侧插自锁 SIM / FM / 双麦双扬声器' if push_sim else '显示载板 · FM 与双麦双扬声器布局' if audio else '显示载板 · 折后排线与车内传感器布局',30,weight='700')
+    text(60,87,'2026-09-23 / 修订 '+('I' if push_sim else 'H' if audio else 'G')+' / 实际 PCB 坐标投影；尚未布线',18)
     text(60,117,'正视投影：F 面朝屏幕，B 面朝后壳；与用户背面照片左右镜像。',16)
     rect(0,0,164.86,99.96,'#e4e9f0','#a5b0c0','7 5')
     bx,by=m['pcb_offset_from_screen_top_left_mm'];rect(bx,by,145,85,'#fbfffc','#43866b')
@@ -40,6 +41,7 @@ def render(project):
     if audio:selected += [('U800','ES8389 / B','#ad496b'),('U815','FM / B','#c17432'),
                           ('U802','MIC L / B','#ad496b'),('U803','MIC R / B','#ad496b'),
                           ('U820','PA L / F','#a75221'),('U821','PA R / F','#a75221')]
+    if push_sim:selected += [('J1000','SIM / B','#315ace')]
     for ref,label,color in selected:
         f=fps[ref];z=f.GetBoundingBox(False,False)
         x=k.ToMM(z.GetX())-50+bx;y=k.ToMM(z.GetY())-50+by
@@ -57,6 +59,10 @@ def render(project):
         s.append(f'<path d="M {px} {py-5} V {py+5} M {px} {py} H {ex} M {ex} {py-5} V {py+5}" stroke="#ad496b" fill="none"/>')
         text((px+ex)/2-50,py+22,'双麦间距 60 mm',14,'#ad496b')
     text(*pt(bx+99,by+91),'隔热槽 + 全层禁铺铜',14,'#0c8d76')
+    if push_sim:
+        px,py=pt(bx+145,by+29)
+        s.append(f'<path d="M {px+44} {py} H {px+3} l 10 -6 m -10 6 l 10 6" stroke="#315ace" stroke-width="2.5" fill="none"/>')
+        text(px-2,py+61,'右侧推入',14,'#315ace','600')
     x=1030
     notes=[('PCB', '145 × 85 mm，四层；尺寸未扩大'),
            ('屏幕内位置','左偏移 9.93 mm；顶部偏移 2.50 mm'),
@@ -76,6 +82,10 @@ def render(project):
            ('功放电源','独立 4.788 V；两路共用 AMP_EN 静音控制'),
            ('车内传感器','OPT3001 / SHT40 与隔热槽保持'),
            ('验证边界','网表/间距通过；固件、声学、RF 待验证')]
+    if push_sim:
+        notes[0]=('PCB','145 × 85 mm / 四层 / 排线及音频位置保持')
+        notes[6]=('侧插自锁 Nano-SIM','GCT SIM8066；右侧推入，再按弹出')
+        notes[8]=('卡口装配待实测','追加按压 0.85 mm；弹出行程 2.70 mm')
     for i,(title,detail) in enumerate(notes):
         y=159+i*57;text(x,y,title,16,weight='700');text(x,y+23,detail,14)
     text(60,770,'触摸横向位置按照片估算；7.5 / 46.1 mm 为用户更正后的尖端测量值。',18,'#91364a')

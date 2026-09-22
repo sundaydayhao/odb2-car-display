@@ -121,3 +121,18 @@ the reviewed board's UUIDs, slots, rule areas or full layout. Use the staged
 workflow for CAD promotion. Current sources, firmware migration requirements
 and verification boundaries are in `AUDIO_ARCHITECTURE.md`; native evidence is
 under `build/carrier-audio/`.
+
+Revision I replaces the hinged SIM8060 with GCT SIM8066-6-1-14-01-A, a
+right-edge push-push Nano-SIM socket. `sim_pushpush.py --baseline <project>
+--output <stage>` is the one-time migration for an unrouted revision-H board:
+it expects the C3032925 download in `build/carrier-sim/sim8066-part/libs/`,
+rebuilds its reviewed NPTH/land pattern/copper keepout, preserves all other
+PCB objects, updates C1030/R1033 and adds the SIM DATA pull-up R1034. It uses
+the normal generator scratch directory; neither scratch output is a release.
+
+Normal subsequent generation uses the checked-in SIM8066 footprint/model
+through `--library-source` and `--preserve-placement`, without downloading
+supplier data again. Native checks plus the independent verifier cover NC
+card-detect polarity, SIM-domain pull-ups, pin maps, peg holes, shell grounds
+and socket orientation. Review current-revision drawing changes and physical
+card/enclosure operation before manufacturing; see `SIM_SOCKET.md`.

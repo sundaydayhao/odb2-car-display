@@ -92,4 +92,4 @@ pin4/pin9 的时钟/数据复用沿用 S31 官方接法，必须配置 ES8389 �
 - 用户本地 `docs/RDA5807M datasheet_v1.pdf`，第 2 / 17 / 18 页引脚、应用和封装；[ABS07](https://abracon.com/Resonators/ABS07.pdf)、[PESD5V0U1BA](https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf)。
 - [SGM3157](https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf)、[TLV62585](https://www.ti.com/lit/ds/symlink/tlv62585.pdf)。
 
-原生 KiCad 10.0.5 检查：0 电气错误、13 个既有接口警告（原 AMP_EN 警告已关闭）、0 物理 DRC 违规、0 SCH/PCB 差异。另有 **845 项未连接、0 走线**。音频引脚/地址电阻/左右通道/BTL 极性/两麦间距由独立网表检查覆盖，326 个实体器件的模型均可加载。详见 `VERIFICATION.json`、`AUDIO_REVIEW.json` 和 `MODEL_VERIFICATION.json`。这些结果只验收本轮图纸与初摆，不能据此投板。
+以下为修订 H 当时的验证记录；当前整板计数见 VERIFICATION.json / SIM_REVIEW.json。原生 KiCad 10.0.5 检查：0 电气错误、13 个既有接口警告（原 AMP_EN 警告已关闭）、0 物理 DRC 违规、0 SCH/PCB 差异。另有 **845 项未连接、0 走线**。音频引脚/地址电阻/左右通道/BTL 极性/两麦间距由独立网表检查覆盖，326 个实体器件的模型均可加载。详见 `VERIFICATION.json`、`AUDIO_REVIEW.json` 和 `MODEL_VERIFICATION.json`。这些结果只验收本轮图纸与初摆，不能据此投板。

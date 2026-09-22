@@ -108,41 +108,6 @@
       "step_valid": true
     },
     {
-      "reference": "J1000",
-      "original_footprint": "Connector_Card:nanoSIM_GCT_SIM8060-6-1-14-00",
-      "footprint": "Carrier:nanoSIM_GCT_SIM8060-6-1-14-00",
-      "file": "SIM8060-6-1-14-00-A.step",
-      "offset_mm": [
-        0,
-        0.35,
-        0.03
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "supplier_package",
-      "source": "https://www.lcsc.com/product-detail/C2943124.html",
-      "note": "0.35 mm model-Y correction from supplier footprint origin to official KiCad pad origin; 0.03 mm seating correction. Hinged lid, not slide-in socket.",
-      "sha256": "10afda79f40532d790a5f6529fd2998c563a779d8eb17335fcf4997ca4212aaf",
-      "raw_model_bounds_mm": [
-        -6.2,
-        6.2,
-        -7.0,
-        7.1,
-        -0.03,
-        1.4
-      ],
-      "step_solids": 29,
-      "step_valid": true
-    },
-    {
       "reference": "U200",
       "original_footprint": "Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
       "footprint": "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
@@ -549,6 +514,39 @@
       "source": "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf",
       "note": "Manufacturer circular 0.8mm lands, 1.70x2.46 pitch; top port offset (+0.005,-0.75). Envelope model only.",
       "sha256": "1b0d08e085d0456e8d2bd730192256a8327562dcdbd54345856e934b6c2c724b"
+    },
+    {
+      "reference": "J1000",
+      "original_footprint": "Carrier:nanoSIM_GCT_SIM8066_PushPush",
+      "footprint": "Carrier:nanoSIM_GCT_SIM8066_PushPush",
+      "file": "SIM8066-6-1-14-01-A.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C3032925.html",
+      "note": "Push-push SIM8066. Supplier STEP, not precision enclosure approval. Land pattern checked against GCT A1; pegs corrected to NPTH; 4 shell tabs share SH/GND.",
+      "sha256": "0f698a9681065c13320fff80893bef5d509bba3cadd9f7f36bc6ee916d0def9e",
+      "raw_model_bounds_mm": [
+        -6.545,
+        6.545,
+        -7.29,
+        7.29,
+        -0.4,
+        1.42
+      ]
     }
   ],
   "intentional_no_model": {

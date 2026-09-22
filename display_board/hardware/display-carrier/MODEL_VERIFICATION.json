@@ -1,8 +1,8 @@
 {
   "status": "PASS",
-  "footprints": 353,
-  "physical_components": 326,
-  "physical_components_with_resolvable_models": 326,
+  "footprints": 354,
+  "physical_components": 327,
+  "physical_components_with_resolvable_models": 327,
   "intentional_bare_features": 27,
   "dnp_footprints": 7,
   "repaired_references": [
@@ -1063,7 +1063,7 @@
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/SIM8060-6-1-14-00-A.step",
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SIM8066-6-1-14-01-A.step",
           "exists": true,
           "shown": true
         }
@@ -4106,6 +4106,18 @@
       "models": [
         {
           "path": "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_3215-2Pin_3.2x1.5mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1034",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
           "exists": true,
           "shown": true
         }

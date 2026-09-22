@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-23",
-  "revision": "G_measured_fold_layout_and_cabin_sensors",
+  "revision": "H_onboard_FM_dual_mic_stereo_audio",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -789,5 +789,33 @@
       "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
       "revision": "v7.3 June2026"
     }
-  ]
+  ],
+  "revision_H_audio_sources": [
+    {
+      "url": "https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf",
+      "local_evidence": "build/carrier-audio/korvo-s31.pdf",
+      "sha256": "6841cdb55bc4749376a4309365a0efeb45b2cb4cc882a48008bf592d029ae0ec"
+    },
+    {
+      "url": "https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf",
+      "local_evidence": "build/carrier-audio/es8389.pdf",
+      "sha256": "ed98e468c0e018bfc7b65c1c87cc6d268c4cd84461c8f0005336212bb4226a56"
+    },
+    {
+      "url": "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf",
+      "local_evidence": "build/carrier-audio/mic381.pdf",
+      "sha256": "f98506437bac8835602fe5a1784b2e6102d44a4f75b75d0fb78ece7192b1d3a2"
+    },
+    {
+      "url": "https://www.micros.com.pl/mediaserver/ULNS4150b_NSIWAY_0001.pdf",
+      "local_evidence": "build/carrier-audio/ns4150b.pdf",
+      "sha256": "1ce714826452ee6d46288c48a99c617d3083a5169ad1a3ab1cceae6f660715a1"
+    },
+    {
+      "local_user_document": "docs/RDA5807M datasheet_v1.pdf",
+      "sha256": "5ec59afd1f3ca4070d99379e32f80994032a56710f6cdbbc47277c85b02d9749"
+    }
+  ],
+  "revision_H_review": "AUDIO_REVIEW.json",
+  "revision_H_firmware": "ES8311 application remains unchanged; ES8389 BSP/TDM/dual-mic migration not yet implemented"
 }

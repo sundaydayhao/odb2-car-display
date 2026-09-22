@@ -1,8 +1,10 @@
 # OSPTEK P4C5 / P4C6 显示底板
 
-2026-09-23，修订 G：按用户更正的折后尖端尺寸 **触摸 7.5 mm / LCD 46.1 mm** 重新布置实际元器件。板框保留 145 × 85 mm，PCB 相对裸屏顶部改为 2.50 mm；触摸座移到上沿、LCD 座移到中部，30 个既有器件移动或翻面。新增 **OPT3001 光照 + SHT40 温湿度**及配套阻容、隔热槽和禁铺铜区。见 [布局与尺寸](FPC_FIT_REVIEW.md)、[传感器](CABIN_SENSORS.md)。
+2026-09-23，修订 H：新增板载 **RDA5807M**，音频改为 **ES8389 + 两颗直接焊载板的 MEMS 麦克风 + 两只 NS4150B / 两路扬声器接口**，参考 ESP32-S31-Korvo-1 官方结构；主控仍为 P4C5/P4C6。见 [音频架构与固件迁移](AUDIO_ARCHITECTURE.md)。
 
-当前 18 页原理图、294 个电路封装＋4 安装孔，269 个实体器件均有可加载模型，默认装配 262 个；7 个互斥配置/射频调谐件保持 DNP。**未布线，732 项未连接，整机电路尚有既有缺口，不能投板。** ERC 0 error / 14 个既有 warning；原生物理 DRC、SCH/PCB 一致性 0 违规。检查边界见 [设计状态](DESIGN_STATUS.md)。
+修订 G 的机械调整继续保留：按用户更正的折后尖端尺寸 **触摸 7.5 mm / LCD 46.1 mm** 重新布置实际元器件。板框保留 145 × 85 mm，PCB 相对裸屏顶部改为 2.50 mm；触摸座移到上沿、LCD 座移到中部，30 个既有器件移动或翻面。新增 **OPT3001 光照 + SHT40 温湿度**及配套阻容、隔热槽和禁铺铜区。见 [布局与尺寸](FPC_FIT_REVIEW.md)、[传感器](CABIN_SENSORS.md)。
+
+当前 20 页原理图、349 个电路封装＋4 安装孔，326 个实体器件均有可加载模型，默认装配 319 个；7 个互斥配置/射频调谐件保持 DNP。**未布线，845 项未连接，整机电路尚有既有缺口，不能投板。** ERC 0 error / 13 个既有 warning；原生物理 DRC、SCH/PCB 一致性 0 违规。检查边界见 [设计状态](DESIGN_STATUS.md)。
 
 按本轮要求放弃原裸 P4＋C6 单板方案，重新设计一块集成外围功能的底板。一个 25 × 25 mm、88 针邮票孔位置，择一贴装 OSPTEK ESP32-P4C5-Core 或 ESP32-P4C6-Core。兼容指同一 PCB 的两种装配配置，不是两个核心板同时装，也不是可热插拔的插座。
 
@@ -43,12 +45,12 @@ OBD 通信按自研 BLE 节点规划。C5/C6 的蓝牙能力是 Bluetooth LE，�
 | 触摸 | 独立可选的 I2C 触摸接口 | 与 LCD 座同在朝屏面，横向放置、入口同朝下；按照片镜像估算 PCB X=36 mm，横向仍待实测。预留 3.3 V、GND、SDA、SCL、INT、RST；脚序和接触面待定。当前接口器件均装配；无触摸款不接触摸排线，固件正常进入显示模式 |
 | 可选 4G＋定位 | 中移 **ML307A-GCLN**，型号已由用户选定 | 17.7 × 15.8 × 2.4 mm、LGA94；同板选装 GPS/北斗、Nano-SIM、LTE/GNSS 双天线、电源及电平转换。标准 AT 固件＋内部 USB RNDIS 优先；具体固件/描述符/GNSS 并发仍需样品验证，不能用 ML307R 或 A-D 系列代替 |
 | 摄像头 | OSPTEK ESP32-P4-Camera / SC2336，2 MP | 一个 24P、0.5 mm CSI 接口；按其原生 24P 定义，预留 2.8/1.8 V、电平转换及 24 MHz 时钟；公开 24P 针序没有外接 1.5 V 脚，不向 NC 引脚供电，DVDD 来源待厂家确认。J1220 和 CSI 针序已绘制；摄像头电源、时钟和电平转换仍待完成 |
-| 音频 Codec | ES8311 | I2S＋I2C，保持麦克风采集和网络音频播放；模拟电源单独低噪声供电 |
-| 外接麦克风 | LinkMems **LMA3729T421-OA1**，C5373235 | 装到外壳上的小麦克风头板，经线缆接主板；它是裸 MEMS 器件，不是可直接焊线的咪头。主板 4P 锁扣座提供清洁电源、MIC_P、MIC_N/回流、GND，线长先限 100 mm，声孔加密封圈 |
-| 外接喇叭 | FUET **FS40DS0450-H18.3**，C782108 | 国内分销可检索的 4 Ω、额定 5 W、约 40 mm 扬声器候选，固定在后壳独立声腔，线接 JST-PH 2P；高度约 18.3 mm 会影响壳厚，最终以供应商机械图为准 |
-| 功放 | 纳芯威 **NS4814**，集成升压的模拟功放候选 | 从 SYS 供电，目标 4 Ω、3 W 持续语音 / 5 W 短时峰值输出；在最低电池电压、THD+N、温升实测后锁上限。5 W 喇叭额定值不等于功放在任何电池电压下都能输出 5 W |
-| FM | **RDA5807M 接收模块**接口 | 8P 有锁线对板接口：3.3 V、GND、SDA、SCL、L、R、GND、保留；模块自带晶体、另接 FM 天线。FM L/R 经电阻合成单声道、隔直/偏置后，经双路模拟开关切换至功放，不直接短接 L/R，也不和 DAC 输出硬并联 |
-| 音源切换 | SGM3157 × 2 或同级双通道音频开关 | 切换 Codec 与 FM 的差分输入路径，模拟电压必须保持在开关电源范围内；播语音提示时静音 FM 并切换至 Codec，麦克风 ADC 保持独立 |
+| 音频 Codec | ES8389，已绘制 | 双 ADC / 双 DAC；7 位 I²C 0x12；沿用 S31 TDM 引脚复用，旧 ES8311 固件需迁移 |
+| 板载双麦克风 | LinkMems **LMA3729T381-OY3S ×2** | 直接焊在 B 面，60 mm 中心距；顶声孔朝后壳，取消外接咪头小板 |
+| 双扬声器 | 两个独立 4 Ω 扬声器，额定 ≥3 W 为候选要求 | 分别接 J820/J821 PH 2P，BTL 两端均不能接地；声腔/外形和采购型号待确认 |
+| 双功放 | **NS4150B ×2**，已绘制 | 独立 4.788 V 降压供电，共用 AMP_EN；目标及音量限制按 THD/温升实测，不沿用旧 5 W 输出目标 |
+| FM | **板载 RDA5807M**，已绘制 | 3.0 V 可关断电源、32.768 kHz 晶体、I²C 隔离和 J810 天线口；左右声道独立；射频与起振待验证 |
+| 音源切换 | SGM3157 ×4 | 分别切换左右声道正负两条模拟线；默认 DAC，切 FM 前先静音两只功放 |
 | USB-UART | **CH343P**＋自动下载电路 | 唯一外部 USB-C 同时充电、日志、P4 烧录；D+/D−只进入 UART 桥。无线芯片另外留内部维修烧录触点，避免为日常用户增加选择拨码 |
 | microSD | 带检测脚的自弹 TF 卡座，4 bit SDMMC | R0 已画 3.3 V 可关断供电和串阻；卡座 ESD 与断电 IO 防反灌尚未闭合。首版按 3.3 V 模式验证，不默认支持 1.8 V UHS |
 | 电池充电 | **BQ25896**，替换原 SGM41513 候选 | NVDC、NTC、PSEL，不占用 USB 数据线；厂商给出最高 9 A 电池放电通路，按整机热设计降额。充电仍设 1～1.5 A；这里不是 9 A 充电。与旧候选不是焊盘直接替换 |
@@ -89,13 +91,15 @@ flowchart LR
   BAT[1S 5000 mAh / PCM / NTC] <--> CHG
   CHG --> SYS[SYS / 受控系统断电]
   SYS --> BOOST[5 V 升压]
-  SYS --> AMP[带升压的音频功放]
+  BOOST --> PAV[4.788 V 独立降压]
+  PAV --> AMP[双 NS4150B 功放]
   BOOST --> CORE[3.3 V / 核心板 / SD]
   BOOST --> LCD[LCD 偏置 / 背光]
   BOOST --> LTE[局部 3.8 V / ML307A-GCLN]
   BOOST --> VBUS[独立开关 / 模组 USB 检测 5 V]
   BOOST --> GNSS[低噪声可关断 / GNSS 天线偏置]
-  CORE --> CAM[摄像头电源 / 触摸 / Codec]
+  CORE --> CAM[摄像头电源 / 触摸]
+  BOOST --> AUDIO[音频 3.3 V LDO / Codec / FM]
 ```
 
 - 电池先按 **1S、3.7 V、5000 mAh（18.5 Wh）** 规划。增加 4G 后采购要求改为含 PCM、10 kΩ NTC、**至少 10 A 连续放电能力的电芯和保护/引线**；不能仅凭容量选电池。软包外形先预留约 95 × 65 × 10 mm 的独立仓，这是空间预算，不是假定某个“尺寸型号”必有 5000 mAh。
@@ -126,8 +130,8 @@ flowchart LR
 | 右边缘中部 | microSD 卡座，卡口向右 | 保证弹出行程和手指取卡空间，不能被螺柱挡住 |
 | 右上/右中 B 面 | ML307A-GCLN 与约 **36 × 40 mm** 功能区域，Nano-SIM 另留右侧边缘区 | 17.7 × 15.8 mm 模组周围分配 2 × 220 µF、局部 3.8 V 降压、电平转换和 RF 匹配；USB 出线面向核心板，天线口靠区域上沿；右侧 SIM 在 SD 上方，卡片取出空间独立 |
 | 蜂窝区靠内侧/下部 B 面 | 3.8 V 电源、主动放电与测试点 | 降压及储能靠近 VBAT42/43，不把低压大电流馈线横穿整板；开关节点避开上沿 GNSS 路径。USB-VBUS 和 GNSS 偏置分别由 GPIO24/25 控制 |
-| 左下 B 面 | Codec、外接麦克风、FM 接口 | 与右侧蜂窝 RF 区分开，并留出与左上电源电感的距离；麦克风与喇叭接口不共用线束 |
-| 右下 B 面 | 功放及喇叭座 | 靠近后壳声腔；功放电源局部回流，线缆成对走线 |
+| 下部 B 面 | Codec、两颗板载麦克风、FM | 麦克风中心为 (20,73)/(80,73) mm，60 mm 间距，后壳两个独立声孔；FM 独立天线 |
+| 右下 F 面 | 双功放、电源和两路扬声器座 | 避开 FPC 禁布区；局部功率回流、输出成对；F 面座高度需核对屏板堆叠 |
 | 中部 F 面 | LCD FPC，原点 (70.5,42.175) mm、入口朝下 | 对应更正后的尖端 Y=46.1 mm；F 面下方排线通道禁止放器件，右侧紧邻 1.8 V 逻辑电路 |
 | 上沿左侧 F 面 | 触摸 FPC，原点 (36,3.575) mm、入口朝下 | 对应尖端 Y=7.5 mm；X 为照片估算，针序/接触面待实测 |
 | 上沿中左 B 面 | OPT3001 光照 | 需后壳/上沿光窗或导光件，屏幕漏光隔离和整机校准 |
@@ -164,10 +168,10 @@ F 面只放低矮屏/触摸座及必要小器件，预留屏尾弯折、锁扣�
 2. **屏幕闭环**：取得 JD9165BA 两 lane 初始化/合法时序、供电负载电流，以及触摸总成脚位和排线接触面；以官方 P4 板验证。此项影响能否使用这块屏，不等到 PCB 画完才问。
 3. **机械冻结**：在 145 × 85 mm 草案上放实际连接器轮廓，核对 LCD/触摸弯折长度、四角螺柱、SD 弹出行程、USB 插头、开关拨帽、40 mm 喇叭和电池仓；外壳厚度由这些实物决定。
 4. **电源与 BOM**：补全屏电源电流，校核 20 W/7.35 A 预算、充电电源路径、功放最低电压、热耗散和休眠反灌。ML307A-GCLN 型号已确定；获取当前标准 AT/GNSS 固件与 LGA94 生产封装，先在 P4 开发板验证 USB RNDIS＋独立 UART 定位并发，再冻结模组库。供应商需澄清旧手册 4.5 V 与较新 GCLN 专表 4.3 V 上限的差异，本设计先采用后者。取得首选/替代料封装及采购来源。
-5. **SCH**：目前已绘制核心板、电源/充电、USB/SD、Codec/FM 与可选蜂窝基础电路。继续完成 LCD/触摸、摄像头、功放、有源 GNSS 和保护电路；所有 ERC 接口待定警告闭合后，才能通过完整电气评审。
+5. **SCH**：目前已绘制核心板、电源/充电、USB/SD、Codec/FM 与可选蜂窝基础电路。继续完成 LCD 偏置/背光、摄像头、有源 GNSS 和保护电路，并验证新双声道音频；所有 ERC 接口待定警告闭合后，才能通过完整电气评审。
 6. **PCB**：连接器/孔位→核心板和高速走廊→电源/Codec 功能组→去耦→普通器件；先高电流和高速网，再低速，最后铺铜/热设计/丝印，完成 DRC 和装配审查后才导出制造文件。
 
-R0 PCB 是带真实网表的未布线初摆。Dwgs.User 中 LCD/触摸/摄像头/功放矩形只是保留空间，不能当作已完成接口。当前没有 Gerber、贴片下单包或量产 BOM；后续应以实测和制造审核关闭待定项，不能删除警告代替完成设计。
+R0 PCB 是带真实网表的未布线初摆。FPC、双麦和双功放已是实际器件；Dwgs.User/规则区描述排线和机械范围，不表示外围电路完整或实物装配已通过。当前没有 Gerber、贴片下单包或量产 BOM；后续应以实测和制造审核关闭待定项，不能删除警告代替完成设计。
 
 ## 8. 依据
 
@@ -178,5 +182,5 @@ R0 PCB 是带真实网表的未布线初摆。Dwgs.User 中 LCD/触摸/摄像头
 - [C5 下载启动条件](https://docs.espressif.com/projects/esptool/en/latest/esp32c5/advanced-topics/boot-mode-selection.html)、[ESP32-P4 Function EV Board](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/user_guide.html)。
 - [BQ25896](https://www.ti.com/product/BQ25896)、[TLV62585](https://www.ti.com/product/TLV62585)、[JST-VH 电流额定条件](https://www.jst-mfg.com/product/index.php?lang=2&series=262)、[TUSB320LAI](https://www.ti.com/product/TUSB320LAI)、[TPS61088](https://www.ti.com/product/TPS61088)、[TPS65150](https://www.ti.com/product/TPS65150)。
 - [ML307A-GCLN 设计与厂家资料索引](OPTIONAL_LTE_GNSS.md)、[乐鑫 USB RNDIS 主机驱动及已测型号](https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_rndis.html)。
-- [ES8311 厂商资料](https://www.everest-semi.com/pdf/ES8311%20PB.pdf)、[NS4814 厂商页面](https://www.nsiway.com.cn/list_37/94.html)、[SGM3157](https://www.sg-micro.com/product/SGM3157)、[麦克风采购型号](https://jlcpcb.com/partdetail/LMA3729T421-OA1/C5373235)、[喇叭采购型号](https://www.lcsc.com/de/product-detail/C782108.html)。
+- [ESP32-S31-Korvo-1 官方原理图](https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf)；ES8389、双 MEMS、NS4150B 和 RDA5807M 资料及接口边界见 [AUDIO_ARCHITECTURE.md](AUDIO_ARCHITECTURE.md)。
 - [用户指定 UomiPi 参考设计](https://oshwhub.com/ikalyes/esp32p4c6)：页面直读返回 403，已读搜索索引中的接口说明；未把未取得的在线工程文件当作已审核电路。

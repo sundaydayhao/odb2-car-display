@@ -1,17 +1,16 @@
 {
   "status": "DRAFT_ONLY_NOT_FAB_APPROVED",
   "kicad": "10.0.5",
-  "schematic_symbols": 300,
-  "circuit_footprints": 294,
+  "schematic_symbols": 358,
+  "circuit_footprints": 349,
   "mounting_holes": 4,
-  "schematic_sheets_including_root": 18,
+  "schematic_sheets_including_root": 20,
   "geometric_violations": 0,
   "duplicate_references": 0,
   "pcb_pad_net_mismatches": 0,
   "erc_errors": 0,
-  "erc_warnings": 14,
+  "erc_warnings": 13,
   "pending_interface_nets": [
-    "AMP_EN",
     "BACKLIGHT_PWM",
     "CAMERA_RESET",
     "CAM_DOVDD_1V8",
@@ -28,7 +27,7 @@
   ],
   "pcb_physical_violations": 0,
   "schematic_parity_violations": 0,
-  "pcb_unconnected_items": 732,
+  "pcb_unconnected_items": 845,
   "drc_reported_unconnected_items": 499,
   "unconnected_count_source": "native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated",
   "open_peripheral_power_boundaries": [
@@ -41,7 +40,7 @@
     "CAM_AVDD_2V8",
     "CAM_DOVDD_1V8"
   ],
-  "fitted_physical_components": 262,
+  "fitted_physical_components": 319,
   "dnp_exceptions": [
     "R105",
     "R107",
@@ -116,15 +115,34 @@
     "08_modem.kicad_sch": "cc82d6a849a35f72f470f2f9def84d26f46a30623be970398bbafdbbc20a3b55",
     "09_modem_power.kicad_sch": "06633a69c91ee4dae56ecd49e6cb07f4fe9209f1404b6e0f2215e89ea408995c",
     "10_sim_rf.kicad_sch": "b06ce9b9c536b7fa8539348235bd29c6a206b8139fc6122e270eada482a05bc1",
-    "11_codec.kicad_sch": "ce2244b748334366f499cc7227b6848c6a4f521606c96669f21a9448332a8917",
-    "12_fm_audio.kicad_sch": "b42a8f9e333ae604a2dddadac2548879e5aac12f19e59731a474f9aa1c372aa0",
-    "13_release_holds.kicad_sch": "45569ba10ae14e064e9f43e206e15f661c7727acec004f0b380ccf771e9abf8f",
+    "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
+    "12_fm_audio.kicad_sch": "4879e8e7c200fc62f746f0fe06c7583d102f96f6e27bf008c1c4da33832cb523",
+    "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
     "14_lcd_fpc.kicad_sch": "0bf577eb3e1227af8b2d157831a41b1459e1251269fc62f47e12fa5b542485b8",
     "15_touch_fpc.kicad_sch": "7cebf321e228dae1507ee76d7b0c8091636ae0fa98211e170595408441c895d6",
     "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
     "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
-    "display_carrier.kicad_pcb": "1474e1aea279f3991a8a55c76122656b95d812959b44faacaeb4db4a9ef7edd5",
+    "18_dual_mic.kicad_sch": "7dfd7a7ad516cc94e3185fd69f7c5e37b9f9993ff20fe1f0c9843bb5fbbf1a36",
+    "19_stereo_pa.kicad_sch": "35da773e6cb42624e78cd38be18b37874b5262a49a7503ae20832c4e251b2f28",
+    "display_carrier.kicad_pcb": "53516f24d9f54f15b846ebc04f4856906e01e0c377becebc588742b5cdee0233",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "79b02f30819ef71b425f82a4a16d7da6daa256bb1274cb1317e6e62b2b16e295"
+    "display_carrier.kicad_sch": "4f7266682fa0fdcb3b60787632cedb226855a62cba02590c891a54acf02c9302"
+  },
+  "stereo_audio": {
+    "ES8389_7bit_address": "0x12",
+    "RDA5807M_7bit_address": "0x10",
+    "stereo_mic_dac_and_BTL_pinmaps": "PASS",
+    "S31_TDM_clock_data_pin_swap": "PASS",
+    "fm_separate_left_right": "PASS",
+    "onboard_mics": 2,
+    "speaker_connectors": 2,
+    "microphone_center_spacing_mm": 60,
+    "PA_nominal_V": 4.788,
+    "PA_static_tolerance_range_V": [
+      4.684,
+      4.8923
+    ],
+    "amplifier_nominal_gain_V_V": 2.4,
+    "firmware_and_physical_audio_validation": "NOT_RUN"
   }
 }

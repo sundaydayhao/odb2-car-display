@@ -42,9 +42,10 @@ erc=json.loads((BUILD/'erc-final.json').read_text(encoding='utf-8'))
 er=[v for s in erc['sheets'] for v in s['violations']]
 assert all(v['severity']=='warning' and v['type']=='isolated_pin_label' for v in er)
 pending=sorted(v['items'][0]['description'].split("'")[1] for v in er)
-hold_nets=sorted(['CAMERA_RESET','BACKLIGHT_PWM','LCD_BIAS_EN','CAM_POWER_EN','AMP_EN',
+hold_nets=sorted(['CAMERA_RESET','BACKLIGHT_PWM','LCD_BIAS_EN','CAM_POWER_EN',
  'LCD_VGH','LCD_VGL','LCD_AVDD_9V8','LCD_VCOM','CAM_MCLK_1V8','CAM_DOVDD_1V8',
  'CAM_RESET_1V8','CAM_SDA_1V8','CAM_SCL_1V8'])
+if 'U820' not in fps:hold_nets=sorted(hold_nets+['AMP_EN'])
 assert pending==hold_nets,(pending,hold_nets)
 drc=json.loads((BUILD/'drc-final.json').read_text(encoding='utf-8'))
 assert not drc['schematic_parity'],drc['schematic_parity']
@@ -86,6 +87,53 @@ if 'U1300' in fps:
        'CABIN_I2C_SCL':{('U1300','4'),('U1301','2'),('R1301','2')}
     }.items():assert {rp for rp,n in sch.items() if n==net}==expected_nodes
     assert all(not fps[r].IsDNP() for r in ['U1300','U1301','R1300','R1301','C1300','C1301','C1302'])
+audio_checks=None
+if 'U820' in fps:
+    # Independent pin map from S31-Korvo-1 p4 / ES8389 p6 and RDA5807M p14.
+    for ref,mapping in {
+        'U800':{'1':'CODEC_AD0','2':'SYSTEM_I2C_SDA','3':'SYSTEM_I2C_SCL','4':'CODEC_TDMIN',
+            '5':'AUDIO_3V3','6':'AUDIO_3V3','7':'GND','8':'CODEC_BCLK','9':'CODEC_MCLK',
+            '10':'CODEC_LRCK','11':'CODEC_DOUT','12':'DAC_R_P','13':'DAC_R_N','14':'DAC_VREF',
+            '15':'DAC_L_N','16':'DAC_L_P','17':'AUDIO_3V3','18':'GND','19':'CODEC_VMID',
+            '20':'ADC_VREF','21':'MIC_R_N','22':'MIC_R_P','23':'MIC_L_N','24':'MIC_L_P','25':'GND'},
+        'U815':{'1':'GND','2':'FM_ANT_IN','3':'GND','4':'FM_SCL','5':'FM_SDA',
+                 '6':'FM_RCLK','7':'FM_3V0','8':'GND','9':'FM_R','10':'FM_L'},
+        'R805':{'1':'CODEC_AD0','2':'GND'},'R806':{'1':'AUDIO_3V3','2':'CODEC_DOUT'},
+        'R803':{'1':'I2S_DOUT','2':'CODEC_TDMIN'},'R800':{'1':'I2S_MCLK','2':'CODEC_MCLK'},
+        'U810':{'1':'AUDIO_3V3','2':'GND','3':'FM_POWER_EN','5':'FM_3V0'},
+        'U822':{'1':'GND','2':'PA_BUCK_SW','3':'+5V','4':'+5V','5':'PA_BUCK_FB'},
+    }.items():
+        for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
+    for i,ch in enumerate(['L','R']):
+        for ref,mapping in {
+            'U'+str(802+i):{'1':'MIC_'+ch+'_3V3','2':'GND','3':'GND','4':'MIC_'+ch+'_OUT'},
+            'U'+str(820+i):{'1':'AMP_EN','2':'PA_'+ch+'_BYPASS','3':'PA_'+ch+'_INP','4':'PA_'+ch+'_INN',
+                 '5':'SPK_'+ch+'_N','6':'PA_4V8','7':'GND','8':'SPK_'+ch+'_P'},
+            'J'+str(820+i):{'1':'SPK_'+ch+'_P','2':'SPK_'+ch+'_N'},
+            'C'+str(841+4*i):{'1':'MIC_'+ch+'_OUT','2':'MIC_'+ch+'_P'},
+            'C'+str(842+4*i):{'1':'GND','2':'MIC_'+ch+'_N'},
+        }.items():
+            for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
+        for j,pol in enumerate(['P','N']):
+            ref='U'+str(811+2*i+j)
+            mapping={'1':'FM_'+ch+'_BIASED' if pol=='P' else 'AUDIO_MID',
+                     '3':'DAC_'+ch+'_'+pol+'_AC','4':'AMP_'+ch+'_'+pol+'_AC',
+                     '2':'GND','5':'AUDIO_3V3','6':'AUDIO_SELECT_LOCAL'}
+            for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
+    assert 'FM_SUM' not in sch.values() and 'J800' not in fps
+    assert all(not fps[r].IsDNP() for r in ['U800','U802','U803','U815','U820','U821','J820','J821'])
+    assert fps['U802'].GetLayer()==fps['U803'].GetLayer()==k.B_Cu
+    assert abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x)-60)<.001
+    assert fps['U803'].GetPosition().y==fps['U802'].GetPosition().y
+    # TI full-temperature FB range is +/-2%; divider resistors are 0.1%.
+    pa_range=[vref*(1+698000*(1+rtol)/(100000*(1-rtol))) for vref,rtol in [(.588,-.001),(.612,.001)]]
+    assert max(pa_range)<5.0 and min(pa_range)>3.0
+    audio_checks={'ES8389_7bit_address':'0x12','RDA5807M_7bit_address':'0x10',
+        'stereo_mic_dac_and_BTL_pinmaps':'PASS','S31_TDM_clock_data_pin_swap':'PASS',
+        'fm_separate_left_right':'PASS','onboard_mics':2,'speaker_connectors':2,
+        'microphone_center_spacing_mm':60,'PA_nominal_V':4.788,
+        'PA_static_tolerance_range_V':[round(x,4) for x in pa_range],
+        'amplifier_nominal_gain_V_V':2.4,'firmware_and_physical_audio_validation':'NOT_RUN'}
 # A passive connector with duplicate power pins does not necessarily cause an
 # isolated-label warning. Report these open supply boundaries independently.
 power_holds=['LCD_LEDA','LCD_LEDK','LCD_AVDD_9V8','LCD_VGH','LCD_VGL','LCD_VCOM',
@@ -134,5 +182,6 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'native_ignored_drc_checks':drc.get('ignored_checks',[]),
  'hash_normalization':'CRLF converted to LF before SHA-256',
  'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro']}}
+if audio_checks:report['stereo_audio']=audio_checks
 (BUILD/'verification-summary.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k not in ['design_file_sha256','native_ignored_drc_checks','pending_interface_nets']},indent=2,ensure_ascii=False))

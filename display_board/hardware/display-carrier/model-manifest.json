@@ -143,41 +143,6 @@
       "step_valid": true
     },
     {
-      "reference": "U800",
-      "original_footprint": "Package_DFN_QFN:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm",
-      "footprint": "Carrier:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm",
-      "file": "ES8311_QFN20.step",
-      "offset_mm": [
-        0,
-        0,
-        0
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        90
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "supplier_package",
-      "source": "https://www.lcsc.com/product-detail/C962342.html",
-      "note": "Supplier package:3x3,20 pins,0.4 pitch,H0.75. Rotate pin-1 mark from raw SW to native NW. EP rendering1.7 vs footprint1.65 is illustrative; footprint not modified.",
-      "sha256": "c1a5d3ee4d1e5f60bf95f2dd90e28f7f2642873eaa0ff3d31db1758dcf2c39b9",
-      "raw_model_bounds_mm": [
-        -1.5,
-        1.5,
-        -1.5,
-        1.5,
-        0.0,
-        0.751
-      ],
-      "step_solids": 56,
-      "step_valid": true
-    },
-    {
       "reference": "U200",
       "original_footprint": "Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
       "footprint": "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
@@ -509,6 +474,81 @@
       "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
       "note": "Official KiCad pad geometry, no center copper; nominal body 1.5x1.5x0.5 mm reference only.",
       "sha256": "8d81aa055bfff96c047315b5e6c5d2f4f4d0108497b1dd005e5f43cd801aed35"
+    },
+    {
+      "reference": "U800",
+      "original_footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "file": "ES8389_QFN24.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier",
+      "source": "https://www.lcsc.com/product-detail/C22380673.html",
+      "note": "Supplier land geometry checked: QFN24 3x3, 0.35 pitch, EP1.7; pad25 GND. Added courtyard.",
+      "sha256": "caaec3a711966d0cad51e3488bbbd4fbe17e6692b2fb5921d17b1770798acdf3"
+    },
+    {
+      "reference": "U802",
+      "original_footprint": "Carrier:LMA3729T381_TopPort",
+      "footprint": "Carrier:LMA3729T381_TopPort",
+      "file": "LMA3729T381_TopPort_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf",
+      "note": "Manufacturer circular 0.8mm lands, 1.70x2.46 pitch; top port offset (+0.005,-0.75). Envelope model only.",
+      "sha256": "1b0d08e085d0456e8d2bd730192256a8327562dcdbd54345856e934b6c2c724b"
+    },
+    {
+      "reference": "U803",
+      "original_footprint": "Carrier:LMA3729T381_TopPort",
+      "footprint": "Carrier:LMA3729T381_TopPort",
+      "file": "LMA3729T381_TopPort_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf",
+      "note": "Manufacturer circular 0.8mm lands, 1.70x2.46 pitch; top port offset (+0.005,-0.75). Envelope model only.",
+      "sha256": "1b0d08e085d0456e8d2bd730192256a8327562dcdbd54345856e934b6c2c724b"
     }
   ],
   "intentional_no_model": {

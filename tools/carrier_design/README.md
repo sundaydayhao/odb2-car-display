@@ -7,7 +7,7 @@ is authoritative about incomplete circuits and validation holds.
 Run on this workspace with KiCad 10.0.5's Python and the installed KiSkill engine:
 
 ```powershell
-& 'C:/Program Files/KiCad/10.0/bin/python.exe' tools/carrier_design/pcb.py
+& 'C:/Program Files/KiCad/10.0/bin/python.exe' tools/carrier_design/pcb.py --preserve-placement display_board/hardware/display-carrier/display_carrier.kicad_pcb
 & 'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe' sch erc --format json --output build/carrier-design/erc-final.json build/carrier-design/project/display_carrier.kicad_sch
 & 'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe' pcb drc --schematic-parity --format json --output build/carrier-design/drc-final.json build/carrier-design/project/display_carrier.kicad_pcb
 & 'C:/Program Files/KiCad/10.0/bin/python.exe' tools/carrier_design/verify.py
@@ -93,3 +93,31 @@ and `FPC_FIT.svg` from the actual PCB. Full revision-G evidence is under
 For later additive changes, `--preserve-placement` also retains the face of
 flipped parts. Stage against the current project to preserve the slots/rule
 areas; do not replace its board with the generator's bare rectangular board.
+
+Revision H adds `stereo_audio.py`: ES8389 using the S31-Korvo-1 clock/data pin
+multiplexing, two onboard LMA3729T381 microphones, onboard RDA5807M and two
+NS4150B amplifiers. `verify.py` independently checks these pin maps, the 0x12
+codec address straps, separate FM channels, speaker polarity, 60 mm spacing,
+and the 4.788 V PA rail tolerance. It does not validate firmware or sound.
+
+`stage_audio.py --baseline <project> --library <reviewed-library> --output <stage>`
+replaces only audio-sheet footprints on an **unrouted** board. It retains all
+other PCB objects, the project rules and existing reference identities; it
+preserves screen-flex/thermal geometry while placing audio parts. Review its
+`AUDIO_LAYOUT.json` and run native ERC/DRC, netlist verification and model checks
+before promotion. It also writes temporary schematic source into the normal
+`build/carrier-design/project/` directory, which must not be used as a release.
+
+`audio_assets.py --output <scratch-library>` was used for the first migration:
+it expects the C22380673 supplier download in
+`build/carrier-audio/es8389-part/libs/`, repairs its courtyard and creates the
+manufacturer-dimensioned microphone footprint and reference model. The reviewed
+assets are checked into the formal project, so normal regeneration should use
+those local assets instead of fetching/recreating them.
+
+The original region placer now requires `--preserve-placement` for revision H.
+It reproduces schematic intent and positions for checking but does not preserve
+the reviewed board's UUIDs, slots, rule areas or full layout. Use the staged
+workflow for CAD promotion. Current sources, firmware migration requirements
+and verification boundaries are in `AUDIO_ARCHITECTURE.md`; native evidence is
+under `build/carrier-audio/`.

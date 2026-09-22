@@ -5,13 +5,13 @@
 	(paper "A3")
 	(title_block
 		(title "13 Pending interface closure")
-		(date "2026-09-19")
+		(date "2026-09-23")
 		(rev "R0 ENGINEERING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
 	(lib_symbols)
-	(text "NOT IMPLEMENTED: LCD bias/backlight, camera power/clock/level conversion and NS4814 amplifier."
+	(text "NOT IMPLEMENTED: LCD bias/backlight, camera power/clock/level conversion and their support circuits."
 		(at 20.32 20.32 0)
 		(effects
 			(font
@@ -21,7 +21,7 @@
 		)
 		(uuid 6739b708-f5af-531b-a294-40aebfb28363)
 	)
-	(text "LCD: vendor 2-lane initialization / legal timing required; FPC contact side and folded tip Y unmeasured."
+	(text "LCD: vendor 2-lane initialization / legal timing required; FPC contact side and mechanical mating still need verification."
 		(at 20.32 25.4 0)
 		(effects
 			(font

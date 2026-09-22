@@ -15,6 +15,9 @@ ap.add_argument('--preserve-placement',type=Path,
 ap.add_argument('--library-source',type=Path,
     help='Reviewed project library in a scratch directory, before promotion.')
 args=ap.parse_args()
+if '18_dual_mic' in d.sheets and not args.preserve_placement:
+    ap.error('Revision H requires --preserve-placement with the reviewed carrier PCB; '
+             'the legacy region placer does not implement the dual-mic/flex geometry.')
 previous={}
 if args.preserve_placement:
     previous_board=k.LoadBoard(str(args.preserve_placement.resolve()))
@@ -123,6 +126,7 @@ text('R0 PLACEMENT STUDY - UNROUTED / NOT FOR FAB',72.5,89,size=1.8)
 text('F = SCREEN SIDE   B = REAR COVER',72.5,-8,size=1.3)
 # Explicit design reservations, not fabricated sockets / false connections.
 for x,y,w,h,label in [(55.5,40,30,40,'LCD FPC ADJUSTMENT AREA\nJ1200 / cable fit unverified'),(87,60,20,18,'TOUCH FPC ADJUSTMENT\nJ1210 / pinout unverified'),(62,0,29,12,'CAMERA FPC\nJ1220 / support pending'),(96,61,19,17,'NS4814 / SPEAKER\nCIRCUIT HOLD')]:
+    if label.startswith('NS4814') and '19_stereo_pa' in d.sheets:continue
     rect(x,y,w,h);text(label,x+w/2,y+h/2,size=.85)
 rect(0,77,145,8);text('BASE / STAND ZONE - NO USER CONNECTOR',72.5,82,size=1)
 text('LCD / J1200',70.5,53.4,k.F_SilkS,1)

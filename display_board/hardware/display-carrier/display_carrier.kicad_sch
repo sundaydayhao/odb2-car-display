@@ -7,7 +7,7 @@
 	(title_block
 		(title "OSPTEK P4C5 / P4C6 Display Carrier")
 		(date "2026-09-23")
-		(rev "R0G LAYOUT")
+		(rev "R0H STEREO")
 		(company "OBD Car Display")
 		(comment 1 "NOT FOR FABRICATION - assembly and validation holds apply")
 	)
@@ -392,7 +392,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid 7361b3ff-87f6-5474-afb5-a4bc7003ca48)
-		(property "Sheetname" "11 Codec and remote microphone"
+		(property "Sheetname" "11 ES8389 stereo codec"
 			(at 215.9 125.73 0)
 			(effects
 				(font
@@ -429,7 +429,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid 47f68dd3-e210-5a8b-b501-de7b5ace14a4)
-		(property "Sheetname" "12 FM and source switching"
+		(property "Sheetname" "12 RDA5807M and stereo source"
 			(at 316.23 125.73 0)
 			(effects
 				(font
@@ -636,6 +636,80 @@
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4"
 					(page "18")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid efe18525-5b5e-5834-a02c-0d27c56629ce)
+		(property "Sheetname" "18 Dual onboard microphones"
+			(at 115.57 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "18_dual_mic.kicad_sch"
+			(at 115.57 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "19")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 3eba86b8-9366-5a77-9362-b2904c1594e9)
+		(property "Sheetname" "19 Dual speaker amplifiers"
+			(at 215.9 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "19_stereo_pa.kicad_sch"
+			(at 215.9 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "20")
 				)
 			)
 		)

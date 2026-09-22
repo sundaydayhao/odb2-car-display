@@ -9950,32 +9950,32 @@
 			)
 		)
 	)
-	(symbol "ES8311"
+	(symbol "ES8389"
 		(pin_names
 			(offset 0.635)
 		)
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 0 17.78 0)
+			(at 0 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "ES8311"
-			(at 0 -17.78 0)
+		(property "Value" "ES8389"
+			(at 0 -20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(symbol "ES8311_0_1"
+		(symbol "ES8389_0_1"
 			(rectangle
-				(start -15.24 15.24)
-				(end 15.24 -15.24)
+				(start -15.24 17.78)
+				(end 15.24 -17.78)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -9985,11 +9985,11 @@
 				)
 			)
 		)
-		(symbol "ES8311_1_1"
+		(symbol "ES8389_1_1"
 			(pin input line
-				(at -20.32 12.7 0)
+				(at -20.32 15.24 0)
 				(length 5.08)
-				(name "CCLK"
+				(name "AD0"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10004,10 +10004,10 @@
 					)
 				)
 			)
-			(pin input line
-				(at -20.32 10.16 0)
+			(pin bidirectional line
+				(at -20.32 12.7 0)
 				(length 5.08)
-				(name "MCLK"
+				(name "CDATA"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10022,10 +10022,10 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at -20.32 7.62 0)
+			(pin input line
+				(at -20.32 10.16 0)
 				(length 5.08)
-				(name "PVDD"
+				(name "CCLK"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10033,6 +10033,24 @@
 					)
 				)
 				(number "3"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 7.62 0)
+				(length 5.08)
+				(name "MCLK_TDMIN"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "4"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10050,7 +10068,7 @@
 						)
 					)
 				)
-				(number "4"
+				(number "5"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10061,25 +10079,7 @@
 			(pin power_in line
 				(at -20.32 2.54 0)
 				(length 5.08)
-				(name "DGND"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at -20.32 0 0)
-				(length 5.08)
-				(name "SCLK"
+				(name "PVDD"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10094,10 +10094,10 @@
 					)
 				)
 			)
-			(pin output line
-				(at -20.32 -2.54 0)
+			(pin power_in line
+				(at -20.32 0 0)
 				(length 5.08)
-				(name "ASDOUT"
+				(name "DGND"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10112,10 +10112,10 @@
 					)
 				)
 			)
-			(pin bidirectional line
-				(at -20.32 -5.08 0)
+			(pin input line
+				(at -20.32 -2.54 0)
 				(length 5.08)
-				(name "LRCK"
+				(name "SCLK"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10131,9 +10131,9 @@
 				)
 			)
 			(pin input line
-				(at -20.32 -7.62 0)
+				(at -20.32 -5.08 0)
 				(length 5.08)
-				(name "DSDIN"
+				(name "DSDIN_CLKIN"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10148,10 +10148,10 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at -20.32 -10.16 0)
+			(pin input line
+				(at -20.32 -7.62 0)
 				(length 5.08)
-				(name "AGND"
+				(name "LRCK"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10166,10 +10166,10 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at -20.32 -12.7 0)
+			(pin bidirectional line
+				(at -20.32 -10.16 0)
 				(length 5.08)
-				(name "AVDD"
+				(name "ASDOUT_AD1"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10185,9 +10185,9 @@
 				)
 			)
 			(pin output line
-				(at 20.32 12.7 180)
+				(at -20.32 -12.7 0)
 				(length 5.08)
-				(name "OUTP"
+				(name "ROUTP"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10203,9 +10203,9 @@
 				)
 			)
 			(pin output line
-				(at 20.32 10.16 180)
+				(at -20.32 -15.24 0)
 				(length 5.08)
-				(name "OUTN"
+				(name "ROUTN"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10221,7 +10221,7 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 7.62 180)
+				(at 20.32 15.24 180)
 				(length 5.08)
 				(name "DACVREF"
 					(effects
@@ -10238,10 +10238,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 20.32 5.08 180)
+			(pin output line
+				(at 20.32 12.7 180)
 				(length 5.08)
-				(name "ADCVREF"
+				(name "LOUTN"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10249,6 +10249,60 @@
 					)
 				)
 				(number "15"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 10.16 180)
+				(length 5.08)
+				(name "LOUTP"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "16"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 7.62 180)
+				(length 5.08)
+				(name "AVDD"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "17"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 5.08 180)
+				(length 5.08)
+				(name "AGND"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "18"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10266,60 +10320,6 @@
 						)
 					)
 				)
-				(number "16"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 20.32 0 180)
-				(length 5.08)
-				(name "MIC1N"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "17"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 20.32 -2.54 180)
-				(length 5.08)
-				(name "MIC1P"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "18"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at 20.32 -5.08 180)
-				(length 5.08)
-				(name "CDATA"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
 				(number "19"
 					(effects
 						(font
@@ -10328,10 +10328,10 @@
 					)
 				)
 			)
-			(pin input line
-				(at 20.32 -7.62 180)
+			(pin passive line
+				(at 20.32 0 180)
 				(length 5.08)
-				(name "CE"
+				(name "ADCVREF"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10346,10 +10346,10 @@
 					)
 				)
 			)
-			(pin power_in line
-				(at 20.32 -10.16 180)
+			(pin input line
+				(at 20.32 -2.54 180)
 				(length 5.08)
-				(name "EP_GND"
+				(name "MIC2N"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10364,34 +10364,106 @@
 					)
 				)
 			)
+			(pin input line
+				(at 20.32 -5.08 180)
+				(length 5.08)
+				(name "MIC2P"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "22"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 20.32 -7.62 180)
+				(length 5.08)
+				(name "MIC1N"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "23"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 20.32 -10.16 180)
+				(length 5.08)
+				(name "MIC1P"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "24"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 -12.7 180)
+				(length 5.08)
+				(name "PGND"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "25"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
 		)
 	)
-	(symbol "CONN4"
+	(symbol "RDA5807M"
 		(pin_names
 			(offset 0.635)
 		)
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 0 7.62 0)
+			(at 0 10.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "CONN4"
-			(at 0 -7.62 0)
+		(property "Value" "RDA5807M"
+			(at 0 -10.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(symbol "CONN4_0_1"
+		(symbol "RDA5807M_0_1"
 			(rectangle
-				(start -5.08 5.08)
-				(end 5.08 -5.08)
+				(start -15.24 7.62)
+				(end 15.24 -7.62)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -10401,11 +10473,11 @@
 				)
 			)
 		)
-		(symbol "CONN4_1_1"
-			(pin passive line
-				(at -10.16 1.27 0)
+		(symbol "RDA5807M_1_1"
+			(pin power_in line
+				(at -20.32 5.08 0)
 				(length 5.08)
-				(name "1"
+				(name "GND1"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10420,10 +10492,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at -10.16 -1.27 0)
+			(pin input line
+				(at -20.32 2.54 0)
 				(length 5.08)
-				(name "2"
+				(name "FMIN"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10438,10 +10510,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 1.27 180)
+			(pin power_in line
+				(at -20.32 0 0)
 				(length 5.08)
-				(name "3"
+				(name "GND2"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10456,10 +10528,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 -1.27 180)
+			(pin input line
+				(at -20.32 -2.54 0)
 				(length 5.08)
-				(name "4"
+				(name "SCLK"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10467,6 +10539,114 @@
 					)
 				)
 				(number "4"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -20.32 -5.08 0)
+				(length 5.08)
+				(name "SDIO"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 20.32 5.08 180)
+				(length 5.08)
+				(name "RCLK"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 2.54 180)
+				(length 5.08)
+				(name "VDD"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 0 180)
+				(length 5.08)
+				(name "GND3"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 -2.54 180)
+				(length 5.08)
+				(name "ROUT"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 -5.08 180)
+				(length 5.08)
+				(name "LOUT"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "10"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10515,7 +10695,7 @@
 			(pin passive line
 				(at -20.32 2.54 0)
 				(length 5.08)
-				(name "NO"
+				(name "B2"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10551,7 +10731,7 @@
 			(pin passive line
 				(at -20.32 -2.54 0)
 				(length 5.08)
-				(name "NC"
+				(name "B1"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10569,7 +10749,7 @@
 			(pin passive line
 				(at 20.32 2.54 180)
 				(length 5.08)
-				(name "COM"
+				(name "A"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10587,7 +10767,7 @@
 			(pin power_in line
 				(at 20.32 0 180)
 				(length 5.08)
-				(name "VPLUS"
+				(name "VCC"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10605,7 +10785,7 @@
 			(pin input line
 				(at 20.32 -2.54 180)
 				(length 5.08)
-				(name "SELECT"
+				(name "S"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10622,32 +10802,32 @@
 			)
 		)
 	)
-	(symbol "CONN8"
+	(symbol "XTAL2"
 		(pin_names
 			(offset 0.635)
 		)
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 0 8.89 0)
+			(at 0 7.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "CONN8"
-			(at 0 -8.89 0)
+		(property "Value" "XTAL2"
+			(at 0 -7.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(symbol "CONN8_0_1"
+		(symbol "XTAL2_0_1"
 			(rectangle
-				(start -5.08 6.35)
-				(end 5.08 -6.35)
+				(start -5.08 5.08)
+				(end 5.08 -5.08)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -10657,11 +10837,11 @@
 				)
 			)
 		)
-		(symbol "CONN8_1_1"
+		(symbol "XTAL2_1_1"
 			(pin passive line
-				(at -10.16 3.81 0)
+				(at -10.16 0 0)
 				(length 5.08)
-				(name "1"
+				(name "X1"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10677,9 +10857,9 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 1.27 0)
+				(at 10.16 0 180)
 				(length 5.08)
-				(name "2"
+				(name "X2"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10694,10 +10874,250 @@
 					)
 				)
 			)
+		)
+	)
+	(symbol "D_TVS"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "D"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_TVS"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "diode TVS thyrector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "D_TVS_0_1"
+			(polyline
+				(pts
+					(xy -2.54 1.27) (xy -2.54 -1.27) (xy 2.54 1.27) (xy 2.54 -1.27) (xy -2.54 1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.27 0) (xy -1.27 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "D_TVS_1_1"
 			(pin passive line
-				(at -10.16 -1.27 0)
+				(at -3.81 0 0)
+				(length 2.54)
+				(name "A1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 3.81 0 180)
+				(length 2.54)
+				(name "A2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "LMA3729T381"
+		(pin_names
+			(offset 0.635)
+		)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LMA3729T381"
+			(at 0 -7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "LMA3729T381_0_1"
+			(rectangle
+				(start -15.24 5.08)
+				(end 15.24 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "LMA3729T381_1_1"
+			(pin power_in line
+				(at -20.32 1.27 0)
 				(length 5.08)
-				(name "3"
+				(name "VDD"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -20.32 -1.27 0)
+				(length 5.08)
+				(name "GND1"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 20.32 1.27 180)
+				(length 5.08)
+				(name "GND2"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10712,10 +11132,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at -10.16 -3.81 0)
+			(pin output line
+				(at 20.32 -1.27 180)
 				(length 5.08)
-				(name "4"
+				(name "OUT"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10730,10 +11150,120 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 3.81 180)
+		)
+	)
+	(symbol "NS4150B"
+		(pin_names
+			(offset 0.635)
+		)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 8.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NS4150B"
+			(at 0 -8.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "NS4150B_0_1"
+			(rectangle
+				(start -15.24 6.35)
+				(end 15.24 -6.35)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "NS4150B_1_1"
+			(pin input line
+				(at -20.32 3.81 0)
 				(length 5.08)
-				(name "5"
+				(name "CTRL"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -20.32 1.27 0)
+				(length 5.08)
+				(name "BYPASS"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 -1.27 0)
+				(length 5.08)
+				(name "INP"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 -3.81 0)
+				(length 5.08)
+				(name "INN"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 3.81 180)
+				(length 5.08)
+				(name "VON"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10748,10 +11278,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 1.27 180)
+			(pin power_in line
+				(at 20.32 1.27 180)
 				(length 5.08)
-				(name "6"
+				(name "VCC"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10766,10 +11296,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 -1.27 180)
+			(pin power_in line
+				(at 20.32 -1.27 180)
 				(length 5.08)
-				(name "7"
+				(name "GND"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -10784,10 +11314,10 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 10.16 -3.81 180)
+			(pin output line
+				(at 20.32 -3.81 180)
 				(length 5.08)
-				(name "8"
+				(name "VOP"
 					(effects
 						(font
 							(size 1.016 1.016)

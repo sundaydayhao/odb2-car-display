@@ -305,47 +305,13 @@ for i,(src,feed) in enumerate([('LTE_RF','LTE_ANT'),('GNSS_RF','GNSS_ANT')]):
 for p in d.parts:
     if p['ref']=='R1041':p['ref']='C1044';p['kind']='C';p['value']='100p C0G RF DC block';p['footprint']=CFP
 
-page('11_codec','11 Codec and remote microphone',(10,61),[
- 'ES8311: I2C 0x18 (CE=0), slave I2S. Keep analog input loop away from switch nodes.',
- 'Remote headboard: LinkMems LMA3729T421-OA1; 4-wire harness <=100 mm initial target.',
- 'DAC outputs go to source selector. NS4814 power stage is held pending a complete datasheet.'
-])
-box('ES8311',[(1,'CCLK','input'),(2,'MCLK','input'),(3,'PVDD','power_in'),(4,'DVDD','power_in'),(5,'DGND','power_in'),(6,'SCLK','bidirectional'),(7,'ASDOUT','output'),(8,'LRCK','bidirectional'),(9,'DSDIN','input'),(10,'AGND','power_in'),(11,'AVDD','power_in'),(12,'OUTP','output'),(13,'OUTN','output'),(14,'DACVREF','passive'),(15,'ADCVREF','passive'),(16,'VMID','passive'),(17,'MIC1N','input'),(18,'MIC1P','input'),(19,'CDATA','bidirectional'),(20,'CE','input'),(21,'EP_GND','power_in')])
-item('11_codec','U800','ES8311','ES8311',{1:'SYSTEM_I2C_SCL',2:'CODEC_MCLK',3:'+3V3',4:'+3V3',5:'GND',6:'CODEC_BCLK',7:'CODEC_DOUT',8:'CODEC_LRCK',9:'CODEC_DIN',10:'GND',11:'AUDIO_3V3',12:'DAC_P',13:'DAC_N',14:'DAC_VREF',15:'ADC_VREF',16:'CODEC_VMID',17:'MIC_N',18:'MIC_P',19:'SYSTEM_I2C_SDA',20:'GND',21:'GND'},'Package_DFN_QFN:QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm',xy=(64.77,86.36),pcb=(22,65),source='https://files.waveshare.com/wiki/common/ES8311.DS.pdf')
-item('11_codec','U801','AP2112K','AP2112K-3.3TRG1',{1:'+5V',2:'GND',3:'+5V',4:None,5:'AUDIO_3V3'},SOT5,xy=(64.77,147.32),pcb=(11,61))
-box('CONN4',[(i,str(i),'passive') for i in range(1,5)],5.08)
-item('11_codec','J800','CONN4','MIC HEAD / 3V3,P,N,GND',{1:'AUDIO_3V3',2:'MIC_CABLE_P',3:'MIC_CABLE_N',4:'GND'},'Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical',xy=(64.77,208.28),pcb=(8,68),angle=90)
-for i,(a,b) in enumerate([('I2S_MCLK','CODEC_MCLK'),('I2S_BCLK','CODEC_BCLK'),('I2S_LRCK','CODEC_LRCK'),('I2S_DOUT','CODEC_DIN'),('CODEC_DOUT','I2S_DIN')]):pas('11_codec','R'+str(800+i),'22R',a,b)
-for i,(v,n) in enumerate([('1u','+5V'),('1u','AUDIO_3V3'),('100n','AUDIO_3V3'),('100n','+3V3'),('1u','+3V3'),('1u','DAC_VREF'),('1u','ADC_VREF'),('1u','CODEC_VMID')]):cap('11_codec','C'+str(800+i),v,n)
-pas('11_codec','C808','1u 10V','MIC_CABLE_P','MIC_P');pas('11_codec','C809','1u 10V','MIC_CABLE_N','MIC_N')
-pas('11_codec','C810','100p C0G','MIC_P','MIC_N')
-
-page('12_fm_audio','12 FM and source switching',(33,63),[
- 'FM uses a complete RDA5807M receiver module with crystal and antenna, not a bare chip.',
- 'L/R are summed through separate 10k resistors. FM and DAC outputs are never hard-paralleled.',
- 'Switch output is AC-coupled for amplifier bias. AMP stage and speaker power remain release holds.'
-])
-box('SGM3157',[(1,'NO','passive'),(2,'GND','power_in'),(3,'NC','passive'),(4,'COM','passive'),(5,'VPLUS','power_in'),(6,'SELECT','input')])
-box('CONN8',[(i,str(i),'passive') for i in range(1,9)],5.08)
-item('12_fm_audio','J810','CONN8','RDA5807M module',{1:'FM_3V3',2:'GND',3:'FM_SDA',4:'FM_SCL',5:'FM_L',6:'FM_R',7:'GND',8:None},'Connector_JST:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical',xy=(63.5,76.2),pcb=(43,69),angle=90)
-item('12_fm_audio','U810','TPS22918','TPS22918DBVR',{1:'AUDIO_3V3',2:'FM_POWER_EN',3:'FM_SLEW',4:'GND',5:'FM_QOD',6:'FM_3V3'},SOT6,xy=(63.5,137.16),pcb=(35,63))
-for i,(a,b) in enumerate([('DAC_P','FM_BIASED'),('DAC_N','AUDIO_MID')]):
-    item('12_fm_audio','U'+str(811+i),'SGM3157','SGM3157XC6/TR',{1:b,2:'GND',3:a,4:'AMP_AC_'+str(i),5:'AUDIO_3V3',6:'AUDIO_SELECT_LOCAL'},'Package_TO_SOT_SMD:SOT-363_SC-70-6',xy=(63.5,205.74+i*33.02),pcb=(45+i*4,63),source='https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf')
-pas('12_fm_audio','R810','100k','FM_POWER_EN','GND');pas('12_fm_audio','R811','100R','FM_QOD','FM_3V3');cap('12_fm_audio','C8101','1n','FM_SLEW');cap('12_fm_audio','C811','1u','FM_3V3');cap('12_fm_audio','C812','1u','AUDIO_3V3')
-for i,(lo,hi) in enumerate([('FM_SDA','SYSTEM_I2C_SDA'),('FM_SCL','SYSTEM_I2C_SCL')]):
-    mos('12_fm_audio','Q'+str(810+i),'FM_3V3',lo,hi);pas('12_fm_audio','R'+str(812+i),'4.7k','FM_3V3',lo)
-pas('12_fm_audio','R814','10k','FM_L','FM_SUM');pas('12_fm_audio','R815','10k','FM_R','FM_SUM')
-pas('12_fm_audio','C813','2.2u','FM_SUM','FM_BIASED');pas('12_fm_audio','R816','100k','AUDIO_MID','FM_BIASED')
-pas('12_fm_audio','R817','10k','AUDIO_3V3','AUDIO_MID');pas('12_fm_audio','R818','10k','AUDIO_MID','GND');cap('12_fm_audio','C814','10u 10V','AUDIO_MID',fp='Capacitor_SMD:C_0805_2012Metric')
-pas('12_fm_audio','R819','1k','AUDIO_SOURCE_SELECT','AUDIO_SELECT_LOCAL');pas('12_fm_audio','R820','100k','AUDIO_SELECT_LOCAL','GND')
-cap('12_fm_audio','C815','100n','AUDIO_3V3');cap('12_fm_audio','C816','100n','AUDIO_3V3')
-pas('12_fm_audio','C817','2.2u','AMP_AC_0','AMP_INPUT_P');pas('12_fm_audio','C818','2.2u','AMP_AC_1','AMP_INPUT_N')
-tp('12_fm_audio','TP810','AMP_INPUT_P');tp('12_fm_audio','TP811','AMP_INPUT_N')
+from stereo_audio import add_audio
+add_audio(d, page, box, item, pas, cap, mos, tp)
 
 # A visible hold sheet prevents an interface reservation being mistaken for a populated circuit.
 page('13_release_holds','13 Pending interface closure',(0,0),[
- 'NOT IMPLEMENTED: LCD bias/backlight, camera power/clock/level conversion and NS4814 amplifier.',
- 'LCD: vendor 2-lane initialization / legal timing required; FPC contact side and folded tip Y unmeasured.',
+ 'NOT IMPLEMENTED: LCD bias/backlight, camera power/clock/level conversion and their support circuits.',
+ 'LCD: vendor 2-lane initialization / legal timing required; FPC contact side and mechanical mating still need verification.',
  'FPC sockets J1200/J1210/J1220 are fitted on F side. Touch pinout and folded LCD fit are not verified.',
  'GNSS: passive RF path drawn. Active antenna current-limit/bias feed is not implemented.',
  'BATTERY: hardware 0..45C cutoff, reverse connection, exact pack/NTC/fuse still need closure.',
@@ -372,6 +338,7 @@ for p in d.parts:
 
 from models import remap_footprints
 remap_footprints(d.parts)
+d.sheets = dict(sorted(d.sheets.items()))
 
 if __name__=='__main__':
     d.write();print('Generated',len(d.parts),'parts in',len(d.sheets),'sheets:',OUT)

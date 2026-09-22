@@ -13,3 +13,8 @@ C1040;C1041;C1042;C1043,DNP until RF tuning,DNP until RF tuning,unvalued shunt m
 J1200;J1210;J1220,FIT,FIT,FPC interfaces populated - mating and functional holds remain
 F300,FIT candidate - qualification HOLD,FIT candidate - qualification HOLD,fuse I2t and pack protection not qualified
 U1300;U1301;R1300;R1301;C1300;C1301;C1302,FIT,FIT,cabin light and humidity sensors - optical and thermal validation pending
+11_codec_all,FIT,FIT,ES8389 7bit 0x12 - firmware port required
+12_fm_audio_all,FIT,FIT,onboard RDA5807M 3V0 and antenna port - no external 8pin module
+18_dual_mic_all,FIT,FIT,two identical LMA3729T381-OY3S soldered on carrier B side
+19_stereo_pa_all,FIT,FIT,two NS4150B and two independent BTL speaker outputs
+external_speakers,2x 4ohm rated >=3W,2x 4ohm rated >=3W,enclosure and exact supplier part remain to be qualified

@@ -1,6 +1,6 @@
 # R0 电气核算和固件接口约定
 
-对应 2026-09-19 工程草稿。数值为设计计算，不是样机实测。检查程序为 `tools/carrier_design/verify.py`，结果在 [VERIFICATION.json](VERIFICATION.json)。
+电源基础对应 2026-09-19 草稿，音频更新至 2026-09-23 修订 H。数值为设计计算，不是样机实测。检查程序为 `tools/carrier_design/verify.py`，结果在 [VERIFICATION.json](VERIFICATION.json)。
 
 ## USB-C 共用充电 / 下载
 
@@ -49,8 +49,8 @@ ILIM=300 Ω，按 KILIM 最大 390 计算输入硬上限约 1.3 A。正常充电
 
 ML307A-GCLN 的全部 94 脚含中央地已建符号并分配，UART/DTR/STATE 均经 1.8 V 转换，VDD_EXT 仅作为模块输出使用。VBAT 3.8 V、USB 检测 5 V 分支独立控制。2×220 µF 的涌入、稳压环路与射频发射压降待实测；GNSS 目前是隔直无源路径，3.3 V 天线电源只到测试点，尚没有有源天线馈电。
 
-ES8311 的 I2C 地址为 0x18，BQ25896 为 0x6A；FM 使用完整接收模块并单独验证地址/音频幅度。FM 的 L/R 各经 10 kΩ 合成，隔直后以独立 1.65 V 中点偏置，经两只 SGM3157 与 Codec 差分输出切换；不直接并联两路音频输出。切换前必须静音。功放和扬声器电路仍未实现。
+ES8389 采用 7 位地址 0x12，避开板载 RDA5807M 的 0x10/0x11；BQ25896 为 0x6A。FM 使用 3.0 V，L/R 独立，经隔直/1.65 V 偏置及四只 SGM3157 与 DAC 左右差分输出切换。两个 NS4150B 从独立 4.788 V 供电，各接一个 BTL 扬声器；静态容差计算为 4.6840～4.8923 V，增益 2.4 倍。切换前拉低 AMP_EN，任一扬声器端子都不能接地。电源瞬态、输出 THD、声学和固件仍待验证；详见 [音频核算和接口](AUDIO_ARCHITECTURE.md)。
 
-SD 供电可关，但其信号线尚无完整硬件断电隔离。暂定固件先释放总线再关电，不能把该约定当作商用防反灌验证已完成。接口 ESD、麦克风线束 EMI 等仍见 DESIGN_STATUS.md。
+SD 供电可关，但其信号线尚无完整硬件断电隔离。暂定固件先释放总线再关电，不能把该约定当作商用防反灌验证已完成。接口 ESD、功放输出 EMI 等仍见 DESIGN_STATUS.md。
 
 主要器件计算依据：[BQ25896](https://www.ti.com/lit/ds/symlink/bq25896.pdf)、[TPS2553](https://www.ti.com/lit/ds/symlink/tps2553.pdf)、[TUSB320LAI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf)、[TPS61088](https://www.ti.com/lit/ds/symlink/tps61088.pdf)、[TPS22990](https://www.ti.com/lit/ds/symlink/tps22990.pdf)、[TLV62569](https://www.ti.com/lit/ds/symlink/tlv62569.pdf)、[TLV62585](https://www.ti.com/lit/ds/symlink/tlv62585.pdf)。

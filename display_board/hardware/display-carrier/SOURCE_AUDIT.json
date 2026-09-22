@@ -1,6 +1,6 @@
 {
-  "plan_date": "2026-09-19",
-  "revision": "F_populated_FPC_and_full_feature_assembly",
+  "plan_date": "2026-09-23",
+  "revision": "G_measured_fold_layout_and_cabin_sensors",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -764,5 +764,30 @@
     "manufacturer_family_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
     "manufacturer_family_drawing_sha256": "87cd1aeadad6c8470a8dab79031fa5bf586697a19952f892e5f74781d8892605",
     "lcd_connector_fit": "not qualified: family recommended thickness 0.30+/-0.02 vs LCM 0.30+/-0.05; width +/-0.05 vs LCM +/-0.10; 6mm reinforcement vs LCM 4.8+/-0.3"
-  }
+  },
+  "measured_fold_layout": {
+    "corrected_user_tip_Y_mm": {
+      "touch": 7.5,
+      "lcd": 46.1
+    },
+    "reference": "screen assembly top to folded gold-finger tip",
+    "photo": "微信图片_20260923055259_368_77.jpg",
+    "touch_X": "photo estimate only; not measured",
+    "pcb_screen_offset_mm": [
+      9.93,
+      2.5
+    ]
+  },
+  "cabin_sensor_sources": [
+    {
+      "part": "OPT3001DNPR",
+      "url": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "revision": "Rev C, package DNP0006A 4221434/C 01/2018"
+    },
+    {
+      "part": "SHT40-AD1B-R2",
+      "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "revision": "v7.3 June2026"
+    }
+  ]
 }

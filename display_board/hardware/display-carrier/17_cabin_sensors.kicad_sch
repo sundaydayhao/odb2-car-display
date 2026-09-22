@@ -1,0 +1,1567 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(uuid 31f630e8-14a2-5ea7-8f30-f7c77d817931)
+	(paper "A3")
+	(title_block
+		(title "17 Cabin ambient light and humidity")
+		(date "2026-09-23")
+		(rev "R0 ENGINEERING")
+		(company "OBD Car Display")
+		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
+	)
+	(lib_symbols
+		(symbol "Carrier:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:OPT3001_DNP"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "OPT3001_DNP"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OPT3001_DNP_0_1"
+				(rectangle
+					(start -15.24 6.35)
+					(end 15.24 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "OPT3001_DNP_1_1"
+				(pin power_in line
+					(at -20.32 3.81 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 1.27 0)
+					(length 5.08)
+					(name "ADDR"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 -1.27 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -3.81 0)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 20.32 3.81 180)
+					(length 5.08)
+					(name "INT_N"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 20.32 1.27 180)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 -1.27 180)
+					(length 5.08)
+					(name "EP_GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Carrier:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:SHT40"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SHT40"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SHT40_0_1"
+				(rectangle
+					(start -15.24 5.08)
+					(end 15.24 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SHT40_1_1"
+				(pin bidirectional line
+					(at -20.32 1.27 0)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -1.27 0)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 1.27 180)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 -1.27 180)
+					(length 5.08)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Carrier:OPT3001_DNP")
+		(at 76.2 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid aa92c015-4d6e-537d-9112-88f957786870)
+		(property "Reference" "U1300"
+			(at 76.2 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OPT3001DNPR"
+			(at 76.2 74.93 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Carrier:OPT3001_DNP0006A"
+			(at 76.2 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opt3001.pdf"
+			(at 76.2 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "0x45, polled; optical window and assembled calibration required"
+			(at 76.2 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 593b1615-063c-5058-bc61-4f4dc8891808)
+		)
+		(pin "2"
+			(uuid 5a5bf181-88fa-52de-9dcb-ba2be8447deb)
+		)
+		(pin "3"
+			(uuid 88d21a3c-6b54-5669-8126-dd5293b485b4)
+		)
+		(pin "4"
+			(uuid a8fd1661-a972-5fe8-bd75-dd6ce90ac8d2)
+		)
+		(pin "5"
+			(uuid 441877b9-2559-50f2-bea4-8517bb0bd804)
+		)
+		(pin "6"
+			(uuid 8e54401a-17d2-54c2-84ed-c02f3e7b2876)
+		)
+		(pin "7"
+			(uuid 6f92812c-b99c-5717-9ed2-b45a510869a9)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "U1300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 55.88 80.01) (xy 50.8 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 1de76bc3-4d1e-559f-9bd6-b7e56ce90045)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 50.8 80.01 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 891616e2-e6b5-5ddb-bded-056c50e13f3b)
+	)
+	(wire
+		(pts
+			(xy 55.88 82.55) (xy 50.8 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 2321735b-6169-5f4f-bdca-eb952fbb2f7f)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 50.8 82.55 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 2e23f0fa-02ec-5511-8cfa-bcc5a765207c)
+	)
+	(wire
+		(pts
+			(xy 55.88 85.09) (xy 50.8 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 21050179-ca4f-5e1d-8cc0-4ad012369088)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 50.8 85.09 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 6fc5826c-6494-5caf-8515-ea18b7cc1947)
+	)
+	(wire
+		(pts
+			(xy 55.88 87.63) (xy 50.8 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid e79d4538-f251-56bb-9491-0d297e815e0b)
+	)
+	(global_label "CABIN_I2C_SCL"
+		(shape bidirectional)
+		(at 50.8 87.63 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 2b20d9ec-6743-5908-83e9-a9e212613df6)
+	)
+	(no_connect
+		(at 96.52 80.01)
+		(uuid 5eb21b12-fc8d-5670-ad36-472a8b85e14a)
+	)
+	(wire
+		(pts
+			(xy 96.52 82.55) (xy 101.6 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid b54a7d67-e355-52ec-92c6-380db25489e0)
+	)
+	(global_label "CABIN_I2C_SDA"
+		(shape bidirectional)
+		(at 101.6 82.55 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 37f490ad-edb6-5182-84c2-2ccc20d6ec99)
+	)
+	(wire
+		(pts
+			(xy 96.52 85.09) (xy 101.6 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid cfbedcc4-a0d4-57c7-891d-fc9035b3c6f4)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 101.6 85.09 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 22a67b8b-a660-5f77-8e1d-9e3f7f85c109)
+	)
+	(symbol
+		(lib_id "Carrier:SHT40")
+		(at 76.2 147.32 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 25281bdb-3d1e-55bf-8299-817af191f315)
+		(property "Reference" "U1301"
+			(at 76.2 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SHT40-AD1B-R2"
+			(at 76.2 139.7 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Carrier:SHT40_DFN4_NoCentralPad"
+			(at 76.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf"
+			(at 76.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "0x44; no center pad; vented thermal island, heater normally off"
+			(at 76.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 396de4fc-dde2-5c5e-9fe2-96a15ff610de)
+		)
+		(pin "2"
+			(uuid c27fbfe9-6407-5693-9344-d08e35b5d7c6)
+		)
+		(pin "3"
+			(uuid dc7f24a0-3eed-5f0b-af1c-b47d1af1a18e)
+		)
+		(pin "4"
+			(uuid a04fc9fb-12e0-5a2d-bd49-8b90580a8165)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "U1301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 55.88 146.05) (xy 50.8 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid f5f31f4b-c338-5806-8752-b7ef09812def)
+	)
+	(global_label "CABIN_I2C_SDA"
+		(shape bidirectional)
+		(at 50.8 146.05 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid bd11c761-a8c0-5078-a84e-bf6a75db3a21)
+	)
+	(wire
+		(pts
+			(xy 55.88 148.59) (xy 50.8 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 750b1b79-a43c-53c8-809f-738d4e153e74)
+	)
+	(global_label "CABIN_I2C_SCL"
+		(shape bidirectional)
+		(at 50.8 148.59 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid ee7b4a63-a6c2-5697-b947-30d04759c3dd)
+	)
+	(wire
+		(pts
+			(xy 96.52 146.05) (xy 101.6 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 6fc4c5bf-d52c-5ec3-8731-3e55129a76b7)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 101.6 146.05 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid f2fea6d6-ab36-53dc-86c5-d341a9c6c205)
+	)
+	(wire
+		(pts
+			(xy 96.52 148.59) (xy 101.6 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 3f9426d2-1fea-54ce-9f75-556f03ba304e)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 101.6 148.59 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 11b08de4-c923-572a-be91-390f3f68417d)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 190.5 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 3a17df7a-9d7d-567d-8ed6-5e42e18470b3)
+		(property "Reference" "R1300"
+			(at 195.58 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22R"
+			(at 195.58 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 9cb6e2d4-3174-5536-8d90-b161896425fb)
+		)
+		(pin "2"
+			(uuid 1fb66a0c-1bef-5947-86ae-0647b8491709)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "R1300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 52.07) (xy 190.5 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid cb3be665-d9f2-5670-ae57-559ff0f000ae)
+	)
+	(global_label "SYSTEM_I2C_SDA"
+		(shape bidirectional)
+		(at 190.5 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 8a74379a-05e3-59f0-a3e0-00ba62b2cf98)
+	)
+	(wire
+		(pts
+			(xy 190.5 59.69) (xy 190.5 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid d31e3e7b-d8ed-58df-9213-66f43ec28b59)
+	)
+	(global_label "CABIN_I2C_SDA"
+		(shape bidirectional)
+		(at 190.5 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid bd208737-1cb9-5c55-bb59-34a67459b8cd)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 246.38 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid da60914b-b57e-56ac-b573-29c03a57687e)
+		(property "Reference" "R1301"
+			(at 251.46 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22R"
+			(at 251.46 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 6df02c66-3dd5-5653-b834-0937dc50f28d)
+		)
+		(pin "2"
+			(uuid e5d0fe6f-164a-5a13-b8f6-201747a6b1e0)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "R1301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 52.07) (xy 246.38 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid a6aaa8bf-0200-5d7e-89cb-7c3f3f8f6600)
+	)
+	(global_label "SYSTEM_I2C_SCL"
+		(shape bidirectional)
+		(at 246.38 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid d168f16d-3abf-5354-aa12-05f8bc6687fe)
+	)
+	(wire
+		(pts
+			(xy 246.38 59.69) (xy 246.38 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 4771dd65-b2d6-55d9-b37f-0c875ad83607)
+	)
+	(global_label "CABIN_I2C_SCL"
+		(shape bidirectional)
+		(at 246.38 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 4f008aec-274f-53fb-b0f1-7ce0fb81683e)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 302.26 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 99d076b7-df17-5563-a7fc-c3d718f1b31b)
+		(property "Reference" "C1300"
+			(at 307.34 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V X7R"
+			(at 307.34 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid ebcbf558-a93f-5049-bcae-c633bfee0f58)
+		)
+		(pin "2"
+			(uuid 1ff8a373-3c0d-5c5d-a62b-db7f564dfa28)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "C1300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 302.26 52.07) (xy 302.26 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid dec7514d-13e0-5b9b-904c-0651e9e30550)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 302.26 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 48c78884-53a5-50b6-9635-eb096c9ad395)
+	)
+	(wire
+		(pts
+			(xy 302.26 59.69) (xy 302.26 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 659b7b5a-e509-52bd-b6ce-4ce0e6cfc4f9)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 302.26 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid fce5fd3d-ea7a-52ce-88f4-c11693c85edd)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 358.14 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 14ef2a81-8f35-5ac2-9d45-4e5c86917f53)
+		(property "Reference" "C1301"
+			(at 363.22 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V X7R"
+			(at 363.22 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 3df5a9b8-4326-523c-9ccc-0011e9456ef4)
+		)
+		(pin "2"
+			(uuid cb67a71c-3062-52bb-85a1-35a42a4f0bf5)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "C1301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 358.14 52.07) (xy 358.14 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid cd2fbba5-070e-524b-b866-bb8395ceb838)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 358.14 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 13ab8c10-8c72-59bd-a1c9-86633d180d89)
+	)
+	(wire
+		(pts
+			(xy 358.14 59.69) (xy 358.14 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid afdff86f-aacb-5f71-b1bd-11e5ed860808)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 358.14 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid a0c304b9-8c3b-55d4-b707-9b34e383422b)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 190.5 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 46c4e6d2-a165-5c6e-86bd-6f22b772084e)
+		(property "Reference" "C1302"
+			(at 195.58 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u 10V X7R"
+			(at 195.58 85.09 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 2e824928-9251-5ca7-a119-2209474e890e)
+		)
+		(pin "2"
+			(uuid a18dd383-6147-5575-990c-80b5158aea69)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1"
+					(reference "C1302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 80.01) (xy 190.5 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 17f186a8-70c8-52d2-a7e1-b291849f400b)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 190.5 74.93 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 82fe441d-59b6-5ded-827a-ff9fcf581572)
+	)
+	(wire
+		(pts
+			(xy 190.5 87.63) (xy 190.5 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 78b427dd-0e2a-5181-bb07-f58440159dc7)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 190.5 92.71 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 51f4becf-665a-580a-9f93-5a6346a56b85)
+	)
+	(text "OPT3001DNPR: ADDR=3V3 selects 0x45; SHT40-AD1B-R2 fixed 0x44. SYSTEM_I2C, no extra GPIO."
+		(at 20.32 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid a13bb298-4305-5a87-8971-677f97ca0b0b)
+	)
+	(text "Reuse R110/R111 4.7k bus pull-ups. R1300/R1301 are 22R branch damping; start at 100kHz."
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid a6830cba-b498-5bcb-8d96-8235e055abcf)
+	)
+	(text "U1300 needs a housing optical window/light guide and LCD stray-light baffle; calibrate assembled optics."
+		(at 20.32 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid 2bcf8a6d-b973-509c-b0f4-6b91d6a903dd)
+	)
+	(text "U1301 needs a vented isolated pocket, PCB thermal slots and no copper pour. Heater OFF for cabin readings."
+		(at 20.32 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid bfadb7d5-0c93-517c-a5f2-82f912c18859)
+	)
+	(text "These are populated sensor circuits; housing response, optical calibration and firmware are unvalidated."
+		(at 20.32 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid 48bd2edc-f5b1-5adb-8193-fa14c35a5c09)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,504 @@
+{
+  "date": "2026-09-23",
+  "status": "MEASURED_Y_PROVISIONAL_X_AND_STACKUP",
+  "screen_nominal_mm": [
+    164.86,
+    99.96
+  ],
+  "pcb_mm": [
+    145,
+    85
+  ],
+  "pcb_offset_from_screen_top_left_mm": [
+    9.93,
+    2.5
+  ],
+  "tail_tip_from_screen_top_mm": {
+    "J1200": 46.1,
+    "J1210": 7.5
+  },
+  "superseded_measurements_mm": [
+    1.2,
+    105.3
+  ],
+  "connector_mouth_from_footprint_origin_mm": 3.525,
+  "connector_nominal_insertion_mm": 2.1,
+  "fpc_positions_mm": {
+    "J1200": [
+      70.5,
+      42.175,
+      0
+    ],
+    "J1210": [
+      36.0,
+      3.575,
+      0
+    ],
+    "J1220": [
+      76.5,
+      7.0,
+      180
+    ]
+  },
+  "touch_x_basis": "Photo estimate: back X~119 mm, front X~46 mm; NOT a caliper measurement",
+  "existing_uuid_paths_pad_nets_preserved": true,
+  "moves": [
+    {
+      "ref": "C1200",
+      "before": [
+        71.0,
+        73.0,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        88.0,
+        43.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C1201",
+      "before": [
+        82.0,
+        71.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        91.5,
+        43.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C1202",
+      "before": [
+        85.8,
+        72.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        95.0,
+        43.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C1203",
+      "before": [
+        86.0,
+        69.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        98.5,
+        43.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C1210",
+      "before": [
+        92.2,
+        70.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        53.0,
+        15.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C1211",
+      "before": [
+        90.6,
+        75.2,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        56.5,
+        15.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "C212",
+      "before": [
+        21.6,
+        7.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        21.6,
+        7.8,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "D212",
+      "before": [
+        22.8,
+        10.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        22.8,
+        10.4,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "J1200",
+      "before": [
+        70.5,
+        57.5,
+        0.0,
+        "F.Cu"
+      ],
+      "after": [
+        70.5,
+        42.175,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "J1210",
+      "before": [
+        96.0,
+        67.0,
+        0.0,
+        "F.Cu"
+      ],
+      "after": [
+        36.0,
+        3.575,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "J300",
+      "before": [
+        30.0,
+        5.5,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        24.0,
+        5.5,
+        0.0,
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "R1200",
+      "before": [
+        83.8,
+        64.0,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        88.0,
+        47.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1201",
+      "before": [
+        70.4,
+        67.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        91.5,
+        47.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1202",
+      "before": [
+        74.2,
+        67.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        95.0,
+        47.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1203",
+      "before": [
+        78.0,
+        67.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        98.5,
+        47.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1204",
+      "before": [
+        80.6,
+        69.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        88.0,
+        51.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1205",
+      "before": [
+        83.8,
+        67.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        91.5,
+        51.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1206",
+      "before": [
+        70.4,
+        70.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        95.0,
+        51.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1207",
+      "before": [
+        74.2,
+        70.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        98.5,
+        51.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1210",
+      "before": [
+        91.4,
+        64.6,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        46.0,
+        11.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1211",
+      "before": [
+        92.2,
+        67.0,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        49.5,
+        11.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1212",
+      "before": [
+        90.6,
+        62.2,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        53.0,
+        11.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1213",
+      "before": [
+        94.2,
+        62.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        56.5,
+        11.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1214",
+      "before": [
+        94.0,
+        74.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        46.0,
+        15.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R1215",
+      "before": [
+        91.4,
+        72.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        49.5,
+        15.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R216",
+      "before": [
+        25.2,
+        7.8,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        25.2,
+        7.8,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R524",
+      "before": [
+        120.2,
+        73.4,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        134.0,
+        72.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "R530",
+      "before": [
+        125.4,
+        72.2,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        134.0,
+        68.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "U1200",
+      "before": [
+        70.0,
+        64.0,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        89.0,
+        38.0,
+        0.0,
+        "F.Cu"
+      ]
+    },
+    {
+      "ref": "U1201",
+      "before": [
+        78.0,
+        64.0,
+        0.0,
+        "B.Cu"
+      ],
+      "after": [
+        97.0,
+        38.0,
+        0.0,
+        "F.Cu"
+      ]
+    }
+  ],
+  "required_fit_checks": [
+    "touch X and total glass outline",
+    "tail plane height and full insertion",
+    "pin-1 mapping and touch pinout",
+    "FPC tolerance and latch clearance",
+    "vent/window and cabin thermal response"
+  ]
+}

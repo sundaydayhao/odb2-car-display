@@ -1,125 +1,320 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950"><style>text{font-family:Microsoft YaHei,Segoe UI,Arial,sans-serif}</style>
-<rect x="0" y="0" width="1440" height="950" rx="0" fill="#f5f7fb" stroke="#f5f7fb" stroke-width="1.5"/>
-<text x="55" y="62" font-size="32" fill="#162f40" font-weight="700" text-anchor="start">OSPTEK P4C5 / P4C6 · 显示底板规划</text>
-<text x="55" y="100" font-size="19" fill="#244052" font-weight="400" text-anchor="start">145 × 85 mm / 四层 / 同向 LCD＋触摸排线 / ML307A-GCLN 可选 4G＋定位</text>
-<rect x="1118" y="38" width="270" height="43" rx="21" fill="#fff1ce" stroke="#ebcd82" stroke-width="1.5"/>
-<text x="1253" y="66" font-size="16" fill="#715017" font-weight="600" text-anchor="middle">方案草图 · 尚未绘制 PCB</text>
-<rect x="100.35" y="172.6" width="824.3" height="499.8" rx="5" fill="#e4e9ef" stroke="#8a9aa7" stroke-width="1.5" stroke-dasharray="8 5"/>
-<text x="104" y="155" font-size="17" fill="#526a7c" font-weight="400" text-anchor="start">屏幕裸 LCM 外形 164.86 × 99.96 mm（触摸盖板待定）</text>
-<rect x="150" y="210" width="725" height="425" rx="14" fill="#fafffc" stroke="#3f8269" stroke-width="1.5"/>
-<text x="183" y="245" font-size="16" fill="#3b6d5b" font-weight="400" text-anchor="start">B 面：核心 / 电源 / 音频；F 面：屏幕和触摸 FPC</text>
-<circle cx="170" cy="230" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="170" cy="230" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<circle cx="855" cy="230" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="855" cy="230" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<circle cx="170" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<rect x="185" y="278" width="175" height="163" rx="10" fill="#e1eefb" stroke="#83a8cb" stroke-width="1.5"/>
-<text x="204" y="311" font-size="21" fill="#315e87" font-weight="700" text-anchor="start">电源区 · B</text>
-<text x="199" y="341" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">CC / 充电 / UART</text>
-<text x="199" y="370" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">电池 10 A / NTC</text>
-<text x="199" y="399" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">SYS / 主 5 V / 3.3 V</text>
-<text x="199" y="428" font-size="16" fill="#315e87" font-weight="400" text-anchor="start">5 V 馈线送右侧降压</text>
-<rect x="131" y="327" width="38" height="86" rx="5" fill="#354e62" stroke="#354e62" stroke-width="1.5"/>
-<text x="58" y="439" font-size="18" fill="#354e62" font-weight="700" text-anchor="start">USB-C</text>
-<text x="58" y="463" font-size="15" fill="#354e62" font-weight="400" text-anchor="start">充电 + UART</text>
-<line x1="132" y1="413" x2="106" y2="423" stroke="#7a8c98" stroke-width="1.5"/>
-<rect x="185" y="518" width="195" height="57" rx="10" fill="#f1e7f8" stroke="#b39bc6" stroke-width="1.5"/>
-<text x="198" y="544" font-size="17" fill="#71538c" font-weight="600" text-anchor="start">Codec / MIC / FM · B</text>
-<text x="198" y="565" font-size="15" fill="#71538c" font-weight="400" text-anchor="start">与电感 / RF 留间距</text>
-<rect x="399" y="267" width="242" height="300" rx="12" fill="#e9f6ee" stroke="#98bfa9" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text x="418" y="296" font-size="18" fill="#477658" font-weight="600" text-anchor="start">MIPI 预留走线区域</text>
-<rect x="468" y="340" width="125" height="125" rx="10" fill="#a7d3b6" stroke="#528466" stroke-width="1.5"/>
-<text x="530.5" y="374" font-size="23" fill="#234e38" font-weight="700" text-anchor="middle">P4C5</text>
-<text x="530.5" y="401" font-size="21" fill="#234e38" font-weight="700" text-anchor="middle">或 P4C6</text>
-<text x="530.5" y="431" font-size="15" fill="#234e38" font-weight="500" text-anchor="middle">25 × 25 mm</text>
-<text x="530.5" y="453" font-size="13" fill="#234e38" font-weight="400" text-anchor="middle">同位贴装 · B 面</text>
-<text x="412" y="491" font-size="14" fill="#477658" font-weight="400" text-anchor="start">DSI / CSI / 内部 USB 留通道</text>
-<text x="419" y="526" font-size="16" fill="#477658" font-weight="400" text-anchor="start">基础版空贴 4G 功能区</text>
-<text x="419" y="550" font-size="14" fill="#477658" font-weight="400" text-anchor="start">同一板框 / 两套选装 BOM</text>
-<rect x="185" y="455" width="190" height="48" rx="10" fill="#d6eee2" stroke="#79ac8b" stroke-width="1.5"/>
-<text x="199" y="477" font-size="17" fill="#305f45" font-weight="600" text-anchor="start">LCD 偏置 / 背光 · B</text>
-<text x="199" y="495" font-size="13" fill="#305f45" font-weight="400" text-anchor="start">避开 MIPI 与 MIC 输入</text>
-<rect x="439" y="200" width="163" height="32" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
-<text x="520.5" y="221" font-size="15" fill="#6e5623" font-weight="600" text-anchor="middle">摄像头 FPC · F</text>
-<line x1="520" y1="197" x2="520" y2="170" stroke="#b88b37" stroke-width="2"/>
-<text x="439" y="190" font-size="14" fill="#886c37" font-weight="400" text-anchor="start">横向座 / 出线向上</text>
-<rect x="650" y="267" width="180" height="200" rx="10" fill="#e8ebfa" stroke="#8e9ace" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="662" y="289" font-size="14" fill="#505c91" font-weight="700" text-anchor="start">可选蜂窝区 36 × 40 mm</text>
-<text x="662" y="312" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">LTE / GNSS 独立天线 ↑</text>
-<rect x="666" y="326" width="88.5" height="79" rx="5" fill="#c5cbed" stroke="#8491bd" stroke-width="1.5"/>
-<text x="710.25" y="346" font-size="14" fill="#3e497a" font-weight="700" text-anchor="middle">ML307A</text>
-<text x="710.25" y="364" font-size="14" fill="#3e497a" font-weight="700" text-anchor="middle">GCLN</text>
-<text x="710.25" y="381" font-size="12" fill="#3e497a" font-weight="400" text-anchor="middle">LGA94</text>
-<text x="710.25" y="397" font-size="11" fill="#3e497a" font-weight="400" text-anchor="middle">17.7 × 15.8</text>
-<rect x="777" y="326" width="40" height="32" rx="4" fill="#e5d4f0" stroke="#aa91bf" stroke-width="1.5"/>
-<text x="797" y="346" font-size="10" fill="#705080" font-weight="600" text-anchor="middle">220µF</text>
-<rect x="777" y="368" width="40" height="32" rx="4" fill="#e5d4f0" stroke="#aa91bf" stroke-width="1.5"/>
-<text x="797" y="388" font-size="10" fill="#705080" font-weight="600" text-anchor="middle">220µF</text>
-<rect x="661" y="416" width="158" height="43" rx="5" fill="#dbe6f7" stroke="#8e9ace" stroke-width="1.5"/>
-<text x="740" y="435" font-size="12" fill="#3e497a" font-weight="600" text-anchor="middle">局部 3.8 V / 放电 / 电平</text>
-<text x="740" y="451" font-size="11" fill="#3e497a" font-weight="400" text-anchor="middle">USB 检测 / GNSS 偏置可关断</text>
-<text x="651" y="492" font-size="13" fill="#505c91" font-weight="400" text-anchor="start">USB 网卡 + 独立 AT UART</text>
-<rect x="841" y="330" width="45" height="71" rx="4" fill="#6e77a0" stroke="#6e77a0" stroke-width="1.5"/>
-<text x="902" y="354" font-size="16" fill="#505c91" font-weight="600" text-anchor="start">Nano-SIM</text>
-<text x="902" y="380" font-size="14" fill="#505c91" font-weight="400" text-anchor="start">右侧选装</text>
-<rect x="841" y="453" width="45" height="77" rx="4" fill="#586b80" stroke="#586b80" stroke-width="1.5"/>
-<text x="904" y="474" font-size="17" fill="#354e62" font-weight="600" text-anchor="start">microSD</text>
-<text x="904" y="499" font-size="15" fill="#244052" font-weight="400" text-anchor="start">右侧取卡</text>
-<rect x="695" y="518" width="135" height="60" rx="10" fill="#fae1dc" stroke="#ce9a8c" stroke-width="1.5"/>
-<text x="710" y="544" font-size="17" fill="#955c4c" font-weight="600" text-anchor="start">功放 / 喇叭 · B</text>
-<text x="710" y="566" font-size="14" fill="#955c4c" font-weight="400" text-anchor="start">分隔电池与咪头</text>
-<rect x="651" y="201" width="40" height="26" rx="3" fill="#7d8ca1" stroke="#7d8ca1" stroke-width="1.5"/>
-<rect x="702" y="201" width="40" height="26" rx="3" fill="#7d8ca1" stroke="#7d8ca1" stroke-width="1.5"/>
-<rect x="764" y="199" width="65" height="29" rx="3" fill="#526b87" stroke="#526b87" stroke-width="1.5"/>
-<text x="670" y="188" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">RST</text>
-<text x="722" y="171" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">BOOT</text>
-<text x="806" y="188" font-size="14" fill="#4c6075" font-weight="600" text-anchor="middle">侧滑电源</text>
-<rect x="150" y="595" width="725" height="40" rx="0" fill="#edf0f2" stroke="#d7dee3" stroke-width="1.5"/>
-<text x="191" y="620" font-size="14" fill="#617180" font-weight="400" text-anchor="start">底边 8 mm：底座 / 低件区</text>
-<circle cx="170" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="170" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<circle cx="855" cy="615" r="12" fill="#e2ebe5" stroke="#729480" stroke-width="1.5"/>
-<circle cx="855" cy="615" r="6.25" fill="#f5f7fb" stroke="#648270"/>
-<rect x="423.5" y="573" width="158" height="30" rx="4" fill="#ffd891" stroke="#be9147" stroke-width="1.5"/>
-<text x="502.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">LCD · F（Y 待定）</text>
-<rect x="586" y="573" width="125" height="30" rx="4" fill="#ffe4a6" stroke="#c4a35c" stroke-width="1.5"/>
-<text x="648.5" y="594" font-size="15" fill="#6c511f" font-weight="700" text-anchor="middle">触摸 FPC · F</text>
-<line x1="502.5" y1="640" x2="502.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
-<path d="M 497.5 618 L 502.5 609 L 507.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
-<line x1="648.5" y1="640" x2="648.5" y2="609" stroke="#bb8c3f" stroke-width="2"/>
-<path d="M 643.5 618 L 648.5 609 L 653.5 618" fill="none" stroke="#bb8c3f" stroke-width="2"/>
-<text x="460" y="663" font-size="15" fill="#886c37" font-weight="400" text-anchor="start">两座入口同朝下 / 从下向上插入</text>
-<line x1="150" y1="699" x2="875" y2="699" stroke="#7a8c98" stroke-width="1.5"/>
-<line x1="150" y1="683" x2="150" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
-<line x1="875" y1="683" x2="875" y2="710" stroke="#7a8c98" stroke-width="1.5"/>
-<text x="512.5" y="726" font-size="18" fill="#526a7c" font-weight="600" text-anchor="middle">PCB 145 mm</text>
-<line x1="962" y1="210" x2="962" y2="635" stroke="#7a8c98" stroke-width="1.5"/>
-<line x1="949" y1="210" x2="975" y2="210" stroke="#7a8c98" stroke-width="1.5"/>
-<line x1="949" y1="635" x2="975" y2="635" stroke="#7a8c98" stroke-width="1.5"/>
-<text x="973" y="408" font-size="17" fill="#526a7c" font-weight="600" text-anchor="start">85</text>
-<text x="970" y="430" font-size="14" fill="#526a7c" font-weight="400" text-anchor="start">mm</text>
-<rect x="1036" y="152" width="348" height="561" rx="14" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
-<text x="1060" y="187" font-size="22" fill="#263e51" font-weight="700" text-anchor="start">装配和电气边界</text>
-<text x="1060" y="228" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">F 面朝屏 / B 面朝后盖</text>
-<text x="1060" y="252" font-size="14" fill="#607487" font-weight="400" text-anchor="start">功能投影不表示两面器件可以重叠；</text>
-<text x="1060" y="276" font-size="14" fill="#607487" font-weight="400" text-anchor="start">去耦、电感和散热按局部电气要求放置。</text>
-<text x="1060" y="326" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">四角固定，外壳承载电池和喇叭</text>
-<text x="1060" y="350" font-size="14" fill="#607487" font-weight="400" text-anchor="start">M2.5 孔中心暂定距边 4 mm；</text>
-<text x="1060" y="374" font-size="14" fill="#607487" font-weight="400" text-anchor="start">屏幕由前框承载，PCB 固定在后壳。</text>
-<text x="1060" y="424" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LTE 与 GNSS 独立天线</text>
-<text x="1060" y="448" font-size="14" fill="#607487" font-weight="400" text-anchor="start">GNSS 优先朝天空，预留后壳上沿出线；</text>
-<text x="1060" y="472" font-size="14" fill="#607487" font-weight="400" text-anchor="start">与 Wi-Fi 天线、电池、屏幕金属分隔。</text>
-<text x="1060" y="522" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">LCD / 触摸接口同向</text>
-<text x="1060" y="546" font-size="14" fill="#607487" font-weight="400" text-anchor="start">朝屏面、入口朝下；保留出厂折法；</text>
-<text x="1060" y="570" font-size="14" fill="#607487" font-weight="400" text-anchor="start">LCD 预留约 30×40 mm；Y 待实测。</text>
-<text x="1060" y="620" font-size="17" fill="#324f65" font-weight="600" text-anchor="start">ML307A 供电就近布置</text>
-<text x="1060" y="644" font-size="14" fill="#607487" font-weight="400" text-anchor="start">3.8 V / 至少 2 × 220 µF 储能；</text>
-<text x="1060" y="668" font-size="14" fill="#607487" font-weight="400" text-anchor="start">USB 检测及天线偏置分别关断。</text>
-<rect x="55" y="775" width="1329" height="116" rx="12" fill="#ffffff" stroke="#d6dfe8" stroke-width="1.5"/>
-<text x="80" y="810" font-size="20" fill="#263e51" font-weight="600" text-anchor="start">本图用于讨论功能布局，不是元件坐标、PCB 布线、阻抗验算或最终外壳图。</text>
-<text x="80" y="843" font-size="18" fill="#526a7c" font-weight="400" text-anchor="start">下一步：两 lane / 触摸资料 → LGA94 封装与固件 → RNDIS＋GNSS 并发及功率验证 → SCH → PCB。</text>
-<text x="80" y="872" font-size="16" fill="#6c7d8c" font-weight="400" text-anchor="start">修订 D · 2026-09-19    ·    LCD 横向基准已校正；出厂已预折，Y / 接触面待实物核定</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="850" viewBox="0 0 1480 850">
+<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif} .small{font-size:13px}</style>
+<rect width="1480" height="850" fill="#f5f7fb"/>
+<text x="60" y="53" font-size="30" fill="#20324a" font-weight="700">显示载板 · 折后排线与车内传感器布局</text>
+<text x="60" y="87" font-size="18" fill="#20324a" font-weight="400">2026-09-23 / 修订 G / 实际 PCB 坐标投影；尚未布线</text>
+<text x="60" y="117" font-size="16" fill="#20324a" font-weight="400">正视投影：F 面朝屏幕，B 面朝后壳；与用户背面照片左右镜像。</text>
+<rect x="70.0" y="145.0" width="923.216" height="559.776" fill="#e4e9f0" stroke="#a5b0c0" stroke-width="1.5" stroke-dasharray="7 5"/>
+<rect x="125.608" y="159.0" width="812.0" height="475.99999999999994" fill="#fbfffc" stroke="#43866b" stroke-width="1.5" />
+<text x="86.8" y="693.8" font-size="14" fill="#20324a" font-weight="400">裸屏名义 164.86 × 99.96 mm；总成盖板尺寸待确认</text>
+<rect x="463.98799999999994" y="381.17999999999995" width="112.83999999999999" height="35.279999999999994" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="629.58" y="395.572" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="239.73599999999996" y="210.66000000000003" width="26.851999999999997" height="13.16" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="629.58" y="440.372" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="609.98" y="417.972" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="668.78" y="440.372" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="609.98" y="395.572" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="394.38" y="238.77200000000002" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="668.78" y="417.972" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="394.38" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="258.29999999999995" y="198.452" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="505.98799999999994" y="175.772" width="96.03999999999999" height="36.428" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="433.58000000000004" y="238.77200000000002" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="867.58" y="535.572" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="867.58" y="557.972" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="609.98" y="440.372" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="649.1800000000001" y="395.572" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="668.78" y="395.572" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="413.98" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="413.98" y="238.77200000000002" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="238.14" y="198.452" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="304.388" y="165.02" width="45.64" height="36.428" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="374.78000000000003" y="238.77200000000002" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="649.1800000000001" y="440.372" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="374.78000000000003" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="655.9" y="363.736" width="25.816" height="15.203999999999999" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="629.58" y="417.972" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="433.58000000000004" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="649.1800000000001" y="417.972" width="16.855999999999998" height="8.456" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="612.388" y="361.15999999999997" width="23.240000000000002" height="20.299999999999997" fill="#c8dedc" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="244.85999999999999" y="460.532" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="211.26" y="554.6119944" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="206.49999999999994" y="249.02" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="296.0999999999999" y="524.54" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="422.94" y="564.692" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="838.4599999999999" y="533.332" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="857.5" y="522.132" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="864.22" y="246.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="707.4200000000001" y="487.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="228.06" y="291.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="452.05999999999995" y="332.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="177.66" y="202.932" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="403.89999439999997" y="575.8919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="701.82" y="303.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="406.14" y="545.652" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="177.66" y="305.972" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="338.94" y="392.212" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="654.78" y="397.81199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="797.1880000000001" y="457.34000000000003" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="407.26" y="327.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="672.6999999999999" y="467.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="829.5" y="244.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="392.6999944" y="218.61200000000002" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="231.58799999999997" y="250.14000000000004" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="496.85999999999996" y="274.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="401.828" y="505.248" width="16.52" height="14.055999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="672.6999999999999" y="454.93199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="251.58" y="353.01199999999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="359.09999439999996" y="403.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="188.86" y="373.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="790.3" y="187.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="653.66" y="452.69199439999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.61999999999995" y="572.5319999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="352.548" y="162.77999999999997" width="38.92" height="31.08" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="853.1880000000001" y="365.5" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="690.62" y="391.092" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="265.02" y="516.5319999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="373.548" y="250.81199999999995" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="290.78" y="463.89199999999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="665.98" y="290.2919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="514.78" y="262.292" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="310.93999999999994" y="217.492" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="651.5880000000001" y="156.76000000000002" width="53.76" height="46.9" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="334.46" y="208.53199999999998" width="25.816" height="12.936" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="191.1" y="528.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="209.01999999999995" y="541.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="235.89999999999995" y="329.94000000000005" width="25.816" height="15.203999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="807.0999999999999" y="444.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="428.42799999999994" y="254.17200000000003" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="472.78000000000003" y="210.772" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="233.66" y="541.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="654.78" y="410.132" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="832.8599999999999" y="263.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="154.14" y="205.17199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="496.85999999999996" y="248.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.61999999999995" y="207.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="254.93999999999997" y="544.5319999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="252.58799999999997" y="375.29999999999995" width="26.04" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="809.34" y="529.972" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="810.3480000000001" y="483.772" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="458.78000000000003" y="307.092" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="335.58" y="303.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="848.4279999999999" y="280.38" width="86.52" height="82.03999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="883.2599999999999" y="244.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="156.38" y="275.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="784.6999999999999" y="255.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="185.668" y="490.94" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="444.2199999999999" y="578.132" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="209.01999999999995" y="283.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="333.34" y="188.37199999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="797.0200000000001" y="553.492" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="880.068" y="366.62" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="653.828" y="328.54" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="665.98" y="303.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="734.748" y="433.42799999999994" width="13.72" height="12.235999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="407.26" y="301.49199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="291.9" y="375.4119999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="159.73999999999998" y="286.932" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="289.548" y="449.05199999999996" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="206.66799999999995" y="392.65999999999997" width="73.08" height="60.11599999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="655.9" y="258.932" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="800.1840000000001" y="601.26" width="15.484" height="11.479999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="309.98799999999994" y="502.14" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="213.49999999999994" y="528.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="708.54" y="439.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="441.98" y="507.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="784.6999999999999" y="523.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="347.78799999999995" y="475.54" width="31.08" height="106.11999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="244.85999999999999" y="498.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="407.26" y="531.0919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="266.14" y="496.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="490.14" y="263.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="672.6999999999999" y="441.49199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="695.0999999999999" y="370.26" width="25.816" height="15.203999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="706.0200000000001" y="465.17999999999995" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="351.148" y="266.65999999999997" width="26.04" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="285.18" y="217.492" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="713.1880000000001" y="156.76000000000002" width="53.76" height="46.9" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="378.14" y="301.49199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="433.0199999999999" y="274.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="264.908" y="455.772" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="326.508" y="426.54" width="26.04" height="18.2" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="286.74800000000005" y="406.94" width="24.919999999999998" height="30.659999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="122.38799999999998" y="302.668" width="53.032000000000004" height="59.86399999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="816.06" y="517.652" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="422.38" y="196.772" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="637.5880000000001" y="212.06" width="24.64" height="28.279999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="287.41999999999996" y="361.972" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="310.828" y="449.21999999999997" width="26.04" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="258.29999999999995" y="254.452" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="224.41999999999996" y="347.58" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="784.6999999999999" y="485.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="803.74" y="504.21199999999993" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="698.1800000000001" y="281.5" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="234.64" y="510.93199999999996" width="26.235999999999997" height="24.135999999999996" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="372.53999999999996" y="218.61200000000002" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="409.388" y="392.65999999999997" width="26.04" height="25.479999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="834.876" y="428.668" width="126.672" height="88.19999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="518.14" y="274.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="401.65999999999997" y="564.692" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="657.0200000000001" y="276.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="722.8480000000001" y="268.76" width="104.972" height="99.06400000000001" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="243.65599999999998" y="159.98" width="52.388" height="53.480000000000004" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="475.58000000000004" y="274.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="650.3" y="370.26" width="25.816" height="15.203999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="442.148" y="174.26" width="16.52" height="14.279999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.61999999999995" y="526.612" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="353.49999439999993" y="373.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="453.18000000000006" y="210.772" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="295.26" y="480.69199439999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="332.21999999999997" y="373.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="800.828" y="374.96399999999994" width="27.159999999999997" height="49.896" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="838.4599999999999" y="521.012" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="259.41999999999996" y="285.81199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="690.62" y="404.532" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="330.45599999999996" y="315.94000000000005" width="26.851999999999997" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="288.428" y="386.2199944" width="26.04" height="18.2" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.61999999999995" y="480.69199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="225.81999999999996" y="317.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="313.18" y="372.052" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="328.86" y="280.212" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="387.09999439999996" y="540.0519999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="363.58" y="207.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="151.78799999999998" y="481.14" width="31.08" height="61.31999999999999" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="703.948" y="450.172" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="784.6999999999999" y="542.2919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="209.01999999999995" y="515.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="293.43999999999994" y="228.132" width="31.835999999999995" height="29.735999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="187.73999999999998" y="391.092" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="538.3" y="263.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="170.66" y="252.38" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="371.308" y="230.652" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="853.0200000000001" y="258.932" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="159.73999999999998" y="366.452" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="324.38" y="559.0919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="200.06" y="307.092" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="173.17999999999998" y="544.5319999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="379.148" y="339.29199439999996" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="173.17999999999998" y="556.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="761.6279999999999" y="374.96399999999994" width="27.159999999999997" height="49.896" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="293.02" y="280.212" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="676.788" y="240.05999999999995" width="24.64" height="28.279999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="195.44" y="320.532" width="26.235999999999997" height="24.135999999999996" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.78799999999995" y="505.248" width="16.52" height="14.055999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="454.29999999999995" y="319.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="300.74800000000005" y="563.2919999999999" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="801.5" y="199.57199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="677.1800000000001" y="275.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="840.6999999999999" y="562.452" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="811.58" y="256.69199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="454.29999999999995" y="293.652" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="453.068" y="254.17200000000003" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="678.3" y="487.412" width="25.816" height="12.936" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="456.54" y="346.2919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="224.41999999999996" y="226.62" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="357.14" y="295.19199999999995" width="18.535999999999998" height="16.366" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="402.78000000000003" y="480.69199439999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="201.62800000000001" y="235.1459944" width="13.594000000000001" height="11.227999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="212.09999999999994" y="371.1" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="351.26" y="282.452" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="382.78799999999995" y="390.14" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="251.58" y="556.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="392.69999999999993" y="493.0119944" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="715.2599999999999" y="255.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="433.0199999999999" y="312.69199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="368.8999999999999" y="315.1" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="257.18" y="472.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="230.29999999999995" y="273.49199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="725.228" y="450.172" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="324.2679999999999" y="406.38" width="26.04" height="18.2" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="251.58" y="273.49199999999996" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="347.78799999999995" y="449.05199999999996" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="328.86" y="355.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="166.46" y="378.77200000000005" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="185.668" y="349.82" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="348.376" y="339.4599999999999" width="26.851999999999997" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="820.54" y="546.7719999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="321.86" y="534.62" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="775.74" y="458.2919999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="725.34" y="381.01199999999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="317.65999999999997" y="392.212" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="316.428" y="266.49199999999996" width="19.32" height="11.255999999999998" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="202.29999999999998" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="263.9" y="533.332" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="213.49999999999994" y="496.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="652.2599999999999" y="480.85999439999995" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="733.1800000000001" y="470.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="247.09999999999994" y="313.81199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="726.4599999999999" y="489.652" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="883.2599999999999" y="263.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="354.61999999999995" y="416.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="299.74" y="546.7719999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="186.62" y="515.412" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="319.9" y="488.532" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="396.06" y="313.81199999999995" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="477.9992" y="287.3912" width="146.4176" height="146.4176" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="673.988" y="206.46" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="784.6999999999999" y="504.21199999999993" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="208.376" y="200.57999999999998" width="26.851999999999997" height="13.16" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="330.70799999999997" y="224.66" width="37.8" height="36.68" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="750.988" y="426.25999999999993" width="26.04" height="25.479999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="433.0199999999999" y="293.652" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="173.17999999999998" y="216.37199999999999" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="181.188" y="278.14" width="23.240000000000002" height="20.299999999999997" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="306.46" y="578.132" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="808.22" y="244.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="454.29999999999995" y="274.61199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="857.5" y="541.172" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="420.69999999999993" y="507.572" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="752.2199944" y="465.01199999999994" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="788.06" y="244.372" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="475.58000000000004" y="252.212" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="186.62" y="443.73199999999997" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="441.98" y="196.772" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="328.86" y="332.852" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="800.38" y="585.972" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="823.5919999999999" y="143.46" width="81.95599999999999" height="94.556" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="210.1399944" y="271.252" width="16.855999999999998" height="8.456" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="170.66" y="229.97999999999996" width="21.896" height="19.32" fill="#e8eef0" stroke="#c4ced6" stroke-width="1.5" />
+<rect x="293.60799999999995" y="203.8" width="67.19999999999999" height="431.2" fill="#cde9f5" fill-opacity="0.75" stroke="#8697a6" stroke-dasharray="4 3"/>
+<rect x="456.00800000000004" y="418.28" width="128.79999999999998" height="216.72" fill="#ffebcc" fill-opacity="0.75" stroke="#8697a6" stroke-dasharray="4 3"/>
+<rect x="477.9992" y="287.3912" width="146.4176" height="146.4176" fill="none" stroke="#64758b" stroke-width="1.5" />
+<text x="516.2080000000001" y="339.6" font-size="14" fill="#64758b" font-weight="600">P4C5 / P4C6 · B</text>
+<rect x="304.388" y="165.02" width="45.64" height="36.428" fill="#ffffff" stroke="#167ea4" stroke-width="1.5" />
+<text x="292.20799999999997" y="158.02" font-size="14" fill="#167ea4" font-weight="600">J1210</text>
+<rect x="463.98799999999994" y="381.17999999999995" width="112.83999999999999" height="35.279999999999994" fill="#ffffff" stroke="#b87013" stroke-width="1.5" />
+<text x="485.408" y="374.17999999999995" font-size="14" fill="#b87013" font-weight="600">LCD J1200</text>
+<rect x="505.98799999999994" y="175.772" width="96.03999999999999" height="36.428" fill="#ffffff" stroke="#435ba1" stroke-width="1.5" />
+<text x="519.008" y="177.2" font-size="14" fill="#435ba1" font-weight="600">CAM J1220</text>
+<rect x="442.148" y="174.26" width="16.52" height="14.279999999999998" fill="#ffffff" stroke="#6855a8" stroke-width="1.5" />
+<text x="415.408" y="160.4" font-size="14" fill="#6855a8" font-weight="600">OPT3001 / B</text>
+<rect x="800.1840000000001" y="601.26" width="15.484" height="11.479999999999999" fill="#ffffff" stroke="#0c8d76" stroke-width="1.5" />
+<text x="773.808" y="586.0" font-size="14" fill="#0c8d76" font-weight="600">SHT40 / B</text>
+<path d="M 495.408 145 H 507.408 V 403.15999999999997 H 533.408" fill="none" stroke="#b33b51" stroke-width="1.5"/>
+<text x="537.408" y="400.15999999999997" font-size="14" fill="#b33b51" font-weight="600">尖端 Y=46.1</text>
+<path d="M 302.20799999999997 145 H 314.20799999999997 V 187.0 H 340.20799999999997" fill="none" stroke="#b33b51" stroke-width="1.5"/>
+<text x="344.20799999999997" y="184.0" font-size="14" fill="#b33b51" font-weight="600">尖端 Y=7.5</text>
+<rect x="780.808" y="565.0" width="5.6" height="61.599999999999994" fill="#ffffff" stroke="#61847d" stroke-width="1.5" />
+<rect x="831.208" y="565.0" width="5.6" height="61.599999999999994" fill="#ffffff" stroke="#61847d" stroke-width="1.5" />
+<text x="680.008" y="668.6" font-size="14" fill="#0c8d76" font-weight="400">隔热槽 + 全层禁铺铜</text>
+<text x="1030" y="159" font-size="16" fill="#20324a" font-weight="700">PCB</text>
+<text x="1030" y="182" font-size="14" fill="#20324a" font-weight="400">145 × 85 mm，四层；尺寸未扩大</text>
+<text x="1030" y="216" font-size="16" fill="#20324a" font-weight="700">屏幕内位置</text>
+<text x="1030" y="239" font-size="14" fill="#20324a" font-weight="400">左偏移 9.93 mm；顶部偏移 2.50 mm</text>
+<text x="1030" y="273" font-size="16" fill="#20324a" font-weight="700">触摸 J1210 · F</text>
+<text x="1030" y="296" font-size="14" fill="#20324a" font-weight="400">X=36.000，Y=3.575 mm</text>
+<text x="1030" y="330" font-size="16" fill="#20324a" font-weight="700">LCD J1200 · F</text>
+<text x="1030" y="353" font-size="14" fill="#20324a" font-weight="400">X=70.500，Y=42.175 mm</text>
+<text x="1030" y="387" font-size="16" fill="#20324a" font-weight="700">名义装配换算</text>
+<text x="1030" y="410" font-size="14" fill="#20324a" font-weight="400">入口偏移 3.525；插入深度暂按 2.10</text>
+<text x="1030" y="444" font-size="16" fill="#20324a" font-weight="700">光照 U1300 · B</text>
+<text x="1030" y="467" font-size="14" fill="#20324a" font-weight="400">OPT3001 / 0x45；顶部光窗或导光件</text>
+<text x="1030" y="501" font-size="16" fill="#20324a" font-weight="700">温湿度 U1301 · B</text>
+<text x="1030" y="524" font-size="14" fill="#20324a" font-weight="400">SHT40 / 0x44；底部独立通风腔</text>
+<text x="1030" y="558" font-size="16" fill="#20324a" font-weight="700">实际修改</text>
+<text x="1030" y="581" font-size="14" fill="#20324a" font-weight="400">移动/翻面 30 个已有器件，新增 7 个</text>
+<text x="1030" y="615" font-size="16" fill="#20324a" font-weight="700">待实测项</text>
+<text x="1030" y="638" font-size="14" fill="#20324a" font-weight="400">触摸 X、盖板边界、屏板间距、插接方向</text>
+<text x="60" y="770" font-size="18" fill="#91364a" font-weight="400">触摸横向位置按照片估算；7.5 / 46.1 mm 为用户更正后的尖端测量值。</text>
+<text x="60" y="802" font-size="16" fill="#91364a" font-weight="400">连接器名义插深、屏板堆叠、触摸针序和外壳光窗/通风仍须样件核对。0 条走线，不能据此投板。</text>
 </svg>

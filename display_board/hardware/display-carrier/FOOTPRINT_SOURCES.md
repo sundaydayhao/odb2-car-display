@@ -35,3 +35,10 @@ KiCad 官方库的许可及模型来源沿用其仓库说明：[KiCad libraries]
 ## FPC 实装补充（修订 F）
 
 J1200/J1210/J1220 采用 XUNPU FPC-05FB-30PH20 / 6PH20 / 24PH20，对应 C2856833 / C2856827 / C2856831。easyeda2kicad 下载后逐项对照厂家系列图 Rev A；导入固定脚 3.24 mm 排距改为 3.25 mm，庭院覆盖所有铜焊盘；两个固定脚统一编号 MP 并接地。新增本地 STEP，Y 偏移 +1.625 mm，比例不变。模型和配套公差限制见 FPC_INTERFACES.md 与 model-manifest.json。未将插座已建库等同于屏幕装配已认可。
+
+## 修订 G：新增传感器封装
+
+- `OPT3001_DNP0006A`：按 TI OPT3001 Rev C 附录 DNP0006A、4221434/C 01/2018 绘制。6 个 0.50×0.25 mm 椭圆焊盘，0.65 mm 节距、1.90 mm 排距；中心 EP 0.65×1.35 mm，编号 7 接 GND，不擅加微孔。视觉检查与 SCH/PCB 逐脚核对完成。
+- `SHT40_DFN4_NoCentralPad`：复制本机 KiCad 10 官方 Sensor_Humidity/Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad；保留焊盘与本体禁铜，仅改库名及本地参考模型。与 Sensirion SHT4x v7.3 推荐焊盘核对。不得增加中心铜焊盘。
+
+本轮两颗传感器的 3D 仅为脚本生成包络，来源、模型哈希与限制见 model-manifest.json / CABIN_SENSORS.md。

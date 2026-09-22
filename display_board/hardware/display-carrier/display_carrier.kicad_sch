@@ -6,8 +6,8 @@
 	(lib_symbols)
 	(title_block
 		(title "OSPTEK P4C5 / P4C6 Display Carrier")
-		(date "2026-09-19")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-23")
+		(rev "R0G LAYOUT")
 		(company "OBD Car Display")
 		(comment 1 "NOT FOR FABRICATION - assembly and validation holds apply")
 	)
@@ -599,6 +599,43 @@
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4"
 					(page "17")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15.24 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1)
+		(property "Sheetname" "17 Cabin ambient light and humidity"
+			(at 15.24 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "17_cabin_sensors.kicad_sch"
+			(at 15.24 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "18")
 				)
 			)
 		)

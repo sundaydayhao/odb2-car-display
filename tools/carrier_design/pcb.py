@@ -19,6 +19,13 @@ previous={}
 if args.preserve_placement:
     previous_board=k.LoadBoard(str(args.preserve_placement.resolve()))
     previous={fp.GetReference():fp for fp in previous_board.GetFootprints()}
+    # A reviewed placement may have moved a support circuit to the other face.
+    # Preserve that face in the intent before emitting schematics/audit data.
+    for p in d.parts:
+        if p['ref'] in previous:
+            old=previous[p['ref']]
+            p.update(pcb=[k.ToMM(old.GetPosition().x)-50,k.ToMM(old.GetPosition().y)-50],
+                     side='F' if old.GetLayer()==k.F_Cu else 'B',angle=old.GetOrientationDegrees())
 print('PCB: circuit loaded',len(d.parts),flush=True)
 d.write()
 xml_path=ROOT/'build/carrier-design/netlist.xml'
@@ -175,6 +182,7 @@ for p in d.parts:
 # courtyard overlap. This is an initial placement, not a routed electrical layout.
 fixed={'U100','U1000','J200','J300','J301','J500','SW101','SW102','SW310','J1000','J1010','J1011','J800','J810','L400','U400','U300','L300','U310','U410','L410','U1010','L1010','C1012','C1013','U800','J1200','J1210','J1220'}
 fixed.update(previous)
+fixed.update({'U1300','U1301','C1300','C1301','C1302','R1300','R1301'})
 overrides={'J200':(3.6,31,90),'SW310':(128,11,0),'J800':(8,66,90),'J810':(43,73,90),'J500':(135.5,56,270),'J1000':(137,29,270),
            'L400':(21,47,0),'U400':(31,47,0),'L410':(53,44,0),'U1010':(110,50,0),'L1010':(114,50,0),
            'L300':(40,15,0),'C1012':(116,43,90),'C1013':(123,43,90),'J1010':(94,12,0),'J1011':(101,17,0),'SW101':(101,3.5,180),'SW102':(112,3.5,180),'J300':(30,5.5,0)}

@@ -354,6 +354,8 @@ page('13_release_holds','13 Pending interface closure',(0,0),[
 ])
 from fpc_interfaces import add_interfaces
 add_interfaces(d, page, box, item, pas, cap)
+from cabin_sensors import add_sensors
+add_sensors(d, page, box, item, pas, cap)
 
 # Correct modem-driven SIM output types, and make optional assembly explicit.
 for sym in d.symbols['ML307A_GCLN']['tree']:

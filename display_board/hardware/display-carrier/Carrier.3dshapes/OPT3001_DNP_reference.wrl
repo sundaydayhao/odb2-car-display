@@ -1,0 +1,5 @@
+#VRML V2.0 utf8
+# Dimension reference only; TI body 2x2x0.65 mm
+Transform { scale 0.3937007874 0.3937007874 0.3937007874 children [
+Transform { translation 0 0 0.325 children [ Shape { appearance Appearance { material Material { diffuseColor 0.25 0.20 0.15 transparency 0.12 } } geometry Box { size 2 2 0.65 } } ] }
+] }

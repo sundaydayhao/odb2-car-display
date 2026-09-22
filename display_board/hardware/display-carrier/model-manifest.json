@@ -459,6 +459,56 @@
       ],
       "valid_solids": true,
       "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "U1300",
+      "original_footprint": "Carrier:OPT3001_DNP0006A",
+      "footprint": "Carrier:OPT3001_DNP0006A",
+      "file": "OPT3001_DNP_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "note": "Body envelope only, 2x2x0.65mm. Not manufacturer STEP or optical/mechanical sign-off.",
+      "sha256": "33f1057e9457f9418f2d80d308ef23f11c66a8c4b1dc839b3a8bed967c3df1d7"
+    },
+    {
+      "reference": "U1301",
+      "original_footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "file": "SHT40_DFN4_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "note": "Official KiCad pad geometry, no center copper; nominal body 1.5x1.5x0.5 mm reference only.",
+      "sha256": "8d81aa055bfff96c047315b5e6c5d2f4f4d0108497b1dd005e5f43cd801aed35"
     }
   ],
   "intentional_no_model": {

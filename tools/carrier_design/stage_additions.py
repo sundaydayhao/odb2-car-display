@@ -54,13 +54,15 @@ def stage(baseline, generated, output):
         value=sexp.atoms(g)[0]
         if value in replacements:g[1]=sexp.QStr.of(replacements[value])
     for g in sexp.find_all(new,'gr_text'):
-        if sexp.atoms(g)[0] in ['LCD / J1200','TOUCH / J1210','CAMERA / J1220']:old.append(copy.deepcopy(g))
+        if (sexp.atoms(g)[0] in ['LCD / J1200','TOUCH / J1210','CAMERA / J1220'] and
+                sexp.atoms(g)[0] not in {sexp.atoms(t)[0] for t in sexp.find_all(old,'gr_text')}):
+            old.append(copy.deepcopy(g))
     shutil.copytree(baseline,output,dirs_exist_ok=True)
     for pattern in ['*.kicad_sch','Carrier.kicad_sym','sym-lib-table','design-intent.json','pcb-pad-audit.json','placement-audit.json','model-manifest.json']:
         for p in generated.glob(pattern):shutil.copy2(p,output/p.name)
-    for p in (generated/'Carrier.pretty').glob('XUNPU_FPC*.kicad_mod'):
+    for p in (generated/'Carrier.pretty').glob('*.kicad_mod'):
         shutil.copy2(p,output/'Carrier.pretty'/p.name)
-    for p in (generated/'Carrier.3dshapes').glob('FPC-SMD*.step'):
+    for p in (generated/'Carrier.3dshapes').glob('*'):
         shutil.copy2(p,output/'Carrier.3dshapes'/p.name)
     sexp.save_file(str(output/'display_carrier.kicad_pcb'),old)
     report={'baseline':str(baseline),'existing_footprints_preserved':len(original),

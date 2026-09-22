@@ -34,6 +34,9 @@ for p in parts:
         target=p['nets'][pin]
         assert (n==target) if target is not None else n.startswith('unconnected-')
     assert fp.GetPath().AsString().startswith('/'+intent['root_uuid']+'/')
+    if (OUT/'MECHANICAL_LAYOUT.json').exists():
+        assert fp.GetLayerName()==p['side']+'.Cu'
+        assert all(abs(a-b)<.01 for a,b in zip([k.ToMM(fp.GetPosition().x)-50,k.ToMM(fp.GetPosition().y)-50],p['pcb']))
 
 erc=json.loads((BUILD/'erc-final.json').read_text(encoding='utf-8'))
 er=[v for s in erc['sheets'] for v in s['violations']]
@@ -51,7 +54,13 @@ connectivity=board.GetConnectivity();connectivity.Build(board)
 unrouted=connectivity.GetUnconnectedCount(False)
 assert unrouted>=len(drc['unconnected_items'])
 assert {r for r,f in fps.items() if f.IsDNP()}=={'R105','R107','R304','C1040','C1041','C1042','C1043'}
-for ref,xy,angle in [('J1200',(70.5,57.5),0),('J1210',(96,67),0),('J1220',(76.5,7),180)]:
+fpc_expected=[('J1200',(70.5,57.5),0),('J1210',(96,67),0),('J1220',(76.5,7),180)]
+if (OUT/'MECHANICAL_LAYOUT.json').exists():
+    # These expected coordinates are derived independently from the measured
+    # tip datum: y = tip - PCB top offset + insertion - footprint mouth offset.
+    fpc_expected=[('J1200',(70.5,46.1-2.5+2.1-3.525),0),
+                  ('J1210',(36,7.5-2.5+2.1-3.525),0),('J1220',(76.5,7),180)]
+for ref,xy,angle in fpc_expected:
     fp=fps[ref]
     assert fp.GetLayer()==k.F_Cu and not fp.IsDNP()
     assert abs(fp.GetOrientationDegrees()-angle)<.01
@@ -63,6 +72,20 @@ for ref,mapping in {
  'J1220':{'3':'CSI_D1_N','4':'CSI_D1_P','6':'CSI_CLK_N','7':'CSI_CLK_P','9':'CSI_D0_N','10':'CSI_D0_P'}
 }.items():
     for pin,net in mapping.items():assert sch[(ref,pin)]==net
+if 'U1300' in fps:
+    for ref,mapping in {
+      'U1300':{'1':'+3V3','2':'+3V3','3':'GND','4':'CABIN_I2C_SCL','6':'CABIN_I2C_SDA','7':'GND'},
+      'U1301':{'1':'CABIN_I2C_SDA','2':'CABIN_I2C_SCL','3':'+3V3','4':'GND'},
+      'R1300':{'1':'SYSTEM_I2C_SDA','2':'CABIN_I2C_SDA'},
+      'R1301':{'1':'SYSTEM_I2C_SCL','2':'CABIN_I2C_SCL'}
+    }.items():
+        for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
+    assert sch[('U1300','5')].startswith('unconnected-')
+    for net,expected_nodes in {
+       'CABIN_I2C_SDA':{('U1300','6'),('U1301','1'),('R1300','2')},
+       'CABIN_I2C_SCL':{('U1300','4'),('U1301','2'),('R1301','2')}
+    }.items():assert {rp for rp,n in sch.items() if n==net}==expected_nodes
+    assert all(not fps[r].IsDNP() for r in ['U1300','U1301','R1300','R1301','C1300','C1301','C1302'])
 # A passive connector with duplicate power pins does not necessarily cause an
 # isolated-label warning. Report these open supply boundaries independently.
 power_holds=['LCD_LEDA','LCD_LEDK','LCD_AVDD_9V8','LCD_VGH','LCD_VGL','LCD_VCOM',
@@ -102,7 +125,8 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'fitted_physical_components':sum(not f.IsDNP() and not r.startswith(('TP','H')) for r,f in fps.items()),
  'dnp_exceptions':['R105','R107','R304','C1040','C1041','C1042','C1043'],
  'tracks':len(board.GetTracks()),
- 'zones':len(board.Zones()),'ts_temperature_threshold_ranges_C':temps,
+ 'zones':sum(not z.GetIsRuleArea() for z in board.Zones()),
+ 'rule_areas':sum(z.GetIsRuleArea() for z in board.Zones()),'ts_temperature_threshold_ranges_C':temps,
  'ts_open_ratio':round(187000/(187000+9090),6),'usb_current_limit_calculation':current,
  'notes':['0 physical DRC violations applies to an UNROUTED placement only.',
           'Native default ignored checks are retained, not counted as passing.',

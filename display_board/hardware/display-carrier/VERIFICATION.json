@@ -1,10 +1,10 @@
 {
   "status": "DRAFT_ONLY_NOT_FAB_APPROVED",
   "kicad": "10.0.5",
-  "schematic_symbols": 293,
-  "circuit_footprints": 287,
+  "schematic_symbols": 300,
+  "circuit_footprints": 294,
   "mounting_holes": 4,
-  "schematic_sheets_including_root": 17,
+  "schematic_sheets_including_root": 18,
   "geometric_violations": 0,
   "duplicate_references": 0,
   "pcb_pad_net_mismatches": 0,
@@ -28,7 +28,7 @@
   ],
   "pcb_physical_violations": 0,
   "schematic_parity_violations": 0,
-  "pcb_unconnected_items": 714,
+  "pcb_unconnected_items": 732,
   "drc_reported_unconnected_items": 499,
   "unconnected_count_source": "native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated",
   "open_peripheral_power_boundaries": [
@@ -41,7 +41,7 @@
     "CAM_AVDD_2V8",
     "CAM_DOVDD_1V8"
   ],
-  "fitted_physical_components": 255,
+  "fitted_physical_components": 262,
   "dnp_exceptions": [
     "R105",
     "R107",
@@ -53,6 +53,7 @@
   ],
   "tracks": 0,
   "zones": 0,
+  "rule_areas": 3,
   "ts_temperature_threshold_ranges_C": {
     "cold_inhibit": [
       2.011,
@@ -121,8 +122,9 @@
     "14_lcd_fpc.kicad_sch": "0bf577eb3e1227af8b2d157831a41b1459e1251269fc62f47e12fa5b542485b8",
     "15_touch_fpc.kicad_sch": "7cebf321e228dae1507ee76d7b0c8091636ae0fa98211e170595408441c895d6",
     "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
-    "display_carrier.kicad_pcb": "c56261b227afcb0d0d094fdb81d90e83daac50f0842c0fbcc66f6c9709e0c785",
+    "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
+    "display_carrier.kicad_pcb": "1474e1aea279f3991a8a55c76122656b95d812959b44faacaeb4db4a9ef7edd5",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "9ce2ec232981d176850bde6dd6c4705433abb71054f362941a80ed7ef94a4d4e"
+    "display_carrier.kicad_sch": "79b02f30819ef71b425f82a4a16d7da6daa256bb1274cb1317e6e62b2b16e295"
   }
 }

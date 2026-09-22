@@ -1,0 +1,58 @@
+{
+  "baseline_commit": "a28a2e7",
+  "status": "PASS_FOR_UNROUTED_LAYOUT_ONLY",
+  "existing_footprints": 291,
+  "existing_uuid_path_value_dnp_pad_nets_and_sizes_preserved": true,
+  "added_references": [
+    "C1300",
+    "C1301",
+    "C1302",
+    "R1300",
+    "R1301",
+    "U1300",
+    "U1301"
+  ],
+  "existing_footprints_moved_or_flipped": 30,
+  "unchanged_existing_child_sheets": [
+    "01_core.kicad_sch",
+    "02_usb.kicad_sch",
+    "03_usb_current.kicad_sch",
+    "04_charger.kicad_sch",
+    "05_system_switch.kicad_sch",
+    "06_main_power.kicad_sch",
+    "07_sd.kicad_sch",
+    "08_modem.kicad_sch",
+    "09_modem_power.kicad_sch",
+    "10_sim_rf.kicad_sch",
+    "11_codec.kicad_sch",
+    "12_fm_audio.kicad_sch",
+    "13_release_holds.kicad_sch",
+    "14_lcd_fpc.kicad_sch",
+    "15_touch_fpc.kicad_sch",
+    "16_camera_fpc.kicad_sch"
+  ],
+  "new_sheet": "17_cabin_sensors.kicad_sch",
+  "project_rules_byte_identical": true,
+  "erc_new": 0,
+  "erc_gone": 0,
+  "erc_existing_warnings": 14,
+  "drc_physical_violations": 0,
+  "schematic_parity_violations": 0,
+  "unconnected": 732,
+  "visual_review": "Native F/B 3D and copper/fab renders; new sensor and root sheets; dimensions overview",
+  "fabrication_release": "HOLD: unrouted; inherited power/interface circuits and physical mating incomplete",
+  "native_front_render_pixel_diff": {
+    "native_render_size": [
+      1768,
+      1064
+    ],
+    "changed_pixels": 23979,
+    "changed_bbox_pixels": [
+      502,
+      231,
+      1343,
+      832
+    ],
+    "interpretation": "front FPCs/support parts moved, new isolation slots visible; reviewed both native faces"
+  }
+}

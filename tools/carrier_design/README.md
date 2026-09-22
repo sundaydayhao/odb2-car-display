@@ -70,3 +70,26 @@ It refuses deleted refs, moved parts or changed existing pad nets. Verify that
 staged project with `verify.py --project <stage> --evidence <reports>`, after
 exporting `netlist.xml`, `erc-final.json` and `drc-final.json` into the report
 directory. Keep the user's project settings when promoting.
+
+The 2026-09-23 revision adds `cabin_sensors.py` (OPT3001 0x45 and SHT40 0x44).
+`sensor_assets.py --output <scratch-library>` builds the reviewed optical land
+pattern and two explicitly labelled body-envelope models, and copies the
+official SHT4x land pattern with its central copper keepout.
+
+`mechanical_layout.py --project <newly-staged-project>` applies the corrected
+7.5/46.1 mm folded-tip dimensions, using the documented screen offset and
+nominal connector insertion. Start from the pre-layout `a28a2e7` checkpoint
+for this one-time reflow; it refuses an already reflowed or routed project.
+It moves existing identities in place, records every change in
+`MECHANICAL_LAYOUT.json`, adds flex rule areas and RH/T isolation slots,
+and updates the staged `design-intent.json` to match actual coordinates/faces.
+Touch X is a photo estimate; mechanical mating is not signed off.
+
+`render_layout.py --project <reviewed-project>` regenerates `FLOORPLAN.svg`
+and `FPC_FIT.svg` from the actual PCB. Full revision-G evidence is under
+`build/carrier-mechanical/`; release boundaries are recorded in
+`FPC_FIT_REVIEW.md`, `CABIN_SENSORS.md`, and `DESIGN_STATUS.md`.
+
+For later additive changes, `--preserve-placement` also retains the face of
+flipped parts. Stage against the current project to preserve the slots/rule
+areas; do not replace its board with the generator's bare rectangular board.

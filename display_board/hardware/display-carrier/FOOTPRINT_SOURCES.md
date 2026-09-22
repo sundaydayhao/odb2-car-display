@@ -10,7 +10,7 @@
 | `ML307A_GCLN_LGA94` | easyeda2kicad，LCSC C48982535 | 94 脚编号集合已核对；**完整几何尚未签核**。必须与中移 GCLN 当前生产版推荐焊盘逐项对照；不能因网表一致就按供应商下载库直接量产 |
 | `USB_C_HRO_TYPE_C_31_M_12_Edge` | KiCad 官方 `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | 焊盘/钻孔未改，仅把伸出板边的丝印收至板内，完整结构保留在 Fab 层；独立保存避免库更新恢复板外丝印 |
 
-其余封装来自本机 KiCad 10.0.5 标准库。其中 SIM8060（历史保留、当前不再使用）、JST B2P-VH、SRP1038C、TI RHL20（ES8311 QFN20 为历史保留、当前不再使用）、WCH QFN16 已复制到 `Carrier.pretty`，仅补充模型绑定，焊盘和几何不变；SCH/PCB 同步使用这些本地库名称。详见 [3D 模型记录](3D_MODELS.md)。TPS22918 的 DBV 引脚明确为 1=VIN、2=GND、3=ON、4=CT、5=QOD、6=VOUT，不能使用其他引脚顺序。
+其余封装来自本机 KiCad 10.0.5 标准库。其中 SIM8060（历史保留、当前不再使用）、JST B2P-VH、SRP1038C（历史保留、当前不再使用）、TI RHL20（ES8311 QFN20 为历史保留、当前不再使用）、WCH QFN16 已复制到 `Carrier.pretty`，仅补充模型绑定，焊盘和几何不变；SCH/PCB 同步使用这些本地库名称。详见 [3D 模型记录](3D_MODELS.md)。TPS22918 的 DBV 引脚明确为 1=VIN、2=GND、3=ON、4=CT、5=QOD、6=VOUT，不能使用其他引脚顺序。
 
 ## 核心板共用封装
 
@@ -54,3 +54,7 @@ J1200/J1210/J1220 采用 XUNPU FPC-05FB-30PH20 / 6PH20 / 24PH20，对应 C285683
 ## 修订 I：侧插自锁 SIM
 
 `nanoSIM_GCT_SIM8066_PushPush` 来自 LCSC C3032925 / easyeda2kicad。依据 GCT A1 图纸，将两定位孔改为 Ø0.75 mm NPTH、七个信号/检测焊盘统一为 0.80×1.14 mm、四个壳脚合并为 SH/GND；修正庭院，并增加器件面铜禁布区。使用本地 STEP。实际取得的资料版本、Rev B PCN 待核对事项、卡行程和验证边界详见 [SIM_SOCKET.md](SIM_SOCKET.md)。
+
+## 修订 J：L400
+
+`Carrier:L_Cjiang_FEXU0640_6.2x6.0mm` 依据长江微电 FEXU 厂家第 4 页建立，A/B/C=6.50/2.00/6.30 mm，B 为中间间隙；焊盘 2.25×6.30、中心 ±2.125 mm。修正供应商中心舍入和过小庭院。STEP 来自 C54140025，Z 偏移 +0.1 mm，未改变模型原字节。参数、采购和验证见 [INDUCTOR_SELECTION.md](INDUCTOR_SELECTION.md)。

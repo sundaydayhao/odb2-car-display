@@ -196,7 +196,10 @@ box('TPS61088',[(1,'VCC_OUT','power_out'),(2,'EN','input'),(3,'FSW','passive'),(
 item('06_main_power','U400','TPS61088','TPS61088RHLR',{1:'BOOST_VCC',2:'SYS_SWITCHED',3:'BOOST_FSW',4:'BOOST_SW',5:'BOOST_SW',6:'BOOST_SW',7:'BOOST_SW',8:'BOOST_BOOT',9:'SYS_SWITCHED',10:'BOOST_SS',11:'GND',12:'GND',13:None,14:'+5V',15:'+5V',16:'+5V',17:'BOOST_FB',18:'BOOST_COMP',19:'BOOST_ILIM',20:'GND',21:'GND'},'Package_DFN_QFN:Texas_VQFN-RHL-20',xy=(58.42,91.44),pcb=(30,46),source=TI+'tps61088.pdf')
 box('TLV62569_DBV',[(1,'EN','input'),(2,'GND','power_in'),(3,'SW','power_out'),(4,'VIN','power_in'),(5,'FB','input')])
 item('06_main_power','U410','TLV62569_DBV','TLV62569DBVR',{1:'+5V',2:'GND',3:'BUCK3_SW',4:'+5V',5:'BUCK3_FB'},SOT5,xy=(58.42,165.1),pcb=(48,43),source=TI+'tlv62569.pdf')
-pas('06_main_power','L400','2.2uH Isat>=12A','SYS_SWITCHED','BOOST_SW',pcb=(26,46),fp='Inductor_SMD:L_Bourns_SRP1038C_10.0x10.0mm')
+item('06_main_power','L400','L','2.2uH FEXU0640S2R2MGS',{'1':'SYS_SWITCHED','2':'BOOST_SW'},
+     'Carrier:L_Cjiang_FEXU0640_6.2x6.0mm',pcb=(21,47),
+     source='https://atta.szlcsc.com/upload/public/pdf/source/20260302/EED1CBF0FC8744AFBE91D5FB993027E7.pdf',
+     status='Cjiang / LCSC C54140025; 4.0mm max; DCR<=7mOhm; hot-load/loop qualification pending')
 pas('06_main_power','R400','178k 1%','+5V','BOOST_FB')
 pas('06_main_power','R401','56.2k 1%','BOOST_FB','GND')
 pas('06_main_power','R402','324k 1%','BOOST_FSW','BOOST_SW')

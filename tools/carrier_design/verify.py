@@ -108,6 +108,32 @@ if 'SIM8066' in fps['J1000'].GetValue():
         'ML307A_default_polarity_match':True,'NPTH_peg_holes_mm':[.75,.75],
         'four_shell_tabs_grounded':True,'component_side_contact_copper_keepout':True,
         'manufacturing_and_enclosure_mating':'NOT_VALIDATED'}
+inductor_checks=None
+if 'FEXU0640' in fps['L400'].GetValue():
+    fp=fps['L400']
+    assert str(fp.GetFPID().GetLibItemName())=='L_Cjiang_FEXU0640_6.2x6.0mm'
+    assert fp.GetLayer()==k.B_Cu and not fp.IsDNP()
+    assert abs(fp.GetOrientationDegrees())<.001
+    for pad in fp.Pads():
+        assert all(abs(a-b)<.001 for a,b in zip([k.ToMM(pad.GetSize().x),k.ToMM(pad.GetSize().y)],[2.25,6.3]))
+        assert abs(abs(k.ToMM(pad.GetPosition().x-fp.GetPosition().x))-2.125)<.001
+        assert pad.GetPosition().y==fp.GetPosition().y
+    assert sch[('L400','1')]=='SYS_SWITCHED' and sch[('L400','2')]=='BOOST_SW'
+    assert fps['R402'].GetValue()=='324k 1%' and fps['R403'].GetValue()=='100k 1%'
+    vo=1.204*(1+178/56.2);low_l=2.2e-6*.8*.7;cases=[]
+    for vin in [2.7,3.0,3.6,4.2,4.4]:
+        freq=(vin/vo)/(324e3*23e-12/4+89e-9)
+        avg=vo*4/(.85*vin);ripple=vin*(1-vin/vo)/(freq*low_l)
+        rms=math.sqrt(avg**2+ripple**2/12)
+        cases.append(dict(vin_V=vin,fsw_nominal_kHz=round(freq/1000,3),average_A=round(avg,3),
+                          peak_A=round(avg+ripple/2,3),rms_A=round(rms,3),copper_loss_25C_W=round(rms*rms*.007,3)))
+    inductor_checks=dict(part='FEXU0640S2R2MGS',LCSC='C54140025',body_mm=[6.2,6.0,4.0],
+        land_pattern_mm=dict(overall=6.5,gap=2.0,height=6.3),DCR_max_ohm=.007,
+        manufacturer_current_columns=dict(Irms_typ_A=16,Irms_column_labeled_Max_A=14,Isat_typ_A=18,Isat_column_labeled_Max_A=15),
+        current_rating_conditions='25C ambient; Irms at 40C rise; Isat at 30 percent L drop; Max column is not a guaranteed minimum',
+        estimate_assumptions=dict(output_A=4,efficiency=.85,L_H=low_l,frequency_tolerance_included=False),
+        estimates=cases,qualification='NOT_RUN: hot Isat, loop, AC/core losses, transients and enclosure; 2.7V/4A lacks minimum current-limit margin')
+
 audio_checks=None
 if 'U820' in fps:
     # Independent pin map from S31-Korvo-1 p4 / ES8389 p6 and RDA5807M p14.
@@ -205,5 +231,6 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro']}}
 if audio_checks:report['stereo_audio']=audio_checks
 if sim_checks:report['push_push_sim']=sim_checks
+if inductor_checks:report['compact_inductor']=inductor_checks
 (BUILD/'verification-summary.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k not in ['design_file_sha256','native_ignored_drc_checks','pending_interface_nets']},indent=2,ensure_ascii=False))

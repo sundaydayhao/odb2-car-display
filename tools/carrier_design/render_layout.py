@@ -10,6 +10,7 @@ def render(project):
     fps={f.GetReference():f for f in b.GetFootprints()}
     audio='U820' in fps
     push_sim='SIM8066' in fps['J1000'].GetValue()
+    compact_l400='FEXU0640' in fps['L400'].GetValue()
     ox,oy=70,145;scale=5.6
     def pt(x,y):return ox+x*scale,oy+y*scale
     s=['<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="850" viewBox="0 0 1480 850">',
@@ -20,7 +21,7 @@ def render(project):
     def rect(x,y,w,h,fill,stroke,dash=''):
         px,py=pt(x,y);s.append(f'<rect x="{px}" y="{py}" width="{w*scale}" height="{h*scale}" fill="{fill}" stroke="{stroke}" stroke-width="1.5" '+(f'stroke-dasharray="{dash}"' if dash else '')+'/>')
     text(60,53,'显示载板 · 侧插自锁 SIM / FM / 双麦双扬声器' if push_sim else '显示载板 · FM 与双麦双扬声器布局' if audio else '显示载板 · 折后排线与车内传感器布局',30,weight='700')
-    text(60,87,'2026-09-23 / 修订 '+('I' if push_sim else 'H' if audio else 'G')+' / 实际 PCB 坐标投影；尚未布线',18)
+    text(60,87,'2026-09-23 / 修订 '+('J · 国产小型 L400' if compact_l400 else 'I' if push_sim else 'H' if audio else 'G')+' / 实际 PCB 坐标投影；尚未布线',18)
     text(60,117,'正视投影：F 面朝屏幕，B 面朝后壳；与用户背面照片左右镜像。',16)
     rect(0,0,164.86,99.96,'#e4e9f0','#a5b0c0','7 5')
     bx,by=m['pcb_offset_from_screen_top_left_mm'];rect(bx,by,145,85,'#fbfffc','#43866b')
@@ -42,6 +43,7 @@ def render(project):
                           ('U802','MIC L / B','#ad496b'),('U803','MIC R / B','#ad496b'),
                           ('U820','PA L / F','#a75221'),('U821','PA R / F','#a75221')]
     if push_sim:selected += [('J1000','SIM / B','#315ace')]
+    if compact_l400:selected += [('L400','L400 / B','#6a4cb5')]
     for ref,label,color in selected:
         f=fps[ref];z=f.GetBoundingBox(False,False)
         x=k.ToMM(z.GetX())-50+bx;y=k.ToMM(z.GetY())-50+by

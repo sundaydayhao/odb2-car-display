@@ -213,41 +213,6 @@
       "step_valid": true
     },
     {
-      "reference": "L400",
-      "original_footprint": "Inductor_SMD:L_Bourns_SRP1038C_10.0x10.0mm",
-      "footprint": "Carrier:L_Bourns_SRP1038C_10.0x10.0mm",
-      "file": "SRP1038C_reference.step",
-      "offset_mm": [
-        0,
-        0,
-        0
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "datasheet_reference",
-      "source": "https://www.bourns.com/docs/technical-documents/obsolete-parts/SRP1038C_obsolete.pdf",
-      "note": "10x10 body,11mm across terminals,H3.8. SRP1038C obsolete; present footprint envelope only, not BOM approval.",
-      "sha256": "029e2bf6f5e58c31cbb385b5d2a8389b6ea2dd42a86dd76451fc15eb26b45b7b",
-      "raw_model_bounds_mm": [
-        -5.5,
-        5.5,
-        -5.0,
-        5.0,
-        0.0,
-        3.8
-      ],
-      "step_solids": 3,
-      "step_valid": true
-    },
-    {
       "reference": "J300",
       "original_footprint": "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
       "footprint": "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
@@ -546,6 +511,39 @@
         7.29,
         -0.4,
         1.42
+      ]
+    },
+    {
+      "reference": "L400",
+      "original_footprint": "Carrier:L_Cjiang_FEXU0640_6.2x6.0mm",
+      "footprint": "Carrier:L_Cjiang_FEXU0640_6.2x6.0mm",
+      "file": "FEXU0640S2R2MGS.step",
+      "offset_mm": [
+        0,
+        0,
+        0.1
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C54140025.html",
+      "note": "Supplier STEP, raw z=-0.10..3.90, seated height 4.0mm. Nominal envelope checked against Cjiang drawing; not precision enclosure approval.",
+      "sha256": "f0c2350f188a09812a36a760f0b0944fad955e365f53235009f6876f1cd69594",
+      "raw_model_bounds_mm": [
+        -3.1,
+        3.1,
+        -3.01,
+        3,
+        -0.1,
+        3.9
       ]
     }
   ],

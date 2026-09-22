@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-23",
-  "revision": "I_side_entry_push_push_SIM",
+  "revision": "J_compact_domestic_L400",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -835,5 +835,20 @@
     "modem_source": "Local ML307A-GNSS hardware V1.0.0 page 32; compatibility manual V3.1.0",
     "evidence": "build/carrier-sim/",
     "review": "SIM_REVIEW.json"
+  },
+  "compact_inductor": {
+    "part": "FEXU0640S2R2MGS",
+    "manufacturer": "Shenzhen Cjiang Technology Co. Ltd.",
+    "lcsc": "C54140025",
+    "availability_checked": "2026-09-23",
+    "stock_observed": 775,
+    "MOQ": 1,
+    "availability_source": "https://www.lcsc.com/product-detail/C54140025.html",
+    "previous_candidate": "Bourns SRP7030CA-2R2M / C1332137 out of stock",
+    "datasheet_source": "https://atta.szlcsc.com/upload/public/pdf/source/20260302/EED1CBF0FC8744AFBE91D5FB993027E7.pdf",
+    "datasheet_sha256": "ff5dd6812e12c2bdf23e16e7a0293c28db6944bd4cfc3831ddcc56165fce3ae3",
+    "evidence": "build/carrier-inductor/",
+    "review": "INDUCTOR_REVIEW.json",
+    "scope": "procurement selection and unrouted placement; not production qualification"
   }
 }

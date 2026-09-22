@@ -1,0 +1,54 @@
+{
+  "status": "PASS_FOR_UNROUTED_INDUCTOR_REPLACEMENT_ONLY",
+  "baseline_commit": "db178cb",
+  "revision": "J",
+  "replacement": "L400: Cjiang FEXU0640S2R2MGS / LCSC C54140025",
+  "other_footprints_tree_identical": 353,
+  "all_non_footprint_board_objects_identical": true,
+  "unchanged_child_sheets": 18,
+  "project_rules_byte_identical": true,
+  "root_footprint_UUID_and_position_preserved": true,
+  "erc_new": [],
+  "erc_gone": [],
+  "existing_erc_warnings": 13,
+  "physical_DRC": 0,
+  "schematic_parity": 0,
+  "unconnected_native": 848,
+  "tracks": 0,
+  "schematic_semantic_diff": {
+    "symbols_added": [],
+    "symbols_removed": [],
+    "symbols_moved": [],
+    "symbols_changed": [
+      {
+        "ref": "L400",
+        "unit": 1,
+        "value": [
+          "2.2uH Isat>=12A",
+          "2.2uH FEXU0640S2R2MGS"
+        ],
+        "lib_id": [
+          "Carrier:L",
+          "Carrier:L"
+        ]
+      }
+    ],
+    "labels_added": [],
+    "labels_removed": [],
+    "count_delta": {}
+  },
+  "pixel_diff": {
+    "changed_px": 493,
+    "bbox_mm": [
+      201.2,
+      56.3,
+      345.0,
+      281.0
+    ],
+    "composite": "build\\carrier-inductor\\06-pixel-diff.png"
+  },
+  "fabrication_release": "HOLD: unrouted; enclosure, converter loop/thermal/load qualification pending",
+  "visual_review": "Native power sheet, 493-pixel difference, B.Cu/Fab/CrtYd land crop, rear 3D and actual coordinate overview inspected",
+  "machine_tier": "PASS",
+  "render_judged_tier": "PASS_FOR_CHANGED_COMPONENT"
+}

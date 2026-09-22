@@ -136,3 +136,15 @@ supplier data again. Native checks plus the independent verifier cover NC
 card-detect polarity, SIM-domain pull-ups, pin maps, peg holes, shell grounds
 and socket orientation. Review current-revision drawing changes and physical
 card/enclosure operation before manufacturing; see `SIM_SOCKET.md`.
+
+Revision J selects Cjiang FEXU0640S2R2MGS (C54140025) for L400. For the
+one-time unrouted migration, fetch C54140025 with `kx fetch` into
+`build/carrier-inductor/cjiang0640-part`, then run native KiCad Python with
+`compact_inductor.py --baseline <reviewed-project> --output <scratch-project>`.
+The script rebuilds the manufacturer's exact 2.25 x 6.30 mm lands with a
+2.00 mm gap, seats the supplier STEP at Z +0.10 mm, and preserves every
+other PCB object. Normal later regeneration uses the checked local library
+and model manifest; no download is required. Run native ERC, DRC/parity,
+netlist export, `verify.py`, `check_models.py`, and render/review before
+promotion. `INDUCTOR_SELECTION.md` records procurement, height and electrical
+limits; the part change does not qualify the converter for continuous 4 A.

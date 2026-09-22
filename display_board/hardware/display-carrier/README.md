@@ -1,6 +1,8 @@
 # OSPTEK P4C5 / P4C6 显示底板
 
-2026-09-23，修订 I：SIM 改为 **GCT SIM8066 按压自锁 Nano-SIM**，从屏幕正视的右侧推入、再次按压弹出。原理图/PCB/3D 已同步；卡检测及上拉按 ML307A 手册修正。见 [SIM 卡座与外壳要求](SIM_SOCKET.md)。
+2026-09-23，修订 J：L400 改为国产长江微电 **FEXU0640S2R2MGS / C54140025**，2.2 µH，6.2×6.0×4.0 mm；SCH/PCB/3D 已同步。见 [电感选型与核算](INDUCTOR_SELECTION.md)。
+
+修订 I 保留：SIM 改为 **GCT SIM8066 按压自锁 Nano-SIM**，从屏幕正视的右侧推入、再次按压弹出。原理图/PCB/3D 已同步；卡检测及上拉按 ML307A 手册修正。见 [SIM 卡座与外壳要求](SIM_SOCKET.md)。
 
 修订 H 保留：新增板载 **RDA5807M**，音频改为 **ES8389 + 两颗直接焊载板的 MEMS 麦克风 + 两只 NS4150B / 两路扬声器接口**，参考 ESP32-S31-Korvo-1 官方结构；主控仍为 P4C5/P4C6。见 [音频架构与固件迁移](AUDIO_ARCHITECTURE.md)。
 

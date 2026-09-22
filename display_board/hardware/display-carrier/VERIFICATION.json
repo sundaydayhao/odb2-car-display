@@ -52,7 +52,7 @@
   ],
   "tracks": 0,
   "zones": 0,
-  "rule_areas": 3,
+  "rule_areas": 6,
   "ts_temperature_threshold_ranges_C": {
     "cold_inhibit": [
       2.011,
@@ -118,15 +118,32 @@
     "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
     "12_fm_audio.kicad_sch": "4879e8e7c200fc62f746f0fe06c7583d102f96f6e27bf008c1c4da33832cb523",
     "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
-    "14_lcd_fpc.kicad_sch": "0bf577eb3e1227af8b2d157831a41b1459e1251269fc62f47e12fa5b542485b8",
-    "15_touch_fpc.kicad_sch": "7cebf321e228dae1507ee76d7b0c8091636ae0fa98211e170595408441c895d6",
+    "14_lcd_fpc.kicad_sch": "7af7116a540ca6720c838c7ca194f1fb8ca0fc32438e16e6f76754f5fd775c37",
+    "15_touch_fpc.kicad_sch": "12c6501a22f07bee926857f718125c920556798013ad17336745ea0bb0d5dae7",
     "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
     "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
     "18_dual_mic.kicad_sch": "7dfd7a7ad516cc94e3185fd69f7c5e37b9f9993ff20fe1f0c9843bb5fbbf1a36",
     "19_stereo_pa.kicad_sch": "35da773e6cb42624e78cd38be18b37874b5262a49a7503ae20832c4e251b2f28",
-    "display_carrier.kicad_pcb": "afe9c88e7ea008e500eb5aec6fef1c72b15edc174ece605ca9d39692495cf5da",
+    "display_carrier.kicad_pcb": "445407eb3286f498d15321c2c16143b3040165465ab6dbad543094d29a707bec",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "7977a80708a732962aac435a0f3df92dbf69a8fd9fa71d916f2ccd6849073f5f"
+    "display_carrier.kicad_sch": "bc9516ddb45e0d91e05e912be2cca4c0bb449ea0fad1e938b5e7bc0b28f2916d"
+  },
+  "screen_back_layout": {
+    "component_side": "F",
+    "screen_side": "B",
+    "back_side_footprints": 0,
+    "through_board_flex_slots_mm": [
+      [
+        10,
+        3
+      ],
+      [
+        20,
+        3
+      ]
+    ],
+    "closed_outline_with_four_internal_cutouts": true,
+    "screen_contact_qualification": "NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked"
   },
   "stereo_audio": {
     "ES8389_7bit_address": "0x12",

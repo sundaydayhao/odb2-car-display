@@ -10,10 +10,10 @@ the unspecified touch glass bundled with the LCM has that pinout.
 def add_interfaces(d, page, box, item, pas, cap):
     s = '14_lcd_fpc'
     page(s, '14 LCD FPC and 1V8 controls', (71, 64), [
-        'J1200: LCM-070WS209-A0, PDF pp5-7. 30 pins, 0.5 mm; F side, cable entry from bottom.',
+        'J1200: 30-pin / 0.5 mm; F faces rear housing. Screen is on B; cable passes through a routed slot.',
         'Only D0/D1 are connected. Vendor 2-lane initialization and timing remain REQUIRED.',
         'LCD_AVDD_9V8 / VGH / VGL / VCOM and LEDA/K are UNDRIVEN: bias/backlight stage still pending.',
-        'Dual-contact connector does not prove folded-tail reach, pin-1 orientation or thickness tolerance.'
+        'Slot and connector positions are provisional: verify 3D flex reach, pin-1, thickness and screen spacing.'
     ])
     names = ['LEDA', 'LEDA', 'VGH', 'VGL', 'UPDN', 'SHLR', 'LEDK', 'LEDK', 'AVDD', 'GND',
              'DSI_D3_P_NC', 'DSI_D3_N_NC', 'GND', 'DSI_D2_P_NC', 'DSI_D2_N_NC', 'GND',
@@ -57,7 +57,7 @@ def add_interfaces(d, page, box, item, pas, cap):
     page(s, '15 Touch FPC reference interface', (89, 67), [
         'J1210: 6-pin reference interface; selected touch module drawing has NOT been supplied.',
         '1 RESET/control, 2 3V3, 3 GND, 4 INT, 5 SDA, 6 SCL. Verify all six before plugging in.',
-        'F side, same cable entry direction as LCD. No-touch product leaves external cable absent.',
+        'F faces rear housing; screen flex passes from B through a slot. Same entry direction as LCD.',
         '3V3 interface assumption only; contact width/thickness, voltage, polarity and ESD await closure.'
     ])
     box('TOUCH_FPC6', [(1,'RESET_CONTROL','passive'), (2,'VCC_3V3','passive'),

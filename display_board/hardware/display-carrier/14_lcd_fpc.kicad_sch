@@ -5,7 +5,7 @@
 	(paper "A3")
 	(title_block
 		(title "14 LCD FPC and 1V8 controls")
-		(date "2026-09-19")
+		(date "2026-09-23")
 		(rev "R0 ENGINEERING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
@@ -3720,7 +3720,7 @@
 		)
 		(uuid ccb805b2-c66a-5d3b-8916-3eca1a6580e1)
 	)
-	(text "J1200: LCM-070WS209-A0, PDF pp5-7. 30 pins, 0.5 mm; F side, cable entry from bottom."
+	(text "J1200: 30-pin / 0.5 mm; F faces rear housing. Screen is on B; cable passes through a routed slot."
 		(at 20.32 20.32 0)
 		(effects
 			(font
@@ -3750,7 +3750,7 @@
 		)
 		(uuid d0ab23d5-add9-5780-abcd-28977ef75794)
 	)
-	(text "Dual-contact connector does not prove folded-tail reach, pin-1 orientation or thickness tolerance."
+	(text "Slot and connector positions are provisional: verify 3D flex reach, pin-1, thickness and screen spacing."
 		(at 20.32 35.56 0)
 		(effects
 			(font

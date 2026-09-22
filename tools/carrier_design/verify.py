@@ -21,6 +21,7 @@ tree=ET.parse(BUILD/'netlist.xml').getroot()
 sch={(z.get('ref'),z.get('pin')):n.get('name') for n in tree.findall('./nets/net') for z in n.findall('node')}
 board=k.LoadBoard(str(OUT/'display_carrier.kicad_pcb'))
 fps={f.GetReference():f for f in board.GetFootprints()}
+screen_back=(OUT/'SCREEN_BACK_LAYOUT.json').is_file()
 expected={p['ref'] for p in parts if p['footprint']}
 assert expected==set(fps)-{'H1','H2','H3','H4'}
 for p in parts:
@@ -61,6 +62,11 @@ if (OUT/'MECHANICAL_LAYOUT.json').exists():
     # tip datum: y = tip - PCB top offset + insertion - footprint mouth offset.
     fpc_expected=[('J1200',(70.5,46.1-2.5+2.1-3.525),0),
                   ('J1210',(36,7.5-2.5+2.1-3.525),0),('J1220',(76.5,7),180)]
+if screen_back:
+    # F now faces the rear housing; X reflects the old screen-front view.
+    # The additional 4 mm is a provisional reach allowance, not a measurement.
+    fpc_expected=[('J1200',(145-70.5,46.1-2.5+2.1-3.525+4),0),
+                  ('J1210',(145-36,7.5-2.5+2.1-3.525+4),0),('J1220',(145-76.5,7),180)]
 for ref,xy,angle in fpc_expected:
     fp=fps[ref]
     assert fp.GetLayer()==k.F_Cu and not fp.IsDNP()
@@ -99,10 +105,13 @@ if 'SIM8066' in fps['J1000'].GetValue():
     f=fps['J1000'];pads=list(f.Pads());holes=[p for p in pads if not p.GetNumber()]
     assert len(holes)==2 and all(p.GetAttribute()==k.PAD_ATTRIB_NPTH and abs(k.ToMM(p.GetDrillSize().x)-.75)<.001 for p in holes)
     assert len([p for p in pads if p.GetNumber()=='SH'])==4
-    assert f.GetLayer()==k.B_Cu and abs(f.GetOrientationDegrees()%360-270)<.001
+    assert f.GetLayer()==(k.F_Cu if screen_back else k.B_Cu) and abs(f.GetOrientationDegrees()%360-270)<.001
     assert len(list(f.Zones()))==1
     # In this bottom-side rotation, shell-front tabs must be nearer +X than signal tails.
-    assert max(p.GetPosition().x for p in pads if p.GetNumber()=='SH')>max(p.GetPosition().x for p in pads if p.GetNumber()=='1')
+    if screen_back:
+        assert min(p.GetPosition().x for p in pads if p.GetNumber()=='SH')<min(p.GetPosition().x for p in pads if p.GetNumber()=='1')
+    else:
+        assert max(p.GetPosition().x for p in pads if p.GetNumber()=='SH')>max(p.GetPosition().x for p in pads if p.GetNumber()=='1')
     sim_checks={'socket':'GCT SIM8066-6-1-14-01-A','mechanism':'push-push','entry':'right edge in screen-front projection',
         'detect_polarity':'HIGH=card present; normally closed CD-to-GND when empty',
         'ML307A_default_polarity_match':True,'NPTH_peg_holes_mm':[.75,.75],
@@ -112,8 +121,8 @@ inductor_checks=None
 if 'FEXU0640' in fps['L400'].GetValue():
     fp=fps['L400']
     assert str(fp.GetFPID().GetLibItemName())=='L_Cjiang_FEXU0640_6.2x6.0mm'
-    assert fp.GetLayer()==k.B_Cu and not fp.IsDNP()
-    assert abs(fp.GetOrientationDegrees())<.001
+    assert fp.GetLayer()==(k.F_Cu if screen_back else k.B_Cu) and not fp.IsDNP()
+    assert abs(fp.GetOrientationDegrees()-(180 if screen_back else 0))<.001
     for pad in fp.Pads():
         assert all(abs(a-b)<.001 for a,b in zip([k.ToMM(pad.GetSize().x),k.ToMM(pad.GetSize().y)],[2.25,6.3]))
         assert abs(abs(k.ToMM(pad.GetPosition().x-fp.GetPosition().x))-2.125)<.001
@@ -169,8 +178,8 @@ if 'U820' in fps:
             for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
     assert 'FM_SUM' not in sch.values() and 'J800' not in fps
     assert all(not fps[r].IsDNP() for r in ['U800','U802','U803','U815','U820','U821','J820','J821'])
-    assert fps['U802'].GetLayer()==fps['U803'].GetLayer()==k.B_Cu
-    assert abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x)-60)<.001
+    assert fps['U802'].GetLayer()==fps['U803'].GetLayer()==(k.F_Cu if screen_back else k.B_Cu)
+    assert abs(abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x))-60)<.001
     assert fps['U803'].GetPosition().y==fps['U802'].GetPosition().y
     # TI full-temperature FB range is +/-2%; divider resistors are 0.1%.
     pa_range=[vref*(1+698000*(1+rtol)/(100000*(1-rtol))) for vref,rtol in [(.588,-.001),(.612,.001)]]
@@ -229,6 +238,28 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'native_ignored_drc_checks':drc.get('ignored_checks',[]),
  'hash_normalization':'CRLF converted to LF before SHA-256',
  'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro']}}
+if screen_back:
+    assert all(f.GetLayer()==k.F_Cu for f in fps.values()),'Screen side must have no footprint bodies'
+    poly=k.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(poly,False)
+    assert poly.OutlineCount()==1 and poly.HoleCount(0)==4
+    cutouts=[]
+    for i in range(poly.HoleCount(0)):
+        z=poly.Hole(0,i).BBox()
+        cutouts.append(tuple(round(k.ToMM(v)-50,3) for v in [z.GetX(),z.GetY(),z.GetRight(),z.GetBottom()]))
+    for box in [(104,14,114,17),(64.5,52.5,84.5,55.5)]:assert box in cutouts,cutouts
+    zones={z.GetZoneName():z for z in board.Zones()}
+    assert len(zones)==6
+    assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetDoNotAllowFootprints()
+    assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetLayer()==k.B_Cu
+    for name in ['TOUCH_PASS_THROUGH_COPPER_CLEAR','LCD_PASS_THROUGH_COPPER_CLEAR']:
+        z=zones[name]
+        assert z.GetDoNotAllowTracks() and z.GetDoNotAllowVias() and z.GetDoNotAllowPads() and z.GetDoNotAllowZoneFills()
+        assert all(z.GetLayerSet().Contains(layer) for layer in [k.F_Cu,k.In1_Cu,k.In2_Cu,k.B_Cu])
+    assert abs(k.ToMM(fps['U100'].GetPosition().x)-50-69)<.001
+    assert abs(k.ToMM(fps['U100'].GetPosition().y)-50-28)<.001
+    report['screen_back_layout']={'component_side':'F','screen_side':'B','back_side_footprints':0,
+        'through_board_flex_slots_mm':[[10,3],[20,3]],'closed_outline_with_four_internal_cutouts':True,
+        'screen_contact_qualification':'NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked'}
 if audio_checks:report['stereo_audio']=audio_checks
 if sim_checks:report['push_push_sim']=sim_checks
 if inductor_checks:report['compact_inductor']=inductor_checks

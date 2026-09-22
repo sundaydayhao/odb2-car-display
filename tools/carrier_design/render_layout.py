@@ -5,6 +5,9 @@ import pcbnew as k
 
 
 def render(project):
+    if (project/'SCREEN_BACK_LAYOUT.json').exists():
+        from render_screen_back import render as render_screen_back
+        return render_screen_back(project)
     b=k.LoadBoard(str(project/'display_carrier.kicad_pcb'))
     m=json.loads((project/'MECHANICAL_LAYOUT.json').read_text(encoding='utf-8'))
     fps={f.GetReference():f for f in b.GetFootprints()}

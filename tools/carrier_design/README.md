@@ -148,3 +148,18 @@ and model manifest; no download is required. Run native ERC, DRC/parity,
 netlist export, `verify.py`, `check_models.py`, and render/review before
 promotion. `INDUCTOR_SELECTION.md` records procurement, height and electrical
 limits; the part change does not qualify the converter for continuous 4 A.
+
+Revision K uses **F = components / rear housing, B = screen**. The one-time
+`screen_back_layout.py --baseline <revision-J-project> --output <scratch>`
+migration mirrors the coordinate view, moves every footprint to F, clears the
+screen side, and creates two real flex pass-through slots. It preserves pad
+and footprint UUIDs, nets and values. It refuses an already-migrated baseline.
+The 4 mm longitudinal flex allowance and screen gap are not mechanically
+qualified. THT tails still protrude on B (nominal model maximum about 2.4 mm);
+see `SCREEN_BACK_ASSEMBLY.md`. Do not represent this as a zero-height rear face.
+
+`render_layout.py` selects `render_screen_back.py` for this revision.
+`verify.py` checks F-side placement, mirrored port orientation, slot bounds,
+four closed internal cutouts, copper keepouts and unchanged pin maps. Keep
+the authoritative native board and its `SCREEN_BACK_LAYOUT.json` together;
+the historical region placer is not a replacement for its reviewed cutouts.

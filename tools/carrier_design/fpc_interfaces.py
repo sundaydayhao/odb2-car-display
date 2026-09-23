@@ -10,10 +10,10 @@ the unspecified touch glass bundled with the LCM has that pinout.
 def add_interfaces(d, page, box, item, pas, cap):
     s = '14_lcd_fpc'
     page(s, '14 LCD FPC and 1V8 controls', (71, 64), [
-        'J1200: 30-pin / 0.5 mm; F faces rear housing. Screen is on B; cable passes through a routed slot.',
+        'J1200: F-side socket; screen and PCB mount separately on enclosure, nominal B-side gap 3 mm.',
         'Only D0/D1 are connected. Vendor 2-lane initialization and timing remain REQUIRED.',
         'LCD_AVDD_9V8 / VGH / VGL / VCOM and LEDA/K are UNDRIVEN: bias/backlight stage still pending.',
-        'Slot and connector positions are provisional: verify 3D flex reach, pin-1, thickness and screen spacing.'
+        'No FPC board slot. Flex wraps over lower PCB edge; verify free length, bend radius and pin-1.'
     ])
     names = ['LEDA', 'LEDA', 'VGH', 'VGL', 'UPDN', 'SHLR', 'LEDK', 'LEDK', 'AVDD', 'GND',
              'DSI_D3_P_NC', 'DSI_D3_N_NC', 'GND', 'DSI_D2_P_NC', 'DSI_D2_N_NC', 'GND',
@@ -57,7 +57,7 @@ def add_interfaces(d, page, box, item, pas, cap):
     page(s, '15 Touch FPC reference interface', (89, 67), [
         'J1210: 6-pin reference interface; selected touch module drawing has NOT been supplied.',
         '1 RESET/control, 2 3V3, 3 GND, 4 INT, 5 SDA, 6 SCL. Verify all six before plugging in.',
-        'F faces rear housing; screen flex passes from B through a slot. Same entry direction as LCD.',
+        'F-side socket moved down; flex wraps over lower PCB edge. Nominal screen gap 3 mm; fit unverified.',
         '3V3 interface assumption only; contact width/thickness, voltage, polarity and ESD await closure.'
     ])
     box('TOUCH_FPC6', [(1,'RESET_CONTROL','passive'), (2,'VCC_3V3','passive'),

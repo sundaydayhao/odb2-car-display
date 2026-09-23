@@ -201,5 +201,19 @@ review. No battery current limiter was added. See `J300_TERMINAL.md`.
 
 The reviewed L1 files have been synchronized to `display-carrier` after its
 editor locks cleared and its tracked files were confirmed unchanged. The
-`display-carrier-revision-L` directory retains the matching reviewed copy;
+`display-carrier-revision-L` directory retains the historical L1 reviewed copy;
 the canonical project for subsequent work is `display-carrier`.
+
+Revision M uses independent enclosure mounting with a user-specified nominal
+3 mm screen-to-PCB back gap. `enclosure_layout.py --baseline <L1-project>
+--output <fresh-scratch>` removes only the two FPC pass-through slots and their
+copper keepouts, moves J1210 to (109,15.5) and J1200 to (74.5,54) on F, and
+rearranges nearby power/audio/interface parts around bottom-edge flex lanes.
+The two sensor thermal slots remain. Footprint/pad identities, pin maps,
+values and models stay fixed. It refuses routed or already-migrated input.
+
+`render_enclosure.py` draws the reviewed PCB and component-free flex/escape
+areas; `render_layout.py` dispatches it using revision M metadata. Native
+checks and `verify.py` validate the new two-hole outline and F-side keepouts.
+Nominal connector setback is an assembly allowance, not proof of flex reach.
+Actual routing, impedance and a physical 3 mm stack test remain required.

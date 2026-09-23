@@ -5,6 +5,9 @@ import pcbnew as k
 def render(project):
     b=k.LoadBoard(str(project/'display_carrier.kicad_pcb'))
     info=json.loads((project/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8'))
+    if info.get('revision')=='M':
+        from render_enclosure import render as enclosure_render
+        return enclosure_render(project)
     fps={f.GetReference():f for f in b.GetFootprints()}
     s=['<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="940" viewBox="0 0 1500 940">',
        '<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif}</style>',

@@ -1,34 +1,23 @@
 {
-  "revision": "K",
-  "baseline_commit": "6eb6734",
-  "status": "PASS_FOR_UNROUTED_LAYOUT_ONLY_FLEX_STACK_PENDING",
-  "footprint_UUID_value_DNP_path_preserved": 354,
-  "pad_UUID_net_number_size_drill_shape_preserved": 1226,
-  "pad_local_geometry_transform": "Old B: X reflected; old F: unchanged handedness; translation only afterward",
-  "all_net_members_unchanged": true,
-  "component_side": "F",
-  "screen_side": "B",
-  "B_side_footprint_bodies": 0,
-  "unchanged_child_sheets": [
-    "01_core.kicad_sch",
-    "02_usb.kicad_sch",
-    "03_usb_current.kicad_sch",
-    "04_charger.kicad_sch",
-    "05_system_switch.kicad_sch",
-    "06_main_power.kicad_sch",
-    "07_sd.kicad_sch",
-    "08_modem.kicad_sch",
-    "09_modem_power.kicad_sch",
-    "10_sim_rf.kicad_sch",
-    "11_codec.kicad_sch",
-    "12_fm_audio.kicad_sch",
-    "13_release_holds.kicad_sch",
-    "16_camera_fpc.kicad_sch",
-    "17_cabin_sensors.kicad_sch",
-    "18_dual_mic.kicad_sch",
-    "19_stereo_pa.kicad_sch"
-  ],
-  "schematic_semantic_diff": {
+  "revision": "M",
+  "baseline_commit": "7117720",
+  "status": "PASS_UNROUTED_LAYOUT_ONLY",
+  "footprints_preserved": 354,
+  "pads_preserved": 1226,
+  "footprint_ids_paths_values_DNP_layers_models_unchanged": true,
+  "pad_ids_numbers_nets_shapes_dimensions_holes_unchanged": true,
+  "netlist_members_unchanged": true,
+  "project_DRC_rules_byte_identical": true,
+  "sch_symbol_label_geometry_delta": {
+    "display_carrier.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {}
+    },
     "14_lcd_fpc.kicad_sch": {
       "symbols_added": [],
       "symbols_removed": [],
@@ -46,50 +35,113 @@
       "labels_added": [],
       "labels_removed": [],
       "count_delta": {}
-    },
-    "display_carrier.kicad_sch": {
-      "symbols_added": [],
-      "symbols_removed": [],
-      "symbols_moved": [],
-      "symbols_changed": [],
-      "labels_added": [],
-      "labels_removed": [],
-      "count_delta": {}
     }
   },
   "erc_new": [],
   "erc_gone": [],
-  "existing_erc_warnings": 13,
   "physical_DRC": 0,
   "schematic_parity": 0,
-  "unconnected_native": 848,
+  "unconnected": 848,
   "tracks": 0,
-  "board_rules_byte_identical": true,
-  "fabrication_release": "HOLD: flex free length, screen gap, untrimmed solder tails, prototype validation and routing pending",
-  "schematic_pixel_diff": {
-    "14": {
-      "changed_px": 4671,
-      "bbox_mm": [
-        20.5,
-        20.0,
-        345.0,
-        281.0
-      ],
-      "composite": "build\\carrier-flatback\\14-diff.png"
+  "moved_footprints": 170,
+  "FPC_pad_separation": {
+    "J1200": {
+      "before": {
+        "min_pad_bbox_separation_mm": 2.877,
+        "pins": [
+          "5",
+          "U100",
+          "44"
+        ]
+      },
+      "after": {
+        "min_pad_bbox_separation_mm": 3.048,
+        "pins": [
+          "1",
+          "R1207",
+          "1"
+        ]
+      }
     },
-    "15": {
-      "changed_px": 2280,
-      "bbox_mm": [
-        22.5,
-        30.2,
-        345.0,
-        281.0
-      ],
-      "composite": "build\\carrier-flatback\\15-diff.png"
+    "J1210": {
+      "before": {
+        "min_pad_bbox_separation_mm": 4.871,
+        "pins": [
+          "6",
+          "C304",
+          "1"
+        ]
+      },
+      "after": {
+        "min_pad_bbox_separation_mm": 5.375,
+        "pins": [
+          "6",
+          "C1211",
+          "2"
+        ]
+      }
     }
   },
-  "machine_tier": "PASS",
-  "render_judged_tier": "PASS_FOR_LAYOUT_ONLY",
-  "visual_review": "Native front/back 3D, top copper/fab/courtyard slot crops, schematic notes/pixel differences, two-face overview reviewed",
-  "screen_mating": "NOT_VALIDATED"
+  "removed_FPC_slot_segments": 52,
+  "remaining_internal_cutouts": 2,
+  "all_FPC_cable_and_escape_areas_free_of_other_footprints": true,
+  "component_clear_areas_mm": {
+    "TOUCH_FLEX_COMPONENT_CLEAR": [
+      104.5,
+      19.9,
+      113.5,
+      85
+    ],
+    "LCD_FLEX_COMPONENT_CLEAR": [
+      63.5,
+      58.2,
+      85.5,
+      85
+    ],
+    "TOUCH_PAD_ESCAPE": [
+      104,
+      7.75,
+      114,
+      12.75
+    ],
+    "LCD_PAD_ESCAPE": [
+      63.5,
+      41.8,
+      83.5,
+      51.25
+    ]
+  },
+  "screen_gap_nominal_mm": 3,
+  "nominal_max_THT_protrusion_mm": 2.392,
+  "nominal_remaining_gap_mm": 0.608,
+  "design_limits": [
+    "No physical flex fit verification",
+    "No routing or impedance qualification",
+    "Power loop, bypass routing, FM RF and audio layout require routed review",
+    "3mm spacing has not been tolerance/solder qualified"
+  ],
+  "visual_review": "PASS: native top 3D, F.Cu/F.SilkS/Edge.Cuts pad closeups, schematic note crops and pixel diffs inspected",
+  "evidence": "build/carrier-enclosure/",
+  "schematic_pixel_diff": {
+    "14": {
+      "changed_px": 4098,
+      "bbox_mm": [
+        20.5,
+        19.9,
+        345.1,
+        280.9
+      ],
+      "composite": "build\\carrier-enclosure\\14-diff.png"
+    },
+    "15": {
+      "changed_px": 2083,
+      "bbox_mm": [
+        21.7,
+        30.1,
+        345.1,
+        280.9
+      ],
+      "composite": "build\\carrier-enclosure\\15-diff.png"
+    }
+  }
 }

@@ -95,3 +95,5 @@ pin4/pin9 的时钟/数据复用沿用 S31 官方接法，必须配置 ES8389 �
 - [SN74LVC1G3157](https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf)、[TLV62585](https://www.ti.com/lit/ds/symlink/tlv62585.pdf)。
 
 以下为修订 H 当时的验证记录；当前整板计数见 VERIFICATION.json / SCREEN_BACK_REVIEW.json。原生 KiCad 10.0.5 检查：0 电气错误、13 个既有接口警告（原 AMP_EN 警告已关闭）、0 物理 DRC 违规、0 SCH/PCB 差异。另有 **845 项未连接、0 走线**。音频引脚/地址电阻/左右通道/BTL 极性/两麦间距由独立网表检查覆盖，326 个实体器件的模型均可加载。详见 `VERIFICATION.json`、`AUDIO_REVIEW.json` 和 `MODEL_VERIFICATION.json`。这些结果只验收本轮图纸与初摆，不能据此投板。
+
+修订 M 当前坐标：U802 (120.5,73)、U803 (60.5,73) mm，F 面 180°、中心距 60 mm；FM 天线座 J810 (91,81)。音频器件已避开绕下沿的排线区域，原 K 版两处穿板槽已删除。外壳声孔以本版原生 PCB 为准。

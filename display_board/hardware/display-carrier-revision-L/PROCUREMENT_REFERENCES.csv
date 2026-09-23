@@ -60,9 +60,9 @@ C213,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,C
 C214,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
 C215,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
 U300,BQ25896RTWR,Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,1,C181475,TI,BQ25896RTWR,SELECTED,,https://item.szlcsc.com/192872.html
-J300,1S BATTERY 10A,Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical,1,C160315,JST,B2P-VH(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C160315.html
+J300,1S BATTERY / PH 2A,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,与 J301 同款 PH 2Pin；额定 2A/AWG24。电池总电流及保险丝配合尚未验证。,https://www.lcsc.com/product-detail/C131337.html
 J301,PACK NTC / RETURN,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C131337.html
-F300,8A pack qualified fuse,Fuse:Fuse_1206_3216Metric,1,,,,HOLD,8A 仅是占位要求；电池包短路电流、直流分断能力、温度降额和保护配合尚未闭合。,
+F300,TBD fuse / PH 2A,Fuse:Fuse_1206_3216Metric,1,,,,HOLD,J300 改为 PH 2A 后撤销原 8A 占位；按端子、线材和电池包短路电流重选保险丝，额定电流/分断能力/温度降额待闭合。,
 L300,1uH Isat>=8A,Inductor_SMD:L_Sunlord_SWPA6045S,1,,,,HOLD,1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。,
 C300,1u 25V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
 C301,10u 25V,Capacitor_SMD:C_1206_3216Metric,1,C13585,Samsung Electro-Mechanics,CL31A106KBHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C13585.html

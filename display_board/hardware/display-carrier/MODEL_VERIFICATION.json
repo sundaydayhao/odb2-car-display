@@ -11,7 +11,6 @@
     "J1210",
     "J1220",
     "J200",
-    "J300",
     "L400",
     "U1000",
     "U1300",
@@ -27,7 +26,6 @@
   "reference_models": [
     "U310",
     "U400",
-    "J300",
     "U1300",
     "U1301",
     "U802",
@@ -2041,18 +2039,6 @@
       ]
     },
     {
-      "reference": "J300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/JST_B2P_VH_reference.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
       "reference": "TP302",
       "dnp": false,
       "intentional_no_model": true,
@@ -2197,6 +2183,18 @@
       "models": [
         {
           "path": "${KICAD10_3DMODEL_DIR}/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-31_Kemet-D.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
           "exists": true,
           "shown": true
         }
@@ -2580,7 +2578,7 @@
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_TopPort_reference.wrl",
+          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
           "exists": true,
           "shown": true
         }
@@ -3912,7 +3910,7 @@
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_TopPort_reference.wrl",
+          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
           "exists": true,
           "shown": true
         }

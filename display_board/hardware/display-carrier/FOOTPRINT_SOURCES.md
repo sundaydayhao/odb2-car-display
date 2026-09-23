@@ -58,3 +58,5 @@ J1200/J1210/J1220 采用 XUNPU FPC-05FB-30PH20 / 6PH20 / 24PH20，对应 C285683
 ## 修订 J：L400
 
 `Carrier:L_Cjiang_FEXU0640_6.2x6.0mm` 依据长江微电 FEXU 厂家第 4 页建立，A/B/C=6.50/2.00/6.30 mm，B 为中间间隙；焊盘 2.25×6.30、中心 ±2.125 mm。修正供应商中心舍入和过小庭院。STEP 来自 C54140025，Z 偏移 +0.1 mm，未改变模型原字节。参数、采购和验证见 [INDUCTOR_SELECTION.md](INDUCTOR_SELECTION.md)。
+
+修订 L1：J300 改为 J301 已使用的 KiCad 官方 `Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical`，同一 3D 模型。2.0 mm 针距、0.75 mm 通孔沿用该封装；原 JST-VH 本地封装/模型只作历史保留，当前 PCB 不引用。依据：[JST PH 图纸](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf)。

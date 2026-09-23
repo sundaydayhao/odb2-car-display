@@ -1,0 +1,9178 @@
+{
+  "root_uuid": "01326f85-d288-503d-aa45-f189caff70a4",
+  "parts": [
+    {
+      "sheet": "01_core",
+      "ref": "U100",
+      "kind": "OSPTEK_P4C5_P4C6",
+      "value": "OSPTEK P4C5 / P4C6",
+      "nets": {
+        "1": "GND",
+        "2": null,
+        "3": "GND",
+        "4": "RF_RX",
+        "5": "RF_TX",
+        "6": "RF_BOOT_C5",
+        "7": "RF_STRAP_C5",
+        "8": null,
+        "9": "RF_BOOT_C6",
+        "10": "RF_STRAP_C6",
+        "11": null,
+        "12": null,
+        "13": null,
+        "14": null,
+        "15": "GND",
+        "16": "MODEM_PWRKEY",
+        "17": "MODEM_AT_TX",
+        "18": "MODEM_AT_RX",
+        "19": "MODEM_DTR",
+        "20": "MODEM_STATE",
+        "21": null,
+        "22": "CAM_TOUCH_I2C_SDA",
+        "23": "CAM_TOUCH_I2C_SCL",
+        "24": "I2S_DOUT",
+        "25": "I2S_LRCK",
+        "26": "I2S_DIN",
+        "27": "I2S_BCLK",
+        "28": "I2S_MCLK",
+        "29": "LCD_RESET",
+        "30": "LCD_STBYB",
+        "31": "TOUCH_INT",
+        "32": "TOUCH_RESET",
+        "33": "GND",
+        "34": "DSI_D1_P",
+        "35": "DSI_D1_N",
+        "36": "DSI_CLK_N",
+        "37": "DSI_CLK_P",
+        "38": "DSI_D0_P",
+        "39": "DSI_D0_N",
+        "40": "GND",
+        "41": "CSI_D0_N",
+        "42": "CSI_D0_P",
+        "43": "CSI_CLK_P",
+        "44": "CSI_CLK_N",
+        "45": "CSI_D1_N",
+        "46": "CSI_D1_P",
+        "47": "GND",
+        "48": "MODEM_USB_N",
+        "49": "MODEM_USB_P",
+        "50": "MODEM_USB_VBUS_EN",
+        "51": "GNSS_ANT_POWER_EN",
+        "52": "GND",
+        "53": "CAMERA_RESET",
+        "54": "BACKLIGHT_PWM",
+        "55": "LCD_VDD_EN",
+        "56": "LCD_BIAS_EN",
+        "57": "POWER_HOLD",
+        "58": "POWER_OFF_REQUEST",
+        "59": "SYSTEM_I2C_SDA",
+        "60": "SYSTEM_I2C_SCL",
+        "61": null,
+        "62": "P4_BOOT",
+        "63": "P4_BOOT_MODE_HIGH",
+        "64": "P4_UART_TX",
+        "65": "P4_UART_RX",
+        "66": null,
+        "67": "SD_D0",
+        "68": "SD_D1",
+        "69": "SD_D2",
+        "70": "SD_D3",
+        "71": "SD_CLK",
+        "72": "SD_CMD",
+        "73": "SD_POWER_EN",
+        "74": "SD_CARD_DETECT",
+        "75": "CAM_POWER_EN",
+        "76": "AMP_EN",
+        "77": "BOARD_TEMP_ADC",
+        "78": "CHARGER_INT",
+        "79": "FM_POWER_EN",
+        "80": "AUDIO_SOURCE_SELECT",
+        "81": "TYPEC_HIGH_CURRENT_N",
+        "82": "RF_EN_SERVICE",
+        "83": "GND",
+        "84": "+3V3",
+        "85": "+3V3",
+        "86": "+3V3",
+        "87": "P4_EN",
+        "88": "MODEM_POWER_EN"
+      },
+      "xy": [
+        95.25,
+        137.16
+      ],
+      "footprint": "Carrier:OSPTEK_P4C5_P4C6_Compatible",
+      "pcb": [
+        69.0,
+        28.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://github.com/osptek",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C101",
+      "kind": "C",
+      "value": "22u 10V X5R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        87.0,
+        18.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C102",
+      "kind": "C",
+      "value": "22u 10V X5R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        85.0,
+        15.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C103",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        70.5,
+        11.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C104",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        77.0,
+        13.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R101",
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "P4_EN"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        74.0,
+        11.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R102",
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "P4_BOOT"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.0,
+        13.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R103",
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "P4_BOOT_MODE_HIGH"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        85.0,
+        27.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C105",
+      "kind": "C",
+      "value": "1u 10V X7R",
+      "nets": {
+        "1": "P4_EN",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        78.0,
+        11.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R104",
+      "kind": "R",
+      "value": "0R C6 default",
+      "nets": {
+        "1": "RF_BOOT_SERVICE",
+        "2": "RF_BOOT_C6"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        84.0,
+        21.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R105",
+      "kind": "R",
+      "value": "0R C5 only",
+      "nets": {
+        "1": "RF_BOOT_SERVICE",
+        "2": "RF_BOOT_C5"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        73.5,
+        13.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R106",
+      "kind": "R",
+      "value": "10k C6 strap",
+      "nets": {
+        "1": "+3V3",
+        "2": "RF_STRAP_C6"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.0,
+        40.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R107",
+      "kind": "R",
+      "value": "10k C5 only",
+      "nets": {
+        "1": "+3V3",
+        "2": "RF_STRAP_C5"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        84.8,
+        24.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP101",
+      "kind": "TestPoint",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        90.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP102",
+      "kind": "TestPoint",
+      "value": "+3V3",
+      "nets": {
+        "1": "+3V3"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        70.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP103",
+      "kind": "TestPoint",
+      "value": "RF_RX",
+      "nets": {
+        "1": "RF_RX"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        85.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP104",
+      "kind": "TestPoint",
+      "value": "RF_TX",
+      "nets": {
+        "1": "RF_TX"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        65.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP105",
+      "kind": "TestPoint",
+      "value": "RF_EN_SERVICE",
+      "nets": {
+        "1": "RF_EN_SERVICE"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        62.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP106",
+      "kind": "TestPoint",
+      "value": "RF_BOOT_SERVICE",
+      "nets": {
+        "1": "RF_BOOT_SERVICE"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        77.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "TP107",
+      "kind": "TestPoint",
+      "value": "P4_EN",
+      "nets": {
+        "1": "P4_EN"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        58.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "SW101",
+      "kind": "SW_SPST",
+      "value": "RESET",
+      "nets": {
+        "1": "P4_EN",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS",
+      "pcb": [
+        44.0,
+        3.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "SW102",
+      "kind": "SW_SPST",
+      "value": "BOOT",
+      "nets": {
+        "1": "P4_BOOT",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS",
+      "pcb": [
+        33.0,
+        3.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R108",
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "BOARD_TEMP_ADC"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        84.0,
+        34.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R109",
+      "kind": "R",
+      "value": "NTC 10k B3950",
+      "nets": {
+        "1": "BOARD_TEMP_ADC",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        80.5,
+        13.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "C106",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "BOARD_TEMP_ADC",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        70.0,
+        13.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R110",
+      "kind": "R",
+      "value": "4.7k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "SYSTEM_I2C_SDA"
+      },
+      "xy": [
+        190.5,
+        223.52
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.0,
+        38.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R111",
+      "kind": "R",
+      "value": "4.7k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "SYSTEM_I2C_SCL"
+      },
+      "xy": [
+        246.38,
+        223.52
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        84.8,
+        29.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R112",
+      "kind": "R",
+      "value": "4.7k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "CAM_TOUCH_I2C_SDA"
+      },
+      "xy": [
+        302.26,
+        223.52
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        85.2,
+        31.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "01_core",
+      "ref": "R113",
+      "kind": "R",
+      "value": "4.7k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "CAM_TOUCH_I2C_SCL"
+      },
+      "xy": [
+        358.14,
+        223.52
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        84.5,
+        36.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "J200",
+      "kind": "USB_C_USB2",
+      "value": "USB-C CHARGE / DEBUG",
+      "nets": {
+        "A1": "GND",
+        "A12": "GND",
+        "B1": "GND",
+        "B12": "GND",
+        "SH": "GND",
+        "A4": "VBUS_RAW",
+        "A9": "VBUS_RAW",
+        "B4": "VBUS_RAW",
+        "B9": "VBUS_RAW",
+        "A5": "CC1",
+        "B5": "CC2",
+        "A6": "UART_USB_P",
+        "B6": "UART_USB_P",
+        "A7": "UART_USB_N",
+        "B7": "UART_USB_N",
+        "A8": null,
+        "B8": null
+      },
+      "xy": [
+        64.77,
+        86.36
+      ],
+      "footprint": "Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge",
+      "pcb": [
+        141.4,
+        31.0
+      ],
+      "side": "F",
+      "angle": 90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "U200",
+      "kind": "CH343P",
+      "value": "CH343P",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "GND",
+        "3": "VBUS_RAW",
+        "4": "BRIDGE_TX",
+        "5": "BRIDGE_RX",
+        "6": "CH343_V3",
+        "7": "UART_USB_P",
+        "8": "UART_USB_N",
+        "9": "VBUS_RAW",
+        "10": "USB_CONFIG_N",
+        "11": null,
+        "12": "BRIDGE_DTR_N",
+        "13": "BRIDGE_RTS_N",
+        "14": null,
+        "15": null,
+        "16": null,
+        "17": "GND"
+      },
+      "xy": [
+        64.77,
+        162.56
+      ],
+      "footprint": "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
+      "pcb": [
+        130.0,
+        31.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://files.waveshare.com/wiki/ESP32-S3-LCD-1.3/CH343DS1_EN.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "U201",
+      "kind": "TXU0202_DCU",
+      "value": "TXU0202DCUR",
+      "nets": {
+        "1": "P4_UART_TX",
+        "2": "GND",
+        "3": "USB_AUX3V3",
+        "4": "BRIDGE_RX",
+        "5": "BRIDGE_TX",
+        "6": "USB_AUX3V3",
+        "7": "+3V3",
+        "8": "P4_UART_RX"
+      },
+      "xy": [
+        64.77,
+        220.98
+      ],
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pcb": [
+        123.0,
+        31.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/txu0202.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "U202",
+      "kind": "USBLC6",
+      "value": "USBLC6-2SC6",
+      "nets": {
+        "1": "UART_USB_P",
+        "2": "GND",
+        "3": "UART_USB_N",
+        "4": "UART_USB_N",
+        "5": "VBUS_RAW",
+        "6": "UART_USB_P"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        132.2,
+        35.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C201",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "CH343_V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        130.2,
+        27.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C202",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        134.2,
+        27.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C203",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        125.6,
+        29.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C204",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        121.8,
+        28.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C205",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        132.5,
+        41.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "C206",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        137.4,
+        37.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "Q201",
+      "kind": "Q_NPN",
+      "value": "MMBT3904",
+      "nets": {
+        "1": "AUTO_DL_B0",
+        "2": "BRIDGE_DTR_N",
+        "3": "P4_EN"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        127.6,
+        39.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "R201",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "BRIDGE_RTS_N",
+        "2": "AUTO_DL_B0"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        132.2,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "Q202",
+      "kind": "Q_NPN",
+      "value": "MMBT3904",
+      "nets": {
+        "1": "AUTO_DL_B1",
+        "2": "BRIDGE_RTS_N",
+        "3": "P4_BOOT"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        125.4,
+        35.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "R202",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "BRIDGE_DTR_N",
+        "2": "AUTO_DL_B1"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        121.0,
+        35.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "R203",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "USB_CONFIG_N"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        136.2,
+        40.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "#FLG200",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "VBUS_RAW"
+      },
+      "xy": [
+        30.48,
+        254.0
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "02_usb",
+      "ref": "#FLG201",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "GND"
+      },
+      "xy": [
+        76.2,
+        254.0
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "U210",
+      "kind": "TUSB320LAI",
+      "value": "TUSB320LAIRWBR",
+      "nets": {
+        "1": "CC1",
+        "2": "CC2",
+        "3": "GND",
+        "4": "CC_VBUS_DET",
+        "5": null,
+        "6": null,
+        "7": "CC_HIGH_N",
+        "8": null,
+        "9": null,
+        "10": "GND",
+        "11": "GND",
+        "12": "USB_AUX3V3"
+      },
+      "xy": [
+        63.5,
+        86.36
+      ],
+      "footprint": "Carrier:TUSB320_RWB12",
+      "pcb": [
+        130.0,
+        14.599999
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "U211",
+      "kind": "AP2112K",
+      "value": "AP2112K-3.3TRG1",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND",
+        "3": "VBUS_RAW",
+        "4": null,
+        "5": "USB_AUX3V3"
+      },
+      "xy": [
+        63.5,
+        137.16
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        133.0,
+        23.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "U212",
+      "kind": "TPS2553DBV",
+      "value": "TPS2553DBVR",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND",
+        "3": "CHARGE_INPUT_EN",
+        "4": "INPUT_FAULT_N",
+        "5": "USB_ILIM",
+        "6": "CHARGE_VBUS"
+      },
+      "xy": [
+        63.5,
+        190.5
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        124.0,
+        18.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R211",
+      "kind": "R",
+      "value": "887k 1%",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "CC_VBUS_DET"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        135.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R212",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "CC_HIGH_N"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        134.2,
+        8.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R213",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "INPUT_ALLOWED_N"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        129.8,
+        11.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "D211",
+      "kind": "D",
+      "value": "BAT54H",
+      "nets": {
+        "1": "CC_HIGH_N",
+        "2": "INPUT_ALLOWED_N"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pcb": [
+        127.8,
+        8.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "D212",
+      "kind": "D",
+      "value": "BAT54H",
+      "nets": {
+        "1": "USB_CONFIG_N",
+        "2": "INPUT_ALLOWED_N"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pcb": [
+        120.5,
+        11.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "Q211",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "INPUT_ALLOWED_N",
+        "2": "GND",
+        "3": "CHARGE_INPUT_EN"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        135.0,
+        14.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R214",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "CHARGE_INPUT_EN"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        138.4,
+        9.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R215",
+      "kind": "R",
+      "value": "68.1k 1%",
+      "nets": {
+        "1": "USB_ILIM",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        120.5,
+        23.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "Q212",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "CC_HIGH_N",
+        "2": "GND",
+        "3": "CC_HIGH"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        125.4,
+        13.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R216",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "CC_HIGH"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        125.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "Q213",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "CC_HIGH",
+        "2": "GND",
+        "3": "USB_ILIM_BOOST"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        135.0,
+        18.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R217",
+      "kind": "R",
+      "value": "33.2k 1%",
+      "nets": {
+        "1": "USB_ILIM",
+        "2": "USB_ILIM_BOOST"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        125.2,
+        24.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "Q214",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "CC_HIGH",
+        "2": "GND",
+        "3": "TYPEC_HIGH_CURRENT_N"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        128.6,
+        17.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R218",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "+3V3",
+        "2": "TYPEC_HIGH_CURRENT_N"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        128.400001,
+        20.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "R219",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "INPUT_FAULT_N"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        120.0,
+        14.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "TP210",
+      "kind": "TestPoint",
+      "value": "INPUT_FAULT_N",
+      "nets": {
+        "1": "INPUT_FAULT_N"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        120.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C211",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        137.4,
+        23.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C212",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "USB_AUX3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        138.5,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C213",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        128.5,
+        25.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C214",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "VBUS_RAW",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        124.8,
+        21.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C215",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "CHARGE_VBUS",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        121.0,
+        25.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "U300",
+      "kind": "BQ25896",
+      "value": "BQ25896RTWR",
+      "nets": {
+        "1": "CHARGE_VBUS",
+        "2": "USB_AUX3V3",
+        "3": "CHG_PG_N",
+        "4": "CHG_STAT_N",
+        "5": "SYSTEM_I2C_SCL",
+        "6": "SYSTEM_I2C_SDA",
+        "7": "CHARGER_INT",
+        "8": "GND",
+        "9": "CHG_DISABLE",
+        "10": "BQ_ILIM",
+        "11": "BAT_TS",
+        "12": "BQ_QON_N",
+        "13": "BAT_PROTECTED",
+        "14": "BAT_PROTECTED",
+        "15": "SYS_ALWAYS",
+        "16": "SYS_ALWAYS",
+        "17": "GND",
+        "18": "GND",
+        "19": "BQ_SW",
+        "20": "BQ_SW",
+        "21": "BQ_BTST",
+        "22": "BQ_REGN",
+        "23": "BQ_PMID",
+        "24": null,
+        "25": "GND"
+      },
+      "xy": [
+        69.85,
+        96.52
+      ],
+      "footprint": "Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm",
+      "pcb": [
+        118.0,
+        18.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/bq25896.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "J300",
+      "kind": "CONN2",
+      "value": "1S BATTERY / PH 2A",
+      "nets": {
+        "1": "BAT_CONNECTOR",
+        "2": "GND"
+      },
+      "xy": [
+        53.34,
+        162.56
+      ],
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "pcb": [
+        121.0,
+        5.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "JST PH rated 2A with AWG24; HOLD battery current budget, charging limit and fuse coordination",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "J301",
+      "kind": "CONN2",
+      "value": "PACK NTC / RETURN",
+      "nets": {
+        "1": "BAT_TS",
+        "2": "GND"
+      },
+      "xy": [
+        53.34,
+        213.36
+      ],
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "pcb": [
+        102.0,
+        4.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "F300",
+      "kind": "FUSE",
+      "value": "TBD fuse / PH 2A",
+      "nets": {
+        "1": "BAT_CONNECTOR",
+        "2": "BAT_PROTECTED"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Fuse:Fuse_1206_3216Metric",
+      "pcb": [
+        116.0,
+        22.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "HOLD: select fuse for PH 2A connector, wire and pack short-circuit current; old 8A placeholder is withdrawn",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "L300",
+      "kind": "L",
+      "value": "1uH Isat>=8A",
+      "nets": {
+        "1": "BQ_SW",
+        "2": "SYS_ALWAYS"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Inductor_SMD:L_Sunlord_SWPA6045S",
+      "pcb": [
+        110.0,
+        22.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C300",
+      "kind": "C",
+      "value": "1u 25V",
+      "nets": {
+        "1": "CHARGE_VBUS",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.5,
+        26.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C301",
+      "kind": "C",
+      "value": "10u 25V",
+      "nets": {
+        "1": "BQ_PMID",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "pcb": [
+        102.4,
+        20.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C302",
+      "kind": "C",
+      "value": "4.7u 10V",
+      "nets": {
+        "1": "BQ_REGN",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        115.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C303",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "BAT_PROTECTED",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        104.5,
+        23.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C304",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "SYS_ALWAYS",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        102.5,
+        10.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C305",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "SYS_ALWAYS",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        115.5,
+        25.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "C306",
+      "kind": "C",
+      "value": "47n 16V",
+      "nets": {
+        "1": "BQ_BTST",
+        "2": "BQ_SW"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        128.5,
+        23.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R300",
+      "kind": "R",
+      "value": "300R 1%",
+      "nets": {
+        "1": "BQ_ILIM",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        124.5,
+        26.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R301",
+      "kind": "R",
+      "value": "9.09k 0.1% / B3950",
+      "nets": {
+        "1": "BQ_REGN",
+        "2": "BAT_TS"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        117.5,
+        27.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R302",
+      "kind": "R",
+      "value": "187k 0.1% / B3950",
+      "nets": {
+        "1": "BAT_TS",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        114.0,
+        29.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R303",
+      "kind": "R",
+      "value": "0R CHARGE DISABLED",
+      "nets": {
+        "1": "BQ_REGN",
+        "2": "CHG_DISABLE"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        116.5,
+        14.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R304",
+      "kind": "R",
+      "value": "0R ENABLE after review",
+      "nets": {
+        "1": "CHG_DISABLE",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        107.0,
+        26.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R305",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "+3V3",
+        "2": "CHARGER_INT"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        114.0,
+        27.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "R306",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "BAT_PROTECTED",
+        "2": "BQ_QON_N"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        117.5,
+        29.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "TP300",
+      "kind": "TestPoint",
+      "value": "BQ_QON_N",
+      "nets": {
+        "1": "BQ_QON_N"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        101.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "TP301",
+      "kind": "TestPoint",
+      "value": "CHG_PG_N",
+      "nets": {
+        "1": "CHG_PG_N"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        116.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "TP302",
+      "kind": "TestPoint",
+      "value": "CHG_STAT_N",
+      "nets": {
+        "1": "CHG_STAT_N"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        113.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "TP303",
+      "kind": "TestPoint",
+      "value": "BAT_TS",
+      "nets": {
+        "1": "BAT_TS"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        95.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "#FLG300",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "BAT_PROTECTED"
+      },
+      "xy": [
+        40.64,
+        254.0
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "04_charger",
+      "ref": "#FLG301",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "SYS_ALWAYS"
+      },
+      "xy": [
+        91.44,
+        254.0
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "U310",
+      "kind": "TPS22990",
+      "value": "TPS22990DMLR",
+      "nets": {
+        "1": "SYS_SLEW",
+        "2": null,
+        "3": "SYS_ALWAYS",
+        "4": "SYS_ALWAYS",
+        "5": "MAIN_ON",
+        "6": "GND",
+        "7": "MAIN_PG",
+        "8": "SYS_SWITCHED",
+        "9": "SYS_SWITCHED",
+        "10": "SYS_SWITCHED",
+        "11": "SYS_ALWAYS"
+      },
+      "xy": [
+        66.04,
+        88.9
+      ],
+      "footprint": "Carrier:TPS22990_DML10",
+      "pcb": [
+        102.0,
+        26.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tps22990.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "SW310",
+      "kind": "SW_SPDT",
+      "value": "POWER SIDE SLIDE",
+      "nets": {
+        "1": "GND",
+        "2": "SLIDER_ON",
+        "3": "SYS_ALWAYS"
+      },
+      "xy": [
+        66.04,
+        154.94
+      ],
+      "footprint": "Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled",
+      "pcb": [
+        20.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "D310",
+      "kind": "D",
+      "value": "BAT54H",
+      "nets": {
+        "1": "MAIN_ON",
+        "2": "SLIDER_ON"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pcb": [
+        106.0,
+        29.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "D311",
+      "kind": "D",
+      "value": "BAT54H",
+      "nets": {
+        "1": "MAIN_ON",
+        "2": "POWER_HOLD"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pcb": [
+        102.8,
+        33.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "R310",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MAIN_ON",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        98.4,
+        26.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "R311",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "POWER_HOLD",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        107.2,
+        35.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "C310",
+      "kind": "C",
+      "value": "10n",
+      "nets": {
+        "1": "SYS_SLEW",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        93.2,
+        26.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "C311",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "SYS_ALWAYS",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.5,
+        28.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "C312",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "SYS_SWITCHED",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        98.0,
+        33.199999
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "Q310",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "SLIDER_ON",
+        "2": "GND",
+        "3": "POWER_OFF_REQUEST"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        99.6,
+        29.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "R312",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "+3V3",
+        "2": "POWER_OFF_REQUEST"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        95.2,
+        28.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "C313",
+      "kind": "C",
+      "value": "10n",
+      "nets": {
+        "1": "POWER_OFF_REQUEST",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        93.2,
+        30.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "U400",
+      "kind": "TPS61088",
+      "value": "TPS61088RHLR",
+      "nets": {
+        "1": "BOOST_VCC",
+        "2": "SYS_SWITCHED",
+        "3": "BOOST_FSW",
+        "4": "BOOST_SW",
+        "5": "BOOST_SW",
+        "6": "BOOST_SW",
+        "7": "BOOST_SW",
+        "8": "BOOST_BOOT",
+        "9": "SYS_SWITCHED",
+        "10": "BOOST_SS",
+        "11": "GND",
+        "12": "GND",
+        "13": null,
+        "14": "+5V",
+        "15": "+5V",
+        "16": "+5V",
+        "17": "BOOST_FB",
+        "18": "BOOST_COMP",
+        "19": "BOOST_ILIM",
+        "20": "GND",
+        "21": "GND"
+      },
+      "xy": [
+        58.42,
+        91.44
+      ],
+      "footprint": "Carrier:Texas_VQFN-RHL-20",
+      "pcb": [
+        114.0,
+        47.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tps61088.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "U410",
+      "kind": "TLV62569_DBV",
+      "value": "TLV62569DBVR",
+      "nets": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "BUCK3_SW",
+        "4": "+5V",
+        "5": "BUCK3_FB"
+      },
+      "xy": [
+        58.42,
+        165.1
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        97.0,
+        43.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tlv62569.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "L400",
+      "kind": "L",
+      "value": "2.2uH FEXU0640S2R2MGS",
+      "nets": {
+        "1": "SYS_SWITCHED",
+        "2": "BOOST_SW"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Carrier:L_Cjiang_FEXU0640_6.2x6.0mm",
+      "pcb": [
+        124.0,
+        47.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "Cjiang / LCSC C54140025; 4.0mm max; DCR<=7mOhm; hot-load/loop qualification pending",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20260302/EED1CBF0FC8744AFBE91D5FB993027E7.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R400",
+      "kind": "R",
+      "value": "178k 1%",
+      "nets": {
+        "1": "+5V",
+        "2": "BOOST_FB"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        132.6,
+        51.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R401",
+      "kind": "R",
+      "value": "56.2k 1%",
+      "nets": {
+        "1": "BOOST_FB",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        106.6,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R402",
+      "kind": "R",
+      "value": "324k 1%",
+      "nets": {
+        "1": "BOOST_FSW",
+        "2": "BOOST_SW"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        102.800001,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R403",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "BOOST_ILIM",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        102.6,
+        46.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R404",
+      "kind": "R",
+      "value": "22k loop-tune",
+      "nets": {
+        "1": "BOOST_COMP",
+        "2": "BOOST_COMP_RC"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        101.800001,
+        44.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C400",
+      "kind": "C",
+      "value": "2.2u 10V",
+      "nets": {
+        "1": "BOOST_VCC",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        114.6,
+        37.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C401",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "BOOST_BOOT",
+        "2": "BOOST_SW"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        113.8,
+        39.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C402",
+      "kind": "C",
+      "value": "47n",
+      "nets": {
+        "1": "BOOST_SS",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.0,
+        38.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C403",
+      "kind": "C",
+      "value": "10n loop-tune",
+      "nets": {
+        "1": "BOOST_COMP_RC",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        109.2,
+        42.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C404",
+      "kind": "C",
+      "value": "100p C0G",
+      "nets": {
+        "1": "BOOST_COMP",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        105.4,
+        42.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C405",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "SYS_SWITCHED",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "pcb": [
+        120.0,
+        39.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C406",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "SYS_SWITCHED",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "pcb": [
+        109.6,
+        53.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C407",
+      "kind": "C",
+      "value": "47u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pcb": [
+        113.6,
+        42.199999
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C408",
+      "kind": "C",
+      "value": "47u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pcb": [
+        106.8,
+        49.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C409",
+      "kind": "C",
+      "value": "47u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pcb": [
+        107.2,
+        45.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "L410",
+      "kind": "L",
+      "value": "2.2uH Isat>=3.5A",
+      "nets": {
+        "1": "BUCK3_SW",
+        "2": "+3V3"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "pcb": [
+        92.0,
+        44.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R410",
+      "kind": "R",
+      "value": "453k 1%",
+      "nets": {
+        "1": "+3V3",
+        "2": "BUCK3_FB"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        114.0,
+        55.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "R411",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "BUCK3_FB",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        122.2,
+        54.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C410",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        118.4,
+        54.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C411",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        114.0,
+        52.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C412",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        103.6,
+        52.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "C413",
+      "kind": "C",
+      "value": "22p C0G",
+      "nets": {
+        "1": "+3V3",
+        "2": "BUCK3_FB"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        120.0,
+        56.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "06_main_power",
+      "ref": "#FLG410",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "+3V3"
+      },
+      "xy": [
+        58.42,
+        241.3
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "J500",
+      "kind": "MICRO_SD",
+      "value": "microSD DM3AT",
+      "nets": {
+        "1": "CARD_D2",
+        "2": "CARD_D3",
+        "3": "CARD_CMD",
+        "4": "VSD",
+        "5": "CARD_CLK",
+        "6": "GND",
+        "7": "CARD_D0",
+        "8": "CARD_D1",
+        "9": "SD_CARD_DETECT",
+        "10": "GND",
+        "SH": "GND"
+      },
+      "xy": [
+        69.85,
+        88.9
+      ],
+      "footprint": "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5",
+      "pcb": [
+        9.5,
+        56.0
+      ],
+      "side": "F",
+      "angle": -90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "U500",
+      "kind": "TPS22918",
+      "value": "TPS22918DBVR",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "SD_POWER_EN",
+        "4": "SD_SLEW",
+        "5": "SD_QOD",
+        "6": "VSD"
+      },
+      "xy": [
+        69.85,
+        147.32
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        23.0,
+        55.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R500",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "SD_POWER_EN",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        21.8,
+        51.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "C500",
+      "kind": "C",
+      "value": "1n",
+      "nets": {
+        "1": "SD_SLEW",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        25.8,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R501",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "SD_QOD",
+        "2": "VSD"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        27.4,
+        54.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "C501",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        12.8,
+        65.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "C502",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "VSD",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        21.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "C503",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "VSD",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        22.4,
+        62.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R510",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_D0",
+        "2": "CARD_D0"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        25.8,
+        62.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R520",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "VSD",
+        "2": "CARD_D0"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        20.2,
+        64.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R511",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_D1",
+        "2": "CARD_D1"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        9.5,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R521",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "VSD",
+        "2": "CARD_D1"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        16.2,
+        65.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R512",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_D2",
+        "2": "CARD_D2"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        23.5,
+        71.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R522",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "VSD",
+        "2": "CARD_D2"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        25.8,
+        65.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R513",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_D3",
+        "2": "CARD_D3"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        21.4,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R523",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "VSD",
+        "2": "CARD_D3"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        19.4,
+        70.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R514",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_CMD",
+        "2": "CARD_CMD"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        16.2,
+        67.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R524",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "VSD",
+        "2": "CARD_CMD"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        11.0,
+        71.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R515",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SD_CLK",
+        "2": "CARD_CLK"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        25.8,
+        69.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "R530",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "+3V3",
+        "2": "SD_CARD_DETECT"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        11.0,
+        68.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "07_sd",
+      "ref": "C504",
+      "kind": "C",
+      "value": "10n",
+      "nets": {
+        "1": "SD_CARD_DETECT",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        16.0,
+        71.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "R313",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "+3V3",
+        "2": "MAIN_PG"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        107.2,
+        31.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "05_system_switch",
+      "ref": "TP310",
+      "kind": "TestPoint",
+      "value": "MAIN_PG",
+      "nets": {
+        "1": "MAIN_PG"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        98.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "03_usb_current",
+      "ref": "C216",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "CHARGE_INPUT_EN",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        138.0,
+        21.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "U1000",
+      "kind": "ML307A_GCLN",
+      "value": "ML307A-GCLN",
+      "nets": {
+        "1": "GND",
+        "2": "GNSS_RF",
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": "MODEM_KEY_N",
+        "8": null,
+        "9": null,
+        "10": "GND",
+        "11": "SIM0_DATA",
+        "12": "SIM0_RST",
+        "13": "SIM0_CLK",
+        "14": "SIM0_VCC",
+        "15": "MODEM_RESET_TP",
+        "16": null,
+        "17": "MODEM_UART_RX_1V8",
+        "18": "MODEM_UART_TX_1V8",
+        "19": "MODEM_DTR_1V8",
+        "20": "MODEM_RI_TP",
+        "21": null,
+        "22": "MODEM_CTS_TP",
+        "23": "MODEM_RTS_TP",
+        "24": "MODEM_1V8",
+        "25": "MODEM_STATE_1V8",
+        "26": null,
+        "27": "GND",
+        "28": null,
+        "29": null,
+        "30": null,
+        "31": null,
+        "32": null,
+        "33": null,
+        "34": "GND",
+        "35": "LTE_RF",
+        "36": "GND",
+        "37": "GND",
+        "38": "MODEM_DBG_RX_TP",
+        "39": "MODEM_DBG_TX_TP",
+        "40": "GND",
+        "41": "GND",
+        "42": "MODEM_3V8",
+        "43": "MODEM_3V8",
+        "44": null,
+        "45": "GND",
+        "46": "GND",
+        "47": "GND",
+        "48": "GND",
+        "49": "MODEM_WAKE_TP",
+        "50": null,
+        "51": null,
+        "52": null,
+        "53": null,
+        "54": null,
+        "55": null,
+        "56": null,
+        "57": null,
+        "58": null,
+        "59": "MODEM_USB_P",
+        "60": "MODEM_USB_N",
+        "61": "MODEM_VBUS5",
+        "62": null,
+        "63": null,
+        "64": null,
+        "65": null,
+        "66": null,
+        "67": null,
+        "68": null,
+        "69": null,
+        "70": "GND",
+        "71": "GND",
+        "72": "GND",
+        "73": "GND",
+        "74": null,
+        "75": null,
+        "76": null,
+        "77": null,
+        "78": null,
+        "79": "SIM0_DET",
+        "80": null,
+        "81": null,
+        "82": "MODEM_BOOT_TP",
+        "83": null,
+        "84": null,
+        "85": null,
+        "86": null,
+        "87": null,
+        "88": "GND",
+        "89": "GND",
+        "90": "GND",
+        "91": "GND",
+        "92": "GND",
+        "93": "GND",
+        "94": "GND"
+      },
+      "xy": [
+        76.2,
+        142.24
+      ],
+      "footprint": "Carrier:ML307A_GCLN_LGA94",
+      "pcb": [
+        29.0,
+        28.0
+      ],
+      "side": "F",
+      "angle": 90.0,
+      "status": "fitted full-feature build; footprint and interface verification pending",
+      "source": "https://openluat.com/ml307a/",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "U1001",
+      "kind": "TXU0202_DCU",
+      "value": "TXU0202DCUR",
+      "nets": {
+        "1": "MODEM_UART_TX_1V8",
+        "2": "GND",
+        "3": "+3V3",
+        "4": "MODEM_AT_RX",
+        "5": "MODEM_AT_TX",
+        "6": "+3V3",
+        "7": "MODEM_1V8",
+        "8": "MODEM_UART_RX_1V8"
+      },
+      "xy": [
+        215.9,
+        60.96
+      ],
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pcb": [
+        49.0,
+        35.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/txu0202.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "U1002",
+      "kind": "TXU0202_DCU",
+      "value": "TXU0202DCUR",
+      "nets": {
+        "1": "MODEM_STATE_1V8",
+        "2": "GND",
+        "3": "+3V3",
+        "4": "MODEM_STATE",
+        "5": "MODEM_DTR",
+        "6": "+3V3",
+        "7": "MODEM_1V8",
+        "8": "MODEM_DTR_1V8"
+      },
+      "xy": [
+        330.2,
+        60.96
+      ],
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pcb": [
+        40.0,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/txu0202.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "C1000",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "MODEM_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        47.0,
+        24.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "C1001",
+      "kind": "C",
+      "value": "1u",
+      "nets": {
+        "1": "MODEM_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        48.6,
+        21.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "C1002",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        40.6,
+        26.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "C1003",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        47.0,
+        26.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "Q1000",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "MODEM_PWRKEY",
+        "2": "GND",
+        "3": "MODEM_KEY_N"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        40.8,
+        23.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "R1000",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MODEM_PWRKEY",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        48.8,
+        18.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "R1001",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MODEM_DTR",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        45.0,
+        21.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "C1004",
+      "kind": "C",
+      "value": "1n",
+      "nets": {
+        "1": "MODEM_RESET_TP",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        38.2,
+        18.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1000",
+      "kind": "TestPoint",
+      "value": "MODEM_RESET_TP",
+      "nets": {
+        "1": "MODEM_RESET_TP"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        49.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1001",
+      "kind": "TestPoint",
+      "value": "MODEM_BOOT_TP",
+      "nets": {
+        "1": "MODEM_BOOT_TP"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        52.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1002",
+      "kind": "TestPoint",
+      "value": "MODEM_DBG_RX_TP",
+      "nets": {
+        "1": "MODEM_DBG_RX_TP"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        55.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1003",
+      "kind": "TestPoint",
+      "value": "MODEM_DBG_TX_TP",
+      "nets": {
+        "1": "MODEM_DBG_TX_TP"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        39.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1004",
+      "kind": "TestPoint",
+      "value": "MODEM_WAKE_TP",
+      "nets": {
+        "1": "MODEM_WAKE_TP"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        36.5,
+        81.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1005",
+      "kind": "TestPoint",
+      "value": "MODEM_RI_TP",
+      "nets": {
+        "1": "MODEM_RI_TP"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        33.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1006",
+      "kind": "TestPoint",
+      "value": "MODEM_CTS_TP",
+      "nets": {
+        "1": "MODEM_CTS_TP"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        36.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "08_modem",
+      "ref": "TP1007",
+      "kind": "TestPoint",
+      "value": "MODEM_RTS_TP",
+      "nets": {
+        "1": "MODEM_RTS_TP"
+      },
+      "xy": [
+        358.14,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        43.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "U1010",
+      "kind": "TLV62585_DRL",
+      "value": "TLV62585DRLR",
+      "nets": {
+        "1": "GND",
+        "2": "MODEM_SW",
+        "3": "+5V",
+        "4": "MODEM_POWER_EN",
+        "5": "MODEM_FB",
+        "6": null
+      },
+      "xy": [
+        57.15,
+        81.28
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-563",
+      "pcb": [
+        35.0,
+        50.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "thermal qualification required",
+      "source": "https://www.ti.com/lit/ds/symlink/tlv62585.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "L1010",
+      "kind": "L",
+      "value": "1uH Isat>=4.5A",
+      "nets": {
+        "1": "MODEM_SW",
+        "2": "MODEM_3V8"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "pcb": [
+        31.0,
+        50.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1010",
+      "kind": "R",
+      "value": "536k 1%",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "MODEM_FB"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        35.5,
+        40.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1011",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "MODEM_FB",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        46.0,
+        49.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1012",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MODEM_POWER_EN",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        42.6,
+        42.2
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1010",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        40.0,
+        51.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1011",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        35.5,
+        53.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1012",
+      "kind": "C",
+      "value": "220u 6.3V low ESR",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+      "pcb": [
+        31.0,
+        43.0
+      ],
+      "side": "F",
+      "angle": 90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1013",
+      "kind": "C",
+      "value": "220u 6.3V low ESR",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+      "pcb": [
+        25.5,
+        43.0
+      ],
+      "side": "F",
+      "angle": 90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1014",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        49.0,
+        45.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1015",
+      "kind": "C",
+      "value": "100p C0G",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        45.0,
+        53.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1016",
+      "kind": "C",
+      "value": "33p C0G",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        35.5,
+        55.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "Q1010",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "MODEM_POWER_EN",
+        "2": "GND",
+        "3": "MODEM_DISCHARGE_EN"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        39.5,
+        54.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1013",
+      "kind": "R",
+      "value": "47k",
+      "nets": {
+        "1": "+3V3",
+        "2": "MODEM_DISCHARGE_EN"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        27.5,
+        56.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "Q1011",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "MODEM_DISCHARGE_EN",
+        "2": "GND",
+        "3": "MODEM_DISCHARGE"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        49.0,
+        56.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1014",
+      "kind": "R",
+      "value": "100R 0.25W",
+      "nets": {
+        "1": "MODEM_3V8",
+        "2": "MODEM_DISCHARGE"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "pcb": [
+        44.0,
+        56.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "U1011",
+      "kind": "TPS22918",
+      "value": "TPS22918DBVR",
+      "nets": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "MODEM_USB_VBUS_EN",
+        "4": "MODEM_USB_SLEW",
+        "5": "MODEM_USB_QOD",
+        "6": "MODEM_VBUS5"
+      },
+      "xy": [
+        57.15,
+        139.7
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        49.5,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1015",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "MODEM_USB_VBUS_EN",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        49.5,
+        53.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1016",
+      "kind": "R",
+      "value": "1k",
+      "nets": {
+        "1": "MODEM_USB_QOD",
+        "2": "MODEM_VBUS5"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        39.5,
+        49.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1017",
+      "kind": "C",
+      "value": "1n",
+      "nets": {
+        "1": "MODEM_USB_SLEW",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        31.0,
+        57.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1018",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "MODEM_VBUS5",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        49.0,
+        43.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "U1012",
+      "kind": "AP2112K",
+      "value": "AP2112K-3.3TRG1",
+      "nets": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "GNSS_ANT_POWER_EN",
+        "4": null,
+        "5": "GNSS_A3V3"
+      },
+      "xy": [
+        57.15,
+        198.12
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        45.0,
+        39.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1019",
+      "kind": "C",
+      "value": "1u",
+      "nets": {
+        "1": "GNSS_A3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        46.0,
+        51.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "C1020",
+      "kind": "C",
+      "value": "1u",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        42.6,
+        44.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "R1017",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "GNSS_ANT_POWER_EN",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        31.5,
+        55.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "TP1010",
+      "kind": "TestPoint",
+      "value": "GNSS_A3V3",
+      "nets": {
+        "1": "GNSS_A3V3"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        30.5,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "TP1011",
+      "kind": "TestPoint",
+      "value": "MODEM_3V8",
+      "nets": {
+        "1": "MODEM_3V8"
+      },
+      "xy": [
+        358.14,
+        195.58
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+      "pcb": [
+        46.0,
+        78.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "09_modem_power",
+      "ref": "#FLG1010",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "MODEM_3V8"
+      },
+      "xy": [
+        50.8,
+        251.46
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "J1000",
+      "kind": "NANOSIM",
+      "value": "GCT SIM8066-6-1-14-01-A",
+      "nets": {
+        "1": "SIM0_VCC",
+        "2": "SIM_RST_SOCKET",
+        "3": "SIM_CLK_SOCKET",
+        "5": "GND",
+        "6": null,
+        "7": "SIM_DATA_SOCKET",
+        "SH": "GND",
+        "SW": "SIM0_DET"
+      },
+      "xy": [
+        63.5,
+        73.66
+      ],
+      "footprint": "Carrier:nanoSIM_GCT_SIM8066_PushPush",
+      "pcb": [
+        8.2,
+        29.0
+      ],
+      "side": "F",
+      "angle": -90.0,
+      "status": "Push-push nano-SIM; CD normally closed to shield; HIGH means card present",
+      "source": "https://gct.co/connector/sim8066",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1030",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SIM0_DATA",
+        "2": "SIM_DATA_SOCKET"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        33.5,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1031",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SIM0_RST",
+        "2": "SIM_RST_SOCKET"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        13.5,
+        20.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1032",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SIM0_CLK",
+        "2": "SIM_CLK_SOCKET"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        26.5,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1030",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "SIM0_VCC",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        40.5,
+        20.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1033",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "MODEM_1V8",
+        "2": "SIM0_DET"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        6.5,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1031",
+      "kind": "C",
+      "value": "10n",
+      "nets": {
+        "1": "SIM0_DET",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        19.5,
+        17.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1034",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "SIM0_VCC",
+        "2": "SIM_DATA_SOCKET"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        17.8,
+        33.0
+      ],
+      "side": "F",
+      "angle": 90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "U1030",
+      "kind": "USBLC6",
+      "value": "USBLC6-2SC6",
+      "nets": {
+        "1": "SIM_DATA_SOCKET",
+        "2": "GND",
+        "3": "SIM_CLK_SOCKET",
+        "4": "SIM_CLK_SOCKET",
+        "5": "SIM0_VCC",
+        "6": "SIM_DATA_SOCKET"
+      },
+      "xy": [
+        63.5,
+        127.0
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        13.0,
+        38.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "U1031",
+      "kind": "USBLC6",
+      "value": "USBLC6-2SC6",
+      "nets": {
+        "1": "SIM_RST_SOCKET",
+        "2": "GND",
+        "3": "GND",
+        "4": "GND",
+        "5": "SIM0_VCC",
+        "6": "SIM_RST_SOCKET"
+      },
+      "xy": [
+        63.5,
+        177.8
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pcb": [
+        8.2,
+        38.8
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "J1010",
+      "kind": "RF_CONN",
+      "value": "IPEX-1 50R",
+      "nets": {
+        "1": "LTE_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+      "pcb": [
+        51.0,
+        12.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "R1040",
+      "kind": "R",
+      "value": "0R RF match",
+      "nets": {
+        "1": "LTE_RF",
+        "2": "LTE_ANT"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        17.2,
+        19.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1040",
+      "kind": "C",
+      "value": "DNP RF tune",
+      "nets": {
+        "1": "LTE_RF",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        10.0,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1041",
+      "kind": "C",
+      "value": "DNP RF tune",
+      "nets": {
+        "1": "LTE_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        23.0,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "J1011",
+      "kind": "RF_CONN",
+      "value": "IPEX-1 50R",
+      "nets": {
+        "1": "GNSS_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+      "pcb": [
+        44.0,
+        17.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1044",
+      "kind": "C",
+      "value": "100p C0G RF DC block",
+      "nets": {
+        "1": "GNSS_RF",
+        "2": "GNSS_ANT"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        8.2,
+        19.4
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1042",
+      "kind": "C",
+      "value": "DNP RF tune",
+      "nets": {
+        "1": "GNSS_RF",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        30.0,
+        18.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "10_sim_rf",
+      "ref": "C1043",
+      "kind": "C",
+      "value": "DNP RF tune",
+      "nets": {
+        "1": "GNSS_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        13.6,
+        18.6
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": true
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "U800",
+      "kind": "ES8389",
+      "value": "ES8389",
+      "nets": {
+        "1": "CODEC_AD0",
+        "2": "SYSTEM_I2C_SDA",
+        "3": "SYSTEM_I2C_SCL",
+        "4": "CODEC_TDMIN",
+        "5": "AUDIO_3V3",
+        "6": "AUDIO_3V3",
+        "7": "GND",
+        "8": "CODEC_BCLK",
+        "9": "CODEC_MCLK",
+        "10": "CODEC_LRCK",
+        "11": "CODEC_DOUT",
+        "12": "DAC_R_P",
+        "13": "DAC_R_N",
+        "14": "DAC_VREF",
+        "15": "DAC_L_N",
+        "16": "DAC_L_P",
+        "17": "AUDIO_3V3",
+        "18": "GND",
+        "19": "CODEC_VMID",
+        "20": "ADC_VREF",
+        "21": "MIC_R_N",
+        "22": "MIC_R_P",
+        "23": "MIC_L_N",
+        "24": "MIC_L_P",
+        "25": "GND"
+      },
+      "xy": [
+        76.2,
+        99.06
+      ],
+      "footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "pcb": [
+        123.0,
+        65.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "S31 TDM pin mux; 0x12; firmware port required",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "U801",
+      "kind": "AP2112K",
+      "value": "AP2112K-3.3TRG1",
+      "nets": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "+5V",
+        "4": null,
+        "5": "AUDIO_3V3"
+      },
+      "xy": [
+        76.2,
+        175.26
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        134.0,
+        61.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R800",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "I2S_MCLK",
+        "2": "CODEC_MCLK"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        129.5,
+        60.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R801",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "I2S_BCLK",
+        "2": "CODEC_BCLK"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        129.0,
+        58.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R802",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "I2S_LRCK",
+        "2": "CODEC_LRCK"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        133.5,
+        68.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R803",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "I2S_DOUT",
+        "2": "CODEC_TDMIN"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        129.0,
+        72.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R804",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "CODEC_DOUT",
+        "2": "I2S_DIN"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        125.5,
+        57.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R805",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "CODEC_AD0",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        123.0,
+        68.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R806",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "CODEC_DOUT"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        118.5,
+        62.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C800",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        135.0,
+        58.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C801",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        135.0,
+        65.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C802",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        122.0,
+        61.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C803",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        126.0,
+        61.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C804",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        129.5,
+        62.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C805",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "DAC_VREF",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        118.5,
+        60.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C806",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "ADC_VREF",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        119.0,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C807",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "CODEC_VMID",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        119.5,
+        69.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C808",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "DAC_L_P",
+        "2": "DAC_L_P_AC"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        126.5,
+        68.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R807",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "DAC_L_P_AC"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        125.5,
+        59.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C809",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "DAC_L_N",
+        "2": "DAC_L_N_AC"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        122.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R808",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "DAC_L_N_AC"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        119.0,
+        64.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C810",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "DAC_R_P",
+        "2": "DAC_R_P_AC"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        127.5,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R809",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "DAC_R_P_AC"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        127.5,
+        64.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C811",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "DAC_R_N",
+        "2": "DAC_R_N_AC"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        131.0,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "R810",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "DAC_R_N_AC"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        131.0,
+        64.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U815",
+      "kind": "RDA5807M",
+      "value": "RDA5807M",
+      "nets": {
+        "1": "GND",
+        "2": "FM_ANT_IN",
+        "3": "GND",
+        "4": "FM_SCL",
+        "5": "FM_SDA",
+        "6": "FM_RCLK",
+        "7": "FM_3V0",
+        "8": "GND",
+        "9": "FM_R",
+        "10": "FM_L"
+      },
+      "xy": [
+        76.2,
+        78.74
+      ],
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "pcb": [
+        104.0,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "docs/RDA5807M datasheet_v1.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U810",
+      "kind": "ME6211C",
+      "value": "ME6211C30M5G-N",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND",
+        "3": "FM_POWER_EN",
+        "4": null,
+        "5": "FM_3V0"
+      },
+      "xy": [
+        76.2,
+        121.92
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        110.0,
+        62.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "3.0V 1%; 1uF ceramic input/output; verify low-headroom startup and FM noise on bench",
+      "source": "https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U811",
+      "kind": "SN74LVC1G3157",
+      "value": "SN74LVC1G3157DCKR",
+      "nets": {
+        "1": "FM_L_BIASED",
+        "2": "GND",
+        "3": "DAC_L_P_AC",
+        "4": "AMP_L_P_AC",
+        "5": "AUDIO_3V3",
+        "6": "AUDIO_SELECT_LOCAL"
+      },
+      "xy": [
+        76.2,
+        160.02
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pcb": [
+        96.0,
+        63.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U812",
+      "kind": "SN74LVC1G3157",
+      "value": "SN74LVC1G3157DCKR",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "GND",
+        "3": "DAC_L_N_AC",
+        "4": "AMP_L_N_AC",
+        "5": "AUDIO_3V3",
+        "6": "AUDIO_SELECT_LOCAL"
+      },
+      "xy": [
+        76.2,
+        193.04
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pcb": [
+        92.0,
+        63.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U813",
+      "kind": "SN74LVC1G3157",
+      "value": "SN74LVC1G3157DCKR",
+      "nets": {
+        "1": "FM_R_BIASED",
+        "2": "GND",
+        "3": "DAC_R_P_AC",
+        "4": "AMP_R_P_AC",
+        "5": "AUDIO_3V3",
+        "6": "AUDIO_SELECT_LOCAL"
+      },
+      "xy": [
+        76.2,
+        226.06
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pcb": [
+        96.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U814",
+      "kind": "SN74LVC1G3157",
+      "value": "SN74LVC1G3157DCKR",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "GND",
+        "3": "DAC_R_N_AC",
+        "4": "AMP_R_N_AC",
+        "5": "AUDIO_3V3",
+        "6": "AUDIO_SELECT_LOCAL"
+      },
+      "xy": [
+        76.2,
+        259.08
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pcb": [
+        92.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R812",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "FM_POWER_EN",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        88.5,
+        61.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R811",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        109.0,
+        68.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C812",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C813",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.0,
+        66.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C814",
+      "kind": "C",
+      "value": "22n",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        103.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "Q810",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "FM_SDA",
+        "3": "SYSTEM_I2C_SDA"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        102.5,
+        73.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R813",
+      "kind": "R",
+      "value": "4.7k",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "FM_SDA"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        94.0,
+        69.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "Q811",
+      "kind": "Q_NMOS",
+      "value": "2N7002",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "FM_SCL",
+        "3": "SYSTEM_I2C_SCL"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pcb": [
+        98.0,
+        70.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R814",
+      "kind": "R",
+      "value": "4.7k",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "FM_SCL"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        99.5,
+        63.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C815",
+      "kind": "C",
+      "value": "2.2u 10V",
+      "nets": {
+        "1": "FM_L",
+        "2": "FM_L_BIASED"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        88.5,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R815",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "FM_L_BIASED"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        88.5,
+        63.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C816",
+      "kind": "C",
+      "value": "2.2u 10V",
+      "nets": {
+        "1": "FM_R",
+        "2": "FM_R_BIASED"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        103.0,
+        63.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R816",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "FM_R_BIASED"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        99.5,
+        61.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R817",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "AUDIO_MID"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        96.0,
+        60.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R818",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        106.5,
+        72.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C817",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "AUDIO_MID",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        97.5,
+        73.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R819",
+      "kind": "R",
+      "value": "1k",
+      "nets": {
+        "1": "AUDIO_SOURCE_SELECT",
+        "2": "AUDIO_SELECT_LOCAL"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        88.5,
+        65.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R820",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "AUDIO_SELECT_LOCAL",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        106.5,
+        74.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C818",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        92.5,
+        60.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C819",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        103.0,
+        61.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C820",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        99.5,
+        59.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C821",
+      "kind": "C",
+      "value": "100n",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        108.0,
+        70.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "Y810",
+      "kind": "XTAL2",
+      "value": "ABS07-32.768KHZ-7-T",
+      "nets": {
+        "1": "FM_RCLK",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        251.46
+      ],
+      "footprint": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
+      "pcb": [
+        104.0,
+        70.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "RDA DCXO self-bias, CL=7pF; no generic two-pin MCU Pierce capacitors",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "J810",
+      "kind": "CONN2",
+      "value": "FM ANT / GND",
+      "nets": {
+        "1": "FM_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        251.46
+      ],
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "pcb": [
+        93.0,
+        74.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C822",
+      "kind": "C",
+      "value": "100p C0G",
+      "nets": {
+        "1": "FM_ANT",
+        "2": "FM_ANT_IN"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        110.0,
+        72.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "D810",
+      "kind": "D_TVS",
+      "value": "PESD5V0U1BA",
+      "nets": {
+        "1": "FM_ANT",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        251.46
+      ],
+      "footprint": "Diode_SMD:D_SOD-323",
+      "pcb": [
+        88.5,
+        69.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "U802",
+      "kind": "LMA3729T381_OAS02",
+      "value": "LMA3729T381-OAS02",
+      "nets": {
+        "1": "MIC_L_3V3",
+        "2": "MIC_L_OUT",
+        "3": "GND",
+        "4": "GND"
+      },
+      "xy": [
+        76.2,
+        83.82
+      ],
+      "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "pcb": [
+        125.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "R840",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "MIC_L_3V3"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        132.5,
+        70.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C840",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "MIC_L_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        132.5,
+        72.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C841",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "MIC_L_OUT",
+        "2": "MIC_L_P"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        132.5,
+        74.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C842",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "GND",
+        "2": "MIC_L_N"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        121.0,
+        75.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C843",
+      "kind": "C",
+      "value": "100p C0G",
+      "nets": {
+        "1": "MIC_L_P",
+        "2": "MIC_L_N"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        129.0,
+        74.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C848",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "MIC_L_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        121.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "#FLG840",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "MIC_L_3V3"
+      },
+      "xy": [
+        50.8,
+        226.06
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "U803",
+      "kind": "LMA3729T381_OAS02",
+      "value": "LMA3729T381-OAS02",
+      "nets": {
+        "1": "MIC_R_3V3",
+        "2": "MIC_R_OUT",
+        "3": "GND",
+        "4": "GND"
+      },
+      "xy": [
+        76.2,
+        152.4
+      ],
+      "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "pcb": [
+        65.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "R841",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "MIC_R_3V3"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        65.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C844",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "MIC_R_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        65.0,
+        69.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C845",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "MIC_R_OUT",
+        "2": "MIC_R_P"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        121.0,
+        71.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C846",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "GND",
+        "2": "MIC_R_N"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        130.0,
+        68.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C847",
+      "kind": "C",
+      "value": "100p C0G",
+      "nets": {
+        "1": "MIC_R_P",
+        "2": "MIC_R_N"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        129.0,
+        70.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "C849",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "MIC_R_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        61.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "18_dual_mic",
+      "ref": "#FLG841",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "MIC_R_3V3"
+      },
+      "xy": [
+        101.6,
+        226.06
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "U820",
+      "kind": "NS4150B",
+      "value": "NS4150B",
+      "nets": {
+        "1": "AMP_EN",
+        "2": "PA_L_BYPASS",
+        "3": "PA_L_INP",
+        "4": "PA_L_INN",
+        "5": "SPK_L_N",
+        "6": "PA_4V8",
+        "7": "GND",
+        "8": "SPK_L_P"
+      },
+      "xy": [
+        76.2,
+        76.2
+      ],
+      "footprint": "Package_SO:MSOP-8_3x3mm_P0.65mm",
+      "pcb": [
+        53.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://www.micros.com.pl/mediaserver/ULNS4150b_NSIWAY_0001.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "J820",
+      "kind": "CONN2",
+      "value": "SPEAKER L / 4R",
+      "nets": {
+        "1": "SPK_L_P",
+        "2": "SPK_L_N"
+      },
+      "xy": [
+        76.2,
+        218.44
+      ],
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "pcb": [
+        51.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C860",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AMP_L_P_AC",
+        "2": "PA_L_CIN_P"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        49.5,
+        63.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R860",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "PA_L_CIN_P",
+        "2": "PA_L_INP"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        58.0,
+        65.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C865",
+      "kind": "C",
+      "value": "1n C0G",
+      "nets": {
+        "1": "SPK_L_P",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        57.5,
+        75.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C861",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AMP_L_N_AC",
+        "2": "PA_L_CIN_N"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        48.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R861",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "PA_L_CIN_N",
+        "2": "PA_L_INN"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        58.0,
+        68.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C866",
+      "kind": "C",
+      "value": "1n C0G",
+      "nets": {
+        "1": "SPK_L_N",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        53.0,
+        61.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R862",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "AMP_EN",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        57.5,
+        71.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C862",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "PA_L_BYPASS",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        57.5,
+        73.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C863",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        56.5,
+        63.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C864",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        53.0,
+        63.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "U821",
+      "kind": "NS4150B",
+      "value": "NS4150B",
+      "nets": {
+        "1": "AMP_EN",
+        "2": "PA_R_BYPASS",
+        "3": "PA_R_INP",
+        "4": "PA_R_INN",
+        "5": "SPK_R_N",
+        "6": "PA_4V8",
+        "7": "GND",
+        "8": "SPK_R_P"
+      },
+      "xy": [
+        76.2,
+        124.46
+      ],
+      "footprint": "Package_SO:MSOP-8_3x3mm_P0.65mm",
+      "pcb": [
+        38.0,
+        67.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://www.micros.com.pl/mediaserver/ULNS4150b_NSIWAY_0001.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "J821",
+      "kind": "CONN2",
+      "value": "SPEAKER R / 4R",
+      "nets": {
+        "1": "SPK_R_P",
+        "2": "SPK_R_N"
+      },
+      "xy": [
+        76.2,
+        254.0
+      ],
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "pcb": [
+        36.0,
+        73.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C868",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AMP_R_P_AC",
+        "2": "PA_R_CIN_P"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        41.5,
+        63.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R863",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "PA_R_CIN_P",
+        "2": "PA_R_INP"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        43.0,
+        65.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C873",
+      "kind": "C",
+      "value": "1n C0G",
+      "nets": {
+        "1": "SPK_R_P",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        42.5,
+        73.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C869",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AMP_R_N_AC",
+        "2": "PA_R_CIN_N"
+      },
+      "xy": [
+        246.38,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        34.5,
+        64.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R864",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "PA_R_CIN_N",
+        "2": "PA_R_INN"
+      },
+      "xy": [
+        302.26,
+        139.7
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        43.0,
+        68.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C874",
+      "kind": "C",
+      "value": "1n C0G",
+      "nets": {
+        "1": "SPK_R_N",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        139.7
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        33.0,
+        66.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R865",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "AMP_EN",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        167.64
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        42.5,
+        71.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C870",
+      "kind": "C",
+      "value": "1u 10V",
+      "nets": {
+        "1": "PA_R_BYPASS",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        42.5,
+        75.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C871",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        43.5,
+        61.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C872",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        167.64
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        38.0,
+        63.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "U822",
+      "kind": "TLV62585_DRL",
+      "value": "TLV62585DRLR",
+      "nets": {
+        "1": "GND",
+        "2": "PA_BUCK_SW",
+        "3": "+5V",
+        "4": "+5V",
+        "5": "PA_BUCK_FB",
+        "6": null
+      },
+      "xy": [
+        76.2,
+        172.72
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-563",
+      "pcb": [
+        44.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/tlv62585.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "L820",
+      "kind": "L",
+      "value": "1uH Isat>=4.5A",
+      "nets": {
+        "1": "PA_BUCK_SW",
+        "2": "PA_4V8"
+      },
+      "xy": [
+        190.5,
+        195.58
+      ],
+      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "pcb": [
+        39.0,
+        59.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R866",
+      "kind": "R",
+      "value": "680k 1%",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "PA_BUCK_FB"
+      },
+      "xy": [
+        246.38,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        47.0,
+        61.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "R867",
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "PA_BUCK_FB",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        195.58
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        45.0,
+        63.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C876",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        195.58
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        47.5,
+        59.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C877",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        34.5,
+        57.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "C878",
+      "kind": "C",
+      "value": "22u 10V",
+      "nets": {
+        "1": "PA_4V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pcb": [
+        34.5,
+        60.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "19_stereo_pa",
+      "ref": "#FLG820",
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "PA_4V8"
+      },
+      "xy": [
+        139.7,
+        251.46
+      ],
+      "footprint": "",
+      "pcb": null,
+      "side": "B",
+      "angle": 0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "J1200",
+      "kind": "LCM070_FPC30",
+      "value": "FPC-05FB-30PH20",
+      "nets": {
+        "1": "LCD_LEDA",
+        "2": "LCD_LEDA",
+        "3": "LCD_VGH",
+        "4": "LCD_VGL",
+        "5": "LCD_UPDN",
+        "6": "LCD_SHLR",
+        "7": "LCD_LEDK",
+        "8": "LCD_LEDK",
+        "9": "LCD_AVDD_9V8",
+        "10": "GND",
+        "11": null,
+        "12": null,
+        "13": "GND",
+        "14": null,
+        "15": null,
+        "16": "GND",
+        "17": "DSI_CLK_P",
+        "18": "DSI_CLK_N",
+        "19": "GND",
+        "20": "DSI_D1_P",
+        "21": "DSI_D1_N",
+        "22": "GND",
+        "23": "DSI_D0_P",
+        "24": "DSI_D0_N",
+        "25": "GND",
+        "26": "LCD_STBYB_1V8",
+        "27": "LCD_RESET_1V8",
+        "28": "LCD_1V8",
+        "29": "LCD_1V8",
+        "30": "LCD_VCOM",
+        "MP": "GND"
+      },
+      "xy": [
+        71.12,
+        93.98
+      ],
+      "footprint": "Carrier:XUNPU_FPC_05FB_30PH20",
+      "pcb": [
+        74.5,
+        46.175
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "LCD pinout checked; folded-tail fit and connector tolerances unverified",
+      "source": "https://www.xunpu.com.cn/product/413.html",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "U1200",
+      "kind": "AP2112K",
+      "value": "AP2112K-1.8TRG1",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "LCD_VDD_EN",
+        "4": null,
+        "5": "LCD_1V8"
+      },
+      "xy": [
+        71.12,
+        165.1
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pcb": [
+        88.5,
+        50.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "U1201",
+      "kind": "TXU0102_DCU",
+      "value": "TXU0102DCUR",
+      "nets": {
+        "1": "LCD_STBYB_1V8",
+        "2": "GND",
+        "3": "+3V3",
+        "4": "LCD_STBYB",
+        "5": "LCD_RESET",
+        "6": "LCD_1V8",
+        "7": "LCD_1V8",
+        "8": "LCD_RESET_1V8"
+      },
+      "xy": [
+        71.12,
+        224.79
+      ],
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pcb": [
+        93.5,
+        53.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://www.ti.com/lit/ds/symlink/txu0102.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "C1200",
+      "kind": "C",
+      "value": "1u 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        91.0,
+        56.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "C1201",
+      "kind": "C",
+      "value": "1u 10V X7R",
+      "nets": {
+        "1": "LCD_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        88.5,
+        53.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "C1202",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "LCD_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        92.5,
+        51.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "C1203",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        93.5,
+        58.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1200",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "LCD_VDD_EN",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        45.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1201",
+      "kind": "R",
+      "value": "10k bleed",
+      "nets": {
+        "1": "LCD_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        90.5,
+        40.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1202",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "LCD_RESET",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        92.5,
+        47.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1203",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "LCD_STBYB",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        43.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1204",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "LCD_RESET_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        57.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1205",
+      "kind": "R",
+      "value": "100k",
+      "nets": {
+        "1": "LCD_STBYB_1V8",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        47.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1206",
+      "kind": "R",
+      "value": "10k scan option",
+      "nets": {
+        "1": "LCD_UPDN",
+        "2": "LCD_1V8"
+      },
+      "xy": [
+        302.26,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        59.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "14_lcd_fpc",
+      "ref": "R1207",
+      "kind": "R",
+      "value": "10k scan option",
+      "nets": {
+        "1": "LCD_SHLR",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        111.76
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        87.5,
+        55.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "J1210",
+      "kind": "TOUCH_FPC6",
+      "value": "FPC-05FB-6PH20",
+      "nets": {
+        "1": "TOUCH_RESET_CONN",
+        "2": "+3V3",
+        "3": "GND",
+        "4": "TOUCH_INT_CONN",
+        "5": "TOUCH_SDA_CONN",
+        "6": "TOUCH_SCL_CONN",
+        "MP": "GND"
+      },
+      "xy": [
+        73.66,
+        83.82
+      ],
+      "footprint": "Carrier:XUNPU_FPC_05FB_6PH20",
+      "pcb": [
+        109.0,
+        7.575
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "REFERENCE PINOUT ONLY: selected touch panel drawing and voltage unverified",
+      "source": "https://www.xunpu.com.cn/product/413.html",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1210",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TOUCH_RESET",
+        "2": "TOUCH_RESET_CONN"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        99.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1211",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "TOUCH_INT",
+        "2": "TOUCH_INT_CONN"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        95.5,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1212",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "CAM_TOUCH_I2C_SDA",
+        "2": "TOUCH_SDA_CONN"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        92.0,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1213",
+      "kind": "R",
+      "value": "100R",
+      "nets": {
+        "1": "CAM_TOUCH_I2C_SCL",
+        "2": "TOUCH_SCL_CONN"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        88.5,
+        11.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1214",
+      "kind": "R",
+      "value": "4.7k",
+      "nets": {
+        "1": "+3V3",
+        "2": "CAM_TOUCH_I2C_SDA"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        99.0,
+        15.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "R1215",
+      "kind": "R",
+      "value": "4.7k",
+      "nets": {
+        "1": "+3V3",
+        "2": "CAM_TOUCH_I2C_SCL"
+      },
+      "xy": [
+        246.38,
+        83.82
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        95.5,
+        15.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "C1210",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        92.0,
+        15.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "15_touch_fpc",
+      "ref": "C1211",
+      "kind": "C",
+      "value": "1u 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        88.5,
+        15.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "16_camera_fpc",
+      "ref": "J1220",
+      "kind": "SC2336_FPC24",
+      "value": "FPC-05FB-24PH20",
+      "nets": {
+        "1": null,
+        "2": null,
+        "3": "CSI_D1_N",
+        "4": "CSI_D1_P",
+        "5": "GND",
+        "6": "CSI_CLK_N",
+        "7": "CSI_CLK_P",
+        "8": "GND",
+        "9": "CSI_D0_N",
+        "10": "CSI_D0_P",
+        "11": null,
+        "12": null,
+        "13": "GND",
+        "14": "CAM_MCLK_1V8",
+        "15": "GND",
+        "16": "CAM_DOVDD_1V8",
+        "17": "CAM_RESET_1V8",
+        "18": null,
+        "19": "GND",
+        "20": "CAM_SDA_1V8",
+        "21": "CAM_SCL_1V8",
+        "22": "GND",
+        "23": "CAM_AVDD_2V8",
+        "24": "CAM_AVDD_2V8",
+        "MP": "GND"
+      },
+      "xy": [
+        73.66,
+        96.52
+      ],
+      "footprint": "Carrier:XUNPU_FPC_05FB_24PH20",
+      "pcb": [
+        68.5,
+        7.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "Camera pin map checked; power, MCLK, level conversion and physical mating pending",
+      "source": "https://github.com/osptek/esp32-p4c5-module-dev-board",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "U1300",
+      "kind": "OPT3001_DNP",
+      "value": "OPT3001DNPR",
+      "nets": {
+        "1": "+3V3",
+        "2": "+3V3",
+        "3": "GND",
+        "4": "CABIN_I2C_SCL",
+        "5": null,
+        "6": "CABIN_I2C_SDA",
+        "7": "GND"
+      },
+      "xy": [
+        76.2,
+        83.82
+      ],
+      "footprint": "Carrier:OPT3001_DNP0006A",
+      "pcb": [
+        87.0,
+        4.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "0x45, polled; optical window and assembled calibration required",
+      "source": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "U1301",
+      "kind": "SHT40",
+      "value": "SHT40-AD1B-R2",
+      "nets": {
+        "1": "CABIN_I2C_SDA",
+        "2": "CABIN_I2C_SCL",
+        "3": "+3V3",
+        "4": "GND"
+      },
+      "xy": [
+        76.2,
+        147.32
+      ],
+      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "pcb": [
+        23.0,
+        80.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "0x44; no center pad; vented thermal island, heater normally off",
+      "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "R1300",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SYSTEM_I2C_SDA",
+        "2": "CABIN_I2C_SDA"
+      },
+      "xy": [
+        190.5,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        85.0,
+        10.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "R1301",
+      "kind": "R",
+      "value": "22R",
+      "nets": {
+        "1": "SYSTEM_I2C_SCL",
+        "2": "CABIN_I2C_SCL"
+      },
+      "xy": [
+        246.38,
+        55.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        81.5,
+        10.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "C1300",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        87.0,
+        7.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "C1301",
+      "kind": "C",
+      "value": "100n 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        55.88
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        23.0,
+        77.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "17_cabin_sensors",
+      "ref": "C1302",
+      "kind": "C",
+      "value": "1u 10V X7R",
+      "nets": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        83.82
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        90.5,
+        7.5
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    }
+  ],
+  "sheets": {
+    "01_core": "01 Core compatibility",
+    "02_usb": "02 USB-C and UART",
+    "03_usb_current": "03 USB input qualification",
+    "04_charger": "04 Battery charger / power path",
+    "05_system_switch": "05 Controlled shutdown",
+    "06_main_power": "06 Regulated 5 V / 3.3 V",
+    "07_sd": "07 microSD 4-bit interface",
+    "08_modem": "08 ML307A-GCLN fitted",
+    "09_modem_power": "09 Modem power and RF",
+    "10_sim_rf": "10 SIM and antenna interfaces",
+    "11_codec": "11 ES8389 stereo codec",
+    "12_fm_audio": "12 RDA5807M and stereo source",
+    "13_release_holds": "13 Pending interface closure",
+    "14_lcd_fpc": "14 LCD FPC and 1V8 controls",
+    "15_touch_fpc": "15 Touch FPC reference interface",
+    "16_camera_fpc": "16 Camera FPC pin map",
+    "17_cabin_sensors": "17 Cabin ambient light and humidity",
+    "18_dual_mic": "18 Dual onboard microphones",
+    "19_stereo_pa": "19 Dual speaker amplifiers"
+  },
+  "geometric_verifier": {
+    "01_core": {
+      "segments": 128,
+      "pins": 128,
+      "violations": 0
+    },
+    "02_usb": {
+      "segments": 62,
+      "pins": 68,
+      "violations": 0
+    },
+    "03_usb_current": {
+      "segments": 65,
+      "pins": 65,
+      "violations": 0
+    },
+    "04_charger": {
+      "segments": 66,
+      "pins": 66,
+      "violations": 0
+    },
+    "05_system_switch": {
+      "segments": 37,
+      "pins": 37,
+      "violations": 0
+    },
+    "06_main_power": {
+      "segments": 72,
+      "pins": 72,
+      "violations": 0
+    },
+    "07_sd": {
+      "segments": 55,
+      "pins": 55,
+      "violations": 0
+    },
+    "08_modem": {
+      "segments": 90,
+      "pins": 90,
+      "violations": 0
+    },
+    "09_modem_power": {
+      "segments": 64,
+      "pins": 64,
+      "violations": 0
+    },
+    "10_sim_rf": {
+      "segments": 49,
+      "pins": 49,
+      "violations": 0
+    },
+    "11_codec": {
+      "segments": 75,
+      "pins": 75,
+      "violations": 0
+    },
+    "12_fm_audio": {
+      "segments": 92,
+      "pins": 92,
+      "violations": 0
+    },
+    "13_release_holds": {
+      "segments": 0,
+      "pins": 0,
+      "violations": 0
+    },
+    "14_lcd_fpc": {
+      "segments": 63,
+      "pins": 63,
+      "violations": 0
+    },
+    "15_touch_fpc": {
+      "segments": 23,
+      "pins": 23,
+      "violations": 0
+    },
+    "16_camera_fpc": {
+      "segments": 20,
+      "pins": 20,
+      "violations": 0
+    },
+    "17_cabin_sensors": {
+      "segments": 20,
+      "pins": 20,
+      "violations": 0
+    },
+    "18_dual_mic": {
+      "segments": 34,
+      "pins": 34,
+      "violations": 0
+    },
+    "19_stereo_pa": {
+      "segments": 78,
+      "pins": 78,
+      "violations": 0
+    }
+  }
+}

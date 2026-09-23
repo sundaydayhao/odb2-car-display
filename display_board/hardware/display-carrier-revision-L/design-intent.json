@@ -1865,7 +1865,7 @@
       "sheet": "04_charger",
       "ref": "J300",
       "kind": "CONN2",
-      "value": "1S BATTERY 10A",
+      "value": "1S BATTERY / PH 2A",
       "nets": {
         "1": "BAT_CONNECTOR",
         "2": "GND"
@@ -1874,15 +1874,15 @@
         53.34,
         162.56
       ],
-      "footprint": "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
       "pcb": [
         121.0,
         5.5
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "JST PH rated 2A with AWG24; HOLD battery current budget, charging limit and fuse coordination",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
       "dnp": false
     },
     {
@@ -1913,7 +1913,7 @@
       "sheet": "04_charger",
       "ref": "F300",
       "kind": "FUSE",
-      "value": "8A pack qualified fuse",
+      "value": "TBD fuse / PH 2A",
       "nets": {
         "1": "BAT_CONNECTOR",
         "2": "BAT_PROTECTED"
@@ -1929,7 +1929,7 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "HOLD: exact fuse I2t and pack reverse-protection test",
+      "status": "HOLD: select fuse for PH 2A connector, wire and pack short-circuit current; old 8A placeholder is withdrawn",
       "source": "",
       "dnp": false
     },

@@ -10656,7 +10656,7 @@
 			)
 		)
 	)
-	(symbol "SGM3157"
+	(symbol "ME6211C"
 		(pin_names
 			(offset 0.635)
 		)
@@ -10670,7 +10670,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3157"
+		(property "Value" "ME6211C"
 			(at 0 -7.62 0)
 			(effects
 				(font
@@ -10678,7 +10678,7 @@
 				)
 			)
 		)
-		(symbol "SGM3157_0_1"
+		(symbol "ME6211C_0_1"
 			(rectangle
 				(start -15.24 5.08)
 				(end 15.24 -5.08)
@@ -10691,7 +10691,135 @@
 				)
 			)
 		)
-		(symbol "SGM3157_1_1"
+		(symbol "ME6211C_1_1"
+			(pin power_in line
+				(at -20.32 2.54 0)
+				(length 5.08)
+				(name "VIN"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -20.32 0 0)
+				(length 5.08)
+				(name "VSS"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 -2.54 0)
+				(length 5.08)
+				(name "CE"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin no_connect line
+				(at 20.32 2.54 180)
+				(length 5.08)
+				(name "NC"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+			(pin power_out line
+				(at 20.32 0 180)
+				(length 5.08)
+				(name "VOUT"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol "SN74LVC1G3157"
+		(pin_names
+			(offset 0.635)
+		)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SN74LVC1G3157"
+			(at 0 -7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "SN74LVC1G3157_0_1"
+			(rectangle
+				(start -15.24 5.08)
+				(end 15.24 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "SN74LVC1G3157_1_1"
 			(pin passive line
 				(at -20.32 2.54 0)
 				(length 5.08)
@@ -11042,7 +11170,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "LMA3729T381"
+	(symbol "LMA3729T381_OAS02"
 		(pin_names
 			(offset 0.635)
 		)
@@ -11056,7 +11184,7 @@
 				)
 			)
 		)
-		(property "Value" "LMA3729T381"
+		(property "Value" "LMA3729T381_OAS02"
 			(at 0 -7.62 0)
 			(effects
 				(font
@@ -11064,7 +11192,7 @@
 				)
 			)
 		)
-		(symbol "LMA3729T381_0_1"
+		(symbol "LMA3729T381_OAS02_0_1"
 			(rectangle
 				(start -15.24 5.08)
 				(end 15.24 -5.08)
@@ -11077,7 +11205,7 @@
 				)
 			)
 		)
-		(symbol "LMA3729T381_1_1"
+		(symbol "LMA3729T381_OAS02_1_1"
 			(pin power_in line
 				(at -20.32 1.27 0)
 				(length 5.08)
@@ -11096,10 +11224,10 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin output line
 				(at -20.32 -1.27 0)
 				(length 5.08)
-				(name "GND1"
+				(name "OUT"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -11117,7 +11245,7 @@
 			(pin power_in line
 				(at 20.32 1.27 180)
 				(length 5.08)
-				(name "GND2"
+				(name "GND1"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -11132,10 +11260,10 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_in line
 				(at 20.32 -1.27 180)
 				(length 5.08)
-				(name "OUT"
+				(name "GND2"
 					(effects
 						(font
 							(size 1.016 1.016)

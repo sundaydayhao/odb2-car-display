@@ -26,9 +26,8 @@ C25819,0603WAF4702T5E,UNI-ROYAL,47k,R214 R216 R520 R521 R522 R523 R524 R1013,,8,
 C25976,0603WAF6812T5E,UNI-ROYAL,68.1k 1%,R215,,1,100,100,20,120,100,200,37100,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:16.893013+00:00,https://www.lcsc.com/product-detail/C25976.html,
 C23003,0603WAF3322T5E,UNI-ROYAL,33.2k 1%,R217,,1,100,100,20,120,100,200,14000,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:17.716932+00:00,https://www.lcsc.com/product-detail/C23003.html,
 C181475,BQ25896RTWR,TI,BQ25896RTWR,U300,,1,100,100,20,120,1,120,2800,PARTNER_CONFIRM,partner,2026-09-23T00:10:58.680290+00:00,https://item.szlcsc.com/192872.html,
-C160315,B2P-VH(LF)(SN),JST,1S BATTERY 10A,J300,,1,100,100,20,120,10,120,297180,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:11:45.095701+00:00,https://www.lcsc.com/product-detail/C160315.html,
-C131337,B2B-PH-K-S(LF)(SN),JST,PACK NTC / RETURN | FM ANT / GND | SPEAKER L / 4R | SPEAKER R / 4R,J301 J810 J820 J821,,4,100,400,20,480,20,480,214940,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:11:46.626750+00:00,https://www.lcsc.com/product-detail/C131337.html,
-,,,8A pack qualified fuse,F300,,1,100,100,20,120,,120,,HOLD,,,,8A 仅是占位要求；电池包短路电流、直流分断能力、温度降额和保护配合尚未闭合。
+C131337,B2B-PH-K-S(LF)(SN),JST,1S BATTERY / PH 2A | PACK NTC / RETURN | FM ANT / GND | SPEAKER L / 4R | SPEAKER R / 4R,J300 J301 J810 J820 J821,,5,100,500,20,600,20,600,214940,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:11:46.626750+00:00,https://www.lcsc.com/product-detail/C131337.html,与 J301 同款 PH 2Pin；额定 2A/AWG24。电池总电流及保险丝配合尚未验证。
+,,,TBD fuse / PH 2A,F300,,1,100,100,20,120,,120,,HOLD,,,,J300 改为 PH 2A 后撤销原 8A 占位；按端子、线材和电池包短路电流重选保险丝，额定电流/分断能力/温度降额待闭合。
 ,,,1uH Isat>=8A,L300,,1,100,100,20,120,,120,,HOLD,,,,1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。
 C13585,CL31A106KBHNNNE,Samsung Electro-Mechanics,10u 25V,C301,,1,100,100,20,120,10,120,542590,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:18:37.558987+00:00,https://www.lcsc.com/product-detail/C13585.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
 C19666,CL10A475KO8NNNC,Samsung Electro-Mechanics,4.7u 10V,C302,,1,100,100,20,120,10,120,1096660,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:52.359766+00:00,https://www.lcsc.com/product-detail/C19666.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。

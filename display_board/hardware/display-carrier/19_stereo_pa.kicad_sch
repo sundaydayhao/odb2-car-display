@@ -4299,7 +4299,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "698k 0.1%"
+		(property "Value" "680k 1%"
 			(at 251.46 196.85 0)
 			(effects
 				(font
@@ -4412,7 +4412,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k 0.1%"
+		(property "Value" "100k 1%"
 			(at 307.34 196.85 0)
 			(effects
 				(font
@@ -4946,7 +4946,7 @@
 		)
 		(uuid a2682161-2d7a-5286-86f5-39b368389e09)
 	)
-	(text "Separate 4.788V buck rail limits the PA supply below 5V across static tolerances. +5V is the system boost."
+	(text "Separate 4.68V buck rail (legacy net PA_4V8) stays below 5V across static tolerance; see procurement audit."
 		(at 20.32 25.4 0)
 		(effects
 			(font

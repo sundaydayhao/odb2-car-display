@@ -11,134 +11,6 @@
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
 	(lib_symbols
-		(symbol "Carrier:AP2112K"
-			(pin_names
-				(offset 0.635)
-			)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "AP2112K"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "AP2112K_0_1"
-				(rectangle
-					(start -15.24 5.08)
-					(end 15.24 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "AP2112K_1_1"
-				(pin power_in line
-					(at -20.32 2.54 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -20.32 0 0)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -20.32 -2.54 0)
-					(length 5.08)
-					(name "EN"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 20.32 2.54 180)
-					(length 5.08)
-					(name "NC"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 20.32 0 180)
-					(length 5.08)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Carrier:C"
 			(pin_numbers
 				(hide yes)
@@ -533,6 +405,134 @@
 				)
 			)
 			(embedded_fonts no)
+		)
+		(symbol "Carrier:ME6211C"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ME6211C"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ME6211C_0_1"
+				(rectangle
+					(start -15.24 5.08)
+					(end 15.24 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "ME6211C_1_1"
+				(pin power_in line
+					(at -20.32 2.54 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 0 0)
+					(length 5.08)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -2.54 0)
+					(length 5.08)
+					(name "CE"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 20.32 2.54 180)
+					(length 5.08)
+					(name "NC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
 		)
 		(symbol "Carrier:Q_NMOS"
 			(pin_names
@@ -1207,7 +1207,7 @@
 				)
 			)
 		)
-		(symbol "Carrier:SGM3157"
+		(symbol "Carrier:SN74LVC1G3157"
 			(pin_names
 				(offset 0.635)
 			)
@@ -1221,7 +1221,7 @@
 					)
 				)
 			)
-			(property "Value" "SGM3157"
+			(property "Value" "SN74LVC1G3157"
 				(at 0 -7.62 0)
 				(effects
 					(font
@@ -1229,7 +1229,7 @@
 					)
 				)
 			)
-			(symbol "SGM3157_0_1"
+			(symbol "SN74LVC1G3157_0_1"
 				(rectangle
 					(start -15.24 5.08)
 					(end 15.24 -5.08)
@@ -1242,7 +1242,7 @@
 					)
 				)
 			)
-			(symbol "SGM3157_1_1"
+			(symbol "SN74LVC1G3157_1_1"
 				(pin passive line
 					(at -20.32 2.54 0)
 					(length 5.08)
@@ -1729,7 +1729,7 @@
 		(uuid 0e9d65e7-cdd8-5271-a52a-2d15a59efa70)
 	)
 	(symbol
-		(lib_id "Carrier:AP2112K")
+		(lib_id "Carrier:ME6211C")
 		(at 76.2 121.92 0)
 		(unit 1)
 		(in_bom yes)
@@ -1744,7 +1744,7 @@
 				)
 			)
 		)
-		(property "Value" "AP2112K-3.0TRG1"
+		(property "Value" "ME6211C30M5G-N"
 			(at 76.2 114.3 0)
 			(effects
 				(font
@@ -1761,7 +1761,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651"
 			(at 76.2 121.92 0)
 			(effects
 				(font
@@ -1770,7 +1770,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "Dedicated 3.0V keeps RDA below its 3.3V maximum including LDO tolerance"
+		(property "DesignStatus" "3.0V 1%; 1uF ceramic input/output; verify low-headroom startup and FM noise on bench"
 			(at 76.2 121.92 0)
 			(effects
 				(font
@@ -1892,7 +1892,7 @@
 		(uuid 07caa91a-9c9b-5210-933c-95e14968fb19)
 	)
 	(symbol
-		(lib_id "Carrier:SGM3157")
+		(lib_id "Carrier:SN74LVC1G3157")
 		(at 76.2 160.02 0)
 		(unit 1)
 		(in_bom yes)
@@ -1907,7 +1907,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3157XC6/TR"
+		(property "Value" "SN74LVC1G3157DCKR"
 			(at 76.2 152.4 0)
 			(effects
 				(font
@@ -1924,7 +1924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf"
 			(at 76.2 160.02 0)
 			(effects
 				(font
@@ -2096,7 +2096,7 @@
 		(uuid 875f1b6d-301d-51e6-9e8e-bc0c09c5a087)
 	)
 	(symbol
-		(lib_id "Carrier:SGM3157")
+		(lib_id "Carrier:SN74LVC1G3157")
 		(at 76.2 193.04 0)
 		(unit 1)
 		(in_bom yes)
@@ -2111,7 +2111,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3157XC6/TR"
+		(property "Value" "SN74LVC1G3157DCKR"
 			(at 76.2 185.42 0)
 			(effects
 				(font
@@ -2128,7 +2128,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf"
 			(at 76.2 193.04 0)
 			(effects
 				(font
@@ -2300,7 +2300,7 @@
 		(uuid af0448e6-0fa5-54e8-8f2f-bad98c49227c)
 	)
 	(symbol
-		(lib_id "Carrier:SGM3157")
+		(lib_id "Carrier:SN74LVC1G3157")
 		(at 76.2 226.06 0)
 		(unit 1)
 		(in_bom yes)
@@ -2315,7 +2315,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3157XC6/TR"
+		(property "Value" "SN74LVC1G3157DCKR"
 			(at 76.2 218.44 0)
 			(effects
 				(font
@@ -2332,7 +2332,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf"
 			(at 76.2 226.06 0)
 			(effects
 				(font
@@ -2504,7 +2504,7 @@
 		(uuid 5a41e692-4899-57aa-8f4a-3b60f0fca895)
 	)
 	(symbol
-		(lib_id "Carrier:SGM3157")
+		(lib_id "Carrier:SN74LVC1G3157")
 		(at 76.2 259.08 0)
 		(unit 1)
 		(in_bom yes)
@@ -2519,7 +2519,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3157XC6/TR"
+		(property "Value" "SN74LVC1G3157DCKR"
 			(at 76.2 251.46 0)
 			(effects
 				(font
@@ -2536,7 +2536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf"
 			(at 76.2 259.08 0)
 			(effects
 				(font
@@ -5688,7 +5688,7 @@
 		)
 		(uuid 40a9b97a-ca1d-5eaa-9a71-abacd8be9795)
 	)
-	(text "FM L/R remain independent. Four SGM3157 switches select both differential legs of both speaker channels."
+	(text "FM L/R remain independent. Four SN74LVC1G3157 switches select both legs of both speaker channels."
 		(at 20.32 25.4 0)
 		(effects
 			(font

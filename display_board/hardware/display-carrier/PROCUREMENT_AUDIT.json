@@ -1,0 +1,25 @@
+{
+  "revision": "L1",
+  "boards": 100,
+  "spare_percent": 20,
+  "physical_positions": 327,
+  "fitted_per_board": 320,
+  "per_board_sourcing": {
+    "user_fixed": 2,
+    "selected": 300,
+    "hold": 18
+  },
+  "unique_selected_lcsc_codes": 72,
+  "supply_groups": {
+    "USER_FIXED": 2,
+    "STOCK_OK": 70,
+    "HOLD": 18,
+    "PARTNER_CONFIRM": 1,
+    "LOW_BUFFER": 1,
+    "DNP": 4
+  },
+  "policy": "Aggregate fitted count by LCSC, add 20%, ceil to observed MOQ/order step. DNP count is zero. Stock is an unreserved snapshot, not a supply guarantee.",
+  "design_intent_sha256": "0bcb0511742d02f6cbadfdee15e9ce8e0fec72c39a98eca9e296687ff90e3bc1",
+  "snapshot_sha256": "df9ed193fd1c14f2230467129d4c7feccf5e810f88618d803f4f8cfe0f73ee04",
+  "status": "SOURCING_REVIEW_NOT_RELEASED"
+}

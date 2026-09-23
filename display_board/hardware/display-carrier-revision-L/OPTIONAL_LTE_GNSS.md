@@ -107,3 +107,5 @@ RESET15 短线、滤波并远离板边噪声；P4 的 RST/BOOT 仍是上边缘�
 - [BQ25896](https://www.ti.com/product/BQ25896)、[TLV62585](https://www.ti.com/product/TLV62585)、[JST-VH](https://www.jst-mfg.com/product/index.php?lang=2&series=262)：沿用的候选供电和连接器。
 
 文档 SHA-256 和已检查/未验证项目见 [SOURCE_AUDIT.json](SOURCE_AUDIT.json)。
+
+修订 L1 覆盖此前电池接口假设：J300 已换成 PH 2Pin，额定 2 A / AWG24；上述 20 W / 7.35 A 为旧负载预算，不能通过现用 PH 口供电。需重新验证电池模式的同时负载、充放电限制与保护配合，见 J300_TERMINAL.md。

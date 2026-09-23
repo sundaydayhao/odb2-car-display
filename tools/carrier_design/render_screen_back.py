@@ -14,7 +14,7 @@ def render(project):
     def rect(x,y,w,h,fill,stroke='none',r=0):
         s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3"/>')
     text(45,48,'显示载板 · 正面器件 / 背面贴屏 / 排线穿板',30,bold=True)
-    text(45,81,'修订 K · 145 × 85 mm · 四层 · 0 条走线 · 穿线槽和屏板间隙尚待实物核对',18)
+    text(45,81,f'{b.GetTitleBlock().GetRevision()} · 145 × 85 mm · 四层 · 0 条走线 · 穿线槽和屏板间隙尚待实物核对',18)
     scale=4.4;oy=160
     for side,ox,title,sub in [('F',55,'F 面 · 正面 / 朝后壳','从屏幕背面看：USB 在右，TF / SIM 在左'),
                               ('B',805,'B 面 · 背面 / 朝屏幕','此图左右镜像：0 个器件本体，仍有通孔焊脚')]:
@@ -66,7 +66,7 @@ def render(project):
         rect(x,605,435,171,'#fff','#d6e0eb',10);text(x+18,638,title,21,bold=True)
         text(x+18,672,a,16);text(x+18,704,c,16);text(x+18,744,e,14,'#665041')
     text(45,817,'当前 F 面坐标：触摸座 (109, 7.575)；LCD 座 (74.5, 46.175)；核心板 (69, 28) mm。',17)
-    text(45,848,'所有电气网络、器件值和装配配置保持；双麦仍为 60 mm 间距。',17)
+    text(45,848,'双麦间距 60 mm；电池端子 J300 与 NTC 端子 J301 均为 PH 2.0 mm 2Pin。',17)
     text(45,889,'工程仍未布线；通过间距检查不代表排线已经够长，也不代表可直接贴金属屏背板。',17,'#97452b')
     s.append('</svg>')
     for name in ['FLOORPLAN.svg','FPC_FIT.svg']:(project/name).write_text('\n'.join(s)+'\n',encoding='utf-8')

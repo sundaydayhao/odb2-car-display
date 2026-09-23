@@ -1,5 +1,5 @@
 {
-  "revision": "K",
+  "revision": "L1",
   "baseline_commit": "6eb6734",
   "status": "UNROUTED_PROVISIONAL_FLEX_STACK",
   "coordinate_view": "F/component side looking toward screen back; +X right, +Y down",
@@ -9746,7 +9746,6 @@
     "R866",
     "R867"
   ],
-  "all_footprint_and_pad_UUIDs_paths_nets_values_DNP_preserved": true,
   "back_side_component_bodies": 0,
   "through_hole_references": [
     "J200",
@@ -9759,7 +9758,7 @@
     "SW102",
     "SW310"
   ],
-  "known_J300_nominal_tail_below_B_mm": 2.1,
+  "known_J300_nominal_tail_below_B_mm": 1.8,
   "clearance_boundary": "B has exposed THT solder tails and locating pegs. No metal-to-PCB direct contact. Gap, maximum protrusion and flex bend require physical measurement.",
   "required_fit_checks": [
     "screen gap / insulation",
@@ -9772,5 +9771,8 @@
     "mic acoustic ports and sensor vents"
   ],
   "nominal_model_max_back_protrusion_mm": 2.392,
-  "protrusion_evidence": "SCREEN_BACK_PROTRUSIONS.json"
+  "protrusion_evidence": "SCREEN_BACK_PROTRUSIONS.json",
+  "base_mechanical_revision": "K",
+  "revision_K_transition_all_footprint_and_pad_UUIDs_paths_nets_values_DNP_preserved": true,
+  "latest_component_change": "J300 PH same as J301; footprint/pad UUIDs and nets preserved; J300 pin2 pitch changes; F300 value TBD"
 }

@@ -166,7 +166,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Carrier:LMA3729T381"
+		(symbol "Carrier:LMA3729T381_OAS02"
 			(pin_names
 				(offset 0.635)
 			)
@@ -180,7 +180,7 @@
 					)
 				)
 			)
-			(property "Value" "LMA3729T381"
+			(property "Value" "LMA3729T381_OAS02"
 				(at 0 -7.62 0)
 				(effects
 					(font
@@ -188,7 +188,7 @@
 					)
 				)
 			)
-			(symbol "LMA3729T381_0_1"
+			(symbol "LMA3729T381_OAS02_0_1"
 				(rectangle
 					(start -15.24 5.08)
 					(end 15.24 -5.08)
@@ -201,7 +201,7 @@
 					)
 				)
 			)
-			(symbol "LMA3729T381_1_1"
+			(symbol "LMA3729T381_OAS02_1_1"
 				(pin power_in line
 					(at -20.32 1.27 0)
 					(length 5.08)
@@ -220,10 +220,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin output line
 					(at -20.32 -1.27 0)
 					(length 5.08)
-					(name "GND1"
+					(name "OUT"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -241,7 +241,7 @@
 				(pin power_in line
 					(at 20.32 1.27 180)
 					(length 5.08)
-					(name "GND2"
+					(name "GND1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -256,10 +256,10 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_in line
 					(at 20.32 -1.27 180)
 					(length 5.08)
-					(name "OUT"
+					(name "GND2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -533,7 +533,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Carrier:LMA3729T381")
+		(lib_id "Carrier:LMA3729T381_OAS02")
 		(at 76.2 83.82 0)
 		(unit 1)
 		(in_bom yes)
@@ -548,7 +548,7 @@
 				)
 			)
 		)
-		(property "Value" "LMA3729T381-OY3S"
+		(property "Value" "LMA3729T381-OAS02"
 			(at 76.2 76.2 0)
 			(effects
 				(font
@@ -556,7 +556,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Carrier:LMA3729T381_TopPort"
+		(property "Footprint" "Carrier:LMA3729T381_OAS02_TopPort"
 			(at 76.2 83.82 0)
 			(effects
 				(font
@@ -565,7 +565,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678"
 			(at 76.2 83.82 0)
 			(effects
 				(font
@@ -635,7 +635,7 @@
 		)
 		(uuid 27f40663-e39b-57c3-ba48-8bf540a0a1b1)
 	)
-	(global_label "GND"
+	(global_label "MIC_L_OUT"
 		(shape bidirectional)
 		(at 50.8 85.09 180)
 		(effects
@@ -677,7 +677,7 @@
 		)
 		(uuid f8bd6acf-dc43-5b25-b397-210ebfcf064e)
 	)
-	(global_label "MIC_L_OUT"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 101.6 85.09 0)
 		(effects
@@ -1456,7 +1456,7 @@
 		(uuid 3e59f9f5-2258-5327-b0be-88cb861c135c)
 	)
 	(symbol
-		(lib_id "Carrier:LMA3729T381")
+		(lib_id "Carrier:LMA3729T381_OAS02")
 		(at 76.2 152.4 0)
 		(unit 1)
 		(in_bom yes)
@@ -1471,7 +1471,7 @@
 				)
 			)
 		)
-		(property "Value" "LMA3729T381-OY3S"
+		(property "Value" "LMA3729T381-OAS02"
 			(at 76.2 144.78 0)
 			(effects
 				(font
@@ -1479,7 +1479,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Carrier:LMA3729T381_TopPort"
+		(property "Footprint" "Carrier:LMA3729T381_OAS02_TopPort"
 			(at 76.2 152.4 0)
 			(effects
 				(font
@@ -1488,7 +1488,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf"
+		(property "Datasheet" "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678"
 			(at 76.2 152.4 0)
 			(effects
 				(font
@@ -1558,7 +1558,7 @@
 		)
 		(uuid 5ed32b31-23ba-59a6-be26-c8923badcdc5)
 	)
-	(global_label "GND"
+	(global_label "MIC_R_OUT"
 		(shape bidirectional)
 		(at 50.8 153.67 180)
 		(effects
@@ -1600,7 +1600,7 @@
 		)
 		(uuid 1601f648-d770-583c-96e7-e8cfeb49c038)
 	)
-	(global_label "MIC_R_OUT"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 101.6 153.67 0)
 		(effects
@@ -2378,7 +2378,7 @@
 		)
 		(uuid 4a45e9ad-2802-5ba2-873c-564dec8bfb07)
 	)
-	(text "Two LMA3729T381-OY3S top-port MEMS microphones solder directly to the B face, as requested."
+	(text "Two LMA3729T381-OAS02 top-port MEMS microphones solder directly to the F face, toward rear housing."
 		(at 20.32 20.32 0)
 		(effects
 			(font

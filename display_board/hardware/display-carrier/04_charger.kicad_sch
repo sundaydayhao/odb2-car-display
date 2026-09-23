@@ -5,7 +5,7 @@
 	(paper "A3")
 	(title_block
 		(title "04 Battery charger / power path")
-		(date "2026-09-19")
+		(date "2026-09-23")
 		(rev "R0 ENGINEERING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
@@ -2096,7 +2096,7 @@
 				)
 			)
 		)
-		(property "Value" "1S BATTERY 10A"
+		(property "Value" "1S BATTERY / PH 2A"
 			(at 53.34 154.94 0)
 			(effects
 				(font
@@ -2104,7 +2104,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
 			(at 53.34 162.56 0)
 			(effects
 				(font
@@ -2113,7 +2113,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 53.34 162.56 0)
 			(effects
 				(font
@@ -2122,7 +2122,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "JST PH rated 2A with AWG24; HOLD battery current budget, charging limit and fuse coordination"
 			(at 53.34 162.56 0)
 			(effects
 				(font
@@ -2313,7 +2313,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "8A pack qualified fuse"
+		(property "Value" "TBD fuse / PH 2A"
 			(at 195.58 57.15 0)
 			(effects
 				(font
@@ -2342,7 +2342,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "HOLD: exact fuse I2t and pack reverse-protection test"
+		(property "DesignStatus" "HOLD: select fuse for PH 2A connector, wire and pack short-circuit current; old 8A placeholder is withdrawn"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -4618,7 +4618,7 @@
 		)
 		(uuid 3b9fa455-4569-50ca-85c7-a4a0e44eaca8)
 	)
-	(text "Pack: protected 1S 4.2 V / 5000 mAh / >=10 A discharge. Separate NTC connector."
+	(text "J300 uses the same PH 2-pin as J301: rated 2A with AWG24. Battery charge/discharge budget is a HOLD."
 		(at 20.32 20.32 0)
 		(effects
 			(font

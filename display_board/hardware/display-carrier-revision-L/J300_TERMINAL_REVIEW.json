@@ -1,0 +1,106 @@
+{
+  "revision": "L1",
+  "baseline_commit": "0aa2b7f",
+  "native_kicad": "10.0.5",
+  "status": "PASS_DRAFT_CHANGE_ONLY",
+  "connector": "JST B2B-PH-K-S(LF)(SN)",
+  "LCSC": "C131337",
+  "same_footprint_and_model_as_J301": true,
+  "rating": {
+    "A": 2,
+    "wire": "AWG24",
+    "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+  },
+  "position_board_mm": [
+    121,
+    5.5
+  ],
+  "angle_deg": 180,
+  "side": "F",
+  "pin1": "BAT_CONNECTOR",
+  "pin2": "GND",
+  "pitch_mm": 2,
+  "preserved_footprint_identities_positions_angles_sides_DNP": 354,
+  "preserved_pad_identities_and_nets": 1226,
+  "footprint_changes": [
+    "J300"
+  ],
+  "pad_geometry_changes": [
+    [
+      "J300",
+      "1"
+    ],
+    [
+      "J300",
+      "2"
+    ]
+  ],
+  "value_changes": [
+    "F300",
+    "J300"
+  ],
+  "all_schematic_net_members_unchanged": true,
+  "schematic_semantic_diff": {
+    "symbols_added": [],
+    "symbols_removed": [],
+    "symbols_moved": [],
+    "symbols_changed": [
+      {
+        "ref": "J300",
+        "unit": 1,
+        "value": [
+          "1S BATTERY 10A",
+          "1S BATTERY / PH 2A"
+        ],
+        "lib_id": [
+          "Carrier:CONN2",
+          "Carrier:CONN2"
+        ]
+      },
+      {
+        "ref": "F300",
+        "unit": 1,
+        "value": [
+          "8A pack qualified fuse",
+          "TBD fuse / PH 2A"
+        ],
+        "lib_id": [
+          "Carrier:FUSE",
+          "Carrier:FUSE"
+        ]
+      }
+    ],
+    "labels_added": [],
+    "labels_removed": [],
+    "count_delta": {}
+  },
+  "erc_new": [],
+  "erc_gone": [],
+  "physical_DRC": 0,
+  "schematic_parity": 0,
+  "remaining_unconnected": 848,
+  "tracks": 0,
+  "model_coverage": "327/327",
+  "electrical_release": "HOLD: old high-power battery budget invalid for PH 2A; charge/discharge limiting and F300 protection not qualified",
+  "visual_review": {
+    "status": "PASS",
+    "schematic": "Changed note, J300 and F300 labels are readable without collisions; pin1/2 labels unchanged",
+    "PCB": "Native top views confirm matching PH geometry and F-side placement",
+    "pixel_diff": {
+      "changed_px": 4864,
+      "bbox_mm": [
+        20.4,
+        19.9,
+        345.0,
+        281.0
+      ],
+      "composite": "build\\carrier-j300\\charger-diff.png"
+    },
+    "crops": [
+      "build/carrier-j300/j300-sch.png",
+      "build/carrier-j300/f300-sch.png",
+      "build/carrier-j300/j300-pcb-before-after.png"
+    ]
+  },
+  "evidence": "build/carrier-j300/"
+}

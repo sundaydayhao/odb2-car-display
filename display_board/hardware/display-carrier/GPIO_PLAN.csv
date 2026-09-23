@@ -51,6 +51,6 @@ p4_gpio,core_pad,planned_signal,status,voltage_domain,notes
 49,77,BOARD_TEMP_ADC,proposed,ADC2,板温 NTC；电池 NTC 独立进入充电器
 50,78,CHARGER_INT,proposed,3V3,常开域中断，上拉不得反灌断电 P4
 51,79,FM_POWER_EN,proposed,3V3 control,板载 RDA5807M 3.0V 使能；断电隔离 I2C
-52,80,AUDIO_SOURCE_SELECT,proposed,3V3,四只 SGM3157；低 DAC / 高 FM；先静音再切换
+52,80,AUDIO_SOURCE_SELECT,proposed,3V3,四只 SN74LVC1G3157；低 DAC / 高 FM；先静音再切换
 53,81,TYPEC_HIGH_CURRENT_N,draft_schematic,3V3,TUSB320 GPIO 模式经 MOS 隔离；低=Type-C 至少1.5A；3A保守按1.5A，非I2C中断
 54,82,RF_CHIP_PU,module_internal,3V3,无线 EN 内连；RF 维修时 P4 复位，避免 GPIO 驱动争用

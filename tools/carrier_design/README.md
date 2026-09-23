@@ -189,3 +189,17 @@ Stock snapshots are not an availability guarantee or assembly release. The
 18 unresolved positions, BQ25896 partner stock and EG1224 small buffer are
 explicit in `PROCUREMENT.md`. Read the project README before using a staged
 revision: an open KiCad editor prevents automatic promotion over its files.
+
+Revision L1 replaces J300 with J301's JST PH 2.0 mm vertical 2-pin header,
+C131337, keeping BAT_CONNECTOR/GND and F-side placement. The one-time
+`battery_ph.py --baseline <pre-PH-L-project> --output <fresh-scratch>` migration
+preserves footprint/pad identities and all other PCB objects; the PH pin 2
+position follows its smaller pitch. Use native KiCad Python. It deliberately
+rejects an already-migrated baseline. F300 is now TBD because the former 8 A
+placeholder cannot protect the 2 A/AWG24 connector without a fresh protection
+review. No battery current limiter was added. See `J300_TERMINAL.md`.
+
+The reviewed L1 files have been synchronized to `display-carrier` after its
+editor locks cleared and its tracked files were confirmed unchanged. The
+`display-carrier-revision-L` directory retains the matching reviewed copy;
+the canonical project for subsequent work is `display-carrier`.

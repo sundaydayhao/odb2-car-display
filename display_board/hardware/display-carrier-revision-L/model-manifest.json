@@ -213,41 +213,6 @@
       "step_valid": true
     },
     {
-      "reference": "J300",
-      "original_footprint": "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
-      "footprint": "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
-      "file": "JST_B2P_VH_reference.step",
-      "offset_mm": [
-        0,
-        0,
-        0
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "datasheet_reference",
-      "source": "https://www.jst-mfg.com/product/pdf/eng/eVH.pdf",
-      "note": "7.86x8.5,H10.9,tail3.7,pitch3.96. Downloaded VH3.96-2A rejected as exact JST model:body7.92x8.7 and H10.4 after seating adjustment. Latch detail simplified.",
-      "sha256": "a0c5f5a5439129d8daab284383fbb477d2df507502f66ff7a9acdbdf6447e88f",
-      "raw_model_bounds_mm": [
-        -1.95,
-        5.91,
-        -4.8,
-        3.7,
-        -3.7,
-        10.9
-      ],
-      "step_solids": 6,
-      "step_valid": true
-    },
-    {
       "reference": "J1200",
       "part": "FPC-05FB-30PH20",
       "original_footprint": "Carrier:XUNPU_FPC_05FB_30PH20",

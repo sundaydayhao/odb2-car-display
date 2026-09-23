@@ -144,7 +144,7 @@ tp('03_usb_current','TP210','INPUT_FAULT_N',pcb=(25,13))
 for i,(v,n) in enumerate([('100n','USB_AUX3V3'),('1u 10V','USB_AUX3V3'),('1u 10V','VBUS_RAW'),('100n','VBUS_RAW'),('1u 10V','CHARGE_VBUS')]):cap('03_usb_current','C'+str(211+i),v,n)
 
 page('04_charger','04 Battery charger / power path',(25,6),[
- 'Pack: protected 1S 4.2 V / 5000 mAh / >=10 A discharge. Separate NTC connector.',
+ 'J300 uses the same PH 2-pin as J301: rated 2A with AWG24. Battery charge/discharge budget is a HOLD.',
  'R0 charge-disable strap fitted. Charger enable is a release HOLD until pack/NTC qualified.',
  'PSEL defaults to USB 500mA. Higher input current requires qualified Type-C status and firmware.',
  'TS: pack 10k/B3950, R25/B tolerance <=1%. Calculated inhibit approx 2..4 / 41..43 C.'
@@ -152,9 +152,9 @@ page('04_charger','04 Battery charger / power path',(25,6),[
 box('BQ25896',[(1,'VBUS','power_in'),(2,'PSEL','input'),(3,'PG_N','open_collector'),(4,'STAT_N','open_collector'),(5,'SCL','input'),(6,'SDA','bidirectional'),(7,'INT_N','open_collector'),(8,'OTG','input'),(9,'CE_N','input'),(10,'ILIM','passive'),(11,'TS','input'),(12,'QON_N','input'),(13,'BAT','passive'),(14,'BAT','passive'),(15,'SYS','passive'),(16,'SYS','passive'),(17,'PGND','power_in'),(18,'PGND','power_in'),(19,'SW','power_out'),(20,'SW','passive'),(21,'BTST','passive'),(22,'REGN','power_out'),(23,'PMID','passive'),(24,'NC','no_connect'),(25,'EP_GND','power_in')])
 item('04_charger','U300','BQ25896','BQ25896RTWR',{1:'CHARGE_VBUS',2:'USB_AUX3V3',3:'CHG_PG_N',4:'CHG_STAT_N',5:'SYSTEM_I2C_SCL',6:'SYSTEM_I2C_SDA',7:'CHARGER_INT',8:'GND',9:'CHG_DISABLE',10:'BQ_ILIM',11:'BAT_TS',12:'BQ_QON_N',13:'BAT_PROTECTED',14:'BAT_PROTECTED',15:'SYS_ALWAYS',16:'SYS_ALWAYS',17:'GND',18:'GND',19:'BQ_SW',20:'BQ_SW',21:'BQ_BTST',22:'BQ_REGN',23:'BQ_PMID',24:None,25:'GND'},'Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm',xy=(69.85,96.52),pcb=(33,15),source=TI+'bq25896.pdf')
 box('CONN2',[(1,'1','passive'),(2,'2','passive')],5.08)
-item('04_charger','J300','CONN2','1S BATTERY 10A',{1:'BAT_CONNECTOR',2:'GND'},'Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical',xy=(53.34,162.56),pcb=(30,4))
+item('04_charger','J300','CONN2','1S BATTERY / PH 2A',{1:'BAT_CONNECTOR',2:'GND'},'Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',xy=(53.34,162.56),pcb=(30,4),source='https://www.jst-mfg.com/product/pdf/eng/ePH.pdf',status='JST PH rated 2A with AWG24; HOLD battery current budget, charging limit and fuse coordination')
 item('04_charger','J301','CONN2','PACK NTC / RETURN',{1:'BAT_TS',2:'GND'},'Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',xy=(53.34,213.36),pcb=(43,4))
-item('04_charger','F300','FUSE','8A pack qualified fuse',{1:'BAT_CONNECTOR',2:'BAT_PROTECTED'},'Fuse:Fuse_1206_3216Metric',pcb=(30,10),status='HOLD: exact fuse I2t and pack reverse-protection test')
+item('04_charger','F300','FUSE','TBD fuse / PH 2A',{1:'BAT_CONNECTOR',2:'BAT_PROTECTED'},'Fuse:Fuse_1206_3216Metric',pcb=(30,10),status='HOLD: select fuse for PH 2A connector, wire and pack short-circuit current; old 8A placeholder is withdrawn')
 pas('04_charger','L300','1uH Isat>=8A','BQ_SW','SYS_ALWAYS',pcb=(38,15))
 for ref,v,net,fp in [('C300','1u 25V','CHARGE_VBUS',CFP),('C301','10u 25V','BQ_PMID','Capacitor_SMD:C_1206_3216Metric'),('C302','4.7u 10V','BQ_REGN',CFP),('C303','10u 10V','BAT_PROTECTED','Capacitor_SMD:C_0805_2012Metric'),('C304','22u 10V','SYS_ALWAYS','Capacitor_SMD:C_0805_2012Metric'),('C305','22u 10V','SYS_ALWAYS','Capacitor_SMD:C_0805_2012Metric')]:cap('04_charger',ref,v,net,fp=fp)
 pas('04_charger','C306','47n 16V','BQ_BTST','BQ_SW')

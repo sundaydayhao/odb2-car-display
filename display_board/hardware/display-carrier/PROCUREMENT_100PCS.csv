@@ -1,0 +1,97 @@
+﻿LCSC,MPN,Manufacturer,CircuitValues,References,DNP_References,PerBoard,Boards,BaseQty,SparePercent,QtyWithSpares,OrderStep,ProposedQty,ObservedStock,SupplyStatus,StockChannel,ObservedAtUTC,URL,Note
+,OSPTEK P4C5 / P4C6,,OSPTEK P4C5 / P4C6,U100,,1,100,100,20,120,,120,,USER_FIXED,,,,用户指定鱼鹰光电核心板、ML307 模组，单独采购。
+C45783,CL21A226MAQNNNE,Samsung Electro-Mechanics,22u 10V X5R | 22u 10V,C101 C102 C304 C305 C411 C412 C502 C1010 C1011 C876 C877 C878,,12,100,1200,20,1440,20,1440,2068380,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:18.816730+00:00,https://www.lcsc.com/product-detail/C45783.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C14663,CC0603KRX7R9BB104,YAGEO,100n 10V X7R | 100n | 100n 10V,C103 C104 C106 C201 C202 C203 C204 C205 C211 C214 C401 C503 C216 C1000 C1002 C1003 C1014 C802 C818 C819 C820 C821 C848 C849 C860 C861 C863 C868 C869 C871 C1202 C1203 C1210 C1300 C1301,,35,100,3500,20,4200,50,4200,9210550,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:22.915882+00:00,https://www.lcsc.com/product-detail/C14663.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C25804,0603WAF1002T5E,UNI-ROYAL,10k 1% | 10k C6 strap | 10k C5 only | 10k | 10k bleed | 10k scan option,R101 R102 R103 R106 R108 R201 R202 R212 R213 R218 R219 R305 R306 R312 R530 R313 R1033 R1034 R817 R818 R862 R865 R1201 R1206 R1207,R107,25,100,2500,20,3000,100,3000,1797900,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:04.778851+00:00,https://www.lcsc.com/product-detail/C25804.html,
+C29936,CL10B105KA8NNNC,Samsung Electro-Mechanics,1u 10V X7R | 1u 10V | 1u 25V | 1u,C105 C206 C212 C213 C215 C300 C311 C501 C1001 C1018 C1019 C1020 C1030 C800 C803 C804 C805 C806 C807 C808 C809 C810 C811 C812 C813 C840 C841 C842 C844 C845 C846 C862 C870 C1200 C1201 C1211 C1302,,37,100,3700,20,4440,10,4440,223740,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:17.770984+00:00,https://www.lcsc.com/product-detail/C29936.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C21189,0603WAF0000T5E,UNI-ROYAL,0R C6 default | 0R C5 only | 0R CHARGE DISABLED | 0R ENABLE after review | 0R RF match,R104 R303 R1040,R105 R304,3,100,300,20,360,100,400,17408700,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:13.903772+00:00,https://www.lcsc.com/product-detail/C21189.html,
+,,,RESET,SW101,,1,100,100,20,120,,120,,HOLD,,,,侧按键 PTS645Vx39-2LFS 尚无可核实的立创现货替代；替换需核对定位孔、按压高度和侧向行程。
+,,,BOOT,SW102,,1,100,100,20,120,,120,,HOLD,,,,同 SW101，不能把通用 6x6 按键当作已验证的直替。
+,,,NTC 10k B3950,R109,,1,100,100,20,120,,120,,HOLD,,,,NTC 10k/B3950 缺完整订货号；R25/B 公差及封装需确认。电池包 NTC 本身不在此载板 BOM 内。
+C23162,0603WAF4701T5E,UNI-ROYAL,4.7k 1% | 4.7k,R110 R111 R112 R113 R813 R814 R1214 R1215,,8,100,800,20,960,100,1000,15863200,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:07.361722+00:00,https://www.lcsc.com/product-detail/C23162.html,
+C165948,TYPE-C-31-M-12,Korean Hroparts Elec,USB-C CHARGE / DEBUG,J200,,1,100,100,20,120,5,120,91910,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:20.834420+00:00,https://www.lcsc.com/product-detail/C165948.html,
+C2846043,CH343P,WCH,CH343P,U200,,1,100,100,20,120,1,120,4366,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:09.274387+00:00,https://www.lcsc.com/product-detail/C2846043.html,
+C5186957,TXU0202DCUR,TI,TXU0202DCUR,U201 U1001 U1002,,3,100,300,20,360,1,360,18387,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:15.155732+00:00,https://www.lcsc.com/product-detail/C5186957.html,
+C7519,USBLC6-2SC6,ST,USBLC6-2SC6,U202 U1030 U1031,,3,100,300,20,360,5,360,39485,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:08:26.072550+00:00,https://www.lcsc.com/product-detail/C7519.html,
+C20526,MMBT3904(RANGE:100-300),JSCJ,MMBT3904,Q201 Q202,,2,100,200,20,240,50,250,73800,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:09.810344+00:00,https://www.lcsc.com/product-detail/C20526.html,长电 MMBT3904，SOT-23。
+C25803,0603WAF1003T5E,UNI-ROYAL,100k | 100k 1%,R203 R310 R311 R403 R411 R500 R1000 R1001 R1011 R1012 R1015 R1017 R805 R806 R807 R808 R809 R810 R812 R811 R815 R816 R820 R860 R861 R863 R864 R867 R1200 R1202 R1203 R1204 R1205,,33,100,3300,20,3960,100,4000,17634100,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:05.663397+00:00,https://www.lcsc.com/product-detail/C25803.html,
+C132554,TUSB320LAIRWBR,TI,TUSB320LAIRWBR,U210,,1,100,100,20,120,1,120,821,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:10.133616+00:00,https://www.lcsc.com/product-detail/C132554.html,
+C51118,AP2112K-3.3TRG1,DIODES,AP2112K-3.3TRG1,U211 U1012 U801,,3,100,300,20,360,5,360,48170,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:11.110339+00:00,https://www.lcsc.com/product-detail/C51118.html,
+C55266,TPS2553DBVR,TI,TPS2553DBVR,U212,,1,100,100,20,120,1,120,60053,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:18.990452+00:00,https://www.lcsc.com/product-detail/C55266.html,
+C403386,ERJ3EKF8873V,PANASONIC,887k 1%,R211,,1,100,100,20,120,100,200,3600,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:04:49.697409+00:00,https://www.lcsc.com/product-detail/C403386.html,
+,,,BAT54H,D211,,1,100,100,20,120,,120,,HOLD,,,,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。
+,,,BAT54H,D212,,1,100,100,20,120,,120,,HOLD,,,,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。
+C8545,2N7002,JSCJ,2N7002,Q211 Q212 Q213 Q214 Q310 Q1000 Q1010 Q1011 Q810 Q811,,10,100,1000,20,1200,50,1200,1387400,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:07.948776+00:00,https://www.lcsc.com/product-detail/C8545.html,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。
+C25819,0603WAF4702T5E,UNI-ROYAL,47k,R214 R216 R520 R521 R522 R523 R524 R1013,,8,100,800,20,960,100,1000,295300,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:13.073162+00:00,https://www.lcsc.com/product-detail/C25819.html,
+C25976,0603WAF6812T5E,UNI-ROYAL,68.1k 1%,R215,,1,100,100,20,120,100,200,37100,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:16.893013+00:00,https://www.lcsc.com/product-detail/C25976.html,
+C23003,0603WAF3322T5E,UNI-ROYAL,33.2k 1%,R217,,1,100,100,20,120,100,200,14000,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:17.716932+00:00,https://www.lcsc.com/product-detail/C23003.html,
+C181475,BQ25896RTWR,TI,BQ25896RTWR,U300,,1,100,100,20,120,1,120,2800,PARTNER_CONFIRM,partner,2026-09-23T00:10:58.680290+00:00,https://item.szlcsc.com/192872.html,
+C131337,B2B-PH-K-S(LF)(SN),JST,1S BATTERY / PH 2A | PACK NTC / RETURN | FM ANT / GND | SPEAKER L / 4R | SPEAKER R / 4R,J300 J301 J810 J820 J821,,5,100,500,20,600,20,600,214940,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:11:46.626750+00:00,https://www.lcsc.com/product-detail/C131337.html,与 J301 同款 PH 2Pin；额定 2A/AWG24。电池总电流及保险丝配合尚未验证。
+,,,TBD fuse / PH 2A,F300,,1,100,100,20,120,,120,,HOLD,,,,J300 改为 PH 2A 后撤销原 8A 占位；按端子、线材和电池包短路电流重选保险丝，额定电流/分断能力/温度降额待闭合。
+,,,1uH Isat>=8A,L300,,1,100,100,20,120,,120,,HOLD,,,,1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。
+C13585,CL31A106KBHNNNE,Samsung Electro-Mechanics,10u 25V,C301,,1,100,100,20,120,10,120,542590,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:18:37.558987+00:00,https://www.lcsc.com/product-detail/C13585.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C19666,CL10A475KO8NNNC,Samsung Electro-Mechanics,4.7u 10V,C302,,1,100,100,20,120,10,120,1096660,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:52.359766+00:00,https://www.lcsc.com/product-detail/C19666.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C15850,CL21A106KAYNNNE,Samsung Electro-Mechanics,10u 10V,C303 C312 C410 C817 C864 C872,,6,100,600,20,720,20,720,1725400,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:51.454505+00:00,https://www.lcsc.com/product-detail/C15850.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C1622,CL10B473KB8NNNC,Samsung Electro-Mechanics,47n 16V | 47n,C306 C402,,2,100,200,20,240,50,250,338200,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:54.656548+00:00,https://www.lcsc.com/product-detail/C1622.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C23025,0603WAF3000T5E,UNI-ROYAL,300R 1%,R300,,1,100,100,20,120,100,200,1190700,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:18.843548+00:00,https://www.lcsc.com/product-detail/C23025.html,
+C861611,RT0603BRD079K09L,YAGEO,9.09k 0.1% / B3950,R301,,1,100,100,20,120,20,120,14100,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:24.211357+00:00,https://www.lcsc.com/product-detail/C861611.html,
+C1854557,TNPW0603187KBEEA,VISHAY,187k 0.1% / B3950,R302,,1,100,100,20,120,5,120,4500,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:11.445126+00:00,https://www.lcsc.com/product-detail/C1854557.html,
+C962990,TPS22990DMLR,TI,TPS22990DMLR,U310,,1,100,100,20,120,1,120,2067,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:11.110339+00:00,https://www.lcsc.com/product-detail/C962990.html,
+C273395,EG1224,E-Switch,POWER SIDE SLIDE,SW310,,1,100,100,20,120,1,120,139,LOW_BUFFER,lcsc_direct_snapshot,2026-09-23T00:11:50.524956+00:00,https://www.lcsc.com/product-detail/C273395.html,
+,,,BAT54H,D310,,1,100,100,20,120,,120,,HOLD,,,,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。
+,,,BAT54H,D311,,1,100,100,20,120,,120,,HOLD,,,,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。
+C57112,0603B103K500NT,FH,10n | 10n loop-tune,C310 C313 C403 C504 C1031,,5,100,500,20,600,50,600,316350,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:56.007940+00:00,https://www.lcsc.com/product-detail/C57112.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C87357,TPS61088RHLR,TI,TPS61088RHLR,U400,,1,100,100,20,120,1,120,5146,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:04.278108+00:00,https://www.lcsc.com/product-detail/C87357.html,
+C141836,TLV62569DBVR,TI,TLV62569DBVR,U410,,1,100,100,20,120,5,120,250015,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:05.315477+00:00,https://www.lcsc.com/product-detail/C141836.html,
+C54140025,FEXU0640S2R2MGS,cjiang,2.2uH FEXU0640S2R2MGS,L400,,1,100,100,20,120,1,120,775,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:16.279082+00:00,https://www.lcsc.com/product-detail/C54140025.html,
+C22823,0603WAF1783T5E,UNI-ROYAL,178k 1%,R400,,1,100,100,20,120,100,200,22400,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:19.924462+00:00,https://www.lcsc.com/product-detail/C22823.html,
+C23080,0603WAF5622T5E,UNI-ROYAL,56.2k 1%,R401,,1,100,100,20,120,100,200,33700,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:20.769688+00:00,https://www.lcsc.com/product-detail/C23080.html,
+C667203,TD03G3243BT,FH,324k 1%,R402,,1,100,100,20,120,20,120,1420,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:18:00.426629+00:00,https://www.lcsc.com/product-detail/C667203.html,324k 使用 0.1% 精度，其余按要求匹配或优于原公差。
+C31850,0603WAF2202T5E,UNI-ROYAL,22k loop-tune,R404,,1,100,100,20,120,100,200,2955600,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:22.213877+00:00,https://www.lcsc.com/product-detail/C31850.html,
+C23630,CL10A225KO8NNNC,Samsung Electro-Mechanics,2.2u 10V,C400 C815 C816,,3,100,300,20,360,50,400,1539050,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:53.626718+00:00,https://www.lcsc.com/product-detail/C23630.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C14858,CL10C101JB8NNNC,Samsung Electro-Mechanics,100p C0G | 100p C0G RF DC block,C404 C1015 C1044 C822 C843 C847,,6,100,600,20,720,50,750,1119700,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:57.489061+00:00,https://www.lcsc.com/product-detail/C14858.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。 | 额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。 RF DC block 的高频损耗/自谐振仍需实测确认。
+C12891,CL31A226KAHNNNE,Samsung Electro-Mechanics,22u 10V,C405 C406,,2,100,200,20,240,20,240,75700,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:19.997912+00:00,https://www.lcsc.com/product-detail/C12891.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C2932478,CL32B476KPJNNNE,Samsung Electro-Mechanics,47u 10V,C407 C408 C409,,3,100,300,20,360,5,360,1110,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:06:22.028867+00:00,https://www.lcsc.com/product-detail/C2932478.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+,,,2.2uH Isat>=3.5A,L410,,1,100,100,20,120,,120,,HOLD,,,,2.2uH/Isat>=3.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。
+C273765,RC0603FR-07453KL,YAGEO,453k 1%,R410,,1,100,100,20,120,100,200,7600,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:04:43.974766+00:00,https://www.lcsc.com/product-detail/C273765.html,
+C1653,CL10C220JB8NNNC,Samsung Electro-Mechanics,22p C0G,C413,,1,100,100,20,120,100,200,740200,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:01.119770+00:00,https://www.lcsc.com/product-detail/C1653.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C114218,DM3AT-SF-PEJM5,HRS,microSD DM3AT,J500,,1,100,100,20,120,1,120,20025,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:11:47.957422+00:00,https://www.lcsc.com/product-detail/C114218.html,
+C131941,TPS22918DBVR,TI,TPS22918DBVR,U500 U1011,,2,100,200,20,240,5,240,8170,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:17.160409+00:00,https://www.lcsc.com/product-detail/C131941.html,
+C1588,CL10B102KB8NNNC,Samsung Electro-Mechanics,1n,C500 C1004 C1017,,3,100,300,20,360,50,400,5399150,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:02.186876+00:00,https://www.lcsc.com/product-detail/C1588.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C22775,0603WAF1000T5E,UNI-ROYAL,100R,R501 R840 R841 R1210 R1211 R1212 R1213,,7,100,700,20,840,100,900,7595800,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:08.487239+00:00,https://www.lcsc.com/product-detail/C22775.html,
+C23345,0603WAF220JT5E,UNI-ROYAL,22R,R510 R511 R512 R513 R514 R515 R1030 R1031 R1032 R800 R801 R802 R803 R804 R1300 R1301,,16,100,1600,20,1920,100,2000,7616800,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:09.533987+00:00,https://www.lcsc.com/product-detail/C23345.html,
+,ML307A-GCLN,,ML307A-GCLN,U1000,,1,100,100,20,120,,120,,USER_FIXED,,,,用户指定鱼鹰光电核心板、ML307 模组，单独采购。
+C485117,TLV62585DRLR,TI,TLV62585DRLR,U1010 U822,,2,100,200,20,240,5,240,1360,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:04:34.690973+00:00,https://www.lcsc.com/product-detail/C485117.html,
+,,,1uH Isat>=4.5A,L1010,,1,100,100,20,120,,120,,HOLD,,,,1uH/Isat>=4.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。
+,,,536k 1%,R1010,,1,100,100,20,120,,120,,HOLD,,,,536k 1%/0603 尚未找到已核实现货料号；不直接改用相近阻值，以免改变 ML307 供电。
+,,,220u 6.3V low ESR,C1012,,1,100,100,20,120,,120,,HOLD,,,,220uF/6.3V 低 ESR 储能待选聚合物及纹波/降额验证；普通钽不能直接替代。
+,,,220u 6.3V low ESR,C1013,,1,100,100,20,120,,120,,HOLD,,,,同 C1012；需保证两只在模组脉冲负载下的有效储能。
+C1663,CL10C330JB8NNNC,Samsung Electro-Mechanics,33p C0G,C1016,,1,100,100,20,120,100,200,236300,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:04.721263+00:00,https://www.lcsc.com/product-detail/C1663.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+,,,100R 0.25W,R1014,,1,100,100,20,120,,120,,HOLD,,,,100R/0.25W/1206 精确采购号待闭合；不可用本表 0603 100R 替代。
+C21190,0603WAF1001T5E,UNI-ROYAL,1k,R1016 R819,,2,100,200,20,240,100,300,9476100,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:11.110339+00:00,https://www.lcsc.com/product-detail/C21190.html,
+C3032925,SIM8066-6-1-14-01-A,Global Connector Technology,GCT SIM8066-6-1-14-01-A,J1000,,1,100,100,20,120,1,120,2366,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:22.063830+00:00,https://www.lcsc.com/product-detail/C3032925.html,
+C598199,U.FL-R-SMT-1(01),HRS,IPEX-1 50R,J1010 J1011,,2,100,200,20,240,1,240,9715,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:18:19.293071+00:00,https://www.lcsc.com/product-detail/C598199.html,
+,,,DNP RF tune,,C1040,0,100,0,20,0,,0,,DNP,,,,待实测匹配后定值；本批不采购。
+,,,DNP RF tune,,C1041,0,100,0,20,0,,0,,DNP,,,,待实测匹配后定值；本批不采购。
+,,,DNP RF tune,,C1042,0,100,0,20,0,,0,,DNP,,,,待实测匹配后定值；本批不采购。
+,,,DNP RF tune,,C1043,0,100,0,20,0,,0,,DNP,,,,待实测匹配后定值；本批不采购。
+C22380673,ES8389,Everest-semi(Everest Semiconductor),ES8389,U800,,1,100,100,20,120,1,120,1763,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:03.810789+00:00,https://www.lcsc.com/product-detail/C22380673.html,
+C19702,CL10A106KP8NNNC,Samsung Electro-Mechanics,10u 10V,C801,,1,100,100,20,120,20,120,5201740,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:27.050264+00:00,https://www.lcsc.com/product-detail/C19702.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+,,,RDA5807M,U815,,1,100,100,20,120,,120,,HOLD,,,,保留用户指定 RDA5807M；立创旧商品页仅有历史零库存信息，当前可采购库存/交期未确认。
+C403651,ME6211C30M5G-N,MICRONE,ME6211C30M5G-N,U810,,1,100,100,20,120,10,120,17250,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:08:23.514620+00:00,https://www.lcsc.com/product-detail/C403651.html,
+C38663,SN74LVC1G3157DCKR,TI,SN74LVC1G3157DCKR,U811 U812 U813 U814,,4,100,400,20,480,5,480,226995,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:04:35.986697+00:00,https://www.lcsc.com/product-detail/C38663.html,
+C21122,CL10B223KB8NNNC,Samsung Electro-Mechanics,22n,C814,,1,100,100,20,120,50,150,522150,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:07:06.073691+00:00,https://www.lcsc.com/product-detail/C21122.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+C276424,ABS07-32.768KHZ-7-T,ABRACON,ABS07-32.768KHZ-7-T,Y810,,1,100,100,20,120,1,120,6705,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:08:29.186309+00:00,https://www.lcsc.com/product-detail/C276424.html,
+C552574,"PESD5V0U1BA,115",Nexperia,PESD5V0U1BA,D810,,1,100,100,20,120,5,120,13710,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:08:27.645101+00:00,https://www.lcsc.com/product-detail/C552574.html,
+C54320678,LMA3729T381-OAS02,LinkMems,LMA3729T381-OAS02,U802 U803,,2,100,200,20,240,1,240,754,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:05.116578+00:00,https://www.lcsc.com/product-detail/C54320678.html,
+C189961,NS4150B,Shenzhen Nsiway Tech,NS4150B,U820 U821,,2,100,200,20,240,5,240,162985,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:22.798032+00:00,https://www.lcsc.com/product-detail/C189961.html,
+C507408,0603CG102F500NT,FH,1n C0G,C865 C866 C873 C874,,4,100,400,20,480,20,480,45040,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:19:37.028267+00:00,https://www.lcsc.com/product-detail/C507408.html,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。
+,,,1uH Isat>=4.5A,L820,,1,100,100,20,120,,120,,HOLD,,,,同 L1010；功放电源需负载瞬态验证。
+C25822,0603WAF6803T5E,UNI-ROYAL,680k 1%,R866,,1,100,100,20,120,100,200,1165900,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:18:20.874330+00:00,https://www.lcsc.com/product-detail/C25822.html,
+C2856833,FPC-05FB-30PH20,XUNPU,FPC-05FB-30PH20,J1200,,1,100,100,20,120,5,120,32610,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:12.928112+00:00,https://www.lcsc.com/product-detail/C2856833.html,
+C176944,AP2112K-1.8TRG1,DIODES,AP2112K-1.8TRG1,U1200,,1,100,100,20,120,5,120,38170,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:04:32.541955+00:00,https://www.lcsc.com/product-detail/C176944.html,
+C5217871,TXU0102DCUR,TI,TXU0102DCUR,U1201,,1,100,100,20,120,1,120,5873,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:16.894976+00:00,https://www.lcsc.com/product-detail/C5217871.html,
+C2856827,FPC-05FB-6PH20,XUNPU,FPC-05FB-6PH20,J1210,,1,100,100,20,120,5,120,22205,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:13.821924+00:00,https://www.lcsc.com/product-detail/C2856827.html,
+C2856831,FPC-05FB-24PH20,XUNPU,FPC-05FB-24PH20,J1220,,1,100,100,20,120,5,120,32680,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:15.277074+00:00,https://www.lcsc.com/product-detail/C2856831.html,
+C90462,OPT3001DNPR,TI,OPT3001DNPR,U1300,,1,100,100,20,120,1,120,6423,STOCK_OK,lcsc_direct_snapshot,2026-09-23T00:03:06.328390+00:00,https://www.lcsc.com/product-detail/C90462.html,
+,,,SHT40-AD1B-R2,U1301,,1,100,100,20,120,,120,,HOLD,,,,现用 SHT40-AD1B-R2 的立创当前现货未确认；AD1F-R2/C7461846 国内有货，但膜版高度/焊盘/装配尚未完成复核，未自动换料。

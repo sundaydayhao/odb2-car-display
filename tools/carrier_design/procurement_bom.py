@@ -25,7 +25,7 @@ ICS={
     'AP2112K-1.8TRG1':'C176944','TXU0102DCUR':'C5217871',
 }
 SPECIAL={
-    'J200':'C165948','J300':'C160315','J301':'C131337','J810':'C131337',
+    'J200':'C165948','J300':'C131337','J301':'C131337','J810':'C131337',
     'J820':'C131337','J821':'C131337','J500':'C114218','J1000':'C3032925',
     'J1010':'C598199','J1011':'C598199','J1200':'C2856833','J1210':'C2856827',
     'J1220':'C2856831','L400':'C54140025','Y810':'C276424','D810':'C552574',
@@ -35,7 +35,7 @@ HOLDS={
     'SW101':'侧按键 PTS645Vx39-2LFS 尚无可核实的立创现货替代；替换需核对定位孔、按压高度和侧向行程。',
     'SW102':'同 SW101，不能把通用 6x6 按键当作已验证的直替。',
     'R109':'NTC 10k/B3950 缺完整订货号；R25/B 公差及封装需确认。电池包 NTC 本身不在此载板 BOM 内。',
-    'F300':'8A 仅是占位要求；电池包短路电流、直流分断能力、温度降额和保护配合尚未闭合。',
+    'F300':'J300 改为 PH 2A 后撤销原 8A 占位；按端子、线材和电池包短路电流重选保险丝，额定电流/分断能力/温度降额待闭合。',
     'L300':'1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。',
     'L410':'2.2uH/Isat>=3.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。',
     'L1010':'1uH/Isat>=4.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。',
@@ -56,7 +56,7 @@ def choose(p):
     if ref in ['U100','U1000']:return '', 'USER_FIXED', '用户指定鱼鹰光电核心板、ML307 模组，单独采购。'
     if ref in HOLDS:return '', 'HOLD', HOLDS[ref]
     if value=='DNP RF tune':return '', 'DNP', '待实测匹配后定值；本批不采购。'
-    if ref in SPECIAL:return SPECIAL[ref], 'SELECTED', ''
+    if ref in SPECIAL:return SPECIAL[ref], 'SELECTED', '与 J301 同款 PH 2Pin；额定 2A/AWG24。电池总电流及保险丝配合尚未验证。' if ref=='J300' else ''
     if value in ICS:return ICS[value], 'SELECTED', ''
     if value=='MMBT3904':return 'C20526','SELECTED','长电 MMBT3904，SOT-23。'
     if value=='2N7002':return 'C8545','SELECTED','长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。'
@@ -126,7 +126,7 @@ def generate(project, intent_path):
     counts=collections.Counter()
     for r in rows:
         if r['Fitted']:counts['selected' if r['LCSC'] else r['SelectionStatus'].lower()]+=1
-    report=dict(revision='L',boards=100,spare_percent=20,physical_positions=327,fitted_per_board=320,
+    report=dict(revision='L1',boards=100,spare_percent=20,physical_positions=327,fitted_per_board=320,
         per_board_sourcing=dict(counts),unique_selected_lcsc_codes=len({r['LCSC'] for r in rows if r['LCSC']}),
         supply_groups=dict(collections.Counter(r['SupplyStatus'] for r in grouped)),
         policy='Aggregate fitted count by LCSC, add 20%, ceil to observed MOQ/order step. DNP count is zero. Stock is an unreserved snapshot, not a supply guarantee.',

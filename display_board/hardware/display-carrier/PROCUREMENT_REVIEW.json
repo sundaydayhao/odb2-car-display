@@ -1,0 +1,209 @@
+{
+  "revision": "L",
+  "baseline_commit": "49f1a6b",
+  "status": "REVIEWED_DRAFT_NOT_FAB_RELEASED",
+  "footprint_positions_sides_rotations_uuids_paths_preserved": 354,
+  "pad_geometry_uuids_preserved": 1226,
+  "microphone_pad_renumber": {
+    "1": "1",
+    "2": "3",
+    "3": "4",
+    "4": "2"
+  },
+  "physical_net_membership_preserved": true,
+  "unchanged_project_drc_rules": true,
+  "erc_new": 0,
+  "erc_gone": 0,
+  "physical_drc": 0,
+  "schematic_parity": 0,
+  "substitutions": [
+    {
+      "ref": "U813",
+      "before": "SGM3157XC6/TR",
+      "after": "SN74LVC1G3157DCKR"
+    },
+    {
+      "ref": "U812",
+      "before": "SGM3157XC6/TR",
+      "after": "SN74LVC1G3157DCKR"
+    },
+    {
+      "ref": "U814",
+      "before": "SGM3157XC6/TR",
+      "after": "SN74LVC1G3157DCKR"
+    },
+    {
+      "ref": "U810",
+      "before": "AP2112K-3.0TRG1",
+      "after": "ME6211C30M5G-N"
+    },
+    {
+      "ref": "U802",
+      "before": "LMA3729T381-OY3S",
+      "after": "LMA3729T381-OAS02"
+    },
+    {
+      "ref": "U811",
+      "before": "SGM3157XC6/TR",
+      "after": "SN74LVC1G3157DCKR"
+    },
+    {
+      "ref": "R867",
+      "before": "100k 0.1%",
+      "after": "100k 1%"
+    },
+    {
+      "ref": "R866",
+      "before": "698k 0.1%",
+      "after": "680k 1%"
+    },
+    {
+      "ref": "U803",
+      "before": "LMA3729T381-OY3S",
+      "after": "LMA3729T381-OAS02"
+    }
+  ],
+  "schematic_semantic_delta": {
+    "12_fm_audio.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [
+        {
+          "ref": "U814",
+          "unit": 1,
+          "value": [
+            "SGM3157XC6/TR",
+            "SN74LVC1G3157DCKR"
+          ],
+          "lib_id": [
+            "Carrier:SGM3157",
+            "Carrier:SN74LVC1G3157"
+          ]
+        },
+        {
+          "ref": "U813",
+          "unit": 1,
+          "value": [
+            "SGM3157XC6/TR",
+            "SN74LVC1G3157DCKR"
+          ],
+          "lib_id": [
+            "Carrier:SGM3157",
+            "Carrier:SN74LVC1G3157"
+          ]
+        },
+        {
+          "ref": "U810",
+          "unit": 1,
+          "value": [
+            "AP2112K-3.0TRG1",
+            "ME6211C30M5G-N"
+          ],
+          "lib_id": [
+            "Carrier:AP2112K",
+            "Carrier:ME6211C"
+          ]
+        },
+        {
+          "ref": "U812",
+          "unit": 1,
+          "value": [
+            "SGM3157XC6/TR",
+            "SN74LVC1G3157DCKR"
+          ],
+          "lib_id": [
+            "Carrier:SGM3157",
+            "Carrier:SN74LVC1G3157"
+          ]
+        },
+        {
+          "ref": "U811",
+          "unit": 1,
+          "value": [
+            "SGM3157XC6/TR",
+            "SN74LVC1G3157DCKR"
+          ],
+          "lib_id": [
+            "Carrier:SGM3157",
+            "Carrier:SN74LVC1G3157"
+          ]
+        }
+      ],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {}
+    },
+    "18_dual_mic.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [
+        {
+          "ref": "U803",
+          "unit": 1,
+          "value": [
+            "LMA3729T381-OY3S",
+            "LMA3729T381-OAS02"
+          ],
+          "lib_id": [
+            "Carrier:LMA3729T381",
+            "Carrier:LMA3729T381_OAS02"
+          ]
+        },
+        {
+          "ref": "U802",
+          "unit": 1,
+          "value": [
+            "LMA3729T381-OY3S",
+            "LMA3729T381-OAS02"
+          ],
+          "lib_id": [
+            "Carrier:LMA3729T381",
+            "Carrier:LMA3729T381_OAS02"
+          ]
+        }
+      ],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {}
+    },
+    "19_stereo_pa.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [
+        {
+          "ref": "R866",
+          "unit": 1,
+          "value": [
+            "698k 0.1%",
+            "680k 1%"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        },
+        {
+          "ref": "R867",
+          "unit": 1,
+          "value": [
+            "100k 0.1%",
+            "100k 1%"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        }
+      ],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {}
+    }
+  },
+  "visual_review": "12,18,19 native schematic SVG/PNG and comparisons inspected; native PCB microphone pads and 0.25mm port inspected. No solder/physical/firmware qualification.",
+  "evidence_directory": "build/carrier-procurement",
+  "procurement": "PROCUREMENT_AUDIT.json"
+}

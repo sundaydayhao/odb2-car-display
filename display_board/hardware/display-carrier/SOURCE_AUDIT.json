@@ -1,6 +1,6 @@
 {
   "plan_date": "2026-09-23",
-  "revision": "K_F_components_B_screen_pass_through",
+  "revision": "L_LCSC_100boards_20percent_spares",
   "phase": "engineering_draft_incomplete_not_for_fabrication",
   "repositories": [
     {
@@ -859,5 +859,24 @@
     "slot_geometry": "provisional engineering allowance, not a measured screen fit",
     "screen_gap_mm": null,
     "evidence": "build/carrier-flatback/"
+  },
+  "procurement": {
+    "review": "PROCUREMENT_REVIEW.json",
+    "quantity_audit": "PROCUREMENT_AUDIT.json",
+    "stock_evidence": "LCSC_STOCK_SNAPSHOT.json",
+    "manufacturer_datasheets": [
+      "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651"
+    ]
+  },
+  "battery_terminal_L1": {
+    "part": "B2B-PH-K-S(LF)(SN)",
+    "LCSC": "C131337",
+    "datasheet": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+    "rated_current_A": 2,
+    "wire_condition": "AWG24",
+    "review": "J300_TERMINAL_REVIEW.json",
+    "qualification": "HOLD battery current budget and protection; no new current limiter"
   }
 }

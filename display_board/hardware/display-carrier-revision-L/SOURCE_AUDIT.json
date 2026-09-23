@@ -869,5 +869,14 @@
       "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
       "https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651"
     ]
+  },
+  "battery_terminal_L1": {
+    "part": "B2B-PH-K-S(LF)(SN)",
+    "LCSC": "C131337",
+    "datasheet": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+    "rated_current_A": 2,
+    "wire_condition": "AWG24",
+    "review": "J300_TERMINAL_REVIEW.json",
+    "qualification": "HOLD battery current budget and protection; no new current limiter"
   }
 }

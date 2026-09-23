@@ -1,0 +1,1647 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(uuid 0abe322c-d769-5ee4-a777-0c2a95d0b4f9)
+	(paper "A3")
+	(title_block
+		(title "15 Touch FPC reference interface")
+		(date "2026-09-23")
+		(rev "R0 ENGINEERING")
+		(company "OBD Car Display")
+		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
+	)
+	(lib_symbols
+		(symbol "Carrier:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:TOUCH_FPC6"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TOUCH_FPC6"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TOUCH_FPC6_0_1"
+				(rectangle
+					(start -15.24 6.35)
+					(end 15.24 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TOUCH_FPC6_1_1"
+				(pin passive line
+					(at -20.32 3.81 0)
+					(length 5.08)
+					(name "RESET_CONTROL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 1.27 0)
+					(length 5.08)
+					(name "VCC_3V3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 -1.27 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 -3.81 0)
+					(length 5.08)
+					(name "INT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 3.81 180)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 1.27 180)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -1.27 180)
+					(length 5.08)
+					(name "MOUNT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Carrier:TOUCH_FPC6")
+		(at 73.66 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 0584f567-4d26-5fcd-9155-5a5ebe52f3ca)
+		(property "Reference" "J1210"
+			(at 73.66 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FPC-05FB-6PH20"
+			(at 73.66 74.93 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Carrier:XUNPU_FPC_05FB_6PH20"
+			(at 73.66 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.xunpu.com.cn/product/413.html"
+			(at 73.66 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "REFERENCE PINOUT ONLY: selected touch panel drawing and voltage unverified"
+			(at 73.66 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid efb07920-f7a6-576a-8999-4da67225bd21)
+		)
+		(pin "2"
+			(uuid 03359218-0178-5b5b-83fe-2fd4420b8c7e)
+		)
+		(pin "3"
+			(uuid 2276d3d0-3077-56ef-b1c0-8f795d9e64cc)
+		)
+		(pin "4"
+			(uuid fc49d2a9-d760-58a7-9071-e8544b282fe7)
+		)
+		(pin "5"
+			(uuid 20df389f-253a-5d56-9a49-8cc700c65b9d)
+		)
+		(pin "6"
+			(uuid 7ec7733e-6738-5626-9d36-450d89d59758)
+		)
+		(pin "MP"
+			(uuid 0dc0d68c-7fa7-5413-9cf3-f93400ad79a3)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "J1210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 53.34 80.01) (xy 48.26 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 570ad9f4-2619-516f-86be-e7478bda1fc2)
+	)
+	(global_label "TOUCH_RESET_CONN"
+		(shape bidirectional)
+		(at 48.26 80.01 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid d5ef3934-c9eb-57e1-aed4-9d53e9162fd7)
+	)
+	(wire
+		(pts
+			(xy 53.34 82.55) (xy 48.26 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid ed144156-fe61-59dd-a5a5-535ff25c975e)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 48.26 82.55 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 36b22428-1705-5d8b-bb85-eac37946ebf5)
+	)
+	(wire
+		(pts
+			(xy 53.34 85.09) (xy 48.26 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 81d05eb3-1311-5340-84c9-29469f506aaa)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 48.26 85.09 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid f1c042cf-0492-51d3-82b0-f99cc105f115)
+	)
+	(wire
+		(pts
+			(xy 53.34 87.63) (xy 48.26 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid be01818f-e06a-550f-a3eb-3d51ecc6ffeb)
+	)
+	(global_label "TOUCH_INT_CONN"
+		(shape bidirectional)
+		(at 48.26 87.63 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid e69e717b-97eb-593d-8f9e-15c300f07ced)
+	)
+	(wire
+		(pts
+			(xy 93.98 80.01) (xy 99.06 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 04484fe1-027b-5a97-8d22-34564c1a2cf9)
+	)
+	(global_label "TOUCH_SDA_CONN"
+		(shape bidirectional)
+		(at 99.06 80.01 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 8d037461-907d-50b1-8fa2-71ff8288c47e)
+	)
+	(wire
+		(pts
+			(xy 93.98 82.55) (xy 99.06 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid ac7899aa-4214-5569-9dfe-f7fa89db5961)
+	)
+	(global_label "TOUCH_SCL_CONN"
+		(shape bidirectional)
+		(at 99.06 82.55 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid b2a93b01-567e-5062-bc43-53000692ea17)
+	)
+	(wire
+		(pts
+			(xy 93.98 85.09) (xy 99.06 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 5d862d41-6e89-5fb1-bc76-4f5393ef5167)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 99.06 85.09 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid ead9c0ad-b0ed-5d86-8ca9-28e6637065b6)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 190.5 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 4d70984b-fe61-5dd8-b6bd-88b3a7ea0760)
+		(property "Reference" "R1210"
+			(at 195.58 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100R"
+			(at 195.58 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 190.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 6d650fe4-bed3-5b18-b133-fe0a1579716a)
+		)
+		(pin "2"
+			(uuid ab9ef2a8-882b-52de-8493-e9a3af788b96)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 52.07) (xy 190.5 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 4268933d-36c1-5f42-8e6e-08f0a280bedc)
+	)
+	(global_label "TOUCH_RESET"
+		(shape bidirectional)
+		(at 190.5 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid fafc7c32-fd9b-5f21-bdd5-4a02ae3d68bc)
+	)
+	(wire
+		(pts
+			(xy 190.5 59.69) (xy 190.5 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 50362b9e-3e0e-5e50-9c84-b749590987bd)
+	)
+	(global_label "TOUCH_RESET_CONN"
+		(shape bidirectional)
+		(at 190.5 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 6759041c-c05f-5493-96fc-4117ba0f09b8)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 246.38 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 5a058a43-a675-5991-b943-ea4d0231b46a)
+		(property "Reference" "R1211"
+			(at 251.46 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100R"
+			(at 251.46 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 246.38 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 5d702888-9f9f-51ea-8d52-f80d56ad6435)
+		)
+		(pin "2"
+			(uuid 2258063c-020e-57b1-9132-06fd25eb5393)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1211")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 52.07) (xy 246.38 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 4eea4a62-8341-52cf-95a4-cfca4acaff82)
+	)
+	(global_label "TOUCH_INT"
+		(shape bidirectional)
+		(at 246.38 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 28d11599-86e6-51b6-baad-604f3927e6f7)
+	)
+	(wire
+		(pts
+			(xy 246.38 59.69) (xy 246.38 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 4b4652a5-f0e5-5e98-8793-6aea6fec12e6)
+	)
+	(global_label "TOUCH_INT_CONN"
+		(shape bidirectional)
+		(at 246.38 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 74932ed6-0f8a-56e6-9440-bee9d27f85ec)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 302.26 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid f3072e67-1dea-5d6a-b067-1ac7e2816d66)
+		(property "Reference" "R1212"
+			(at 307.34 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100R"
+			(at 307.34 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 302.26 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 2e7de0a5-2e19-5a62-aba1-6c5a09bf283f)
+		)
+		(pin "2"
+			(uuid e6feb984-6a42-5f35-9e8e-15963e1563d0)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1212")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 302.26 52.07) (xy 302.26 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 06dc33df-fa98-552b-b1b2-486dd5bc792d)
+	)
+	(global_label "CAM_TOUCH_I2C_SDA"
+		(shape bidirectional)
+		(at 302.26 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 44c26257-67e6-595e-8eba-553447e98d1c)
+	)
+	(wire
+		(pts
+			(xy 302.26 59.69) (xy 302.26 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid a7bb1b24-7361-5ba0-b28e-baac335168ad)
+	)
+	(global_label "TOUCH_SDA_CONN"
+		(shape bidirectional)
+		(at 302.26 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 5b752237-9f62-5495-a7c4-7a89c474f11b)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 358.14 55.88 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 27e5d3de-329a-5ac8-bff3-8607616fff21)
+		(property "Reference" "R1213"
+			(at 363.22 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100R"
+			(at 363.22 57.15 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 358.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid cdd4bf8c-9c41-5480-8c62-a5029529432b)
+		)
+		(pin "2"
+			(uuid d1893e85-635c-51a8-a233-e95802830d32)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1213")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 358.14 52.07) (xy 358.14 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid d8af1986-2459-5734-8577-6056a375d07b)
+	)
+	(global_label "CAM_TOUCH_I2C_SCL"
+		(shape bidirectional)
+		(at 358.14 46.99 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid b16def76-64c3-5897-8fc7-ad59e7767702)
+	)
+	(wire
+		(pts
+			(xy 358.14 59.69) (xy 358.14 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 6f56c58d-b220-5856-8b4a-914001250327)
+	)
+	(global_label "TOUCH_SCL_CONN"
+		(shape bidirectional)
+		(at 358.14 64.77 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 4e53bc37-9692-5cf8-a866-1bb85c2e2289)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 190.5 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid d7627412-788b-5422-94e6-7bdbd10a1a22)
+		(property "Reference" "R1214"
+			(at 195.58 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 195.58 85.09 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 190.5 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 42f9aafe-5fbd-5c59-a8ee-7675be6a14f1)
+		)
+		(pin "2"
+			(uuid 770e1aa6-1b3d-5dab-b642-c2dca1802fab)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1214")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 80.01) (xy 190.5 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 2034e0b2-cf42-592f-bf5a-4d964f12405a)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 190.5 74.93 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 853ad7f9-6589-5c2d-87a9-d53945a3a949)
+	)
+	(wire
+		(pts
+			(xy 190.5 87.63) (xy 190.5 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid ebece1cc-88ac-5b89-8795-361411539c5d)
+	)
+	(global_label "CAM_TOUCH_I2C_SDA"
+		(shape bidirectional)
+		(at 190.5 92.71 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 5288543b-08d4-5698-b896-3af2dd7bca34)
+	)
+	(symbol
+		(lib_id "Carrier:R")
+		(at 246.38 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 34f67033-630f-51c8-940f-e75b896c8071)
+		(property "Reference" "R1215"
+			(at 251.46 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 251.46 85.09 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 246.38 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 246.38 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid ef72315d-5f86-5171-992e-d2358793a99a)
+		)
+		(pin "2"
+			(uuid bf9a44d6-91b7-5992-bd6f-5c05c826dd85)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "R1215")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 80.01) (xy 246.38 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 4ee12417-fd7d-5767-8f8a-e892a61bede4)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 246.38 74.93 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 360678f6-5f6d-5abc-a2e8-6cc7aee5ed9b)
+	)
+	(wire
+		(pts
+			(xy 246.38 87.63) (xy 246.38 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid f08aee97-8859-56e7-aa9e-2e5b7f5704cb)
+	)
+	(global_label "CAM_TOUCH_I2C_SCL"
+		(shape bidirectional)
+		(at 246.38 92.71 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid d56e978b-ede3-54ac-ae01-a93cda18cd46)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 302.26 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 40c86083-ea1e-5ce0-be77-f8b84ab8956a)
+		(property "Reference" "C1210"
+			(at 307.34 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V X7R"
+			(at 307.34 85.09 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 302.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 302.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 2c6abcc8-1455-5a57-81b6-83300d76ebf1)
+		)
+		(pin "2"
+			(uuid 9cc5567a-b721-532e-ab00-d66e85a47410)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "C1210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 302.26 80.01) (xy 302.26 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 3658858a-ae4b-55b8-a49a-60877a71d084)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 302.26 74.93 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid cafab249-8b4b-5d32-8539-c38ca8e99c9d)
+	)
+	(wire
+		(pts
+			(xy 302.26 87.63) (xy 302.26 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 1b22a1a0-2f05-53c4-8729-0f460f7e5a5d)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 302.26 92.71 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 33ccc626-e39d-5d85-ab71-bc3c568c717e)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 358.14 83.82 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid 2b266a2a-86ec-5960-a781-797a2d4add49)
+		(property "Reference" "C1211"
+			(at 363.22 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u 10V X7R"
+			(at 363.22 85.09 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 358.14 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 358.14 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 358.14 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 36c7a82d-53f3-54f7-be94-f105f6ee1383)
+		)
+		(pin "2"
+			(uuid 5d7c1adb-ed8b-5a97-a20b-ff93004318ea)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/20544a2a-ca9e-51e9-96af-01e705d4b644"
+					(reference "C1211")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 358.14 80.01) (xy 358.14 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid f5c4003f-6c34-5a67-a521-f4e1593bd1cb)
+	)
+	(global_label "+3V3"
+		(shape bidirectional)
+		(at 358.14 74.93 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 853bdd74-dd6d-5c0f-a5fe-df1557321309)
+	)
+	(wire
+		(pts
+			(xy 358.14 87.63) (xy 358.14 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid c8d610dc-f99f-59b2-beca-2bccb5b9a049)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 358.14 92.71 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 7158fad2-047c-5b99-b8ac-84d2cb35ff73)
+	)
+	(text "J1210: 6-pin reference interface; selected touch module drawing has NOT been supplied."
+		(at 20.32 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid 75f2b442-da98-5610-babb-8be007eed1e5)
+	)
+	(text "1 RESET/control, 2 3V3, 3 GND, 4 INT, 5 SDA, 6 SCL. Verify all six before plugging in."
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid dfcfb62b-dc4d-5e67-b4cc-07dd7ad229e6)
+	)
+	(text "F faces rear housing; screen flex passes from B through a slot. Same entry direction as LCD."
+		(at 20.32 30.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid 1098e26f-4026-5332-9d31-e043f586fe55)
+	)
+	(text "3V3 interface assumption only; contact width/thickness, voltage, polarity and ESD await closure."
+		(at 20.32 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid 6d3d1c1b-638f-5295-8095-806a4a36d1c6)
+	)
+	(embedded_fonts no)
+)

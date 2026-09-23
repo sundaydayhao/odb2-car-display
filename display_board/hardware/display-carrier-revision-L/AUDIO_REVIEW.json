@@ -1,0 +1,824 @@
+{
+  "baseline_commit": "88c088a",
+  "revision": "H",
+  "status": "PASS_FOR_UNROUTED_AUDIO_PLACEMENT_ONLY",
+  "existing_non_audio_footprints_byte_tree_identical": 251,
+  "unchanged_child_sheets": [
+    "01_core.kicad_sch",
+    "02_usb.kicad_sch",
+    "03_usb_current.kicad_sch",
+    "04_charger.kicad_sch",
+    "05_system_switch.kicad_sch",
+    "06_main_power.kicad_sch",
+    "07_sd.kicad_sch",
+    "08_modem.kicad_sch",
+    "09_modem_power.kicad_sch",
+    "10_sim_rf.kicad_sch",
+    "14_lcd_fpc.kicad_sch",
+    "15_touch_fpc.kicad_sch",
+    "16_camera_fpc.kicad_sch",
+    "17_cabin_sensors.kicad_sch"
+  ],
+  "preserved_geometry": [
+    "board outline",
+    "thermal slots",
+    "all 3 rule areas",
+    "FPC footprints",
+    "sensors",
+    "mounting holes"
+  ],
+  "project_rules_byte_identical": true,
+  "erc_new": [],
+  "erc_gone": [
+    {
+      "items": [
+        {
+          "description": "全局标签 'AMP_EN'",
+          "pos": {
+            "x": 1.3081,
+            "y": 1.6129
+          },
+          "uuid": "cbd96883-788d-5615-88a1-9cc994826443"
+        }
+      ],
+      "severity": "warning",
+      "type": "isolated_pin_label"
+    }
+  ],
+  "physical_DRC": 0,
+  "schematic_parity": 0,
+  "unconnected_native": 845,
+  "tracks": 0,
+  "new_sheets": [
+    "18_dual_mic.kicad_sch",
+    "19_stereo_pa.kicad_sch"
+  ],
+  "schematic_semantic_diff": {
+    "11_codec.kicad_sch": {
+      "symbols_added": [
+        "C811.1",
+        "R805.1",
+        "R806.1",
+        "R807.1",
+        "R808.1",
+        "R809.1",
+        "R810.1"
+      ],
+      "symbols_removed": [
+        "J800.1"
+      ],
+      "symbols_moved": [
+        {
+          "ref": "C801",
+          "unit": 1,
+          "from": [
+            302.26,
+            83.82
+          ],
+          "to": [
+            190.5,
+            111.76
+          ]
+        },
+        {
+          "ref": "C809",
+          "unit": 1,
+          "from": [
+            302.26,
+            139.7
+          ],
+          "to": [
+            246.38,
+            167.64
+          ]
+        },
+        {
+          "ref": "C810",
+          "unit": 1,
+          "from": [
+            358.14,
+            139.7
+          ],
+          "to": [
+            358.14,
+            167.64
+          ]
+        },
+        {
+          "ref": "U800",
+          "unit": 1,
+          "from": [
+            64.77,
+            86.36
+          ],
+          "to": [
+            76.2,
+            99.06
+          ]
+        },
+        {
+          "ref": "C805",
+          "unit": 1,
+          "from": [
+            302.26,
+            111.76
+          ],
+          "to": [
+            190.5,
+            139.7
+          ]
+        },
+        {
+          "ref": "C808",
+          "unit": 1,
+          "from": [
+            246.38,
+            139.7
+          ],
+          "to": [
+            358.14,
+            139.7
+          ]
+        },
+        {
+          "ref": "C802",
+          "unit": 1,
+          "from": [
+            358.14,
+            83.82
+          ],
+          "to": [
+            246.38,
+            111.76
+          ]
+        },
+        {
+          "ref": "C800",
+          "unit": 1,
+          "from": [
+            246.38,
+            83.82
+          ],
+          "to": [
+            358.14,
+            83.82
+          ]
+        },
+        {
+          "ref": "C804",
+          "unit": 1,
+          "from": [
+            246.38,
+            111.76
+          ],
+          "to": [
+            358.14,
+            111.76
+          ]
+        },
+        {
+          "ref": "C806",
+          "unit": 1,
+          "from": [
+            358.14,
+            111.76
+          ],
+          "to": [
+            246.38,
+            139.7
+          ]
+        },
+        {
+          "ref": "U801",
+          "unit": 1,
+          "from": [
+            64.77,
+            147.32
+          ],
+          "to": [
+            76.2,
+            175.26
+          ]
+        },
+        {
+          "ref": "C807",
+          "unit": 1,
+          "from": [
+            190.5,
+            139.7
+          ],
+          "to": [
+            302.26,
+            139.7
+          ]
+        },
+        {
+          "ref": "C803",
+          "unit": 1,
+          "from": [
+            190.5,
+            111.76
+          ],
+          "to": [
+            302.26,
+            111.76
+          ]
+        }
+      ],
+      "symbols_changed": [
+        {
+          "ref": "C801",
+          "unit": 1,
+          "value": [
+            "1u",
+            "10u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C810",
+          "unit": 1,
+          "value": [
+            "100p C0G",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "U800",
+          "unit": 1,
+          "value": [
+            "ES8311",
+            "ES8389"
+          ],
+          "lib_id": [
+            "Carrier:ES8311",
+            "Carrier:ES8389"
+          ]
+        },
+        {
+          "ref": "C805",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C802",
+          "unit": 1,
+          "value": [
+            "100n",
+            "100n 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C800",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C804",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C806",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C807",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C803",
+          "unit": 1,
+          "value": [
+            "100n",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        }
+      ],
+      "labels_added": [
+        "AUDIO_MID",
+        "CODEC_AD0",
+        "CODEC_TDMIN",
+        "DAC_L_N",
+        "DAC_L_N_AC",
+        "DAC_L_P",
+        "DAC_L_P_AC",
+        "DAC_R_N",
+        "DAC_R_N_AC",
+        "DAC_R_P",
+        "DAC_R_P_AC",
+        "MIC_L_N",
+        "MIC_L_P",
+        "MIC_R_N",
+        "MIC_R_P"
+      ],
+      "labels_removed": [
+        "+3V3",
+        "CODEC_DIN",
+        "DAC_N",
+        "DAC_P",
+        "MIC_CABLE_N",
+        "MIC_CABLE_P",
+        "MIC_N",
+        "MIC_P"
+      ],
+      "count_delta": {
+        "symbol": 6,
+        "wire": 14,
+        "global_label": 14,
+        "text": 1
+      }
+    },
+    "12_fm_audio.kicad_sch": {
+      "symbols_added": [
+        "C819.1",
+        "C820.1",
+        "C821.1",
+        "C822.1",
+        "D810.1",
+        "U813.1",
+        "U814.1",
+        "U815.1",
+        "Y810.1"
+      ],
+      "symbols_removed": [
+        "C8101.1",
+        "C811.1",
+        "R810.1",
+        "TP810.1",
+        "TP811.1"
+      ],
+      "symbols_moved": [
+        {
+          "ref": "U811",
+          "unit": 1,
+          "from": [
+            63.5,
+            205.74
+          ],
+          "to": [
+            76.2,
+            160.02
+          ]
+        },
+        {
+          "ref": "R813",
+          "unit": 1,
+          "from": [
+            190.5,
+            111.76
+          ],
+          "to": [
+            302.26,
+            83.82
+          ]
+        },
+        {
+          "ref": "C813",
+          "unit": 1,
+          "from": [
+            358.14,
+            111.76
+          ],
+          "to": [
+            358.14,
+            55.88
+          ]
+        },
+        {
+          "ref": "C816",
+          "unit": 1,
+          "from": [
+            358.14,
+            167.64
+          ],
+          "to": [
+            358.14,
+            111.76
+          ]
+        },
+        {
+          "ref": "C818",
+          "unit": 1,
+          "from": [
+            246.38,
+            195.58
+          ],
+          "to": [
+            302.26,
+            167.64
+          ]
+        },
+        {
+          "ref": "C817",
+          "unit": 1,
+          "from": [
+            190.5,
+            195.58
+          ],
+          "to": [
+            358.14,
+            139.7
+          ]
+        },
+        {
+          "ref": "C814",
+          "unit": 1,
+          "from": [
+            358.14,
+            139.7
+          ],
+          "to": [
+            190.5,
+            83.82
+          ]
+        },
+        {
+          "ref": "U812",
+          "unit": 1,
+          "from": [
+            63.5,
+            238.76
+          ],
+          "to": [
+            76.2,
+            193.04
+          ]
+        },
+        {
+          "ref": "R812",
+          "unit": 1,
+          "from": [
+            302.26,
+            83.82
+          ],
+          "to": [
+            190.5,
+            55.88
+          ]
+        },
+        {
+          "ref": "U810",
+          "unit": 1,
+          "from": [
+            63.5,
+            137.16
+          ],
+          "to": [
+            76.2,
+            121.92
+          ]
+        },
+        {
+          "ref": "C815",
+          "unit": 1,
+          "from": [
+            302.26,
+            167.64
+          ],
+          "to": [
+            246.38,
+            111.76
+          ]
+        },
+        {
+          "ref": "J810",
+          "unit": 1,
+          "from": [
+            63.5,
+            76.2
+          ],
+          "to": [
+            246.38,
+            251.46
+          ]
+        },
+        {
+          "ref": "C812",
+          "unit": 1,
+          "from": [
+            190.5,
+            83.82
+          ],
+          "to": [
+            302.26,
+            55.88
+          ]
+        },
+        {
+          "ref": "R814",
+          "unit": 1,
+          "from": [
+            246.38,
+            111.76
+          ],
+          "to": [
+            190.5,
+            111.76
+          ]
+        }
+      ],
+      "symbols_changed": [
+        {
+          "ref": "C813",
+          "unit": 1,
+          "value": [
+            "2.2u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C816",
+          "unit": 1,
+          "value": [
+            "100n",
+            "2.2u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "C818",
+          "unit": 1,
+          "value": [
+            "2.2u",
+            "100n"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "R815",
+          "unit": 1,
+          "value": [
+            "10k",
+            "100k"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        },
+        {
+          "ref": "C817",
+          "unit": 1,
+          "value": [
+            "2.2u",
+            "10u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "R811",
+          "unit": 1,
+          "value": [
+            "100R",
+            "100k"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        },
+        {
+          "ref": "C814",
+          "unit": 1,
+          "value": [
+            "10u 10V",
+            "22n"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "R812",
+          "unit": 1,
+          "value": [
+            "4.7k",
+            "100k"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        },
+        {
+          "ref": "U810",
+          "unit": 1,
+          "value": [
+            "TPS22918DBVR",
+            "AP2112K-3.0TRG1"
+          ],
+          "lib_id": [
+            "Carrier:TPS22918",
+            "Carrier:AP2112K"
+          ]
+        },
+        {
+          "ref": "C815",
+          "unit": 1,
+          "value": [
+            "100n",
+            "2.2u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "J810",
+          "unit": 1,
+          "value": [
+            "RDA5807M module",
+            "FM ANT / GND"
+          ],
+          "lib_id": [
+            "Carrier:CONN8",
+            "Carrier:CONN2"
+          ]
+        },
+        {
+          "ref": "C812",
+          "unit": 1,
+          "value": [
+            "1u",
+            "1u 10V"
+          ],
+          "lib_id": [
+            "Carrier:C",
+            "Carrier:C"
+          ]
+        },
+        {
+          "ref": "R814",
+          "unit": 1,
+          "value": [
+            "10k",
+            "4.7k"
+          ],
+          "lib_id": [
+            "Carrier:R",
+            "Carrier:R"
+          ]
+        }
+      ],
+      "labels_added": [
+        "AMP_L_N_AC",
+        "AMP_L_P_AC",
+        "AMP_R_N_AC",
+        "AMP_R_P_AC",
+        "DAC_L_N_AC",
+        "DAC_L_P_AC",
+        "DAC_R_N_AC",
+        "DAC_R_P_AC",
+        "FM_3V0",
+        "FM_ANT",
+        "FM_ANT_IN",
+        "FM_L_BIASED",
+        "FM_RCLK",
+        "FM_R_BIASED"
+      ],
+      "labels_removed": [
+        "AMP_AC_0",
+        "AMP_AC_1",
+        "AMP_INPUT_N",
+        "AMP_INPUT_P",
+        "DAC_N",
+        "DAC_P",
+        "FM_3V3",
+        "FM_BIASED",
+        "FM_QOD",
+        "FM_SLEW",
+        "FM_SUM"
+      ],
+      "count_delta": {
+        "symbol": 4,
+        "wire": 19,
+        "global_label": 19,
+        "text": 1
+      }
+    },
+    "13_release_holds.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {}
+    },
+    "display_carrier.kicad_sch": {
+      "symbols_added": [],
+      "symbols_removed": [],
+      "symbols_moved": [],
+      "symbols_changed": [],
+      "labels_added": [],
+      "labels_removed": [],
+      "count_delta": {
+        "sheet": 2
+      }
+    }
+  },
+  "pixel_diff": {
+    "11": {
+      "changed_px": 130769,
+      "bbox_mm": [
+        20.3,
+        19.8,
+        397.2,
+        283.7
+      ],
+      "composite": "build\\carrier-audio\\11-pixel-diff.png"
+    },
+    "12": {
+      "changed_px": 181597,
+      "bbox_mm": [
+        20.3,
+        20.0,
+        397.2,
+        283.7
+      ],
+      "composite": "build\\carrier-audio\\12-pixel-diff.png"
+    },
+    "13": {
+      "changed_px": 1645,
+      "bbox_mm": [
+        99.7,
+        20.0,
+        397.2,
+        283.7
+      ],
+      "composite": "build\\carrier-audio\\13-pixel-diff.png"
+    }
+  },
+  "visual_review": "PASS: all four audio sheets, root and release-hold page; native front/rear 3D; actual PCB coordinate overview",
+  "visual_scope": "geometry and readable drawings only; no routing, enclosure, acoustic, RF or powered validation",
+  "fabrication_release": "HOLD",
+  "source_regeneration": "PASS: all 20 formal schematic files, local symbol library and every native pad-net entry reproduced from source with reviewed placement"
+}

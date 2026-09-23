@@ -1,0 +1,556 @@
+{
+  "schema": 1,
+  "scope": "display_carrier model bindings including the three populated FPC connectors; source and dimensional limitations are documented",
+  "models": [
+    {
+      "reference": "U1000",
+      "original_footprint": "Carrier:ML307A_GCLN_LGA94",
+      "footprint": "Carrier:ML307A_GCLN_LGA94",
+      "file": "ML307A_GCLN_LGA94.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C48982535.html",
+      "note": "Repair stale WRL URI; retained imported 270-degree orientation. Model package reference only.",
+      "sha256": "ab751d2b2014c6a8c370687f0077ee45b06b554c4e9fe91cdaab75f5767edf09",
+      "raw_model_bounds_mm": [
+        -8.85,
+        8.85,
+        -7.9,
+        7.9,
+        -0.01,
+        2.31
+      ],
+      "step_solids": 1,
+      "step_valid": true
+    },
+    {
+      "reference": "U210",
+      "original_footprint": "Carrier:TUSB320_RWB12",
+      "footprint": "Carrier:TUSB320_RWB12",
+      "file": "TUSB320_RWB12.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C132554.html",
+      "note": "Repair stale WRL URI; 1.6 x 1.6 x 0.4 mm.",
+      "sha256": "6a4387df221fa6c89a57d63a77a0a9a035a77980841c085ffe1c794b9b254fab",
+      "raw_model_bounds_mm": [
+        -0.8,
+        0.8,
+        -0.8,
+        0.8,
+        0.0,
+        0.401
+      ],
+      "step_solids": 38,
+      "step_valid": true
+    },
+    {
+      "reference": "J200",
+      "original_footprint": "Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge",
+      "footprint": "Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge",
+      "file": "TYPE-C-31-M-12.step",
+      "offset_mm": [
+        0,
+        -1.05,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C165948.html",
+      "note": "Raw shell-leg Y=-4.175/0; rotate 180 then offset Y=-1.05 gives native pad Y=-3.125/+1.05. Locators align at (+/-2.89,-2.60); no scaling.",
+      "sha256": "b083e67ce4d06850a2c3835a6366f4012b2def64f8f2781636381ebcaa33e9a0",
+      "raw_model_bounds_mm": [
+        -4.47,
+        4.47,
+        -5.3,
+        2.6,
+        -0.85,
+        3.251
+      ],
+      "step_solids": 14,
+      "step_valid": true
+    },
+    {
+      "reference": "U200",
+      "original_footprint": "Package_DFN_QFN:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
+      "footprint": "Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm",
+      "file": "CH343P_QFN16.step",
+      "offset_mm": [
+        0,
+        0,
+        0.01
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C2846043.html",
+      "note": "Supplier package:3x3,0.5 pitch,H0.8; rotate pin-1 mark to native NW, lift0.01 to seating plane. EP rendering1.7 vs footprint1.8 is illustrative.",
+      "sha256": "c0e4ce7826ec0071788b135da6de58398c5b0234ba8922dcfc7fc0d2f292a219",
+      "raw_model_bounds_mm": [
+        -1.51,
+        1.51,
+        -1.51,
+        1.51,
+        -0.01,
+        0.801
+      ],
+      "step_solids": 14,
+      "step_valid": true
+    },
+    {
+      "reference": "U310",
+      "original_footprint": "Carrier:TPS22990_DML10",
+      "footprint": "Carrier:TPS22990_DML10",
+      "file": "TPS22990_DML10_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/pdf/MPDS574",
+      "note": "3x2x0.8mm,7 small contacts plus merged8-10 output bar,EP2.6x1.1.",
+      "sha256": "4d2df7bd7fff0c4a0c9d4bcefdedb6a01d89dea0a987e557fc35455a6b4abfca",
+      "raw_model_bounds_mm": [
+        -1.5,
+        1.5,
+        -1.0,
+        1.0,
+        0.0,
+        0.8
+      ],
+      "step_solids": 11,
+      "step_valid": true
+    },
+    {
+      "reference": "U400",
+      "original_footprint": "Package_DFN_QFN:Texas_VQFN-RHL-20",
+      "footprint": "Carrier:Texas_VQFN-RHL-20",
+      "file": "TPS61088_RHL20_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/ds/symlink/tps61088.pdf",
+      "note": "RHL0020A:3.5x4.5x1,20 leads+EP2.05x3.05. Downloaded C87357 model rejected:24 peripheral contacts.",
+      "sha256": "66a289780cc3c0dc0cfed3437e0c040f4433e21b99c504b9f485801290e24e78",
+      "raw_model_bounds_mm": [
+        -1.75,
+        1.75,
+        -2.25,
+        2.25,
+        0.0,
+        1.0
+      ],
+      "step_solids": 27,
+      "step_valid": true
+    },
+    {
+      "reference": "J300",
+      "original_footprint": "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
+      "footprint": "Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical",
+      "file": "JST_B2P_VH_reference.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/eVH.pdf",
+      "note": "7.86x8.5,H10.9,tail3.7,pitch3.96. Downloaded VH3.96-2A rejected as exact JST model:body7.92x8.7 and H10.4 after seating adjustment. Latch detail simplified.",
+      "sha256": "a0c5f5a5439129d8daab284383fbb477d2df507502f66ff7a9acdbdf6447e88f",
+      "raw_model_bounds_mm": [
+        -1.95,
+        5.91,
+        -4.8,
+        3.7,
+        -3.7,
+        10.9
+      ],
+      "step_solids": 6,
+      "step_valid": true
+    },
+    {
+      "reference": "J1200",
+      "part": "FPC-05FB-30PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_30PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_30PH20",
+      "file": "FPC-SMD_30P-P0.50_FPC-05FB-30PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856833.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "9131bcc2a5a84f7307e973d6b8c53d6bbdab1aaba0b09621ca94cdff34169e07",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -9.250000100000001,
+        9.250000100000001,
+        -5.150000100000005,
+        0.25000009999999956,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "J1210",
+      "part": "FPC-05FB-6PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_6PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_6PH20",
+      "file": "FPC-SMD_6P-P0.50_FPC-05FB-6PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856827.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "8322418ae83b7f688049310820f28cb3ffbc25ad667634314787e67d4c3b2f63",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -3.2500000999999994,
+        3.2500000999999994,
+        -5.150000100000005,
+        0.250000099999999,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "J1220",
+      "part": "FPC-05FB-24PH20",
+      "original_footprint": "Carrier:XUNPU_FPC_05FB_24PH20",
+      "footprint": "Carrier:XUNPU_FPC_05FB_24PH20",
+      "file": "FPC-SMD_24P-P0.50_FPC-05FB-24PH20.step",
+      "kind": "supplier_reference",
+      "source": "https://www.lcsc.com/product-detail/C2856831.html",
+      "manufacturer_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+      "sha256": "4e01fab2673707bedcd6dbd64474e96b3d243a05de26dff4baeaa22be8be68f5",
+      "offset_mm": [
+        0,
+        1.625,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "raw_bounds_mm": [
+        -7.750000100000001,
+        7.750000100000001,
+        -5.150000100000004,
+        0.250000099999999,
+        -1e-07,
+        2.0100001000000005
+      ],
+      "valid_solids": true,
+      "notes": "Family drawing Rev A: pitch/terminal count, 0.30x1.20 lands, 2.00x1.80 hold-down lands and 3.25 row offset checked. 6P model body 6.5 mm differs from drawing 6.9 mm; fabrication envelope uses 6.9 mm. Closed latch only; mating and tolerance not qualified."
+    },
+    {
+      "reference": "U1300",
+      "original_footprint": "Carrier:OPT3001_DNP0006A",
+      "footprint": "Carrier:OPT3001_DNP0006A",
+      "file": "OPT3001_DNP_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "note": "Body envelope only, 2x2x0.65mm. Not manufacturer STEP or optical/mechanical sign-off.",
+      "sha256": "33f1057e9457f9418f2d80d308ef23f11c66a8c4b1dc839b3a8bed967c3df1d7"
+    },
+    {
+      "reference": "U1301",
+      "original_footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "file": "SHT40_DFN4_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "note": "Official KiCad pad geometry, no center copper; nominal body 1.5x1.5x0.5 mm reference only.",
+      "sha256": "8d81aa055bfff96c047315b5e6c5d2f4f4d0108497b1dd005e5f43cd801aed35"
+    },
+    {
+      "reference": "U800",
+      "original_footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "file": "ES8389_QFN24.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier",
+      "source": "https://www.lcsc.com/product-detail/C22380673.html",
+      "note": "Supplier land geometry checked: QFN24 3x3, 0.35 pitch, EP1.7; pad25 GND. Added courtyard.",
+      "sha256": "caaec3a711966d0cad51e3488bbbd4fbe17e6692b2fb5921d17b1770798acdf3"
+    },
+    {
+      "reference": "U802",
+      "original_footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "file": "LMA3729T381_OAS02_TopPort_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "note": "M282 v1.1 2026-02-25: PCB top view 1=VDD upper right, 2=OUT upper left, 3/4=GND lower. 0.8mm lands, 1.70x2.46 spacing; 0.25mm top port. Envelope reference only.",
+      "sha256": "aaedb88cdfc6e4bf9bac9064c66ee7629a8d09d8b3288d3e4ac12edc77360888"
+    },
+    {
+      "reference": "U803",
+      "original_footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
+      "file": "LMA3729T381_OAS02_TopPort_reference.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "note": "M282 v1.1 2026-02-25: PCB top view 1=VDD upper right, 2=OUT upper left, 3/4=GND lower. 0.8mm lands, 1.70x2.46 spacing; 0.25mm top port. Envelope reference only.",
+      "sha256": "aaedb88cdfc6e4bf9bac9064c66ee7629a8d09d8b3288d3e4ac12edc77360888"
+    },
+    {
+      "reference": "J1000",
+      "original_footprint": "Carrier:nanoSIM_GCT_SIM8066_PushPush",
+      "footprint": "Carrier:nanoSIM_GCT_SIM8066_PushPush",
+      "file": "SIM8066-6-1-14-01-A.step",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C3032925.html",
+      "note": "Push-push SIM8066. Supplier STEP, not precision enclosure approval. Land pattern checked against GCT A1; pegs corrected to NPTH; 4 shell tabs share SH/GND.",
+      "sha256": "0f698a9681065c13320fff80893bef5d509bba3cadd9f7f36bc6ee916d0def9e",
+      "raw_model_bounds_mm": [
+        -6.545,
+        6.545,
+        -7.29,
+        7.29,
+        -0.4,
+        1.42
+      ]
+    },
+    {
+      "reference": "L400",
+      "original_footprint": "Carrier:L_Cjiang_FEXU0640_6.2x6.0mm",
+      "footprint": "Carrier:L_Cjiang_FEXU0640_6.2x6.0mm",
+      "file": "FEXU0640S2R2MGS.step",
+      "offset_mm": [
+        0,
+        0,
+        0.1
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "supplier_package",
+      "source": "https://www.lcsc.com/product-detail/C54140025.html",
+      "note": "Supplier STEP, raw z=-0.10..3.90, seated height 4.0mm. Nominal envelope checked against Cjiang drawing; not precision enclosure approval.",
+      "sha256": "f0c2350f188a09812a36a760f0b0944fad955e365f53235009f6876f1cd69594",
+      "raw_model_bounds_mm": [
+        -3.1,
+        3.1,
+        -3.01,
+        3,
+        -0.1,
+        3.9
+      ]
+    }
+  ],
+  "intentional_no_model": {
+    "test_points": "bare copper; no mounted object",
+    "mounting_holes": "NPTH only; screws belong to enclosure assembly"
+  },
+  "all_dimensions_mm": true,
+  "rotation_convention": "KiCad model rotation; preserve scale1"
+}

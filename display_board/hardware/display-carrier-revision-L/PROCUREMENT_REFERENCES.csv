@@ -1,0 +1,328 @@
+﻿Reference,CircuitValue,Footprint,Fitted,LCSC,Manufacturer,MPN,SelectionStatus,Note,URL
+U100,OSPTEK P4C5 / P4C6,Carrier:OSPTEK_P4C5_P4C6_Compatible,1,,,OSPTEK P4C5 / P4C6,USER_FIXED,用户指定鱼鹰光电核心板、ML307 模组，单独采购。,
+C101,22u 10V X5R,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C102,22u 10V X5R,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C103,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C104,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R101,10k 1%,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R102,10k 1%,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R103,10k 1%,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C105,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R104,0R C6 default,Resistor_SMD:R_0603_1608Metric,1,C21189,UNI-ROYAL,0603WAF0000T5E,SELECTED,,https://www.lcsc.com/product-detail/C21189.html
+R105,0R C5 only,Resistor_SMD:R_0603_1608Metric,0,C21189,UNI-ROYAL,0603WAF0000T5E,SELECTED,,https://www.lcsc.com/product-detail/C21189.html
+R106,10k C6 strap,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R107,10k C5 only,Resistor_SMD:R_0603_1608Metric,0,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+SW101,RESET,Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS,1,,,,HOLD,侧按键 PTS645Vx39-2LFS 尚无可核实的立创现货替代；替换需核对定位孔、按压高度和侧向行程。,
+SW102,BOOT,Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS,1,,,,HOLD,同 SW101，不能把通用 6x6 按键当作已验证的直替。,
+R108,10k 1%,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R109,NTC 10k B3950,Resistor_SMD:R_0603_1608Metric,1,,,,HOLD,NTC 10k/B3950 缺完整订货号；R25/B 公差及封装需确认。电池包 NTC 本身不在此载板 BOM 内。,
+C106,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R110,4.7k 1%,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+R111,4.7k 1%,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+R112,4.7k 1%,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+R113,4.7k 1%,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+J200,USB-C CHARGE / DEBUG,Carrier:USB_C_HRO_TYPE_C_31_M_12_Edge,1,C165948,Korean Hroparts Elec,TYPE-C-31-M-12,SELECTED,,https://www.lcsc.com/product-detail/C165948.html
+U200,CH343P,Carrier:WCH_QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,1,C2846043,WCH,CH343P,SELECTED,,https://www.lcsc.com/product-detail/C2846043.html
+U201,TXU0202DCUR,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,1,C5186957,TI,TXU0202DCUR,SELECTED,,https://www.lcsc.com/product-detail/C5186957.html
+U202,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,1,C7519,ST,USBLC6-2SC6,SELECTED,,https://www.lcsc.com/product-detail/C7519.html
+C201,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C202,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C203,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C204,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C205,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C206,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+Q201,MMBT3904,Package_TO_SOT_SMD:SOT-23,1,C20526,JSCJ,MMBT3904(RANGE:100-300),SELECTED,长电 MMBT3904，SOT-23。,https://www.lcsc.com/product-detail/C20526.html
+R201,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+Q202,MMBT3904,Package_TO_SOT_SMD:SOT-23,1,C20526,JSCJ,MMBT3904(RANGE:100-300),SELECTED,长电 MMBT3904，SOT-23。,https://www.lcsc.com/product-detail/C20526.html
+R202,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R203,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+U210,TUSB320LAIRWBR,Carrier:TUSB320_RWB12,1,C132554,TI,TUSB320LAIRWBR,SELECTED,,https://www.lcsc.com/product-detail/C132554.html
+U211,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,1,C51118,DIODES,AP2112K-3.3TRG1,SELECTED,,https://www.lcsc.com/product-detail/C51118.html
+U212,TPS2553DBVR,Package_TO_SOT_SMD:SOT-23-6,1,C55266,TI,TPS2553DBVR,SELECTED,,https://www.lcsc.com/product-detail/C55266.html
+R211,887k 1%,Resistor_SMD:R_0603_1608Metric,1,C403386,PANASONIC,ERJ3EKF8873V,SELECTED,,https://www.lcsc.com/product-detail/C403386.html
+R212,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R213,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+D211,BAT54H,Diode_SMD:D_SOD-123,1,,,,HOLD,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。,
+D212,BAT54H,Diode_SMD:D_SOD-123,1,,,,HOLD,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。,
+Q211,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R214,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R215,68.1k 1%,Resistor_SMD:R_0603_1608Metric,1,C25976,UNI-ROYAL,0603WAF6812T5E,SELECTED,,https://www.lcsc.com/product-detail/C25976.html
+Q212,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R216,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+Q213,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R217,33.2k 1%,Resistor_SMD:R_0603_1608Metric,1,C23003,UNI-ROYAL,0603WAF3322T5E,SELECTED,,https://www.lcsc.com/product-detail/C23003.html
+Q214,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R218,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R219,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C211,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C212,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C213,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C214,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C215,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+U300,BQ25896RTWR,Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,1,C181475,TI,BQ25896RTWR,SELECTED,,https://item.szlcsc.com/192872.html
+J300,1S BATTERY 10A,Carrier:JST_VH_B2P-VH_1x02_P3.96mm_Vertical,1,C160315,JST,B2P-VH(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C160315.html
+J301,PACK NTC / RETURN,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C131337.html
+F300,8A pack qualified fuse,Fuse:Fuse_1206_3216Metric,1,,,,HOLD,8A 仅是占位要求；电池包短路电流、直流分断能力、温度降额和保护配合尚未闭合。,
+L300,1uH Isat>=8A,Inductor_SMD:L_Sunlord_SWPA6045S,1,,,,HOLD,1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。,
+C300,1u 25V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C301,10u 25V,Capacitor_SMD:C_1206_3216Metric,1,C13585,Samsung Electro-Mechanics,CL31A106KBHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C13585.html
+C302,4.7u 10V,Capacitor_SMD:C_0603_1608Metric,1,C19666,Samsung Electro-Mechanics,CL10A475KO8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C19666.html
+C303,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+C304,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C305,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C306,47n 16V,Capacitor_SMD:C_0603_1608Metric,1,C1622,Samsung Electro-Mechanics,CL10B473KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1622.html
+R300,300R 1%,Resistor_SMD:R_0603_1608Metric,1,C23025,UNI-ROYAL,0603WAF3000T5E,SELECTED,,https://www.lcsc.com/product-detail/C23025.html
+R301,9.09k 0.1% / B3950,Resistor_SMD:R_0603_1608Metric,1,C861611,YAGEO,RT0603BRD079K09L,SELECTED,,https://www.lcsc.com/product-detail/C861611.html
+R302,187k 0.1% / B3950,Resistor_SMD:R_0603_1608Metric,1,C1854557,VISHAY,TNPW0603187KBEEA,SELECTED,,https://www.lcsc.com/product-detail/C1854557.html
+R303,0R CHARGE DISABLED,Resistor_SMD:R_0603_1608Metric,1,C21189,UNI-ROYAL,0603WAF0000T5E,SELECTED,,https://www.lcsc.com/product-detail/C21189.html
+R304,0R ENABLE after review,Resistor_SMD:R_0603_1608Metric,0,C21189,UNI-ROYAL,0603WAF0000T5E,SELECTED,,https://www.lcsc.com/product-detail/C21189.html
+R305,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R306,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+U310,TPS22990DMLR,Carrier:TPS22990_DML10,1,C962990,TI,TPS22990DMLR,SELECTED,,https://www.lcsc.com/product-detail/C962990.html
+SW310,POWER SIDE SLIDE,Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled,1,C273395,E-Switch,EG1224,SELECTED,,https://www.lcsc.com/product-detail/C273395.html
+D310,BAT54H,Diode_SMD:D_SOD-123,1,,,,HOLD,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。,
+D311,BAT54H,Diode_SMD:D_SOD-123,1,,,,HOLD,BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。,
+R310,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R311,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C310,10n,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH,0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C57112.html
+C311,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C312,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+Q310,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R312,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C313,10n,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH,0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C57112.html
+U400,TPS61088RHLR,Carrier:Texas_VQFN-RHL-20,1,C87357,TI,TPS61088RHLR,SELECTED,,https://www.lcsc.com/product-detail/C87357.html
+U410,TLV62569DBVR,Package_TO_SOT_SMD:SOT-23-5,1,C141836,TI,TLV62569DBVR,SELECTED,,https://www.lcsc.com/product-detail/C141836.html
+L400,2.2uH FEXU0640S2R2MGS,Carrier:L_Cjiang_FEXU0640_6.2x6.0mm,1,C54140025,cjiang,FEXU0640S2R2MGS,SELECTED,,https://www.lcsc.com/product-detail/C54140025.html
+R400,178k 1%,Resistor_SMD:R_0603_1608Metric,1,C22823,UNI-ROYAL,0603WAF1783T5E,SELECTED,,https://www.lcsc.com/product-detail/C22823.html
+R401,56.2k 1%,Resistor_SMD:R_0603_1608Metric,1,C23080,UNI-ROYAL,0603WAF5622T5E,SELECTED,,https://www.lcsc.com/product-detail/C23080.html
+R402,324k 1%,Resistor_SMD:R_0603_1608Metric,1,C667203,FH,TD03G3243BT,SELECTED,324k 使用 0.1% 精度，其余按要求匹配或优于原公差。,https://www.lcsc.com/product-detail/C667203.html
+R403,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R404,22k loop-tune,Resistor_SMD:R_0603_1608Metric,1,C31850,UNI-ROYAL,0603WAF2202T5E,SELECTED,,https://www.lcsc.com/product-detail/C31850.html
+C400,2.2u 10V,Capacitor_SMD:C_0603_1608Metric,1,C23630,Samsung Electro-Mechanics,CL10A225KO8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C23630.html
+C401,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C402,47n,Capacitor_SMD:C_0603_1608Metric,1,C1622,Samsung Electro-Mechanics,CL10B473KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1622.html
+C403,10n loop-tune,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH,0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C57112.html
+C404,100p C0G,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14858.html
+C405,22u 10V,Capacitor_SMD:C_1206_3216Metric,1,C12891,Samsung Electro-Mechanics,CL31A226KAHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C12891.html
+C406,22u 10V,Capacitor_SMD:C_1206_3216Metric,1,C12891,Samsung Electro-Mechanics,CL31A226KAHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C12891.html
+C407,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C2932478,Samsung Electro-Mechanics,CL32B476KPJNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C2932478.html
+C408,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C2932478,Samsung Electro-Mechanics,CL32B476KPJNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C2932478.html
+C409,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C2932478,Samsung Electro-Mechanics,CL32B476KPJNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C2932478.html
+L410,2.2uH Isat>=3.5A,Inductor_SMD:L_Sunlord_SWPA4020S,1,,,,HOLD,2.2uH/Isat>=3.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。,
+R410,453k 1%,Resistor_SMD:R_0603_1608Metric,1,C273765,YAGEO,RC0603FR-07453KL,SELECTED,,https://www.lcsc.com/product-detail/C273765.html
+R411,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C410,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+C411,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C412,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C413,22p C0G,Capacitor_SMD:C_0603_1608Metric,1,C1653,Samsung Electro-Mechanics,CL10C220JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1653.html
+J500,microSD DM3AT,Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5,1,C114218,HRS,DM3AT-SF-PEJM5,SELECTED,,https://www.lcsc.com/product-detail/C114218.html
+U500,TPS22918DBVR,Package_TO_SOT_SMD:SOT-23-6,1,C131941,TI,TPS22918DBVR,SELECTED,,https://www.lcsc.com/product-detail/C131941.html
+R500,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C500,1n,Capacitor_SMD:C_0603_1608Metric,1,C1588,Samsung Electro-Mechanics,CL10B102KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1588.html
+R501,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+C501,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C502,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C503,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R510,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R520,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R511,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R521,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R512,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R522,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R513,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R523,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R514,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R524,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+R515,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R530,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C504,10n,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH,0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C57112.html
+R313,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C216,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+U1000,ML307A-GCLN,Carrier:ML307A_GCLN_LGA94,1,,,ML307A-GCLN,USER_FIXED,用户指定鱼鹰光电核心板、ML307 模组，单独采购。,
+U1001,TXU0202DCUR,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,1,C5186957,TI,TXU0202DCUR,SELECTED,,https://www.lcsc.com/product-detail/C5186957.html
+U1002,TXU0202DCUR,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,1,C5186957,TI,TXU0202DCUR,SELECTED,,https://www.lcsc.com/product-detail/C5186957.html
+C1000,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1001,1u,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C1002,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1003,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+Q1000,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R1000,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1001,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C1004,1n,Capacitor_SMD:C_0603_1608Metric,1,C1588,Samsung Electro-Mechanics,CL10B102KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1588.html
+U1010,TLV62585DRLR,Package_TO_SOT_SMD:SOT-563,1,C485117,TI,TLV62585DRLR,SELECTED,,https://www.lcsc.com/product-detail/C485117.html
+L1010,1uH Isat>=4.5A,Inductor_SMD:L_Sunlord_SWPA4020S,1,,,,HOLD,1uH/Isat>=4.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。,
+R1010,536k 1%,Resistor_SMD:R_0603_1608Metric,1,,,,HOLD,536k 1%/0603 尚未找到已核实现货料号；不直接改用相近阻值，以免改变 ML307 供电。,
+R1011,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1012,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C1010,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C1011,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C1012,220u 6.3V low ESR,Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D,1,,,,HOLD,220uF/6.3V 低 ESR 储能待选聚合物及纹波/降额验证；普通钽不能直接替代。,
+C1013,220u 6.3V low ESR,Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D,1,,,,HOLD,同 C1012；需保证两只在模组脉冲负载下的有效储能。,
+C1014,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1015,100p C0G,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14858.html
+C1016,33p C0G,Capacitor_SMD:C_0603_1608Metric,1,C1663,Samsung Electro-Mechanics,CL10C330JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1663.html
+Q1010,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R1013,47k,Resistor_SMD:R_0603_1608Metric,1,C25819,UNI-ROYAL,0603WAF4702T5E,SELECTED,,https://www.lcsc.com/product-detail/C25819.html
+Q1011,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R1014,100R 0.25W,Resistor_SMD:R_1206_3216Metric,1,,,,HOLD,100R/0.25W/1206 精确采购号待闭合；不可用本表 0603 100R 替代。,
+U1011,TPS22918DBVR,Package_TO_SOT_SMD:SOT-23-6,1,C131941,TI,TPS22918DBVR,SELECTED,,https://www.lcsc.com/product-detail/C131941.html
+R1015,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1016,1k,Resistor_SMD:R_0603_1608Metric,1,C21190,UNI-ROYAL,0603WAF1001T5E,SELECTED,,https://www.lcsc.com/product-detail/C21190.html
+C1017,1n,Capacitor_SMD:C_0603_1608Metric,1,C1588,Samsung Electro-Mechanics,CL10B102KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C1588.html
+C1018,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+U1012,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,1,C51118,DIODES,AP2112K-3.3TRG1,SELECTED,,https://www.lcsc.com/product-detail/C51118.html
+C1019,1u,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C1020,1u,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R1017,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+J1000,GCT SIM8066-6-1-14-01-A,Carrier:nanoSIM_GCT_SIM8066_PushPush,1,C3032925,Global Connector Technology,SIM8066-6-1-14-01-A,SELECTED,,https://www.lcsc.com/product-detail/C3032925.html
+R1030,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R1031,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R1032,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+C1030,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R1033,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C1031,10n,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH,0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C57112.html
+R1034,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+U1030,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,1,C7519,ST,USBLC6-2SC6,SELECTED,,https://www.lcsc.com/product-detail/C7519.html
+U1031,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,1,C7519,ST,USBLC6-2SC6,SELECTED,,https://www.lcsc.com/product-detail/C7519.html
+J1010,IPEX-1 50R,Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C598199,HRS,U.FL-R-SMT-1(01),SELECTED,,https://www.lcsc.com/product-detail/C598199.html
+R1040,0R RF match,Resistor_SMD:R_0603_1608Metric,1,C21189,UNI-ROYAL,0603WAF0000T5E,SELECTED,,https://www.lcsc.com/product-detail/C21189.html
+C1040,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
+C1041,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
+J1011,IPEX-1 50R,Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C598199,HRS,U.FL-R-SMT-1(01),SELECTED,,https://www.lcsc.com/product-detail/C598199.html
+C1044,100p C0G RF DC block,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。 RF DC block 的高频损耗/自谐振仍需实测确认。,https://www.lcsc.com/product-detail/C14858.html
+C1042,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
+C1043,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
+U800,ES8389,Carrier:ES8389_QFN24_3x3_P0.35,1,C22380673,Everest-semi(Everest Semiconductor),ES8389,SELECTED,,https://www.lcsc.com/product-detail/C22380673.html
+U801,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,1,C51118,DIODES,AP2112K-3.3TRG1,SELECTED,,https://www.lcsc.com/product-detail/C51118.html
+R800,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R801,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R802,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R803,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R804,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R805,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R806,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C800,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C801,10u 10V,Capacitor_SMD:C_0603_1608Metric,1,C19702,Samsung Electro-Mechanics,CL10A106KP8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C19702.html
+C802,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C803,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C804,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C805,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C806,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C807,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C808,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R807,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C809,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R808,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C810,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R809,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C811,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+R810,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+U815,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,1,,,,HOLD,保留用户指定 RDA5807M；立创旧商品页仅有历史零库存信息，当前可采购库存/交期未确认。,
+U810,ME6211C30M5G-N,Package_TO_SOT_SMD:SOT-23-5,1,C403651,MICRONE,ME6211C30M5G-N,SELECTED,,https://www.lcsc.com/product-detail/C403651.html
+U811,SN74LVC1G3157DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,1,C38663,TI,SN74LVC1G3157DCKR,SELECTED,,https://www.lcsc.com/product-detail/C38663.html
+U812,SN74LVC1G3157DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,1,C38663,TI,SN74LVC1G3157DCKR,SELECTED,,https://www.lcsc.com/product-detail/C38663.html
+U813,SN74LVC1G3157DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,1,C38663,TI,SN74LVC1G3157DCKR,SELECTED,,https://www.lcsc.com/product-detail/C38663.html
+U814,SN74LVC1G3157DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,1,C38663,TI,SN74LVC1G3157DCKR,SELECTED,,https://www.lcsc.com/product-detail/C38663.html
+R812,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R811,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C812,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C813,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C814,22n,Capacitor_SMD:C_0603_1608Metric,1,C21122,Samsung Electro-Mechanics,CL10B223KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C21122.html
+Q810,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R813,4.7k,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+Q811,2N7002,Package_TO_SOT_SMD:SOT-23,1,C8545,JSCJ,2N7002,SELECTED,长电 2N7002，SOT-23；按现有低电流用途，非功率开关替代。,https://www.lcsc.com/product-detail/C8545.html
+R814,4.7k,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+C815,2.2u 10V,Capacitor_SMD:C_0603_1608Metric,1,C23630,Samsung Electro-Mechanics,CL10A225KO8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C23630.html
+R815,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C816,2.2u 10V,Capacitor_SMD:C_0603_1608Metric,1,C23630,Samsung Electro-Mechanics,CL10A225KO8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C23630.html
+R816,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R817,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R818,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C817,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+R819,1k,Resistor_SMD:R_0603_1608Metric,1,C21190,UNI-ROYAL,0603WAF1001T5E,SELECTED,,https://www.lcsc.com/product-detail/C21190.html
+R820,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C818,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C819,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C820,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C821,100n,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+Y810,ABS07-32.768KHZ-7-T,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,1,C276424,ABRACON,ABS07-32.768KHZ-7-T,SELECTED,,https://www.lcsc.com/product-detail/C276424.html
+J810,FM ANT / GND,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C131337.html
+C822,100p C0G,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14858.html
+D810,PESD5V0U1BA,Diode_SMD:D_SOD-323,1,C552574,Nexperia,"PESD5V0U1BA,115",SELECTED,,https://www.lcsc.com/product-detail/C552574.html
+U802,LMA3729T381-OAS02,Carrier:LMA3729T381_OAS02_TopPort,1,C54320678,LinkMems,LMA3729T381-OAS02,SELECTED,,https://www.lcsc.com/product-detail/C54320678.html
+R840,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+C840,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C841,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C842,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C843,100p C0G,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14858.html
+C848,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+U803,LMA3729T381-OAS02,Carrier:LMA3729T381_OAS02_TopPort,1,C54320678,LinkMems,LMA3729T381-OAS02,SELECTED,,https://www.lcsc.com/product-detail/C54320678.html
+R841,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+C844,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C845,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C846,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C847,100p C0G,Capacitor_SMD:C_0603_1608Metric,1,C14858,Samsung Electro-Mechanics,CL10C101JB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14858.html
+C849,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+U820,NS4150B,Package_SO:MSOP-8_3x3mm_P0.65mm,1,C189961,Shenzhen Nsiway Tech,NS4150B,SELECTED,,https://www.lcsc.com/product-detail/C189961.html
+J820,SPEAKER L / 4R,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C131337.html
+C860,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R860,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C865,1n C0G,Capacitor_SMD:C_0603_1608Metric,1,C507408,FH,0603CG102F500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C507408.html
+C861,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R861,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C866,1n C0G,Capacitor_SMD:C_0603_1608Metric,1,C507408,FH,0603CG102F500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C507408.html
+R862,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C862,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C863,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C864,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+U821,NS4150B,Package_SO:MSOP-8_3x3mm_P0.65mm,1,C189961,Shenzhen Nsiway Tech,NS4150B,SELECTED,,https://www.lcsc.com/product-detail/C189961.html
+J821,SPEAKER R / 4R,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://www.lcsc.com/product-detail/C131337.html
+C868,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R863,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C873,1n C0G,Capacitor_SMD:C_0603_1608Metric,1,C507408,FH,0603CG102F500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C507408.html
+C869,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R864,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C874,1n C0G,Capacitor_SMD:C_0603_1608Metric,1,C507408,FH,0603CG102F500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C507408.html
+R865,10k,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+C870,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C871,100n 10V,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C872,10u 10V,Capacitor_SMD:C_0805_2012Metric,1,C15850,Samsung Electro-Mechanics,CL21A106KAYNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C15850.html
+U822,TLV62585DRLR,Package_TO_SOT_SMD:SOT-563,1,C485117,TI,TLV62585DRLR,SELECTED,,https://www.lcsc.com/product-detail/C485117.html
+L820,1uH Isat>=4.5A,Inductor_SMD:L_Sunlord_SWPA4020S,1,,,,HOLD,同 L1010；功放电源需负载瞬态验证。,
+R866,680k 1%,Resistor_SMD:R_0603_1608Metric,1,C25822,UNI-ROYAL,0603WAF6803T5E,SELECTED,,https://www.lcsc.com/product-detail/C25822.html
+R867,100k 1%,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+C876,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C877,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+C878,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,Samsung Electro-Mechanics,CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C45783.html
+J1200,FPC-05FB-30PH20,Carrier:XUNPU_FPC_05FB_30PH20,1,C2856833,XUNPU,FPC-05FB-30PH20,SELECTED,,https://www.lcsc.com/product-detail/C2856833.html
+U1200,AP2112K-1.8TRG1,Package_TO_SOT_SMD:SOT-23-5,1,C176944,DIODES,AP2112K-1.8TRG1,SELECTED,,https://www.lcsc.com/product-detail/C176944.html
+U1201,TXU0102DCUR,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,1,C5217871,TI,TXU0102DCUR,SELECTED,,https://www.lcsc.com/product-detail/C5217871.html
+C1200,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C1201,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+C1202,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1203,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+R1200,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1201,10k bleed,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R1202,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1203,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1204,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1205,100k,Resistor_SMD:R_0603_1608Metric,1,C25803,UNI-ROYAL,0603WAF1003T5E,SELECTED,,https://www.lcsc.com/product-detail/C25803.html
+R1206,10k scan option,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+R1207,10k scan option,Resistor_SMD:R_0603_1608Metric,1,C25804,UNI-ROYAL,0603WAF1002T5E,SELECTED,,https://www.lcsc.com/product-detail/C25804.html
+J1210,FPC-05FB-6PH20,Carrier:XUNPU_FPC_05FB_6PH20,1,C2856827,XUNPU,FPC-05FB-6PH20,SELECTED,,https://www.lcsc.com/product-detail/C2856827.html
+R1210,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+R1211,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+R1212,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+R1213,100R,Resistor_SMD:R_0603_1608Metric,1,C22775,UNI-ROYAL,0603WAF1000T5E,SELECTED,,https://www.lcsc.com/product-detail/C22775.html
+R1214,4.7k,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+R1215,4.7k,Resistor_SMD:R_0603_1608Metric,1,C23162,UNI-ROYAL,0603WAF4701T5E,SELECTED,,https://www.lcsc.com/product-detail/C23162.html
+C1210,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1211,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html
+J1220,FPC-05FB-24PH20,Carrier:XUNPU_FPC_05FB_24PH20,1,C2856831,XUNPU,FPC-05FB-24PH20,SELECTED,,https://www.lcsc.com/product-detail/C2856831.html
+U1300,OPT3001DNPR,Carrier:OPT3001_DNP0006A,1,C90462,TI,OPT3001DNPR,SELECTED,,https://www.lcsc.com/product-detail/C90462.html
+U1301,SHT40-AD1B-R2,Carrier:SHT40_DFN4_NoCentralPad,1,,,,HOLD,现用 SHT40-AD1B-R2 的立创当前现货未确认；AD1F-R2/C7461846 国内有货，但膜版高度/焊盘/装配尚未完成复核，未自动换料。,
+R1300,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+R1301,22R,Resistor_SMD:R_0603_1608Metric,1,C23345,UNI-ROYAL,0603WAF220JT5E,SELECTED,,https://www.lcsc.com/product-detail/C23345.html
+C1300,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1301,100n 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C14663,YAGEO,CC0603KRX7R9BB104,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C14663.html
+C1302,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,Samsung Electro-Mechanics,CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://www.lcsc.com/product-detail/C29936.html

@@ -8,7 +8,9 @@ Two matched top-port analog MEMS microphones are soldered directly to the PCB.
 KORVO='https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf'
 ES='https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf'
 NS='https://www.micros.com.pl/mediaserver/ULNS4150b_NSIWAY_0001.pdf'
-SGM='https://www.sg-micro.com/rect/assets/a22623ad-a59a-4732-b010-4b667f6b9a7c/SGM3157.pdf'
+SWITCH='https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf'
+MIC='https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678'
+LDO='https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651'
 
 
 def add_audio(d,page,box,item,pas,cap,mos,tp):
@@ -50,7 +52,7 @@ def add_audio(d,page,box,item,pas,cap,mos,tp):
     s='12_fm_audio'
     page(s,'12 RDA5807M and stereo source',(33,62),[
         'Onboard RDA5807M MSOP10 with 32.768k crystal. J810 is FM antenna/GND, not the former 8-pin module port.',
-        'FM L/R remain independent. Four SGM3157 switches select both differential legs of both speaker channels.',
+        'FM L/R remain independent. Four SN74LVC1G3157 switches select both legs of both speaker channels.',
         'AUDIO_SOURCE_SELECT=0: codec (pin3); =1: FM (pin1). Mute both PAs before changing source or FM power.',
         'RDA5807M supply and I2C branch are switched together. Antenna matching/ESD and RF desense need bench QA.'
     ])
@@ -60,18 +62,20 @@ def add_audio(d,page,box,item,pas,cap,mos,tp):
     item(s,'U815','RDA5807M','RDA5807M',{1:'GND',2:'FM_ANT_IN',3:'GND',4:'FM_SCL',5:'FM_SDA',
         6:'FM_RCLK',7:'FM_3V0',8:'GND',9:'FM_R',10:'FM_L'},'Package_SO:MSOP-10_3x3mm_P0.5mm',
         xy=(76.2,78.74),pcb=(41,67),source='docs/RDA5807M datasheet_v1.pdf')
-    item(s,'U810','AP2112K','AP2112K-3.0TRG1',{1:'AUDIO_3V3',2:'GND',3:'FM_POWER_EN',
+    box('ME6211C',[(1,'VIN','power_in'),(2,'VSS','power_in'),(3,'CE','input'),
+                   (4,'NC','no_connect'),(5,'VOUT','power_out')])
+    item(s,'U810','ME6211C','ME6211C30M5G-N',{1:'AUDIO_3V3',2:'GND',3:'FM_POWER_EN',
         4:None,5:'FM_3V0'},'Package_TO_SOT_SMD:SOT-23-5',xy=(76.2,121.92),pcb=(35,63),
-        status='Dedicated 3.0V keeps RDA below its 3.3V maximum including LDO tolerance')
-    box('SGM3157',[(1,'B2','passive'),(2,'GND','power_in'),(3,'B1','passive'),
+        source=LDO,status='3.0V 1%; 1uF ceramic input/output; verify low-headroom startup and FM noise on bench')
+    box('SN74LVC1G3157',[(1,'B2','passive'),(2,'GND','power_in'),(3,'B1','passive'),
                    (4,'A','passive'),(5,'VCC','power_in'),(6,'S','input')])
     for i,(codec,fm,output) in enumerate([
         ('DAC_L_P_AC','FM_L_BIASED','AMP_L_P_AC'),('DAC_L_N_AC','AUDIO_MID','AMP_L_N_AC'),
         ('DAC_R_P_AC','FM_R_BIASED','AMP_R_P_AC'),('DAC_R_N_AC','AUDIO_MID','AMP_R_N_AC')]):
-        item(s,'U'+str(811+i),'SGM3157','SGM3157XC6/TR',
+        item(s,'U'+str(811+i),'SN74LVC1G3157','SN74LVC1G3157DCKR',
              {1:fm,2:'GND',3:codec,4:output,5:'AUDIO_3V3',6:'AUDIO_SELECT_LOCAL'},
              'Package_TO_SOT_SMD:SOT-363_SC-70-6',xy=(76.2,160.02+i*33.02),
-             pcb=(46+i*4,63),source=SGM)
+             pcb=(46+i*4,63),source=SWITCH)
     # R811 is retained; R810 is now codec bias, so new FM control pull-down uses R812.
     pas(s,'R812','100k','FM_POWER_EN','GND');pas(s,'R811','100k','FM_3V0','GND')
     cap(s,'C812','1u 10V','AUDIO_3V3');cap(s,'C813','1u 10V','FM_3V0');cap(s,'C814','22n','FM_3V0')
@@ -98,17 +102,17 @@ def add_audio(d,page,box,item,pas,cap,mos,tp):
 
     s='18_dual_mic'
     page(s,'18 Dual onboard microphones',(8,64),[
-        'Two LMA3729T381-OY3S top-port MEMS microphones solder directly to the B face, as requested.',
+        'Two LMA3729T381-OAS02 top-port MEMS microphones solder directly to the F face, toward rear housing.',
         'U802=left, U803=right. Same part/orientation; 60mm nominal center spacing, two separate housing ports.',
         'Codec senses each microphone OUT against its local ground via a matched AC-coupled pair.',
         'Keep acoustic ports clear of solder paste, adhesive and coating; no board washing or ultrasonic cleaning.'
     ])
-    box('LMA3729T381',[(1,'VDD','power_in'),(2,'GND1','power_in'),(3,'GND2','power_in'),(4,'OUT','output')])
+    box('LMA3729T381_OAS02',[(1,'VDD','power_in'),(2,'OUT','output'),(3,'GND1','power_in'),(4,'GND2','power_in')])
     for i,ch in enumerate(['L','R']):
-        item(s,'U'+str(802+i),'LMA3729T381','LMA3729T381-OY3S',
-             {1:'MIC_'+ch+'_3V3',2:'GND',3:'GND',4:'MIC_'+ch+'_OUT'},
-             'Carrier:LMA3729T381_TopPort',xy=(76.2,83.82+i*68.58),pcb=(20+i*60,73),
-             source='https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf')
+        item(s,'U'+str(802+i),'LMA3729T381_OAS02','LMA3729T381-OAS02',
+             {1:'MIC_'+ch+'_3V3',2:'MIC_'+ch+'_OUT',3:'GND',4:'GND'},
+             'Carrier:LMA3729T381_OAS02_TopPort',xy=(76.2,83.82+i*68.58),pcb=(20+i*60,73),
+             source=MIC)
         pas(s,'R'+str(840+i),'100R','AUDIO_3V3','MIC_'+ch+'_3V3')
         cap(s,'C'+str(840+i*4),'1u 10V','MIC_'+ch+'_3V3')
         pas(s,'C'+str(841+i*4),'1u 10V','MIC_'+ch+'_OUT','MIC_'+ch+'_P')
@@ -120,7 +124,7 @@ def add_audio(d,page,box,item,pas,cap,mos,tp):
     s='19_stereo_pa'
     page(s,'19 Dual speaker amplifiers',(90,64),[
         'S31-Korvo-1 dual NS4150B structure. J820/J821 are independent BTL outputs; neither terminal is GND.',
-        'Separate 4.788V buck rail limits the PA supply below 5V across static tolerances. +5V is the system boost.',
+        'Separate 4.68V buck rail (legacy net PA_4V8) stays below 5V across static tolerance; see procurement audit.',
         '100k input resistors: nominal differential gain 240k/100k=2.4 (7.6dB). Start volume low.',
         'AMP_EN low mutes both channels; assert only after rail/codec settle. No 5W or simultaneous full-load claim.'
     ])
@@ -147,7 +151,7 @@ def add_audio(d,page,box,item,pas,cap,mos,tp):
          'Package_TO_SOT_SMD:SOT-563',xy=(76.2,172.72),pcb=(100,59),
          source='https://www.ti.com/lit/ds/symlink/tlv62585.pdf')
     pas(s,'L820','1uH Isat>=4.5A','PA_BUCK_SW','PA_4V8',pcb=(105,59),fp='Inductor_SMD:L_Sunlord_SWPA4020S')
-    pas(s,'R866','698k 0.1%','PA_4V8','PA_BUCK_FB');pas(s,'R867','100k 0.1%','PA_BUCK_FB','GND')
+    pas(s,'R866','680k 1%','PA_4V8','PA_BUCK_FB');pas(s,'R867','100k 1%','PA_BUCK_FB','GND')
     cap(s,'C876','22u 10V','+5V',fp='Capacitor_SMD:C_0805_2012Metric')
     cap(s,'C877','22u 10V','PA_4V8',fp='Capacitor_SMD:C_0805_2012Metric')
     cap(s,'C878','22u 10V','PA_4V8',fp='Capacitor_SMD:C_0805_2012Metric')

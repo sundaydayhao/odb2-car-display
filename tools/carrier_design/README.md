@@ -4,6 +4,14 @@ This creates an **unrouted engineering draft**, never manufacturing outputs.
 The project status in `display_board/hardware/display-carrier/DESIGN_STATUS.md`
 is authoritative about incomplete circuits and validation holds.
 
+Revision L was delivered independently to
+`display_board/hardware/display-carrier-revision-L/` because the original
+project is open in KiCad. Until that revision is promoted, its README and
+verification reports describe the updated source in this directory. For a
+scratch regeneration, pass both `--preserve-placement` with that revision's
+PCB and `--library-source` with that revision's directory. Do not regenerate
+against the older K library or overwrite a live editor's project.
+
 Run on this workspace with KiCad 10.0.5's Python and the installed KiSkill engine:
 
 ```powershell
@@ -98,7 +106,7 @@ Revision H adds `stereo_audio.py`: ES8389 using the S31-Korvo-1 clock/data pin
 multiplexing, two onboard LMA3729T381 microphones, onboard RDA5807M and two
 NS4150B amplifiers. `verify.py` independently checks these pin maps, the 0x12
 codec address straps, separate FM channels, speaker polarity, 60 mm spacing,
-and the 4.788 V PA rail tolerance. It does not validate firmware or sound.
+and the current 4.68 V PA rail tolerance. It does not validate firmware or sound.
 
 `stage_audio.py --baseline <project> --library <reviewed-library> --output <stage>`
 replaces only audio-sheet footprints on an **unrouted** board. It retains all
@@ -163,3 +171,21 @@ see `SCREEN_BACK_ASSEMBLY.md`. Do not represent this as a zero-height rear face.
 four closed internal cutouts, copper keepouts and unchanged pin maps. Keep
 the authoritative native board and its `SCREEN_BACK_LAYOUT.json` together;
 the historical region placer is not a replacement for its reviewed cutouts.
+
+Revision L selects LCSC ordering codes for 300 fitted positions, replaces the
+two discontinued microphones with OAS02 (pad numbers change), the four audio
+switches with TI SN74LVC1G3157DCKR, and the FM LDO with ME6211C30M5G-N. The PA
+divider uses 680k/100k 1% parts (4.68 V nominal). `procurement_revision.py
+--baseline <revision-K-project> --output <scratch>` preserves all positions,
+pad/footprint identities and physical nets. It refuses an already-migrated
+microphone baseline. The new checked microphone asset, rather than the
+historical `audio_assets.py` migration, is used for subsequent regeneration.
+
+`procurement_bom.py --project <reviewed-L-project> --intent <design-intent.json>`
+reproduces the purchasing review from `LCSC_STOCK_SNAPSHOT.json`. It aggregates
+fitted refs by code before 100-board/20%-spare/order-step rounding; seven DNP
+positions require no purchasing. It deliberately fails on unclassified parts.
+Stock snapshots are not an availability guarantee or assembly release. The
+18 unresolved positions, BQ25896 partner stock and EG1224 small buffer are
+explicit in `PROCUREMENT.md`. Read the project README before using a staged
+revision: an open KiCad editor prevents automatic promotion over its files.

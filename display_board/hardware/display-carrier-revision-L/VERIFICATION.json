@@ -1,0 +1,250 @@
+{
+  "status": "DRAFT_ONLY_NOT_FAB_APPROVED",
+  "kicad": "10.0.5",
+  "schematic_symbols": 359,
+  "circuit_footprints": 350,
+  "mounting_holes": 4,
+  "schematic_sheets_including_root": 20,
+  "geometric_violations": 0,
+  "duplicate_references": 0,
+  "pcb_pad_net_mismatches": 0,
+  "erc_errors": 0,
+  "erc_warnings": 13,
+  "pending_interface_nets": [
+    "BACKLIGHT_PWM",
+    "CAMERA_RESET",
+    "CAM_DOVDD_1V8",
+    "CAM_MCLK_1V8",
+    "CAM_POWER_EN",
+    "CAM_RESET_1V8",
+    "CAM_SCL_1V8",
+    "CAM_SDA_1V8",
+    "LCD_AVDD_9V8",
+    "LCD_BIAS_EN",
+    "LCD_VCOM",
+    "LCD_VGH",
+    "LCD_VGL"
+  ],
+  "pcb_physical_violations": 0,
+  "schematic_parity_violations": 0,
+  "pcb_unconnected_items": 848,
+  "drc_reported_unconnected_items": 499,
+  "unconnected_count_source": "native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated",
+  "open_peripheral_power_boundaries": [
+    "LCD_LEDA",
+    "LCD_LEDK",
+    "LCD_AVDD_9V8",
+    "LCD_VGH",
+    "LCD_VGL",
+    "LCD_VCOM",
+    "CAM_AVDD_2V8",
+    "CAM_DOVDD_1V8"
+  ],
+  "fitted_physical_components": 320,
+  "dnp_exceptions": [
+    "R105",
+    "R107",
+    "R304",
+    "C1040",
+    "C1041",
+    "C1042",
+    "C1043"
+  ],
+  "tracks": 0,
+  "zones": 0,
+  "rule_areas": 6,
+  "ts_temperature_threshold_ranges_C": {
+    "cold_inhibit": [
+      2.011,
+      3.992
+    ],
+    "cold_derate": [
+      7.508,
+      9.307
+    ],
+    "warm_derate": [
+      30.303,
+      31.934
+    ],
+    "hot_inhibit": [
+      41.024,
+      43.085
+    ]
+  },
+  "ts_open_ratio": 0.953644,
+  "usb_current_limit_calculation": {
+    "legacy_tps2553_max_mA": 438.83,
+    "qualified_typec_tps2553_max_mA": 1252.27
+  },
+  "notes": [
+    "0 physical DRC violations applies to an UNROUTED placement only.",
+    "Native default ignored checks are retained, not counted as passing.",
+    "NTC sensor thermal contact, aging, and IC comparator dynamics are not included in this calculation."
+  ],
+  "native_ignored_drc_checks": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ],
+  "hash_normalization": "CRLF converted to LF before SHA-256",
+  "design_file_sha256": {
+    "01_core.kicad_sch": "7762d9d0dd08c0b64868fa48321f001fffdba97d615202398f579f448095ddbe",
+    "02_usb.kicad_sch": "75b09e6bb9fd8221831f4e69c464be02264a80e0ac5e0c239c265849733885fb",
+    "03_usb_current.kicad_sch": "78f6efaff990c772e89ebf3298eba6fc47aa6cd636245f1ec4a7c420cfa5bb2e",
+    "04_charger.kicad_sch": "36bf8c89b5882699b4f2a61e64156528b331695620a1a30f7668d4ac157a1b62",
+    "05_system_switch.kicad_sch": "eeb8461a8a5aadd96f99845f4848fd2ce86c143d8b15fa63fe65cdc7079859ce",
+    "06_main_power.kicad_sch": "0a12371af93069ea265aa47be72098eb7fb2780cbf54caaabe3e70fee9caf069",
+    "07_sd.kicad_sch": "7c7e13f999cdb25ba56f191163cd3df5180dfb3105d0f160dade0f4f6d6fa752",
+    "08_modem.kicad_sch": "cc82d6a849a35f72f470f2f9def84d26f46a30623be970398bbafdbbc20a3b55",
+    "09_modem_power.kicad_sch": "06633a69c91ee4dae56ecd49e6cb07f4fe9209f1404b6e0f2215e89ea408995c",
+    "10_sim_rf.kicad_sch": "e1da2a585d4188fa2e576b99d2d5f709beed920e42334535d11d2c2c8c4eee15",
+    "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
+    "12_fm_audio.kicad_sch": "33ecc3d3e6686358ae3db8ffd05a574fa06d99196ec3157b775e3f979945eafe",
+    "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
+    "14_lcd_fpc.kicad_sch": "7af7116a540ca6720c838c7ca194f1fb8ca0fc32438e16e6f76754f5fd775c37",
+    "15_touch_fpc.kicad_sch": "12c6501a22f07bee926857f718125c920556798013ad17336745ea0bb0d5dae7",
+    "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
+    "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
+    "18_dual_mic.kicad_sch": "65f26ee40f3de7f0250a444b8106a3c2a16c65fce1a669cc8932ea96dccbd4fe",
+    "19_stereo_pa.kicad_sch": "f81ead102d1ea0943c5e0a10abac93cbfb8945739a10f53428afd3738db25ef8",
+    "display_carrier.kicad_pcb": "c88f2f5c0c709abbc0f25b772e7909ee9f7af544cae7be23e0cdf8aad405d707",
+    "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
+    "display_carrier.kicad_sch": "d15948de5921157d0c8adfb4df69ac25756f6988e265569f9d86d2d1b4643664"
+  },
+  "screen_back_layout": {
+    "component_side": "F",
+    "screen_side": "B",
+    "back_side_footprints": 0,
+    "through_board_flex_slots_mm": [
+      [
+        10,
+        3
+      ],
+      [
+        20,
+        3
+      ]
+    ],
+    "closed_outline_with_four_internal_cutouts": true,
+    "screen_contact_qualification": "NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked"
+  },
+  "stereo_audio": {
+    "ES8389_7bit_address": "0x12",
+    "RDA5807M_7bit_address": "0x10",
+    "stereo_mic_dac_and_BTL_pinmaps": "PASS",
+    "S31_TDM_clock_data_pin_swap": "PASS",
+    "fm_separate_left_right": "PASS",
+    "onboard_mics": 2,
+    "speaker_connectors": 2,
+    "microphone_center_spacing_mm": 60,
+    "PA_nominal_V": 4.68,
+    "PA_static_tolerance_range_V": [
+      4.4296,
+      4.9435
+    ],
+    "amplifier_nominal_gain_V_V": 2.4,
+    "firmware_and_physical_audio_validation": "NOT_RUN"
+  },
+  "push_push_sim": {
+    "socket": "GCT SIM8066-6-1-14-01-A",
+    "mechanism": "push-push",
+    "entry": "right edge in screen-front projection",
+    "detect_polarity": "HIGH=card present; normally closed CD-to-GND when empty",
+    "ML307A_default_polarity_match": true,
+    "NPTH_peg_holes_mm": [
+      0.75,
+      0.75
+    ],
+    "four_shell_tabs_grounded": true,
+    "component_side_contact_copper_keepout": true,
+    "manufacturing_and_enclosure_mating": "NOT_VALIDATED"
+  },
+  "compact_inductor": {
+    "part": "FEXU0640S2R2MGS",
+    "LCSC": "C54140025",
+    "body_mm": [
+      6.2,
+      6.0,
+      4.0
+    ],
+    "land_pattern_mm": {
+      "overall": 6.5,
+      "gap": 2.0,
+      "height": 6.3
+    },
+    "DCR_max_ohm": 0.007,
+    "manufacturer_current_columns": {
+      "Irms_typ_A": 16,
+      "Irms_column_labeled_Max_A": 14,
+      "Isat_typ_A": 18,
+      "Isat_column_labeled_Max_A": 15
+    },
+    "current_rating_conditions": "25C ambient; Irms at 40C rise; Isat at 30 percent L drop; Max column is not a guaranteed minimum",
+    "estimate_assumptions": {
+      "output_A": 4,
+      "efficiency": 0.85,
+      "L_H": 1.232e-06,
+      "frequency_tolerance_included": false
+    },
+    "estimates": [
+      {
+        "vin_V": 2.7,
+        "fsw_nominal_kHz": 275.681,
+        "average_A": 8.745,
+        "peak_A": 10.581,
+        "rms_A": 8.809,
+        "copper_loss_25C_W": 0.543
+      },
+      {
+        "vin_V": 3.0,
+        "fsw_nominal_kHz": 306.312,
+        "average_A": 7.87,
+        "peak_A": 9.469,
+        "rms_A": 7.924,
+        "copper_loss_25C_W": 0.44
+      },
+      {
+        "vin_V": 3.6,
+        "fsw_nominal_kHz": 367.575,
+        "average_A": 6.559,
+        "peak_A": 7.682,
+        "rms_A": 6.591,
+        "copper_loss_25C_W": 0.304
+      },
+      {
+        "vin_V": 4.2,
+        "fsw_nominal_kHz": 428.837,
+        "average_A": 5.622,
+        "peak_A": 6.269,
+        "rms_A": 5.634,
+        "copper_loss_25C_W": 0.222
+      },
+      {
+        "vin_V": 4.4,
+        "fsw_nominal_kHz": 449.258,
+        "average_A": 5.366,
+        "peak_A": 5.855,
+        "rms_A": 5.374,
+        "copper_loss_25C_W": 0.202
+      }
+    ],
+    "qualification": "NOT_RUN: hot Isat, loop, AC/core losses, transients and enclosure; 2.7V/4A lacks minimum current-limit margin"
+  }
+}

@@ -1,0 +1,723 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(uuid 01326f85-d288-503d-aa45-f189caff70a4)
+	(paper "A3")
+	(lib_symbols)
+	(title_block
+		(title "OSPTEK P4C5 / P4C6 Display Carrier")
+		(date "2026-09-23")
+		(rev "R0L LCSC SOURCING")
+		(company "OBD Car Display")
+		(comment 1 "NOT FOR FABRICATION - assembly and validation holds apply")
+	)
+	(sheet
+		(at 15.24 35.56)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid a49eb20c-14a9-5947-a3fb-00a327f93981)
+		(property "Sheetname" "01 Core compatibility"
+			(at 15.24 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "01_core.kicad_sch"
+			(at 15.24 69.85 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 35.56)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 91177921-dbcb-5821-9234-822b91d04887)
+		(property "Sheetname" "02 USB-C and UART"
+			(at 115.57 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_usb.kicad_sch"
+			(at 115.57 69.85 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 35.56)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid c77109d8-1482-5a44-b486-cf84c71ba298)
+		(property "Sheetname" "03 USB input qualification"
+			(at 215.9 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "03_usb_current.kicad_sch"
+			(at 215.9 69.85 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 316.23 35.56)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 533871f6-c5c8-5c23-9f17-290ab7fee63e)
+		(property "Sheetname" "04 Battery charger / power path"
+			(at 316.23 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_charger.kicad_sch"
+			(at 316.23 69.85 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15.24 81.28)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid ad886b9b-afb1-5fdc-bbee-d903dd95f342)
+		(property "Sheetname" "05 Controlled shutdown"
+			(at 15.24 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "05_system_switch.kicad_sch"
+			(at 15.24 115.57 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 81.28)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid e15dbe61-a7e9-59de-9223-fa7a84b478b3)
+		(property "Sheetname" "06 Regulated 5 V / 3.3 V"
+			(at 115.57 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "06_main_power.kicad_sch"
+			(at 115.57 115.57 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 81.28)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid d8fb17e8-f89e-5113-a1f9-0d847b52c36c)
+		(property "Sheetname" "07 microSD 4-bit interface"
+			(at 215.9 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "07_sd.kicad_sch"
+			(at 215.9 115.57 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 316.23 81.28)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 86feebf6-5efb-5957-a32d-8102fb1b7e5c)
+		(property "Sheetname" "08 ML307A-GCLN fitted"
+			(at 316.23 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "08_modem.kicad_sch"
+			(at 316.23 115.57 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15.24 127.0)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 9f512a0e-e5bc-5ddd-86ca-7ec88e088407)
+		(property "Sheetname" "09 Modem power and RF"
+			(at 15.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "09_modem_power.kicad_sch"
+			(at 15.24 161.29 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 127.0)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 7005c163-f007-5d72-a223-90e467af9379)
+		(property "Sheetname" "10 SIM and antenna interfaces"
+			(at 115.57 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "10_sim_rf.kicad_sch"
+			(at 115.57 161.29 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 127.0)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 7361b3ff-87f6-5474-afb5-a4bc7003ca48)
+		(property "Sheetname" "11 ES8389 stereo codec"
+			(at 215.9 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "11_codec.kicad_sch"
+			(at 215.9 161.29 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 316.23 127.0)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 47f68dd3-e210-5a8b-b501-de7b5ace14a4)
+		(property "Sheetname" "12 RDA5807M and stereo source"
+			(at 316.23 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "12_fm_audio.kicad_sch"
+			(at 316.23 161.29 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "13")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15.24 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 6dbe5d78-4bbd-5c1e-ad49-6ce71a6aef95)
+		(property "Sheetname" "13 Pending interface closure"
+			(at 15.24 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "13_release_holds.kicad_sch"
+			(at 15.24 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "14")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 5a29d953-1065-555e-8cd0-bb4470599f58)
+		(property "Sheetname" "14 LCD FPC and 1V8 controls"
+			(at 115.57 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "14_lcd_fpc.kicad_sch"
+			(at 115.57 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "15")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 20544a2a-ca9e-51e9-96af-01e705d4b644)
+		(property "Sheetname" "15 Touch FPC reference interface"
+			(at 215.9 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "15_touch_fpc.kicad_sch"
+			(at 215.9 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "16")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 316.23 172.72)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 74b401f8-fd0a-5de2-8205-7b8fba3e18c8)
+		(property "Sheetname" "16 Camera FPC pin map"
+			(at 316.23 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "16_camera_fpc.kicad_sch"
+			(at 316.23 207.01 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "17")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15.24 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 7ea5ff23-3e24-5823-a43d-cd66bdc8f7d1)
+		(property "Sheetname" "17 Cabin ambient light and humidity"
+			(at 15.24 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "17_cabin_sensors.kicad_sch"
+			(at 15.24 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "18")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid efe18525-5b5e-5834-a02c-0d27c56629ce)
+		(property "Sheetname" "18 Dual onboard microphones"
+			(at 115.57 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "18_dual_mic.kicad_sch"
+			(at 115.57 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "19")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 218.44)
+		(size 91.44 33.02)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid 3eba86b8-9366-5a77-9362-b2904c1594e9)
+		(property "Sheetname" "19 Dual speaker amplifiers"
+			(at 215.9 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "19_stereo_pa.kicad_sch"
+			(at 215.9 252.73 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4"
+					(page "20")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

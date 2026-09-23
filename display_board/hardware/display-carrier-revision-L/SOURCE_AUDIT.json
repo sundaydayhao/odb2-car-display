@@ -1,0 +1,873 @@
+{
+  "plan_date": "2026-09-23",
+  "revision": "L_LCSC_100boards_20percent_spares",
+  "phase": "engineering_draft_incomplete_not_for_fabrication",
+  "repositories": [
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board",
+      "head": "f00d33f574f1f12732f9c3ecfc08c6b9770dbf81",
+      "url": "https://github.com/osptek/esp32-p4c5-core-board"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board",
+      "head": "8eac0d9fa51e8ae5b77ffd3084e8023b39ba63f3",
+      "url": "https://github.com/osptek/esp32-p4c6-core-board"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board",
+      "head": "4ff96212c7c48e1f75ea3568be9e5199f83bbc8a",
+      "url": "https://github.com/osptek/esp32-p4c5-module-dev-board"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board",
+      "head": "0bbf5d91fb4aae42c097369bf34db4bb9f889ff0",
+      "url": "https://github.com/osptek/esp32-p4c6-module-dev-board"
+    }
+  ],
+  "pin_comparison": {
+    "pins_each": 88,
+    "normalization": "C5_/C6_ prefix -> RF_",
+    "different_function_pads": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "matched_function_pads": 82,
+    "comparison_scope": "vendor_pin_names_not_internal_schematic_or_footprint_validation"
+  },
+  "checked_items": [
+    "88-pin tables",
+    "module connection and dimension images",
+    "module dev board V1.5 schematic in 20260910 guide",
+    "camera specification",
+    "LCM mechanical/power/pinout/timing data",
+    "ML307A GNSS hardware manual pins/power/control and rendered pinout",
+    "ML307 compatibility V3.1.0 page 10 GCLN supply/footprint compared with older manual",
+    "P4 USB RNDIS documented support boundary",
+    "existing Wi-Fi-only network_service.c and HTTP consumers",
+    "88 numbered nominal pad rectangles imported from both vendor PcbLibs and compared to common land pattern",
+    "14-page native schematic ERC and geometric stub verification",
+    "262 circuit footprint pad sets and nets compared with native schematic XML",
+    "native PCB schematic parity and unrouted physical DRC",
+    "native schematic page and bottom assembly rendering reviewed"
+  ],
+  "not_yet_verified": [
+    "internal module netlist and high-speed trace length",
+    "STEP clearance and assembled enclosure",
+    "panel two-lane initialization/timing",
+    "touch controller and FPC specification",
+    "exact purchasable BOM/stock/price",
+    "battery pack mechanical drawing/discharge/NTC",
+    "NS4814 full design and measured clean output",
+    "physical bring-up with both module variants",
+    "ML307A-GCLN current AT/GNSS firmware and production LGA94 land pattern",
+    "ML307A-GCLN RNDIS descriptors/ports and GNSS concurrency with P4",
+    "current vendor clarification of conflicting GCLN supply tables",
+    "4G/GNSS on/off and sleep currents including USB disconnect/reconnect",
+    "20 W simultaneous-load and 3.8 V burst/inrush/thermal tests",
+    "440 uF bulk stability and active discharge below 1.8 V for at least 100 ms",
+    "optional 4G mechanical/radio coexistence",
+    "core assembly tolerances/stencil/real solder joints despite nominal land coverage",
+    "remaining LCD/touch/camera/amplifier/active GNSS/protection circuits",
+    "power-loop/decoupling placement and complete routing/impedance/thermal verification"
+  ],
+  "sources": [
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\docs\\ESP32-P4C5-Core_User Guide 20260521.pdf",
+      "bytes": 4613127,
+      "sha256": "f97cadd37d8cbd90b408fe25dd90717bdbe20c9eb99b974d89435c8ea23dac42",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\docs\\ESP32-P4C5-Core核心板_使用指南2026.1.6.pdf",
+      "bytes": 2879383,
+      "sha256": "0725f5a0a094ba2beb3227ff4a17c3511e45ac0d44f4f3d070e735f7cc63a6ad",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\docs\\ESP32P4C5模组封装.PcbLib",
+      "bytes": 1701888,
+      "sha256": "4e899ec89b97b298861faebe017e6afb28fb447e7b342a02e1588fc4262c25d1",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\docs\\ESP32P4C5模组封装.SchLib",
+      "bytes": 22016,
+      "sha256": "849accc28440be43768752dba2e9ef50a099b0e151f7ff4d7ad9f86087afc7c8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\docs\\P4模组3D模型.step",
+      "bytes": 8814809,
+      "sha256": "26074b813b9d980c131010afd3ba0972cfba0be839c50a07cde723e7a0c5a312",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\block-diagram.png",
+      "bytes": 72146,
+      "sha256": "3db9ffd414b900047db17a72eb4d008b6d971d7989b5de3e9995afebc60facb8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\c5-p4-connection.png",
+      "bytes": 101918,
+      "sha256": "6c0c0c722d32f914299b279e0db5a4f3417539a597f1941ecf0a275baff34baa",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\dev-board-angle.png",
+      "bytes": 330433,
+      "sha256": "877d569c687e79855a67f1c2f2bd92ac09303461536d9c161e9a5e710b1e1fc1",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\dev-board.png",
+      "bytes": 542252,
+      "sha256": "09ac0a6dde209fecae88065d18311c58f64bf4e9ad70bf2f8837f15a9a6a79aa",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\dimensions.png",
+      "bytes": 464994,
+      "sha256": "a17234eaa3366497c461e1ddaebb39d9af100a581e30985fe0064eb8cd1e3e73",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\logo.png",
+      "bytes": 16614,
+      "sha256": "d348f0345f2d26bc73574469bb6131fb3e43badf4c2a1399ba5aea514ccc198f",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\pinout.png",
+      "bytes": 199093,
+      "sha256": "a31ff3b518f5627d2e6dfb2cd411a0a533180728b31a51b94a259577f4667332",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\product.png",
+      "bytes": 226046,
+      "sha256": "249bc48eed651fa7390e3f0f7b1b626d45a10072dedbb26a5ac0d908a52615b5",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\images\\reflow-profile.png",
+      "bytes": 233864,
+      "sha256": "81eaea86d877e34bcdf342c388ee0f15ff58d8e73ae007e481f76ec5f3d64d62",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\pages\\pin-definition_EN.md",
+      "bytes": 5010,
+      "sha256": "984a3432cb5da60813922cfa68b60e75e6afe6ce041c27f9e8e0545d4df279eb",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\pages\\引脚定义.md",
+      "bytes": 4979,
+      "sha256": "df123f49ddb16d6b9e06af41c9798f622d31b93ed44fe59fffffa5bd7b540581",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\README.md",
+      "bytes": 12047,
+      "sha256": "c908ceededefb42c0a1ce6bb9771d9ec0dd54f9c8c164d8114a1be575b87bbb0",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-core-board\\README_EN.md",
+      "bytes": 11434,
+      "sha256": "fc3e8d94587c0f28cdbf8335e3eaf9dd534927b282d16a5699faf0537f94eb89",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\docs\\C6 2.4G天线.pdf",
+      "bytes": 950753,
+      "sha256": "d173a2daef1ae0e5f47ee4fdfa70b955680fb3c0d31e68b382f50f39a1aa8100",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\docs\\ESP32-P4C6-Core_User Guide 260413.pdf",
+      "bytes": 2265538,
+      "sha256": "b9c7cc2d35444911d47c55098f8b1c9de67b6c7c83c2fd11ded2f21a66c59347",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\docs\\ESP32-P4C6-Core核心板_使用指南260413.pdf",
+      "bytes": 3445482,
+      "sha256": "935867654a5fadf653e2d19236bd28099eadb587d2a4c505a0a38c30950f121b",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\docs\\ESP32P4C6模组封装.PcbLib",
+      "bytes": 1396736,
+      "sha256": "df1bc31eb7e4d718098fd6d92beda7ff12523591283da4f8b2298076abc035a9",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\docs\\ESP32P4C6模组封装.SchLib",
+      "bytes": 29184,
+      "sha256": "c74f6b09843371c466deb3e6c328d90ebecb911df652e74d3be4984776c25603",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\block-diagram.png",
+      "bytes": 59452,
+      "sha256": "5c2da79d767dc96e210a719d95fc3ec711b419d887d2fda30e9c4453a1a88197",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\c6-p4-connection.png",
+      "bytes": 54171,
+      "sha256": "d2bd4d9b7b18f4beb226f6d217cb070c2f3dedbb02157958f82ad5bfdd5a77b7",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\dev-board-dimensions.png",
+      "bytes": 384719,
+      "sha256": "73dbe4d3d12eaa86c0e88234dd58679cf62a5c746ec6ac80d208869ef7730aa0",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\dev-board.png",
+      "bytes": 471070,
+      "sha256": "74cb58d4464389d87f68a8dd21a3432a217284556dced12ac0590dc4c94f214a",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\dimensions.png",
+      "bytes": 493559,
+      "sha256": "a6548e5431cea9d642771b608a33c18d6e72f589e1b17bf0c97d03f26225ebaa",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\logo.png",
+      "bytes": 16614,
+      "sha256": "d348f0345f2d26bc73574469bb6131fb3e43badf4c2a1399ba5aea514ccc198f",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\pinout.png",
+      "bytes": 457511,
+      "sha256": "94f917f0f14a11235120eb229c160c8fb0ce832f515b49c0acec9a45b49dc423",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\product.png",
+      "bytes": 450401,
+      "sha256": "89146e560b41d0a5c0df4aefb713e274ca2d413a7f6e9ef6f18695b7738c6e7d",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\images\\reflow-profile.png",
+      "bytes": 300712,
+      "sha256": "371c2c17075cecf0c005fc31869baaf5b52dec0385ff7bb1f669d69b7b79e410",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\pages\\pin-definition_EN.md",
+      "bytes": 4976,
+      "sha256": "a10a7052fbb0634d8f99912b526ac52560b9c71a897c71ddb5f4507e20104470",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\pages\\引脚定义.md",
+      "bytes": 5287,
+      "sha256": "ce2e833ba8a3c25cbe617b67e2e9fb91b7449de720549fe64cf3ff2666d1406e",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\README.md",
+      "bytes": 11995,
+      "sha256": "1f363b77d9d5b1802efa7fbdef394f89f95e8a823a734e20ed1e72073233fbc9",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-core-board\\README_EN.md",
+      "bytes": 11479,
+      "sha256": "af491bf58b221e7b1ba857970ffb87b22c778fc7b9b1cffb33d647ed7d616194",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\C5双频天线 .pdf",
+      "bytes": 1014580,
+      "sha256": "020483459409fc7b5c685325f764a745b05b9bdd3f7ed6c6ba3d15cd5691cc20",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32-P4-Camera.pdf",
+      "bytes": 897541,
+      "sha256": "94d15610a5ea25964bb7934f0597ef33d6423d795e724d6de0681370375fd464",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32-P4-Module_User Guide 20260910.pdf",
+      "bytes": 11504559,
+      "sha256": "12a2397a10f96635c0229d042a25b107a0503064622b9715370c91a4a54c2f52",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32-P4-Module_使用指南2026.09.10（含原理图）.pdf",
+      "bytes": 6777196,
+      "sha256": "f5c351b32d1e1c1683617b339a8305b444cb40ce2d5f21f34b106440843b3ca8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32-P4C5-Module-Enclosure-Back-4inch-V1.0.STEP",
+      "bytes": 990379,
+      "sha256": "48ccfc1176b0bc234a929648d64a7eeec122a26741d2ebf188dacdbbbcd158a8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32-P4C5-Module-Enclosure-Front-4inch-V1.0.STEP",
+      "bytes": 393160,
+      "sha256": "4f7e70ea9705ec2191b965e7b37c999b920215dd84e3a2d78535f640f44e698a",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\ESP32P4模组基础底板V1.3.pdf",
+      "bytes": 1258111,
+      "sha256": "88912834110a2077695000727aeb0ce7eb71667bf0e6c5795c741d01ae0c6fb8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\docs\\SC2336_数据手册_V0.7(1).pdf",
+      "bytes": 1572561,
+      "sha256": "7285a101f4bd3697aed7085b8c4ac1e86726028e50a650468b3998163423a4a9",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\board-back.png",
+      "bytes": 169097,
+      "sha256": "1f2a384e7008c8f07daea3bcd523e8f9f5601c623371da05aad95132fcc70249",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\board-front.png",
+      "bytes": 348224,
+      "sha256": "9a1c924d20af2b0a9ab614e4b2ff469c3df3779a12c30842b3e25c03436b4b61",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\dimensions.png",
+      "bytes": 227517,
+      "sha256": "51144c6617e44edfe379df85c81485755dd5559ab3a32269f98042c11113d27d",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\enclosure.png",
+      "bytes": 379570,
+      "sha256": "40956abddfa0f3b4b56f3d8aa35193b1ba8839a2b0386d9d820c8b3652d0b082",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\logo.png",
+      "bytes": 16614,
+      "sha256": "d348f0345f2d26bc73574469bb6131fb3e43badf4c2a1399ba5aea514ccc198f",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\product.png",
+      "bytes": 306818,
+      "sha256": "2d047f570cc89c191f3b673cee558b42be46230914c25b881187116439a2e678",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\images\\schematic.jpg",
+      "bytes": 304625,
+      "sha256": "62ab7437c67d7739179351d59a67f512eab027c0310bce929c072db14912dd16",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\README.md",
+      "bytes": 19159,
+      "sha256": "fd56a9c5d686ef3e98454ff78e9792b639563611b127c1c1b6030cee1a529bc9",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c5-module-dev-board\\README_EN.md",
+      "bytes": 18887,
+      "sha256": "868f200fafd2df05c260bb8f22606f6b37131e4c78f4ad1e71433b5f24050728",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\C6 2.4G天线.pdf",
+      "bytes": 950753,
+      "sha256": "d173a2daef1ae0e5f47ee4fdfa70b955680fb3c0d31e68b382f50f39a1aa8100",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\ESP32-P4-Camera.pdf",
+      "bytes": 897541,
+      "sha256": "94d15610a5ea25964bb7934f0597ef33d6423d795e724d6de0681370375fd464",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\ESP32-P4-Module_User Guide 20260910.pdf",
+      "bytes": 11504559,
+      "sha256": "12a2397a10f96635c0229d042a25b107a0503064622b9715370c91a4a54c2f52",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\ESP32-P4-Module_使用指南2026.09.10（含原理图）.pdf",
+      "bytes": 6777196,
+      "sha256": "f5c351b32d1e1c1683617b339a8305b444cb40ce2d5f21f34b106440843b3ca8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\ESP32P4C6开发板说明书.pdf",
+      "bytes": 2054979,
+      "sha256": "f112b7681afc271138fce198879892e2de8feb7f61da1411303b4837e8c94d4b",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\ESP32P4模组基础底板V1.3.pdf",
+      "bytes": 1258111,
+      "sha256": "88912834110a2077695000727aeb0ce7eb71667bf0e6c5795c741d01ae0c6fb8",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\docs\\SC2336_数据手册_V0.7(1).pdf",
+      "bytes": 1572561,
+      "sha256": "7285a101f4bd3697aed7085b8c4ac1e86726028e50a650468b3998163423a4a9",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\board-back.png",
+      "bytes": 169097,
+      "sha256": "1f2a384e7008c8f07daea3bcd523e8f9f5601c623371da05aad95132fcc70249",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\board-front.png",
+      "bytes": 586973,
+      "sha256": "73f4d63be897b19d8b8acf86833afda5952105dcfcc0cacd6c3ee06d93416f0f",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\dimensions.png",
+      "bytes": 482056,
+      "sha256": "cb761ec7be80ad048ada904b3cff344e6a8ab0e0cdfc8dc45cc3730cf8c47644",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\logo.png",
+      "bytes": 16614,
+      "sha256": "d348f0345f2d26bc73574469bb6131fb3e43badf4c2a1399ba5aea514ccc198f",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\product.png",
+      "bytes": 471070,
+      "sha256": "74cb58d4464389d87f68a8dd21a3432a217284556dced12ac0590dc4c94f214a",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\images\\schematic.png",
+      "bytes": 1354227,
+      "sha256": "4b9c6cf641f9c2007dcbc80cf02498603ab9abfca5cf3b0c4b7084a3f1eb072a",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\README.md",
+      "bytes": 18431,
+      "sha256": "605067256a4e88d31f564a40980f28f5a956ff2615664ca81d38dea524e43507",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\osptek\\esp32-p4c6-module-dev-board\\README_EN.md",
+      "bytes": 17343,
+      "sha256": "419e65f0924b33ea72c4670c1560cd7346e50cbff1e0f3222e5080d2f0d0a353",
+      "status": "inventory_fingerprint_not_individual_review_claim"
+    },
+    {
+      "path": "C:\\projects\\esp32-odb2-car-display\\docs\\LCM-070--A0 规格书.pdf",
+      "bytes": 835792,
+      "sha256": "5c1c5d475678b057fc09aed4b49899c7ec38aa3d90bb4238d10295ac1e80a2de",
+      "status": "electrical_text_and_pages_5_to_10_reviewed"
+    }
+  ],
+  "planning_decisions": {
+    "lcd_and_touch_fpc": {
+      "side": "screen_facing_F",
+      "long_axis": "horizontal",
+      "entry_edge": "bottom_for_both",
+      "touch_x_and_contact_side": "pending_actual_touch_drawing",
+      "source_boundary": "LCD bottom tail confirmed by LCM PDF page 5; touch direction is user design requirement, not proven by this PDF"
+    },
+    "optional_modem": {
+      "family": "China Mobile ML307A",
+      "ordering_code": "ML307A-GCLN",
+      "selection_status": "user_selected",
+      "firmware": "standard AT plus GNSS, exact version pending",
+      "assembly": "fitted_by_default_user_requested_full_feature_assembly",
+      "package": "LGA94",
+      "body_mm": [
+        17.7,
+        15.8,
+        2.4
+      ],
+      "functional_reserve_mm": [
+        36,
+        40
+      ],
+      "reserve_scope": "modem_power_bulk_capacitors_level_shifters_RF_matching; SIM seat separate",
+      "core_usb_pads": {
+        "DM": 48,
+        "DP": 49
+      },
+      "modem_usb_pads": {
+        "DM": 60,
+        "DP": 59,
+        "VBUS": 61
+      },
+      "transport": "USB RNDIS preferred, sample validation pending; no assumed PPP compatibility",
+      "gpio": {
+        "enable": 0,
+        "pwrkey": 1,
+        "uart_tx": 2,
+        "uart_rx": 3,
+        "dtr": 4,
+        "state": 5,
+        "usb_vbus_enable": 24,
+        "gnss_antenna_enable": 25
+      }
+    },
+    "power_candidates": {
+      "charger": "BQ25896",
+      "main_5V": "TPS61088, 4 A peak design target",
+      "modem_3V8": "TLV62585, 3 A design target",
+      "battery": "1S 5000 mAh, >=10 A pack/PCM capability",
+      "peak_load_W": 20,
+      "low_battery_current_A_estimate": 7.352941176470588,
+      "all_values": "planning_targets_not_measured_ratings",
+      "modem_supply_allowed_V": [
+        3.4,
+        4.3
+      ],
+      "modem_supply_target_V": 3.8,
+      "modem_peak_current_A_from_manual": 2,
+      "modem_bulk_capacitors_minimum_uF": [
+        220,
+        220
+      ],
+      "modem_supply_location": "B side adjacent to modem, not in left power block",
+      "shutdown_hold_budget_s": 45,
+      "shutdown_budget_status": "board target, not vendor maximum shutdown time"
+    },
+    "board": {
+      "size_mm": [
+        145,
+        85
+      ],
+      "layers": 4,
+      "size_status": "planning envelope, physical fit not yet verified",
+      "usb_fs_service_gpio24_25": "reassigned to modem USB detect and GNSS bias; external CH343P retained"
+    },
+    "lcd_fpc_fit_review": {
+      "state": "NOT_VERIFIED_FOR_PHYSICAL_ASSEMBLY",
+      "user_confirmed": "LCD FPC is factory-folded onto rear of display; preserve factory fold",
+      "lcd_drawing_page": 5,
+      "datum": "LCD front projection; rear view mirrors X",
+      "tail_left_reference_mm": 72.68,
+      "tail_width_mm": 15.5,
+      "tail_center_front_reference_mm": 80.43,
+      "centered_pcb_tail_center_front_reference_mm": 70.5,
+      "tail_end_thickness_mm": [
+        0.25,
+        0.35
+      ],
+      "flat_extension_reference_mm": 56.54,
+      "flat_extension_is_usable_folded_length": false,
+      "entry_y_formula_mm": "92.48 - E + I; E must be measured at assembly height",
+      "pending": [
+        "factory-folded free-end position E",
+        "exposed contact face",
+        "actual connector insertion depth I",
+        "screen/PCB stackup and free-tail lift",
+        "touch FPC drawing"
+      ],
+      "FH12A_comparison": "Candidate only, not selected. Exposed length, width tolerances and FPC conductor recommendation do not fully match panel drawing.",
+      "report": "FPC_FIT_REVIEW.md",
+      "user_margin_request": "not measured yet; leave assembly margin",
+      "F_side_space_reserve_mm": {
+        "x": 55.5,
+        "y": 40,
+        "width": 30,
+        "height": 40
+      },
+      "reserve_status": "pre-layout adjustment area plus tail corridor; does not prove fit or allow sliding after soldering"
+    }
+  },
+  "source_conflicts": [
+    {
+      "topic": "ML307A-GCLN VBAT maximum",
+      "older_GNSS_hardware_manual": "V1.0.0 operating max 4.5 V, absolute max table 4.3 V",
+      "later_compatibility_manual": "V3.1.0 page 10 GCLN/GSLN operating max 4.3 V",
+      "design_decision": "use regulated 3.8 V within 3.4-4.3 V; request current manufacturer clarification before production"
+    }
+  ],
+  "web_sources_reviewed": [
+    "https://market-isv-1258344699.cos.ap-shanghai.myqcloud.com/20220104/document/202304/eee1d27f-802d-42fa-915f-d2945028eb9d/ML307A%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C.pdf",
+    "https://whycan.com/files/202412/ML307/2_%E7%A1%AC%E4%BB%B6%E5%85%BC%E5%AE%B9%E6%80%A7%E6%89%8B%E5%86%8C_ML307%E7%B3%BB%E5%88%97%E9%80%82%E7%94%A8_V3.1.0.pdf",
+    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_rndis.html",
+    "https://components.espressif.com/components/espressif/iot_usbh_rndis/versions/0.3.0/readme?language=en",
+    "https://www.ti.com/product/BQ25896",
+    "https://www.ti.com/product/TLV62585",
+    "https://www.jst-mfg.com/product/index.php?lang=2&series=262",
+    "https://www.hirose.com/en/product/document?clcode=CL0586-0556-5-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-30S-0.5SH%2855%29&series=FH12"
+  ],
+  "downloaded_manual_fingerprints": [
+    {
+      "url": "https://market-isv-1258344699.cos.ap-shanghai.myqcloud.com/20220104/document/202304/eee1d27f-802d-42fa-915f-d2945028eb9d/ML307A%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C.pdf",
+      "sha256": "e9f0ca23eb5cfcc53ab81fcde5f3d936da3c134f1a8d5fce5764eff6dbc9d63c",
+      "bytes": 2699034,
+      "local_scratch": "build\\osptek-plan\\ml307a-gnss-hardware-v1.0.0.pdf"
+    },
+    {
+      "url": "https://whycan.com/files/202412/ML307/2_%E7%A1%AC%E4%BB%B6%E5%85%BC%E5%AE%B9%E6%80%A7%E6%89%8B%E5%86%8C_ML307%E7%B3%BB%E5%88%97%E9%80%82%E7%94%A8_V3.1.0.pdf",
+      "sha256": "f5fd85c16efe01ece7a2b1e0f576742b25af18910c507ab5a9d3a35fca10e293",
+      "bytes": 2645314,
+      "local_scratch": "build\\osptek-plan\\ml307-compatibility-v3.1.0.pdf"
+    },
+    {
+      "url": "https://www.hirose.com/en/product/document?clcode=CL0586-0556-5-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-30S-0.5SH%2855%29&series=FH12",
+      "sha256": "71ee7e624d8db9ee105c477a89cf6b1b38edb580639f0ab6c29c90acedf43a7f",
+      "bytes": 864017,
+      "local_scratch": "build\\osptek-plan\\FH12-official.pdf",
+      "reviewed_pages": [
+        6,
+        10,
+        17
+      ]
+    }
+  ],
+  "cad_verification_summary": "VERIFICATION.json",
+  "design_status": "DESIGN_STATUS.md",
+  "core_footprint_nominal_check": {
+    "c5_ESP32P4C5模组": {
+      "numbered_pads": 88,
+      "nominal_land_containment_failures": [],
+      "minimum_margin_mm": 0.0
+    },
+    "c6_ESP32P4模组封装": {
+      "numbered_pads": 88,
+      "nominal_land_containment_failures": [],
+      "minimum_margin_mm": 0.0
+    },
+    "scope": "Nominal vendor land rectangles only; no solder tolerance/assembly/thermal/production approval.",
+    "modified_core_land_size_mm": [
+      1.4,
+      0.7
+    ]
+  },
+  "datasheet_file_fingerprints": {
+    "bq25896": {
+      "sha256": "f45ec93b7e7dbcd1b1df3997283474f6d2b7ada65c0332af09dcd356dbbb0bc2",
+      "bytes": 1675426,
+      "local_evidence": "build/carrier-design/bq25896.pdf"
+    },
+    "tps61088": {
+      "sha256": "9806d6caa5e6f6d5ae01e10359ff86bf27fac85e383d0a471e29f6d25d6acc53",
+      "bytes": 1847930,
+      "local_evidence": "build/carrier-design/tps61088.pdf"
+    },
+    "tlv62569": {
+      "sha256": "1ba6f55dfe678d06d563acd6632f1f950a497d812270806021097b55cd81d3c4",
+      "bytes": 1357133,
+      "local_evidence": "build/carrier-design/tlv62569.pdf"
+    },
+    "tlv62585": {
+      "sha256": "b86da7682db78a2b2264d893249126b6a4c78adbf48c4f6d43227628d4d7b1a0",
+      "bytes": 1658293,
+      "local_evidence": "build/carrier-design/tlv62585.pdf"
+    },
+    "tusb320lai": {
+      "sha256": "62f7b3f65338e25ebd6fd46ef04474ba806b06b1cc04bc0b3d7b8191b01ca87d",
+      "bytes": 1313743,
+      "local_evidence": "build/carrier-design/tusb320lai.pdf"
+    },
+    "txu0202": {
+      "sha256": "f8e3f51edcccf12c7e991bec54cf1747a7fd84dccd23b875f326a3e631241ef2",
+      "bytes": 1705432,
+      "local_evidence": "build/carrier-design/txu0202.pdf"
+    },
+    "tps22990": {
+      "sha256": "ea198776524544eb3e4a130f1f6a6e5c8e80ca8164eebf387a8fd6b4b7dde2a3",
+      "bytes": 4760542,
+      "local_evidence": "build/carrier-design/tps22990.pdf"
+    },
+    "tps2553": {
+      "sha256": "88e453700cea2b263cdb5b44fce1e883e0f6d3b975457f879ac1423eeea42071",
+      "bytes": 2091666,
+      "local_evidence": "build/carrier-design/tps2553.pdf"
+    },
+    "tps22918": {
+      "sha256": "1b28eb58003d28b18bf919a15734056f296a499bebee2bd493a1e4358c4dfb1c",
+      "bytes": 1072926,
+      "local_evidence": "build/carrier-design/tps22918.pdf"
+    },
+    "sgm3157": {
+      "sha256": "47a62f5a6203ed6ee1796bf989db1b526d34490fbeed7258ac796647a79ccb41",
+      "bytes": 668987,
+      "local_evidence": "build/carrier-design/sgm3157.pdf"
+    },
+    "es8311": {
+      "sha256": "be42a2cb09093378feaccf55c227be579edc5a17786a11cc34254ea91264538a",
+      "bytes": 729315,
+      "local_evidence": "build/carrier-design/es8311.pdf"
+    },
+    "ch343": {
+      "sha256": "d1dba2658f17b842a14a1911e65ce1a19fa8d1fdb8f777183e4cde4febb34865",
+      "bytes": 277847,
+      "local_evidence": "build/carrier-design/ch343.pdf"
+    }
+  },
+  "implemented_fpc_interfaces": {
+    "status": "populated_unrouted_prototype_interfaces_not_mating_approved",
+    "J1200": {
+      "part": "FPC-05FB-30PH20",
+      "pins": 30,
+      "xy_mm": [
+        70.5,
+        57.5
+      ],
+      "side": "F",
+      "rotation_deg": 0,
+      "source": "user LCM PDF page6"
+    },
+    "J1210": {
+      "part": "FPC-05FB-6PH20",
+      "pins": 6,
+      "xy_mm": [
+        96,
+        67
+      ],
+      "side": "F",
+      "rotation_deg": 0,
+      "source": "previous 6-pin reference only; actual touch drawing absent"
+    },
+    "J1220": {
+      "part": "FPC-05FB-24PH20",
+      "pins": 24,
+      "xy_mm": [
+        76.5,
+        7
+      ],
+      "side": "F",
+      "rotation_deg": 180,
+      "source": "OSPTEK ESP32-P4-Camera PDF page3"
+    },
+    "manufacturer_family_drawing": "https://datasheet.lcsc.com/datasheet/pdf/efde5e3dfa7498fa4d87ef03a639edf6.pdf",
+    "manufacturer_family_drawing_sha256": "87cd1aeadad6c8470a8dab79031fa5bf586697a19952f892e5f74781d8892605",
+    "lcd_connector_fit": "not qualified: family recommended thickness 0.30+/-0.02 vs LCM 0.30+/-0.05; width +/-0.05 vs LCM +/-0.10; 6mm reinforcement vs LCM 4.8+/-0.3"
+  },
+  "measured_fold_layout": {
+    "corrected_user_tip_Y_mm": {
+      "touch": 7.5,
+      "lcd": 46.1
+    },
+    "reference": "screen assembly top to folded gold-finger tip",
+    "photo": "微信图片_20260923055259_368_77.jpg",
+    "touch_X": "photo estimate only; not measured",
+    "pcb_screen_offset_mm": [
+      9.93,
+      2.5
+    ]
+  },
+  "cabin_sensor_sources": [
+    {
+      "part": "OPT3001DNPR",
+      "url": "https://www.ti.com/lit/ds/symlink/opt3001.pdf",
+      "revision": "Rev C, package DNP0006A 4221434/C 01/2018"
+    },
+    {
+      "part": "SHT40-AD1B-R2",
+      "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "revision": "v7.3 June2026"
+    }
+  ],
+  "revision_H_audio_sources": [
+    {
+      "url": "https://dl.espressif.com/schematics/esp32-s31-korvo-1-schematics.pdf",
+      "local_evidence": "build/carrier-audio/korvo-s31.pdf",
+      "sha256": "6841cdb55bc4749376a4309365a0efeb45b2cb4cc882a48008bf592d029ae0ec"
+    },
+    {
+      "url": "https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf",
+      "local_evidence": "build/carrier-audio/es8389.pdf",
+      "sha256": "ed98e468c0e018bfc7b65c1c87cc6d268c4cd84461c8f0005336212bb4226a56"
+    },
+    {
+      "url": "https://atta.szlcsc.com/upload/public/pdf/source/20240604/C1447F1D03265B3E9B89676302ED84F3.pdf",
+      "local_evidence": "build/carrier-audio/mic381.pdf",
+      "sha256": "f98506437bac8835602fe5a1784b2e6102d44a4f75b75d0fb78ece7192b1d3a2"
+    },
+    {
+      "url": "https://www.micros.com.pl/mediaserver/ULNS4150b_NSIWAY_0001.pdf",
+      "local_evidence": "build/carrier-audio/ns4150b.pdf",
+      "sha256": "1ce714826452ee6d46288c48a99c617d3083a5169ad1a3ab1cceae6f660715a1"
+    },
+    {
+      "local_user_document": "docs/RDA5807M datasheet_v1.pdf",
+      "sha256": "5ec59afd1f3ca4070d99379e32f80994032a56710f6cdbbc47277c85b02d9749"
+    }
+  ],
+  "revision_H_review": "AUDIO_REVIEW.json",
+  "revision_H_firmware": "ES8311 application remains unchanged; ES8389 BSP/TDM/dual-mic migration not yet implemented",
+  "push_push_SIM": {
+    "part": "GCT SIM8066-6-1-14-01-A",
+    "official_product": "https://gct.co/connector/sim8066",
+    "drawing": {
+      "source": "https://www1.futureelectronics.com/doc/Global%20Connector%20Technology/SIM8066.pdf",
+      "revision": "A1 2021-09-22",
+      "sha256": "20c56183afd501b03b663d620b6eb7a071a007db998a1d3e32320c689dd2cd75"
+    },
+    "specification": {
+      "source": "https://media.digikey.com/pdf/Data%20Sheets/GCT%20PDFs/SIM8066-spec.pdf",
+      "revision": "A 2021-03-19",
+      "sha256": "db6a28e5d1b120eff61f1ea909ad765fb459031da7589065039cbe76eb34c7cf"
+    },
+    "current_revision_boundary": "Official page lists Rev B PCN 2025-03-13; file not retrieved; manufacturing comparison pending",
+    "modem_source": "Local ML307A-GNSS hardware V1.0.0 page 32; compatibility manual V3.1.0",
+    "evidence": "build/carrier-sim/",
+    "review": "SIM_REVIEW.json"
+  },
+  "compact_inductor": {
+    "part": "FEXU0640S2R2MGS",
+    "manufacturer": "Shenzhen Cjiang Technology Co. Ltd.",
+    "lcsc": "C54140025",
+    "availability_checked": "2026-09-23",
+    "stock_observed": 775,
+    "MOQ": 1,
+    "availability_source": "https://www.lcsc.com/product-detail/C54140025.html",
+    "previous_candidate": "Bourns SRP7030CA-2R2M / C1332137 out of stock",
+    "datasheet_source": "https://atta.szlcsc.com/upload/public/pdf/source/20260302/EED1CBF0FC8744AFBE91D5FB993027E7.pdf",
+    "datasheet_sha256": "ff5dd6812e12c2bdf23e16e7a0293c28db6944bd4cfc3831ddcc56165fce3ae3",
+    "evidence": "build/carrier-inductor/",
+    "review": "INDUCTOR_REVIEW.json",
+    "scope": "procurement selection and unrouted placement; not production qualification"
+  },
+  "screen_back_layout": {
+    "source": "User instruction 2026-09-23: FPC and tall 2Pin to front; back faces screen",
+    "current_review": "SCREEN_BACK_REVIEW.json",
+    "face_definition": "F rear-housing/components; B screen",
+    "coordinate_conversion": "Xnew=145-Xold",
+    "slot_geometry": "provisional engineering allowance, not a measured screen fit",
+    "screen_gap_mm": null,
+    "evidence": "build/carrier-flatback/"
+  },
+  "procurement": {
+    "review": "PROCUREMENT_REVIEW.json",
+    "quantity_audit": "PROCUREMENT_AUDIT.json",
+    "stock_evidence": "LCSC_STOCK_SNAPSHOT.json",
+    "manufacturer_datasheets": [
+      "https://datasheet.lcsc.com/datasheet/pdf/922c86cdb9d20ace7f31ad0e941a76e0.pdf?productCode=C54320678",
+      "https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf",
+      "https://datasheet.lcsc.com/datasheet/pdf/c9ef11d769b31cb43b095af03eae2458.pdf?productCode=C403651"
+    ]
+  }
+}

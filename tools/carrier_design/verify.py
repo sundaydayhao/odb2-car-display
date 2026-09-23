@@ -162,7 +162,8 @@ if 'U820' in fps:
         for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
     for i,ch in enumerate(['L','R']):
         for ref,mapping in {
-            'U'+str(802+i):{'1':'MIC_'+ch+'_3V3','2':'GND','3':'GND','4':'MIC_'+ch+'_OUT'},
+            # LinkMems M282 v1.1 p6 PCB top view, independently checked.
+            'U'+str(802+i):{'1':'MIC_'+ch+'_3V3','2':'MIC_'+ch+'_OUT','3':'GND','4':'GND'},
             'U'+str(820+i):{'1':'AMP_EN','2':'PA_'+ch+'_BYPASS','3':'PA_'+ch+'_INP','4':'PA_'+ch+'_INN',
                  '5':'SPK_'+ch+'_N','6':'PA_4V8','7':'GND','8':'SPK_'+ch+'_P'},
             'J'+str(820+i):{'1':'SPK_'+ch+'_P','2':'SPK_'+ch+'_N'},
@@ -181,13 +182,14 @@ if 'U820' in fps:
     assert fps['U802'].GetLayer()==fps['U803'].GetLayer()==(k.F_Cu if screen_back else k.B_Cu)
     assert abs(abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x))-60)<.001
     assert fps['U803'].GetPosition().y==fps['U802'].GetPosition().y
-    # TI full-temperature FB range is +/-2%; divider resistors are 0.1%.
-    pa_range=[vref*(1+698000*(1+rtol)/(100000*(1-rtol))) for vref,rtol in [(.588,-.001),(.612,.001)]]
+    # TI full-temperature FB +/-2%; 680k/100k resistors +/-1% plus
+    # independent worst-case 100ppm/K drift over 100K from 25C => +/-2% each.
+    pa_range=[vref*(1+680000*(1+rtol)/(100000*(1-rtol))) for vref,rtol in [(.588,-.02),(.612,.02)]]
     assert max(pa_range)<5.0 and min(pa_range)>3.0
     audio_checks={'ES8389_7bit_address':'0x12','RDA5807M_7bit_address':'0x10',
         'stereo_mic_dac_and_BTL_pinmaps':'PASS','S31_TDM_clock_data_pin_swap':'PASS',
         'fm_separate_left_right':'PASS','onboard_mics':2,'speaker_connectors':2,
-        'microphone_center_spacing_mm':60,'PA_nominal_V':4.788,
+        'microphone_center_spacing_mm':60,'PA_nominal_V':4.68,
         'PA_static_tolerance_range_V':[round(x,4) for x in pa_range],
         'amplifier_nominal_gain_V_V':2.4,'firmware_and_physical_audio_validation':'NOT_RUN'}
 # A passive connector with duplicate power pins does not necessarily cause an

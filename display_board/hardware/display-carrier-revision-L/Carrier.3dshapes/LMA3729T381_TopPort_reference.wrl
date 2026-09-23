@@ -1,0 +1,6 @@
+#VRML V2.0 utf8
+# 2.95x3.76x1.00mm top-port body reference, not vendor CAD
+Transform { scale 0.3937007874 0.3937007874 0.3937007874 children [
+Transform { translation 0 0 0.5 children [ Shape { appearance Appearance { material Material { diffuseColor 0.65 0.65 0.62 } } geometry Box { size 2.95 3.76 1.0 } } ] }
+Transform { translation 0.005 0.75 1.001 rotation 1 0 0 1.5707963268 children [ Shape { appearance Appearance { material Material { diffuseColor 0.03 0.03 0.03 } } geometry Cylinder { radius 0.1625 height 0.002 } } ] }
+] }

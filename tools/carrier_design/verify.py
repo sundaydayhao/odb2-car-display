@@ -22,6 +22,7 @@ sch={(z.get('ref'),z.get('pin')):n.get('name') for n in tree.findall('./nets/net
 board=k.LoadBoard(str(OUT/'display_carrier.kicad_pcb'))
 fps={f.GetReference():f for f in board.GetFootprints()}
 screen_back=(OUT/'SCREEN_BACK_LAYOUT.json').is_file()
+mipi_layout=screen_back and json.loads((OUT/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8')).get('revision')=='N'
 expected={p['ref'] for p in parts if p['footprint']}
 assert expected==set(fps)-{'H1','H2','H3','H4'}
 for p in parts:
@@ -67,6 +68,8 @@ if screen_back:
     # The additional 4 mm is a provisional reach allowance, not a measurement.
     fpc_expected=[('J1200',(145-70.5,46.1-2.5+2.1-3.525+4),0),
                   ('J1210',(145-36,7.5-2.5+2.1-3.525+4),0),('J1220',(145-76.5,7),180)]
+if mipi_layout:
+    fpc_expected=[('J1200',(74.5,46.175),0),('J1210',(109,7.575),0),('J1220',(94,39),0)]
 for ref,xy,angle in fpc_expected:
     fp=fps[ref]
     assert fp.GetLayer()==k.F_Cu and not fp.IsDNP()
@@ -250,7 +253,7 @@ if screen_back:
         cutouts.append(tuple(round(k.ToMM(v)-50,3) for v in [z.GetX(),z.GetY(),z.GetRight(),z.GetBottom()]))
     for box in [(104,14,114,17),(64.5,52.5,84.5,55.5)]:assert box in cutouts,cutouts
     zones={z.GetZoneName():z for z in board.Zones()}
-    assert len(zones)==6
+    assert len(zones)==(10 if mipi_layout else 6)
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetDoNotAllowFootprints()
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetLayer()==k.B_Cu
     for name in ['TOUCH_PASS_THROUGH_COPPER_CLEAR','LCD_PASS_THROUGH_COPPER_CLEAR']:
@@ -258,10 +261,18 @@ if screen_back:
         assert z.GetDoNotAllowTracks() and z.GetDoNotAllowVias() and z.GetDoNotAllowPads() and z.GetDoNotAllowZoneFills()
         assert all(z.GetLayerSet().Contains(layer) for layer in [k.F_Cu,k.In1_Cu,k.In2_Cu,k.B_Cu])
     assert abs(k.ToMM(fps['U100'].GetPosition().x)-50-69)<.001
-    assert abs(k.ToMM(fps['U100'].GetPosition().y)-50-28)<.001
+    assert abs(k.ToMM(fps['U100'].GetPosition().y)-50-(22 if mipi_layout else 28))<.001
     report['screen_back_layout']={'component_side':'F','screen_side':'B','back_side_footprints':0,
         'through_board_flex_slots_mm':[[10,3],[20,3]],'closed_outline_with_four_internal_cutouts':True,
         'screen_contact_qualification':'NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked'}
+    if mipi_layout:
+        for name in ['MIPI_DSI_ESCAPE','MIPI_CSI_TURN','MIPI_CSI_ESCAPE','CAMERA_LATCH_FLEX_CLEAR']:
+            z=zones[name]
+            assert z.GetLayer()==k.F_Cu and z.GetDoNotAllowFootprints()
+            assert not any([z.GetDoNotAllowPads(),z.GetDoNotAllowTracks(),z.GetDoNotAllowVias(),z.GetDoNotAllowZoneFills()])
+        report['screen_back_layout'].update(screen_gap_nominal_mm=3,LCD_touch_slots_and_sockets_unchanged=True,
+            core_xy_mm=[69,22],camera_xy_mm=[94,39],layout_review='MIPI_LAYOUT_REVIEW.json',
+            routing_trial='12 signals tried separately; geometry only, no impedance/coupling/length qualification')
 if audio_checks:report['stereo_audio']=audio_checks
 if sim_checks:report['push_push_sim']=sim_checks
 if inductor_checks:report['compact_inductor']=inductor_checks

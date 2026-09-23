@@ -1,95 +1,11 @@
 {
-  "revision": "K",
-  "baseline_commit": "6eb6734",
-  "status": "PASS_FOR_UNROUTED_LAYOUT_ONLY_FLEX_STACK_PENDING",
-  "footprint_UUID_value_DNP_path_preserved": 354,
-  "pad_UUID_net_number_size_drill_shape_preserved": 1226,
-  "pad_local_geometry_transform": "Old B: X reflected; old F: unchanged handedness; translation only afterward",
-  "all_net_members_unchanged": true,
-  "component_side": "F",
-  "screen_side": "B",
-  "B_side_footprint_bodies": 0,
-  "unchanged_child_sheets": [
-    "01_core.kicad_sch",
-    "02_usb.kicad_sch",
-    "03_usb_current.kicad_sch",
-    "04_charger.kicad_sch",
-    "05_system_switch.kicad_sch",
-    "06_main_power.kicad_sch",
-    "07_sd.kicad_sch",
-    "08_modem.kicad_sch",
-    "09_modem_power.kicad_sch",
-    "10_sim_rf.kicad_sch",
-    "11_codec.kicad_sch",
-    "12_fm_audio.kicad_sch",
-    "13_release_holds.kicad_sch",
-    "16_camera_fpc.kicad_sch",
-    "17_cabin_sensors.kicad_sch",
-    "18_dual_mic.kicad_sch",
-    "19_stereo_pa.kicad_sch"
-  ],
-  "schematic_semantic_diff": {
-    "14_lcd_fpc.kicad_sch": {
-      "symbols_added": [],
-      "symbols_removed": [],
-      "symbols_moved": [],
-      "symbols_changed": [],
-      "labels_added": [],
-      "labels_removed": [],
-      "count_delta": {}
-    },
-    "15_touch_fpc.kicad_sch": {
-      "symbols_added": [],
-      "symbols_removed": [],
-      "symbols_moved": [],
-      "symbols_changed": [],
-      "labels_added": [],
-      "labels_removed": [],
-      "count_delta": {}
-    },
-    "display_carrier.kicad_sch": {
-      "symbols_added": [],
-      "symbols_removed": [],
-      "symbols_moved": [],
-      "symbols_changed": [],
-      "labels_added": [],
-      "labels_removed": [],
-      "count_delta": {}
-    }
-  },
-  "erc_new": [],
-  "erc_gone": [],
-  "existing_erc_warnings": 13,
+  "revision": "N",
+  "status": "PASS_LAYOUT_AND_GEOMETRIC_ESCAPE_TRIAL_ONLY",
+  "current_review": "MIPI_LAYOUT_REVIEW.json",
+  "baseline_commit": "7f842ff",
   "physical_DRC": 0,
   "schematic_parity": 0,
-  "unconnected_native": 848,
-  "tracks": 0,
-  "board_rules_byte_identical": true,
-  "fabrication_release": "HOLD: flex free length, screen gap, untrimmed solder tails, prototype validation and routing pending",
-  "schematic_pixel_diff": {
-    "14": {
-      "changed_px": 4671,
-      "bbox_mm": [
-        20.5,
-        20.0,
-        345.0,
-        281.0
-      ],
-      "composite": "build\\carrier-flatback\\14-diff.png"
-    },
-    "15": {
-      "changed_px": 2280,
-      "bbox_mm": [
-        22.5,
-        30.2,
-        345.0,
-        281.0
-      ],
-      "composite": "build\\carrier-flatback\\15-diff.png"
-    }
-  },
-  "machine_tier": "PASS",
-  "render_judged_tier": "PASS_FOR_LAYOUT_ONLY",
-  "visual_review": "Native front/back 3D, top copper/fab/courtyard slot crops, schematic notes/pixel differences, two-face overview reviewed",
-  "screen_mating": "NOT_VALIDATED"
+  "slots_unchanged": true,
+  "screen_gap_nominal_mm": 3,
+  "historical_K_review": "Git history; current geometry reviewed by MIPI_LAYOUT_REVIEW.json"
 }

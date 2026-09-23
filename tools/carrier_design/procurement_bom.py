@@ -133,6 +133,8 @@ def generate(project, intent_path):
         design_intent_sha256=hashlib.sha256(intent_path.read_bytes()).hexdigest(),
         snapshot_sha256=hashlib.sha256((project/'LCSC_STOCK_SNAPSHOT.json').read_bytes()).hexdigest(),
         status='SOURCING_REVIEW_NOT_RELEASED')
+    if (project/'SCREEN_BACK_LAYOUT.json').is_file():
+        report['layout_revision']=json.loads((project/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8'))['revision']
     (project/'PROCUREMENT_AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

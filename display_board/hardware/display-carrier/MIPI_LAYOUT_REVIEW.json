@@ -1,0 +1,103 @@
+{
+  "revision": "N",
+  "baseline_commit": "7f842ff",
+  "status": "PASS_LAYOUT_AND_GEOMETRIC_ESCAPE_TRIAL_ONLY",
+  "footprints_preserved": 354,
+  "pads_preserved": 1226,
+  "native_schematic_files_unchanged": 20,
+  "DRC_rules_unchanged": true,
+  "net_pin_model_bindings_preserved": true,
+  "all_Edge_Cuts_preserved": true,
+  "LCD_touch_FPCs_preserved": true,
+  "user_J300_J301_positions_preserved": true,
+  "moved_footprints": 49,
+  "physical_DRC": 0,
+  "schematic_parity": 0,
+  "ERC_errors": 0,
+  "existing_ERC_warnings": 13,
+  "pad_edge_gap_mm": {
+    "J1200": {
+      "before": 2.877,
+      "after": 8.877
+    },
+    "J1220": {
+      "before": 5.702,
+      "after": 7.1924
+    }
+  },
+  "CSI_straight_line_pad_distance_mm": {
+    "before": {
+      "CSI_D1_N": 34.6855,
+      "CSI_D1_P": 33.5703,
+      "CSI_CLK_N": 34.7994,
+      "CSI_CLK_P": 34.2125,
+      "CSI_D0_N": 33.2114,
+      "CSI_D0_P": 33.3616
+    },
+    "after": {
+      "CSI_D1_N": 18.0479,
+      "CSI_D1_P": 17.8703,
+      "CSI_CLK_N": 18.0021,
+      "CSI_CLK_P": 18.4952,
+      "CSI_D0_N": 19.4827,
+      "CSI_D0_P": 18.0021
+    }
+  },
+  "placement_tracks": 0,
+  "placement_unconnected": 848,
+  "trial_nets_connected": [
+    "DSI_D1_P",
+    "DSI_D1_N",
+    "DSI_CLK_N",
+    "DSI_CLK_P",
+    "DSI_D0_P",
+    "DSI_D0_N",
+    "CSI_D0_N",
+    "CSI_D0_P",
+    "CSI_CLK_P",
+    "CSI_CLK_N",
+    "CSI_D1_N",
+    "CSI_D1_P"
+  ],
+  "trial_unconnected": 836,
+  "trial": "MIPI_ROUTING_TRIAL.json",
+  "visual_review": "PASS: native top 3D and all-layer MIPI escape crop inspected; trial traces are not length/impedance qualified",
+  "screen_gap_nominal_mm": 3,
+  "boundary": "Placement and connectivity geometry only. Coupled differential spacing, length matching, stackup impedance, return paths, camera flex and full routing not qualified.",
+  "native_design_sha256": {
+    "01_core.kicad_sch": "7762d9d0dd08c0b64868fa48321f001fffdba97d615202398f579f448095ddbe",
+    "02_usb.kicad_sch": "75b09e6bb9fd8221831f4e69c464be02264a80e0ac5e0c239c265849733885fb",
+    "03_usb_current.kicad_sch": "78f6efaff990c772e89ebf3298eba6fc47aa6cd636245f1ec4a7c420cfa5bb2e",
+    "04_charger.kicad_sch": "8f9f5afb117a97d948b1b91b75949e2610a2778ad297a6f736400808e019869c",
+    "05_system_switch.kicad_sch": "eeb8461a8a5aadd96f99845f4848fd2ce86c143d8b15fa63fe65cdc7079859ce",
+    "06_main_power.kicad_sch": "0a12371af93069ea265aa47be72098eb7fb2780cbf54caaabe3e70fee9caf069",
+    "07_sd.kicad_sch": "7c7e13f999cdb25ba56f191163cd3df5180dfb3105d0f160dade0f4f6d6fa752",
+    "08_modem.kicad_sch": "cc82d6a849a35f72f470f2f9def84d26f46a30623be970398bbafdbbc20a3b55",
+    "09_modem_power.kicad_sch": "06633a69c91ee4dae56ecd49e6cb07f4fe9209f1404b6e0f2215e89ea408995c",
+    "10_sim_rf.kicad_sch": "e1da2a585d4188fa2e576b99d2d5f709beed920e42334535d11d2c2c8c4eee15",
+    "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
+    "12_fm_audio.kicad_sch": "33ecc3d3e6686358ae3db8ffd05a574fa06d99196ec3157b775e3f979945eafe",
+    "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
+    "14_lcd_fpc.kicad_sch": "7af7116a540ca6720c838c7ca194f1fb8ca0fc32438e16e6f76754f5fd775c37",
+    "15_touch_fpc.kicad_sch": "12c6501a22f07bee926857f718125c920556798013ad17336745ea0bb0d5dae7",
+    "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
+    "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
+    "18_dual_mic.kicad_sch": "65f26ee40f3de7f0250a444b8106a3c2a16c65fce1a669cc8932ea96dccbd4fe",
+    "19_stereo_pa.kicad_sch": "f81ead102d1ea0943c5e0a10abac93cbfb8945739a10f53428afd3738db25ef8",
+    "display_carrier.kicad_pcb": "7d28ff1d5982c37bdd307170501204ca611f7d80821592c650990d106318a805",
+    "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
+    "display_carrier.kicad_sch": "683a3685958c277cf77412f724e9f6ee950379e5832f145e74474402bb1947db"
+  },
+  "pcb_pixel_diff": {
+    "changed_px": 101355,
+    "bbox_mm": [
+      51.8,
+      2.64,
+      123.47,
+      59.61
+    ],
+    "composite": "build\\carrier-mipi\\pcb-diff.png"
+  },
+  "pcb_pixel_diff_review": "PASS: inspected red/green comparison; changes confined to planned core/FPC/support placement and LCD label",
+  "baseline_PCB_sha256": "db7709ad4e73be6279a3d17de23f84d562d1b84f1512ba7a4408e97f3f56a51f"
+}

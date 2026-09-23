@@ -52,7 +52,7 @@
   ],
   "tracks": 0,
   "zones": 0,
-  "rule_areas": 6,
+  "rule_areas": 10,
   "ts_temperature_threshold_ranges_C": {
     "cold_inhibit": [
       2.011,
@@ -124,7 +124,7 @@
     "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
     "18_dual_mic.kicad_sch": "65f26ee40f3de7f0250a444b8106a3c2a16c65fce1a669cc8932ea96dccbd4fe",
     "19_stereo_pa.kicad_sch": "f81ead102d1ea0943c5e0a10abac93cbfb8945739a10f53428afd3738db25ef8",
-    "display_carrier.kicad_pcb": "855e1fc1ac1b6a5fd7835dbf3af017dbbfcc9476b6b09522f66fca1dc7693568",
+    "display_carrier.kicad_pcb": "7d28ff1d5982c37bdd307170501204ca611f7d80821592c650990d106318a805",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
     "display_carrier.kicad_sch": "683a3685958c277cf77412f724e9f6ee950379e5832f145e74474402bb1947db"
   },
@@ -143,7 +143,19 @@
       ]
     ],
     "closed_outline_with_four_internal_cutouts": true,
-    "screen_contact_qualification": "NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked"
+    "screen_contact_qualification": "NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked",
+    "screen_gap_nominal_mm": 3,
+    "LCD_touch_slots_and_sockets_unchanged": true,
+    "core_xy_mm": [
+      69,
+      22
+    ],
+    "camera_xy_mm": [
+      94,
+      39
+    ],
+    "layout_review": "MIPI_LAYOUT_REVIEW.json",
+    "routing_trial": "12 signals tried separately; geometry only, no impedance/coupling/length qualification"
   },
   "stereo_audio": {
     "ES8389_7bit_address": "0x12",

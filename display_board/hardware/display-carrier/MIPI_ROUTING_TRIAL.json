@@ -1,0 +1,118 @@
+{
+  "status": "GEOMETRY_TRIAL_NOT_SIGNAL_INTEGRITY_APPROVED",
+  "track_width_mm": 0.15,
+  "clearance_mm": 0.127,
+  "via_mm": 0.6,
+  "drill_mm": 0.3,
+  "used_layers": [
+    "F.Cu",
+    "In2.Cu",
+    "B.Cu"
+  ],
+  "nets": [
+    {
+      "net": "DSI_CLK_P",
+      "length_mm": 10.7408,
+      "vias": 0,
+      "visited": 6176
+    },
+    {
+      "net": "DSI_CLK_N",
+      "length_mm": 10.9479,
+      "vias": 0,
+      "visited": 2556
+    },
+    {
+      "net": "DSI_D1_P",
+      "length_mm": 11.3621,
+      "vias": 0,
+      "visited": 9126
+    },
+    {
+      "net": "DSI_D1_N",
+      "length_mm": 12.0884,
+      "vias": 2,
+      "visited": 50206
+    },
+    {
+      "net": "DSI_D0_P",
+      "length_mm": 11.4035,
+      "vias": 2,
+      "visited": 91993
+    },
+    {
+      "net": "DSI_D0_N",
+      "length_mm": 12.842,
+      "vias": 2,
+      "visited": 49452
+    },
+    {
+      "net": "CSI_D1_P",
+      "length_mm": 19.8312,
+      "vias": 0,
+      "visited": 32125
+    },
+    {
+      "net": "CSI_D1_N",
+      "length_mm": 21.2647,
+      "vias": 2,
+      "visited": 120468
+    },
+    {
+      "net": "CSI_CLK_P",
+      "length_mm": 20.3229,
+      "vias": 0,
+      "visited": 28956
+    },
+    {
+      "net": "CSI_CLK_N",
+      "length_mm": 19.5007,
+      "vias": 0,
+      "visited": 6722
+    },
+    {
+      "net": "CSI_D0_P",
+      "length_mm": 19.8229,
+      "vias": 0,
+      "visited": 23408
+    },
+    {
+      "net": "CSI_D0_N",
+      "length_mm": 22.0906,
+      "vias": 2,
+      "visited": 102844
+    }
+  ],
+  "pair_length_delta_mm": {
+    "DSI_CLK": 0.2071,
+    "DSI_D1": 0.7263,
+    "DSI_D0": 1.4385,
+    "CSI_D1": 1.4335,
+    "CSI_CLK": 0.8222,
+    "CSI_D0": 2.2677
+  },
+  "limitations": [
+    "Grid A* is an escape/congestion trial, not a coupled differential router.",
+    "Unmatched lengths, pair spacing, return vias and actual stackup/100 ohm impedance require final engineering.",
+    "Trial copper is not promoted into the unrouted placement board."
+  ],
+  "physical_DRC": 0,
+  "schematic_parity": 0,
+  "native_connected_nets": [
+    "CSI_CLK_N",
+    "CSI_CLK_P",
+    "CSI_D0_N",
+    "CSI_D0_P",
+    "CSI_D1_N",
+    "CSI_D1_P",
+    "DSI_CLK_N",
+    "DSI_CLK_P",
+    "DSI_D0_N",
+    "DSI_D0_P",
+    "DSI_D1_N",
+    "DSI_D1_P"
+  ],
+  "unconnected_before": 848,
+  "unconnected_after": 836,
+  "original_trial_board": "build/carrier-mipi/trial2/display_carrier.kicad_pcb"
+}

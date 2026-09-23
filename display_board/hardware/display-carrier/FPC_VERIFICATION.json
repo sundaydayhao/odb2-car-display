@@ -1,7 +1,7 @@
 {
-  "revision": "K",
+  "revision": "N",
   "current_layout": "SCREEN_BACK_LAYOUT.json",
-  "review": "SCREEN_BACK_REVIEW.json",
+  "review": "MIPI_LAYOUT_REVIEW.json",
   "pin_maps_unchanged": true,
   "original_planar_tip_Y_mm": {
     "touch": 7.5,
@@ -21,5 +21,10 @@
   ],
   "mechanical_mating": "HOLD; free flex length, bend, screen gap and solder-tail clearance unverified",
   "pcb_schematic_parity_violations": 0,
-  "FPC_geometry_unchanged_from_revision_G": false
+  "FPC_geometry_unchanged_from_revision_G": false,
+  "screen_gap_nominal_mm": 3,
+  "camera_FPC_xy_mm": [
+    94,
+    39
+  ]
 }

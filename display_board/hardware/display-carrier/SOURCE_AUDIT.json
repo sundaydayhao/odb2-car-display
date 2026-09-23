@@ -878,5 +878,18 @@
     "wire_condition": "AWG24",
     "review": "J300_TERMINAL_REVIEW.json",
     "qualification": "HOLD battery current budget and protection; no new current limiter"
-  }
+  },
+  "layout_revision": "N",
+  "revision_N_layout_sources": [
+    {
+      "source": "User: preserve LCD/touch pass-through slots and improve main-core/FPC routability; nominal screen gap about 3 mm.",
+      "date": "2026-09-24"
+    },
+    {
+      "source": "Espressif ESP32-P4 hardware design guidelines / MIPI",
+      "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/zh_CN/latest/esp32p4/pcb-layout-design-esp32p4.html#mipi",
+      "accessed": "2026-09-24",
+      "boundary": "Trial only demonstrates net connectivity and clearance. Coupling, 100-ohm stackup, length limits and returns remain pending."
+    }
+  ]
 }

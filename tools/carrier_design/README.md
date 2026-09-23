@@ -201,5 +201,21 @@ review. No battery current limiter was added. See `J300_TERMINAL.md`.
 
 The reviewed L1 files have been synchronized to `display-carrier` after its
 editor locks cleared and its tracked files were confirmed unchanged. The
-`display-carrier-revision-L` directory retains the matching reviewed copy;
+`display-carrier-revision-L` directory retains the historical L1 reviewed copy;
 the canonical project for subsequent work is `display-carrier`.
+
+Revision N retains both screen-flex slots and their sockets. Starting from
+the user's checkpoint `7f842ff`, run `mipi_layout.py --baseline <L1-project>
+--output <fresh-scratch>` with KiCad Python. This moves U100 to (69,22),
+J1220 to (94,39), and the affected local support parts. It preserves pad
+identities, models, nets and every Edge.Cuts segment. Other saved user
+placements are retained and synchronized into the intent metadata.
+
+`mipi_route_trial.py --project <staged-N-project> --output <fresh-trial>`
+performs a separate 12-net geometric escape trial on native F/In2/B copper.
+It uses A* with a partner-trace adjacency preference, not a constrained
+differential router. Run native DRC and verify every source/destination via
+the native connectivity graph. Do not copy the trial tracks into the main
+unrouted layout: its lengths, coupling, layer transitions, returns and
+100-ohm impedance are unqualified. The reviewed results are described in
+`MIPI_LAYOUT.md`, `MIPI_LAYOUT_REVIEW.json`, and `MIPI_ROUTING_TRIAL.json`.

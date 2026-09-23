@@ -1,10 +1,10 @@
 {
-  "revision": "M",
+  "revision": "L1",
   "mode": "canonical_project",
-  "base_commit": "7117720",
+  "base_commit": "0aa2b7f",
   "original_project": "display_board/hardware/display-carrier",
   "original_project_replaced": true,
-  "reason": "2026-09-24: user requested no FPC slots, lower sockets, coordinated placement and nominal 3 mm enclosure gap.",
+  "reason": "2026-09-24: editor locks cleared and canonical project had no uncommitted changes; verified L1 synchronized.",
   "native_cad_matches_verified_stage": true,
   "checks": "VERIFICATION.json",
   "procurement": "PROCUREMENT_AUDIT.json",
@@ -22,8 +22,8 @@
     "11_codec.kicad_sch": "0dabb0a49b026d3ee4fe7c5ca2e9215ca43e50f144ec47080becaf2ea2301190",
     "12_fm_audio.kicad_sch": "33ecc3d3e6686358ae3db8ffd05a574fa06d99196ec3157b775e3f979945eafe",
     "13_release_holds.kicad_sch": "5511acd0b3d94edda1e1237e63f0cbb61e4f2ea1507d2b363599261eacc0ca17",
-    "14_lcd_fpc.kicad_sch": "8a8ff553bcaa44424f7ed6a576a41215c45152c1fe603c102c06aace71d07d19",
-    "15_touch_fpc.kicad_sch": "fe4e3048a98861c35ec505f8b2aa7caffcaeee6019dcc5ea9dcec1f7598bd9f9",
+    "14_lcd_fpc.kicad_sch": "7af7116a540ca6720c838c7ca194f1fb8ca0fc32438e16e6f76754f5fd775c37",
+    "15_touch_fpc.kicad_sch": "12c6501a22f07bee926857f718125c920556798013ad17336745ea0bb0d5dae7",
     "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
     "17_cabin_sensors.kicad_sch": "4e94bd979b3ca64ac22cb661bb32d930e638efb33f44545f6d0ed9f85bb3d72d",
     "18_dual_mic.kicad_sch": "65f26ee40f3de7f0250a444b8106a3c2a16c65fce1a669cc8932ea96dccbd4fe",
@@ -71,11 +71,10 @@
     "Carrier.pretty/XUNPU_FPC_05FB_24PH20.kicad_mod": "242b1751f0f17b3f9bfa22762c4e2834af139f4200b87d407c5e2fce19e99ba8",
     "Carrier.pretty/XUNPU_FPC_05FB_30PH20.kicad_mod": "d12eddc905e5a29ec49623628da3d457608a5ee6f0e8a9c26bc15ffa71ad12a9",
     "Carrier.pretty/XUNPU_FPC_05FB_6PH20.kicad_mod": "7eddcdb55ffac1196f8adca9e0bc6ee9cb6145b696a1ad14cda41d48086a0be9",
-    "display_carrier.kicad_pcb": "8c42957d863abf5c76acf39d32f8c08756e52063e219c70c896233f14588f2ab",
+    "display_carrier.kicad_pcb": "855e1fc1ac1b6a5fd7835dbf3af017dbbfcc9476b6b09522f66fca1dc7693568",
     "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "adfff3d9e78b216155b12687733bfcad90cc566fbf8e490cf8586077238d391e"
+    "display_carrier.kicad_sch": "683a3685958c277cf77412f724e9f6ee950379e5832f145e74474402bb1947db"
   },
   "connector_review": "J300_TERMINAL_REVIEW.json",
-  "hash_normalization": "CAD text CRLF converted to LF before SHA-256; STEP/WRL bytes unchanged",
-  "layout_review": "SCREEN_BACK_REVIEW.json"
+  "hash_normalization": "CAD text CRLF converted to LF before SHA-256; STEP/WRL bytes unchanged"
 }

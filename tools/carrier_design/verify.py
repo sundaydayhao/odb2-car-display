@@ -22,7 +22,6 @@ sch={(z.get('ref'),z.get('pin')):n.get('name') for n in tree.findall('./nets/net
 board=k.LoadBoard(str(OUT/'display_carrier.kicad_pcb'))
 fps={f.GetReference():f for f in board.GetFootprints()}
 screen_back=(OUT/'SCREEN_BACK_LAYOUT.json').is_file()
-enclosure=screen_back and json.loads((OUT/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8')).get('revision')=='M'
 expected={p['ref'] for p in parts if p['footprint']}
 assert expected==set(fps)-{'H1','H2','H3','H4'}
 for p in parts:
@@ -68,8 +67,6 @@ if screen_back:
     # The additional 4 mm is a provisional reach allowance, not a measurement.
     fpc_expected=[('J1200',(145-70.5,46.1-2.5+2.1-3.525+4),0),
                   ('J1210',(145-36,7.5-2.5+2.1-3.525+4),0),('J1220',(145-76.5,7),180)]
-if enclosure:
-    fpc_expected=[('J1200',(74.5,54),0),('J1210',(109,15.5),0),('J1220',(68.5,7),180)]
 for ref,xy,angle in fpc_expected:
     fp=fps[ref]
     assert fp.GetLayer()==k.F_Cu and not fp.IsDNP()
@@ -246,24 +243,17 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
 if screen_back:
     assert all(f.GetLayer()==k.F_Cu for f in fps.values()),'Screen side must have no footprint bodies'
     poly=k.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(poly,False)
-    assert poly.OutlineCount()==1 and poly.HoleCount(0)==(2 if enclosure else 4)
+    assert poly.OutlineCount()==1 and poly.HoleCount(0)==4
     cutouts=[]
     for i in range(poly.HoleCount(0)):
         z=poly.Hole(0,i).BBox()
         cutouts.append(tuple(round(k.ToMM(v)-50,3) for v in [z.GetX(),z.GetY(),z.GetRight(),z.GetBottom()]))
-    for box in [(104,14,114,17),(64.5,52.5,84.5,55.5)]:
-        assert (box not in cutouts) if enclosure else (box in cutouts),cutouts
+    for box in [(104,14,114,17),(64.5,52.5,84.5,55.5)]:assert box in cutouts,cutouts
     zones={z.GetZoneName():z for z in board.Zones()}
     assert len(zones)==6
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetDoNotAllowFootprints()
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetLayer()==k.B_Cu
-    if enclosure:
-        assert not any('PASS_THROUGH' in name or 'BEND_COMPONENT' in name for name in zones)
-        for name in ['TOUCH_FLEX_COMPONENT_CLEAR','LCD_FLEX_COMPONENT_CLEAR','TOUCH_PAD_ESCAPE','LCD_PAD_ESCAPE']:
-            z=zones[name]
-            assert z.GetLayer()==k.F_Cu and z.GetDoNotAllowFootprints()
-            assert not any([z.GetDoNotAllowTracks(),z.GetDoNotAllowVias(),z.GetDoNotAllowPads(),z.GetDoNotAllowZoneFills()])
-    for name in ([] if enclosure else ['TOUCH_PASS_THROUGH_COPPER_CLEAR','LCD_PASS_THROUGH_COPPER_CLEAR']):
+    for name in ['TOUCH_PASS_THROUGH_COPPER_CLEAR','LCD_PASS_THROUGH_COPPER_CLEAR']:
         z=zones[name]
         assert z.GetDoNotAllowTracks() and z.GetDoNotAllowVias() and z.GetDoNotAllowPads() and z.GetDoNotAllowZoneFills()
         assert all(z.GetLayerSet().Contains(layer) for layer in [k.F_Cu,k.In1_Cu,k.In2_Cu,k.B_Cu])
@@ -272,13 +262,6 @@ if screen_back:
     report['screen_back_layout']={'component_side':'F','screen_side':'B','back_side_footprints':0,
         'through_board_flex_slots_mm':[[10,3],[20,3]],'closed_outline_with_four_internal_cutouts':True,
         'screen_contact_qualification':'NOT_RUN; untrimmed THT tails and solder still protrude; insulating gap and physical flex reach must be checked'}
-    if enclosure:
-        report['screen_back_layout']={'component_side':'F','screen_side':'B','back_side_footprints':0,
-          'through_board_flex_slots_mm':[],'closed_outline_with_two_thermal_cutouts':True,
-          'screen_gap_nominal_mm':3,'screen_and_PCB_mount':'independent enclosure supports',
-          'flex_route':'over PCB bottom edge to F-side sockets','component_free_flex_width_mm':{'touch':9,'LCD':22},
-          'FPC_pad_escape_areas':'5 mm deep touch / 9.45 mm deep LCD; copper routing allowed',
-          'assembly_qualification':'NOT_RUN; actual flex length, solder protrusion, insulation and bend radius require physical stack test'}
 if audio_checks:report['stereo_audio']=audio_checks
 if sim_checks:report['push_push_sim']=sim_checks
 if inductor_checks:report['compact_inductor']=inductor_checks

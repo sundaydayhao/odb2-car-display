@@ -3,7 +3,8 @@
 Run with KiCad's native Python. procurement.json is the sourcing source of truth.
 """
 from pathlib import Path
-import csv, json, sys
+import json, sys
+from export_bom import export_boms
 sys.path.insert(0, 'C:/projects/kicad-projects/tools/KiSkill-main')
 from kicad_lib import sexp, ops
 import pcbnew as k
@@ -66,38 +67,6 @@ intent['status'] = revision+' cost/sourcing prototype; bench qualification and f
 intent['manufacturing_release'] = False
 (P/'design-intent.json').write_text(json.dumps(intent, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 
-groups = {}
-for ref, a in intent['parts'].items():
-    if ref not in choices: continue
-    key = (a['value'], a['footprint'], a['mpn'], a['lcsc'], a['manufacturer'])
-    groups.setdefault(key, []).append(ref)
-with (P/'BOM.csv').open('w', newline='', encoding='utf-8-sig') as f:
-    w = csv.writer(f)
-    w.writerow(['References','Qty','Value','Footprint','MPN','LCSC candidate','Manufacturer','Assembly note'])
-    for (value, footprint, mpn, code, maker), rr in groups.items():
-        w.writerow([','.join(rr),len(rr),value,footprint,mpn,code,maker,choices[rr[0]]['decision']])
-
-# Explicit quantities for 100 boards. Import with BOM multiplier = 1, not 100.
-with (P/f'BOM-LCSC-100boards-{revision}.csv').open('w', newline='', encoding='utf-8-sig') as f:
-    w = csv.writer(f)
-    w.writerow(['商品编号','型号','品牌','封装','数量','位号','备注'])
-    for c in catalog['groups']:
-        if c.get('optional'): continue
-        rr = c['refs']; a = intent['parts'][rr[0]]
-        package = {'U1':'MSOP-10','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
-        w.writerow([c['lcsc'], c['mpn'],c['manufacturer'],package,
-                    100*len(rr),','.join(rr),c['decision']])
-
-with (P/'BOM-cost-100.csv').open('w', newline='', encoding='utf-8-sig') as f:
-    w = csv.writer(f)
-    w.writerow(['位号','每板数量','100板净用量','MPN','品牌','立创编号','参考单价USD','适用阶梯数量',
-                '最小购买倍数_公开LCSC','100板净用料小计USD','网页库存记录_未锁货','来源','评估'])
-    for c in catalog['groups']:
-        q = len(c['refs']); price = c['unit_usd']
-        w.writerow([','.join(c['refs']),q,q*100,c['mpn'],c['manufacturer'],c['lcsc'],
-                    price if price is not None else '',c['tier'],c['moq_multiple'],
-                    round(q*100*price,4) if price is not None else '',c['stock_observed'],
-                    c.get('purchase_url',f"https://www.lcsc.com/product-detail/{c['lcsc']}.html") if c['lcsc'] else '',c['decision']])
-subtotal = sum(len(c['refs'])*100*c['unit_usd'] for c in catalog['groups'] if c['unit_usd'] is not None)
-print(f'Applied {revision} metadata. Priced 100-board subtotal excluding U2/headers: USD {subtotal:.2f}.')
+export_boms(P)
+print(f'Applied {revision} metadata.')
 print('No circuit connections, pad positions, tracks or zones changed.')

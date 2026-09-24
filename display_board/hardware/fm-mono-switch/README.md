@@ -13,9 +13,9 @@ A5将音频开关改为**润石 RS2117HYN / C5372463，MSOP-10 外露引脚**，
 - `output/pdf/schematic.pdf`：完整原理图，可放大查看。
 - `output/board-3d.png`、`output/wiring.png`、`output/assembly.png`：预览。
 - `PROCUREMENT.md`：逐项降本、原立创报价错配与交期说明。
-- `BOM-LCSC-100boards-A5.csv`：100 板采购净用量，导入立创时套数填 1；排针不装，损耗另加。
-- `BOM-cost-100.csv`：各料号参考价格、MOQ 和来源；替代件仍需国内账户重新配单确认。
-- `BOM.csv`：分组工程物料表；`output/fabrication/`：Gerber、钻孔和贴装坐标。
+- `BOM-LCSC-A5.csv`：只列每套用量，1套=1块小板；导入立创时把“每套用量”映射为数量，按实际需求填写采购套数。排针不装，损耗另加。
+- `BOM-cost.csv`：每套用量、每套净用料参考金额、MOQ和来源。沿用已核对的阶梯单价，不代表购买1套时的成交价；重新配单确认。
+- `BOM.csv`：分组工程物料表，明确列出“每套用量”；`output/fabrication/`：Gerber、钻孔和贴装坐标。
 - `VERIFICATION.md`、`output/verification.json`：检查范围和文件校验值。
 - `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号和历史库；当前U1/U2均使用KiCad官方MSOP-10封装与模型。
 - `reference/RDA5807M.pdf`：用户提供的裸芯片手册副本；其他依据见 `SOURCES.md`。
@@ -98,5 +98,7 @@ MP3 和小智共用 ES8311，二者的互斥由软件音频管理负责。进入
 ## 维护
 
 脚本位于仓库 `tools/fm_mono_switch/`。`generate.py`仅用于从头生成原理图与初步摆放，带有防覆盖检查；`--regen-placed-board`会覆盖已布线结果。A5请使用交付PCB；`route.py` / `finish_routes.py`是历史A2 QFN流程，已加运行拦截，不能用于MSOP。`finalize.py`整理料号，`verify_final.py`比对网表，`draw_wiring_a2.py`生成当前接线图，`package_release.py`导出文件包。
+
+只更新BOM时运行 `python tools/fm_mono_switch/export_bom.py`，不改写原理图和PCB。以后导出的工程表、采购表和成本表只列“每套用量”，不预乘采购套数。`procurement.json` 的 `price_reference_boards` 仅记录历史价格评估基准。
 
 打开工程建议使用KiCad 10。U1/U2均用官方 `Package_SO:MSOP-10_3x3mm_P0.5mm`；U1符号和完整厂商手册已随工程提供。标准焊盘1.50×0.35mm、行中心距4.20mm，按厂商3×3mm本体、4.75–5.05mm引脚总宽复核；焊盘比推荐图的1.02×0.31mm更长，不冒称完全照搬推荐焊盘。

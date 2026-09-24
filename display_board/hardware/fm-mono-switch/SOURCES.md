@@ -11,7 +11,7 @@
 7. [风华 CBG160808U601T 厂商规格](https://fhcomp.com/zh-cn/product_info/?prod_code=CBG160808U601T)：600Ω@100MHz、DCR≤0.5Ω、额定200mA。
 8. 用户 `BOM-立创_20260924.xls`：BOM260924002306，2026-09-24 11:54:52。原1套配单中的实际人民币价格、MOQ、渠道、交期与错配依据，详见 `PROCUREMENT.md`。
 
-全部替代料号和采购页面记录在 `procurement.json` / `BOM-cost-100.csv`。LCSC公开网站库存、美元价格并非国内账户成交保证，重新配单时必须确认“国内现货”和实际MOQ。RDA5807M在用户报价中为订货7–10个工作日。
+全部替代料号和采购页面记录在 `procurement.json` / `BOM-cost.csv`。LCSC公开网站库存、美元价格并非国内账户成交保证，重新配单时必须确认“国内现货”和实际MOQ。RDA5807M在用户报价中为订货7–10个工作日。
 
 A2历史参考：[TI TLV755P](https://www.ti.com/lit/ds/symlink/tlv755p.pdf)、[Nexperia PESD5V0F1BL](https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL.pdf)、[Abracon AB26T](https://abracon.com/Resonators/AB26T.pdf)。这些不是A5采购型号的参数依据。
 

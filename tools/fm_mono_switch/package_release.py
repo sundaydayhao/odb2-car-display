@@ -53,7 +53,7 @@ with zipfile.ZipFile(OUT/'fm-mono-switch-A5-project.zip','w',zipfile.ZIP_DEFLATE
     for p in sorted(P.rglob('*')):
         if not p.is_file() or p.suffix in ['.zip','.kicad_prl'] or p.name=='.gitignore':continue
         if any(q.startswith('.') for q in p.relative_to(P).parts):continue
-        if p.parent == P and p.name not in {'fm_mono_switch.kicad_sch','fm_mono_switch.kicad_pcb','fm_mono_switch.kicad_pro','Mono.kicad_sym','sym-lib-table','fp-lib-table','design-intent.json','procurement.json','BOM.csv','BOM-cost-100.csv','BOM-LCSC-100boards-A5.csv','README.md','SOURCES.md','VERIFICATION.md','PROCUREMENT.md'}:continue
+        if p.parent == P and p.name not in {'fm_mono_switch.kicad_sch','fm_mono_switch.kicad_pcb','fm_mono_switch.kicad_pro','Mono.kicad_sym','sym-lib-table','fp-lib-table','design-intent.json','procurement.json','BOM.csv','BOM-cost.csv','BOM-LCSC-A5.csv','README.md','SOURCES.md','VERIFICATION.md','PROCUREMENT.md'}:continue
         if 'archive' in p.relative_to(P).parts:continue
         if p.name == 'a4-geometry-comparison.json':continue
         z.write(p,'fm-mono-switch-A5/'+p.relative_to(P).as_posix())

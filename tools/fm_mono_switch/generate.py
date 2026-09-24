@@ -334,8 +334,8 @@ pro={'meta':{'filename':NAME+'.kicad_pro','version':1},'board':{'design_settings
 (OUT/(NAME+'.kicad_pro')).write_text(json.dumps(pro,indent=2)+'\n')
 (OUT/'design-intent.json').write_text(json.dumps(intent,indent=2)+'\n')
 with (OUT/'BOM.csv').open('w',newline='',encoding='utf-8-sig') as f0:
-    w=csv.writer(f0);w.writerow(['Reference','Value','Footprint','LCSC','Note'])
+    w=csv.writer(f0);w.writerow(['Reference','每套用量','Value','Footprint','LCSC','Note'])
     for ref,a in parts.items():
         if not a['footprint']:continue
-        w.writerow([ref,a['value'],a['footprint'],a['lcsc'],'Header hand solder; or solder wires directly' if ref.startswith('J') else ''])
+        w.writerow([ref,1,a['value'],a['footprint'],a['lcsc'],'Header hand solder; or solder wires directly' if ref.startswith('J') else ''])
 print('Integrated chip board placed: 40x36mm. Native ERC/DRC and routing required.')

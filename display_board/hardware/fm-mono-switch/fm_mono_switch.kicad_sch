@@ -5,9 +5,9 @@
 	(uuid "16ed3c18-209e-53be-bdba-20ade0d40886")
 	(paper "A2")
 	(title_block
-		(title "P4 v1.4 - RDA5807M + RS2117H mono FM")
+		(title "P4 v1.4 - RDA5807M + TS5A22364 mono FM")
 		(date "2026-09-24")
-		(rev "A5 PROTOTYPE")
+		(rev "A6 PROTOTYPE")
 		(company "OBD Car Display")
 		(comment 1 "Remove R83/R84. Retain original capacitors and amplifier.")
 	)
@@ -825,7 +825,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mono:RS2117H"
+		(symbol "Mono:TS5A22364"
 			(pin_names
 				(offset 0.635)
 			)
@@ -839,7 +839,7 @@
 					)
 				)
 			)
-			(property "Value" "RS2117H"
+			(property "Value" "TS5A22364"
 				(at 0 27.94 0)
 				(effects
 					(font
@@ -847,7 +847,7 @@
 					)
 				)
 			)
-			(symbol "RS2117H_0_1"
+			(symbol "TS5A22364_0_1"
 				(rectangle
 					(start -20.32 25.4)
 					(end 20.32 -25.4)
@@ -860,7 +860,7 @@
 					)
 				)
 			)
-			(symbol "RS2117H_1_1"
+			(symbol "TS5A22364_1_1"
 				(pin power_in line
 					(at 0.0 33.02 270)
 					(length 7.62)
@@ -882,14 +882,14 @@
 				(pin passive line
 					(at -27.94 20.32 0)
 					(length 7.62)
-					(name "NC1 / CODEC_P"
+					(name "NC1 / CODEC_P_SW"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "5"
+					(number "4"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -918,14 +918,14 @@
 				(pin passive line
 					(at -27.94 -10.16 0)
 					(length 7.62)
-					(name "NC2 / CODEC_N"
+					(name "NC2 / CODEC_N_SW"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "7"
+					(number "8"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -997,7 +997,7 @@
 							)
 						)
 					)
-					(number "4"
+					(number "5"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1015,7 +1015,7 @@
 							)
 						)
 					)
-					(number "8"
+					(number "7"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -3804,7 +3804,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mono:RS2117H")
+		(lib_id "Mono:TS5A22364")
 		(at 220.98 119.38 0)
 		(unit 1)
 		(body_style 1)
@@ -3824,7 +3824,7 @@
 				)
 			)
 		)
-		(property "Value" "RS2117HYN"
+		(property "Value" "TS5A22364DGSR"
 			(at 233.67999999999998 86.35999999999999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3845,7 +3845,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5a22364.pdf"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3866,19 +3866,19 @@
 		(pin "3"
 			(uuid "2607cb92-2b03-47af-a918-71e24d614716")
 		)
-		(pin "4"
+		(pin "5"
 			(uuid "395fd204-e63e-4e58-be72-1cd065f514a7")
 		)
-		(pin "5"
+		(pin "4"
 			(uuid "aa537657-72fa-4f65-a848-c495f3b59d2f")
 		)
 		(pin "6"
 			(uuid "d9350333-6841-4993-903e-341940771f48")
 		)
-		(pin "7"
+		(pin "8"
 			(uuid "e3490c2f-f345-4a5e-8088-6b1f76b240e4")
 		)
-		(pin "8"
+		(pin "7"
 			(uuid "35bd9020-6d6e-433c-a507-e6a88aac5d21")
 		)
 		(pin "9"
@@ -3895,7 +3895,7 @@
 				)
 			)
 		)
-		(property "MPN" "RS2117HYN"
+		(property "MPN" "TS5A22364DGSR"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3907,7 +3907,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "RUNIC / 润石"
+		(property "Manufacturer" "TI / 德州仪器"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3919,7 +3919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RS2117HYN MSOP-10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2"
+		(property "Description" "TS5A22364DGSR VSSOP-10: dual SPDT negative-audio switch with inactive-input shunts; 1 VCC, 2 NO1, 3 COM1, 4 NC1, 5 IN1, 6 GND, 7 IN2, 8 NC2, 9 COM2, 10 NO2. R5/R6=1k series limiters."
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3931,7 +3931,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5372463"
+		(property "LCSC" "C105181"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3954,7 +3954,7 @@
 		)
 		(uuid "429c4f4c-8a27-404b-af8f-83db2392b658")
 	)
-	(label "CODEC_P"
+	(label "CODEC_P_SW"
 		(at 182.88 99.06 0)
 		(effects
 			(font
@@ -3994,7 +3994,7 @@
 		)
 		(uuid "c1415ac1-03b0-4422-a62f-b05d365bd0d3")
 	)
-	(label "CODEC_N"
+	(label "CODEC_N_SW"
 		(at 182.88 129.54 0)
 		(effects
 			(font
@@ -4166,7 +4166,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k 1%"
+		(property "Value" "1k 1%"
 			(at 302.26 102.86999999999999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4214,7 +4214,7 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF1003T5E"
+		(property "MPN" "0603WAF1001T5E"
 			(at 298.45 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4238,7 +4238,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" "C21190"
 			(at 298.45 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4282,73 +4282,6 @@
 		(uuid "5212d0dd-35fb-4c93-8abe-3d7f2ebe6f73")
 	)
 	(symbol
-		(lib_id "Mono:GND")
-		(at 298.45 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e90a6c53-1f17-5802-bc05-0f442ada6991")
-		(property "Reference" "#PWRR5"
-			(at 298.45 101.60000000000001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "GND"
-			(at 298.45 104.14 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" ""
-			(at 298.45 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 298.45 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6cb64023-d5cf-4846-90ad-fc35fa9a610e")
-		)
-		(instances
-			(project "fm_mono_switch"
-				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
-					(reference "#PWRR5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mono:R")
 		(at 331.47 101.6 0)
 		(unit 1)
@@ -4370,7 +4303,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k 1%"
+		(property "Value" "1k 1%"
 			(at 335.28000000000003 102.86999999999999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4418,7 +4351,7 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF1003T5E"
+		(property "MPN" "0603WAF1001T5E"
 			(at 331.47 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4442,7 +4375,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" "C21190"
 			(at 331.47 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4484,73 +4417,6 @@
 			(type default)
 		)
 		(uuid "9b1c6215-9145-4487-91ee-f932abb32812")
-	)
-	(symbol
-		(lib_id "Mono:GND")
-		(at 331.47 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8a2e8bf3-51ab-58e4-9f46-06c5d46dfa0c")
-		(property "Reference" "#PWRR6"
-			(at 331.47 101.60000000000001 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Value" "GND"
-			(at 331.47 104.14 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-			(hide yes)
-		)
-		(property "Footprint" ""
-			(at 331.47 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 331.47 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b2fa6911-06da-4836-96b4-ef64d439c45f")
-		)
-		(instances
-			(project "fm_mono_switch"
-				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
-					(reference "#PWRR6")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Mono:R")
@@ -9345,7 +9211,7 @@
 		)
 		(uuid c33147b1-02c7-56e8-8588-ce3c5992a21b)
 	)
-	(text "PROTO A5: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
+	(text "PROTO A6: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
 		(at 22.86 269.24 0)
 		(effects
 			(font
@@ -9428,5 +9294,25 @@
 			(justify left top)
 		)
 		(uuid 05775afa-a07f-5a4f-8094-23568c245434)
+	)
+	(label "CODEC_P_SW"
+		(at 298.45 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "20a73635-e132-4d59-b97f-cb22f4295a43")
+	)
+	(label "CODEC_N_SW"
+		(at 331.47 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "febb6f3f-88c7-41c0-a21b-f8e78b89f5ad")
 	)
 )

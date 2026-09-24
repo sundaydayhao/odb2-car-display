@@ -1,10 +1,10 @@
-# RDA5807M + RS2117H 单声道 FM 小板 · A5
+# RDA5807M + TS5A22364 单声道 FM 小板 · A6
 
-直接集成 **RDA5807M 裸芯片**、32.768 kHz 晶振、电源和天线接口。FM 与 ES8311（MP3 / 小智）经 RS2117H 切换，共用 ESP32-P4 Function EV Board **v1.4** 的 NS4150B 功放和原喇叭。FM 左右声道经电阻合成单声道。
+直接集成 **RDA5807M 裸芯片**、32.768 kHz 晶振、电源和天线接口。FM 与 ES8311（MP3 / 小智）经 TS5A22364 切换，共用 ESP32-P4 Function EV Board **v1.4** 的 NS4150B 功放和原喇叭。FM 左右声道经电阻合成单声道。
 
 **状态：首板原型设计完成，已布线。KiCad 10.0.5 原生 ERC、DRC、原理图与 PCB 一致性均为零问题；92 个物理引脚的网络与设计意图一致。尚未做实物验证，不是量产验证版本。本次没有修改固件。**
 
-A5将音频开关改为**润石 RS2117HYN / C5372463，MSOP-10 外露引脚**，0.5mm节距、3×3mm本体。公开LCSC记录5颗起订/步进、库存465颗、100颗适用USD0.2401/颗档。国内人民币价和库存以新配单为准。U1焊盘与相关音频走线已重做，C4移近电源脚；必须使用A5 PCB，不能在旧QFN焊盘上替换。RDA5807M、GPIO及R83/R84接法保持不变。
+A6采用 **TI TS5A22364DGSR / C105181，VSSOP-10 外露引脚**，0.5mm节距、3×3mm本体。TI标为ACTIVE；2026-09-24公开LCSC页面记录库存4719颗、1颗起购/步进，100颗报价阶梯USD0.4479/颗。库存未锁定，国内人民币价和即时交付以新配单为准。相较最早讨论的TS5A22362，本型号当次现货更多、价格更低；两者电气功能有差异，不能直接按同系列替换。A6重接U1的4/5/7/8脚，并将R5/R6改成1kΩ串联限流；必须使用A6 PCB，不能在A5原板上直接换芯片。RDA5807M、GPIO及R83/R84外部接法不变。
 
 ## 文件
 
@@ -13,11 +13,11 @@ A5将音频开关改为**润石 RS2117HYN / C5372463，MSOP-10 外露引脚**，
 - `output/pdf/schematic.pdf`：完整原理图，可放大查看。
 - `output/board-3d.png`、`output/wiring.png`、`output/assembly.png`：预览。
 - `PROCUREMENT.md`：逐项降本、原立创报价错配与交期说明。
-- `BOM-LCSC-A5.csv`：只列每套用量，1套=1块小板；导入立创时把“每套用量”映射为数量，按实际需求填写采购套数。排针不装，损耗另加。
+- `BOM-LCSC-A6.csv`：只列每套用量，1套=1块小板；导入立创时把“每套用量”映射为数量，按实际需求填写采购套数。排针不装，损耗另加。
 - `BOM-cost.csv`：每套用量、每套净用料参考金额、MOQ和来源。沿用已核对的阶梯单价，不代表购买1套时的成交价；重新配单确认。
 - `BOM.csv`：分组工程物料表，明确列出“每套用量”；`output/fabrication/`：Gerber、钻孔和贴装坐标。
 - `VERIFICATION.md`、`output/verification.json`：检查范围和文件校验值。
-- `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号和历史库；当前U1/U2均使用KiCad官方MSOP-10封装与模型。
+- `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号和历史库；U1为TI VSSOP-10，U2为MSOP-10，使用核对过的KiCad标准MSOP-10封装及模型。
 - `reference/RDA5807M.pdf`：用户提供的裸芯片手册副本；其他依据见 `SOURCES.md`。
 
 ## 外部接线：4 根音频线 + 5 根电源 / 控制线
@@ -51,15 +51,15 @@ A5将音频开关改为**润石 RS2117HYN / C5372463，MSOP-10 外露引脚**，
 | FM 电源 | U3 ME6211C30M5G-N；3.3 V → 3.0 V → FB1 → FM_VDD，C9/C10 就近去耦 |
 | 射频输入 | J3 ANT → C6 100 pF → FMIN；D1 LESD8LL5.0CT5G 低电容双向 ESD 管 |
 | 合成单声道 | L/R 各串 1 µF 隔直及 10 kΩ，再汇合；不直接短接左右输出 |
-| 音源切换 | U1 RS2117HYN，两个 SPDT 同时切换功放正负两根输入 |
+| 音源切换 | U1 TS5A22364DGSR，两个 SPDT 同时切换功放正负两根输入 |
 | 上电默认 | SEL 100 kΩ 下拉，GPIO6=0 接 ES8311，GPIO6=1 接 FM |
 | 原功放 | 继续使用 NS4150B；小板上不增设功放 |
 
 RDA5807M **裸芯片引脚**：1 GND、2 FMIN、3 GND、4 SCLK、5 SDIO、6 RCLK、7 VDD、8 GND、9 ROUT、10 LOUT。`fm-module` 目录中 RRD-102 成品模块的焊盘号不同，不能套用。截图出现的 `33.768 kHz` 是笔误，本板为 **32.768 kHz**。
 
-RS2117H 引脚：1 V+；2 NO1=FM_MONO；3 COM1=AP；4 IN1=SEL；5 NC1=CP；6 GND；7 NC2=CN；8 IN2=SEL；9 COM2=AN；10 NO2=FM_REF。FM_REF 经 R4=4.3 kΩ 到地，给单端 FM 输入提供近似阻抗匹配的参考支路。R5–R8 提供交流节点的直流参考。
+TS5A22364 引脚：1 VCC；2 NO1=FM_MONO；3 COM1=AP；4 NC1=CODEC_P_SW；5 IN1=SEL；6 GND；7 IN2=SEL；8 NC2=CODEC_N_SW；9 COM2=AN；10 NO2=FM_REF。J1的CP/CN分别经R5/R6=1kΩ到NC1/NC2；FM_REF经R4=4.3kΩ接地。R7/R8=100kΩ为功放输入和被选中的音源提供直流参考。
 
-RS2117H由3.3V经R11=10Ω和C4/C5去耦供电。3.3V供电时允许−2V至V+模拟输入，适用于原板C39/C40后的交流信号；3.3V条件下Ron典型5Ω、全温最大6.5Ω（手册规定测试范围内）。高电平门限1.3V、低电平0.4V，兼容GPIO控制。关断时NO/NC两端电压差不得超过4.2V；首板核对两音源最大摆幅、失真及切换爆音。
+TS5A22364由3.3V经R11=10Ω和C4/C5去耦供电。选通通路范围为VCC−5.5V至VCC，标称3.3V时约−2.2V至+3.3V；3.0V供电测试条件下Ron典型0.61Ω、全温最大0.97Ω，不能把典型值当作全条件保证。逻辑VIH≥1.4V、VIL≤0.6V，与GPIO兼容。未选通NC/NO会通过内部约25Ω放电，TI建议电流不超过±10mA；R5/R6改为1kΩ/1%，若输入瞬时绝对值≤3.6V，仅按最小990Ω计算电流≤3.64mA，FM通路由R1/R2各10kΩ限流。所有音源均经电容隔直，不能引入负直流。此限流计算不代替上电瞬态实测；软件继续停止未使用音源并执行功放静音切换。
 
 I²C 经 R12/R13=100 Ω 串联，R14/R15=4.7 kΩ 拉到 FM_VDD（约 3.0 V）。ESP32 引脚使用开漏 I²C，关闭不需要的内部上拉；小板与主板一起供电。
 
@@ -67,7 +67,7 @@ I²C 经 R12/R13=100 Ω 串联，R14/R15=4.7 kΩ 拉到 FM_VDD（约 3.0 V）。
 
 40 × 36 mm，双层，建议板厚 1.6 mm、1 oz 铜。两个 Ø2.2 mm 非金属化安装孔中心为板左上角起算 (3,3) 和 (37,33) mm。板上阻容以 0603 为主，接口为 2.54 mm 排针。最小设计线宽 0.15 mm、间距 0.127 mm；普通过孔 0.6 / 0.3 mm。双面接地铺铜已填充。
 
-- **U1 RS2117HYN 为 MSOP-10**，两侧外露引脚，3×3mm本体、0.5mm间距；细烙铁配合助焊剂可拖焊，也可回流焊。比QFN便于检查，但仍需检查连锡。不要买成UQFN版RS2117HYUTQK10。
+- **U1 TS5A22364DGSR 为 VSSOP-10 / DGS**，两侧外露引脚，3×3mm本体、0.5mm间距。使用已核对包络的KiCad标准MSOP-10焊盘（库命名不同，机械尺寸相容）；不买DRC/VSON或YZP/DSBGA封装。
 - U2 是 MSOP-10、0.5 mm 间距；封装三角和模型圆点标明 1 脚。
 - Y1 为扬兴 `Y6OEL89CGI-STUYLC-32.768K`（C19272781），目录参数 CL=12.5pF、ESR≤50kΩ、−40～85°C，DT-26 圆柱约 Ø2×6mm。引脚成形至1.9mm孔距。精确承认书与起振裕量仍需首板确认，不能用立创旧报价匹配的 SMD3215 晶体直接替换。
 - D1 为乐山 **LESD8LL5.0CT5G**（C172421），典型0.25pF、最大0.3pF，双向，SOD-882；焊盘与原板一致，整机 ESD 效果未测试。
@@ -97,7 +97,7 @@ MP3 和小智共用 ES8311，二者的互斥由软件音频管理负责。进入
 
 ## 维护
 
-脚本位于仓库 `tools/fm_mono_switch/`。`generate.py`仅用于从头生成原理图与初步摆放，带有防覆盖检查；`--regen-placed-board`会覆盖已布线结果。A5请使用交付PCB；`route.py` / `finish_routes.py`是历史A2 QFN流程，已加运行拦截，不能用于MSOP。`finalize.py`整理料号，`verify_final.py`比对网表，`draw_wiring_a2.py`生成当前接线图，`package_release.py`导出文件包。
+脚本位于仓库 `tools/fm_mono_switch/`。`generate.py`仅用于从头生成原理图与初步摆放，带有防覆盖检查；`--regen-placed-board`会覆盖已布线结果。A6请使用交付PCB；`route.py` / `finish_routes.py`是历史A2 QFN流程，已加运行拦截，不能用于MSOP。`finalize.py`整理料号，`verify_final.py`比对网表，`verify_a6_change.py`核对本次变更范围，`draw_wiring_a2.py`生成当前接线图，`package_release.py`导出文件包。
 
 只更新BOM时运行 `python tools/fm_mono_switch/export_bom.py`，不改写原理图和PCB。以后导出的工程表、采购表和成本表只列“每套用量”，不预乘采购套数。`procurement.json` 的 `price_reference_boards` 仅记录历史价格评估基准。
 

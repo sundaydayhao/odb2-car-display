@@ -323,17 +323,17 @@
       "mpn": ""
     },
     "U1": {
-      "kind": "RS2117H",
-      "value": "RS2117HYN",
+      "kind": "TS5A22364",
+      "value": "TS5A22364DGSR",
       "nets": {
         "1": "VCC_SW",
         "2": "FM_MONO",
         "3": "AMP_P",
-        "4": "SEL",
-        "5": "CODEC_P",
+        "4": "CODEC_P_SW",
+        "5": "SEL",
         "6": "GND",
-        "7": "CODEC_N",
-        "8": "SEL",
+        "7": "SEL",
+        "8": "CODEC_N_SW",
         "9": "AMP_N",
         "10": "FM_REF"
       },
@@ -343,8 +343,8 @@
         15.0
       ],
       "angle": 0,
-      "lcsc": "C5372463",
-      "source": "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf",
+      "lcsc": "C105181",
+      "source": "https://www.ti.com/lit/ds/symlink/ts5a22364.pdf",
       "pad_positions": {
         "1": [
           22.9,
@@ -387,15 +387,15 @@
           14.0
         ]
       },
-      "mpn": "RS2117HYN",
-      "manufacturer": "RUNIC / 润石"
+      "mpn": "TS5A22364DGSR",
+      "manufacturer": "TI / 德州仪器"
     },
     "R5": {
       "kind": "R",
-      "value": "100k 1%",
+      "value": "1k 1%",
       "nets": {
         "1": "CODEC_P",
-        "2": "GND"
+        "2": "CODEC_P_SW"
       },
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
@@ -403,7 +403,7 @@
         8
       ],
       "angle": 0,
-      "lcsc": "C25803",
+      "lcsc": "C21190",
       "source": "",
       "pad_positions": {
         "1": [
@@ -415,28 +415,15 @@
           8.0
         ]
       },
-      "mpn": "0603WAF1003T5E",
+      "mpn": "0603WAF1001T5E",
       "manufacturer": "UNI-ROYAL / 厚声"
-    },
-    "#PWRR5": {
-      "kind": "GND",
-      "value": "GND",
-      "nets": {
-        "1": "GND"
-      },
-      "footprint": "",
-      "pcb": null,
-      "angle": 0,
-      "lcsc": "",
-      "source": "",
-      "mpn": ""
     },
     "R6": {
       "kind": "R",
-      "value": "100k 1%",
+      "value": "1k 1%",
       "nets": {
         "1": "CODEC_N",
-        "2": "GND"
+        "2": "CODEC_N_SW"
       },
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
@@ -444,7 +431,7 @@
         11.5
       ],
       "angle": 0,
-      "lcsc": "C25803",
+      "lcsc": "C21190",
       "source": "",
       "pad_positions": {
         "1": [
@@ -456,21 +443,8 @@
           11.5
         ]
       },
-      "mpn": "0603WAF1003T5E",
+      "mpn": "0603WAF1001T5E",
       "manufacturer": "UNI-ROYAL / 厚声"
-    },
-    "#PWRR6": {
-      "kind": "GND",
-      "value": "GND",
-      "nets": {
-        "1": "GND"
-      },
-      "footprint": "",
-      "pcb": null,
-      "angle": 0,
-      "lcsc": "",
-      "source": "",
-      "mpn": ""
     },
     "R7": {
       "kind": "R",
@@ -1410,21 +1384,21 @@
   },
   "geometry": {
     "violations": 0,
-    "pins": 112,
+    "pins": 110,
     "segments": 100
   },
-  "status": "A5 cost/sourcing prototype; bench qualification and final supplier availability required",
+  "status": "A6 cost/sourcing prototype; bench qualification and final supplier availability required",
   "manufacturing_release": false,
   "board_size_final": true,
   "uses_fm_module": false,
   "truth_table": {
     "0": [
       [
-        "CODEC_P",
+        "CODEC_P_SW",
         "AMP_P"
       ],
       [
-        "CODEC_N",
+        "CODEC_N_SW",
         "AMP_N"
       ]
     ],
@@ -1445,5 +1419,6 @@
     36
   ],
   "hardware_tested": false,
-  "prototype_fabrication_ready": true
+  "prototype_fabrication_ready": true,
+  "input_protection": "R5/R6=1k series; limits inactive codec path shunt current; FM path has R1/R2=10k series. R7/R8 keep selected path referenced to GND."
 }

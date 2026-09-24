@@ -36,7 +36,7 @@ def export_boms(project=PROJECT):
             if c.get('optional'):
                 continue
             rr = c['refs']
-            package = {'U1':'MSOP-10','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
+            package = c.get('package', {'U1':'VSSOP-10','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603'))
             w.writerow([c['lcsc'],c['mpn'],c['manufacturer'],package,
                         len(rr),','.join(rr),c['decision']])
 

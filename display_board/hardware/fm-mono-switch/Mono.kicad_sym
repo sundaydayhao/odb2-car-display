@@ -1742,7 +1742,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "RS2117H"
+	(symbol "TS5A22364"
 		(pin_names
 			(offset 0.635)
 		)
@@ -1756,7 +1756,7 @@
 				)
 			)
 		)
-		(property "Value" "RS2117H"
+		(property "Value" "TS5A22364"
 			(at 0 27.94 0)
 			(effects
 				(font
@@ -1764,7 +1764,7 @@
 				)
 			)
 		)
-		(symbol "RS2117H_0_1"
+		(symbol "TS5A22364_0_1"
 			(rectangle
 				(start -20.32 25.4)
 				(end 20.32 -25.4)
@@ -1777,7 +1777,7 @@
 				)
 			)
 		)
-		(symbol "RS2117H_1_1"
+		(symbol "TS5A22364_1_1"
 			(pin power_in line
 				(at 0.0 33.02 270)
 				(length 7.62)
@@ -1799,14 +1799,14 @@
 			(pin passive line
 				(at -27.94 20.32 0)
 				(length 7.62)
-				(name "NC1 / CODEC_P"
+				(name "NC1 / CODEC_P_SW"
 					(effects
 						(font
 							(size 1.016 1.016)
 						)
 					)
 				)
-				(number "5"
+				(number "4"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -1835,14 +1835,14 @@
 			(pin passive line
 				(at -27.94 -10.16 0)
 				(length 7.62)
-				(name "NC2 / CODEC_N"
+				(name "NC2 / CODEC_N_SW"
 					(effects
 						(font
 							(size 1.016 1.016)
 						)
 					)
 				)
-				(number "7"
+				(number "8"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -1914,7 +1914,7 @@
 						)
 					)
 				)
-				(number "4"
+				(number "5"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -1932,7 +1932,7 @@
 						)
 					)
 				)
-				(number "8"
+				(number "7"
 					(effects
 						(font
 							(size 1.016 1.016)

@@ -1,26 +1,28 @@
 {
-  "revision": "A5",
+  "revision": "A6",
   "review_date": "2026-09-24",
   "price_reference_boards": 100,
   "currency": "USD",
-  "price_basis": "Public LCSC USD tiers; not a mainland China quotation. A5 U1 domestic price requires a new quote. A3 domestic quote for 100 boards is recorded separately; do not mix currencies. Stock is not reserved.",
+  "price_basis": "Public LCSC USD quantity tiers, not a mainland account quotation. A6 U1 refreshed 2026-09-24; other prices retained from prior review. No fixed production or purchasing quantity. Stock is not reserved.",
   "planning_cny_per_usd": 7.2,
   "groups": [
     {
       "refs": [
         "U1"
       ],
-      "mpn": "RS2117HYN",
-      "manufacturer": "RUNIC / 润石",
-      "lcsc": "C5372463",
-      "unit_usd": 0.2401,
-      "tier": 50,
-      "moq_multiple": 5,
-      "stock_observed": 465,
-      "decision": "A5改为MSOP-10外露引脚；双SPDT，3.3V供电支持-2V负向信号，0.5mm节距。公开LCSC库存465、5颗起订/步进，100颗适用50颗档USD0.2401。国内人民币价与库存须新配单；不保证100颗低于人民币100元。不能装在A4 QFN焊盘上，使用A5 PCB。首板验证音频和切换爆音。",
-      "value": "RS2117HYN",
-      "purchase_url": "https://www.lcsc.com/product-detail/C5372463.html",
-      "datasheet": "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf"
+      "mpn": "TS5A22364DGSR",
+      "manufacturer": "TI / 德州仪器",
+      "lcsc": "C105181",
+      "unit_usd": 0.4479,
+      "tier": 100,
+      "moq_multiple": 1,
+      "stock_observed": 4719,
+      "decision": "A6采用TI在产型号，VSSOP-10两侧外露引脚，0.5mm间距。公开库存4719、1颗起购/步进；USD0.4479为100颗报价阶梯，不是采购数量。人民币价/国内库存重新配单确认。内部关断放电支路要求R5/R6改为各1kΩ串联限流，使用A6 PCB；不可直接替装A5。库存未锁定，不能保证未来持续现货。",
+      "value": "TS5A22364DGSR",
+      "purchase_url": "https://www.lcsc.com/product-detail/C105181.html",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/ts5a22364.pdf",
+      "package": "VSSOP-10",
+      "domestic_url": "https://item.szlcsc.com/106396.html"
     },
     {
       "refs": [
@@ -232,8 +234,6 @@
     },
     {
       "refs": [
-        "R5",
-        "R6",
         "R7",
         "R8",
         "R10"
@@ -249,6 +249,8 @@
     },
     {
       "refs": [
+        "R5",
+        "R6",
         "R9"
       ],
       "mpn": "0603WAF1001T5E",
@@ -258,7 +260,8 @@
       "tier": 100,
       "moq_multiple": 100,
       "stock_observed": 8874800,
-      "decision": "1kΩ、1%、0.1W、0603；GPIO 串联滤波。"
+      "decision": "0603/1%/0.1W；R5/R6串联于ES8311两路交流信号，限制TS5A22364未选通支路放电电流；R9为GPIO串联。每套3颗。",
+      "value": "1k 1%"
     },
     {
       "refs": [

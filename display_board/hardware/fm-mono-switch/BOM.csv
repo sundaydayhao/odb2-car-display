@@ -7,9 +7,9 @@ J4,1,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm
 "R1,R2",2,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,UNI-ROYAL / 厚声,10kΩ、1%、0.1W、0603；保留左右声道隔离与求和，不能短接。
 R3,1,47k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4702T5E,C25819,UNI-ROYAL / 厚声,47kΩ、1%、0.1W、0603；保留音频直流参考。
 R4,1,4.3k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4301T5E,C23159,UNI-ROYAL / 厚声,4.3kΩ、1%、0.1W、0603；保留 FM 参考支路近似阻抗匹配。
-U1,1,RS2117HYN,Package_SO:MSOP-10_3x3mm_P0.5mm,RS2117HYN,C5372463,RUNIC / 润石,A5改为MSOP-10外露引脚；双SPDT，3.3V供电支持-2V负向信号，0.5mm节距。公开LCSC库存465、5颗起订/步进，100颗适用50颗档USD0.2401。国内人民币价与库存须新配单；不保证100颗低于人民币100元。不能装在A4 QFN焊盘上，使用A5 PCB。首板验证音频和切换爆音。
-"R5,R6,R7,R8,R10",5,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,UNI-ROYAL / 厚声,100kΩ、1%、0.1W、0603；合并采购，保留音频参考与上电默认状态。
-R9,1,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,UNI-ROYAL / 厚声,1kΩ、1%、0.1W、0603；GPIO 串联滤波。
+U1,1,TS5A22364DGSR,Package_SO:MSOP-10_3x3mm_P0.5mm,TS5A22364DGSR,C105181,TI / 德州仪器,A6采用TI在产型号，VSSOP-10两侧外露引脚，0.5mm间距。公开库存4719、1颗起购/步进；USD0.4479为100颗报价阶梯，不是采购数量。人民币价/国内库存重新配单确认。内部关断放电支路要求R5/R6改为各1kΩ串联限流，使用A6 PCB；不可直接替装A5。库存未锁定，不能保证未来持续现货。
+"R5,R6,R9",3,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,UNI-ROYAL / 厚声,0603/1%/0.1W；R5/R6串联于ES8311两路交流信号，限制TS5A22364未选通支路放电电流；R9为GPIO串联。每套3颗。
+"R7,R8,R10",3,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,UNI-ROYAL / 厚声,100kΩ、1%、0.1W、0603；合并采购，保留音频参考与上电默认状态。
 C3,1,1nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B102K500NT,C44369,FH / 风华高科,控制脚 RC 滤波改 X7R；不是射频或音频耦合电容，无需 C0G 精度。
 R11,1,10R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF100JT5E,C22859,UNI-ROYAL / 厚声,10Ω、1%、0.1W、0603；保留开关电源 RC 去耦。
 C4,1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B104K500NT,C30926,FH / 风华高科,100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。

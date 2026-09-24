@@ -1,4 +1,4 @@
-"""Build RDA5807M + RS2117H mono receiver in KiCad 10 (native Python)."""
+"""Build RDA5807M + TS5A22364 mono receiver in KiCad 10 (native Python)."""
 from pathlib import Path
 import copy, csv, json, sys, uuid, subprocess
 
@@ -18,7 +18,7 @@ Q = sexp.QStr.of
 S = sexp.Sym
 mm = lambda x: round(x * 1.27, 3)
 pt = lambda x, y: (mm(x), mm(y))
-SOURCE = 'https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf'
+SOURCE = 'https://www.ti.com/lit/ds/symlink/ts5a22364.pdf'
 OUT.mkdir(parents=True, exist_ok=True)
 WORK.mkdir(parents=True, exist_ok=True)
 
@@ -42,21 +42,21 @@ for name, lib, item in [('R','Device','R'),('C','Device','C'),('J2','Connector_G
         if name=='LDO' and sexp.atoms(p)[0]=='Description':p[2]=Q('500mA low-dropout regulator, fixed 3.0V output, SOT-23-5; IN/GND/EN/NC/OUT')
     defs[name]=d
 
-# Pin numbering is checked against RS2117H Rev.E.1.1 page 6 (MSOP-10).
-u = ['(symbol "Mono:RS2117H" (pin_names (offset 0.635)) (in_bom yes) (on_board yes)',
+# Pin numbering: TI TS5A22364 Rev.H page 3, DGS VSSOP-10.
+u = ['(symbol "Mono:TS5A22364" (pin_names (offset 0.635)) (in_bom yes) (on_board yes)',
      '(property "Reference" "U" (at 0 30.48 0) (effects (font (size 1.27 1.27))))',
-     '(property "Value" "RS2117H" (at 0 27.94 0) (effects (font (size 1.27 1.27))))',
-     '(symbol "RS2117H_0_1" (rectangle (start -20.32 25.4) (end 20.32 -25.4) (stroke (width 0.254) (type default)) (fill (type background))))',
-     '(symbol "RS2117H_1_1"']
-upins = [(1,'V+',0,26,270,'power_in'),(5,'NC1 / CODEC_P',-22,16,0,'passive'),
-         (2,'NO1 / FM_MONO',-22,8,0,'passive'),(7,'NC2 / CODEC_N',-22,-8,0,'passive'),
+     '(property "Value" "TS5A22364" (at 0 27.94 0) (effects (font (size 1.27 1.27))))',
+     '(symbol "TS5A22364_0_1" (rectangle (start -20.32 25.4) (end 20.32 -25.4) (stroke (width 0.254) (type default)) (fill (type background))))',
+     '(symbol "TS5A22364_1_1"']
+upins = [(1,'V+',0,26,270,'power_in'),(4,'NC1 / CODEC_P_SW',-22,16,0,'passive'),
+         (2,'NO1 / FM_MONO',-22,8,0,'passive'),(8,'NC2 / CODEC_N_SW',-22,-8,0,'passive'),
          (10,'NO2 / FM_REF',-22,-16,0,'passive'),(3,'COM1 / AMP_P',22,12,180,'passive'),
-         (9,'COM2 / AMP_N',22,-12,180,'passive'),(4,'IN1',-8,-26,90,'input'),
-         (8,'IN2',0,-26,90,'input'),(6,'GND',8,-26,90,'power_in')]
+         (9,'COM2 / AMP_N',22,-12,180,'passive'),(5,'IN1',-8,-26,90,'input'),
+         (7,'IN2',0,-26,90,'input'),(6,'GND',8,-26,90,'power_in')]
 for n,name,x,y,a,t in upins:
     length=6 if abs(x)==22 else 6
     u.append(f'(pin {t} line (at {mm(x)} {mm(y)} {a}) (length {mm(length)}) (name "{name}" (effects (font (size 1.016 1.016)))) (number "{n}" (effects (font (size 1.016 1.016)))))')
-u.append('))');defs['RS2117H']=sexp.parse('\n'.join(u))
+u.append('))');defs['TS5A22364']=sexp.parse('\n'.join(u))
 
 # RDA5807M MSOP-10, not the ten-pin RRD-102 module from the screenshots.
 u=['(symbol "Mono:RDA5807M" (pin_names (offset 0.635)) (in_bom yes) (on_board yes)',
@@ -74,7 +74,7 @@ for n,name,x,y,a,typ in [(7,'VDD',0,24,270,'power_in'),(2,'FMIN',-20,12,0,'input
 u.append('))');defs['RDA5807M']=sexp.parse('\n'.join(u))
 
 doc=build.empty_sheet(uid('root'),'A2')
-doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - RDA5807M + RS2117H mono FM") (date "2026-09-24") (rev "A5 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84. Retain original capacitors and amplifier."))'))
+doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - RDA5807M + TS5A22364 mono FM") (date "2026-09-24") (rev "A6 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84. Retain original capacitors and amplifier."))'))
 parts={}; pins={}; segs=[]; labels=[]; junctions=[]
 def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',source=''):
     choice=choices.get(ref,{})
@@ -93,7 +93,7 @@ def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',sourc
     if kind in ['R','C']:
         refpos=(at[0],at[1]-3.175) if rot else (at[0]+3.81,at[1]-1.27)
         valpos=(at[0],at[1]+3.175) if rot else (at[0]+3.81,at[1]+1.27)
-    elif kind in ['RS2117H','RDA5807M']:refpos=(at[0]+12.7,at[1]-35.56);valpos=(at[0]+12.7,at[1]-33.02)
+    elif kind in ['TS5A22364','RDA5807M']:refpos=(at[0]+12.7,at[1]-35.56);valpos=(at[0]+12.7,at[1]-33.02)
     else:refpos=(at[0],at[1]-10.16);valpos=(at[0],at[1]-7.62)
     if ref=='D1':refpos=(at[0]-15.24,at[1]-10.16);valpos=(at[0]-15.24,at[1]-7.62)
     for prop in sexp.find_all(sym,'property'):
@@ -164,17 +164,20 @@ wire('FM_MONO',e,p('R3',1));g=pt(90,108);wire('GND',p('R3',2),g);ground('GND',g,
 add('R4','R','4.3k 1%',(114,99),{1:'FM_REF',2:'GND'},RFP,(11,14))
 stub('R4',1,0,-7);g=pt(114,108);wire('GND',p('R4',2),g);ground('GND',g,'#PWR02')
 
-add('U1','RS2117H','RS2117HYN',(174,94),
-    {1:'VCC_SW',2:'FM_MONO',3:'AMP_P',4:'SEL',5:'CODEC_P',6:'GND',7:'CODEC_N',8:'SEL',9:'AMP_N',10:'FM_REF'},
-    'Package_SO:MSOP-10_3x3mm_P0.5mm',(16,12),lcsc='C5372463',source=SOURCE)
-for n in [5,2,7,10]:stub('U1',n,-8)
+add('U1','TS5A22364','TS5A22364DGSR',(174,94),
+    {1:'VCC_SW',2:'FM_MONO',3:'AMP_P',4:'CODEC_P_SW',5:'SEL',6:'GND',7:'SEL',8:'CODEC_N_SW',9:'AMP_N',10:'FM_REF'},
+    'Package_SO:MSOP-10_3x3mm_P0.5mm',(25,15),lcsc='C105181',source=SOURCE)
+for n in [4,2,8,10]:stub('U1',n,-8)
 for n in [3,9]:stub('U1',n,8)
 stub('U1',1,0,-6)
-for n in [4,8,6]:stub('U1',n,0,6)
+for n in [5,7,6]:stub('U1',n,0,6)
 
-# Bleeders keep both sources and both amplifier-facing wires near zero DC.
-for ref,net,x,y,pcb in [('R5','CODEC_P',235,80,(8,8)),('R6','CODEC_N',261,80,(8,11.5)),
-                      ('R7','AMP_P',235,108,(23,10)),('R8','AMP_N',261,108,(23,14))]:
+# Codec current limiters protect the inactive-input shunts (TI recommends <=10mA).
+for ref,net,x,pcb in [('R5','CODEC_P',235,(8,8)),('R6','CODEC_N',261,(8,11.5))]:
+    add(ref,'R','1k 1%',(x,80),{1:net,2:net+'_SW'},RFP,pcb)
+    stub(ref,1,0,-5);stub(ref,2,0,5)
+# Amplifier-facing bleeders also reference the selected codec path through R5/R6.
+for ref,net,x,y,pcb in [('R7','AMP_P',235,108,(23,10)),('R8','AMP_N',261,108,(23,14))]:
     add(ref,'R','100k 1%',(x,y),{1:net,2:'GND'},RFP,pcb)
     stub(ref,1,0,-5);g=pt(x,y+8);wire('GND',p(ref,2),g);ground('GND',g,'#PWR'+ref)
 
@@ -209,7 +212,7 @@ note('INSTALLATION: remove P4 R83 and R84; solder four separate wires to their f
 note('J1.1 -> R83 C39 side; J1.2 -> R84 C40 side. J2.1 -> R83 C59 side; J2.2 -> R84 C58 side.',18,197)
 note('J4.1 -> P4 J1 pin 17 (3V3); J4.2 -> P4 J1 pin 20 (GND); J4.3 -> P4 J1 pin 15 (GPIO6).',18,202)
 note('Mute/disable the board PA (GPIO53) before changing SEL. Enable PA for FM after settling.',18,207)
-note('PROTO A5: direct RDA5807M chip, not a module. Hardware/audio/RF tests required.',18,212)
+note('PROTO A6: direct RDA5807M chip, not a module. Hardware/audio/RF tests required.',18,212)
 
 # Dedicated antenna input, no headphone-ground antenna sharing.
 add('C6','C','100pF C0G',(363,54),{1:'ANT',2:'FMIN'},CFP,(6.3,24),rot=90)
@@ -278,9 +281,9 @@ sexp.save_file(str(OUT/'Mono.kicad_sym'),libdoc)
 (OUT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.kicad_sym") (options "") (descr "Datasheet checked mono FM selector")))\n')
 (OUT/'fp-lib-table').write_text('(fp_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.pretty") (options "") (descr "Legacy local footprints; current U1 uses official Package_SO MSOP-10")))\n')
 intent={'root_uuid':uid('root'),'parts':parts,'geometry':{'violations':0,'pins':len(pinmodel),'segments':len(segs)},
-        'status':'A5 integrated RDA5807M prototype; design checks pending',
+        'status':'A6 integrated RDA5807M prototype; design checks pending',
         'manufacturing_release':False,'board_size_final':True,'uses_fm_module':False,
-        'truth_table':{'0':[['CODEC_P','AMP_P'],['CODEC_N','AMP_N']],'1':[['FM_MONO','AMP_P'],['FM_REF','AMP_N']]},
+        'truth_table':{'0':[['CODEC_P_SW','AMP_P'],['CODEC_N_SW','AMP_N']],'1':[['FM_MONO','AMP_P'],['FM_REF','AMP_N']]},
         'supply':'3.3V input; 3.0V FM LDO','board_size_mm':[40,36],'hardware_tested':False}
 (OUT/'design-intent.json').write_text(json.dumps(intent,indent=2)+'\n')
 print('Schematic geometry OK:',len(pinmodel),'pins',len(segs),'segments')
@@ -318,7 +321,7 @@ for ref,a in parts.items():
 for a,b in [((50,50),(90,50)),((90,50),(90,86)),((90,86),(50,86)),((50,86),(50,50))]:line(board,a,b,k.Edge_Cuts,.05)
 def text(s,x,y,layer=k.F_SilkS,size=.8):
     z=k.PCB_TEXT(board);z.SetText(s);z.SetPosition(v(50+x,50+y));z.SetTextSize(v(size,size));z.SetTextThickness(k.FromMM(.12));z.SetLayer(layer);board.Add(z)
-text('MONO FM A5',10,2,size=1);text('3V3 ONLY',25,1,size=.8)
+text('MONO FM A6',10,2,size=1);text('3V3 ONLY',25,1,size=.8)
 text('CODEC',5.5,4.8);text('CP',5.3,9);text('CN',5.3,11.54)
 text('TO PA',37,3);text('AP',34.7,8);text('AN',34.7,10.54)
 for s,x in [('3V3',20),('G',22.54),('SEL',25.08),('SDA',27.62),('SCL',30.16)]:text(s,x,5.1,size=.8)

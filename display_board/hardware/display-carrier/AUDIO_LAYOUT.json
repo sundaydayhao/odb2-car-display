@@ -396,11 +396,11 @@
     },
     "C814": {
       "xy_mm": [
-        103.0,
-        59.0
+        99.5,
+        65.75
       ],
-      "side": "F",
-      "angle": 180.0
+      "angle": -90.0,
+      "side": "F"
     },
     "Q810": {
       "xy_mm": [
@@ -941,5 +941,6 @@
   "status": "REVIEWED_UNROUTED",
   "review": "AUDIO_REVIEW.json",
   "revision": "K",
-  "current_review": "SCREEN_BACK_REVIEW.json"
+  "current_review": "SCREEN_BACK_REVIEW.json",
+  "fm_sensor_review": "FM_SENSOR_REVIEW.json"
 }

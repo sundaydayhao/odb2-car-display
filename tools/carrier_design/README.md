@@ -219,3 +219,10 @@ the native connectivity graph. Do not copy the trial tracks into the main
 unrouted layout: its lengths, coupling, layer transitions, returns and
 100-ohm impedance are unqualified. The reviewed results are described in
 `MIPI_LAYOUT.md`, `MIPI_LAYOUT_REVIEW.json`, and `MIPI_ROUTING_TRIAL.json`.
+
+The 2026-09-24 FM/sensor review retains RDA5807M, OPT3001 and SHT40.
+`fm_sensor_review.py --baseline <pre-review-N-project> --output <fresh-scratch>`
+moves only C814 nearer U815 pin 7 and preserves every other native PCB object.
+Run DRC/parity, `verify.py`, model checks and visual review before promotion.
+`FM_SENSORS.md` and `FM_SENSOR_REVIEW.json` record the circuit audit and limits;
+this is still an unrouted layout, not the DHT20/VEML7700 A8 hardware target.

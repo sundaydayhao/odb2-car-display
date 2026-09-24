@@ -34,7 +34,8 @@ def render(project):
                 region(k.ToMM(z.GetX())-50,k.ToMM(z.GetY())-50,k.ToMM(z.GetWidth()),k.ToMM(z.GetHeight()),'#dce6ec','#c0ccd8')
             labels={'U100':'P4C5 / P4C6','J1200':'LCD FPC','J1210':'触摸 FPC','J1220':'CAM',
                     'J300':'电池 2Pin','J301':'NTC 2Pin','J810':'FM ANT','J820':'SPK L','J821':'SPK R',
-                    'L400':'L400','U802':'MIC L','U803':'MIC R','U1301':'SHT40'}
+                    'L400':'L400','U802':'MIC L','U803':'MIC R','U1301':'SHT40',
+                    'U815':'FM RDA5807M','U1300':'OPT3001'}
             for r,label in labels.items():
                 f=fps[r];z=f.GetBoundingBox(False,False)
                 region(k.ToMM(z.GetX())-50,k.ToMM(z.GetY())-50,k.ToMM(z.GetWidth()),k.ToMM(z.GetHeight()),'#fff','#456e9d')
@@ -43,7 +44,9 @@ def render(project):
                 if r=='J300':text(x-11,y+35,label,12,'#325d91',True)
                 elif r=='J301':text(x-26,y-21,label,12,'#325d91',True)
                 elif r=='U100':text(x-40,y,label,14,'#325d91',True)
-                elif r=='U1301':text(x-17,y-14,label,12,'#325d91',True)
+                elif r=='U1301':text(x-17,y+37,label,12,'#325d91',True)
+                elif r=='U1300':text(x-26,y+25,label,12,'#325d91',True)
+                elif r=='U815':text(x-35,y-16,label,12,'#325d91',True)
                 else:text(x-25,y-14,label,12,'#325d91',True)
         else:
             for f in fps.values():

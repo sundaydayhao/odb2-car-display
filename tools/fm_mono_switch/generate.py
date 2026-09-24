@@ -22,6 +22,9 @@ SOURCE = 'https://www.sg-micro.com/rect/assets/3d47e91a-f3bb-4f8e-9305-8e041848a
 OUT.mkdir(parents=True, exist_ok=True)
 WORK.mkdir(parents=True, exist_ok=True)
 
+if (OUT/(NAME+'.kicad_pcb')).exists() and '--regen-placed-board' not in sys.argv:
+    raise SystemExit('Refusing to overwrite routed PCB. Use --regen-placed-board only for a fresh layout.')
+
 defs = {}
 for name, lib, item in [('R','Device','R'),('C','Device','C'),('J2','Connector_Generic','Conn_01x02'),
                       ('J5','Connector_Generic','Conn_01x05'),('GND','power','GND'),('PWR_FLAG','power','PWR_FLAG'),
@@ -33,6 +36,7 @@ for name, lib, item in [('R','Device','R'),('C','Device','C'),('J2','Connector_G
         sub[1]=Q(sexp.atoms(sub)[0].replace(item+'_',name+'_',1))
     for p in sexp.find_all(d,'property'):
         if sexp.atoms(p)[0]=='Value':p[2]=Q(name)
+        if name=='LDO' and sexp.atoms(p)[0]=='Description':p[2]=Q('500mA low-dropout regulator, fixed 3.0V output, SOT-23-5; IN/GND/EN/NC/OUT')
     defs[name]=d
 
 # Pin numbering is checked against manufacturer table on page 3.
@@ -138,18 +142,18 @@ for r in ['J1','J2','J3','J4']:
     for n in parts[r]['nets']:stub(r,n,-10)
 
 # FM: independent AC coupling, resistor summing, DC return.
-add('C1','C','1uF 16V X7R',(38,76),{1:'FM_L',2:'FM_L_AC'},CFP,(7,17),rot=90,lcsc='C15849')
-add('C2','C','1uF 16V X7R',(38,92),{1:'FM_R',2:'FM_R_AC'},CFP,(7,19),rot=90,lcsc='C15849')
-add('R1','R','10k 1%',(58,76),{1:'FM_L_AC',2:'FM_MONO'},RFP,(11,17),rot=90,lcsc='C25804')
-add('R2','R','10k 1%',(58,92),{1:'FM_R_AC',2:'FM_MONO'},RFP,(14,20),rot=90,lcsc='C25804')
+add('C1','C','1uF 16V X7R',(38,76),{1:'FM_L',2:'FM_L_AC'},CFP,(7,17),rot=90)
+add('C2','C','1uF 16V X7R',(38,92),{1:'FM_R',2:'FM_R_AC'},CFP,(7,19),rot=90)
+add('R1','R','10k 1%',(58,76),{1:'FM_L_AC',2:'FM_MONO'},RFP,(11,17),rot=90)
+add('R2','R','10k 1%',(58,92),{1:'FM_R_AC',2:'FM_MONO'},RFP,(14,20),rot=90)
 stub('C1',1,-10);stub('C2',1,-10)
 wire('FM_L_AC',p('C1',2),p('R1',1));wire('FM_R_AC',p('C2',2),p('R2',1))
 label('FM_L_AC',p('C1',2));label('FM_R_AC',p('C2',2))
 a=pt(78,76);b=pt(78,92);c=pt(78,84);e=pt(90,84)
 wire('FM_MONO',p('R1',2),a,c,b,p('R2',2));wire('FM_MONO',c,e);label('FM_MONO',e);junction(c)
-add('R3','R','47k 1%',(90,99),{1:'FM_MONO',2:'GND'},RFP,(17,19),lcsc='C25819')
+add('R3','R','47k 1%',(90,99),{1:'FM_MONO',2:'GND'},RFP,(17,19))
 wire('FM_MONO',e,p('R3',1));g=pt(90,108);wire('GND',p('R3',2),g);ground('GND',g,'#PWR01')
-add('R4','R','4.3k 1%',(114,99),{1:'FM_REF',2:'GND'},RFP,(11,14),lcsc='C23159')
+add('R4','R','4.3k 1%',(114,99),{1:'FM_REF',2:'GND'},RFP,(11,14))
 stub('R4',1,0,-7);g=pt(114,108);wire('GND',p('R4',2),g);ground('GND',g,'#PWR02')
 
 add('U1','SGM3718','SGM3718YUWQ10G/TR',(174,94),
@@ -163,24 +167,24 @@ for n in [4,8,6]:stub('U1',n,0,6)
 # Bleeders keep both sources and both amplifier-facing wires near zero DC.
 for ref,net,x,y,pcb in [('R5','CODEC_P',235,80,(8,8)),('R6','CODEC_N',261,80,(8,11.5)),
                       ('R7','AMP_P',235,108,(23,10)),('R8','AMP_N',261,108,(23,14))]:
-    add(ref,'R','100k 1%',(x,y),{1:net,2:'GND'},RFP,pcb,lcsc='C25803')
+    add(ref,'R','100k 1%',(x,y),{1:net,2:'GND'},RFP,pcb)
     stub(ref,1,0,-5);g=pt(x,y+8);wire('GND',p(ref,2),g);ground('GND',g,'#PWR'+ref)
 
 # One selector line controls both switches. Low is codec, high is FM.
-add('R9','R','1k 1%',(40,151),{1:'GPIO6_SEL',2:'SEL'},RFP,(22,7.5),rot=90,lcsc='C21190')
+add('R9','R','1k 1%',(40,151),{1:'GPIO6_SEL',2:'SEL'},RFP,(22,7.5),rot=90)
 stub('R9',1,-8);a=pt(58,151);b=pt(77,151);c=pt(88,151)
 wire('SEL',p('R9',2),a,b,c);label('SEL',c)
-add('R10','R','100k 1%',(58,164),{1:'SEL',2:'GND'},RFP,(21,17),lcsc='C25803')
-add('C3','C','1nF C0G',(77,164),{1:'SEL',2:'GND'},CFP,(23,19),lcsc='C1588')
+add('R10','R','100k 1%',(58,164),{1:'SEL',2:'GND'},RFP,(21,17))
+add('C3','C','1nF C0G',(77,164),{1:'SEL',2:'GND'},CFP,(23,19))
 for ref,x in [('R10',58),('C3',77)]:
     wire('SEL',pt(x,151),p(ref,1));junction(pt(x,151));g=pt(x,173);wire('GND',p(ref,2),g);ground('GND',g,'#PWR'+ref)
 
 # Local 3.3V filtering. Do not power this board from 5V.
-add('R11','R','10R 1%',(152,151),{1:'+3V3_IN',2:'VCC_SW'},RFP,(17,6),rot=90,lcsc='C22859')
+add('R11','R','10R 1%',(152,151),{1:'+3V3_IN',2:'VCC_SW'},RFP,(17,6),rot=90)
 stub('R11',1,-8);a=pt(169,151);b=pt(188,151);c=pt(200,151)
 wire('VCC_SW',p('R11',2),a,b,c);label('VCC_SW',c)
-add('C4','C','100nF 16V X7R',(169,164),{1:'VCC_SW',2:'GND'},CFP,(16,14.6),lcsc='C14663')
-add('C5','C','1uF 16V X7R',(188,164),{1:'VCC_SW',2:'GND'},CFP,(20,14.6),lcsc='C15849')
+add('C4','C','100nF 16V X7R',(169,164),{1:'VCC_SW',2:'GND'},CFP,(16,14.6))
+add('C5','C','1uF 16V X7R',(188,164),{1:'VCC_SW',2:'GND'},CFP,(20,14.6))
 for ref,x in [('C4',169),('C5',188)]:
     wire('VCC_SW',pt(x,151),p(ref,1));junction(pt(x,151));g=pt(x,173);wire('GND',p(ref,2),g);ground('GND',g,'#PWR'+ref)
 for ref,net,xy in [('#FLG1','+3V3_IN',(238,156)),('#FLG2','VCC_SW',(265,156)),('#FLG3','GND',(292,156))]:
@@ -207,7 +211,7 @@ add('D1','TVS','PESD5V0F1BL (0.4pF)',(328,64),{1:'ANT',2:'GND'},'Diode_SMD:D_SOD
 stub('D1',1,0,-4);g=pt(328,74);wire('GND',p('D1',2),g);ground('GND',g,'#PWRD1')
 add('U2','RDA5807M','RDA5807M',(390,97),
     {1:'GND',2:'FMIN',3:'GND',4:'I2C_SCLK',5:'I2C_SDIO',6:'RCLK',7:'FM_VDD',8:'GND',9:'FM_R',10:'FM_L'},
-    'Package_SO:MSOP-10_3x3mm_P0.5mm',(11,24.5),lcsc='C82537',source='../../../../fm-module/RDA5807M datasheet_v1.pdf')
+    'Package_SO:MSOP-10_3x3mm_P0.5mm',(11,24.5),lcsc='C82537',source='${KIPRJMOD}/reference/RDA5807M.pdf')
 for n in [2,4,5]:stub('U2',n,-9)
 for n in [9,10]:stub('U2',n,8)
 stub('U2',7,0,-6)

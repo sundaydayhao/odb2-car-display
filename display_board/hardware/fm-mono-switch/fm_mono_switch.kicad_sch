@@ -1883,7 +1883,7 @@
 					)
 				)
 			)
-			(property "Description" "200mA Low Dropout Voltage Regulator, Fixed Output 1.2V, SOT-23-5"
+			(property "Description" "500mA low-dropout regulator, fixed 3.0V output, SOT-23-5; IN/GND/EN/NC/OUT"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2758,7 +2758,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C15849"
+		(property "LCSC" ""
 			(at 48.26 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -2837,7 +2837,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C15849"
+		(property "LCSC" ""
 			(at 48.26 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -2916,7 +2916,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
+		(property "LCSC" ""
 			(at 73.66 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -2995,7 +2995,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
+		(property "LCSC" ""
 			(at 73.66 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -3222,7 +3222,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25819"
+		(property "LCSC" ""
 			(at 114.3 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3390,7 +3390,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C23159"
+		(property "LCSC" ""
 			(at 144.78 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3587,6 +3587,17 @@
 				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
 					(reference "U1")
 					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "SGM3718YUWQ10G/TR"
+			(at 220.98 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -3871,7 +3882,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" ""
 			(at 298.45 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4049,7 +4060,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" ""
 			(at 331.47 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4227,7 +4238,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" ""
 			(at 298.45 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -4405,7 +4416,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" ""
 			(at 331.47 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -4581,7 +4592,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" ""
 			(at 50.8 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -4722,7 +4733,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
+		(property "LCSC" ""
 			(at 73.66 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -4803,7 +4814,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1588"
+		(property "LCSC" ""
 			(at 97.79 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -5068,7 +5079,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C22859"
+		(property "LCSC" ""
 			(at 193.04 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -5209,7 +5220,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" ""
 			(at 214.63 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -5290,7 +5301,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C15849"
+		(property "LCSC" ""
 			(at 238.76 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -5755,7 +5766,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -5819,7 +5830,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -6044,6 +6055,17 @@
 		(pin "2"
 			(uuid "1830bb1f-ff10-448b-9566-71ffbed93322")
 		)
+		(property "MPN" "PESD5V0F1BL"
+			(at 416.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "fm_mono_switch"
 				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
@@ -6192,7 +6214,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "../../../../fm-module/RDA5807M datasheet_v1.pdf"
+		(property "Datasheet" "${KIPRJMOD}/reference/RDA5807M.pdf"
 			(at 495.3 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -6238,6 +6260,17 @@
 				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
 					(reference "U2")
 					(unit 1)
+				)
+			)
+		)
+		(property "MPN" "RDA5807M"
+			(at 495.3 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -6511,6 +6544,17 @@
 		)
 		(pin "2"
 			(uuid "4e847483-5605-4ba7-b923-bf9de53993fd")
+		)
+		(property "MPN" "AB26T-32.768KHZ-12.5-B"
+			(at 542.29 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7118,6 +7162,17 @@
 		)
 		(pin "5"
 			(uuid "f02fb1d0-67d2-4b47-9463-b4ca3fd21aa9")
+		)
+		(property "MPN" "TLV75530PDBVR"
+			(at 111.76 337.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"

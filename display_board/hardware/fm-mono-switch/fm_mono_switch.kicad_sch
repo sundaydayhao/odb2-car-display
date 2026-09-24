@@ -5,9 +5,9 @@
 	(uuid "16ed3c18-209e-53be-bdba-20ade0d40886")
 	(paper "A2")
 	(title_block
-		(title "P4 v1.4 - RDA5807M + DIO1717 mono FM")
+		(title "P4 v1.4 - RDA5807M + RS2117H mono FM")
 		(date "2026-09-24")
-		(rev "A4 PROTOTYPE")
+		(rev "A5 PROTOTYPE")
 		(company "OBD Car Display")
 		(comment 1 "Remove R83/R84. Retain original capacitors and amplifier.")
 	)
@@ -825,7 +825,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mono:DIO1717"
+		(symbol "Mono:RS2117H"
 			(pin_names
 				(offset 0.635)
 			)
@@ -839,7 +839,7 @@
 					)
 				)
 			)
-			(property "Value" "DIO1717"
+			(property "Value" "RS2117H"
 				(at 0 27.94 0)
 				(effects
 					(font
@@ -847,7 +847,7 @@
 					)
 				)
 			)
-			(symbol "DIO1717_0_1"
+			(symbol "RS2117H_0_1"
 				(rectangle
 					(start -20.32 25.4)
 					(end 20.32 -25.4)
@@ -860,7 +860,7 @@
 					)
 				)
 			)
-			(symbol "DIO1717_1_1"
+			(symbol "RS2117H_1_1"
 				(pin power_in line
 					(at 0.0 33.02 270)
 					(length 7.62)
@@ -3804,7 +3804,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mono:DIO1717")
+		(lib_id "Mono:RS2117H")
 		(at 220.98 119.38 0)
 		(unit 1)
 		(body_style 1)
@@ -3824,7 +3824,7 @@
 				)
 			)
 		)
-		(property "Value" "DIO1717LP10"
+		(property "Value" "RS2117HYN"
 			(at 233.67999999999998 86.35999999999999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3834,7 +3834,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Mono:DIO1717_DQFN10_1.8x1.4_P0.4"
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3845,7 +3845,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf"
+		(property "Datasheet" "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3895,7 +3895,7 @@
 				)
 			)
 		)
-		(property "MPN" "DIO1717LP10"
+		(property "MPN" "RS2117HYN"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3907,7 +3907,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "DIOO / 帝奥微"
+		(property "Manufacturer" "RUNIC / 润石"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3919,7 +3919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "DIO1717LP10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2"
+		(property "Description" "RS2117HYN MSOP-10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -3931,7 +3931,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C444371"
+		(property "LCSC" "C5372463"
 			(at 220.98 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -9345,7 +9345,7 @@
 		)
 		(uuid c33147b1-02c7-56e8-8588-ce3c5992a21b)
 	)
-	(text "PROTO A4: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
+	(text "PROTO A5: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
 		(at 22.86 269.24 0)
 		(effects
 			(font

@@ -1,7 +1,9 @@
+"""Historical A2 QFN routing only. Do not run on the A5 MSOP board."""
 """Finish the switch fanout while retaining continuous ground planes."""
 from pathlib import Path
 import sys,shutil
 import pcbnew as k
+raise SystemExit('Historical A2 routing script; incompatible with A5 MSOP-10. Use the delivered routed PCB.')
 ROOT=Path(__file__).resolve().parents[2];W=ROOT/'build/fm-mono-switch'
 P=ROOT/'display_board/hardware/fm-mono-switch/fm_mono_switch.kicad_pcb'
 sys.path.insert(0,'C:/projects/kicad-projects/tools/KiSkill-main')

@@ -1,7 +1,9 @@
+"""Historical A2 QFN routing only. Do not run on the A5 MSOP board."""
 """Preserve short RF/clock/decoupling routes; export/import a local router session."""
 from pathlib import Path
 import sys,json
 import pcbnew as k
+raise SystemExit('Historical A2 routing script; incompatible with A5 MSOP-10. Use the delivered routed PCB.')
 ROOT=Path(__file__).resolve().parents[2]
 P=ROOT/'display_board/hardware/fm-mono-switch/fm_mono_switch.kicad_pcb'
 W=ROOT/'build/fm-mono-switch'

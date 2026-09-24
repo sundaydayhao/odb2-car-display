@@ -1,26 +1,26 @@
 {
-  "revision": "A4",
+  "revision": "A5",
   "review_date": "2026-09-24",
   "boards": 100,
   "currency": "USD",
-  "price_basis": "Public LCSC USD tiers; not a mainland China quotation. A4 U1 domestic price requires a new quote. A3 domestic quote for 100 boards is recorded separately; do not mix currencies. Stock is not reserved.",
+  "price_basis": "Public LCSC USD tiers; not a mainland China quotation. A5 U1 domestic price requires a new quote. A3 domestic quote for 100 boards is recorded separately; do not mix currencies. Stock is not reserved.",
   "planning_cny_per_usd": 7.2,
   "groups": [
     {
       "refs": [
         "U1"
       ],
-      "mpn": "DIO1717LP10",
-      "manufacturer": "DIOO / 帝奥微",
-      "lcsc": "C444371",
-      "unit_usd": 0.2003,
+      "mpn": "RS2117HYN",
+      "manufacturer": "RUNIC / 润石",
+      "lcsc": "C5372463",
+      "unit_usd": 0.2401,
       "tier": 50,
       "moq_multiple": 5,
-      "stock_observed": 2980,
-      "decision": "A4替换SGM3718；双SPDT、支持-2V负向音频，DQFN-10 1.8x1.4mm。公开LCSC库存2980、5颗起订/步进，100颗适用50颗档USD0.2003。国内人民币价/现货需新配单确认，MPQ3000不等于MOQ。回流焊，首板验证失真和切换爆音。",
-      "value": "DIO1717LP10",
-      "purchase_url": "https://www.lcsc.com/product-detail/C444371.html",
-      "datasheet": "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf"
+      "stock_observed": 465,
+      "decision": "A5改为MSOP-10外露引脚；双SPDT，3.3V供电支持-2V负向信号，0.5mm节距。公开LCSC库存465、5颗起订/步进，100颗适用50颗档USD0.2401。国内人民币价与库存须新配单；不保证100颗低于人民币100元。不能装在A4 QFN焊盘上，使用A5 PCB。首板验证音频和切换爆音。",
+      "value": "RS2117HYN",
+      "purchase_url": "https://www.lcsc.com/product-detail/C5372463.html",
+      "datasheet": "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf"
     },
     {
       "refs": [

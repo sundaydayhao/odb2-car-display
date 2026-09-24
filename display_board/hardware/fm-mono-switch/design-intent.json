@@ -323,8 +323,8 @@
       "mpn": ""
     },
     "U1": {
-      "kind": "DIO1717",
-      "value": "DIO1717LP10",
+      "kind": "RS2117H",
+      "value": "RS2117HYN",
       "nets": {
         "1": "VCC_SW",
         "2": "FM_MONO",
@@ -337,58 +337,58 @@
         "9": "AMP_N",
         "10": "FM_REF"
       },
-      "footprint": "Mono:DIO1717_DQFN10_1.8x1.4_P0.4",
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
       "pcb": [
-        25,
-        15
+        25.0,
+        15.0
       ],
       "angle": 0,
-      "lcsc": "C444371",
-      "source": "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf",
+      "lcsc": "C5372463",
+      "source": "https://www.run-ic.com/upload/goods/20240412/202404121507559540.pdf",
       "pad_positions": {
         "1": [
-          24.8,
-          15.5185
+          22.9,
+          14.0
         ],
         "2": [
-          25.2,
-          15.5685
+          22.9,
+          14.5
         ],
         "3": [
-          25.7685,
-          15.4
+          22.9,
+          15.0
         ],
         "4": [
-          25.7685,
-          15.0
+          22.9,
+          15.5
         ],
         "5": [
-          25.7685,
-          14.6
+          22.9,
+          16.0
         ],
         "6": [
-          25.2,
-          14.4315
+          27.1,
+          16.0
         ],
         "7": [
-          24.8,
-          14.4315
+          27.1,
+          15.5
         ],
         "8": [
-          24.2315,
-          14.6
-        ],
-        "9": [
-          24.2315,
+          27.1,
           15.0
         ],
+        "9": [
+          27.1,
+          14.5
+        ],
         "10": [
-          24.2315,
-          15.4
+          27.1,
+          14.0
         ]
       },
-      "mpn": "DIO1717LP10",
-      "manufacturer": "DIOO / 帝奥微"
+      "mpn": "RS2117HYN",
+      "manufacturer": "RUNIC / 润石"
     },
     "R5": {
       "kind": "R",
@@ -701,20 +701,20 @@
       },
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        25,
-        18
+        22.0,
+        12.0
       ],
       "angle": 0,
       "lcsc": "C30926",
       "source": "",
       "pad_positions": {
         "1": [
-          24.225,
-          18.0
+          21.225,
+          12.0
         ],
         "2": [
-          25.775,
-          18.0
+          22.775,
+          12.0
         ]
       },
       "mpn": "0603B104K500NT",
@@ -1413,7 +1413,7 @@
     "pins": 112,
     "segments": 100
   },
-  "status": "A4 cost/sourcing prototype; bench qualification and final supplier availability required",
+  "status": "A5 cost/sourcing prototype; bench qualification and final supplier availability required",
   "manufacturing_release": false,
   "board_size_final": true,
   "uses_fm_module": false,

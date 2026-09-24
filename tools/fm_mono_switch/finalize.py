@@ -30,7 +30,7 @@ for ref, c in choices.items():
     if ref == 'U3':
         props['Description'] = 'ME6211C30M5G-N: 3.0V LDO, SOT-23-5; 1 VIN, 2 GND, 3 CE active high, 4 NC, 5 VOUT'
     if ref == 'U1':
-        props['Description'] = 'DIO1717LP10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2'
+        props['Description'] = 'RS2117HYN MSOP-10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2'
     for name, value in props.items():
         ops.set_prop(sch, ref, name, value)
         if name == 'Value': fps[ref].SetValue(value)
@@ -84,7 +84,7 @@ with (P/f'BOM-LCSC-100boards-{revision}.csv').open('w', newline='', encoding='ut
     for c in catalog['groups']:
         if c.get('optional'): continue
         rr = c['refs']; a = intent['parts'][rr[0]]
-        package = {'U1':'QFN-10(1.8x1.4)','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
+        package = {'U1':'MSOP-10','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
         w.writerow([c['lcsc'], c['mpn'],c['manufacturer'],package,
                     100*len(rr),','.join(rr),c['decision']])
 

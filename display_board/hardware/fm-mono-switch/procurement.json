@@ -1,9 +1,9 @@
 {
-  "revision": "A7",
+  "revision": "A8",
   "review_date": "2026-09-24",
   "price_reference_boards": 100,
   "currency": "USD",
-  "price_basis": "Public LCSC USD quantity tiers, not a mainland account quotation. A7 D1 and A6 U1 refreshed 2026-09-24; other prices retained from prior review. No fixed production or purchasing quantity. Stock is not reserved.",
+  "price_basis": "Public LCSC USD quantity tiers; A8 sensors checked 2026-09-24. Other prices retained. No fixed purchase quantity; mainland account quote and immediate stock must be reconfirmed.",
   "planning_cny_per_usd": 7.2,
   "groups": [
     {
@@ -95,6 +95,40 @@
     },
     {
       "refs": [
+        "U5"
+      ],
+      "mpn": "VEML7700-TT",
+      "value": "VEML7700-TT",
+      "manufacturer": "Vishay / 威世",
+      "lcsc": "C1850416",
+      "package": "SMD-4 顶视型",
+      "unit_usd": 0.7747,
+      "tier": 100,
+      "moq_multiple": 1,
+      "stock_observed": 4468,
+      "purchase_url": "https://www.lcsc.com/product-detail/C1850416.html",
+      "datasheet": "${KIPRJMOD}/reference/VEML7700.pdf",
+      "decision": "每套1颗；指定-TT顶视包装、四个1.27mm间距外露焊端，非QFN。1 SCL/2 VDD/3 GND/4 SDA，3.3V、I2C1地址0x10。不可接FM的I2C0，地址相同；外壳留透光窗，避免屏幕漏光。 公开库存/价格未锁定，支持1颗起购；100颗只是参考报价阶梯。"
+    },
+    {
+      "refs": [
+        "U4"
+      ],
+      "mpn": "DHT20",
+      "value": "DHT20",
+      "manufacturer": "Aosong / 奥松",
+      "lcsc": "C3012627",
+      "package": "SIP-4 卧式弯脚",
+      "unit_usd": 0.749,
+      "tier": 100,
+      "moq_multiple": 1,
+      "stock_observed": 1836,
+      "purchase_url": "https://www.lcsc.com/product-detail/C3012627.html",
+      "datasheet": "${KIPRJMOD}/reference/DHT20.pdf",
+      "decision": "每套1颗；2.54mm通孔弯脚卧装，感应孔朝上。1 VDD/2 SDA/3 GND/4 SCL；3.3V、I2C1地址0x38。依靠主板R98/R109上拉，不重复加外部上拉。感应孔不可涂胶/三防漆；焊后安装，预留空气流通。 公开库存/价格未锁定，支持1颗起购；100颗只是参考报价阶梯。"
+    },
+    {
+      "refs": [
         "FB1"
       ],
       "mpn": "CBG160808U601T",
@@ -139,7 +173,9 @@
     },
     {
       "refs": [
-        "C4"
+        "C4",
+        "C11",
+        "C12"
       ],
       "mpn": "0603B104K500NT",
       "manufacturer": "FH / 风华高科",
@@ -149,7 +185,7 @@
       "tier": 50,
       "moq_multiple": 50,
       "stock_observed": 2253300,
-      "decision": "100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。"
+      "decision": "100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。 C11/C12为新增传感器就近100nF去耦，每套合计3颗。"
     },
     {
       "refs": [
@@ -311,7 +347,8 @@
         "J1",
         "J2",
         "J3",
-        "J4"
+        "J4",
+        "J5"
       ],
       "mpn": "",
       "manufacturer": "通用国内供应商",
@@ -321,7 +358,7 @@
       "moq_multiple": null,
       "stock_observed": null,
       "optional": true,
-      "decision": "默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。"
+      "decision": "排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。"
     }
   ],
   "source_quote": "BOM-立创_20260924.xls / BOM260924002306 / 2026-09-24 11:54:52",

@@ -1,4 +1,4 @@
-"""Two-page Chinese wiring and assembly guide for the routed chip-based board."""
+"""Three-page Chinese wiring and assembly guide for the A8 sensor board."""
 from pathlib import Path
 import shutil
 from reportlab.pdfgen import canvas
@@ -15,7 +15,7 @@ shutil.copyfile(ROOT/'build/fm-mono-switch/schematic-final.pdf',PDF/'schematic.p
 pdfmetrics.registerFont(TTFont('CN','C:/Windows/Fonts/msyh.ttc',subfontIndex=0))
 W,H=1300,1070
 pdf=canvas.Canvas(str(PDF/'wiring.pdf'),pagesize=(W,H))
-pdf.setTitle('RDA5807M + TS5A22364 单声道小板 A7：接线与安装')
+pdf.setTitle('RDA5807M + TS5A22364 + DHT20 + VEML7700 小板 A8：接线与安装')
 INK='#17304A';MUTED='#587085';BLUE='#266ACB';GREEN='#00876F';ORANGE='#BD6818'
 def box(x,y,w,h,fill,stroke=None,r=12):
     pdf.setFillColor(HexColor(fill));pdf.setStrokeColor(HexColor(stroke or fill))
@@ -41,7 +41,7 @@ def background(title,subtitle):
     t(title,40,27,28);t(subtitle,42,75,17,MUTED)
 
 background('RDA5807M + TS5A22364：FM / MP3 / 小智共用一个喇叭',
-           'ESP32-P4 Function EV Board v1.4  |  单声道  |  40 × 36 mm 双层小板  |  A7 首板方案')
+           'ESP32-P4 Function EV Board v1.4  |  单声道  |  40 × 58 mm 双层小板  |  A8 首板方案')
 box(40,118,1220,52,'#E6F5F0')
 t('直接焊接 RDA5807M 芯片，晶振、电源、天线接口都在小板上；继续使用开发板原功放。',60,132,19,GREEN)
 box(40,195,310,355,'#FFFFFF','#CBD7E4');t('ESP32-P4 开发板',62,215,22)
@@ -85,12 +85,12 @@ t('小板 J1 与开发板 J1 是不同接口；请按完整名称接线。',701,
 box(40,901,1220,129,'#E8EDF5');t('安装与切换要点',60,917,18)
 t('• 保留 C39、C40、C58、C59、R146、R147；扬声器仍接开发板 J16。',60,947,16)
 t('• 先静音 / 关闭功放 → 切换 GPIO6 → 等待稳定 → 恢复功放；原 PA 控制为 GPIO53。',60,976,16)
-t('• J3.1 接 FM 天线，J3.2 为地。小板只接 3.3 V；本次交付未修改固件。',60,1004,16)
-t('A7 / 2026-09-24  ·  电气连接示意，非实物比例  ·  1 / 2',43,1040,13,MUTED)
+t('• J3.1 接 FM 天线，J3.2 为地。传感器另加 J5 两根线，详见第 3 页。',60,1004,16)
+t('A8 / 2026-09-24  ·  电气连接示意，非实物比例  ·  1 / 3',43,1040,13,MUTED)
 pdf.showPage()
 background('小板布局与开发板焊点位置','图左为本工程 PCB 的实际 3D 渲染；图右为官方 v1.4 开发板音频区丝印。')
 box(40,118,790,710,'#FFFFFF','#CBD7E4');picture(OUT/'board-3d.png',50,130,770,650)
-t('40 × 36 mm · 两层 · 2 个 Ø2.2 mm 安装孔 · 排针间距 2.54 mm',65,800,15,MUTED)
+t('40 × 58 mm · DHT20 卧装 · 排针选装 · DHT20 为简化包络模型',65,800,15,MUTED)
 box(850,118,410,710,'#FFFFFF','#CBD7E4');t('开发板 R83 / R84 在这里',869,137,20)
 picture(ROOT/'build/rda5807-datasheet-review/p4-audio-placement.png',863,180,384,238)
 box(870,445,370,83,'#FFF1D6');t('C40 旁边：R84',886,458,19,ORANGE);t('C39 旁边：R83',886,489,19,ORANGE)
@@ -101,10 +101,54 @@ box(40,850,1220,179,'#E8EDF5');t('装配与首板验证',60,867,20)
 t('1. U1 为 VSSOP-10、U2 为 MSOP-10，均为 0.5 mm 间距外露引脚；按圆点 / 三角标识确认 1 脚。',60,904,17)
 t('2. Y1 为 32.768 kHz 手表晶振，按 1.9 mm 孔距成形引脚；不要按参考截图的 33.768 kHz 误写选型。',60,939,17)
 t('3. 先测 FM_VDD 约 3.0 V，再测 I²C、搜台和音频。晶振起振、接收效果与切换爆音需首板实测。',60,974,17)
-t('A7 / 2026-09-24  ·  ERC / DRC / 原理图与 PCB 一致性检查通过，尚未实物验证  ·  2 / 2',43,1040,13,MUTED)
+t('A8 / 2026-09-24  ·  ERC / DRC / 原理图与 PCB 一致性检查通过，尚未实物验证  ·  2 / 3',43,1040,13,MUTED)
+pdf.showPage()
+background('DHT20 卧式安装 + 光照传感器接线',
+           'DHT20 温湿度 / VEML7700-TT 光照，每套各 1 颗；共用 3.3 V，增加 2 根 I²C 信号线。')
+box(40,118,1220,78,'#FFF1D6')
+t('J5 使用主板 GPIO7 / GPIO8；不要与 J4 的 FM SDA / SCL 短接。',62,132,23,ORANGE)
+t('VEML7700 与 RDA5807M 都使用 0x10，必须在两条独立的 I²C 总线上。',62,168,17,ORANGE)
+box(40,216,600,310,'#FFFFFF','#CBD7E4');t('新增飞线：小板 J5 → 开发板 J1',60,234,22)
+for i,row in enumerate([('小板接口','开发板位置','功能'),('J5.1 / SDA7','J1 第 3 脚','GPIO7 / SDA'),('J5.2 / SCL8','J1 第 5 脚','GPIO8 / SCL')]):
+    yy=282+i*50
+    if i==0:box(52,yy-5,575,35,'#EAF0F7',r=3)
+    for s,x in zip(row,[63,260,458]):t(s,x,yy,16,INK if i else MUTED)
+t('电源和地继续走 J4.1 / J4.2，无须另加电源线。',60,443,16)
+t('主板已有 2.2kΩ 上拉；复用 BSP 的 I²C1 总线。',60,482,16,MUTED)
+box(660,216,600,310,'#FFFFFF','#CBD7E4');t('DHT20 顶视脚序：感应孔向上',680,234,22)
+box(701,284,210,122,'#E8EDF5','#99A8B8',r=4)
+for xx in range(722,891,42):
+    for yy in [303,340,377]:box(xx,yy,18,14,'#587085',r=0)
+t('12.6 × 16.1 mm 本体投影',932,300,17)
+t('焊孔在本体下方',932,341,17,MUTED)
+for i,label in enumerate(['1 / VDD','2 / SDA','3 / GND','4 / SCL']):
+    xx=717+i*56;line([(xx,406),(xx,435)],MUTED,4)
+    box(xx-6,429,12,12,ORANGE if i==0 else BLUE,r=1)
+    t(label,xx-27,454,12)
+t('保持 1→4 顺序弯脚；方形焊盘为 1 脚。',680,491,17,ORANGE)
+box(40,548,1220,241,'#FFFFFF','#CBD7E4');t('侧视安装示意：卧放，不压住感应孔',61,565,22)
+box(85,731,510,15,GREEN,r=0);t('PCB 1.6 mm',610,726,17,GREEN)
+box(123,632,310,88,'#E8EDF5','#99A8B8',r=3)
+t('DHT20 本体厚度 5.8 mm',143,658,19)
+for xx in [153,217,281,345]:line([(xx,630),(xx,604)],BLUE,2,True)
+t('感应面 / 通风孔向上',480,607,16,BLUE)
+line([(433,674),(467,674),(467,754)],MUTED,5)
+t('引脚弯折后入孔',480,669,16,MUTED)
+t('目标离板约 0.5 mm；本体顶面约 6.3 mm。',755,601,18)
+t('外壳局部建议留至少 8 mm 净空。',755,644,18)
+t('夹持引脚成形，勿在塑封根部硬折。',755,687,18,ORANGE)
+t('首件核对弯脚高度；示意不按实物比例。',755,740,16,MUTED)
+box(40,811,1220,218,'#E8EDF5');t('测量与装配要点',61,827,21)
+for i,s in enumerate([
+    '• DHT20 下方两层避开大面积铜皮；回流后手焊，外壳开通风孔，勿覆胶、泡棉或三防漆。',
+    '• VEML7700 必须为 -TT 顶视型，另留透光窗，避开屏幕漏光；装壳后校准光照读数。',
+    '• 温湿度区远离背光、稳压器和阳光直射；两颗传感器都使用 J4 的 3.3 V。',
+    '• 本次仅完成硬件；固件需复用 I²C1 并添加驱动，接入要点见工程 SENSORS.md。']):
+    t(s,61,869+i*37,17)
+t('A8 / 2026-09-24  ·  温湿度和光照可在各音频模式下读取，实测效果待首板确认  ·  3 / 3',43,1040,13,MUTED)
 pdf.showPage();pdf.save()
 doc=pymupdf.open(PDF/'wiring.pdf')
 for i,page in enumerate(doc):
-    page.get_pixmap(matrix=pymupdf.Matrix(1.3,1.3)).save(OUT/('wiring.png' if i==0 else 'assembly.png'))
-assert len(doc)==2
+    page.get_pixmap(matrix=pymupdf.Matrix(1.3,1.3)).save(OUT/['wiring.png','assembly.png','sensors.png'][i])
+assert len(doc)==3
 print(PDF/'wiring.pdf')

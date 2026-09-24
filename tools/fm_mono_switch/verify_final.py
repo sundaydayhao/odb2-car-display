@@ -4,7 +4,7 @@ import hashlib, json, sys, xml.etree.ElementTree as ET
 import pcbnew as k
 ROOT=Path(__file__).resolve().parents[2]
 P=ROOT/'display_board/hardware/fm-mono-switch'; W=ROOT/'build/fm-mono-switch'
-intent=json.loads((P/'design-intent.json').read_text())
+intent=json.loads((P/'design-intent.json').read_text(encoding='utf-8'))
 expected={(ref,str(pin)):net for ref,a in intent['parts'].items() if a['footprint'] for pin,net in a['nets'].items()}
 expected[('U3','4')]='unconnected-(U3-NC-Pad4)'
 xml=ET.parse(W/'netlist-final.xml').getroot()
@@ -33,7 +33,7 @@ for name in ['erc-final','drc-final']:
     report=json.loads((W/(name+'.json')).read_text(encoding='utf-8'))
     for field in ['violations','unconnected_items','schematic_parity']:
         assert not report.get(field,[]),(name,field,report.get(field))
-result={'kicad':'10.0.5','board_mm':[40,36],'layers':2,'footprints':len(refs),
+result={'kicad':'10.0.5','board_mm':intent['board_size_mm'],'layers':2,'footprints':len(refs),
         'physical_pin_net_pairs':len(pcb),'netlist_matches_intent':True,'pcb_matches_intent':True,
         'erc_violations':0,'drc_violations':0,'unconnected_items':0,'schematic_parity_issues':0,
         'bench_tested':False,'sha256':{}}

@@ -22,3 +22,11 @@ A2历史参考：[TI TLV755P](https://www.ti.com/lit/ds/symlink/tlv755p.pdf)、[
 12. 比较依据：[TS5A22362 LCSC](https://www.lcsc.com/product-detail/C201663.html)刷新186颗/100颗阶梯USD3.3122；[DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TS5A22362DGSR/1909714)显示缺货。[SGM3718官方](https://www.sg-micro.com/product/SGM3718)当前仅UTQFN封装。比较仅反映查询时页面记录。
 
 13. A7 D1：[安世PESD5V0F1BL,315 / C45961](https://www.lcsc.com/product-detail/C45961.html)。2026-09-24公开页库存57925、MOQ/步进5，50颗报价阶梯USD0.0812；10000为整盘数量。旧分类页缓存不作为本次库存依据。国内新配单未提交，库存未锁定。
+
+14. A8 U4：[奥松DHT20官方V1.3手册](https://www.aosong.com/uploadfiles/2025/02/20250228161634702.pdf)，2024.09，工程副本 `reference/DHT20.pdf`。供电2.2～5.5V、3.3V应用，1 VDD/2 SDA/3 GND/4 SCL，7位地址0x38；核对外壳12.6×16.1×5.8mm、2.54mm脚距、7.2±0.5mm引线。引脚卧式成形为本工程机械安排，需要首件核对。
+15. A8 U5：[Vishay VEML7700官方手册](https://www.vishay.com/docs/84286/veml7700.pdf)，Rev1.8，2024-11-28，工程副本 `reference/VEML7700.pdf`。供电2.5～3.6V、7位固定地址0x10，1 SCL/2 VDD/3 GND/4 SDA；第6页去耦、第10页-TT顶视焊盘0.7×1.6mm和1.27mm脚距。使用该修订版的增益/积分时间及量程表，不沿用旧目录的120klx固定说法。
+16. 热设计：[奥松温湿度传感器设计指南](https://aosong.com/userfiles/files/Aosong%20Electronic%20Temperature%20and%20Humidity%20Sensor%20Design%20Guide.pdf)。本板下方禁铺铜、外壳通风、远离背光与直晒属于减小热偏差措施；未进行热仿真或装壳测量。
+17. A8传感器总线：[Espressif v1.4官方原理图](https://dl.espressif.com/dl/schematics/esp32-p4-function-ev-board-v1.4-schematics.pdf)，第2页GPIO7/8经R194/R190接主I²C，第3页R98/R109为2.2kΩ上拉至3.3V；手册header表J1.3=GPIO7、J1.5=GPIO8。仓库BSP头文件及初始化代码对应I²C1，FM驱动另用I²C0 GPIO2/3。
+18. A8采购：[DHT20 / C3012627](https://www.lcsc.com/product-detail/C3012627.html)、[VEML7700-TT / C1850416](https://www.lcsc.com/product-detail/C1850416.html)。2026-09-24公开页分别1836/4468颗库存、均1颗起购及步进；100颗报价阶梯分别USD0.7490/0.7747。仅作每套参考价格，无固定采购总量，国内即时供应需重新配单。
+
+A8本地DHT20符号按官方脚序建立，卧式焊盘及简化3D包络按手册尺寸建立；VEML7700通过C1850416取得模型后，按官方-TT焊盘尺寸/脚距复核并规范化。本地文件随项目包提供。

@@ -26,6 +26,8 @@ if (OUT/(NAME+'.kicad_pcb')).exists() and '--regen-placed-board' not in sys.argv
     raise SystemExit('Refusing to overwrite routed PCB. Use --regen-placed-board only for a fresh layout.')
 
 catalog = json.loads((OUT/'procurement.json').read_text(encoding='utf-8'))
+if catalog['revision'] != 'A7':
+    raise SystemExit('Historical A7 generator: later sensor designs must be edited from the delivered native CAD files.')
 choices = {r:g for g in catalog['groups'] for r in g['refs']}
 
 defs = {}

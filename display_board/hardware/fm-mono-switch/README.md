@@ -1,28 +1,30 @@
-# RDA5807M + TS5A22364 单声道 FM 小板 · A7
+# RDA5807M + TS5A22364 单声道 FM / 环境传感小板 · A8
 
 直接集成 **RDA5807M 裸芯片**、32.768 kHz 晶振、电源和天线接口。FM 与 ES8311（MP3 / 小智）经 TS5A22364 切换，共用 ESP32-P4 Function EV Board **v1.4** 的 NS4150B 功放和原喇叭。FM 左右声道经电阻合成单声道。
 
-**状态：首板原型设计完成，已布线。KiCad 10.0.5 原生 ERC、DRC、原理图与 PCB 一致性均为零问题；92 个物理引脚的网络与设计意图一致。尚未做实物验证，不是量产验证版本。本次没有修改固件。**
+**状态：首板原型设计完成，已布线。KiCad 10.0.5 原生 ERC、DRC、原理图与 PCB 一致性均为零问题；106 个物理引脚的网络与设计意图一致。尚未做实物验证，不是量产验证版本。本次没有修改固件。**
 
-A7仅将D1恢复为 **安世 PESD5V0F1BL,315 / C45961**，与现有SOD882焊盘匹配，连接和走线不变。U3 **ME6211C30M5G-N**、Y1 **Y6OEL89CGI-STUYLC-32.768K** 及其余器件保留A6选型。
+A8新增 **DHT20 温湿度传感器（卧式、感应面朝上）** 和 **VEML7700-TT 光照传感器**，每套各1颗。板子加长至 **40×58mm**，原安装孔位置保留。新增J5两根线接开发板GPIO7/8；详细引脚、装配尺寸、外壳与固件接入见 [SENSORS.md](SENSORS.md)。
+
+D1沿用A7的 **安世 PESD5V0F1BL,315 / C45961**。U3 **ME6211C30M5G-N**、Y1 **Y6OEL89CGI-STUYLC-32.768K** 和FM/音频部分的元件、焊盘、既有走线保持不变。
 
 A6引入的音频方案继续使用 **TI TS5A22364DGSR / C105181，VSSOP-10 外露引脚**，0.5mm节距、3×3mm本体。TI标为ACTIVE；2026-09-24公开LCSC页面记录库存4719颗、1颗起购/步进，100颗报价阶梯USD0.4479/颗。库存未锁定，国内人民币价和即时交付以新配单为准。相较最早讨论的TS5A22362，本型号当次现货更多、价格更低；两者电气功能有差异，不能直接按同系列替换。A6重接U1的4/5/7/8脚，并将R5/R6改成1kΩ串联限流；必须使用A6或A7 PCB，不能在A5原板上直接换芯片。RDA5807M、GPIO及R83/R84外部接法不变。
 
 ## 文件
 
 - `fm_mono_switch.kicad_pro`：打开工程；同名 `.kicad_sch` / `.kicad_pcb` 为完整原理图和已布线 PCB。
-- `output/pdf/wiring.pdf`：两页中文接线和安装图，含 R83/R84 的官方丝印位置。
+- `output/pdf/wiring.pdf`：三页中文接线和安装图，含 R83/R84 官方丝印位置及卧式传感器安装图。
 - `output/pdf/schematic.pdf`：完整原理图，可放大查看。
-- `output/board-3d.png`、`output/wiring.png`、`output/assembly.png`：预览。
+- `output/board-3d.png`、`output/wiring.png`、`output/assembly.png`、`output/sensors.png`：预览；DHT20模型为简化机械包络。
 - `PROCUREMENT.md`：逐项降本、原立创报价错配与交期说明。
-- `BOM-LCSC-A7.csv`：只列每套用量，1套=1块小板；导入立创时把“每套用量”映射为数量，按实际需求填写采购套数。排针不装，损耗另加。
+- `BOM-LCSC-A8.csv`：只列每套用量，1套=1块小板；导入立创时把“每套用量”映射为数量，按实际需求填写采购套数。排针不装，损耗另加。
 - `BOM-cost.csv`：每套用量、每套净用料参考金额、MOQ和来源。沿用已核对的阶梯单价，不代表购买1套时的成交价；重新配单确认。
 - `BOM.csv`：分组工程物料表，明确列出“每套用量”；`output/fabrication/`：Gerber、钻孔和贴装坐标。
 - `VERIFICATION.md`、`output/verification.json`：检查范围和文件校验值。
 - `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号和历史库；U1为TI VSSOP-10，U2为MSOP-10，使用核对过的KiCad标准MSOP-10封装及模型。
 - `reference/RDA5807M.pdf`：用户提供的裸芯片手册副本；其他依据见 `SOURCES.md`。
 
-## 外部接线：4 根音频线 + 5 根电源 / 控制线
+## 外部接线：4 根音频线 + 5 根电源 / 控制线 + 2 根传感器线
 
 断电，**拆下开发板 R83、R84 两颗 0Ω 电阻**。保留 C39、C40、C58、C59、R146、R147。用万用表的导通档确认焊盘所属支路，再焊接细软线；不要按照片的左右方向猜测。
 
@@ -37,6 +39,8 @@ A6引入的音频方案继续使用 **TI TS5A22364DGSR / C105181，VSSOP-10 外�
 | J4.3 / SEL | 开发板 J1.15 | GPIO6，音源选择 |
 | J4.4 / SDA | 开发板 J1.21 | GPIO2，FM I²C 数据 |
 | J4.5 / SCL | 开发板 J1.19 | GPIO3，FM I²C 时钟 |
+| J5.1 / SDA7 | 开发板 J1.3 | GPIO7，传感器 I²C 数据 |
+| J5.2 / SCL8 | 开发板 J1.5 | GPIO8，传感器 I²C 时钟 |
 
 小板 J1 是两针音频输入，**不是开发板的 J1 排针**。小板接口方形焊盘为 1 脚，J4 顶视图从标有 `3V3` 的方形焊盘依次为 `3V3 / G / SEL / SDA / SCL`。排针可不装，直接焊线。
 
@@ -67,7 +71,11 @@ I²C 经 R12/R13=100 Ω 串联，R14/R15=4.7 kΩ 拉到 FM_VDD（约 3.0 V）。
 
 ## PCB 与装配
 
-40 × 36 mm，双层，建议板厚 1.6 mm、1 oz 铜。两个 Ø2.2 mm 非金属化安装孔中心为板左上角起算 (3,3) 和 (37,33) mm。板上阻容以 0603 为主，接口为 2.54 mm 排针。最小设计线宽 0.15 mm、间距 0.127 mm；普通过孔 0.6 / 0.3 mm。双面接地铺铜已填充。
+40 × 58 mm，双层，建议板厚 1.6 mm、1 oz 铜。两个 Ø2.2 mm 非金属化安装孔中心为板左上角起算 (3,3) 和 (37,33) mm，保留原固定点。板上阻容以 0603 为主，接口为 2.54 mm 排针。最小设计线宽 0.15 mm、间距 0.127 mm；普通过孔 0.6 / 0.3 mm。双面地平面已填充，DHT20本体下方两面禁止铺铜，以减小导热；信号细线允许通过。
+
+- U4 DHT20按丝印轮廓**卧放、感应孔朝上**。四脚保持原顺序后弯折入孔，方焊盘为1脚VDD。外壳12.6×16.1×5.8mm，预留约0.5mm离板间隙，装配后本体顶面约6.3mm高；建议外壳局部留至少8mm净空再做首件核对。此高度不包括选装直插排针。
+- DHT20在贴片工序后手焊，夹持引脚成形，不能在塑封根部硬折。不要用胶、泡棉或三防漆覆盖感应孔；外壳对应位置开通风孔。弯脚尺寸由首件实物确认。
+- U5指定VEML7700-**TT顶视型**，不要换-TR侧视型。外壳开独立透光窗，避免显示屏漏光；装入最终外壳后校准透光衰减。温湿度区避免直晒与热源。
 
 - **U1 TS5A22364DGSR 为 VSSOP-10 / DGS**，两侧外露引脚，3×3mm本体、0.5mm间距。使用已核对包络的KiCad标准MSOP-10焊盘（库命名不同，机械尺寸相容）；不买DRC/VSON或YZP/DSBGA封装。
 - U2 是 MSOP-10、0.5 mm 间距；封装三角和模型圆点标明 1 脚。
@@ -99,7 +107,7 @@ MP3 和小智共用 ES8311，二者的互斥由软件音频管理负责。进入
 
 ## 维护
 
-脚本位于仓库 `tools/fm_mono_switch/`。`generate.py`仅用于从头生成原理图与初步摆放，带有防覆盖检查；`--regen-placed-board`会覆盖已布线结果。A7请使用交付PCB；`route.py` / `finish_routes.py`是历史A2 QFN流程，已加运行拦截，不能用于MSOP。`finalize.py`整理料号，`verify_final.py`比对网表，`verify_a7_change.py`核对本次变更范围，`draw_wiring_a2.py`生成当前接线图，`package_release.py`导出文件包。
+脚本位于仓库 `tools/fm_mono_switch/`。A8使用交付的原生CAD文件维护；`generate.py`是历史A7生成器，已阻止覆盖A8。`add_sensors_a8.py`为一次性的A7到A8迁移，`route_sensors_a8.py`只为该迁移导入传感器布线。`route.py` / `finish_routes.py`是已拦截的历史A2流程。`finalize.py`整理料号，`verify_final.py`比对网表，`verify_a8_change.py`核对A7元件及全部既有走线保留，`draw_wiring_a2.py`生成当前三页接线图，`package_release.py`导出文件包。
 
 只更新BOM时运行 `python tools/fm_mono_switch/export_bom.py`，不改写原理图和PCB。以后导出的工程表、采购表和成本表只列“每套用量”，不预乘采购套数。`procurement.json` 的 `price_reference_boards` 仅记录历史价格评估基准。
 

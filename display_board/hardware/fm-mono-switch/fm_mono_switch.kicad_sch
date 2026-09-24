@@ -7,7 +7,7 @@
 	(title_block
 		(title "P4 v1.4 - RDA5807M + TS5A22364 mono FM")
 		(date "2026-09-24")
-		(rev "A7 PROTOTYPE")
+		(rev "A8 PROTOTYPE")
 		(company "OBD Car Display")
 		(comment 1 "Remove R83/R84. Retain original capacitors and amplifier.")
 	)
@@ -2188,6 +2188,226 @@
 				)
 			)
 			(embedded_fonts no)
+		)
+		(symbol "Mono:DHT20"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DHT20"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DHT20_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "DHT20_1_1"
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Mono:VEML7700"
+			(pin_names
+				(offset 0.635)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VEML7700"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VEML7700_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "VEML7700_1_1"
+				(pin power_in line
+					(at 0 12.7 270)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
 		)
 	)
 	(symbol
@@ -9127,6 +9347,832 @@
 		)
 		(uuid "4f22b022-4468-4046-b1e7-f1dc7b8a0489")
 	)
+	(symbol
+		(lib_id "Mono:DHT20")
+		(at 387.35 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "af7e2a9a-f5e0-4121-9721-ae5d2b0dc883")
+		(property "Reference" "U4"
+			(at 400.05 309.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DHT20"
+			(at 400.05 312.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Mono:DHT20_Horizontal"
+			(at 387.35 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/reference/DHT20.pdf"
+			(at 387.35 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a9203d9a-4c8b-4b72-8615-2ec060c8d655")
+		)
+		(pin "2"
+			(uuid "8ab607d3-b43a-471b-bb35-13e053e78c2e")
+		)
+		(pin "3"
+			(uuid "cb09199b-e23c-47c6-a16c-e8b5b856f640")
+		)
+		(pin "4"
+			(uuid "d501a78d-608f-4178-88be-e96499168dad")
+		)
+		(property "MPN" "DHT20"
+			(at 387.35 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Aosong / 奥松"
+			(at 387.35 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3012627"
+			(at 387.35 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "fm_mono_switch"
+				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 387.35 314.96) (xy 387.35 307.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "222f7d58-398b-4da1-865f-cf1599af8d5b")
+	)
+	(label "+3V3_IN"
+		(at 387.35 307.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91e2f0d6-44bc-403e-b9ca-0381f840fd8a")
+	)
+	(wire
+		(pts
+			(xy 372.11 325.12) (xy 359.41 325.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8800c5a6-1272-4879-9d74-e287394812f5")
+	)
+	(label "SENSOR_SDA"
+		(at 359.41 325.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4740e308-6875-43d4-989e-6b50e015d46d")
+	)
+	(wire
+		(pts
+			(xy 387.35 340.36) (xy 387.35 347.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4db1736b-0660-48a9-9677-413b4b9da461")
+	)
+	(label "GND"
+		(at 387.35 347.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b69883f3-fa5c-4e6a-a7b3-79170e839c0f")
+	)
+	(wire
+		(pts
+			(xy 372.11 330.2) (xy 359.41 330.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b300da9-3858-489d-bc35-8c78463651cf")
+	)
+	(label "SENSOR_SCL"
+		(at 359.41 330.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e6b600f5-f23b-4449-8dfc-8d3a5a365198")
+	)
+	(symbol
+		(lib_id "Mono:VEML7700")
+		(at 509.27 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d4252a08-e039-4d38-87b7-5ce4067c54d5")
+		(property "Reference" "U5"
+			(at 521.97 309.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VEML7700-TT"
+			(at 521.97 312.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Mono:VEML7700_TT"
+			(at 509.27 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/reference/VEML7700.pdf"
+			(at 509.27 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "07a3bd2f-66ed-42c5-9431-0f48d5d26309")
+		)
+		(pin "2"
+			(uuid "ed3e0ecc-52ea-4921-8e5b-197dcfe822dd")
+		)
+		(pin "3"
+			(uuid "3556034b-7859-405a-bde9-2f59071a5e9d")
+		)
+		(pin "4"
+			(uuid "ace24b38-c10a-4690-af5c-3b66c9233b8d")
+		)
+		(property "MPN" "VEML7700-TT"
+			(at 509.27 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay / 威世"
+			(at 509.27 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1850416"
+			(at 509.27 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "fm_mono_switch"
+				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 509.27 314.96) (xy 509.27 307.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6f39a0b-01f5-4dcd-af2e-7d83727c6912")
+	)
+	(label "+3V3_IN"
+		(at 509.27 307.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "928f6d4b-cc1d-4488-a2d7-03f74cafce1e")
+	)
+	(wire
+		(pts
+			(xy 494.03 325.12) (xy 481.33 325.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33679a04-d752-4d87-9b81-2a078a64d70d")
+	)
+	(label "SENSOR_SDA"
+		(at 481.33 325.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5ba6964-ef13-41ef-80f1-2d5f844f8256")
+	)
+	(wire
+		(pts
+			(xy 509.27 340.36) (xy 509.27 347.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82541168-1ec4-41aa-835e-b913c0800c4b")
+	)
+	(label "GND"
+		(at 509.27 347.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "94c8a4a6-a81d-4bcb-9dcc-93781a1054d4")
+	)
+	(wire
+		(pts
+			(xy 494.03 330.2) (xy 481.33 330.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9cc9b34-4711-4dce-8494-9bcbfc7606cb")
+	)
+	(label "SENSOR_SCL"
+		(at 481.33 330.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54a6abfc-3c57-4706-92d1-c7aad9805e8d")
+	)
+	(symbol
+		(lib_id "Mono:C")
+		(at 430.53 340.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e8d08779-2373-41cd-bf73-08459318b79e")
+		(property "Reference" "C11"
+			(at 434.34 339.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF 50V X7R"
+			(at 434.34 341.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 430.53 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 430.53 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b7bf4bf5-a112-43bc-9502-efae8a81fa9f")
+		)
+		(pin "2"
+			(uuid "db41063b-886b-48ba-8bff-f1f225379ac4")
+		)
+		(property "MPN" "0603B104K500NT"
+			(at 430.53 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 430.53 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C30926"
+			(at 430.53 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "fm_mono_switch"
+				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 430.53 336.55) (xy 430.53 328.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82c92f7f-7126-40c0-98f4-8198b7061d80")
+	)
+	(label "+3V3_IN"
+		(at 430.53 328.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "305d5cd6-82ef-4aac-9f2b-c656d2837713")
+	)
+	(wire
+		(pts
+			(xy 430.53 344.17) (xy 430.53 351.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d2f3029-ff22-43cc-b767-327240a75e16")
+	)
+	(label "GND"
+		(at 430.53 351.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e53db5e4-a544-4e3b-9189-cd2d8b1cb49f")
+	)
+	(symbol
+		(lib_id "Mono:C")
+		(at 552.45 340.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6c3fdbec-cb24-473d-9692-8f7616285cfd")
+		(property "Reference" "C12"
+			(at 556.26 339.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF 50V X7R"
+			(at 556.26 341.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 552.45 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 552.45 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0157f0fe-816f-442b-9401-0fe34386de25")
+		)
+		(pin "2"
+			(uuid "5b4038e9-acb1-45cf-8e54-18931671d066")
+		)
+		(property "MPN" "0603B104K500NT"
+			(at 552.45 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 552.45 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C30926"
+			(at 552.45 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "fm_mono_switch"
+				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 552.45 336.55) (xy 552.45 328.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f116978-c598-433e-bf68-2f58463d20f8")
+	)
+	(label "+3V3_IN"
+		(at 552.45 328.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dfffd3f9-2a46-461f-9cc9-0375144eab16")
+	)
+	(wire
+		(pts
+			(xy 552.45 344.17) (xy 552.45 351.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1787bba9-543f-422d-8132-e8cbf7c51b9e")
+	)
+	(label "GND"
+		(at 552.45 351.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "295de88f-3878-461d-86b3-dd0d02af3f16")
+	)
+	(symbol
+		(lib_id "Mono:J2")
+		(at 337.82 307.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "14211649-ad91-43a0-bc67-019256103f05")
+		(property "Reference" "J5"
+			(at 337.82 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SENS: GPIO7 SDA / GPIO8 SCL"
+			(at 337.82 292.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 337.82 307.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 337.82 307.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dbac5646-ecd8-4d4f-8d09-18ccaa6d55e6")
+		)
+		(pin "2"
+			(uuid "678f51c0-ebe4-4dbd-ba7b-7d88ecd48332")
+		)
+		(property "MPN" ""
+			(at 337.82 307.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "通用国内供应商"
+			(at 337.82 307.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 337.82 307.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "fm_mono_switch"
+				(path "/16ed3c18-209e-53be-bdba-20ade0d40886"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 332.74 307.34) (xy 320.04 307.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a917f142-223d-4e8d-ad83-0cb28722aca0")
+	)
+	(label "SENSOR_SDA"
+		(at 320.04 307.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a9db86ce-f4d3-47c0-86b5-8e5bda110ccd")
+	)
+	(wire
+		(pts
+			(xy 332.74 309.88) (xy 320.04 309.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e3b54b-531e-4cde-a6af-1abd9c7a2629")
+	)
+	(label "SENSOR_SCL"
+		(at 320.04 309.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3bd826a7-02e2-4895-a868-757cc2fe64e3")
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
@@ -9223,7 +10269,7 @@
 		)
 		(uuid c33147b1-02c7-56e8-8588-ce3c5992a21b)
 	)
-	(text "PROTO A7: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
+	(text "PROTO A8: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
 		(at 22.86 269.24 0)
 		(effects
 			(font
@@ -9326,5 +10372,45 @@
 			(justify left bottom)
 		)
 		(uuid "febb6f3f-88c7-41c0-a21b-f8e78b89f5ad")
+	)
+	(text "ENVIRONMENT SENSORS: separate 3.3V host I2C1; never bridge to FM I2C0."
+		(at 353.06 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "7b113a3d-22a4-4bfa-bc77-e81df54bd8ae")
+	)
+	(text "J5.1 -> P4 J1.3 / GPIO7 SDA; J5.2 -> P4 J1.5 / GPIO8 SCL."
+		(at 353.06 364.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a2b3d5a1-23b6-4794-b0c5-e55602ca1ae9")
+	)
+	(text "Host R98/R109: 2.2k pull-ups. DHT20 0x38; VEML7700 0x10 (7-bit)."
+		(at 353.06 370.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "92a77016-f1bd-4e3a-9507-c900a901183f")
+	)
+	(text "DHT20 lies face-up; bend leads without swapping pins. Keep vents/window clear."
+		(at 353.06 377.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "941f8798-25d3-44c7-a7ff-b998bfdd40eb")
 	)
 )

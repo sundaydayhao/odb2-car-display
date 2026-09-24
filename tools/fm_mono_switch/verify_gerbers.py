@@ -8,6 +8,7 @@ sys.path.insert(0,str(W/'runtime/gerber-python'))
 from gerbonara import GerberFile, ExcellonFile
 from gerbonara.utils import MM
 G=P/'fabrication/gerbers'
+board_mm=json.loads((P.parent/'design-intent.json').read_text(encoding='utf-8'))['board_size_mm']
 report={}
 for f in sorted(G.iterdir()):
     if f.suffix=='.gbrjob':continue
@@ -16,7 +17,7 @@ for f in sorted(G.iterdir()):
     if f.suffix=='.gm1':
         assert len(layer.objects)==4
         w,h=layer.size(MM)
-        assert abs(w-40.05)<.001 and abs(h-36.05)<.001,(w,h)
+        assert abs(w-board_mm[0]-.05)<.001 and abs(h-board_mm[1]-.05)<.001,(w,h)
     if 'NPTH' in f.name:assert len(layer.objects)==2
     if f.suffix=='.gtl':
         svg=W/'gerber-top.svg';svg.write_text(str(layer.to_svg(fg='#B5472F',bg='white')),encoding='utf-8')

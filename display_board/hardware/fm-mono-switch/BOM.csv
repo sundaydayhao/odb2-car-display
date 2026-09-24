@@ -1,8 +1,8 @@
 ﻿References,每套用量,Value,Footprint,MPN,LCSC candidate,Manufacturer,Assembly note
-J1,1,"CODEC / C39,C40 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
-J2,1,"AMP / C59,C58 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
-J3,1,ANT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
-J4,1,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
+J1,1,"CODEC / C39,C40 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。
+J2,1,"AMP / C59,C58 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。
+J3,1,ANT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。
+J4,1,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,,,通用国内供应商,排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。
 "C1,C2,C5,C10",4,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,0603B105K160NT,C93816,FH / 风华高科,1µF/16V/X7R/±10%/0603；合并同规格采购，保留音频耦合容量和电源去耦。
 "R1,R2",2,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,UNI-ROYAL / 厚声,10kΩ、1%、0.1W、0603；保留左右声道隔离与求和，不能短接。
 R3,1,47k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4702T5E,C25819,UNI-ROYAL / 厚声,47kΩ、1%、0.1W、0603；保留音频直流参考。
@@ -12,7 +12,7 @@ U1,1,TS5A22364DGSR,Package_SO:MSOP-10_3x3mm_P0.5mm,TS5A22364DGSR,C105181,TI / �
 "R7,R8,R10",3,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,UNI-ROYAL / 厚声,100kΩ、1%、0.1W、0603；合并采购，保留音频参考与上电默认状态。
 C3,1,1nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B102K500NT,C44369,FH / 风华高科,控制脚 RC 滤波改 X7R；不是射频或音频耦合电容，无需 C0G 精度。
 R11,1,10R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF100JT5E,C22859,UNI-ROYAL / 厚声,10Ω、1%、0.1W、0603；保留开关电源 RC 去耦。
-C4,1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B104K500NT,C30926,FH / 风华高科,100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。
+"C4,C11,C12",3,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B104K500NT,C30926,FH / 风华高科,100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。 C11/C12为新增传感器就近100nF去耦，每套合计3颗。
 C6,1,100pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,0603CG101J500NT,C1635,FH / 风华高科,射频耦合保留 C0G、±5%，不能跟 C3 一起改为 X7R/Y5V。
 D1,1,"PESD5V0F1BL,315",Diode_SMD:D_SOD-882,"PESD5V0F1BL,315",C45961,Nexperia / 安世,A7按用户要求恢复安世；双向、VRWM5.5V、结电容0.4pF典型/0.55pF最大（1MHz、0V、25°C）。SOD882现有0.4×0.7mm焊盘及0.7mm中心距与厂商推荐一致，不改走线。2026-09-24公开库存57925，MOQ/步进5；USD0.0812为50颗报价阶梯，非国内账户报价或采购总量。整机ESD待测。
 U2,1,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,RDA5807M,C82537,RDA / 锐迪科,保留RDA5807M MSOP-10。用户A3百板报价：100颗，¥1.0483/颗、MOQ5、库存0、订货预估7–10工作日；订货行未给封装/商品编号，锁单需确认MSOP-10。C82537为原目录编号，不得换SOP-8。
@@ -23,3 +23,6 @@ U3,1,ME6211C30M5G-N,Package_TO_SOT_SMD:SOT-23-5,ME6211C30M5G-N,C403651,Microne /
 "C7,C8",2,4.7uF 10V X5R,Capacitor_SMD:C_0603_1608Metric,0603X475M100NT,C2857987,FH / 风华高科,由 4.7µF/16V/X7R 改常见 4.7µF/10V/X5R/±20%，工作约 3.3/3.0V。必须保证偏压温度下有效容量≥1µF；未取得本料号偏压曲线，首板测启动/纹波/负载响应。X5R 上限85°C。
 C9,1,22nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B223K500NT,C77571,FH / 风华高科,22nF/50V/X7R/±10%/0603；保留参考设计近端去耦。
 FB1,1,600R@100MHz / DCR<=0.5R,Resistor_SMD:R_0603_1608Metric,CBG160808U601T,C73326,FH / 风华高科,保留滤波功能并指定常备国产料；0603、200mA、DCR≤0.5Ω，20mA 时压降≤10mV。
+U4,1,DHT20,Mono:DHT20_Horizontal,DHT20,C3012627,Aosong / 奥松,每套1颗；2.54mm通孔弯脚卧装，感应孔朝上。1 VDD/2 SDA/3 GND/4 SCL；3.3V、I2C1地址0x38。依靠主板R98/R109上拉，不重复加外部上拉。感应孔不可涂胶/三防漆；焊后安装，预留空气流通。 公开库存/价格未锁定，支持1颗起购；100颗只是参考报价阶梯。
+U5,1,VEML7700-TT,Mono:VEML7700_TT,VEML7700-TT,C1850416,Vishay / 威世,每套1颗；指定-TT顶视包装、四个1.27mm间距外露焊端，非QFN。1 SCL/2 VDD/3 GND/4 SDA，3.3V、I2C1地址0x10。不可接FM的I2C0，地址相同；外壳留透光窗，避免屏幕漏光。 公开库存/价格未锁定，支持1颗起购；100颗只是参考报价阶梯。
+J5,1,SENS: GPIO7 SDA / GPIO8 SCL,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,排针默认不装，直接飞线；可选4个1×2P和1个1×5P，2.54mm。J5为新增GPIO7/8传感器总线，不与FM的GPIO2/3短接。

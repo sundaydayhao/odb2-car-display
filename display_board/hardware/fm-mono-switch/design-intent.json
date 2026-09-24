@@ -1380,14 +1380,174 @@
       "lcsc": "",
       "source": "",
       "mpn": ""
+    },
+    "U4": {
+      "kind": "DHT20",
+      "value": "DHT20",
+      "nets": {
+        "1": "+3V3_IN",
+        "2": "SENSOR_SDA",
+        "3": "GND",
+        "4": "SENSOR_SCL"
+      },
+      "footprint": "Mono:DHT20_Horizontal",
+      "pcb": [
+        10,
+        55.5
+      ],
+      "angle": 0,
+      "mpn": "DHT20",
+      "manufacturer": "Aosong / 奥松",
+      "lcsc": "C3012627",
+      "source": "${KIPRJMOD}/reference/DHT20.pdf",
+      "pad_positions": {
+        "1": [
+          6.19,
+          55.5
+        ],
+        "2": [
+          8.73,
+          55.5
+        ],
+        "3": [
+          11.27,
+          55.5
+        ],
+        "4": [
+          13.81,
+          55.5
+        ]
+      }
+    },
+    "U5": {
+      "kind": "VEML7700",
+      "value": "VEML7700-TT",
+      "nets": {
+        "1": "SENSOR_SCL",
+        "2": "+3V3_IN",
+        "3": "GND",
+        "4": "SENSOR_SDA"
+      },
+      "footprint": "Mono:VEML7700_TT",
+      "pcb": [
+        26,
+        44
+      ],
+      "angle": 0,
+      "mpn": "VEML7700-TT",
+      "manufacturer": "Vishay / 威世",
+      "lcsc": "C1850416",
+      "source": "${KIPRJMOD}/reference/VEML7700.pdf",
+      "pad_positions": {
+        "1": [
+          24.095,
+          44.0
+        ],
+        "2": [
+          25.365,
+          44.0
+        ],
+        "3": [
+          26.635,
+          44.0
+        ],
+        "4": [
+          27.905,
+          44.0
+        ]
+      }
+    },
+    "C11": {
+      "kind": "C",
+      "value": "100nF 50V X7R",
+      "nets": {
+        "1": "+3V3_IN",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        2,
+        55.5
+      ],
+      "angle": 90,
+      "mpn": "0603B104K500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C30926",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          2.0,
+          56.275
+        ],
+        "2": [
+          2.0,
+          54.725
+        ]
+      }
+    },
+    "C12": {
+      "kind": "C",
+      "value": "100nF 50V X7R",
+      "nets": {
+        "1": "+3V3_IN",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        26,
+        47
+      ],
+      "angle": 0,
+      "mpn": "0603B104K500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C30926",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          25.225,
+          47.0
+        ],
+        "2": [
+          26.775,
+          47.0
+        ]
+      }
+    },
+    "J5": {
+      "kind": "J2",
+      "value": "SENS: GPIO7 SDA / GPIO8 SCL",
+      "nets": {
+        "1": "SENSOR_SDA",
+        "2": "SENSOR_SCL"
+      },
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pcb": [
+        37,
+        40
+      ],
+      "angle": 0,
+      "mpn": "",
+      "manufacturer": "通用国内供应商",
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          37.0,
+          40.0
+        ],
+        "2": [
+          37.0,
+          42.54
+        ]
+      }
     }
   },
   "geometry": {
     "violations": 0,
-    "pins": 110,
-    "segments": 100
+    "pins": 124,
+    "segments": 114
   },
-  "status": "A7 cost/sourcing prototype; bench qualification and final supplier availability required",
+  "status": "A8 cost/sourcing prototype; bench qualification and final supplier availability required",
   "manufacturing_release": false,
   "board_size_final": true,
   "uses_fm_module": false,
@@ -1416,9 +1576,28 @@
   "supply": "3.3V input; 3.0V FM LDO",
   "board_size_mm": [
     40,
-    36
+    58
   ],
   "hardware_tested": false,
   "prototype_fabrication_ready": true,
-  "input_protection": "R5/R6=1k series; limits inactive codec path shunt current; FM path has R1/R2=10k series. R7/R8 keep selected path referenced to GND."
+  "input_protection": "R5/R6=1k series; limits inactive codec path shunt current; FM path has R1/R2=10k series. R7/R8 keep selected path referenced to GND.",
+  "sensor_geometry": {
+    "violations": 0,
+    "pins": 14,
+    "segments": 14
+  },
+  "sensors": {
+    "bus": "host I2C1 GPIO7/8 at J5, distinct from FM GPIO2/3",
+    "DHT20": {
+      "address_7bit": 56,
+      "mount": "horizontal, sensing face up"
+    },
+    "VEML7700-TT": {
+      "address_7bit": 16,
+      "mount": "top view"
+    },
+    "supply": "+3V3_IN",
+    "host_pullups": "R98/R109 2.2k to ESP_3V3",
+    "firmware_implemented": false
+  }
 }

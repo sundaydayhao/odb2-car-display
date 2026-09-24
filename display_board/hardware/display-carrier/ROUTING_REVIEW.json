@@ -1,0 +1,147 @@
+{
+  "revision": "Q",
+  "status": "PASS_PARTIAL_ROUTING_NOT_RELEASED",
+  "passives_changed": 155,
+  "schematic_change": "Only 155 Footprint properties; all electrical and drawing trees preserved",
+  "pad_and_footprint_UUIDs_preserved": true,
+  "all_component_centers_and_angles_preserved": true,
+  "board_outline_slots_and_drawings_preserved": true,
+  "planes": "In1.Cu and In2.Cu GND; no inner signal tracks",
+  "mipi": {
+    "CSI_CLK_N": {
+      "planar_length_mm": 34.89042788041933,
+      "signal_vias": 0,
+      "barrel_inclusive_length_mm": 34.89042788041933,
+      "outer_equivalent_delay_length_mm": 34.89042788041933,
+      "coupled_at_0_15mm_gap_mm": 30.29836747933617,
+      "fanout_and_corner_uncoupled_mm": 4.59206040108316,
+      "connected": true
+    },
+    "CSI_CLK_P": {
+      "planar_length_mm": 34.890428466205776,
+      "signal_vias": 0,
+      "barrel_inclusive_length_mm": 34.890428466205776,
+      "outer_equivalent_delay_length_mm": 34.890428466205776,
+      "coupled_at_0_15mm_gap_mm": 30.298367479335838,
+      "fanout_and_corner_uncoupled_mm": 4.592060986869939,
+      "connected": true
+    },
+    "CSI_D0_N": {
+      "planar_length_mm": 31.240427661636613,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 34.368827661636615,
+      "outer_equivalent_delay_length_mm": 35.07729186235807,
+      "coupled_at_0_15mm_gap_mm": 25.235862683581825,
+      "fanout_and_corner_uncoupled_mm": 6.004564978054788,
+      "connected": true
+    },
+    "CSI_D0_P": {
+      "planar_length_mm": 31.240428528642532,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 34.36882852864253,
+      "outer_equivalent_delay_length_mm": 35.07729272936399,
+      "coupled_at_0_15mm_gap_mm": 25.2358626835815,
+      "fanout_and_corner_uncoupled_mm": 6.00456584506103,
+      "connected": true
+    },
+    "CSI_D1_N": {
+      "planar_length_mm": 31.240428815829926,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 34.36882881582993,
+      "outer_equivalent_delay_length_mm": 35.07729301655138,
+      "coupled_at_0_15mm_gap_mm": 25.288554372492047,
+      "fanout_and_corner_uncoupled_mm": 5.9518744433378785,
+      "connected": true
+    },
+    "CSI_D1_P": {
+      "planar_length_mm": 31.240431313195714,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 34.36883131319571,
+      "outer_equivalent_delay_length_mm": 35.07729551391717,
+      "coupled_at_0_15mm_gap_mm": 25.288554372492058,
+      "fanout_and_corner_uncoupled_mm": 5.951876940703656,
+      "connected": true
+    },
+    "DSI_CLK_N": {
+      "planar_length_mm": 23.758591019969504,
+      "signal_vias": 0,
+      "barrel_inclusive_length_mm": 23.758591019969504,
+      "outer_equivalent_delay_length_mm": 23.758591019969504,
+      "coupled_at_0_15mm_gap_mm": 19.778248658278464,
+      "fanout_and_corner_uncoupled_mm": 3.98034236169104,
+      "connected": true
+    },
+    "DSI_CLK_P": {
+      "planar_length_mm": 23.758591605755885,
+      "signal_vias": 0,
+      "barrel_inclusive_length_mm": 23.758591605755885,
+      "outer_equivalent_delay_length_mm": 23.758591605755885,
+      "coupled_at_0_15mm_gap_mm": 19.778248658278,
+      "fanout_and_corner_uncoupled_mm": 3.9803429474778866,
+      "connected": true
+    },
+    "DSI_D0_N": {
+      "planar_length_mm": 20.1085942808139,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 23.2369942808139,
+      "outer_equivalent_delay_length_mm": 23.945458481535354,
+      "coupled_at_0_15mm_gap_mm": 14.484194730670787,
+      "fanout_and_corner_uncoupled_mm": 5.624399550143114,
+      "connected": true
+    },
+    "DSI_D0_P": {
+      "planar_length_mm": 20.108594712640723,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 23.236994712640723,
+      "outer_equivalent_delay_length_mm": 23.945458913362177,
+      "coupled_at_0_15mm_gap_mm": 14.484194730671428,
+      "fanout_and_corner_uncoupled_mm": 5.624399981969296,
+      "connected": true
+    },
+    "DSI_D1_N": {
+      "planar_length_mm": 20.10859243953967,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 23.23699243953967,
+      "outer_equivalent_delay_length_mm": 23.945456640261124,
+      "coupled_at_0_15mm_gap_mm": 14.049563019883578,
+      "fanout_and_corner_uncoupled_mm": 6.059029419656092,
+      "connected": true
+    },
+    "DSI_D1_P": {
+      "planar_length_mm": 20.10859375004787,
+      "signal_vias": 2,
+      "barrel_inclusive_length_mm": 23.23699375004787,
+      "outer_equivalent_delay_length_mm": 23.945457950769324,
+      "coupled_at_0_15mm_gap_mm": 14.049563019883594,
+      "fanout_and_corner_uncoupled_mm": 6.059030730164276,
+      "connected": true
+    }
+  },
+  "pair_skew_mm": {
+    "CSI_CLK": 5.857864451286332e-07,
+    "CSI_D0": 8.67005919502617e-07,
+    "CSI_D1": 2.4973657879456823e-06,
+    "DSI_CLK": 5.85786381179787e-07,
+    "DSI_D0": 4.3182682318843035e-07,
+    "DSI_D1": 1.3105081997366597e-06
+  },
+  "bus_skew": {
+    "DSI_": {
+      "geometric_mm": 0.521599166216216,
+      "estimated_delay_equivalent_mm": 0.18686789339267307
+    },
+    "CSI_": {
+      "geometric_mm": 0.5216008045691609,
+      "estimated_delay_equivalent_mm": 0.1868676334978403
+    }
+  },
+  "reference_plane_samples_checked": 6284,
+  "reference_plane_gaps_outside_transition_antipads": 0,
+  "paired_ground_returns": 8,
+  "total_tracks_and_vias": 1214,
+  "remaining_unconnected": 519,
+  "physical_drc": 0,
+  "schematic_parity": 0,
+  "signal_integrity": "Not simulated or measured; effective dielectric via delay is a first-order budget only",
+  "impedance": "JLC public calculator estimate 98.738 ohm; production compensation and coupons require board-factory confirmation"
+}

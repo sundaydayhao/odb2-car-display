@@ -246,3 +246,29 @@ moves only C814 nearer U815 pin 7 and preserves every other native PCB object.
 Run DRC/parity, `verify.py`, model checks and visual review before promotion.
 `FM_SENSORS.md` and `FM_SENSOR_REVIEW.json` record the circuit audit and limits;
 this is still an unrouted layout, not the DHT20/VEML7700 A8 hardware target.
+
+Revision Q shrinks 155 passive positions to standard imperial 0402 while
+preserving values, nets, pad identities and centers. `small_passives.py` is the
+shared selection policy used by the generator and purchasing table. Precision,
+power, bulk, zero-ohm and NTC exceptions remain at their reviewed sizes.
+`stage_small_passives.py --project <scratch> --stock <observed-stock.json>`
+refuses to replace footprints already contacted by tracks; it can preserve
+unrelated MIPI routing. It is a one-time migration, followed by native checks.
+
+`route_mipi.py --project <scratch>` creates six coupled outer-layer MIPI pairs
+on an initially unrouted board. `route_ground.py --project <scratch>` adds
+inner GND reference planes, transition returns, clock guard segments and local
+ground escapes. These are partial routing steps; power-ground current paths
+and thermal-pad via arrays still require manual work. The selected stackup,
+JLC public calculator evidence and limits are recorded in the project's
+`ROUTING.md`. Do not infer signal-integrity qualification from geometric DRC.
+
+Ordinary-net sessions may be selectively imported with
+`import_general_routes.py --project <scratch> --session <SES> --exclusions
+<manual-net-list.json> --evidence <directory>`. It retains original non-routing
+objects and removes entire incoming nets that fail native physical DRC or cut
+the MIPI reference with via antipads. It never claims full-board completion.
+`review_routing.py --baseline <P-checkpoint> --project <Q-stage> --evidence
+<directory>` independently checks schematic changes, identities, native MIPI
+connectivity/length/coupling and filled reference coverage. `verify.py` keeps
+the original interface/pin checks for partially routed boards as well.

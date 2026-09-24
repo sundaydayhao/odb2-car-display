@@ -1,0 +1,1253 @@
+{
+  "revision": "Q",
+  "changed_count": 155,
+  "by_kind": {
+    "C": 56,
+    "R": 99
+  },
+  "package": "0402 imperial / 1005 metric",
+  "changes": [
+    {
+      "reference": "C103",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C104",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R101",
+      "value": "10k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R102",
+      "value": "10k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R103",
+      "value": "10k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R106",
+      "value": "10k C6 strap",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R107",
+      "value": "10k C5 only",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R108",
+      "value": "10k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C106",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R110",
+      "value": "4.7k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R111",
+      "value": "4.7k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R112",
+      "value": "4.7k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R113",
+      "value": "4.7k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "C201",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C202",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C203",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C204",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C205",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R201",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R202",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R203",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R212",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R213",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R214",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R216",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R218",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R219",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C211",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C214",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R305",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R306",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R310",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R311",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R312",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R403",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R404",
+      "value": "22k loop-tune",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25768",
+      "MPN": "0402WGF2202TCE"
+    },
+    {
+      "reference": "C401",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C404",
+      "value": "100p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1546",
+      "MPN": "0402CG101J500NT"
+    },
+    {
+      "reference": "R411",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C413",
+      "value": "22p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT"
+    },
+    {
+      "reference": "R500",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C500",
+      "value": "1n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1523",
+      "MPN": "0402B102K500NT"
+    },
+    {
+      "reference": "C503",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R510",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R520",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R511",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R521",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R512",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R522",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R513",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R523",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R514",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R524",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R515",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R530",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R313",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C216",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1000",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1002",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1003",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R1000",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1001",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C1004",
+      "value": "1n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1523",
+      "MPN": "0402B102K500NT"
+    },
+    {
+      "reference": "R1011",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1012",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C1014",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1015",
+      "value": "100p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1546",
+      "MPN": "0402CG101J500NT"
+    },
+    {
+      "reference": "C1016",
+      "value": "33p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1562",
+      "MPN": "0402CG330J500NT"
+    },
+    {
+      "reference": "R1013",
+      "value": "47k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25792",
+      "MPN": "0402WGF4702TCE"
+    },
+    {
+      "reference": "R1015",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C1017",
+      "value": "1n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1523",
+      "MPN": "0402B102K500NT"
+    },
+    {
+      "reference": "R1017",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1030",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R1031",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R1032",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R1033",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R1034",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C1044",
+      "value": "100p C0G RF DC block",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1546",
+      "MPN": "0402CG101J500NT"
+    },
+    {
+      "reference": "R800",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R801",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R802",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R803",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R804",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R805",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R806",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C802",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C803",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C804",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C805",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R807",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R808",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R809",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R810",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R812",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R811",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C814",
+      "value": "22n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1532",
+      "MPN": "0402B223K500NT"
+    },
+    {
+      "reference": "R813",
+      "value": "4.7k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R814",
+      "value": "4.7k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R815",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R816",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R817",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R818",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R820",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C818",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C819",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C820",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C821",
+      "value": "100n",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R840",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "C843",
+      "value": "100p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1546",
+      "MPN": "0402CG101J500NT"
+    },
+    {
+      "reference": "C848",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R841",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "C847",
+      "value": "100p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1546",
+      "MPN": "0402CG101J500NT"
+    },
+    {
+      "reference": "C849",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C860",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R860",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C861",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R861",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R862",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C863",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C868",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R863",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C869",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R864",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R865",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C871",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R867",
+      "value": "100k 1%",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "C1202",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1203",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R1200",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1201",
+      "value": "10k bleed",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R1202",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1203",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1204",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1205",
+      "value": "100k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE"
+    },
+    {
+      "reference": "R1206",
+      "value": "10k scan option",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R1207",
+      "value": "10k scan option",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "R1210",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "R1211",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "R1212",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "R1213",
+      "value": "100R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE"
+    },
+    {
+      "reference": "R1214",
+      "value": "4.7k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "R1215",
+      "value": "4.7k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE"
+    },
+    {
+      "reference": "C1210",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R1300",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "R1301",
+      "value": "22R",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25092",
+      "MPN": "0402WGF220JTCE"
+    },
+    {
+      "reference": "C1300",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C1301",
+      "value": "100n 10V X7R",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C879",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C881",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C882",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "R821",
+      "value": "10k",
+      "before": "Resistor_SMD:R_0603_1608Metric",
+      "after": "Resistor_SMD:R_0402_1005Metric",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE"
+    },
+    {
+      "reference": "C823",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    },
+    {
+      "reference": "C825",
+      "value": "22p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT"
+    },
+    {
+      "reference": "C826",
+      "value": "22p C0G",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT"
+    },
+    {
+      "reference": "C827",
+      "value": "100n 10V",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": "Capacitor_SMD:C_0402_1005Metric",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC"
+    }
+  ],
+  "preserved": "All component centers, orientation, references, pad UUIDs, nets and existing MIPI tracks",
+  "retained": "Power inductors, bulk and LDO capacitors, bootstrap/loop caps, C0G 1nF, precision/NTC/zero-ohm parts and R501 QOD remain at reviewed sizes"
+}

@@ -1,0 +1,62 @@
+{
+  "request": {
+    "accessId": "cdc88ea0013944229c84996bc64fd357",
+    "impedance_calc_mark": "DiffEdgeCoupledCoatedMicrostrip1B",
+    "impedance_calc_arg": {
+      "H1": 3.9133858267716537,
+      "Er1": 4.1,
+      "H2": 0,
+      "Er2": 0,
+      "H3": 0,
+      "Er3": 0,
+      "H4": 0,
+      "Er4": 0,
+      "W1": 4.409448818897638,
+      "W2": 3.909448818897638,
+      "G1": 0,
+      "G2": 0,
+      "S1": 5.905511811023622,
+      "D1": 0,
+      "O1": 0,
+      "T1": 1.6,
+      "REr": 0,
+      "C1": 1,
+      "C2": 0.6,
+      "C3": 1,
+      "CEr": 3.8,
+      "HZ0": 108.0,
+      "Zo": 100,
+      "MinW1": 2.5,
+      "MaxW1": 25,
+      "dCalculateMode": 3,
+      "isLinkComputingMode": false,
+      "W2LinkW1Incr": 0.5,
+      "ZoTol": 0.5
+    },
+    "uuid": "e213da4a08ba495aa3e92acc7100a954",
+    "paramMd5": "19bb670439a277d48953411464aaf98f"
+  },
+  "response": {
+    "message": null,
+    "result": "success",
+    "body": null,
+    "success": true
+  },
+  "result": {
+    "accessId": "cdc88ea0013944229c84996bc64fd357",
+    "impedance_calc_error_msg": "",
+    "impedance_calc_mark": "DiffEdgeCoupledCoatedMicrostrip1B",
+    "impedance_calc_result": {
+      "dCer": 0,
+      "dDelay": 5717.89557656,
+      "dErEff": 2.93842064783,
+      "dImpedance": 98.7382266195,
+      "dInductance": 0,
+      "dResultValid": 1
+    },
+    "impedance_calc_status": 0,
+    "impedance_calc_time": 79,
+    "paramMd5": "6c7b4f2f3633602b86d4a0801b73f26d",
+    "uuid": "e213da4a08ba495aa3e92acc7100a954"
+  }
+}

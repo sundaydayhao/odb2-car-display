@@ -52,7 +52,12 @@ assert pending==hold_nets,(pending,hold_nets)
 drc=json.loads((BUILD/'drc-final.json').read_text(encoding='utf-8'))
 assert not drc['schematic_parity'],drc['schematic_parity']
 assert not drc['violations'],drc['violations']
-assert len(board.GetTracks())==0 and len(drc['unconnected_items'])>0
+routing_started=(OUT/'MIPI_ROUTING.json').exists()
+if routing_started:
+    assert len(board.GetTracks())>0
+    assert all(t.GetLayer() in [k.F_Cu,k.B_Cu] for t in board.GetTracks() if not isinstance(t,k.PCB_VIA))
+else:
+    assert len(board.GetTracks())==0 and len(drc['unconnected_items'])>0
 connectivity=board.GetConnectivity();connectivity.Build(board)
 unrouted=connectivity.GetUnconnectedCount(False)
 assert unrouted>=len(drc['unconnected_items'])
@@ -276,12 +281,12 @@ report={'status':'DRAFT_ONLY_NOT_FAB_APPROVED','kicad':k.GetBuildVersion(),
  'zones':sum(not z.GetIsRuleArea() for z in board.Zones()),
  'rule_areas':sum(z.GetIsRuleArea() for z in board.Zones()),'ts_temperature_threshold_ranges_C':temps,
  'ts_open_ratio':round(187000/(187000+9090),6),'usb_current_limit_calculation':current,
- 'notes':['0 physical DRC violations applies to an UNROUTED placement only.',
+ 'notes':['Partial routing: electrical unconnected items remain; see ROUTING_REVIEW.json.' if routing_started else '0 physical DRC violations applies to an UNROUTED placement only.',
           'Native default ignored checks are retained, not counted as passing.',
           'NTC sensor thermal contact, aging, and IC comparator dynamics are not included in this calculation.'],
  'native_ignored_drc_checks':drc.get('ignored_checks',[]),
  'hash_normalization':'CRLF converted to LF before SHA-256',
- 'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro']}}
+ 'design_file_sha256':{p.name:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in sorted(OUT.glob('*.kicad_*')) if p.suffix in ['.kicad_sch','.kicad_pcb','.kicad_pro','.kicad_dru']}}
 if screen_back:
     assert all(f.GetLayer()==k.F_Cu for f in fps.values()),'Screen side must have no footprint bodies'
     poly=k.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(poly,False)
@@ -291,7 +296,7 @@ if screen_back:
         z=poly.Hole(0,i).BBox()
         cutouts.append(tuple(round(k.ToMM(v)-50,3) for v in [z.GetX(),z.GetY(),z.GetRight(),z.GetBottom()]))
     for box in [(104,14,114,17),(64.5,52.5,84.5,55.5)]:assert box in cutouts,cutouts
-    zones={z.GetZoneName():z for z in board.Zones()}
+    zones={z.GetZoneName():z for z in board.Zones() if z.GetIsRuleArea()}
     assert len(zones)==(10 if mipi_layout else 6)
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetDoNotAllowFootprints()
     assert zones['SCREEN_SIDE_NO_COMPONENTS'].GetLayer()==k.B_Cu

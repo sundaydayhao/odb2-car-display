@@ -43,6 +43,11 @@ HOLDS={'F300':'PH 2A 电池端子：按线材、电池短路电流和温度降�
 
 def choose(p):
     ref,value,fp=p['ref'],p['value'],p['footprint']
+    if '_0402_1005Metric' in fp:
+        from small_passives import selected_code
+        code=selected_code(p)
+        assert code,(ref,value,fp)
+        return code,'SELECTED','0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。'
     if ref in ['U100','U1000']:return '', 'USER_FIXED', '用户指定鱼鹰光电核心板、ML307 模组，单独采购。'
     if ref in HOLDS:return '', 'HOLD', HOLDS[ref]
     if value=='DNP RF tune':return '', 'DNP', '待实测匹配后定值；本批不采购。'
@@ -116,12 +121,13 @@ def generate(project, intent_path):
     counts=collections.Counter()
     for r in rows:
         if r['Fitted']:counts['selected' if r['LCSC'] else r['SelectionStatus'].lower()]+=1
-    report=dict(revision='P',boards=100,spare_percent=20,physical_positions=len(rows),fitted_per_board=sum(r['Fitted'] for r in rows),
+    report=dict(revision='Q' if (project/'PASSIVE_SHRINK.json').exists() else 'P',boards=100,spare_percent=20,physical_positions=len(rows),fitted_per_board=sum(r['Fitted'] for r in rows),
         per_board_sourcing=dict(counts),unique_selected_lcsc_codes=len({r['LCSC'] for r in rows if r['LCSC']}),
         supply_groups=dict(collections.Counter(r['SupplyStatus'] for r in grouped)),
         policy='Aggregate fitted count by LCSC, add 20%, ceil to observed MOQ/order step. DNP count is zero. Stock is an unreserved snapshot, not a supply guarantee.',
-        design_intent_sha256=hashlib.sha256(intent_path.read_bytes()).hexdigest(),
-        snapshot_sha256=hashlib.sha256((project/'LCSC_STOCK_SNAPSHOT.json').read_bytes()).hexdigest(),
+        hash_normalization='CRLF converted to LF before SHA-256',
+        design_intent_sha256=hashlib.sha256(intent_path.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+        snapshot_sha256=hashlib.sha256((project/'LCSC_STOCK_SNAPSHOT.json').read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
         status='SOURCING_REVIEW_NOT_RELEASED')
     if (project/'SCREEN_BACK_LAYOUT.json').is_file():
         report['layout_revision']=json.loads((project/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8'))['revision']

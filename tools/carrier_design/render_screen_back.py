@@ -6,6 +6,7 @@ def render(project):
     b=k.LoadBoard(str(project/'display_carrier.kicad_pcb'))
     info=json.loads((project/'SCREEN_BACK_LAYOUT.json').read_text(encoding='utf-8'))
     mipi=info.get('revision')=='N'
+    routing=(project/'MIPI_ROUTING.json').exists()
     fps={f.GetReference():f for f in b.GetFootprints()}
     s=['<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="940" viewBox="0 0 1500 940">',
        '<style>text{font-family:"Microsoft YaHei","Segoe UI",sans-serif}</style>',
@@ -16,7 +17,8 @@ def render(project):
         s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3"/>')
     title='显示载板 · 国内采购替换 / 板载 FM 与传感器' if info.get('sourcing_revision')=='P' else '显示载板 · 主控高速接口布局 / 排线穿板' if mipi else '显示载板 · 正面器件 / 背面贴屏 / 排线穿板'
     text(45,48,title,30,bold=True)
-    text(45,81,f'{b.GetTitleBlock().GetRevision()} · 145 × 85 mm · 四层 · 0 条走线 · 穿线槽和屏板间隙尚待实物核对',18)
+    route_label='部分布线 / 0402' if routing else '0 条走线'
+    text(45,81,f'{b.GetTitleBlock().GetRevision()} · 145 × 85 mm · 四层 · {route_label} · 穿线槽和屏板间隙尚待实物核对',18)
     scale=4.4;oy=160
     for side,ox,title,sub in [('F',55,'F 面 · 正面 / 朝后壳','从屏幕背面看：USB 在右，TF / SIM 在左'),
                               ('B',805,'B 面 · 背面 / 朝屏幕','此图左右镜像：0 个器件本体，仍有通孔焊脚')]:
@@ -74,7 +76,7 @@ def render(project):
             '穿板预留 4 mm 补偿，尚未实测','间隙、线长、折弯和针序需样件核对。')]
     if mipi:
         cards[2]=(1025,'MIPI 局部调整','主控上移 6 mm；LCD 净距 8.88 mm',
-            '摄像头座移至 (94,39)，入口朝下','12 根信号试连通；等长与阻抗待定。')
+            '摄像头座移至 (94,39)，入口朝下','六组差分已布；待实板验证。' if routing else '12 根信号试连通；等长与阻抗待定。')
     for x,title,a,c,e in cards:
         rect(x,605,435,171,'#fff','#d6e0eb',10);text(x+18,638,title,21,bold=True)
         text(x+18,672,a,16);text(x+18,704,c,16);text(x+18,744,e,14,'#665041')
@@ -82,6 +84,6 @@ def render(project):
     text(45,817,f'当前 F 面坐标：触摸座 (109, 7.575)；LCD 座 (74.5, 46.175)；核心板 ({core[0]:g}, {core[1]:g}) mm。',17)
     mic_spacing=abs(k.ToMM(fps['U802'].GetPosition().x-fps['U803'].GetPosition().x))
     text(45,848,f'双麦间距 {mic_spacing:g} mm；两路扬声器接口左右分置。电池 / NTC 均为 PH 2.0 mm 2Pin。',17)
-    text(45,889,'主工程未布线；屏板名义间距 3 mm。蓝色是局部出线/开盖空间；装配与高速性能仍待验证。' if mipi else '工程仍未布线；通过间距检查不代表排线已经够长，也不代表可直接贴金属屏背板。',17,'#97452b')
+    text(45,889,'主工程部分布线；此图仅示器件布局。屏板名义间距 3 mm；装配、高速和电源仍待验证。' if routing else '主工程未布线；屏板名义间距 3 mm。蓝色是局部出线/开盖空间；装配与高速性能仍待验证。' if mipi else '工程仍未布线；通过间距检查不代表排线已经够长，也不代表可直接贴金属屏背板。',17,'#97452b')
     s.append('</svg>')
     for name in ['FLOORPLAN.svg','FPC_FIT.svg']:(project/name).write_text('\n'.join(s)+'\n',encoding='utf-8')

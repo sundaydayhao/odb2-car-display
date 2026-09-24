@@ -27,7 +27,7 @@
   ],
   "pcb_physical_violations": 0,
   "schematic_parity_violations": 0,
-  "pcb_unconnected_items": 885,
+  "pcb_unconnected_items": 519,
   "drc_reported_unconnected_items": 499,
   "unconnected_count_source": "native CONNECTIVITY_DATA.GetUnconnectedCount(False); CLI report list is truncated",
   "open_peripheral_power_boundaries": [
@@ -50,8 +50,8 @@
     "C1042",
     "C1043"
   ],
-  "tracks": 0,
-  "zones": 0,
+  "tracks": 1214,
+  "zones": 2,
   "rule_areas": 10,
   "ts_temperature_threshold_ranges_C": {
     "cold_inhibit": [
@@ -77,7 +77,7 @@
     "qualified_typec_tps2553_max_mA": 1252.27
   },
   "notes": [
-    "0 physical DRC violations applies to an UNROUTED placement only.",
+    "Partial routing: electrical unconnected items remain; see ROUTING_REVIEW.json.",
     "Native default ignored checks are retained, not counted as passing.",
     "NTC sensor thermal contact, aging, and IC comparator dynamics are not included in this calculation."
   ],
@@ -105,28 +105,29 @@
   ],
   "hash_normalization": "CRLF converted to LF before SHA-256",
   "design_file_sha256": {
-    "01_core.kicad_sch": "627caea769440c420d9643f846600ff64fed920289af3ac477bbb5c2f2eec17f",
-    "02_usb.kicad_sch": "75b09e6bb9fd8221831f4e69c464be02264a80e0ac5e0c239c265849733885fb",
-    "03_usb_current.kicad_sch": "5f07280b2095a5782ff7dc726a56f426907862d8b22b90f264180724bd42ac4b",
-    "04_charger.kicad_sch": "447f95b9f1b0434770658697d3e63c09cc45f58b42403ee970e667294d4bbce3",
-    "05_system_switch.kicad_sch": "15005d4b069f9ad092c876162c6ea040c615bb8a0aa341c5354dff927d66d7b6",
-    "06_main_power.kicad_sch": "4b4524c4f9660afe74c4b3220d059b996b6d3e77ac8530278dff1b8270b7f50d",
-    "07_sd.kicad_sch": "7c7e13f999cdb25ba56f191163cd3df5180dfb3105d0f160dade0f4f6d6fa752",
-    "08_modem.kicad_sch": "cc82d6a849a35f72f470f2f9def84d26f46a30623be970398bbafdbbc20a3b55",
-    "09_modem_power.kicad_sch": "f322b982ef8b050495920bffc04f66ce4d11f09dd2426605a29a8a77edf643d5",
-    "10_sim_rf.kicad_sch": "e1da2a585d4188fa2e576b99d2d5f709beed920e42334535d11d2c2c8c4eee15",
-    "11_codec.kicad_sch": "16fbc4445be93ac81d957e18bfe309d4bc2dfca72539f8876bb6354e291f2309",
-    "12_fm_audio.kicad_sch": "4bdd786a76c0e15fe3b9855645b9d2a01fc81f10c387650f4fb472ec4ff260c1",
+    "01_core.kicad_sch": "684aa5f650e3196ee8bd192f5e1bb1c9105ed9a7a9a9bc8e3212a17ea78330cf",
+    "02_usb.kicad_sch": "e42c3450fe893970e52ba8e1bd140ac18cf069689c418b189abc670e8f2b1a48",
+    "03_usb_current.kicad_sch": "b3ee69539bcb21e98bece2115494e3d374fb518692a6cb0961c9bc17aa7f9e39",
+    "04_charger.kicad_sch": "bf3c15d88bb27ce3a57f59c48d36ac7b5707c5beb38606a81ec59b4548bb9282",
+    "05_system_switch.kicad_sch": "542309eb450a227fb5a349b8ddc2020aeccc433f21600d3e67bfa18f90b74cfd",
+    "06_main_power.kicad_sch": "54ec5fba61198e7a822623b2aba148e864d0d35dfc197a478417ee492a13b5f1",
+    "07_sd.kicad_sch": "c2f59d00aefdaac74a14ce2052bf747c9a4885a97e61b9f55355310a3d845cc7",
+    "08_modem.kicad_sch": "4885ef96c14e2613bcc7fba79b132efcd82891cf8fc9d2b230242af6702b4c2d",
+    "09_modem_power.kicad_sch": "09c16aa2b38f180c2c8800f7316132a66e479b5bd8a240d8a942cd8df08030c5",
+    "10_sim_rf.kicad_sch": "712af6dd65afa9305da3b8260e9374685a1be8df9b366dd3f27401815e8c3428",
+    "11_codec.kicad_sch": "de93cfcd94767e4fc22fdeac5b34b0fd7b21d1a0ffb3c275c0d60b36ddc55c09",
+    "12_fm_audio.kicad_sch": "0039ca5153b5d3b3da0da4b99a859083039f4e1b53baa96b02c7ebecee8e027f",
     "13_release_holds.kicad_sch": "67b4535894aaf94c2557c92f3f7ca40c62fcf49cf6f758305e85bd6a6dd95fb9",
-    "14_lcd_fpc.kicad_sch": "7af7116a540ca6720c838c7ca194f1fb8ca0fc32438e16e6f76754f5fd775c37",
-    "15_touch_fpc.kicad_sch": "12c6501a22f07bee926857f718125c920556798013ad17336745ea0bb0d5dae7",
+    "14_lcd_fpc.kicad_sch": "23cc26f0dd342e177e0297f6f7d33e9e2fb1ae763145bf0a71cdc28bc9adedf7",
+    "15_touch_fpc.kicad_sch": "1c66843850e673c0076e107de497352923e834d45ed5ca35d7c1f5be582b294c",
     "16_camera_fpc.kicad_sch": "606a8b7f3a4234dd179333d09feff572bf2726bd390005bf83a8baf333deccfd",
-    "17_cabin_sensors.kicad_sch": "8eb4747a62581b503d9f59f93faaf3b955ea756a955d401c97a95d79482d2be0",
-    "18_dual_mic.kicad_sch": "43edb637656f422321902878cbcf182007979ab6b3bd7d615fa388dc5224a144",
-    "19_stereo_pa.kicad_sch": "1c949cee1546a7a4800891ee8c4bb78706b97abe576812b4448c99267bab0e8f",
-    "display_carrier.kicad_pcb": "3f16d76fa46fe272990c1310312776a40d6f0ed1878698214759865ef27dd88a",
-    "display_carrier.kicad_pro": "67cf436419ca53eeeea61a71d2ca24e4b9461dc67c8acd672eea2fbf3d0ae0d3",
-    "display_carrier.kicad_sch": "0bbea1acebdb26f32d7893e4077d0136e68d4b657f0284802b2d52aacba1a2da"
+    "17_cabin_sensors.kicad_sch": "b7562374d2313a84db519f921af0caa0ffbf129e5ee68cbdacb66508b51b6cdf",
+    "18_dual_mic.kicad_sch": "d31ee2f4b91eb0dd52d203b84fefe9b8ac1389e08a01743efa4d79394c4ca040",
+    "19_stereo_pa.kicad_sch": "3f2d822d3987221512fe06197503a0707af346a4062b173037542773df168210",
+    "display_carrier.kicad_pcb": "469466aeaccac0ed73fb7503bf140399c7e9d3bf9fe414235b4e52a7cc85ba7e",
+    "display_carrier.kicad_pro": "c9f0bea432f2c00b9c4a7afede9d4c1fe433f07a9e266e6b8e1cc21de67ca323",
+    "display_carrier.kicad_sch": "0bbea1acebdb26f32d7893e4077d0136e68d4b657f0284802b2d52aacba1a2da",
+    "display_carrier.kicad_dru": "51b34bbf663ff76862ece1b11992a1b3786ca7b603c7d7a1516d534b4b00c048"
   },
   "screen_back_layout": {
     "component_side": "F",

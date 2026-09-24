@@ -1,0 +1,26 @@
+(version 1)
+# JLC04161H-3313, nominal 1.6 mm; outer 100 ohm differential geometry.
+(rule "MIPI outer trace width"
+ (condition "A.hasNetclass('MIPI_100R_JLC3313')")
+ (constraint track_width (min 0.112mm) (opt 0.112mm) (max 0.112mm)))
+(rule "MIPI pair skew 10 mil"
+ (condition "A.hasNetclass('MIPI_100R_JLC3313')")
+ (constraint skew (max 0.254mm) (within_diff_pairs)))
+(rule "MIPI gap minimum"
+ (condition "A.hasNetclass('MIPI_100R_JLC3313')")
+ (constraint diff_pair_gap (min 0.145mm) (opt 0.15mm)))
+(rule "MIPI isolation from other routed signals 3W"
+ (condition "A.Type == 'Track' && B.Type == 'Track' && A.hasNetclass('MIPI_100R_JLC3313') && !AB.isCoupledDiffPair()")
+ (constraint clearance (min 0.336mm)))
+(rule "Inner layers are reference planes"
+ (layer inner)
+ (constraint disallow track))
+(rule "MIPI maximum two vias"
+ (condition "A.hasNetclass('MIPI_100R_JLC3313')")
+ (constraint via_count (max 2)))
+(rule "MIPI clocks stay on front copper"
+ (condition "A.inDiffPair('DSI_CLK') || A.inDiffPair('CSI_CLK')")
+ (constraint via_count (max 0)))
+(rule "Keep other-net via antipads away from MIPI"
+ (condition "A.Type == 'Track' && A.hasNetclass('MIPI_100R_JLC3313') && B.Type == 'Via' && !B.hasNetclass('MIPI_100R_JLC3313')")
+ (constraint clearance (min 0.336mm)))

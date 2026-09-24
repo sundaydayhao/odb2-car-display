@@ -857,7 +857,7 @@
     },
     "D1": {
       "kind": "TVS",
-      "value": "LESD8LL5.0CT5G",
+      "value": "PESD5V0F1BL,315",
       "nets": {
         "1": "ANT",
         "2": "GND"
@@ -868,8 +868,8 @@
         21
       ],
       "angle": 90,
-      "lcsc": "C172421",
-      "source": "${KIPRJMOD}/reference/LESD8LL5.0CT5G.pdf",
+      "lcsc": "C45961",
+      "source": "${KIPRJMOD}/reference/PESD5V0F1BL.pdf",
       "pad_positions": {
         "": [
           5.5,
@@ -884,8 +884,8 @@
           20.65
         ]
       },
-      "mpn": "LESD8LL5.0CT5G",
-      "manufacturer": "LRC / 乐山无线电"
+      "mpn": "PESD5V0F1BL,315",
+      "manufacturer": "Nexperia / 安世"
     },
     "#PWRD1": {
       "kind": "GND",
@@ -1387,7 +1387,7 @@
     "pins": 110,
     "segments": 100
   },
-  "status": "A6 cost/sourcing prototype; bench qualification and final supplier availability required",
+  "status": "A7 cost/sourcing prototype; bench qualification and final supplier availability required",
   "manufacturing_release": false,
   "board_size_final": true,
   "uses_fm_module": false,

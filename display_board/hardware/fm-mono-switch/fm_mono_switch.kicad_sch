@@ -7,7 +7,7 @@
 	(title_block
 		(title "P4 v1.4 - RDA5807M + TS5A22364 mono FM")
 		(date "2026-09-24")
-		(rev "A6 PROTOTYPE")
+		(rev "A7 PROTOTYPE")
 		(company "OBD Car Display")
 		(comment 1 "Remove R83/R84. Retain original capacitors and amplifier.")
 	)
@@ -6511,7 +6511,7 @@
 				)
 			)
 		)
-		(property "Value" "LESD8LL5.0CT5G"
+		(property "Value" "PESD5V0F1BL,315"
 			(at 401.32 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6532,7 +6532,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/reference/LESD8LL5.0CT5G.pdf"
+		(property "Datasheet" "${KIPRJMOD}/reference/PESD5V0F1BL.pdf"
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -6550,7 +6550,7 @@
 		(pin "2"
 			(uuid "1830bb1f-ff10-448b-9566-71ffbed93322")
 		)
-		(property "MPN" "LESD8LL5.0CT5G"
+		(property "MPN" "PESD5V0F1BL,315"
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -6562,7 +6562,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C172421"
+		(property "LCSC" "C45961"
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -6574,7 +6574,19 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "LRC / 乐山无线电"
+		(property "Manufacturer" "Nexperia / 安世"
+			(at 416.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Nexperia PESD5V0F1BL,315: bidirectional ESD diode; SOD882 / DFN1006-2; VRWM 5.5V; Cd 0.4pF typ / 0.55pF max at 1MHz, 0V, 25C."
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -9211,7 +9223,7 @@
 		)
 		(uuid c33147b1-02c7-56e8-8588-ce3c5992a21b)
 	)
-	(text "PROTO A6: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
+	(text "PROTO A7: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
 		(at 22.86 269.24 0)
 		(effects
 			(font

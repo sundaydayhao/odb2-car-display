@@ -1,9 +1,9 @@
 {
-  "revision": "A6",
+  "revision": "A7",
   "review_date": "2026-09-24",
   "price_reference_boards": 100,
   "currency": "USD",
-  "price_basis": "Public LCSC USD quantity tiers, not a mainland account quotation. A6 U1 refreshed 2026-09-24; other prices retained from prior review. No fixed production or purchasing quantity. Stock is not reserved.",
+  "price_basis": "Public LCSC USD quantity tiers, not a mainland account quotation. A7 D1 and A6 U1 refreshed 2026-09-24; other prices retained from prior review. No fixed production or purchasing quantity. Stock is not reserved.",
   "planning_cny_per_usd": 7.2,
   "groups": [
     {
@@ -66,16 +66,18 @@
       "refs": [
         "D1"
       ],
-      "mpn": "LESD8LL5.0CT5G",
-      "manufacturer": "LRC / 乐山无线电",
-      "lcsc": "C172421",
-      "value": "LESD8LL5.0CT5G",
-      "unit_usd": 0.0154,
+      "mpn": "PESD5V0F1BL,315",
+      "manufacturer": "Nexperia / 安世",
+      "lcsc": "C45961",
+      "value": "PESD5V0F1BL,315",
+      "unit_usd": 0.0812,
       "tier": 50,
-      "moq_multiple": 50,
-      "stock_observed": 204350,
-      "datasheet": "${KIPRJMOD}/reference/LESD8LL5.0CT5G.pdf",
-      "decision": "替换 Nexperia PESD5V0F1BL；双向、5V、0.25pF 典型/0.3pF 最大、SOD-882。钳位性能不宣称等同，整机 ESD 待测。"
+      "moq_multiple": 5,
+      "stock_observed": 57925,
+      "datasheet": "${KIPRJMOD}/reference/PESD5V0F1BL.pdf",
+      "decision": "A7按用户要求恢复安世；双向、VRWM5.5V、结电容0.4pF典型/0.55pF最大（1MHz、0V、25°C）。SOD882现有0.4×0.7mm焊盘及0.7mm中心距与厂商推荐一致，不改走线。2026-09-24公开库存57925，MOQ/步进5；USD0.0812为50颗报价阶梯，非国内账户报价或采购总量。整机ESD待测。",
+      "package": "SOD-882 / DFN1006-2",
+      "purchase_url": "https://www.lcsc.com/product-detail/C45961.html"
     },
     {
       "refs": [

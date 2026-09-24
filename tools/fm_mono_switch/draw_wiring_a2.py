@@ -15,7 +15,7 @@ shutil.copyfile(ROOT/'build/fm-mono-switch/schematic-final.pdf',PDF/'schematic.p
 pdfmetrics.registerFont(TTFont('CN','C:/Windows/Fonts/msyh.ttc',subfontIndex=0))
 W,H=1300,1070
 pdf=canvas.Canvas(str(PDF/'wiring.pdf'),pagesize=(W,H))
-pdf.setTitle('RDA5807M + TS5A22364 单声道小板 A6：接线与安装')
+pdf.setTitle('RDA5807M + TS5A22364 单声道小板 A7：接线与安装')
 INK='#17304A';MUTED='#587085';BLUE='#266ACB';GREEN='#00876F';ORANGE='#BD6818'
 def box(x,y,w,h,fill,stroke=None,r=12):
     pdf.setFillColor(HexColor(fill));pdf.setStrokeColor(HexColor(stroke or fill))
@@ -41,7 +41,7 @@ def background(title,subtitle):
     t(title,40,27,28);t(subtitle,42,75,17,MUTED)
 
 background('RDA5807M + TS5A22364：FM / MP3 / 小智共用一个喇叭',
-           'ESP32-P4 Function EV Board v1.4  |  单声道  |  40 × 36 mm 双层小板  |  A6 首板方案')
+           'ESP32-P4 Function EV Board v1.4  |  单声道  |  40 × 36 mm 双层小板  |  A7 首板方案')
 box(40,118,1220,52,'#E6F5F0')
 t('直接焊接 RDA5807M 芯片，晶振、电源、天线接口都在小板上；继续使用开发板原功放。',60,132,19,GREEN)
 box(40,195,310,355,'#FFFFFF','#CBD7E4');t('ESP32-P4 开发板',62,215,22)
@@ -86,7 +86,7 @@ box(40,901,1220,129,'#E8EDF5');t('安装与切换要点',60,917,18)
 t('• 保留 C39、C40、C58、C59、R146、R147；扬声器仍接开发板 J16。',60,947,16)
 t('• 先静音 / 关闭功放 → 切换 GPIO6 → 等待稳定 → 恢复功放；原 PA 控制为 GPIO53。',60,976,16)
 t('• J3.1 接 FM 天线，J3.2 为地。小板只接 3.3 V；本次交付未修改固件。',60,1004,16)
-t('A6 / 2026-09-24  ·  电气连接示意，非实物比例  ·  1 / 2',43,1040,13,MUTED)
+t('A7 / 2026-09-24  ·  电气连接示意，非实物比例  ·  1 / 2',43,1040,13,MUTED)
 pdf.showPage()
 background('小板布局与开发板焊点位置','图左为本工程 PCB 的实际 3D 渲染；图右为官方 v1.4 开发板音频区丝印。')
 box(40,118,790,710,'#FFFFFF','#CBD7E4');picture(OUT/'board-3d.png',50,130,770,650)
@@ -101,7 +101,7 @@ box(40,850,1220,179,'#E8EDF5');t('装配与首板验证',60,867,20)
 t('1. U1 为 VSSOP-10、U2 为 MSOP-10，均为 0.5 mm 间距外露引脚；按圆点 / 三角标识确认 1 脚。',60,904,17)
 t('2. Y1 为 32.768 kHz 手表晶振，按 1.9 mm 孔距成形引脚；不要按参考截图的 33.768 kHz 误写选型。',60,939,17)
 t('3. 先测 FM_VDD 约 3.0 V，再测 I²C、搜台和音频。晶振起振、接收效果与切换爆音需首板实测。',60,974,17)
-t('A6 / 2026-09-24  ·  ERC / DRC / 原理图与 PCB 一致性检查通过，尚未实物验证  ·  2 / 2',43,1040,13,MUTED)
+t('A7 / 2026-09-24  ·  ERC / DRC / 原理图与 PCB 一致性检查通过，尚未实物验证  ·  2 / 2',43,1040,13,MUTED)
 pdf.showPage();pdf.save()
 doc=pymupdf.open(PDF/'wiring.pdf')
 for i,page in enumerate(doc):

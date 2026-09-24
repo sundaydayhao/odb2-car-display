@@ -32,6 +32,8 @@ for ref, c in choices.items():
         props['Description'] = 'ME6211C30M5G-N: 3.0V LDO, SOT-23-5; 1 VIN, 2 GND, 3 CE active high, 4 NC, 5 VOUT'
     if ref == 'U1':
         props['Description'] = 'TS5A22364DGSR VSSOP-10: dual SPDT negative-audio switch with inactive-input shunts; 1 VCC, 2 NO1, 3 COM1, 4 NC1, 5 IN1, 6 GND, 7 IN2, 8 NC2, 9 COM2, 10 NO2. R5/R6=1k series limiters.'
+    if ref == 'D1':
+        props['Description'] = 'Nexperia PESD5V0F1BL,315: bidirectional ESD diode; SOD882 / DFN1006-2; VRWM 5.5V; Cd 0.4pF typ / 0.55pF max at 1MHz, 0V, 25C.'
     for name, value in props.items():
         ops.set_prop(sch, ref, name, value)
         if name == 'Value': fps[ref].SetValue(value)

@@ -14,7 +14,7 @@ C3,1,1nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B102K500NT,C44369,FH / 风�
 R11,1,10R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF100JT5E,C22859,UNI-ROYAL / 厚声,10Ω、1%、0.1W、0603；保留开关电源 RC 去耦。
 C4,1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B104K500NT,C30926,FH / 风华高科,100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。
 C6,1,100pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,0603CG101J500NT,C1635,FH / 风华高科,射频耦合保留 C0G、±5%，不能跟 C3 一起改为 X7R/Y5V。
-D1,1,LESD8LL5.0CT5G,Diode_SMD:D_SOD-882,LESD8LL5.0CT5G,C172421,LRC / 乐山无线电,替换 Nexperia PESD5V0F1BL；双向、5V、0.25pF 典型/0.3pF 最大、SOD-882。钳位性能不宣称等同，整机 ESD 待测。
+D1,1,"PESD5V0F1BL,315",Diode_SMD:D_SOD-882,"PESD5V0F1BL,315",C45961,Nexperia / 安世,A7按用户要求恢复安世；双向、VRWM5.5V、结电容0.4pF典型/0.55pF最大（1MHz、0V、25°C）。SOD882现有0.4×0.7mm焊盘及0.7mm中心距与厂商推荐一致，不改走线。2026-09-24公开库存57925，MOQ/步进5；USD0.0812为50颗报价阶梯，非国内账户报价或采购总量。整机ESD待测。
 U2,1,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,RDA5807M,C82537,RDA / 锐迪科,保留RDA5807M MSOP-10。用户A3百板报价：100颗，¥1.0483/颗、MOQ5、库存0、订货预估7–10工作日；订货行未给封装/商品编号，锁单需确认MSOP-10。C82537为原目录编号，不得换SOP-8。
 Y1,1,32.768kHz CL12.5pF,Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Horizontal,Y6OEL89CGI-STUYLC-32.768K,C19272781,YXC / 扬兴,替换 Abracon；目录规格 32.768kHz、CL12.5pF、ESR50kΩ、±10ppm、-40~85°C、DT-26 2×6mm。引脚成形到 1.9mm；电气参数按目录核对，精确承认书与起振裕量待首板确认。不要换成 -20~70°C 版本。
 "R12,R13",2,100R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1000T5E,C22775,UNI-ROYAL / 厚声,100Ω、1%、0.1W、0603；I²C 飞线阻尼，不建议省掉。

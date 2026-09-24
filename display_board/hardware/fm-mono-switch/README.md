@@ -1,8 +1,10 @@
-# RDA5807M + SGM3718 单声道 FM 小板 · A3
+# RDA5807M + DIO1717 单声道 FM 小板 · A4
 
-直接集成 **RDA5807M 裸芯片**、32.768 kHz 晶振、电源和天线接口。FM 与 ES8311（MP3 / 小智）经 SGM3718 切换，共用 ESP32-P4 Function EV Board **v1.4** 的 NS4150B 功放和原喇叭。FM 左右声道经电阻合成单声道。
+直接集成 **RDA5807M 裸芯片**、32.768 kHz 晶振、电源和天线接口。FM 与 ES8311（MP3 / 小智）经 DIO1717 切换，共用 ESP32-P4 Function EV Board **v1.4** 的 NS4150B 功放和原喇叭。FM 左右声道经电阻合成单声道。
 
 **状态：首板原型设计完成，已布线。KiCad 10.0.5 原生 ERC、DRC、原理图与 PCB 一致性均为零问题；92 个物理引脚的网络与设计意图一致。尚未做实物验证，不是量产验证版本。本次没有修改固件。**
+
+A4将音频开关改为**帝奥微DIO1717LP10 / C444371**，公开LCSC记录5颗起订、5颗步进，100颗适用USD0.2003/颗档。国内人民币价和库存以新配单为准。RDA5807M、GPIO及R83/R84接法保持不变。
 
 ## 文件
 
@@ -11,11 +13,11 @@
 - `output/pdf/schematic.pdf`：完整原理图，可放大查看。
 - `output/board-3d.png`、`output/wiring.png`、`output/assembly.png`：预览。
 - `PROCUREMENT.md`：逐项降本、原立创报价错配与交期说明。
-- `BOM-LCSC-100boards-A3.csv`：100 板采购净用量，导入立创时套数填 1；排针不装，损耗另加。
+- `BOM-LCSC-100boards-A4.csv`：100 板采购净用量，导入立创时套数填 1；排针不装，损耗另加。
 - `BOM-cost-100.csv`：各料号参考价格、MOQ 和来源；替代件仍需国内账户重新配单确认。
 - `BOM.csv`：分组工程物料表；`output/fabrication/`：Gerber、钻孔和贴装坐标。
 - `VERIFICATION.md`、`output/verification.json`：检查范围和文件校验值。
-- `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号、SGM3718 封装和模型。
+- `Mono.kicad_sym`、`Mono.pretty`、`libs/`：本地符号、DIO1717封装和对应供应商外观模型。
 - `reference/RDA5807M.pdf`：用户提供的裸芯片手册副本；其他依据见 `SOURCES.md`。
 
 ## 外部接线：4 根音频线 + 5 根电源 / 控制线
@@ -49,15 +51,15 @@
 | FM 电源 | U3 ME6211C30M5G-N；3.3 V → 3.0 V → FB1 → FM_VDD，C9/C10 就近去耦 |
 | 射频输入 | J3 ANT → C6 100 pF → FMIN；D1 LESD8LL5.0CT5G 低电容双向 ESD 管 |
 | 合成单声道 | L/R 各串 1 µF 隔直及 10 kΩ，再汇合；不直接短接左右输出 |
-| 音源切换 | U1 SGM3718YUWQ10G/TR，两个 SPDT 同时切换功放正负两根输入 |
+| 音源切换 | U1 DIO1717LP10，两个 SPDT 同时切换功放正负两根输入 |
 | 上电默认 | SEL 100 kΩ 下拉，GPIO6=0 接 ES8311，GPIO6=1 接 FM |
 | 原功放 | 继续使用 NS4150B；小板上不增设功放 |
 
 RDA5807M **裸芯片引脚**：1 GND、2 FMIN、3 GND、4 SCLK、5 SDIO、6 RCLK、7 VDD、8 GND、9 ROUT、10 LOUT。`fm-module` 目录中 RRD-102 成品模块的焊盘号不同，不能套用。截图出现的 `33.768 kHz` 是笔误，本板为 **32.768 kHz**。
 
-SGM3718 引脚：1 V+；2 NO1=FM_MONO；3 COM1=AP；4 IN1=SEL；5 NC1=CP；6 GND；7 NC2=CN；8 IN2=SEL；9 COM2=AN；10 NO2=FM_REF。FM_REF 经 R4=4.3 kΩ 到地，给单端 FM 输入提供近似阻抗匹配的参考支路。R5–R8 提供交流节点的直流参考。
+DIO1717 引脚：1 V+；2 NO1=FM_MONO；3 COM1=AP；4 IN1=SEL；5 NC1=CP；6 GND；7 NC2=CN；8 IN2=SEL；9 COM2=AN；10 NO2=FM_REF。FM_REF 经 R4=4.3 kΩ 到地，给单端 FM 输入提供近似阻抗匹配的参考支路。R5–R8 提供交流节点的直流参考。
 
-SGM3718 由 3.3 V 经 R11=10 Ω 和 C4/C5 去耦供电。它在该电压下允许负向模拟信号，适用于原板 C39/C40 后的交流信号；此结论不能直接套用于其他供电电压。
+DIO1717 由 3.3 V 经 R11=10 Ω 和 C4/C5 去耦供电。DIO1717支持−2V至V+的模拟输入，适用于原板C39/C40后的交流信号；手册典型导通电阻2.8Ω不等于全温最大值，首板仍需验证失真及切换爆音。
 
 I²C 经 R12/R13=100 Ω 串联，R14/R15=4.7 kΩ 拉到 FM_VDD（约 3.0 V）。ESP32 引脚使用开漏 I²C，关闭不需要的内部上拉；小板与主板一起供电。
 
@@ -65,7 +67,7 @@ I²C 经 R12/R13=100 Ω 串联，R14/R15=4.7 kΩ 拉到 FM_VDD（约 3.0 V）。
 
 40 × 36 mm，双层，建议板厚 1.6 mm、1 oz 铜。两个 Ø2.2 mm 非金属化安装孔中心为板左上角起算 (3,3) 和 (37,33) mm。板上阻容以 0603 为主，接口为 2.54 mm 排针。最小设计线宽 0.15 mm、间距 0.127 mm；普通过孔 0.6 / 0.3 mm。双面接地铺铜已填充。
 
-- **U1 UTQFN-10 只有 1.8 × 1.4 mm**，建议回流焊或热风焊。按焊盘 1 和圆点标识定位；不能仅根据功能引脚图的朝向推断封装方向。
+- **U1 DQFN-10 只有 1.8 × 1.4 mm**，建议回流焊或热风焊。按焊盘 1 和圆点标识定位；不能仅根据功能引脚图的朝向推断封装方向。
 - U2 是 MSOP-10、0.5 mm 间距；封装三角和模型圆点标明 1 脚。
 - Y1 为扬兴 `Y6OEL89CGI-STUYLC-32.768K`（C19272781），目录参数 CL=12.5pF、ESR≤50kΩ、−40～85°C，DT-26 圆柱约 Ø2×6mm。引脚成形至1.9mm孔距。精确承认书与起振裕量仍需首板确认，不能用立创旧报价匹配的 SMD3215 晶体直接替换。
 - D1 为乐山 **LESD8LL5.0CT5G**（C172421），典型0.25pF、最大0.3pF，双向，SOD-882；焊盘与原板一致，整机 ESD 效果未测试。
@@ -97,4 +99,4 @@ MP3 和小智共用 ES8311，二者的互斥由软件音频管理负责。进入
 
 脚本位于仓库 `tools/fm_mono_switch/`。`generate.py` 用于从头生成原理图与初步摆放，带有防覆盖检查；`--regen-placed-board` 会覆盖已布线结果，不应对交付 PCB 随意运行。`route.py` / `finish_routes.py` 记录本次布局布线过程，依赖构建目录的中间文件。`finalize.py` 整理料号元数据，`verify_final.py` 独立比对原生网表，`draw_wiring_a2.py` 生成接线文件，`package_release.py` 导出首板文件包。
 
-打开工程建议使用 KiCad 10；标准封装和模型使用随 KiCad 安装的官方库，SGM3718 特殊封装及模型已随工程提供。
+打开工程建议使用 KiCad 10；标准封装和模型使用随 KiCad 安装的官方库，DIO1717 特殊封装及模型已随工程提供。

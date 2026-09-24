@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 P = ROOT / 'display_board/hardware/fm-mono-switch'
 intent = json.loads((P/'design-intent.json').read_text(encoding='utf-8'))
 catalog = json.loads((P/'procurement.json').read_text(encoding='utf-8'))
+revision = catalog['revision']
 choices = {ref: group for group in catalog['groups'] for ref in group['refs']}
 refs = {ref for ref, p in intent['parts'].items() if p['footprint'] and not ref.startswith('H')}
 assert refs == set(choices), (refs - choices.keys(), choices.keys() - refs)
@@ -28,6 +29,8 @@ for ref, c in choices.items():
              'Manufacturer': c['manufacturer'], 'Datasheet': a['source']}
     if ref == 'U3':
         props['Description'] = 'ME6211C30M5G-N: 3.0V LDO, SOT-23-5; 1 VIN, 2 GND, 3 CE active high, 4 NC, 5 VOUT'
+    if ref == 'U1':
+        props['Description'] = 'DIO1717LP10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2'
     for name, value in props.items():
         ops.set_prop(sch, ref, name, value)
         if name == 'Value': fps[ref].SetValue(value)
@@ -51,14 +54,15 @@ for ref, c in choices.items():
 
 # Only printed revision text changes. All pins, pads, wires, tracks and zones stay intact.
 for node in sexp.find_all(sch, 'text'):
-    if str(node[1]).startswith('PROTO A2:'): node[1] = sexp.QStr.of(str(node[1]).replace('PROTO A2:', 'PROTO A3:'))
+    if str(node[1]).startswith('PROTO A'):
+        node[1] = sexp.QStr.of('PROTO '+revision+':'+str(node[1]).split(':',1)[1])
 title = sexp.find(sch, 'title_block')
-sexp.find(title, 'rev')[1] = sexp.QStr.of('A3 PROTOTYPE')
+sexp.find(title, 'rev')[1] = sexp.QStr.of(revision+' PROTOTYPE')
 for draw in board.GetDrawings():
-    if isinstance(draw, k.PCB_TEXT) and draw.GetText() == 'MONO FM A2': draw.SetText('MONO FM A3')
+    if isinstance(draw, k.PCB_TEXT) and draw.GetText().startswith('MONO FM A'): draw.SetText('MONO FM '+revision)
 sexp.save_file(str(P/'fm_mono_switch.kicad_sch'), sch)
 k.SaveBoard(str(P/'fm_mono_switch.kicad_pcb'), board)
-intent['status'] = 'A3 cost/sourcing prototype; bench qualification and final supplier availability required'
+intent['status'] = revision+' cost/sourcing prototype; bench qualification and final supplier availability required'
 intent['manufacturing_release'] = False
 (P/'design-intent.json').write_text(json.dumps(intent, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 
@@ -74,13 +78,13 @@ with (P/'BOM.csv').open('w', newline='', encoding='utf-8-sig') as f:
         w.writerow([','.join(rr),len(rr),value,footprint,mpn,code,maker,choices[rr[0]]['decision']])
 
 # Explicit quantities for 100 boards. Import with BOM multiplier = 1, not 100.
-with (P/'BOM-LCSC-100boards-A3.csv').open('w', newline='', encoding='utf-8-sig') as f:
+with (P/f'BOM-LCSC-100boards-{revision}.csv').open('w', newline='', encoding='utf-8-sig') as f:
     w = csv.writer(f)
     w.writerow(['商品编号','型号','品牌','封装','数量','位号','备注'])
     for c in catalog['groups']:
         if c.get('optional'): continue
         rr = c['refs']; a = intent['parts'][rr[0]]
-        package = {'U1':'UTQFN-10L(1.4x1.8)','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
+        package = {'U1':'QFN-10(1.8x1.4)','U2':'MSOP-10','U3':'SOT-23-5','D1':'SOD-882','Y1':'DT-26'}.get(rr[0], '0603')
         w.writerow([c['lcsc'], c['mpn'],c['manufacturer'],package,
                     100*len(rr),','.join(rr),c['decision']])
 
@@ -95,5 +99,5 @@ with (P/'BOM-cost-100.csv').open('w', newline='', encoding='utf-8-sig') as f:
                     round(q*100*price,4) if price is not None else '',c['stock_observed'],
                     c.get('purchase_url',f"https://www.lcsc.com/product-detail/{c['lcsc']}.html") if c['lcsc'] else '',c['decision']])
 subtotal = sum(len(c['refs'])*100*c['unit_usd'] for c in catalog['groups'] if c['unit_usd'] is not None)
-print(f'Applied A3 metadata. Priced 100-board subtotal excluding U2/headers: USD {subtotal:.2f}.')
+print(f'Applied {revision} metadata. Priced 100-board subtotal excluding U2/headers: USD {subtotal:.2f}.')
 print('No circuit connections, pad positions, tracks or zones changed.')

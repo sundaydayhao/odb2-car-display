@@ -1,6 +1,6 @@
 ﻿位号,每板数量,100板净用量,MPN,品牌,立创编号,参考单价USD,适用阶梯数量,最小购买倍数_公开LCSC,100板净用料小计USD,网页库存记录_未锁货,来源,评估
-U1,1,100,SGM3718YUWQ10G/TR,SG Micro / 圣邦微,C700220,0.3594,100,1,35.94,1819,https://www.lcsc.com/product-detail/C700220.html,保留；需要支持隔直后负向音频，普通 4053 不能直接替换。UTQFN 回流焊。
-U2,1,100,RDA5807M,RDA / 锐迪科,C82537,,,5,,0,https://item.szlcsc.com/83694.html,保留 MSOP-10 裸芯片。用户2026-09-24立创报价：MOQ5、库存0、订货预估7–10工作日，5颗档¥1.0483；100颗报价/交期和封装待锁单确认。C82537为原目录编号，不能直接套用于无商品编号的订货渠道。不得用SOP-8直接替代。
+U1,1,100,DIO1717LP10,DIOO / 帝奥微,C444371,0.2003,50,5,20.03,2980,https://www.lcsc.com/product-detail/C444371.html,A4替换SGM3718；双SPDT、支持-2V负向音频，DQFN-10 1.8x1.4mm。公开LCSC库存2980、5颗起订/步进，100颗适用50颗档USD0.2003。国内人民币价/现货需新配单确认，MPQ3000不等于MOQ。回流焊，首板验证失真和切换爆音。
+U2,1,100,RDA5807M,RDA / 锐迪科,C82537,,,5,,0,https://item.szlcsc.com/83694.html,保留RDA5807M MSOP-10。用户A3百板报价：100颗，¥1.0483/颗、MOQ5、库存0、订货预估7–10工作日；订货行未给封装/商品编号，锁单需确认MSOP-10。C82537为原目录编号，不得换SOP-8。
 U3,1,100,ME6211C30M5G-N,Microne / 南京微盟,C403651,0.049,100,10,4.9,19910,https://www.lcsc.com/product-detail/C403651.html,替换 TLV75530PDBVR；3.0V、SOT-23-5、1 VIN/2 GND/3 CE/4 NC/5 VOUT。选带 -N 新版，保持 CE 接输入。低压差与噪声需首板验证。
 D1,1,100,LESD8LL5.0CT5G,LRC / 乐山无线电,C172421,0.0154,50,50,1.54,204350,https://www.lcsc.com/product-detail/C172421.html,替换 Nexperia PESD5V0F1BL；双向、5V、0.25pF 典型/0.3pF 最大、SOD-882。钳位性能不宣称等同，整机 ESD 待测。
 Y1,1,100,Y6OEL89CGI-STUYLC-32.768K,YXC / 扬兴,C19272781,0.0629,50,5,6.29,645,https://www.lcsc.com/product-detail/C19272781.html,替换 Abracon；目录规格 32.768kHz、CL12.5pF、ESR50kΩ、±10ppm、-40~85°C、DT-26 2×6mm。引脚成形到 1.9mm；电气参数按目录核对，精确承认书与起振裕量待首板确认。不要换成 -20~70°C 版本。

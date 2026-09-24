@@ -323,8 +323,8 @@
       "mpn": ""
     },
     "U1": {
-      "kind": "SGM3718",
-      "value": "SGM3718YUWQ10G/TR",
+      "kind": "DIO1717",
+      "value": "DIO1717LP10",
       "nets": {
         "1": "VCC_SW",
         "2": "FM_MONO",
@@ -337,14 +337,14 @@
         "9": "AMP_N",
         "10": "FM_REF"
       },
-      "footprint": "Mono:SGM3718_UTQFN10_1.8x1.4_P0.4",
+      "footprint": "Mono:DIO1717_DQFN10_1.8x1.4_P0.4",
       "pcb": [
         25,
         15
       ],
       "angle": 0,
-      "lcsc": "C700220",
-      "source": "https://www.sg-micro.com/rect/assets/3d47e91a-f3bb-4f8e-9305-8e041848aeda/SGM3718.pdf",
+      "lcsc": "C444371",
+      "source": "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf",
       "pad_positions": {
         "1": [
           24.8,
@@ -387,8 +387,8 @@
           15.4
         ]
       },
-      "mpn": "SGM3718YUWQ10G/TR",
-      "manufacturer": "SG Micro / 圣邦微"
+      "mpn": "DIO1717LP10",
+      "manufacturer": "DIOO / 帝奥微"
     },
     "R5": {
       "kind": "R",
@@ -1413,7 +1413,7 @@
     "pins": 112,
     "segments": 100
   },
-  "status": "A3 cost/sourcing prototype; bench qualification and final supplier availability required",
+  "status": "A4 cost/sourcing prototype; bench qualification and final supplier availability required",
   "manufacturing_release": false,
   "board_size_final": true,
   "uses_fm_module": false,

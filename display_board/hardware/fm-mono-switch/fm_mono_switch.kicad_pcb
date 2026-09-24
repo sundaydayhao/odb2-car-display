@@ -2551,7 +2551,7 @@
 			)
 		)
 	)
-	(footprint "Mono:SGM3718_UTQFN10_1.8x1.4_P0.4"
+	(footprint "Mono:DIO1717_DQFN10_1.8x1.4_P0.4"
 		(layer "F.Cu")
 		(uuid "4d0e6bc0-01b2-4123-9ec9-a02f611f9abe")
 		(at 75 65)
@@ -2566,7 +2566,7 @@
 				)
 			)
 		)
-		(property "Value" "SGM3718YUWQ10G/TR"
+		(property "Value" "DIO1717LP10"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2577,7 +2577,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.sg-micro.com/rect/assets/3d47e91a-f3bb-4f8e-9305-8e041848aeda/SGM3718.pdf"
+		(property "Datasheet" "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2588,7 +2588,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "DIO1717LP10: dual SPDT negative-audio switch; 1 V+, 2 NO1, 3 COM1, 4 IN1, 5 NC1, 6 GND, 7 NC2, 8 IN2, 9 COM2, 10 NO2"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2599,7 +2599,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C700220"
+		(property "LCSC" "C444371"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -2611,7 +2611,7 @@
 				)
 			)
 		)
-		(property "MPN" "SGM3718YUWQ10G/TR"
+		(property "MPN" "DIO1717LP10"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -2623,7 +2623,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "SG Micro / 圣邦微"
+		(property "Manufacturer" "DIOO / 帝奥微"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -2823,7 +2823,7 @@
 			(uuid "f6168324-71b8-4b60-91fb-89adde45cb1c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libs/easyeda2kicad.3dshapes/UTQFN-10L_L1.8-W1.4-H0.8-P0.40-BL.step"
+		(model "${KIPRJMOD}/libs/easyeda2kicad.3dshapes/QFN-10_L1.4-W1.8-H0.5-P0.40-BL.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2831,7 +2831,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 0 0 270)
 			)
 		)
 	)
@@ -8164,7 +8164,7 @@
 			)
 		)
 	)
-	(gr_text "MONO FM A3"
+	(gr_text "MONO FM A4"
 		(at 60 52 0)
 		(layer "F.SilkS")
 		(uuid "935118ac-72a4-4899-9040-dcac094fcb69")

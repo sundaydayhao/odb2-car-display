@@ -1,23 +1,26 @@
 {
-  "revision": "A3",
+  "revision": "A4",
   "review_date": "2026-09-24",
   "boards": 100,
   "currency": "USD",
-  "price_basis": "Public LCSC website quantity tiers, retrieval-date snapshots, no coupons. NOT a mainland China tax-inclusive quotation. Stock is not reserved. U2 price/availability remain unconfirmed.",
+  "price_basis": "Public LCSC USD tiers; not a mainland China quotation. A4 U1 domestic price requires a new quote. A3 domestic quote for 100 boards is recorded separately; do not mix currencies. Stock is not reserved.",
   "planning_cny_per_usd": 7.2,
   "groups": [
     {
       "refs": [
         "U1"
       ],
-      "mpn": "SGM3718YUWQ10G/TR",
-      "manufacturer": "SG Micro / 圣邦微",
-      "lcsc": "C700220",
-      "unit_usd": 0.3594,
-      "tier": 100,
-      "moq_multiple": 1,
-      "stock_observed": 1819,
-      "decision": "保留；需要支持隔直后负向音频，普通 4053 不能直接替换。UTQFN 回流焊。"
+      "mpn": "DIO1717LP10",
+      "manufacturer": "DIOO / 帝奥微",
+      "lcsc": "C444371",
+      "unit_usd": 0.2003,
+      "tier": 50,
+      "moq_multiple": 5,
+      "stock_observed": 2980,
+      "decision": "A4替换SGM3718；双SPDT、支持-2V负向音频，DQFN-10 1.8x1.4mm。公开LCSC库存2980、5颗起订/步进，100颗适用50颗档USD0.2003。国内人民币价/现货需新配单确认，MPQ3000不等于MOQ。回流焊，首板验证失真和切换爆音。",
+      "value": "DIO1717LP10",
+      "purchase_url": "https://www.lcsc.com/product-detail/C444371.html",
+      "datasheet": "https://www.dioo.com/admin/api/upload/img/1701860076828.pdf"
     },
     {
       "refs": [
@@ -31,7 +34,16 @@
       "moq_multiple": 5,
       "stock_observed": 0,
       "purchase_url": "https://item.szlcsc.com/83694.html",
-      "decision": "保留 MSOP-10 裸芯片。用户2026-09-24立创报价：MOQ5、库存0、订货预估7–10工作日，5颗档¥1.0483；100颗报价/交期和封装待锁单确认。C82537为原目录编号，不能直接套用于无商品编号的订货渠道。不得用SOP-8直接替代。"
+      "decision": "保留RDA5807M MSOP-10。用户A3百板报价：100颗，¥1.0483/颗、MOQ5、库存0、订货预估7–10工作日；订货行未给封装/商品编号，锁单需确认MSOP-10。C82537为原目录编号，不得换SOP-8。",
+      "domestic_quote": {
+        "unit_cny": 1.0483,
+        "quantity": 100,
+        "line_total_cny": 104.83,
+        "moq": 5,
+        "stock": 0,
+        "lead_time": "预估7-10个工作日",
+        "quote": "BOM260924002453"
+      }
     },
     {
       "refs": [
@@ -307,5 +319,6 @@
       "decision": "默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。"
     }
   ],
-  "source_quote": "BOM-立创_20260924.xls / BOM260924002306 / 2026-09-24 11:54:52"
+  "source_quote": "BOM-立创_20260924.xls / BOM260924002306 / 2026-09-24 11:54:52",
+  "source_quote_100boards": "BOM-LCSC-100boards-A3-立创_20260924.xls / BOM260924002453 / 2026-09-24 12:29:53"
 }

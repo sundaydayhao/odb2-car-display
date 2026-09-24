@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "filename": "fm_mono_switch.kicad_pro",
+    "version": 1
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.127,
+        "min_track_width": 0.15,
+        "min_via_diameter": 0.6,
+        "min_through_hole_diameter": 0.3,
+        "min_hole_clearance": 0.25,
+        "min_copper_edge_clearance": 0.3,
+        "solder_mask_min_width": 0.075,
+        "min_silk_clearance": 0.1
+      },
+      "defaults": {
+        "solder_mask_clearance": 0.025,
+        "solder_mask_min_width": 0.075
+      }
+    }
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.127,
+        "track_width": 0.2,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "bus_width": 12,
+        "wire_width": 6,
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)"
+      }
+    ],
+    "meta": {
+      "version": 4
+    }
+  }
+}

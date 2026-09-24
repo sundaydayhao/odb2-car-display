@@ -1,0 +1,832 @@
+{
+  "root_uuid": "16ed3c18-209e-53be-bdba-20ade0d40886",
+  "parts": {
+    "J1": {
+      "kind": "J2",
+      "value": "CODEC / C39,C40 side",
+      "nets": {
+        "1": "CODEC_P",
+        "2": "CODEC_N"
+      },
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pcb": [
+        3,
+        9
+      ],
+      "angle": 0,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          3.0,
+          9.0
+        ],
+        "2": [
+          3.0,
+          11.54
+        ]
+      }
+    },
+    "J2": {
+      "kind": "J2",
+      "value": "AMP / C59,C58 side",
+      "nets": {
+        "1": "AMP_P",
+        "2": "AMP_N"
+      },
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pcb": [
+        29,
+        8
+      ],
+      "angle": 0,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          29.0,
+          8.0
+        ],
+        "2": [
+          29.0,
+          10.54
+        ]
+      }
+    },
+    "J3": {
+      "kind": "J3",
+      "value": "FM MODULE: L,G,R",
+      "nets": {
+        "1": "FM_L",
+        "2": "GND",
+        "3": "FM_R"
+      },
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pcb": [
+        4,
+        22
+      ],
+      "angle": 90,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          4.0,
+          22.0
+        ],
+        "2": [
+          6.54,
+          22.0
+        ],
+        "3": [
+          9.08,
+          22.0
+        ]
+      }
+    },
+    "J4": {
+      "kind": "J3",
+      "value": "P4: 3V3,GND,GPIO6",
+      "nets": {
+        "1": "+3V3_IN",
+        "2": "GND",
+        "3": "GPIO6_SEL"
+      },
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pcb": [
+        20,
+        3
+      ],
+      "angle": 90,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          20.0,
+          3.0
+        ],
+        "2": [
+          22.54,
+          3.0
+        ],
+        "3": [
+          25.08,
+          3.0
+        ]
+      }
+    },
+    "C1": {
+      "kind": "C",
+      "value": "1uF 16V X7R",
+      "nets": {
+        "1": "FM_L",
+        "2": "FM_L_AC"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        7,
+        17
+      ],
+      "angle": 0,
+      "lcsc": "C15849",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          6.225,
+          17.0
+        ],
+        "2": [
+          7.775,
+          17.0
+        ]
+      }
+    },
+    "C2": {
+      "kind": "C",
+      "value": "1uF 16V X7R",
+      "nets": {
+        "1": "FM_R",
+        "2": "FM_R_AC"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        7,
+        19
+      ],
+      "angle": 0,
+      "lcsc": "C15849",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          6.225,
+          19.0
+        ],
+        "2": [
+          7.775,
+          19.0
+        ]
+      }
+    },
+    "R1": {
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "FM_L_AC",
+        "2": "FM_MONO"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        11,
+        17
+      ],
+      "angle": 0,
+      "lcsc": "C25804",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          10.175,
+          17.0
+        ],
+        "2": [
+          11.825,
+          17.0
+        ]
+      }
+    },
+    "R2": {
+      "kind": "R",
+      "value": "10k 1%",
+      "nets": {
+        "1": "FM_R_AC",
+        "2": "FM_MONO"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        14,
+        20
+      ],
+      "angle": 0,
+      "lcsc": "C25804",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          13.175,
+          20.0
+        ],
+        "2": [
+          14.825,
+          20.0
+        ]
+      }
+    },
+    "R3": {
+      "kind": "R",
+      "value": "47k 1%",
+      "nets": {
+        "1": "FM_MONO",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        17,
+        19
+      ],
+      "angle": 0,
+      "lcsc": "C25819",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          16.175,
+          19.0
+        ],
+        "2": [
+          17.825,
+          19.0
+        ]
+      }
+    },
+    "#PWR01": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R4": {
+      "kind": "R",
+      "value": "4.3k 1%",
+      "nets": {
+        "1": "FM_REF",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        11,
+        14
+      ],
+      "angle": 0,
+      "lcsc": "C23159",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          10.175,
+          14.0
+        ],
+        "2": [
+          11.825,
+          14.0
+        ]
+      }
+    },
+    "#PWR02": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "U1": {
+      "kind": "SGM3718",
+      "value": "SGM3718YUWQ10G/TR",
+      "nets": {
+        "1": "VCC_SW",
+        "2": "FM_MONO",
+        "3": "AMP_P",
+        "4": "SEL",
+        "5": "CODEC_P",
+        "6": "GND",
+        "7": "CODEC_N",
+        "8": "SEL",
+        "9": "AMP_N",
+        "10": "FM_REF"
+      },
+      "footprint": "Mono:SGM3718_UTQFN10_1.8x1.4_P0.4",
+      "pcb": [
+        16,
+        12
+      ],
+      "angle": 0,
+      "lcsc": "C700220",
+      "source": "https://www.sg-micro.com/rect/assets/3d47e91a-f3bb-4f8e-9305-8e041848aeda/SGM3718.pdf",
+      "pad_positions": {
+        "1": [
+          15.8,
+          12.5185
+        ],
+        "2": [
+          16.2,
+          12.5685
+        ],
+        "3": [
+          16.7685,
+          12.4
+        ],
+        "4": [
+          16.7685,
+          12.0
+        ],
+        "5": [
+          16.7685,
+          11.6
+        ],
+        "6": [
+          16.2,
+          11.4315
+        ],
+        "7": [
+          15.8,
+          11.4315
+        ],
+        "8": [
+          15.2315,
+          11.6
+        ],
+        "9": [
+          15.2315,
+          12.0
+        ],
+        "10": [
+          15.2315,
+          12.4
+        ]
+      }
+    },
+    "R5": {
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "CODEC_P",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        8,
+        8
+      ],
+      "angle": 0,
+      "lcsc": "C25803",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          7.175,
+          8.0
+        ],
+        "2": [
+          8.825,
+          8.0
+        ]
+      }
+    },
+    "#PWRR5": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R6": {
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "CODEC_N",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        8,
+        11.5
+      ],
+      "angle": 0,
+      "lcsc": "C25803",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          7.175,
+          11.5
+        ],
+        "2": [
+          8.825,
+          11.5
+        ]
+      }
+    },
+    "#PWRR6": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R7": {
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "AMP_P",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        23,
+        10
+      ],
+      "angle": 0,
+      "lcsc": "C25803",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          22.175,
+          10.0
+        ],
+        "2": [
+          23.825,
+          10.0
+        ]
+      }
+    },
+    "#PWRR7": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R8": {
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "AMP_N",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        23,
+        14
+      ],
+      "angle": 0,
+      "lcsc": "C25803",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          22.175,
+          14.0
+        ],
+        "2": [
+          23.825,
+          14.0
+        ]
+      }
+    },
+    "#PWRR8": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R9": {
+      "kind": "R",
+      "value": "1k 1%",
+      "nets": {
+        "1": "GPIO6_SEL",
+        "2": "SEL"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        22,
+        7.5
+      ],
+      "angle": 0,
+      "lcsc": "C21190",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          21.175,
+          7.5
+        ],
+        "2": [
+          22.825,
+          7.5
+        ]
+      }
+    },
+    "R10": {
+      "kind": "R",
+      "value": "100k 1%",
+      "nets": {
+        "1": "SEL",
+        "2": "GND"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        21,
+        17
+      ],
+      "angle": 0,
+      "lcsc": "C25803",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          20.175,
+          17.0
+        ],
+        "2": [
+          21.825,
+          17.0
+        ]
+      }
+    },
+    "C3": {
+      "kind": "C",
+      "value": "1nF C0G",
+      "nets": {
+        "1": "SEL",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        23,
+        19
+      ],
+      "angle": 0,
+      "lcsc": "C1588",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          22.225,
+          19.0
+        ],
+        "2": [
+          23.775,
+          19.0
+        ]
+      }
+    },
+    "#PWRR10": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "#PWRC3": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "R11": {
+      "kind": "R",
+      "value": "10R 1%",
+      "nets": {
+        "1": "+3V3_IN",
+        "2": "VCC_SW"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        17,
+        6
+      ],
+      "angle": 0,
+      "lcsc": "C22859",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          16.175,
+          6.0
+        ],
+        "2": [
+          17.825,
+          6.0
+        ]
+      }
+    },
+    "C4": {
+      "kind": "C",
+      "value": "100nF 16V X7R",
+      "nets": {
+        "1": "VCC_SW",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        16,
+        14.6
+      ],
+      "angle": 0,
+      "lcsc": "C14663",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          15.225,
+          14.6
+        ],
+        "2": [
+          16.775,
+          14.6
+        ]
+      }
+    },
+    "C5": {
+      "kind": "C",
+      "value": "1uF 16V X7R",
+      "nets": {
+        "1": "VCC_SW",
+        "2": "GND"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        20,
+        14.6
+      ],
+      "angle": 0,
+      "lcsc": "C15849",
+      "source": "",
+      "pad_positions": {
+        "1": [
+          19.225,
+          14.6
+        ],
+        "2": [
+          20.775,
+          14.6
+        ]
+      }
+    },
+    "#PWRC4": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "#PWRC5": {
+      "kind": "GND",
+      "value": "GND",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "#FLG1": {
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "+3V3_IN"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "#FLG2": {
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "VCC_SW"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "#FLG3": {
+      "kind": "PWR_FLAG",
+      "value": "PWR_FLAG",
+      "nets": {
+        "1": "GND"
+      },
+      "footprint": "",
+      "pcb": null,
+      "angle": 0,
+      "lcsc": "",
+      "source": ""
+    },
+    "H1": {
+      "kind": "Mount",
+      "value": "M2 NPTH",
+      "nets": {},
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pcb": [
+        3,
+        3
+      ],
+      "angle": 0,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "": [
+          3.0,
+          3.0
+        ]
+      }
+    },
+    "H2": {
+      "kind": "Mount",
+      "value": "M2 NPTH",
+      "nets": {},
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pcb": [
+        29,
+        23
+      ],
+      "angle": 0,
+      "lcsc": "",
+      "source": "",
+      "pad_positions": {
+        "": [
+          29.0,
+          23.0
+        ]
+      }
+    }
+  },
+  "geometry": {
+    "violations": 0,
+    "pins": 65,
+    "segments": 60
+  },
+  "truth_table": {
+    "0": [
+      [
+        "CODEC_P",
+        "AMP_P"
+      ],
+      [
+        "CODEC_N",
+        "AMP_N"
+      ]
+    ],
+    "1": [
+      [
+        "FM_MONO",
+        "AMP_P"
+      ],
+      [
+        "FM_REF",
+        "AMP_N"
+      ]
+    ]
+  },
+  "supply": "3.3V ONLY",
+  "board_size_mm": [
+    32,
+    26
+  ],
+  "hardware_tested": false,
+  "status": "CORE DRAFT ONLY - awaiting existing FM module geometry and pinout",
+  "manufacturing_release": false,
+  "board_size_final": false,
+  "module_footprint_confirmed": false
+}

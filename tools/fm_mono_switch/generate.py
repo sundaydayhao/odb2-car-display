@@ -25,6 +25,9 @@ WORK.mkdir(parents=True, exist_ok=True)
 if (OUT/(NAME+'.kicad_pcb')).exists() and '--regen-placed-board' not in sys.argv:
     raise SystemExit('Refusing to overwrite routed PCB. Use --regen-placed-board only for a fresh layout.')
 
+catalog = json.loads((OUT/'procurement.json').read_text(encoding='utf-8'))
+choices = {r:g for g in catalog['groups'] for r in g['refs']}
+
 defs = {}
 for name, lib, item in [('R','Device','R'),('C','Device','C'),('J2','Connector_Generic','Conn_01x02'),
                       ('J5','Connector_Generic','Conn_01x05'),('GND','power','GND'),('PWR_FLAG','power','PWR_FLAG'),
@@ -71,9 +74,11 @@ for n,name,x,y,a,typ in [(7,'VDD',0,24,270,'power_in'),(2,'FMIN',-20,12,0,'input
 u.append('))');defs['RDA5807M']=sexp.parse('\n'.join(u))
 
 doc=build.empty_sheet(uid('root'),'A2')
-doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - RDA5807M + SGM3718 mono FM") (date "2026-09-24") (rev "A2 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84. Retain original capacitors and amplifier."))'))
+doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - RDA5807M + SGM3718 mono FM") (date "2026-09-24") (rev "A3 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84. Retain original capacitors and amplifier."))'))
 parts={}; pins={}; segs=[]; labels=[]; junctions=[]
 def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',source=''):
+    choice=choices.get(ref,{})
+    value=choice.get('value',value); lcsc=choice.get('lcsc',lcsc); source=choice.get('datasheet',source)
     at=pt(*xy); d=defs[kind]
     ops.place(doc,d,at,rot,ref,value,list(map(str,nets)),project=NAME)
     sym=list(sexp.find_all(doc,'symbol'))[-1]
@@ -83,11 +88,14 @@ def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',sourc
         if nam=='Footprint':prop[2]=Q(footprint)
         if nam=='Datasheet':prop[2]=Q(source)
     if lcsc: sym.append(build.prop('LCSC',lcsc,*at,hide=True))
+    for field,key in [('MPN','mpn'),('Manufacturer','manufacturer')]:
+        if choice.get(key):sym.append(build.prop(field,choice[key],*at,hide=True))
     if kind in ['R','C']:
         refpos=(at[0],at[1]-3.175) if rot else (at[0]+3.81,at[1]-1.27)
         valpos=(at[0],at[1]+3.175) if rot else (at[0]+3.81,at[1]+1.27)
     elif kind in ['SGM3718','RDA5807M']:refpos=(at[0]+12.7,at[1]-35.56);valpos=(at[0]+12.7,at[1]-33.02)
     else:refpos=(at[0],at[1]-10.16);valpos=(at[0],at[1]-7.62)
+    if ref=='D1':refpos=(at[0]-15.24,at[1]-10.16);valpos=(at[0]-15.24,at[1]-7.62)
     for prop in sexp.find_all(sym,'property'):
         nam=sexp.atoms(prop)[0]
         if nam in ['Reference','Value']:
@@ -201,7 +209,7 @@ note('INSTALLATION: remove P4 R83 and R84; solder four separate wires to their f
 note('J1.1 -> R83 C39 side; J1.2 -> R84 C40 side. J2.1 -> R83 C59 side; J2.2 -> R84 C58 side.',18,197)
 note('J4.1 -> P4 J1 pin 17 (3V3); J4.2 -> P4 J1 pin 20 (GND); J4.3 -> P4 J1 pin 15 (GPIO6).',18,202)
 note('Mute/disable the board PA (GPIO53) before changing SEL. Enable PA for FM after settling.',18,207)
-note('PROTO A2: direct RDA5807M chip, not a module. Hardware/audio/RF tests required.',18,212)
+note('PROTO A3: direct RDA5807M chip, not a module. Hardware/audio/RF tests required.',18,212)
 
 # Dedicated antenna input, no headphone-ground antenna sharing.
 add('C6','C','100pF C0G',(363,54),{1:'ANT',2:'FMIN'},CFP,(6.3,24),rot=90)
@@ -270,7 +278,7 @@ sexp.save_file(str(OUT/'Mono.kicad_sym'),libdoc)
 (OUT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.kicad_sym") (options "") (descr "Datasheet checked mono FM selector")))\n')
 (OUT/'fp-lib-table').write_text('(fp_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.pretty") (options "") (descr "SGM3718 manufacturer recommended land pattern")))\n')
 intent={'root_uuid':uid('root'),'parts':parts,'geometry':{'violations':0,'pins':len(pinmodel),'segments':len(segs)},
-        'status':'A2 integrated RDA5807M prototype; design checks pending',
+        'status':'A3 integrated RDA5807M prototype; design checks pending',
         'manufacturing_release':False,'board_size_final':True,'uses_fm_module':False,
         'truth_table':{'0':[['CODEC_P','AMP_P'],['CODEC_N','AMP_N']],'1':[['FM_MONO','AMP_P'],['FM_REF','AMP_N']]},
         'supply':'3.3V input; 3.0V FM LDO','board_size_mm':[40,36],'hardware_tested':False}
@@ -325,7 +333,7 @@ for ref,a in parts.items():
 for a,b in [((50,50),(90,50)),((90,50),(90,86)),((90,86),(50,86)),((50,86),(50,50))]:line(board,a,b,k.Edge_Cuts,.05)
 def text(s,x,y,layer=k.F_SilkS,size=.8):
     z=k.PCB_TEXT(board);z.SetText(s);z.SetPosition(v(50+x,50+y));z.SetTextSize(v(size,size));z.SetTextThickness(k.FromMM(.12));z.SetLayer(layer);board.Add(z)
-text('MONO FM A2',10,2,size=1);text('3V3 ONLY',25,1,size=.8)
+text('MONO FM A3',10,2,size=1);text('3V3 ONLY',25,1,size=.8)
 text('CODEC',5.5,4.8);text('CP',5.3,9);text('CN',5.3,11.54)
 text('TO PA',37,3);text('AP',34.7,8);text('AN',34.7,10.54)
 for s,x in [('3V3',20),('G',22.54),('SEL',25.08),('SDA',27.62),('SCL',30.16)]:text(s,x,5.1,size=.8)

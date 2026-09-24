@@ -7,7 +7,7 @@
 	(title_block
 		(title "P4 v1.4 - RDA5807M + SGM3718 mono FM")
 		(date "2026-09-24")
-		(rev "A2 PROTOTYPE")
+		(rev "A3 PROTOTYPE")
 		(company "OBD Car Display")
 		(comment 1 "Remove R83/R84. Retain original capacitors and amplifier.")
 	)
@@ -2241,6 +2241,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2248,6 +2249,42 @@
 		)
 		(pin "2"
 			(uuid "630bb38b-5db4-4e77-89a8-025eb33557d7")
+		)
+		(property "MPN" ""
+			(at 55.88 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 55.88 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "通用国内供应商"
+			(at 55.88 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -2309,6 +2346,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2316,6 +2354,42 @@
 		)
 		(pin "2"
 			(uuid "f69b593a-560f-40b9-8458-b8133eea7ca5")
+		)
+		(property "MPN" ""
+			(at 160.02 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 160.02 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "通用国内供应商"
+			(at 160.02 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -2377,6 +2451,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2384,6 +2459,42 @@
 		)
 		(pin "2"
 			(uuid "911637ec-9b03-4af2-a370-b3937be51b76")
+		)
+		(property "MPN" ""
+			(at 438.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 438.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "通用国内供应商"
+			(at 438.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -2445,6 +2556,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2461,6 +2573,42 @@
 		)
 		(pin "5"
 			(uuid "a850223e-0cfa-46c8-a047-51974085c8a2")
+		)
+		(property "MPN" ""
+			(at 311.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 311.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "通用国内供应商"
+			(at 311.15 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -2742,6 +2890,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2758,7 +2907,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603B105K160NT"
 			(at 48.26 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -2767,6 +2916,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 48.26 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C93816"
+			(at 48.26 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -2821,6 +2995,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2837,7 +3012,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603B105K160NT"
 			(at 48.26 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -2846,6 +3021,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 48.26 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C93816"
+			(at 48.26 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -2900,6 +3100,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2916,7 +3117,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1002T5E"
 			(at 73.66 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -2925,6 +3126,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 73.66 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 73.66 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -2979,6 +3205,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2995,7 +3222,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1002T5E"
 			(at 73.66 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -3004,6 +3231,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 73.66 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 73.66 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -3206,6 +3458,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3222,7 +3475,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF4702T5E"
 			(at 114.3 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3231,6 +3484,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 114.3 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25819"
+			(at 114.3 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -3374,6 +3652,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3390,7 +3669,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF4301T5E"
 			(at 144.78 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3399,6 +3678,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 144.78 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23159"
+			(at 144.78 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -3550,6 +3854,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3599,6 +3904,19 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SG Micro / 圣邦微"
+			(at 220.98 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C700220"
@@ -3610,6 +3928,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 	)
@@ -3866,6 +4185,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3882,7 +4202,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1003T5E"
 			(at 298.45 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -3891,6 +4211,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 298.45 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 298.45 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4044,6 +4389,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4060,7 +4406,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1003T5E"
 			(at 331.47 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4069,6 +4415,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 331.47 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 331.47 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4222,6 +4593,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4238,7 +4610,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1003T5E"
 			(at 298.45 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -4247,6 +4619,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 298.45 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 298.45 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4400,6 +4797,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4416,7 +4814,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1003T5E"
 			(at 331.47 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -4425,6 +4823,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 331.47 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 331.47 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4576,6 +4999,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4592,7 +5016,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1001T5E"
 			(at 50.8 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -4601,6 +5025,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 50.8 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 50.8 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4717,6 +5166,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4733,7 +5183,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF1003T5E"
 			(at 73.66 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -4742,6 +5192,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 73.66 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 73.66 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -4767,7 +5242,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1nF C0G"
+		(property "Value" "1nF 50V X7R"
 			(at 101.60000000000001 209.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4798,6 +5273,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4814,7 +5290,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603B102K500NT"
 			(at 97.79 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -4823,6 +5299,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 97.79 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C44369"
+			(at 97.79 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -5063,6 +5564,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5079,7 +5581,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603WAF100JT5E"
 			(at 193.04 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -5088,6 +5590,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 193.04 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22859"
+			(at 193.04 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -5173,7 +5700,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF 16V X7R"
+		(property "Value" "100nF 50V X7R"
 			(at 218.44 209.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5204,6 +5731,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5220,7 +5748,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603B104K500NT"
 			(at 214.63 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -5229,6 +5757,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 214.63 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C30926"
+			(at 214.63 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -5285,6 +5838,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5301,7 +5855,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "MPN" "0603B105K160NT"
 			(at 238.76 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -5310,6 +5864,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 238.76 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C93816"
+			(at 238.76 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 	)
@@ -5909,7 +6488,7 @@
 				)
 			)
 		)
-		(property "Value" "100pF C0G"
+		(property "Value" "100pF 50V C0G"
 			(at 461.01 71.755 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5939,6 +6518,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5946,6 +6526,42 @@
 		)
 		(pin "2"
 			(uuid "e895885f-d7ab-4210-acd2-259ed06e569b")
+		)
+		(property "MPN" "0603CG101J500NT"
+			(at 461.01 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1635"
+			(at 461.01 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 461.01 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -6008,7 +6624,7 @@
 		(dnp no)
 		(uuid "0e1ef9e0-7a59-59cb-a952-4b2cb6ad3294")
 		(property "Reference" "D1"
-			(at 416.56 71.12 90)
+			(at 401.32 71.12 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6017,8 +6633,8 @@
 				)
 			)
 		)
-		(property "Value" "PESD5V0F1BL (0.4pF)"
-			(at 416.56 73.66 90)
+		(property "Value" "LESD8LL5.0CT5G"
+			(at 401.32 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6038,7 +6654,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL.pdf"
+		(property "Datasheet" "${KIPRJMOD}/reference/LESD8LL5.0CT5G.pdf"
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -6047,6 +6663,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6055,7 +6672,7 @@
 		(pin "2"
 			(uuid "1830bb1f-ff10-448b-9566-71ffbed93322")
 		)
-		(property "MPN" "PESD5V0F1BL"
+		(property "MPN" "LESD8LL5.0CT5G"
 			(at 416.56 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -6064,6 +6681,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C172421"
+			(at 416.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LRC / 乐山无线电"
+			(at 416.56 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(instances
@@ -6223,6 +6865,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6272,6 +6915,19 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "RDA / 锐迪科"
+			(at 495.3 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "LCSC" "C82537"
@@ -6283,6 +6939,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 	)
@@ -6528,7 +7185,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C19272781.pdf"
 			(at 542.29 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -6537,6 +7194,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6545,7 +7203,7 @@
 		(pin "2"
 			(uuid "4e847483-5605-4ba7-b923-bf9de53993fd")
 		)
-		(property "MPN" "AB26T-32.768KHZ-12.5-B"
+		(property "MPN" "Y6OEL89CGI-STUYLC-32.768K"
 			(at 542.29 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -6554,6 +7212,31 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C19272781"
+			(at 542.29 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YXC / 扬兴"
+			(at 542.29 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(instances
@@ -6713,6 +7396,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6720,6 +7404,42 @@
 		)
 		(pin "2"
 			(uuid "c2067a7a-863e-4506-825f-51c9a0ab99b3")
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 444.5 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 444.5 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 444.5 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -6823,6 +7543,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6830,6 +7551,42 @@
 		)
 		(pin "2"
 			(uuid "347b936a-a9a2-48d5-874d-22a388361053")
+		)
+		(property "MPN" "0603WAF4701T5E"
+			(at 457.2 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23162"
+			(at 457.2 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 457.2 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -6931,6 +7688,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6938,6 +7696,42 @@
 		)
 		(pin "2"
 			(uuid "20bdb25a-08e9-4491-ae91-e47a9f6b0645")
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 513.08 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 513.08 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 513.08 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7041,6 +7835,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7048,6 +7843,42 @@
 		)
 		(pin "2"
 			(uuid "d8dcd515-90b2-40d1-944a-f349f9e05fac")
+		)
+		(property "MPN" "0603WAF4701T5E"
+			(at 525.78 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23162"
+			(at 525.78 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL / 厚声"
+			(at 525.78 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7119,7 +7950,7 @@
 				)
 			)
 		)
-		(property "Value" "TLV75530PDBVR"
+		(property "Value" "ME6211C30M5G-N"
 			(at 111.76 330.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7140,7 +7971,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv755p.pdf"
+		(property "Datasheet" "${KIPRJMOD}/reference/ME6211.pdf"
 			(at 111.76 337.82 0)
 			(hide yes)
 			(show_name no)
@@ -7149,6 +7980,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7163,7 +7995,7 @@
 		(pin "5"
 			(uuid "f02fb1d0-67d2-4b47-9463-b4ca3fd21aa9")
 		)
-		(property "MPN" "TLV75530PDBVR"
+		(property "MPN" "ME6211C30M5G-N"
 			(at 111.76 337.82 0)
 			(hide yes)
 			(show_name no)
@@ -7172,6 +8004,43 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C403651"
+			(at 111.76 337.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Microne / 南京微盟"
+			(at 111.76 337.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ME6211C30M5G-N: 3.0V LDO, SOT-23-5; 1 VIN, 2 GND, 3 CE active high, 4 NC, 5 VOUT"
+			(at 111.76 337.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(instances
@@ -7342,7 +8211,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF 16V X7R"
+		(property "Value" "4.7uF 10V X5R"
 			(at 54.61 347.97999999999996 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7373,6 +8242,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7380,6 +8250,42 @@
 		)
 		(pin "2"
 			(uuid "b5c2c56f-2177-4772-ac57-afba2f872362")
+		)
+		(property "MPN" "0603X475M100NT"
+			(at 50.8 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2857987"
+			(at 50.8 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 50.8 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7509,7 +8415,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF 16V X7R"
+		(property "Value" "4.7uF 10V X5R"
 			(at 157.48 347.97999999999996 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7540,6 +8446,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7547,6 +8454,42 @@
 		)
 		(pin "2"
 			(uuid "58e90914-a4e4-4a34-beeb-a6f25fdeaf67")
+		)
+		(property "MPN" "0603X475M100NT"
+			(at 153.67 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2857987"
+			(at 153.67 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 153.67 346.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7676,7 +8619,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22nF 16V X7R"
+		(property "Value" "22nF 50V X7R"
 			(at 248.92000000000002 355.59999999999997 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7707,6 +8650,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7714,6 +8658,42 @@
 		)
 		(pin "2"
 			(uuid "77b106c4-2a42-4a64-b8ec-d07a044320e5")
+		)
+		(property "MPN" "0603B223K500NT"
+			(at 245.11 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77571"
+			(at 245.11 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 245.11 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -7874,6 +8854,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7881,6 +8862,42 @@
 		)
 		(pin "2"
 			(uuid "5f0795b2-ede3-40ed-8bf2-fd1e18652ab3")
+		)
+		(property "MPN" "0603B105K160NT"
+			(at 292.1 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C93816"
+			(at 292.1 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 292.1 354.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -8009,7 +9026,7 @@
 				)
 			)
 		)
-		(property "Value" "600R@100MHz / DCR<0.5R"
+		(property "Value" "600R@100MHz / DCR<=0.5R"
 			(at 195.58 327.65999999999997 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8039,6 +9056,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8046,6 +9064,42 @@
 		)
 		(pin "2"
 			(uuid "c789c02c-3f4e-403c-ad9b-4ddb1bdac198")
+		)
+		(property "MPN" "CBG160808U601T"
+			(at 195.58 335.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C73326"
+			(at 195.58 335.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "FH / 风华高科"
+			(at 195.58 335.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(instances
 			(project "fm_mono_switch"
@@ -8279,7 +9333,7 @@
 		)
 		(uuid c33147b1-02c7-56e8-8588-ce3c5992a21b)
 	)
-	(text "PROTO A2: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
+	(text "PROTO A3: direct RDA5807M chip, not a module. Hardware/audio/RF tests required."
 		(at 22.86 269.24 0)
 		(effects
 			(font

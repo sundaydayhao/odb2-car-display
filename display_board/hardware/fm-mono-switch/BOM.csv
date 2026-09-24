@@ -1,25 +1,25 @@
-﻿References,Qty,Value,Footprint,MPN,LCSC candidate,Assembly note
-J1,1,"CODEC / C39,C40 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,Optional headers; wires may be soldered directly
-J2,1,"AMP / C59,C58 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,Optional headers; wires may be soldered directly
-J3,1,ANT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,Optional headers; wires may be soldered directly
-J4,1,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,,,Optional headers; wires may be soldered directly
-"C1,C2,C5,C10",4,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
-"R1,R2",2,10k 1%,Resistor_SMD:R_0603_1608Metric,,,
-R3,1,47k 1%,Resistor_SMD:R_0603_1608Metric,,,
-R4,1,4.3k 1%,Resistor_SMD:R_0603_1608Metric,,,
-U1,1,SGM3718YUWQ10G/TR,Mono:SGM3718_UTQFN10_1.8x1.4_P0.4,SGM3718YUWQ10G/TR,C700220,UTQFN; reflow recommended; verify pin 1 in assembly preview
-"R5,R6,R7,R8,R10",5,100k 1%,Resistor_SMD:R_0603_1608Metric,,,
-R9,1,1k 1%,Resistor_SMD:R_0603_1608Metric,,,
-C3,1,1nF C0G,Capacitor_SMD:C_0603_1608Metric,,,
-R11,1,10R 1%,Resistor_SMD:R_0603_1608Metric,,,
-C4,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
-C6,1,100pF C0G,Capacitor_SMD:C_0603_1608Metric,,,
-D1,1,PESD5V0F1BL (0.4pF),Diode_SMD:D_SOD-882,PESD5V0F1BL,,"Low-capacitance F1BL, not S1BL; bidirectional"
-U2,1,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,RDA5807M,C82537,
-Y1,1,32.768kHz CL12.5pF,Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Horizontal,AB26T-32.768KHZ-12.5-B,,Form leads to 1.9mm pitch; verify crystal startup on first prototype
-"R12,R13",2,100R 1%,Resistor_SMD:R_0603_1608Metric,,,
-"R14,R15",2,4.7k 1%,Resistor_SMD:R_0603_1608Metric,,,
-U3,1,TLV75530PDBVR,Package_TO_SOT_SMD:SOT-23-5,TLV75530PDBVR,,
-"C7,C8",2,4.7uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
-C9,1,22nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
-FB1,1,600R@100MHz / DCR<0.5R,Resistor_SMD:R_0603_1608Metric,,,
+﻿References,Qty,Value,Footprint,MPN,LCSC candidate,Manufacturer,Assembly note
+J1,1,"CODEC / C39,C40 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
+J2,1,"AMP / C59,C58 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
+J3,1,ANT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
+J4,1,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,,,通用国内供应商,默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。
+"C1,C2,C5,C10",4,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,0603B105K160NT,C93816,FH / 风华高科,1µF/16V/X7R/±10%/0603；合并同规格采购，保留音频耦合容量和电源去耦。
+"R1,R2",2,10k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1002T5E,C25804,UNI-ROYAL / 厚声,10kΩ、1%、0.1W、0603；保留左右声道隔离与求和，不能短接。
+R3,1,47k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4702T5E,C25819,UNI-ROYAL / 厚声,47kΩ、1%、0.1W、0603；保留音频直流参考。
+R4,1,4.3k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4301T5E,C23159,UNI-ROYAL / 厚声,4.3kΩ、1%、0.1W、0603；保留 FM 参考支路近似阻抗匹配。
+U1,1,SGM3718YUWQ10G/TR,Mono:SGM3718_UTQFN10_1.8x1.4_P0.4,SGM3718YUWQ10G/TR,C700220,SG Micro / 圣邦微,保留；需要支持隔直后负向音频，普通 4053 不能直接替换。UTQFN 回流焊。
+"R5,R6,R7,R8,R10",5,100k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1003T5E,C25803,UNI-ROYAL / 厚声,100kΩ、1%、0.1W、0603；合并采购，保留音频参考与上电默认状态。
+R9,1,1k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1001T5E,C21190,UNI-ROYAL / 厚声,1kΩ、1%、0.1W、0603；GPIO 串联滤波。
+C3,1,1nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B102K500NT,C44369,FH / 风华高科,控制脚 RC 滤波改 X7R；不是射频或音频耦合电容，无需 C0G 精度。
+R11,1,10R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF100JT5E,C22859,UNI-ROYAL / 厚声,10Ω、1%、0.1W、0603；保留开关电源 RC 去耦。
+C4,1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B104K500NT,C30926,FH / 风华高科,100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。
+C6,1,100pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,0603CG101J500NT,C1635,FH / 风华高科,射频耦合保留 C0G、±5%，不能跟 C3 一起改为 X7R/Y5V。
+D1,1,LESD8LL5.0CT5G,Diode_SMD:D_SOD-882,LESD8LL5.0CT5G,C172421,LRC / 乐山无线电,替换 Nexperia PESD5V0F1BL；双向、5V、0.25pF 典型/0.3pF 最大、SOD-882。钳位性能不宣称等同，整机 ESD 待测。
+U2,1,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,RDA5807M,C82537,RDA / 锐迪科,保留 MSOP-10 裸芯片。用户2026-09-24立创报价：MOQ5、库存0、订货预估7–10工作日，5颗档¥1.0483；100颗报价/交期和封装待锁单确认。C82537为原目录编号，不能直接套用于无商品编号的订货渠道。不得用SOP-8直接替代。
+Y1,1,32.768kHz CL12.5pF,Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Horizontal,Y6OEL89CGI-STUYLC-32.768K,C19272781,YXC / 扬兴,替换 Abracon；目录规格 32.768kHz、CL12.5pF、ESR50kΩ、±10ppm、-40~85°C、DT-26 2×6mm。引脚成形到 1.9mm；电气参数按目录核对，精确承认书与起振裕量待首板确认。不要换成 -20~70°C 版本。
+"R12,R13",2,100R 1%,Resistor_SMD:R_0603_1608Metric,0603WAF1000T5E,C22775,UNI-ROYAL / 厚声,100Ω、1%、0.1W、0603；I²C 飞线阻尼，不建议省掉。
+"R14,R15",2,4.7k 1%,Resistor_SMD:R_0603_1608Metric,0603WAF4701T5E,C23162,UNI-ROYAL / 厚声,4.7kΩ、1%、0.1W、0603；上拉到 FM_VDD，保留。
+U3,1,ME6211C30M5G-N,Package_TO_SOT_SMD:SOT-23-5,ME6211C30M5G-N,C403651,Microne / 南京微盟,替换 TLV75530PDBVR；3.0V、SOT-23-5、1 VIN/2 GND/3 CE/4 NC/5 VOUT。选带 -N 新版，保持 CE 接输入。低压差与噪声需首板验证。
+"C7,C8",2,4.7uF 10V X5R,Capacitor_SMD:C_0603_1608Metric,0603X475M100NT,C2857987,FH / 风华高科,由 4.7µF/16V/X7R 改常见 4.7µF/10V/X5R/±20%，工作约 3.3/3.0V。必须保证偏压温度下有效容量≥1µF；未取得本料号偏压曲线，首板测启动/纹波/负载响应。X5R 上限85°C。
+C9,1,22nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,0603B223K500NT,C77571,FH / 风华高科,22nF/50V/X7R/±10%/0603；保留参考设计近端去耦。
+FB1,1,600R@100MHz / DCR<=0.5R,Resistor_SMD:R_0603_1608Metric,CBG160808U601T,C73326,FH / 风华高科,保留滤波功能并指定常备国产料；0603、200mA、DCR≤0.5Ω，20mA 时压降≤10mV。

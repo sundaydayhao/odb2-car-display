@@ -1,0 +1,311 @@
+{
+  "revision": "A3",
+  "review_date": "2026-09-24",
+  "boards": 100,
+  "currency": "USD",
+  "price_basis": "Public LCSC website quantity tiers, retrieval-date snapshots, no coupons. NOT a mainland China tax-inclusive quotation. Stock is not reserved. U2 price/availability remain unconfirmed.",
+  "planning_cny_per_usd": 7.2,
+  "groups": [
+    {
+      "refs": [
+        "U1"
+      ],
+      "mpn": "SGM3718YUWQ10G/TR",
+      "manufacturer": "SG Micro / 圣邦微",
+      "lcsc": "C700220",
+      "unit_usd": 0.3594,
+      "tier": 100,
+      "moq_multiple": 1,
+      "stock_observed": 1819,
+      "decision": "保留；需要支持隔直后负向音频，普通 4053 不能直接替换。UTQFN 回流焊。"
+    },
+    {
+      "refs": [
+        "U2"
+      ],
+      "mpn": "RDA5807M",
+      "manufacturer": "RDA / 锐迪科",
+      "lcsc": "C82537",
+      "unit_usd": null,
+      "tier": null,
+      "moq_multiple": 5,
+      "stock_observed": 0,
+      "purchase_url": "https://item.szlcsc.com/83694.html",
+      "decision": "保留 MSOP-10 裸芯片。用户2026-09-24立创报价：MOQ5、库存0、订货预估7–10工作日，5颗档¥1.0483；100颗报价/交期和封装待锁单确认。C82537为原目录编号，不能直接套用于无商品编号的订货渠道。不得用SOP-8直接替代。"
+    },
+    {
+      "refs": [
+        "U3"
+      ],
+      "mpn": "ME6211C30M5G-N",
+      "manufacturer": "Microne / 南京微盟",
+      "lcsc": "C403651",
+      "value": "ME6211C30M5G-N",
+      "unit_usd": 0.049,
+      "tier": 100,
+      "moq_multiple": 10,
+      "stock_observed": 19910,
+      "datasheet": "${KIPRJMOD}/reference/ME6211.pdf",
+      "decision": "替换 TLV75530PDBVR；3.0V、SOT-23-5、1 VIN/2 GND/3 CE/4 NC/5 VOUT。选带 -N 新版，保持 CE 接输入。低压差与噪声需首板验证。"
+    },
+    {
+      "refs": [
+        "D1"
+      ],
+      "mpn": "LESD8LL5.0CT5G",
+      "manufacturer": "LRC / 乐山无线电",
+      "lcsc": "C172421",
+      "value": "LESD8LL5.0CT5G",
+      "unit_usd": 0.0154,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 204350,
+      "datasheet": "${KIPRJMOD}/reference/LESD8LL5.0CT5G.pdf",
+      "decision": "替换 Nexperia PESD5V0F1BL；双向、5V、0.25pF 典型/0.3pF 最大、SOD-882。钳位性能不宣称等同，整机 ESD 待测。"
+    },
+    {
+      "refs": [
+        "Y1"
+      ],
+      "mpn": "Y6OEL89CGI-STUYLC-32.768K",
+      "manufacturer": "YXC / 扬兴",
+      "lcsc": "C19272781",
+      "unit_usd": 0.0629,
+      "tier": 50,
+      "moq_multiple": 5,
+      "stock_observed": 645,
+      "datasheet": "https://www.lcsc.com/datasheet/C19272781.pdf",
+      "decision": "替换 Abracon；目录规格 32.768kHz、CL12.5pF、ESR50kΩ、±10ppm、-40~85°C、DT-26 2×6mm。引脚成形到 1.9mm；电气参数按目录核对，精确承认书与起振裕量待首板确认。不要换成 -20~70°C 版本。"
+    },
+    {
+      "refs": [
+        "FB1"
+      ],
+      "mpn": "CBG160808U601T",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C73326",
+      "value": "600R@100MHz / DCR<=0.5R",
+      "unit_usd": 0.0111,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 695050,
+      "decision": "保留滤波功能并指定常备国产料；0603、200mA、DCR≤0.5Ω，20mA 时压降≤10mV。"
+    },
+    {
+      "refs": [
+        "C1",
+        "C2",
+        "C5",
+        "C10"
+      ],
+      "mpn": "0603B105K160NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C93816",
+      "unit_usd": 0.0138,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 797150,
+      "decision": "1µF/16V/X7R/±10%/0603；合并同规格采购，保留音频耦合容量和电源去耦。"
+    },
+    {
+      "refs": [
+        "C3"
+      ],
+      "mpn": "0603B102K500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C44369",
+      "value": "1nF 50V X7R",
+      "unit_usd": 0.0082,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 1190900,
+      "decision": "控制脚 RC 滤波改 X7R；不是射频或音频耦合电容，无需 C0G 精度。"
+    },
+    {
+      "refs": [
+        "C4"
+      ],
+      "mpn": "0603B104K500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C30926",
+      "value": "100nF 50V X7R",
+      "unit_usd": 0.0144,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 2253300,
+      "decision": "100nF/50V/X7R/±10%/0603；选常见库存规格，50V 是此料号耐压，不是板上供电要求。"
+    },
+    {
+      "refs": [
+        "C6"
+      ],
+      "mpn": "0603CG101J500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C1635",
+      "value": "100pF 50V C0G",
+      "unit_usd": 0.0137,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 257550,
+      "decision": "射频耦合保留 C0G、±5%，不能跟 C3 一起改为 X7R/Y5V。"
+    },
+    {
+      "refs": [
+        "C7",
+        "C8"
+      ],
+      "mpn": "0603X475M100NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C2857987",
+      "value": "4.7uF 10V X5R",
+      "unit_usd": 0.0199,
+      "tier": 50,
+      "moq_multiple": 50,
+      "stock_observed": 28650,
+      "decision": "由 4.7µF/16V/X7R 改常见 4.7µF/10V/X5R/±20%，工作约 3.3/3.0V。必须保证偏压温度下有效容量≥1µF；未取得本料号偏压曲线，首板测启动/纹波/负载响应。X5R 上限85°C。"
+    },
+    {
+      "refs": [
+        "C9"
+      ],
+      "mpn": "0603B223K500NT",
+      "manufacturer": "FH / 风华高科",
+      "lcsc": "C77571",
+      "value": "22nF 50V X7R",
+      "unit_usd": 0.0116,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 229800,
+      "decision": "22nF/50V/X7R/±10%/0603；保留参考设计近端去耦。"
+    },
+    {
+      "refs": [
+        "R1",
+        "R2"
+      ],
+      "mpn": "0603WAF1002T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C25804",
+      "unit_usd": 0.0019,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 960500,
+      "decision": "10kΩ、1%、0.1W、0603；保留左右声道隔离与求和，不能短接。"
+    },
+    {
+      "refs": [
+        "R3"
+      ],
+      "mpn": "0603WAF4702T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C25819",
+      "unit_usd": 0.0038,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 282400,
+      "decision": "47kΩ、1%、0.1W、0603；保留音频直流参考。"
+    },
+    {
+      "refs": [
+        "R4"
+      ],
+      "mpn": "0603WAF4301T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C23159",
+      "unit_usd": 0.0024,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 118700,
+      "decision": "4.3kΩ、1%、0.1W、0603；保留 FM 参考支路近似阻抗匹配。"
+    },
+    {
+      "refs": [
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R10"
+      ],
+      "mpn": "0603WAF1003T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C25803",
+      "unit_usd": 0.0031,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 17523700,
+      "decision": "100kΩ、1%、0.1W、0603；合并采购，保留音频参考与上电默认状态。"
+    },
+    {
+      "refs": [
+        "R9"
+      ],
+      "mpn": "0603WAF1001T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C21190",
+      "unit_usd": 0.0026,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 8874800,
+      "decision": "1kΩ、1%、0.1W、0603；GPIO 串联滤波。"
+    },
+    {
+      "refs": [
+        "R11"
+      ],
+      "mpn": "0603WAF100JT5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C22859",
+      "unit_usd": 0.0032,
+      "tier": 20,
+      "moq_multiple": 20,
+      "stock_observed": 6008660,
+      "decision": "10Ω、1%、0.1W、0603；保留开关电源 RC 去耦。"
+    },
+    {
+      "refs": [
+        "R12",
+        "R13"
+      ],
+      "mpn": "0603WAF1000T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C22775",
+      "unit_usd": 0.0032,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 7365300,
+      "decision": "100Ω、1%、0.1W、0603；I²C 飞线阻尼，不建议省掉。"
+    },
+    {
+      "refs": [
+        "R14",
+        "R15"
+      ],
+      "mpn": "0603WAF4701T5E",
+      "manufacturer": "UNI-ROYAL / 厚声",
+      "lcsc": "C23162",
+      "unit_usd": 0.0028,
+      "tier": 100,
+      "moq_multiple": 100,
+      "stock_observed": 15586300,
+      "decision": "4.7kΩ、1%、0.1W、0603；上拉到 FM_VDD，保留。"
+    },
+    {
+      "refs": [
+        "J1",
+        "J2",
+        "J3",
+        "J4"
+      ],
+      "mpn": "",
+      "manufacturer": "通用国内供应商",
+      "lcsc": "",
+      "unit_usd": null,
+      "tier": null,
+      "moq_multiple": null,
+      "stock_observed": null,
+      "optional": true,
+      "decision": "默认成本方案不装排针，直接焊飞线。需要可拆卸时配 3 个 1×2P、1 个 1×5P、2.54mm 单排直插排针；常见长排针可裁切。插壳、线束和手焊费用另计。"
+    }
+  ],
+  "source_quote": "BOM-立创_20260924.xls / BOM260924002306 / 2026-09-24 11:54:52"
+}

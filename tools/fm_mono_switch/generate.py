@@ -1,4 +1,4 @@
-"""Build the independent SGM3718 prototype in KiCad 10 (native Python)."""
+"""Build RDA5807M + SGM3718 mono receiver in KiCad 10 (native Python)."""
 from pathlib import Path
 import copy, csv, json, sys, uuid, subprocess
 
@@ -24,7 +24,9 @@ WORK.mkdir(parents=True, exist_ok=True)
 
 defs = {}
 for name, lib, item in [('R','Device','R'),('C','Device','C'),('J2','Connector_Generic','Conn_01x02'),
-                      ('J3','Connector_Generic','Conn_01x03'),('GND','power','GND'),('PWR_FLAG','power','PWR_FLAG'),
+                      ('J5','Connector_Generic','Conn_01x05'),('GND','power','GND'),('PWR_FLAG','power','PWR_FLAG'),
+                      ('Y','Device','Crystal'),('TVS','Device','D_TVS'),('FB','Device','FerriteBead'),
+                      ('LDO','Regulator_Linear','TLV70012_SOT23-5'),
                       ('Mount','Mechanical','MountingHole')]:
     d = ops.extract_libdef(str(LIB/'symbols'/f'{lib}.kicad_sym'),item,f'Mono:{name}')
     for sub in sexp.find_all(d,'symbol'):
@@ -49,8 +51,23 @@ for n,name,x,y,a,t in upins:
     u.append(f'(pin {t} line (at {mm(x)} {mm(y)} {a}) (length {mm(length)}) (name "{name}" (effects (font (size 1.016 1.016)))) (number "{n}" (effects (font (size 1.016 1.016)))))')
 u.append('))');defs['SGM3718']=sexp.parse('\n'.join(u))
 
-doc=build.empty_sheet(uid('root'),'A3')
-doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - SGM3718 mono FM selector") (date "2026-09-24") (rev "A1 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84; retain C39/C40/C58/C59 and NS4150B. Physical validation pending."))'))
+# RDA5807M MSOP-10, not the ten-pin RRD-102 module from the screenshots.
+u=['(symbol "Mono:RDA5807M" (pin_names (offset 0.635)) (in_bom yes) (on_board yes)',
+   '(property "Reference" "U" (at 0 30.48 0) (effects (font (size 1.27 1.27))))',
+   '(property "Value" "RDA5807M" (at 0 27.94 0) (effects (font (size 1.27 1.27))))',
+   '(symbol "RDA5807M_0_1" (rectangle (start -20.32 22.86) (end 20.32 -22.86) (stroke (width 0.254) (type default)) (fill (type background))))',
+   '(symbol "RDA5807M_1_1"']
+for n,name,x,y,a,typ in [(7,'VDD',0,24,270,'power_in'),(2,'FMIN',-20,12,0,'input'),
+                       (4,'SCLK',-20,0,0,'input'),(5,'SDIO',-20,-10,0,'bidirectional'),
+                       (10,'LOUT',20,12,180,'output'),(9,'ROUT',20,0,180,'output'),
+                       (6,'RCLK',12,-24,90,'passive'),(1,'GND',-12,-24,90,'power_in'),
+                       (3,'GND',-4,-24,90,'power_in'),(8,'GND',4,-24,90,'power_in')]:
+    length=4 if abs(x)==20 else 6
+    u.append(f'(pin {typ} line (at {mm(x)} {mm(y)} {a}) (length {mm(length)}) (name "{name}" (effects (font (size 1.016 1.016)))) (number "{n}" (effects (font (size 1.016 1.016)))))')
+u.append('))');defs['RDA5807M']=sexp.parse('\n'.join(u))
+
+doc=build.empty_sheet(uid('root'),'A2')
+doc.insert(6,sexp.parse('(title_block (title "P4 v1.4 - RDA5807M + SGM3718 mono FM") (date "2026-09-24") (rev "A2 PROTOTYPE") (company "OBD Car Display") (comment 1 "Remove R83/R84. Retain original capacitors and amplifier."))'))
 parts={}; pins={}; segs=[]; labels=[]; junctions=[]
 def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',source=''):
     at=pt(*xy); d=defs[kind]
@@ -65,7 +82,7 @@ def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',sourc
     if kind in ['R','C']:
         refpos=(at[0],at[1]-3.175) if rot else (at[0]+3.81,at[1]-1.27)
         valpos=(at[0],at[1]+3.175) if rot else (at[0]+3.81,at[1]+1.27)
-    elif kind=='SGM3718':refpos=(at[0],at[1]-35.56);valpos=(at[0],at[1]-33.02)
+    elif kind in ['SGM3718','RDA5807M']:refpos=(at[0]+12.7,at[1]-35.56);valpos=(at[0]+12.7,at[1]-33.02)
     else:refpos=(at[0],at[1]-10.16);valpos=(at[0],at[1]-7.62)
     for prop in sexp.find_all(sym,'property'):
         nam=sexp.atoms(prop)[0]
@@ -85,7 +102,10 @@ def add(ref,kind,value,xy,nets,footprint='',pcb=None,rot=0,angle=0,lcsc='',sourc
             elif rot==180:dx,dy=-px,py
             elif rot==270:dx,dy=py,px
             geom[n]=(round(at[0]+dx,3),round(at[1]+dy,3))
-            pins[(ref,n)]=(nets[int(n)],geom[n])
+            if int(n) in nets:pins[(ref,n)]=(nets[int(n)],geom[n])
+            else:
+                assert ref=='U3' and n=='4'
+                doc.append(sexp.parse(f'(no_connect (at {geom[n][0]} {geom[n][1]}) (uuid {uid("NC-U3-4")}))'))
     parts[ref]=dict(kind=kind,value=value,nets={str(n):v for n,v in nets.items()},footprint=footprint,pcb=pcb,angle=angle,lcsc=lcsc,source=source)
     return geom
 def p(ref,n):return pins[(ref,str(n))][1]
@@ -111,8 +131,9 @@ H2='Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical'
 H3='Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical'
 add('J1','J2','CODEC / C39,C40 side',(44,35),{1:'CODEC_P',2:'CODEC_N'},H2,(3,9))
 add('J2','J2','AMP / C59,C58 side',(126,35),{1:'AMP_P',2:'AMP_N'},H2,(29,8))
-add('J3','J3','FM MODULE: L,G,R',(205,35),{1:'FM_L',2:'GND',3:'FM_R'},H3,(4,22),angle=90)
-add('J4','J3','P4: 3V3,GND,GPIO6',(293,35),{1:'+3V3_IN',2:'GND',3:'GPIO6_SEL'},H3,(20,3),angle=90)
+add('J3','J2','ANT / GND',(345,35),{1:'ANT',2:'GND'},H2,(3,22))
+add('J4','J5','P4: 3V3,GND,SEL,SDA,SCL',(245,35),{1:'+3V3_IN',2:'GND',3:'GPIO6_SEL',4:'GPIO2_SDA',5:'GPIO3_SCL'},
+    'Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical',(20,3),angle=90)
 for r in ['J1','J2','J3','J4']:
     for n in parts[r]['nets']:stub(r,n,-10)
 
@@ -176,7 +197,61 @@ note('INSTALLATION: remove P4 R83 and R84; solder four separate wires to their f
 note('J1.1 -> R83 C39 side; J1.2 -> R84 C40 side. J2.1 -> R83 C59 side; J2.2 -> R84 C58 side.',18,197)
 note('J4.1 -> P4 J1 pin 17 (3V3); J4.2 -> P4 J1 pin 20 (GND); J4.3 -> P4 J1 pin 15 (GPIO6).',18,202)
 note('Mute/disable the board PA (GPIO53) before changing SEL. Enable PA for FM after settling.',18,207)
-note('PROTO A1: ERC/DRC + netlist checks are design checks; hardware/audio tests are still required.',18,212)
+note('PROTO A2: direct RDA5807M chip, not a module. Hardware/audio/RF tests required.',18,212)
+
+# Dedicated antenna input, no headphone-ground antenna sharing.
+add('C6','C','100pF C0G',(363,54),{1:'ANT',2:'FMIN'},CFP,(6.3,24),rot=90)
+stub('C6',1,-8);stub('C6',2,8)
+add('D1','TVS','PESD5V0F1BL (0.4pF)',(328,64),{1:'ANT',2:'GND'},'Diode_SMD:D_SOD-882',(5.5,21),rot=270,angle=90,
+    source='https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL.pdf')
+stub('D1',1,0,-4);g=pt(328,74);wire('GND',p('D1',2),g);ground('GND',g,'#PWRD1')
+add('U2','RDA5807M','RDA5807M',(390,97),
+    {1:'GND',2:'FMIN',3:'GND',4:'I2C_SCLK',5:'I2C_SDIO',6:'RCLK',7:'FM_VDD',8:'GND',9:'FM_R',10:'FM_L'},
+    'Package_SO:MSOP-10_3x3mm_P0.5mm',(11,24.5),lcsc='C82537',source='../../../../fm-module/RDA5807M datasheet_v1.pdf')
+for n in [2,4,5]:stub('U2',n,-9)
+for n in [9,10]:stub('U2',n,8)
+stub('U2',7,0,-6)
+for n in [1,3,8,6]:stub('U2',n,0,6)
+add('Y1','Y','32.768kHz CL12.5pF',(427,140),{1:'RCLK',2:'GND'},
+    'Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Horizontal',(13.7,28),angle=270)
+stub('Y1',1,-7);g=pt(430,147);wire('GND',p('Y1',2),g);ground('GND',g,'#PWRY1')
+note('Bare chip pinout: PDF p14; crystal-to-GND: p17. No external load caps.',320,153)
+note('Dedicated wire antenna; C6 + D1 are not the headphone LC choke.',320,158)
+
+for r,up,io,ext,x,y,pc in [('R12','R14','I2C_SDIO','GPIO2_SDA',350,191,(7,33.5)),
+                           ('R13','R15','I2C_SCLK','GPIO3_SCL',404,191,(11,33.5))]:
+    add(r,'R','100R 1%',(x,y),{1:ext,2:io},RFP,pc,rot=90)
+    stub(r,1,-8);stub(r,2,10)
+    add(up,'R','4.7k 1%',(x+10,y-14),{1:'FM_VDD',2:io},RFP,(pc[0],pc[1]-2.5))
+    stub(up,1,0,-5);stub(up,2,0,5)
+note('I2C pull-ups to FM_VDD (~3.0V); use open-drain on P4.',320,209)
+note('J4.4 -> P4 J1.21 / GPIO2; J4.5 -> P4 J1.19 / GPIO3.',320,214)
+
+note('FM supply: 3.3V -> 3.0V LDO -> ferrite bead; separate from switch supply.',18,232)
+add('U3','LDO','TLV75530PDBVR',(88,266),{1:'+3V3_IN',2:'GND',3:'+3V3_IN',5:'LDO_3V0'},
+    'Package_TO_SOT_SMD:SOT-23-5',(28,30),source='https://www.ti.com/lit/ds/symlink/tlv755p.pdf')
+for n in [1,3]:stub('U3',n,-10)
+stub('U3',5,12);g=pt(88,279);wire('GND',p('U3',2),g);ground('GND',g,'#PWRU3')
+for ref,net,xy,pc,value in [('C7','+3V3_IN',(40,273),(31.5,27.5),'4.7uF 16V X7R'),
+                         ('C8','LDO_3V0',(121,273),(31.5,32.5),'4.7uF 16V X7R'),
+                         ('C9','FM_VDD',(193,279),(16,26.5),'22nF 16V X7R'),
+                         ('C10','FM_VDD',(230,279),(19.5,27),'1uF 16V X7R')]:
+    add(ref,'C',value,xy,{1:net,2:'GND'},CFP,pc)
+    stub(ref,1,0,-7);g=pt(xy[0],xy[1]+10);wire('GND',p(ref,2),g);ground('GND',g,'#PWR'+ref)
+add('FB1','FB','600R@100MHz / DCR<0.5R',(154,264),{1:'LDO_3V0',2:'FM_VDD'},RFP,(22.5,29),rot=90)
+stub('FB1',1,-8);stub('FB1',2,8)
+add('#FLG4','PWR_FLAG','PWR_FLAG',(270,264),{1:'FM_VDD'});stub('#FLG4',1,0,5)
+note('Y1: watch crystal, 2 x 6 mm body. Keep RCLK trace short; verify startup with the selected crystal.',18,304)
+note('J3.1 ANT: external FM wire antenna. J3.2 GND: shield/return; no vehicle phantom power.',18,310)
+
+# Placement groups keep the RF input and crystal away from the host header.
+placement={'J2':(37,8),'H2':(37,33),'U1':(25,15),
+           'R12':(8,16),'R13':(13,16),'R14':(8,18.5),'R15':(13,18.5),
+           'C1':(16.5,21.5),'C2':(16.5,23.7),'R1':(20.5,21.5),'R2':(20.5,23.7),
+           'R3':(24.5,23.7),'R4':(20.5,18.5),'R5':(8,8),'R6':(8,11.5),
+           'R7':(32,12),'R8':(32,16),'R9':(29,7),'R10':(28.5,21),'C3':(32,22),
+           'R11':(20,7),'C4':(25,18),'C5':(28.5,18)}
+for ref,xy in placement.items():parts[ref]['pcb']=xy
 
 assert verify([Seg('A',pt(0,1),pt(2,1)),Seg('B',pt(1,0),pt(1,2))],[],[],False)
 pinmodel=[Pin(net,xy,ref+'.'+n) for (ref,n),(net,xy) in pins.items()]
@@ -191,10 +266,10 @@ sexp.save_file(str(OUT/'Mono.kicad_sym'),libdoc)
 (OUT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.kicad_sym") (options "") (descr "Datasheet checked mono FM selector")))\n')
 (OUT/'fp-lib-table').write_text('(fp_lib_table (lib (name "Mono") (type "KiCad") (uri "${KIPRJMOD}/Mono.pretty") (options "") (descr "SGM3718 manufacturer recommended land pattern")))\n')
 intent={'root_uuid':uid('root'),'parts':parts,'geometry':{'violations':0,'pins':len(pinmodel),'segments':len(segs)},
-        'status':'CORE DRAFT ONLY - user selected existing FM module mounted on carrier; awaiting exact module geometry and pinout',
-        'manufacturing_release':False,'board_size_final':False,'module_footprint_confirmed':False,
+        'status':'A2 integrated RDA5807M prototype; design checks pending',
+        'manufacturing_release':False,'board_size_final':True,'uses_fm_module':False,
         'truth_table':{'0':[['CODEC_P','AMP_P'],['CODEC_N','AMP_N']],'1':[['FM_MONO','AMP_P'],['FM_REF','AMP_N']]},
-        'supply':'3.3V ONLY','board_size_mm':[32,26],'hardware_tested':False}
+        'supply':'3.3V input; 3.0V FM LDO','board_size_mm':[40,36],'hardware_tested':False}
 (OUT/'design-intent.json').write_text(json.dumps(intent,indent=2)+'\n')
 print('Schematic geometry OK:',len(pinmodel),'pins',len(segs),'segments')
 
@@ -233,7 +308,9 @@ for ref,a in parts.items():
     f0.Value().SetVisible(False);f0.Reference().SetVisible(True);f0.Reference().SetTextSize(v(.8,.8));f0.Reference().SetTextThickness(k.FromMM(.12))
     
     if ref.startswith('H'):f0.Reference().SetVisible(False)
-    for rn,rx,ry in [('C4',16,16.1),('C2',9.5,19),('R9',25,7.5),('R7',23,11.5),('R10',19,17)]:
+    for rn,rx,ry in [('C4',25,19.4),('C2',16.5,25),('C5',28.5,19.4),('J4',17.5,3),('Y1',9,29),('U2',10.5,21.7),
+                     ('R11',17.2,7),('R9',32,7),('R10',26,21),('R2',20.5,25.2),('C9',16,28),('C10',19.5,28.5),
+                     ('R14',8,20),('R15',13,20),('J3',2.2,17.5),('D1',5.5,18)]:
         if ref==rn:f0.Reference().SetPosition(v(50+rx,50+ry))
     f0.Reference().SetTextAngle(k.EDA_ANGLE(0,k.DEGREES_T))
     for pad in f0.Pads():
@@ -241,15 +318,15 @@ for ref,a in parts.items():
     for key,val in [('LCSC',a['lcsc']),('Datasheet',a['source'])]:
         if val:f0.SetField(key,val);f0.GetField(key).SetVisible(False)
     a['pad_positions']={pad.GetNumber():[round(k.ToMM(pad.GetPosition().x)-50,4),round(k.ToMM(pad.GetPosition().y)-50,4)] for pad in f0.Pads()}
-for a,b in [((50,50),(82,50)),((82,50),(82,76)),((82,76),(50,76)),((50,76),(50,50))]:line(board,a,b,k.Edge_Cuts,.05)
+for a,b in [((50,50),(90,50)),((90,50),(90,86)),((90,86),(50,86)),((50,86),(50,50))]:line(board,a,b,k.Edge_Cuts,.05)
 def text(s,x,y,layer=k.F_SilkS,size=.8):
     z=k.PCB_TEXT(board);z.SetText(s);z.SetPosition(v(50+x,50+y));z.SetTextSize(v(size,size));z.SetTextThickness(k.FromMM(.12));z.SetLayer(layer);board.Add(z)
-text('MONO FM / A1',11,2,size=1);text('3V3 ONLY',22.5,1,size=.8)
+text('MONO FM A2',10,2,size=1);text('3V3 ONLY',25,1,size=.8)
 text('CODEC',5.5,4.8);text('CP',5.3,9);text('CN',5.3,11.54)
-text('TO PA',29,3);text('AP',26.7,8);text('AN',26.7,10.54)
-for s,x in [('3V3',20),('G',22.54),('SEL',25.08)]:text(s,x,5.1,size=.8)
-for s,x in [('L',4),('G',6.54),('R',9.08)]:text(s,x,24.1)
-text('FM IN',3.5,17);text('0: CODEC   1: FM',20.5,24.7,size=.8)
+text('TO PA',37,3);text('AP',34.7,8);text('AN',34.7,10.54)
+for s,x in [('3V3',20),('G',22.54),('SEL',25.08),('SDA',27.62),('SCL',30.16)]:text(s,x,5.1,size=.8)
+text('ANT',3,19.5);text('GND',3,27)
+text('0:CODEC 1:FM',27,35,size=.8)
 settings=board.GetDesignSettings();settings.SetCopperLayerCount(2)
 k.SaveBoard(str(OUT/(NAME+'.kicad_pcb')),board)
 pro={'meta':{'filename':NAME+'.kicad_pro','version':1},'board':{'design_settings':{'rules':{
@@ -264,4 +341,4 @@ with (OUT/'BOM.csv').open('w',newline='',encoding='utf-8-sig') as f0:
     for ref,a in parts.items():
         if not a['footprint']:continue
         w.writerow([ref,a['value'],a['footprint'],a['lcsc'],'Header hand solder; or solder wires directly' if ref.startswith('J') else ''])
-print('CORE DRAFT ONLY: 32x26mm switch circuit. Module footprint, final outline and routing pending.')
+print('Integrated chip board placed: 40x36mm. Native ERC/DRC and routing required.')

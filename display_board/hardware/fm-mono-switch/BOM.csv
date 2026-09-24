@@ -1,8 +1,8 @@
 ﻿Reference,Value,Footprint,LCSC,Note
 J1,"CODEC / C39,C40 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,Header hand solder; or solder wires directly
 J2,"AMP / C59,C58 side",Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,Header hand solder; or solder wires directly
-J3,"FM MODULE: L,G,R",Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,,Header hand solder; or solder wires directly
-J4,"P4: 3V3,GND,GPIO6",Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,,Header hand solder; or solder wires directly
+J3,ANT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,Header hand solder; or solder wires directly
+J4,"P4: 3V3,GND,SEL,SDA,SCL",Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,,Header hand solder; or solder wires directly
 C1,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,C15849,
 C2,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,C15849,
 R1,10k 1%,Resistor_SMD:R_0603_1608Metric,C25804,
@@ -22,3 +22,17 @@ C4,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,C14663,
 C5,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,C15849,
 H1,M2 NPTH,MountingHole:MountingHole_2.2mm_M2,,
 H2,M2 NPTH,MountingHole:MountingHole_2.2mm_M2,,
+C6,100pF C0G,Capacitor_SMD:C_0603_1608Metric,,
+D1,PESD5V0F1BL (0.4pF),Diode_SMD:D_SOD-882,,
+U2,RDA5807M,Package_SO:MSOP-10_3x3mm_P0.5mm,C82537,
+Y1,32.768kHz CL12.5pF,Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Horizontal,,
+R12,100R 1%,Resistor_SMD:R_0603_1608Metric,,
+R14,4.7k 1%,Resistor_SMD:R_0603_1608Metric,,
+R13,100R 1%,Resistor_SMD:R_0603_1608Metric,,
+R15,4.7k 1%,Resistor_SMD:R_0603_1608Metric,,
+U3,TLV75530PDBVR,Package_TO_SOT_SMD:SOT-23-5,,
+C7,4.7uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C8,4.7uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C9,22nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C10,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+FB1,600R@100MHz / DCR<0.5R,Resistor_SMD:R_0603_1608Metric,,

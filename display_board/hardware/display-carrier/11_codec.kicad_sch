@@ -4,9 +4,9 @@
 	(uuid 4cc847fe-b7b8-5bf8-b252-b165c4f844be)
 	(paper "A3")
 	(title_block
-		(title "11 ES8389 stereo codec")
-		(date "2026-09-23")
-		(rev "R0 ENGINEERING")
+		(title "11 ES8388 stereo codec")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -294,32 +294,32 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Carrier:ES8389"
+		(symbol "Carrier:ES8388"
 			(pin_names
 				(offset 0.635)
 			)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 0 20.32 0)
+				(at 0 22.86 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "ES8389"
-				(at 0 -20.32 0)
+			(property "Value" "ES8388"
+				(at 0 -22.86 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(symbol "ES8389_0_1"
+			(symbol "ES8388_0_1"
 				(rectangle
-					(start -15.24 17.78)
-					(end 15.24 -17.78)
+					(start -15.24 20.32)
+					(end 15.24 -20.32)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -329,11 +329,11 @@
 					)
 				)
 			)
-			(symbol "ES8389_1_1"
+			(symbol "ES8388_1_1"
 				(pin input line
-					(at -20.32 15.24 0)
+					(at -20.32 17.78 0)
 					(length 5.08)
-					(name "AD0"
+					(name "MCLK"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -348,10 +348,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -20.32 12.7 0)
+				(pin power_in line
+					(at -20.32 15.24 0)
 					(length 5.08)
-					(name "CDATA"
+					(name "DVDD"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -366,10 +366,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -20.32 10.16 0)
+				(pin power_in line
+					(at -20.32 12.7 0)
 					(length 5.08)
-					(name "CCLK"
+					(name "PVDD"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -384,10 +384,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -20.32 7.62 0)
+				(pin power_in line
+					(at -20.32 10.16 0)
 					(length 5.08)
-					(name "MCLK_TDMIN"
+					(name "DGND"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -402,10 +402,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -20.32 5.08 0)
+				(pin input line
+					(at -20.32 7.62 0)
 					(length 5.08)
-					(name "DVDD"
+					(name "SCLK"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -420,10 +420,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -20.32 2.54 0)
+				(pin input line
+					(at -20.32 5.08 0)
 					(length 5.08)
-					(name "PVDD"
+					(name "DSDIN"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -438,10 +438,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -20.32 0 0)
+				(pin input line
+					(at -20.32 2.54 0)
 					(length 5.08)
-					(name "DGND"
+					(name "LRCK"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -456,10 +456,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -20.32 -2.54 0)
+				(pin output line
+					(at -20.32 0 0)
 					(length 5.08)
-					(name "SCLK"
+					(name "ASDOUT"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -474,10 +474,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -20.32 -5.08 0)
+				(pin no_connect line
+					(at -20.32 -2.54 0)
 					(length 5.08)
-					(name "DSDIN_CLKIN"
+					(name "NC1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -492,10 +492,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -20.32 -7.62 0)
+				(pin passive line
+					(at -20.32 -5.08 0)
 					(length 5.08)
-					(name "LRCK"
+					(name "VREF"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -510,10 +510,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -20.32 -10.16 0)
+				(pin output line
+					(at -20.32 -7.62 0)
 					(length 5.08)
-					(name "ASDOUT_AD1"
+					(name "ROUT1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -529,9 +529,9 @@
 					)
 				)
 				(pin output line
-					(at -20.32 -12.7 0)
+					(at -20.32 -10.16 0)
 					(length 5.08)
-					(name "ROUTP"
+					(name "LOUT1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -546,10 +546,10 @@
 						)
 					)
 				)
-				(pin output line
-					(at -20.32 -15.24 0)
+				(pin power_in line
+					(at -20.32 -12.7 0)
 					(length 5.08)
-					(name "ROUTN"
+					(name "HPGND"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -564,10 +564,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 20.32 15.24 180)
+				(pin output line
+					(at -20.32 -15.24 0)
 					(length 5.08)
-					(name "DACVREF"
+					(name "ROUT2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -583,9 +583,9 @@
 					)
 				)
 				(pin output line
-					(at 20.32 12.7 180)
+					(at -20.32 -17.78 0)
 					(length 5.08)
-					(name "LOUTN"
+					(name "LOUT2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -600,10 +600,10 @@
 						)
 					)
 				)
-				(pin output line
-					(at 20.32 10.16 180)
+				(pin power_in line
+					(at 20.32 17.78 180)
 					(length 5.08)
-					(name "LOUTP"
+					(name "HPVDD"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -619,7 +619,7 @@
 					)
 				)
 				(pin power_in line
-					(at 20.32 7.62 180)
+					(at 20.32 15.24 180)
 					(length 5.08)
 					(name "AVDD"
 						(effects
@@ -637,7 +637,7 @@
 					)
 				)
 				(pin power_in line
-					(at 20.32 5.08 180)
+					(at 20.32 12.7 180)
 					(length 5.08)
 					(name "AGND"
 						(effects
@@ -655,9 +655,9 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 2.54 180)
+					(at 20.32 10.16 180)
 					(length 5.08)
-					(name "VMID"
+					(name "ADCVREF"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -673,9 +673,9 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 0 180)
+					(at 20.32 7.62 180)
 					(length 5.08)
-					(name "ADCVREF"
+					(name "VMID"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -691,9 +691,9 @@
 					)
 				)
 				(pin input line
-					(at 20.32 -2.54 180)
+					(at 20.32 5.08 180)
 					(length 5.08)
-					(name "MIC2N"
+					(name "RIN2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -709,9 +709,9 @@
 					)
 				)
 				(pin input line
-					(at 20.32 -5.08 180)
+					(at 20.32 2.54 180)
 					(length 5.08)
-					(name "MIC2P"
+					(name "LIN2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -727,9 +727,9 @@
 					)
 				)
 				(pin input line
-					(at 20.32 -7.62 180)
+					(at 20.32 0 180)
 					(length 5.08)
-					(name "MIC1N"
+					(name "RIN1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -745,9 +745,9 @@
 					)
 				)
 				(pin input line
-					(at 20.32 -10.16 180)
+					(at 20.32 -2.54 180)
 					(length 5.08)
-					(name "MIC1P"
+					(name "LIN1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -762,10 +762,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 20.32 -12.7 180)
+				(pin no_connect line
+					(at 20.32 -5.08 180)
 					(length 5.08)
-					(name "PGND"
+					(name "NC2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -773,6 +773,78 @@
 						)
 					)
 					(number "25"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 -7.62 180)
+					(length 5.08)
+					(name "CE"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 20.32 -10.16 180)
+					(length 5.08)
+					(name "CDATA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 -12.7 180)
+					(length 5.08)
+					(name "CCLK"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 -15.24 180)
+					(length 5.08)
+					(name "EP"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "29"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -924,7 +996,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Carrier:ES8389")
+		(lib_id "Carrier:ES8388")
 		(at 76.2 99.06 0)
 		(unit 1)
 		(in_bom yes)
@@ -932,22 +1004,22 @@
 		(dnp no)
 		(uuid d51034e9-d6c2-5a80-ac8a-24bb9c8ebce9)
 		(property "Reference" "U800"
-			(at 76.2 76.2 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "ES8389"
-			(at 76.2 78.74 0)
+		(property "Value" "ES8388"
+			(at 76.2 76.2 0)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 			)
 		)
-		(property "Footprint" "Carrier:ES8389_QFN24_3x3_P0.35"
+		(property "Footprint" "Carrier:ES8388_QFN28_4x4_P0.45"
 			(at 76.2 99.06 0)
 			(effects
 				(font
@@ -956,7 +1028,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf"
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20190124/C365736_5E84B6C58F11FDCF085DB830A572A0FC.pdf"
 			(at 76.2 99.06 0)
 			(effects
 				(font
@@ -965,7 +1037,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "S31 TDM pin mux; 0x12; firmware port required"
+		(property "DesignStatus" "I2S slave; 7-bit 0x10; ADC differential pairs 1 and 2; firmware port required"
 			(at 76.2 99.06 0)
 			(effects
 				(font
@@ -1049,6 +1121,18 @@
 		(pin "25"
 			(uuid 7b973d33-0198-5a5e-aac0-b5080c2efb88)
 		)
+		(pin "26"
+			(uuid 239d487f-8288-57da-8229-1cdf64a8bd6a)
+		)
+		(pin "27"
+			(uuid fdc33e1a-cf19-5837-9638-dbf577905d19)
+		)
+		(pin "28"
+			(uuid c62863cc-9cdb-5275-8f2e-42c506ed8b33)
+		)
+		(pin "29"
+			(uuid da792efc-7307-52e4-a843-e7c3d283bfcb)
+		)
 		(instances
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4/7361b3ff-87f6-5474-afb5-a4bc7003ca48"
@@ -1060,7 +1144,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 83.82) (xy 50.8 83.82)
+			(xy 55.88 81.28) (xy 50.8 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1068,9 +1152,9 @@
 		)
 		(uuid 78bc6745-73a9-525f-8ec1-77d8014f1e20)
 	)
-	(global_label "CODEC_AD0"
+	(global_label "CODEC_MCLK"
 		(shape bidirectional)
-		(at 50.8 83.82 180)
+		(at 50.8 81.28 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1081,7 +1165,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 86.36) (xy 50.8 86.36)
+			(xy 55.88 83.82) (xy 50.8 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1089,9 +1173,9 @@
 		)
 		(uuid 5c15ff2e-d61f-5a33-b234-fc8ff910670e)
 	)
-	(global_label "SYSTEM_I2C_SDA"
+	(global_label "AUDIO_3V3"
 		(shape bidirectional)
-		(at 50.8 86.36 180)
+		(at 50.8 83.82 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1102,7 +1186,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 88.9) (xy 50.8 88.9)
+			(xy 55.88 86.36) (xy 50.8 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1110,9 +1194,9 @@
 		)
 		(uuid 242aa2c0-b40c-593c-bfa2-d8c23dd0b00c)
 	)
-	(global_label "SYSTEM_I2C_SCL"
+	(global_label "AUDIO_3V3"
 		(shape bidirectional)
-		(at 50.8 88.9 180)
+		(at 50.8 86.36 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1123,7 +1207,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 91.44) (xy 50.8 91.44)
+			(xy 55.88 88.9) (xy 50.8 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1131,9 +1215,9 @@
 		)
 		(uuid 51c4b547-1989-5d99-8e2e-cd940f102ddb)
 	)
-	(global_label "CODEC_TDMIN"
+	(global_label "GND"
 		(shape bidirectional)
-		(at 50.8 91.44 180)
+		(at 50.8 88.9 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1144,7 +1228,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 93.98) (xy 50.8 93.98)
+			(xy 55.88 91.44) (xy 50.8 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1152,9 +1236,9 @@
 		)
 		(uuid f017d9ee-044d-55ce-a47b-d6f3f708ec55)
 	)
-	(global_label "AUDIO_3V3"
+	(global_label "CODEC_BCLK"
 		(shape bidirectional)
-		(at 50.8 93.98 180)
+		(at 50.8 91.44 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1165,7 +1249,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 96.52) (xy 50.8 96.52)
+			(xy 55.88 93.98) (xy 50.8 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1173,9 +1257,9 @@
 		)
 		(uuid 59adf4f5-6b85-57cc-b658-a3158ca211ff)
 	)
-	(global_label "AUDIO_3V3"
+	(global_label "CODEC_TDMIN"
 		(shape bidirectional)
-		(at 50.8 96.52 180)
+		(at 50.8 93.98 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1186,7 +1270,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 99.06) (xy 50.8 99.06)
+			(xy 55.88 96.52) (xy 50.8 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1194,9 +1278,9 @@
 		)
 		(uuid 8d98bd74-fe02-531c-9614-35de4f88d688)
 	)
-	(global_label "GND"
+	(global_label "CODEC_LRCK"
 		(shape bidirectional)
-		(at 50.8 99.06 180)
+		(at 50.8 96.52 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1207,7 +1291,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 101.6) (xy 50.8 101.6)
+			(xy 55.88 99.06) (xy 50.8 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1215,9 +1299,9 @@
 		)
 		(uuid db54c6e4-a22f-567d-8ae2-be203d9d918a)
 	)
-	(global_label "CODEC_BCLK"
+	(global_label "CODEC_DOUT"
 		(shape bidirectional)
-		(at 50.8 101.6 180)
+		(at 50.8 99.06 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1225,6 +1309,10 @@
 			(justify right)
 		)
 		(uuid 658e9b14-eb95-5d95-8c67-5131cbcaeb12)
+	)
+	(no_connect
+		(at 55.88 101.6)
+		(uuid 1f8eb777-a62a-57d1-a768-b02eb3af6d17)
 	)
 	(wire
 		(pts
@@ -1234,32 +1322,11 @@
 			(width 0)
 			(type default)
 		)
-		(uuid b95d4895-2620-51d6-8ed9-e5ef051c61df)
-	)
-	(global_label "CODEC_MCLK"
-		(shape bidirectional)
-		(at 50.8 104.14 180)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(uuid b506460b-6348-5d44-8acb-2d34d6fa30a1)
-	)
-	(wire
-		(pts
-			(xy 55.88 106.68) (xy 50.8 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
 		(uuid c57d96f5-ee39-5be3-b6d2-7bd13d8943d7)
 	)
-	(global_label "CODEC_LRCK"
+	(global_label "DAC_VREF"
 		(shape bidirectional)
-		(at 50.8 106.68 180)
+		(at 50.8 104.14 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1270,7 +1337,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 109.22) (xy 50.8 109.22)
+			(xy 55.88 106.68) (xy 50.8 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1278,9 +1345,9 @@
 		)
 		(uuid 9e3b31d5-fa4c-5919-a5e1-0abac06ad1d9)
 	)
-	(global_label "CODEC_DOUT"
+	(global_label "DAC_R_P"
 		(shape bidirectional)
-		(at 50.8 109.22 180)
+		(at 50.8 106.68 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1291,7 +1358,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 111.76) (xy 50.8 111.76)
+			(xy 55.88 109.22) (xy 50.8 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1299,9 +1366,9 @@
 		)
 		(uuid 266a18ef-464f-5c14-b012-acd71ca1c4b4)
 	)
-	(global_label "DAC_R_P"
+	(global_label "DAC_L_P"
 		(shape bidirectional)
-		(at 50.8 111.76 180)
+		(at 50.8 109.22 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1312,7 +1379,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 114.3) (xy 50.8 114.3)
+			(xy 55.88 111.76) (xy 50.8 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1320,9 +1387,9 @@
 		)
 		(uuid 7073d628-c438-5ee8-a57c-67c516f0c063)
 	)
-	(global_label "DAC_R_N"
+	(global_label "GND"
 		(shape bidirectional)
-		(at 50.8 114.3 180)
+		(at 50.8 111.76 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1331,51 +1398,17 @@
 		)
 		(uuid d1ded849-261b-51f9-a714-f5a5e4612ecc)
 	)
-	(wire
-		(pts
-			(xy 96.52 83.82) (xy 101.6 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid eac29f8d-4f66-5321-9ed0-cf1d5aa26551)
+	(no_connect
+		(at 55.88 114.3)
+		(uuid d1a76ff4-b3a3-55fa-a38b-f84453854a8e)
 	)
-	(global_label "DAC_VREF"
-		(shape bidirectional)
-		(at 101.6 83.82 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid 27e6e148-320f-5769-b103-acfd4e759ccf)
+	(no_connect
+		(at 55.88 116.84)
+		(uuid 1b4df670-c6b2-5a8a-8c56-ce1695c11429)
 	)
 	(wire
 		(pts
-			(xy 96.52 86.36) (xy 101.6 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid 70840f9b-274a-5514-ad49-e514abffd3b5)
-	)
-	(global_label "DAC_L_N"
-		(shape bidirectional)
-		(at 101.6 86.36 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(uuid 28960f84-429b-588d-8c37-c5b96e07c143)
-	)
-	(wire
-		(pts
-			(xy 96.52 88.9) (xy 101.6 88.9)
+			(xy 96.52 81.28) (xy 101.6 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1383,9 +1416,9 @@
 		)
 		(uuid 011083bc-b765-5449-9ecf-a6e787ee753a)
 	)
-	(global_label "DAC_L_P"
+	(global_label "AUDIO_3V3"
 		(shape bidirectional)
-		(at 101.6 88.9 0)
+		(at 101.6 81.28 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1396,7 +1429,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 91.44) (xy 101.6 91.44)
+			(xy 96.52 83.82) (xy 101.6 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1406,7 +1439,7 @@
 	)
 	(global_label "AUDIO_3V3"
 		(shape bidirectional)
-		(at 101.6 91.44 0)
+		(at 101.6 83.82 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1417,7 +1450,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 93.98) (xy 101.6 93.98)
+			(xy 96.52 86.36) (xy 101.6 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1427,7 +1460,7 @@
 	)
 	(global_label "GND"
 		(shape bidirectional)
-		(at 101.6 93.98 0)
+		(at 101.6 86.36 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1438,7 +1471,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 96.52) (xy 101.6 96.52)
+			(xy 96.52 88.9) (xy 101.6 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1446,9 +1479,9 @@
 		)
 		(uuid 3c59ab3c-1276-5532-ab7e-b56eab81c9fc)
 	)
-	(global_label "CODEC_VMID"
+	(global_label "ADC_VREF"
 		(shape bidirectional)
-		(at 101.6 96.52 0)
+		(at 101.6 88.9 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1459,7 +1492,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 99.06) (xy 101.6 99.06)
+			(xy 96.52 91.44) (xy 101.6 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1467,9 +1500,9 @@
 		)
 		(uuid 3db96291-9e92-5dac-b08b-c643562c1061)
 	)
-	(global_label "ADC_VREF"
+	(global_label "CODEC_VMID"
 		(shape bidirectional)
-		(at 101.6 99.06 0)
+		(at 101.6 91.44 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1480,7 +1513,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 101.6) (xy 101.6 101.6)
+			(xy 96.52 93.98) (xy 101.6 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1490,7 +1523,7 @@
 	)
 	(global_label "MIC_R_N"
 		(shape bidirectional)
-		(at 101.6 101.6 0)
+		(at 101.6 93.98 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1501,7 +1534,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 104.14) (xy 101.6 104.14)
+			(xy 96.52 96.52) (xy 101.6 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1511,7 +1544,7 @@
 	)
 	(global_label "MIC_R_P"
 		(shape bidirectional)
-		(at 101.6 104.14 0)
+		(at 101.6 96.52 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1522,7 +1555,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 106.68) (xy 101.6 106.68)
+			(xy 96.52 99.06) (xy 101.6 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1532,7 +1565,7 @@
 	)
 	(global_label "MIC_L_N"
 		(shape bidirectional)
-		(at 101.6 106.68 0)
+		(at 101.6 99.06 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1543,7 +1576,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 109.22) (xy 101.6 109.22)
+			(xy 96.52 101.6) (xy 101.6 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1553,7 +1586,7 @@
 	)
 	(global_label "MIC_L_P"
 		(shape bidirectional)
-		(at 101.6 109.22 0)
+		(at 101.6 101.6 0)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1561,6 +1594,52 @@
 			(justify left)
 		)
 		(uuid 36176e32-afe0-5c5b-aed8-0cd27e7946ea)
+	)
+	(no_connect
+		(at 96.52 104.14)
+		(uuid 73cab539-13b5-5b1c-a822-14a51b2fec92)
+	)
+	(wire
+		(pts
+			(xy 96.52 106.68) (xy 101.6 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid b4b2174c-432e-5179-bfcb-628e5a006f6f)
+	)
+	(global_label "CODEC_AD0"
+		(shape bidirectional)
+		(at 101.6 106.68 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 5f00c9f0-2e02-5dbd-9373-934a3b777246)
+	)
+	(wire
+		(pts
+			(xy 96.52 109.22) (xy 101.6 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid ba6d965b-1fb0-5fe2-860d-0eb990e151c2)
+	)
+	(global_label "SYSTEM_I2C_SDA"
+		(shape bidirectional)
+		(at 101.6 109.22 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid bc21a448-c99e-56bb-9456-b04c655697fc)
 	)
 	(wire
 		(pts
@@ -1570,9 +1649,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid ecde4aa5-420e-5ac2-9832-0311537f5691)
+		(uuid 1ac150b7-5775-5731-9c84-1353d2c61730)
 	)
-	(global_label "GND"
+	(global_label "SYSTEM_I2C_SCL"
 		(shape bidirectional)
 		(at 101.6 111.76 0)
 		(effects
@@ -1581,7 +1660,28 @@
 			)
 			(justify left)
 		)
-		(uuid e0db861c-519e-5eae-8a6a-3e01e0f032fb)
+		(uuid c986bce5-9270-5c55-bb96-f4be013d5346)
+	)
+	(wire
+		(pts
+			(xy 96.52 114.3) (xy 101.6 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid c9c1fe36-7ce8-578f-9603-9c9bf95db16a)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 101.6 114.3 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid db02445e-39f9-5a5a-a8b7-08dd6369f7a0)
 	)
 	(symbol
 		(lib_id "Carrier:AP2112K")
@@ -2505,7 +2605,7 @@
 		)
 		(uuid 260fab15-0b8d-5a7d-8cf1-c6ce679582d0)
 	)
-	(global_label "AUDIO_3V3"
+	(global_label "CODEC_DOUT"
 		(shape bidirectional)
 		(at 302.26 74.93 0)
 		(effects
@@ -2526,7 +2626,7 @@
 		)
 		(uuid d0346db9-9e56-57c1-96e4-a85669e9e614)
 	)
-	(global_label "CODEC_DOUT"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 302.26 92.71 180)
 		(effects
@@ -2893,7 +2993,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 10V"
+		(property "Value" "100n 10V"
 			(at 307.34 113.03 0)
 			(effects
 				(font
@@ -3006,7 +3106,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 10V"
+		(property "Value" "100n 10V"
 			(at 363.22 113.03 0)
 			(effects
 				(font
@@ -3119,7 +3219,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 10V"
+		(property "Value" "100n 10V"
 			(at 195.58 140.97 0)
 			(effects
 				(font
@@ -3232,7 +3332,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 10V"
+		(property "Value" "10u 10V"
 			(at 251.46 140.97 0)
 			(effects
 				(font
@@ -3345,7 +3445,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 10V"
+		(property "Value" "10u 10V"
 			(at 307.34 140.97 0)
 			(effects
 				(font
@@ -3748,7 +3848,7 @@
 		)
 		(uuid 1c288b06-e757-5cf5-93f5-b12e1a19d559)
 	)
-	(global_label "DAC_L_N"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 246.38 158.75 0)
 		(effects
@@ -4200,7 +4300,7 @@
 		)
 		(uuid 96d76b82-477c-58c3-998e-4ce57f85644a)
 	)
-	(global_label "DAC_R_N"
+	(global_label "GND"
 		(shape bidirectional)
 		(at 246.38 186.69 0)
 		(effects
@@ -4345,7 +4445,459 @@
 		)
 		(uuid 25f225a0-f10e-5e0f-b968-de4827ab03e9)
 	)
-	(text "S31-Korvo-1 V1.1 audio topology, adapted to P4 GPIO9..13. ES8389 is NOT pin-compatible with ES8311."
+	(symbol
+		(lib_id "Carrier:C")
+		(at 190.5 223.52 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid a8272577-3cd2-5cd8-86af-4155442ce3b7)
+		(property "Reference" "C879"
+			(at 195.58 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V"
+			(at 195.58 224.79 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 190.5 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 190.5 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 0e347818-b657-5373-9982-688c9c3ba4ea)
+		)
+		(pin "2"
+			(uuid c285a254-6688-54f5-a0f6-4f82cb535d03)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7361b3ff-87f6-5474-afb5-a4bc7003ca48"
+					(reference "C879")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.5 219.71) (xy 190.5 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 2e2114c9-5859-5b27-b324-482939a1ba22)
+	)
+	(global_label "AUDIO_3V3"
+		(shape bidirectional)
+		(at 190.5 214.63 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid eda5325b-4014-5a83-958d-e55c2a46605f)
+	)
+	(wire
+		(pts
+			(xy 190.5 227.33) (xy 190.5 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid e13ee0cc-9247-5461-8790-12dc7e5cc0fb)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 190.5 232.41 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 8c1634c3-abf9-5588-9b1b-4c6cf66889c2)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 246.38 223.52 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid a6745943-f5b9-5e97-bc2a-b793307c5cd0)
+		(property "Reference" "C880"
+			(at 251.46 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u 10V"
+			(at 251.46 224.79 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 246.38 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 246.38 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid 97630062-8f1d-557e-a0b1-0a4b78d237cc)
+		)
+		(pin "2"
+			(uuid 98cde02b-36e6-5690-8974-a5e1b27900a3)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7361b3ff-87f6-5474-afb5-a4bc7003ca48"
+					(reference "C880")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 246.38 219.71) (xy 246.38 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid dd69bcb5-79f2-5354-8ff4-840a4a4f919b)
+	)
+	(global_label "AUDIO_3V3"
+		(shape bidirectional)
+		(at 246.38 214.63 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 59e4318a-69c1-5b4c-b483-cf3c221adfeb)
+	)
+	(wire
+		(pts
+			(xy 246.38 227.33) (xy 246.38 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 93173628-6885-5a6b-9844-8506677f73d8)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 246.38 232.41 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 432c55f9-0ad9-5998-ad5d-59141c712e0d)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 302.26 223.52 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid b8b13a59-6bbe-5ba5-9783-76169f761669)
+		(property "Reference" "C881"
+			(at 307.34 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V"
+			(at 307.34 224.79 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 302.26 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 302.26 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid bb421c66-50cf-56b0-8c90-ecb2403ed22f)
+		)
+		(pin "2"
+			(uuid 80b0a5d8-0806-51da-a550-808b77b8c2b5)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7361b3ff-87f6-5474-afb5-a4bc7003ca48"
+					(reference "C881")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 302.26 219.71) (xy 302.26 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid a204b971-efe7-57da-af0d-ef1304f724bf)
+	)
+	(global_label "ADC_VREF"
+		(shape bidirectional)
+		(at 302.26 214.63 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid a538f2ee-4cd3-52f6-bbd3-ab7b4248a92e)
+	)
+	(wire
+		(pts
+			(xy 302.26 227.33) (xy 302.26 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid c7c1d511-5601-5077-a6f1-e72658f66631)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 302.26 232.41 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 7a2f3cf8-bf0b-548b-9db9-1a598746d41d)
+	)
+	(symbol
+		(lib_id "Carrier:C")
+		(at 358.14 223.52 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid fa0835fd-cc6e-514a-816c-07d3739aa3a9)
+		(property "Reference" "C882"
+			(at 363.22 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 10V"
+			(at 363.22 224.79 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 358.14 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 358.14 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DesignStatus" "engineering"
+			(at 358.14 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid fbd1c9f7-6b2e-5077-a98f-d5b42b3b3ac4)
+		)
+		(pin "2"
+			(uuid b18f1750-ae7c-5628-8161-02461d11fb15)
+		)
+		(instances
+			(project "display_carrier"
+				(path "/01326f85-d288-503d-aa45-f189caff70a4/7361b3ff-87f6-5474-afb5-a4bc7003ca48"
+					(reference "C882")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 358.14 219.71) (xy 358.14 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid b6b41b1a-b40d-5b80-8385-97545b96a85d)
+	)
+	(global_label "CODEC_VMID"
+		(shape bidirectional)
+		(at 358.14 214.63 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid 8dfe354e-8cdd-58cc-8839-b21e12931a6e)
+	)
+	(wire
+		(pts
+			(xy 358.14 227.33) (xy 358.14 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid c2a95d8c-3dba-53dc-b3b6-7a0f65c521ca)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 358.14 232.41 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 9e820108-4c78-5f8c-a65b-e2fd73b948de)
+	)
+	(text "ES8388 QFN28 replaces ES8389. 0x10 I2C; standard I2S slave on existing GPIO9..13."
 		(at 20.32 20.32 0)
 		(effects
 			(font
@@ -4355,7 +4907,7 @@
 		)
 		(uuid 3465e856-5eff-5ba6-a20e-c3a139b85331)
 	)
-	(text "TDM wiring: pin4=playback data, pin9=MCLK. Firmware must configure the pin multiplexers and stereo slots."
+	(text "Dual differential ADC: LIN1-RIN1=left mic; LIN2-RIN2=right mic. Reg10=0xFC, Reg11.DS=0."
 		(at 20.32 25.4 0)
 		(effects
 			(font
@@ -4365,7 +4917,7 @@
 		)
 		(uuid c0d6a9a6-4e80-5bc3-a95a-bab6183bc90b)
 	)
-	(text "AD1 pull HIGH / AD0 LOW: 7-bit I2C 0x12 (8-bit write 0x24); avoids RDA5807M 0x10/0x11."
+	(text "LOUT1/ROUT1 feed the stereo line path. Negative PA inputs have AC ground returns; unused OUT2 pins are NC."
 		(at 20.32 30.48 0)
 		(effects
 			(font
@@ -4375,7 +4927,7 @@
 		)
 		(uuid b07fc615-4b47-5c72-8928-407ee9b0a04c)
 	)
-	(text "Two ADC inputs remain microphones. FM bypasses codec; no hardware FM echo-reference ADC is provided."
+	(text "No ES8389 TDM pin swap or 192kHz support. Port ES8388 initialization; mute PAs during transitions."
 		(at 20.32 35.56 0)
 		(effects
 			(font

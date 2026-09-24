@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "17 Cabin ambient light and humidity")
-		(date "2026-09-23")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -808,7 +808,7 @@
 				)
 			)
 		)
-		(property "Value" "SHT40-AD1B-R2"
+		(property "Value" "SHT40-AD1F-R2"
 			(at 76.2 139.7 0)
 			(effects
 				(font
@@ -816,7 +816,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Carrier:SHT40_DFN4_NoCentralPad"
+		(property "Footprint" "Carrier:SHT40_AD1F_DFN4_Membrane"
 			(at 76.2 147.32 0)
 			(effects
 				(font
@@ -834,7 +834,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "0x44; no center pad; vented thermal island, heater normally off"
+		(property "DesignStatus" "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered"
 			(at 76.2 147.32 0)
 			(effects
 				(font
@@ -1513,7 +1513,7 @@
 		)
 		(uuid 51f4becf-665a-580a-9f93-5a6346a56b85)
 	)
-	(text "OPT3001DNPR: ADDR=3V3 selects 0x45; SHT40-AD1B-R2 fixed 0x44. SYSTEM_I2C, no extra GPIO."
+	(text "OPT3001DNPR: ADDR=3V3 selects 0x45; SHT40-AD1F-R2 fixed 0x44. SYSTEM_I2C, no extra GPIO."
 		(at 20.32 20.32 0)
 		(effects
 			(font

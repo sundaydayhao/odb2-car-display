@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "03 USB input qualification")
-		(date "2026-09-19")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -2463,7 +2463,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT54H"
+		(property "Value" "BAT54H,115"
 			(at 358.14 48.26 0)
 			(effects
 				(font
@@ -2471,7 +2471,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Carrier:BAT54H_SOD123F"
 			(at 358.14 55.88 0)
 			(effects
 				(font
@@ -2480,7 +2480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf"
 			(at 358.14 55.88 0)
 			(effects
 				(font
@@ -2571,7 +2571,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT54H"
+		(property "Value" "BAT54H,115"
 			(at 190.5 76.2 0)
 			(effects
 				(font
@@ -2579,7 +2579,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Carrier:BAT54H_SOD123F"
 			(at 190.5 83.82 0)
 			(effects
 				(font
@@ -2588,7 +2588,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf"
 			(at 190.5 83.82 0)
 			(effects
 				(font

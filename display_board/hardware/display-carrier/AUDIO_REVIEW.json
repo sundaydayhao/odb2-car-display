@@ -820,5 +820,6 @@
   "visual_review": "PASS: all four audio sheets, root and release-hold page; native front/rear 3D; actual PCB coordinate overview",
   "visual_scope": "geometry and readable drawings only; no routing, enclosure, acoustic, RF or powered validation",
   "fabrication_release": "HOLD",
-  "source_regeneration": "PASS: all 20 formal schematic files, local symbol library and every native pad-net entry reproduced from source with reviewed placement"
+  "source_regeneration": "PASS: all 20 formal schematic files, local symbol library and every native pad-net entry reproduced from source with reviewed placement",
+  "applicability_note": "Historical pre-P evidence; changed packages and switches are superseded by SOURCING_REVIEW.json. Old switch protrusion/mating limits do not qualify revision P."
 }

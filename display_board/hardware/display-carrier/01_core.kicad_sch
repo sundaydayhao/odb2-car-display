@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "01 Core compatibility")
-		(date "2026-09-19")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -1928,155 +1928,97 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Carrier:SW_SPST"
+		(symbol "Carrier:SIDE_KEY_SH"
 			(pin_names
-				(offset 0)
-				(hide yes)
+				(offset 0.635)
 			)
-			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 0 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
+			(property "Reference" "U"
+				(at 0 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "SW_SPST"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
+			(property "Value" "SIDE_KEY_SH"
+				(at 0 -7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Single Pole Single Throw (SPST) switch"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "switch lever"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SW_SPST_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
+			(symbol "SIDE_KEY_SH_0_1"
+				(rectangle
+					(start -15.24 5.08)
+					(end 15.24 -5.08)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 0.254) (xy 1.524 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
+						(type background)
 					)
 				)
 			)
-			(symbol "SW_SPST_1_1"
+			(symbol "SIDE_KEY_SH_1_1"
 				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
+					(at -20.32 1.27 0)
+					(length 5.08)
 					(name "A"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
+					(at -20.32 -1.27 0)
+					(length 5.08)
 					(name "B"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 1.27 180)
+					(length 5.08)
+					(name "SHELL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "SH"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 			)
-			(embedded_fonts no)
 		)
 		(symbol "Carrier:TestPoint"
 			(pin_numbers
@@ -6166,7 +6108,7 @@
 		(uuid f882146c-d914-50c4-98b1-04c5a786463e)
 	)
 	(symbol
-		(lib_id "Carrier:SW_SPST")
+		(lib_id "Carrier:SIDE_KEY_SH")
 		(at 358.14 167.64 0)
 		(unit 1)
 		(in_bom yes)
@@ -6181,7 +6123,7 @@
 				)
 			)
 		)
-		(property "Value" "RESET"
+		(property "Value" "TS-038-060250-D2"
 			(at 358.14 160.02 0)
 			(effects
 				(font
@@ -6189,7 +6131,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS"
+		(property "Footprint" "Carrier:TS038_SideKey"
 			(at 358.14 167.64 0)
 			(effects
 				(font
@@ -6198,7 +6140,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/54999684.html"
 			(at 358.14 167.64 0)
 			(effects
 				(font
@@ -6222,6 +6164,9 @@
 		(pin "2"
 			(uuid 4bf9ad24-22be-58e2-9785-e6f0e3ef22db)
 		)
+		(pin "SH"
+			(uuid 270346d8-9758-5f12-b1d5-e72f4db9c8f3)
+		)
 		(instances
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4/a49eb20c-14a9-5947-a3fb-00a327f93981"
@@ -6233,7 +6178,7 @@
 	)
 	(wire
 		(pts
-			(xy 353.06 167.64) (xy 347.98 167.64)
+			(xy 337.82 166.37) (xy 332.74 166.37)
 		)
 		(stroke
 			(width 0)
@@ -6243,7 +6188,7 @@
 	)
 	(global_label "P4_EN"
 		(shape bidirectional)
-		(at 347.98 167.64 180)
+		(at 332.74 166.37 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -6254,7 +6199,7 @@
 	)
 	(wire
 		(pts
-			(xy 363.22 167.64) (xy 368.3 167.64)
+			(xy 337.82 168.91) (xy 332.74 168.91)
 		)
 		(stroke
 			(width 0)
@@ -6264,17 +6209,38 @@
 	)
 	(global_label "GND"
 		(shape bidirectional)
-		(at 368.3 167.64 0)
+		(at 332.74 168.91 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 7e4c8f54-51bd-5ae6-ab2d-c1fe54fb0db4)
+	)
+	(wire
+		(pts
+			(xy 378.46 166.37) (xy 383.54 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 0bbb5e9a-405e-5b7c-be70-bd87149ba954)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 383.54 166.37 0)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
 			(justify left)
 		)
-		(uuid 7e4c8f54-51bd-5ae6-ab2d-c1fe54fb0db4)
+		(uuid 845b1882-0a5b-5f13-ac1b-ff0ef277cf2d)
 	)
 	(symbol
-		(lib_id "Carrier:SW_SPST")
+		(lib_id "Carrier:SIDE_KEY_SH")
 		(at 190.5 195.58 0)
 		(unit 1)
 		(in_bom yes)
@@ -6289,7 +6255,7 @@
 				)
 			)
 		)
-		(property "Value" "BOOT"
+		(property "Value" "TS-038-060250-D2"
 			(at 190.5 187.96 0)
 			(effects
 				(font
@@ -6297,7 +6263,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS"
+		(property "Footprint" "Carrier:TS038_SideKey"
 			(at 190.5 195.58 0)
 			(effects
 				(font
@@ -6306,7 +6272,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/54999684.html"
 			(at 190.5 195.58 0)
 			(effects
 				(font
@@ -6330,6 +6296,9 @@
 		(pin "2"
 			(uuid 1074ba72-741e-5508-b687-6c4ab175c053)
 		)
+		(pin "SH"
+			(uuid f45c0007-5f09-59fb-814f-57a9b050dc5e)
+		)
 		(instances
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4/a49eb20c-14a9-5947-a3fb-00a327f93981"
@@ -6341,7 +6310,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 195.58) (xy 180.34 195.58)
+			(xy 170.18 194.31) (xy 165.1 194.31)
 		)
 		(stroke
 			(width 0)
@@ -6351,7 +6320,7 @@
 	)
 	(global_label "P4_BOOT"
 		(shape bidirectional)
-		(at 180.34 195.58 180)
+		(at 165.1 194.31 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -6362,7 +6331,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 195.58) (xy 200.66 195.58)
+			(xy 170.18 196.85) (xy 165.1 196.85)
 		)
 		(stroke
 			(width 0)
@@ -6372,14 +6341,35 @@
 	)
 	(global_label "GND"
 		(shape bidirectional)
-		(at 200.66 195.58 0)
+		(at 165.1 196.85 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid df9390a5-601d-5c19-b7ec-07f65d57693d)
+	)
+	(wire
+		(pts
+			(xy 210.82 194.31) (xy 215.9 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 3fc65c1b-910b-59b2-9ada-528bfe75e2e2)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 215.9 194.31 0)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
 			(justify left)
 		)
-		(uuid df9390a5-601d-5c19-b7ec-07f65d57693d)
+		(uuid 0eec8056-2c10-5226-a27c-8540a185bd2b)
 	)
 	(symbol
 		(lib_id "Carrier:R")
@@ -6511,7 +6501,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NTC 10k B3950"
+		(property "Value" "NTC 10k B3950 1%"
 			(at 307.34 196.85 0)
 			(effects
 				(font
@@ -6530,7 +6520,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/51854434.html"
 			(at 302.26 195.58 0)
 			(effects
 				(font
@@ -6540,7 +6530,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "ST10603X103F3950FB; R25 and B25/50 each +/-1%; board sensor, not battery-pack NTC"
 			(at 302.26 195.58 0)
 			(effects
 				(font

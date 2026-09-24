@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "09 Modem power and RF")
-		(date "2026-09-19")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -255,6 +255,183 @@
 				)
 			)
 			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:CPOL"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "CPOL"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CPOL_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794) (xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "CPOL_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -1662,7 +1839,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uH Isat>=4.5A"
+		(property "Value" "1uH MWSA0402S-1R0MT"
 			(at 195.58 57.15 0)
 			(effects
 				(font
@@ -1671,7 +1848,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA4020S"
+		(property "Footprint" "Carrier:L_Sunlord_MWSA0402S"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -1681,7 +1858,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/397734.html"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -1691,7 +1868,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -2324,7 +2501,7 @@
 		(uuid 21ab6668-501f-5aa6-8c11-2852582a6205)
 	)
 	(symbol
-		(lib_id "Carrier:C")
+		(lib_id "Carrier:CPOL")
 		(at 302.26 83.82 0)
 		(unit 1)
 		(in_bom yes)
@@ -2340,7 +2517,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220u 6.3V low ESR"
+		(property "Value" "220u 10V polymer 25mR"
 			(at 307.34 85.09 0)
 			(effects
 				(font
@@ -2349,7 +2526,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D"
+		(property "Footprint" "Carrier:T520D_7343_31"
 			(at 302.26 83.82 0)
 			(effects
 				(font
@@ -2359,7 +2536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/117998.html"
 			(at 302.26 83.82 0)
 			(effects
 				(font
@@ -2369,7 +2546,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height"
 			(at 302.26 83.82 0)
 			(effects
 				(font
@@ -2437,7 +2614,7 @@
 		(uuid 617b9977-1249-51a6-8882-598c2432122d)
 	)
 	(symbol
-		(lib_id "Carrier:C")
+		(lib_id "Carrier:CPOL")
 		(at 358.14 83.82 0)
 		(unit 1)
 		(in_bom yes)
@@ -2453,7 +2630,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220u 6.3V low ESR"
+		(property "Value" "220u 10V polymer 25mR"
 			(at 363.22 85.09 0)
 			(effects
 				(font
@@ -2462,7 +2639,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D"
+		(property "Footprint" "Carrier:T520D_7343_31"
 			(at 358.14 83.82 0)
 			(effects
 				(font
@@ -2472,7 +2649,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/117998.html"
 			(at 358.14 83.82 0)
 			(effects
 				(font
@@ -2482,7 +2659,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height"
 			(at 358.14 83.82 0)
 			(effects
 				(font

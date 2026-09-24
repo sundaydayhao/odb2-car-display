@@ -1,0 +1,6 @@
+#VRML V2.0 utf8
+# Datasheet envelope only; see SOURCING_REVIEW.md
+Transform { scale 0.3937007874 0.3937007874 0.3937007874 children [
+Transform { translation 0 0.95 3.6 children [ Shape { appearance Appearance { material Material { diffuseColor 0.18 0.19 0.20 } } geometry Box { size 8.4 6.5 7.2 } } ] }
+Transform { translation 0 -3.575 3.6 children [ Shape { appearance Appearance { material Material { diffuseColor 0.18 0.19 0.20 } } geometry Box { size 3.3 2.55 3.3 } } ] }
+] }

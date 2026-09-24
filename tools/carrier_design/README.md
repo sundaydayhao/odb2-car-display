@@ -4,13 +4,33 @@ This creates an **unrouted engineering draft**, never manufacturing outputs.
 The project status in `display_board/hardware/display-carrier/DESIGN_STATUS.md`
 is authoritative about incomplete circuits and validation holds.
 
-Revision L was delivered independently to
-`display_board/hardware/display-carrier-revision-L/` because the original
-project is open in KiCad. Until that revision is promoted, its README and
-verification reports describe the updated source in this directory. For a
-scratch regeneration, pass both `--preserve-placement` with that revision's
-PCB and `--library-source` with that revision's directory. Do not regenerate
-against the older K library or overwrite a live editor's project.
+The canonical project is now revision P in
+`display_board/hardware/display-carrier/`; the separate L directory is history.
+Revision P replaces scarce parts using mainland LCSC stock observations while
+preserving N's core/FPC layout, outlines, slots and design rules.
+
+`domestic_sourcing_spec.py` contains the electrical substitutions;
+`domestic_sourcing_assets.py` builds the cited package lands and clearly labelled
+dimension-envelope models. `stage_domestic_sourcing.py --baseline <N-project>
+--output <scratch-project>` applies this delta to the reviewed N baseline
+(`90df33e`), keeping existing footprint identities. It expects that pre-P
+baseline, not a project that already contains the new references.
+
+Before promotion, run native ERC/DRC with schematic parity, `verify.py`,
+`check_models.py`, and `review_domestic_sourcing.py --baseline <N-project>
+--project <scratch-project> --evidence <report-dir>`. The evidence directory must
+contain `netlist.xml`, `erc-final.json`, `drc-final.json` and the verification
+summary. Generate the two procurement CSVs before the sourcing review. Review
+the native sheet and PCB renders; current stock evidence does not qualify
+drivers, RF, thermal performance or enclosure mating.
+
+The user's subsequent left/right separation request is applied by
+`spread_audio_edges.py --project <scratch-project>` after staging: microphone
+centers at F-face (7,73) and (138,73) mm, 131 mm apart, and one external speaker
+connector at each side. Local microphone supply filters move with the mics;
+ADC coupling stays by the codec. Re-run DRC/verification and regenerate
+procurement hashes after moving these parts. The array geometry and enclosure
+ports must be reflected in the later acoustic/firmware validation.
 
 Run on this workspace with KiCad 10.0.5's Python and the installed KiSkill engine:
 

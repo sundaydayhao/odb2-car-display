@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "06 Regulated 5 V / 3.3 V")
-		(date "2026-09-23")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -3696,7 +3696,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2uH Isat>=3.5A"
+		(property "Value" "2.2uH MWSA0402S-2R2MT"
 			(at 195.58 168.91 0)
 			(effects
 				(font
@@ -3705,7 +3705,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA4020S"
+		(property "Footprint" "Carrier:L_Sunlord_MWSA0402S"
 			(at 190.5 167.64 0)
 			(effects
 				(font
@@ -3715,7 +3715,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/397737.html"
 			(at 190.5 167.64 0)
 			(effects
 				(font
@@ -3725,7 +3725,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending"
 			(at 190.5 167.64 0)
 			(effects
 				(font

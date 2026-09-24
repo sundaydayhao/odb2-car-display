@@ -1,5 +1,8 @@
 # R0 电气核算和固件接口约定
 
+2026-09-24 修订 P 更新：本页旧 ES8389/RDA5807/裸版 SHT40 和未定采购料号的描述已由 [SOURCING_REVIEW.md](SOURCING_REVIEW.md) 取代；当前符号/封装、引脚、地址与驱动约定以实际 P 工程和 AUDIO_ARCHITECTURE.md 为准。其他既有电源核算及待验证条件继续保留。
+
+
 电源基础对应 2026-09-19 草稿，音频更新至修订 H，L400 更新至 2026-09-23 修订 J。数值为设计计算，不是样机实测。检查程序为 `tools/carrier_design/verify.py`，结果在 [VERIFICATION.json](VERIFICATION.json)。
 
 ## USB-C 共用充电 / 下载

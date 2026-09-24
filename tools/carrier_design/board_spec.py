@@ -344,6 +344,9 @@ for p in d.parts:
 
 from models import remap_footprints
 remap_footprints(d.parts)
+from domestic_sourcing_spec import apply as apply_domestic_sourcing
+apply_domestic_sourcing(d)
+remap_footprints(d.parts)
 d.sheets = dict(sorted(d.sheets.items()))
 
 if __name__=='__main__':

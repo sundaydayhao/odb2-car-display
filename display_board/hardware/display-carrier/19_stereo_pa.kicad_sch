@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "19 Dual speaker amplifiers")
-		(date "2026-09-23")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -4186,7 +4186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uH Isat>=4.5A"
+		(property "Value" "1uH MWSA0402S-1R0MT"
 			(at 195.58 196.85 0)
 			(effects
 				(font
@@ -4195,7 +4195,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA4020S"
+		(property "Footprint" "Carrier:L_Sunlord_MWSA0402S"
 			(at 190.5 195.58 0)
 			(effects
 				(font
@@ -4205,7 +4205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/397734.html"
 			(at 190.5 195.58 0)
 			(effects
 				(font
@@ -4215,7 +4215,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending"
 			(at 190.5 195.58 0)
 			(effects
 				(font

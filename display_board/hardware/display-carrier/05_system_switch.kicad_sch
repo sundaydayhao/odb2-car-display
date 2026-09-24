@@ -5,8 +5,8 @@
 	(paper "A3")
 	(title_block
 		(title "05 Controlled shutdown")
-		(date "2026-09-19")
-		(rev "R0 ENGINEERING")
+		(date "2026-09-24")
+		(rev "R0P SOURCING")
 		(company "OBD Car Display")
 		(comment 1 "Prototype drawing; see DESIGN_STATUS.md")
 	)
@@ -809,195 +809,169 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Carrier:SW_SPDT"
+		(symbol "Carrier:SLIDE_DPDT"
 			(pin_names
-				(offset 0)
-				(hide yes)
+				(offset 0.635)
 			)
-			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
+			(property "Reference" "U"
+				(at 0 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "SW_SPDT"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
+			(property "Value" "SLIDE_DPDT"
+				(at 0 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Switch, single pole double throw"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "switch single-pole double-throw spdt ON-ON"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SW_SPDT_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.651 0.254) (xy 1.651 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 2.54)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 -2.54)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_SPDT_1_1"
+			(symbol "SLIDE_DPDT_0_1"
 				(rectangle
-					(start -3.175 3.81)
-					(end 3.175 -3.81)
+					(start -15.24 6.35)
+					(end 15.24 -6.35)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type background)
 					)
 				)
+			)
+			(symbol "SLIDE_DPDT_1_1"
 				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "A"
+					(at -20.32 3.81 0)
+					(length 5.08)
+					(name "A_OFF"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "B"
+					(at -20.32 1.27 0)
+					(length 5.08)
+					(name "A_COM"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "C"
+					(at -20.32 -1.27 0)
+					(length 5.08)
+					(name "A_ON"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 -3.81 0)
+					(length 5.08)
+					(name "B_OFF"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 3.81 180)
+					(length 5.08)
+					(name "B_COM"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 1.27 180)
+					(length 5.08)
+					(name "B_ON"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -1.27 180)
+					(length 5.08)
+					(name "SHELL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "SH"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 			)
-			(embedded_fonts no)
 		)
 		(symbol "Carrier:TPS22990"
 			(pin_names
@@ -1667,7 +1641,7 @@
 		(uuid e80a71ac-9749-5201-b223-3cf44c82a435)
 	)
 	(symbol
-		(lib_id "Carrier:SW_SPDT")
+		(lib_id "Carrier:SLIDE_DPDT")
 		(at 66.04 154.94 0)
 		(unit 1)
 		(in_bom yes)
@@ -1675,22 +1649,22 @@
 		(dnp no)
 		(uuid aaf8cbc0-afbf-5201-9208-585ad4ad74e5)
 		(property "Reference" "SW310"
-			(at 66.04 144.78 0)
+			(at 66.04 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "POWER SIDE SLIDE"
-			(at 66.04 147.32 0)
+		(property "Value" "SK22D02L4"
+			(at 66.04 146.05 0)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled"
+		(property "Footprint" "Carrier:SK22D02L4_SideSlide"
 			(at 66.04 154.94 0)
 			(effects
 				(font
@@ -1699,7 +1673,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/639830.html"
 			(at 66.04 154.94 0)
 			(effects
 				(font
@@ -1708,7 +1682,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "Side actuator L=4mm; use pole A only; second pole NC; housing opening needs refit"
 			(at 66.04 154.94 0)
 			(effects
 				(font
@@ -1726,6 +1700,18 @@
 		(pin "3"
 			(uuid 87877930-2edc-5b4d-a911-95e7862cfd7e)
 		)
+		(pin "4"
+			(uuid fd711fe0-33f2-5963-91c0-23f407950895)
+		)
+		(pin "5"
+			(uuid 89e00730-4c66-55d2-a374-4c664b4792e6)
+		)
+		(pin "6"
+			(uuid 32e6b12f-c391-5df1-9874-5e3f0df5b564)
+		)
+		(pin "SH"
+			(uuid a0dc97c4-7c5e-5a0f-b3ce-384d8b86af03)
+		)
 		(instances
 			(project "display_carrier"
 				(path "/01326f85-d288-503d-aa45-f189caff70a4/ad886b9b-afb1-5fdc-bbee-d903dd95f342"
@@ -1737,7 +1723,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 152.4) (xy 76.2 152.4)
+			(xy 45.72 151.13) (xy 40.64 151.13)
 		)
 		(stroke
 			(width 0)
@@ -1747,18 +1733,18 @@
 	)
 	(global_label "GND"
 		(shape bidirectional)
-		(at 76.2 152.4 0)
+		(at 40.64 151.13 180)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid 023a5a59-cbdb-532a-9d00-1da7a616a0f5)
 	)
 	(wire
 		(pts
-			(xy 60.96 154.94) (xy 55.88 154.94)
+			(xy 45.72 153.67) (xy 40.64 153.67)
 		)
 		(stroke
 			(width 0)
@@ -1768,7 +1754,7 @@
 	)
 	(global_label "SLIDER_ON"
 		(shape bidirectional)
-		(at 55.88 154.94 180)
+		(at 40.64 153.67 180)
 		(effects
 			(font
 				(size 1.016 1.016)
@@ -1779,7 +1765,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 157.48) (xy 76.2 157.48)
+			(xy 45.72 156.21) (xy 40.64 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1789,14 +1775,47 @@
 	)
 	(global_label "SYS_ALWAYS"
 		(shape bidirectional)
-		(at 76.2 157.48 0)
+		(at 40.64 156.21 180)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid 36ab0736-7831-5b74-a4c7-8602f69c94aa)
+	)
+	(no_connect
+		(at 45.72 158.75)
+		(uuid 470be830-1281-5595-be6a-17633236fd48)
+	)
+	(no_connect
+		(at 86.36 151.13)
+		(uuid 77ea7b69-8bd1-5f68-8034-430c2bca7c19)
+	)
+	(no_connect
+		(at 86.36 153.67)
+		(uuid 52194178-2faa-51a0-bfe0-c635fc6f7f0b)
+	)
+	(wire
+		(pts
+			(xy 86.36 156.21) (xy 91.44 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid 7ddf49c0-c273-564c-8a93-a49007ffc719)
+	)
+	(global_label "GND"
+		(shape bidirectional)
+		(at 91.44 156.21 0)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
 			(justify left)
 		)
-		(uuid 36ab0736-7831-5b74-a4c7-8602f69c94aa)
+		(uuid 0fd44b27-2e65-57b2-b570-4e15fe62f527)
 	)
 	(symbol
 		(lib_id "Carrier:D")
@@ -1814,7 +1833,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT54H"
+		(property "Value" "BAT54H,115"
 			(at 190.5 48.26 0)
 			(effects
 				(font
@@ -1822,7 +1841,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Carrier:BAT54H_SOD123F"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -1831,7 +1850,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf"
 			(at 190.5 55.88 0)
 			(effects
 				(font
@@ -1922,7 +1941,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT54H"
+		(property "Value" "BAT54H,115"
 			(at 246.38 48.26 0)
 			(effects
 				(font
@@ -1930,7 +1949,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Carrier:BAT54H_SOD123F"
 			(at 246.38 55.88 0)
 			(effects
 				(font
@@ -1939,7 +1958,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf"
 			(at 246.38 55.88 0)
 			(effects
 				(font

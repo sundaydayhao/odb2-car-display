@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "display_carrier model bindings including the three populated FPC connectors; source and dimensional limitations are documented",
+  "scope": "Revision P: every new package bound to a local datasheet dimension envelope; fit not validated.",
   "models": [
     {
       "reference": "U1000",
@@ -346,56 +346,6 @@
       "sha256": "33f1057e9457f9418f2d80d308ef23f11c66a8c4b1dc839b3a8bed967c3df1d7"
     },
     {
-      "reference": "U1301",
-      "original_footprint": "Carrier:SHT40_DFN4_NoCentralPad",
-      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
-      "file": "SHT40_DFN4_reference.wrl",
-      "offset_mm": [
-        0,
-        0,
-        0
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "datasheet_reference",
-      "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
-      "note": "Official KiCad pad geometry, no center copper; nominal body 1.5x1.5x0.5 mm reference only.",
-      "sha256": "8d81aa055bfff96c047315b5e6c5d2f4f4d0108497b1dd005e5f43cd801aed35"
-    },
-    {
-      "reference": "U800",
-      "original_footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
-      "footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
-      "file": "ES8389_QFN24.step",
-      "offset_mm": [
-        0,
-        0,
-        0
-      ],
-      "rotation_deg": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "kind": "supplier",
-      "source": "https://www.lcsc.com/product-detail/C22380673.html",
-      "note": "Supplier land geometry checked: QFN24 3x3, 0.35 pitch, EP1.7; pad25 GND. Added courtyard.",
-      "sha256": "caaec3a711966d0cad51e3488bbbd4fbe17e6692b2fb5921d17b1770798acdf3"
-    },
-    {
       "reference": "U802",
       "original_footprint": "Carrier:LMA3729T381_OAS02_TopPort",
       "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
@@ -509,6 +459,546 @@
         3,
         -0.1,
         3.9
+      ]
+    },
+    {
+      "reference": "U800",
+      "original_footprint": "Carrier:ES8388_QFN28_4x4_P0.45",
+      "footprint": "Carrier:ES8388_QFN28_4x4_P0.45",
+      "file": "ES8388_QFN28_4x4_P0.45.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "ES8388 rev5 pp5,35; LCSC C365736",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "5356d8591da41736379ca28499e0991ece7cb1986019235f6a06426c603f1809",
+      "body_mm": [
+        4,
+        4,
+        0.9
+      ]
+    },
+    {
+      "reference": "U815",
+      "original_footprint": "Carrier:FSV4730_SSOP24",
+      "footprint": "Carrier:FSV4730_SSOP24",
+      "file": "FSV4730_SSOP24.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "FSV4730 rev1.1 pp31,34; LCSC C19191931",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "acccd1a39d49115660f86736dc0f46349b90d1998ad5eb1f79f2d8c9cfbdd51a",
+      "body_mm": [
+        3.9,
+        8.7,
+        1.75
+      ]
+    },
+    {
+      "reference": "U816",
+      "original_footprint": "Carrier:SOT23_MCP120",
+      "footprint": "Carrier:SOT23_MCP120",
+      "file": "SOT23_MCP120.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Microchip DS11184D; pin1 RESET, 2 VDD, 3 VSS",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "88b2488dfa385f0a5eaba1de51156dd8522d3ac098cc1155daf9eabfcc495547",
+      "body_mm": [
+        2.9,
+        1.3,
+        1.1
+      ]
+    },
+    {
+      "reference": "D211",
+      "original_footprint": "Carrier:BAT54H_SOD123F",
+      "footprint": "Carrier:BAT54H_SOD123F",
+      "file": "BAT54H_SOD123F.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Nexperia BAT54H SOD123F; pin1 cathode; C426769",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "583a1799b303589fc4427bde9ea57e310682bf1f55573f3e3a494ca959a8f1fa",
+      "body_mm": [
+        2.6,
+        1.6,
+        1.1
+      ]
+    },
+    {
+      "reference": "D212",
+      "original_footprint": "Carrier:BAT54H_SOD123F",
+      "footprint": "Carrier:BAT54H_SOD123F",
+      "file": "BAT54H_SOD123F.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Nexperia BAT54H SOD123F; pin1 cathode; C426769",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "583a1799b303589fc4427bde9ea57e310682bf1f55573f3e3a494ca959a8f1fa",
+      "body_mm": [
+        2.6,
+        1.6,
+        1.1
+      ]
+    },
+    {
+      "reference": "D310",
+      "original_footprint": "Carrier:BAT54H_SOD123F",
+      "footprint": "Carrier:BAT54H_SOD123F",
+      "file": "BAT54H_SOD123F.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Nexperia BAT54H SOD123F; pin1 cathode; C426769",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "583a1799b303589fc4427bde9ea57e310682bf1f55573f3e3a494ca959a8f1fa",
+      "body_mm": [
+        2.6,
+        1.6,
+        1.1
+      ]
+    },
+    {
+      "reference": "D311",
+      "original_footprint": "Carrier:BAT54H_SOD123F",
+      "footprint": "Carrier:BAT54H_SOD123F",
+      "file": "BAT54H_SOD123F.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Nexperia BAT54H SOD123F; pin1 cathode; C426769",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "583a1799b303589fc4427bde9ea57e310682bf1f55573f3e3a494ca959a8f1fa",
+      "body_mm": [
+        2.6,
+        1.6,
+        1.1
+      ]
+    },
+    {
+      "reference": "C1012",
+      "original_footprint": "Carrier:T520D_7343_31",
+      "footprint": "Carrier:T520D_7343_31",
+      "file": "T520D_7343_31.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "KEMET T520D227M010ATE025 D case; C116743",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "e987f135e8e7b37142c8e4239f0608e857bd791ad622bf931641f2bcd1b8ded0",
+      "body_mm": [
+        7.3,
+        4.3,
+        3.1
+      ]
+    },
+    {
+      "reference": "C1013",
+      "original_footprint": "Carrier:T520D_7343_31",
+      "footprint": "Carrier:T520D_7343_31",
+      "file": "T520D_7343_31.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "KEMET T520D227M010ATE025 D case; C116743",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "e987f135e8e7b37142c8e4239f0608e857bd791ad622bf931641f2bcd1b8ded0",
+      "body_mm": [
+        7.3,
+        4.3,
+        3.1
+      ]
+    },
+    {
+      "reference": "U1301",
+      "original_footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
+      "footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
+      "file": "SHT40_AD1F_DFN4_Membrane.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Sensirion SHT4x v7.3; C7461846",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "a5aa533949bedefcc2c8fc391c8c6a2d6262c0d9e8ef11d163d31de7b6e8f442",
+      "body_mm": [
+        1.5,
+        1.5,
+        0.69
+      ]
+    },
+    {
+      "reference": "L300",
+      "original_footprint": "Carrier:L_DMBJ_CXP0520",
+      "footprint": "Carrier:L_DMBJ_CXP0520",
+      "file": "L_DMBJ_CXP0520.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "CXP0520 drawing pp3,4; C7461343",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "1ad70a66a567b782cbb2b7956de74e70d94f573c51a2d92d5f20f12c1fe90d9f",
+      "body_mm": [
+        5.2,
+        5.7,
+        2.0
+      ]
+    },
+    {
+      "reference": "L410",
+      "original_footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "file": "L_Sunlord_MWSA0402S.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Sunlord MWSA0402S 2023 pp2,3; C408332/C408335",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "eba764284af27e3da8a930c6c6107c579c3424966b5fbcde61c0b5749f69140b",
+      "body_mm": [
+        4.4,
+        4.2,
+        2.0
+      ]
+    },
+    {
+      "reference": "L1010",
+      "original_footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "file": "L_Sunlord_MWSA0402S.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Sunlord MWSA0402S 2023 pp2,3; C408332/C408335",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "eba764284af27e3da8a930c6c6107c579c3424966b5fbcde61c0b5749f69140b",
+      "body_mm": [
+        4.4,
+        4.2,
+        2.0
+      ]
+    },
+    {
+      "reference": "L820",
+      "original_footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
+      "file": "L_Sunlord_MWSA0402S.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Sunlord MWSA0402S 2023 pp2,3; C408332/C408335",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "eba764284af27e3da8a930c6c6107c579c3424966b5fbcde61c0b5749f69140b",
+      "body_mm": [
+        4.4,
+        4.2,
+        2.0
+      ]
+    },
+    {
+      "reference": "Y810",
+      "original_footprint": "Carrier:SXTF3215R_32k",
+      "footprint": "Carrier:SXTF3215R_32k",
+      "file": "SXTF3215R_32k.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "SXTF3215R32768A20F package drawing; C22386778",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "869628ae213719a2a45f804d1fc4a34f7c9788531a34edcdcf96b8372b1585c3",
+      "body_mm": [
+        3.2,
+        1.5,
+        0.9
+      ]
+    },
+    {
+      "reference": "SW101",
+      "original_footprint": "Carrier:TS038_SideKey",
+      "footprint": "Carrier:TS038_SideKey",
+      "file": "TS038_SideKey.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Zhongdi TS-038-060250-D2 manufacturer drawing; C52178082",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "01dbd469d8191f26ce743ffac955f1af94093eb1ba190146fa99bcf187fa2525",
+      "body_mm": [
+        8.4,
+        6.5,
+        7.2
+      ]
+    },
+    {
+      "reference": "SW102",
+      "original_footprint": "Carrier:TS038_SideKey",
+      "footprint": "Carrier:TS038_SideKey",
+      "file": "TS038_SideKey.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "Zhongdi TS-038-060250-D2 manufacturer drawing; C52178082",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "01dbd469d8191f26ce743ffac955f1af94093eb1ba190146fa99bcf187fa2525",
+      "body_mm": [
+        8.4,
+        6.5,
+        7.2
+      ]
+    },
+    {
+      "reference": "SW310",
+      "original_footprint": "Carrier:SK22D02L4_SideSlide",
+      "footprint": "Carrier:SK22D02L4_SideSlide",
+      "file": "SK22D02L4_SideSlide.wrl",
+      "offset_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "kind": "datasheet_reference",
+      "source": "XKB SK22D02 L=4 drawing; C609825",
+      "note": "Dimension envelope; not an assembly fit qualification.",
+      "sha256": "bfa09a5f205b8c9c57c54a20705f3e8706b6b3f6f5f0f939efd07cd674ed8c8a",
+      "body_mm": [
+        10.8,
+        6.1,
+        5.2
       ]
     }
   ],

@@ -1,0 +1,131 @@
+{
+  "revision": "P",
+  "reason": "User requested maximum left/right microphone separation and one speaker on each side.",
+  "coordinate_view": "F face / rear of screen; electrical L is at F-right and R is at F-left.",
+  "microphone_center_spacing_mm": 131,
+  "positions": {
+    "U802": {
+      "before_xy_mm": [
+        125.0,
+        73.0
+      ],
+      "xy_mm": [
+        138,
+        73
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "U803": {
+      "before_xy_mm": [
+        65.0,
+        73.0
+      ],
+      "xy_mm": [
+        7,
+        73
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "R840": {
+      "before_xy_mm": [
+        132.5,
+        70.0
+      ],
+      "xy_mm": [
+        141.5,
+        70
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "C840": {
+      "before_xy_mm": [
+        132.5,
+        72.0
+      ],
+      "xy_mm": [
+        135,
+        76.25
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "C848": {
+      "before_xy_mm": [
+        121.0,
+        73.0
+      ],
+      "xy_mm": [
+        139,
+        76.5
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "R841": {
+      "before_xy_mm": [
+        65.0,
+        67.0
+      ],
+      "xy_mm": [
+        3.25,
+        69.5
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "C844": {
+      "before_xy_mm": [
+        65.0,
+        69.0
+      ],
+      "xy_mm": [
+        3.25,
+        74
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "C849": {
+      "before_xy_mm": [
+        61.0,
+        73.0
+      ],
+      "xy_mm": [
+        3.25,
+        71.75
+      ],
+      "side": "F",
+      "angle": 180.0
+    },
+    "J820": {
+      "before_xy_mm": [
+        51.0,
+        73.0
+      ],
+      "xy_mm": [
+        137.5,
+        45.5
+      ],
+      "side": "F",
+      "angle": 0.0
+    },
+    "J821": {
+      "before_xy_mm": [
+        36.0,
+        73.0
+      ],
+      "xy_mm": [
+        6.5,
+        44
+      ],
+      "side": "F",
+      "angle": 0.0
+    }
+  },
+  "speaker_note": "These are the two external speaker connectors. Speaker bodies and acoustic chambers are enclosure parts, not PCB footprints.",
+  "routing": "UNROUTED; route long analog microphone signals with quiet return paths and keep away from power switch nodes",
+  "acoustic_and_AEC_validation": "NOT_RUN; update array geometry and calibrate after assembly"
+}

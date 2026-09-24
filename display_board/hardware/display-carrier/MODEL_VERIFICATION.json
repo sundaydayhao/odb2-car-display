@@ -1,17 +1,30 @@
 {
   "status": "PASS",
-  "footprints": 354,
-  "physical_components": 327,
-  "physical_components_with_resolvable_models": 327,
+  "footprints": 365,
+  "physical_components": 338,
+  "physical_components_with_resolvable_models": 338,
   "intentional_bare_features": 27,
   "dnp_footprints": 7,
   "repaired_references": [
+    "C1012",
+    "C1013",
+    "D211",
+    "D212",
+    "D310",
+    "D311",
     "J1000",
     "J1200",
     "J1210",
     "J1220",
     "J200",
+    "L1010",
+    "L300",
     "L400",
+    "L410",
+    "L820",
+    "SW101",
+    "SW102",
+    "SW310",
     "U1000",
     "U1300",
     "U1301",
@@ -21,921 +34,41 @@
     "U400",
     "U800",
     "U802",
-    "U803"
+    "U803",
+    "U815",
+    "U816",
+    "Y810"
   ],
   "reference_models": [
     "U310",
     "U400",
     "U1300",
-    "U1301",
     "U802",
-    "U803"
+    "U803",
+    "U800",
+    "U815",
+    "U816",
+    "D211",
+    "D212",
+    "D310",
+    "D311",
+    "C1012",
+    "C1013",
+    "U1301",
+    "L300",
+    "L410",
+    "L1010",
+    "L820",
+    "Y810",
+    "SW101",
+    "SW102",
+    "SW310"
   ],
   "unchanged_cad_geometry_and_electrical_files": [],
   "failures": [],
   "inventory": [
     {
-      "reference": "R411",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C806",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q214",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C815",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R514",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R864",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C501",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1040",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R805",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C845",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1016",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R217",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R112",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R212",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R818",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1002",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R815",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_30P-P0.50_FPC-05FB-30PH20.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C202",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C404",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1018",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U500",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U813",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "D212",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-123.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C872",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C313",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1015",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1034",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1031",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R303",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "H4",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "C861",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U212",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP105",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R104",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP101",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "U812",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1019",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R202",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1205",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R404",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1003",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R1032",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1207",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1015",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R817",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP103",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R865",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1030",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1012",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R804",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C303",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R410",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1000",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R101",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "SW101",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx39-2LFS.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "L820",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Sunlord_SWPA4020S.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "F300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_1206_3216Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C801",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C807",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1215",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C819",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R500",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C101",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C844",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1203",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C808",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1014",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1006",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R1040",
+      "reference": "R400",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -959,325 +92,7 @@
       ]
     },
     {
-      "reference": "J820",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U814",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C104",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "H2",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R302",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C809",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C405",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP104",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "C878",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R513",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C822",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C502",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U815",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-10_3x3mm_P0.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R108",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C311",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1000",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/SIM8066-6-1-14-01-A.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "D810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1033",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C216",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R860",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1042",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C840",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U801",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C812",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C213",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C302",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1007",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R512",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1031",
+      "reference": "U1030",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -1289,1573 +104,7 @@
       ]
     },
     {
-      "reference": "U1011",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1003",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-563.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U820",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C401",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C411",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J821",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "L400",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/FEXU0640S2R2MGS.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1000",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/SHT40_DFN4_reference.wrl",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C803",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1016",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R522",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C862",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP300",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R1211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C804",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C816",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R802",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R109",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1011",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R216",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1220",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_24P-P0.50_FPC-05FB-24PH20.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1002",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C306",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "SW102",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx39-2LFS.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP303",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R102",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C410",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C408",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U400",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/TPS61088_RHL20_reference.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/TYPE-C-31-M-12.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C821",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP301",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "C863",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R520",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1302",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C400",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C406",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R219",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q202",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C500",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C503",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q1000",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1001",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "U800",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/ES8389_QFN24.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R306",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "L410",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Sunlord_SWPA4020S.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP310",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "J500",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_Card.3dshapes/microSD_HC_Hirose_DM3AT-SF-PEJM5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R105",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R820",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1001",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1000",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/ML307A_GCLN_LGA94.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R861",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C870",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP302",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "C105",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R809",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1001",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/OPT3001_DNP_reference.wrl",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R813",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R402",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C818",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U822",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-563.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C874",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R401",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1013",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-31_Kemet-D.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R521",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1002",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R215",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C864",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1020",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "D310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-123.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C407",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C811",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C203",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C402",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Y810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_3215-2Pin_3.2x1.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R304",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R814",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R515",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R808",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C802",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C820",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R530",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C205",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C106",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q213",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R524",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C304",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1010",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R1204",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1043",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C206",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R816",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U802",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C805",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C312",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1202",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1012",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-31_Kemet-D.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R806",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R305",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1011",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/CH343P_QFN16.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U811",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R111",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C814",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1041",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1001",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C504",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1031",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R107",
-      "dnp": true,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R840",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C102",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C846",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP102",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R1014",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R113",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R862",
+      "reference": "R301",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -2879,55 +128,7 @@
       ]
     },
     {
-      "reference": "U310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/TPS22990_DML10_reference.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R810",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U210",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/TUSB320_RWB12.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C300",
+      "reference": "C311",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -2939,19 +140,19 @@
       ]
     },
     {
-      "reference": "U410",
+      "reference": "C1012",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "path": "${KIPRJMOD}/Carrier.3dshapes/T520D_7343_31.wrl",
           "exists": true,
           "shown": true
         }
       ]
     },
     {
-      "reference": "R801",
+      "reference": "R860",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -2963,7 +164,67 @@
       ]
     },
     {
-      "reference": "C817",
+      "reference": "U1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-563.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1040",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1301",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U800",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/ES8388_QFN28_4x4_P0.45.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C312",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -2975,379 +236,7 @@
       ]
     },
     {
-      "reference": "C860",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1203",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1004",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R110",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C413",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C214",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R863",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1212",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1011",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1210",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C212",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C409",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C869",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "J1210",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_6P-P0.50_FPC-05FB-6PH20.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C215",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C412",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C841",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R311",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R203",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U821",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U202",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "D311",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-123.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R523",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1214",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q811",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R501",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C403",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C866",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C305",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C868",
+      "reference": "C809",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3365,457 +254,31 @@
       "models": []
     },
     {
-      "reference": "R213",
+      "reference": "J821",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
           "exists": true,
           "shown": true
         }
       ]
     },
     {
-      "reference": "R803",
+      "reference": "D310",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "path": "${KIPRJMOD}/Carrier.3dshapes/BAT54H_SOD123F.wrl",
           "exists": true,
           "shown": true
         }
       ]
     },
     {
-      "reference": "R1206",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R800",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q1011",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP210",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R807",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1210",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R1013",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C204",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R867",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1017",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C877",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1201",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C1044",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP107",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "C873",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R403",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R866",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R812",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C865",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C800",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C813",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R312",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C842",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U100",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/OSPTEK_P4C5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP106",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "U1012",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "TP1005",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "TP1000",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
-    },
-    {
-      "reference": "R510",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "D211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-123.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "L300",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Sunlord_SWPA6045S.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "L1010",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Sunlord_SWPA4020S.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R106",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C848",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C849",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C843",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C847",
+      "reference": "C1300",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3839,13 +302,13 @@
       ]
     },
     {
-      "reference": "TP1011",
+      "reference": "H4",
       "dnp": false,
       "intentional_no_model": true,
       "models": []
     },
     {
-      "reference": "R819",
+      "reference": "R1203",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3857,7 +320,7 @@
       ]
     },
     {
-      "reference": "R841",
+      "reference": "R501",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3869,7 +332,7 @@
       ]
     },
     {
-      "reference": "R1030",
+      "reference": "R530",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3881,7 +344,19 @@
       ]
     },
     {
-      "reference": "R1213",
+      "reference": "C1016",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R864",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3893,7 +368,43 @@
       ]
     },
     {
-      "reference": "C876",
+      "reference": "C1001",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R311",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1000",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C877",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3905,19 +416,1195 @@
       ]
     },
     {
-      "reference": "U803",
+      "reference": "R807",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
         {
-          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
           "exists": true,
           "shown": true
         }
       ]
     },
     {
-      "reference": "R103",
+      "reference": "C104",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP303",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R1211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C866",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C879",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1007",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "J1210",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_6P-P0.50_FPC-05FB-6PH20.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R107",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1043",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C878",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U820",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP103",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "U814",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1011",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C212",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP300",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R110",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C407",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U812",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "D212",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/BAT54H_SOD123F.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J500",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_Card.3dshapes/microSD_HC_Hirose_DM3AT-SF-PEJM5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U821",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C503",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1033",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R312",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1042",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U400",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TPS61088_RHL20_reference.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/CH343P_QFN16.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R216",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R203",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R510",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1014",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C206",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1002",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C845",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "H2",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "U1301",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SHT40_AD1F_DFN4_Membrane.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1011",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R305",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1012",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C861",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C412",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TYPE-C-31-M-12.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R867",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C882",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C106",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R102",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C880",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "L300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/L_DMBJ_CXP0520.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R512",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R404",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U816",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SOT23_MCP120.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "F300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_1206_3216Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C868",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1031",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C818",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R804",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C213",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Y810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SXTF3215R_32k.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R863",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R813",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U811",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C205",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C871",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "L400",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/FEXU0640S2R2MGS.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J301",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R522",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C313",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP105",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C203",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R219",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1002",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1302",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q214",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1000",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R410",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C301",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R805",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C102",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R803",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R524",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1015",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1006",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R1214",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C204",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J1000",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SIM8066-6-1-14-01-A.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1001",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C302",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R806",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R802",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R218",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R106",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C214",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "SW310",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/SK22D02L4_SideSlide.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C404",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q1011",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C401",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C844",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R113",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3941,7 +1628,1387 @@
       ]
     },
     {
-      "reference": "R811",
+      "reference": "R820",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1011",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R108",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1003",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1020",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C806",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C402",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R112",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U210",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TUSB320_RWB12.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1207",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C306",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1000",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/ML307A_GCLN_LGA94.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP101",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "L410",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/L_Sunlord_MWSA0402S.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R817",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1040",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C803",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1031",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U500",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R521",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R866",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R310",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C804",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C801",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U310",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TPS22990_DML10_reference.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C807",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C821",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C504",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1213",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C406",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1210",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C826",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1015",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R304",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C841",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP104",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "J1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C823",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1041",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "D211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/BAT54H_SOD123F.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C869",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C873",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C820",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1030",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U801",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "SW101",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TS038_SideKey.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U410",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1301",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R812",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C413",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C822",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R809",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R801",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1030",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R514",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C105",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C502",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C817",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C403",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R840",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C103",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP302",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R401",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1010",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "TP301",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "R800",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R402",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C811",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C865",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R815",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1205",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1019",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C813",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R520",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C400",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U822",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-563.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C863",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R109",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C842",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1013",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C410",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R306",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C405",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R103",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R217",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1014",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1212",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C408",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C411",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1202",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1203",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1204",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U813",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C864",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP310",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C849",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C805",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C816",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C846",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R862",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R814",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1031",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1012",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R819",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C872",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C874",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1210",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -3965,6 +3032,78 @@
       ]
     },
     {
+      "reference": "C881",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "L1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/L_Sunlord_MWSA0402S.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R101",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C860",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1032",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1004",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
       "reference": "R1017",
       "dnp": false,
       "intentional_no_model": false,
@@ -3977,12 +3116,978 @@
       ]
     },
     {
-      "reference": "C1030",
+      "reference": "C810",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
         {
           "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R111",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1010",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1005",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "D311",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/BAT54H_SOD123F.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C501",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C812",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1001",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C827",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U803",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "SW102",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/TS038_SideKey.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C202",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R865",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1011",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C305",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1215",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R808",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R500",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R213",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C216",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q213",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q310",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R303",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J820",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R861",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J1011",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R302",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R411",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "L820",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/L_Sunlord_MWSA0402S.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1044",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C802",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C304",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R104",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C825",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP1002",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C808",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R513",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C814",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R523",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R816",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C310",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R818",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP106",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C862",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C824",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1018",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U815",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/FSV4730_SSOP24.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1000",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U211",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R403",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R841",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R105",
+      "dnp": true,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "D810",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R811",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C819",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1206",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C409",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q1000",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C815",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C303",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "J1220",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_24P-P0.50_FPC-05FB-24PH20.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q201",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R821",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U202",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP210",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C1013",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/T520D_7343_31.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R215",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R515",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U802",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/LMA3729T381_OAS02_TopPort_reference.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C847",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP107",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C848",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U1300",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/OPT3001_DNP_reference.wrl",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1001",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R212",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "TP102",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
+    },
+    {
+      "reference": "C870",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1003",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C1017",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q202",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
           "exists": true,
           "shown": true
         }
@@ -3995,19 +4100,7 @@
       "models": []
     },
     {
-      "reference": "C103",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R400",
+      "reference": "R1016",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -4019,7 +4112,31 @@
       ]
     },
     {
-      "reference": "C1300",
+      "reference": "J1200",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/FPC-SMD_30P-P0.50_FPC-05FB-30PH20.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "Q811",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C500",
       "dnp": false,
       "intentional_no_model": false,
       "models": [
@@ -4029,6 +4146,132 @@
           "shown": true
         }
       ]
+    },
+    {
+      "reference": "U100",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KIPRJMOD}/Carrier.3dshapes/OSPTEK_P4C5.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C843",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C840",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C101",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C800",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C215",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R202",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "C876",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "R1034",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "U212",
+      "dnp": false,
+      "intentional_no_model": false,
+      "models": [
+        {
+          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "exists": true,
+          "shown": true
+        }
+      ]
+    },
+    {
+      "reference": "H3",
+      "dnp": false,
+      "intentional_no_model": true,
+      "models": []
     },
     {
       "reference": "R313",
@@ -4041,84 +4284,6 @@
           "shown": true
         }
       ]
-    },
-    {
-      "reference": "C1301",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "SW310",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_E-Switch_EG1224_SPDT_Angled.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "U1200",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "R218",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "Q211",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "C871",
-      "dnp": false,
-      "intentional_no_model": false,
-      "models": [
-        {
-          "path": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
-          "exists": true,
-          "shown": true
-        }
-      ]
-    },
-    {
-      "reference": "H3",
-      "dnp": false,
-      "intentional_no_model": true,
-      "models": []
     }
   ]
 }

@@ -563,49 +563,51 @@
     {
       "sheet": "01_core",
       "ref": "SW101",
-      "kind": "SW_SPST",
-      "value": "RESET",
+      "kind": "SIDE_KEY_SH",
+      "value": "TS-038-060250-D2",
       "nets": {
         "1": "P4_EN",
-        "2": "GND"
+        "2": "GND",
+        "SH": "GND"
       },
       "xy": [
         358.14,
         167.64
       ],
-      "footprint": "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS",
+      "footprint": "Carrier:TS038_SideKey",
       "pcb": [
         44.0,
         3.5
       ],
       "side": "F",
-      "angle": 0.0,
+      "angle": 180.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://item.szlcsc.com/54999684.html",
       "dnp": false
     },
     {
       "sheet": "01_core",
       "ref": "SW102",
-      "kind": "SW_SPST",
-      "value": "BOOT",
+      "kind": "SIDE_KEY_SH",
+      "value": "TS-038-060250-D2",
       "nets": {
         "1": "P4_BOOT",
-        "2": "GND"
+        "2": "GND",
+        "SH": "GND"
       },
       "xy": [
         190.5,
         195.58
       ],
-      "footprint": "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS",
+      "footprint": "Carrier:TS038_SideKey",
       "pcb": [
         33.0,
         3.5
       ],
       "side": "F",
-      "angle": 0.0,
+      "angle": 180.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://item.szlcsc.com/54999684.html",
       "dnp": false
     },
     {
@@ -636,7 +638,7 @@
       "sheet": "01_core",
       "ref": "R109",
       "kind": "R",
-      "value": "NTC 10k B3950",
+      "value": "NTC 10k B3950 1%",
       "nets": {
         "1": "BOARD_TEMP_ADC",
         "2": "GND"
@@ -652,8 +654,8 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "ST10603X103F3950FB; R25 and B25/50 each +/-1%; board sensor, not battery-pack NTC",
+      "source": "https://item.szlcsc.com/51854434.html",
       "dnp": false
     },
     {
@@ -1244,7 +1246,7 @@
       "footprint": "Carrier:TUSB320_RWB12",
       "pcb": [
         130.0,
-        14.599999
+        14.6
       ],
       "side": "F",
       "angle": 180.0,
@@ -1383,7 +1385,7 @@
       "sheet": "03_usb_current",
       "ref": "D211",
       "kind": "D",
-      "value": "BAT54H",
+      "value": "BAT54H,115",
       "nets": {
         "1": "CC_HIGH_N",
         "2": "INPUT_ALLOWED_N"
@@ -1392,7 +1394,7 @@
         358.14,
         55.88
       ],
-      "footprint": "Diode_SMD:D_SOD-123",
+      "footprint": "Carrier:BAT54H_SOD123F",
       "pcb": [
         127.8,
         8.6
@@ -1400,14 +1402,14 @@
       "side": "F",
       "angle": 180.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf",
       "dnp": false
     },
     {
       "sheet": "03_usb_current",
       "ref": "D212",
       "kind": "D",
-      "value": "BAT54H",
+      "value": "BAT54H,115",
       "nets": {
         "1": "USB_CONFIG_N",
         "2": "INPUT_ALLOWED_N"
@@ -1416,7 +1418,7 @@
         190.5,
         83.82
       ],
-      "footprint": "Diode_SMD:D_SOD-123",
+      "footprint": "Carrier:BAT54H_SOD123F",
       "pcb": [
         120.5,
         11.5
@@ -1424,7 +1426,7 @@
       "side": "F",
       "angle": 0.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf",
       "dnp": false
     },
     {
@@ -1638,7 +1640,7 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        128.400001,
+        128.4,
         20.8
       ],
       "side": "F",
@@ -1937,7 +1939,7 @@
       "sheet": "04_charger",
       "ref": "L300",
       "kind": "L",
-      "value": "1uH Isat>=8A",
+      "value": "1uH CXP0520-1R0M-AG",
       "nets": {
         "1": "BQ_SW",
         "2": "SYS_ALWAYS"
@@ -1946,15 +1948,15 @@
         246.38,
         55.88
       ],
-      "footprint": "Inductor_SMD:L_Sunlord_SWPA6045S",
+      "footprint": "Carrier:L_DMBJ_CXP0520",
       "pcb": [
         110.0,
         22.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "Isat 9A/Irms 8A characterization; 17mOhm max; hot saturation/load test pending",
+      "source": "https://item.szlcsc.com/8489120.html",
       "dnp": false
     },
     {
@@ -2461,33 +2463,37 @@
     {
       "sheet": "05_system_switch",
       "ref": "SW310",
-      "kind": "SW_SPDT",
-      "value": "POWER SIDE SLIDE",
+      "kind": "SLIDE_DPDT",
+      "value": "SK22D02L4",
       "nets": {
         "1": "GND",
         "2": "SLIDER_ON",
-        "3": "SYS_ALWAYS"
+        "3": "SYS_ALWAYS",
+        "4": null,
+        "5": null,
+        "6": null,
+        "SH": "GND"
       },
       "xy": [
         66.04,
         154.94
       ],
-      "footprint": "Button_Switch_THT:SW_E-Switch_EG1224_SPDT_Angled",
+      "footprint": "Carrier:SK22D02L4_SideSlide",
       "pcb": [
         20.0,
-        11.0
+        5.5
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "Side actuator L=4mm; use pole A only; second pole NC; housing opening needs refit",
+      "source": "https://item.szlcsc.com/639830.html",
       "dnp": false
     },
     {
       "sheet": "05_system_switch",
       "ref": "D310",
       "kind": "D",
-      "value": "BAT54H",
+      "value": "BAT54H,115",
       "nets": {
         "1": "MAIN_ON",
         "2": "SLIDER_ON"
@@ -2496,7 +2502,7 @@
         190.5,
         55.88
       ],
-      "footprint": "Diode_SMD:D_SOD-123",
+      "footprint": "Carrier:BAT54H_SOD123F",
       "pcb": [
         106.0,
         29.2
@@ -2504,14 +2510,14 @@
       "side": "F",
       "angle": 180.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf",
       "dnp": false
     },
     {
       "sheet": "05_system_switch",
       "ref": "D311",
       "kind": "D",
-      "value": "BAT54H",
+      "value": "BAT54H,115",
       "nets": {
         "1": "MAIN_ON",
         "2": "POWER_HOLD"
@@ -2520,7 +2526,7 @@
         246.38,
         55.88
       ],
-      "footprint": "Diode_SMD:D_SOD-123",
+      "footprint": "Carrier:BAT54H_SOD123F",
       "pcb": [
         111.5,
         33.0
@@ -2528,7 +2534,7 @@
       "side": "F",
       "angle": 180.0,
       "status": "engineering",
-      "source": "",
+      "source": "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf",
       "dnp": false
     },
     {
@@ -3122,7 +3128,7 @@
       "footprint": "Capacitor_SMD:C_1210_3225Metric",
       "pcb": [
         113.6,
-        42.199999
+        42.2
       ],
       "side": "F",
       "angle": 180.0,
@@ -3182,7 +3188,7 @@
       "sheet": "06_main_power",
       "ref": "L410",
       "kind": "L",
-      "value": "2.2uH Isat>=3.5A",
+      "value": "2.2uH MWSA0402S-2R2MT",
       "nets": {
         "1": "BUCK3_SW",
         "2": "+3V3"
@@ -3191,15 +3197,15 @@
         190.5,
         167.64
       ],
-      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
       "pcb": [
         90.0,
         51.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending",
+      "source": "https://item.szlcsc.com/397737.html",
       "dnp": false
     },
     {
@@ -4539,7 +4545,7 @@
       "sheet": "09_modem_power",
       "ref": "L1010",
       "kind": "L",
-      "value": "1uH Isat>=4.5A",
+      "value": "1uH MWSA0402S-1R0MT",
       "nets": {
         "1": "MODEM_SW",
         "2": "MODEM_3V8"
@@ -4548,15 +4554,15 @@
         190.5,
         55.88
       ],
-      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
       "pcb": [
         31.0,
-        50.0
+        50.5
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending",
+      "source": "https://item.szlcsc.com/397734.html",
       "dnp": false
     },
     {
@@ -4682,8 +4688,8 @@
     {
       "sheet": "09_modem_power",
       "ref": "C1012",
-      "kind": "C",
-      "value": "220u 6.3V low ESR",
+      "kind": "CPOL",
+      "value": "220u 10V polymer 25mR",
       "nets": {
         "1": "MODEM_3V8",
         "2": "GND"
@@ -4692,22 +4698,22 @@
         302.26,
         83.82
       ],
-      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+      "footprint": "Carrier:T520D_7343_31",
       "pcb": [
         31.0,
         43.0
       ],
       "side": "F",
       "angle": 90.0,
-      "status": "engineering",
-      "source": "",
+      "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
+      "source": "https://item.szlcsc.com/117998.html",
       "dnp": false
     },
     {
       "sheet": "09_modem_power",
       "ref": "C1013",
-      "kind": "C",
-      "value": "220u 6.3V low ESR",
+      "kind": "CPOL",
+      "value": "220u 10V polymer 25mR",
       "nets": {
         "1": "MODEM_3V8",
         "2": "GND"
@@ -4716,15 +4722,15 @@
         358.14,
         83.82
       ],
-      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+      "footprint": "Carrier:T520D_7343_31",
       "pcb": [
         25.5,
         43.0
       ],
       "side": "F",
       "angle": 90.0,
-      "status": "engineering",
-      "source": "",
+      "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
+      "source": "https://item.szlcsc.com/117998.html",
       "dnp": false
     },
     {
@@ -4888,7 +4894,7 @@
       ],
       "footprint": "Resistor_SMD:R_1206_3216Metric",
       "pcb": [
-        44.0,
+        44.5,
         56.0
       ],
       "side": "F",
@@ -5635,48 +5641,52 @@
     {
       "sheet": "11_codec",
       "ref": "U800",
-      "kind": "ES8389",
-      "value": "ES8389",
+      "kind": "ES8388",
+      "value": "ES8388",
       "nets": {
-        "1": "CODEC_AD0",
-        "2": "SYSTEM_I2C_SDA",
-        "3": "SYSTEM_I2C_SCL",
-        "4": "CODEC_TDMIN",
-        "5": "AUDIO_3V3",
-        "6": "AUDIO_3V3",
-        "7": "GND",
-        "8": "CODEC_BCLK",
-        "9": "CODEC_MCLK",
-        "10": "CODEC_LRCK",
-        "11": "CODEC_DOUT",
-        "12": "DAC_R_P",
-        "13": "DAC_R_N",
-        "14": "DAC_VREF",
-        "15": "DAC_L_N",
-        "16": "DAC_L_P",
+        "1": "CODEC_MCLK",
+        "2": "AUDIO_3V3",
+        "3": "AUDIO_3V3",
+        "4": "GND",
+        "5": "CODEC_BCLK",
+        "6": "CODEC_TDMIN",
+        "7": "CODEC_LRCK",
+        "8": "CODEC_DOUT",
+        "9": null,
+        "10": "DAC_VREF",
+        "11": "DAC_R_P",
+        "12": "DAC_L_P",
+        "13": "GND",
+        "14": null,
+        "15": null,
+        "16": "AUDIO_3V3",
         "17": "AUDIO_3V3",
         "18": "GND",
-        "19": "CODEC_VMID",
-        "20": "ADC_VREF",
+        "19": "ADC_VREF",
+        "20": "CODEC_VMID",
         "21": "MIC_R_N",
         "22": "MIC_R_P",
         "23": "MIC_L_N",
         "24": "MIC_L_P",
-        "25": "GND"
+        "25": null,
+        "26": "CODEC_AD0",
+        "27": "SYSTEM_I2C_SDA",
+        "28": "SYSTEM_I2C_SCL",
+        "29": "GND"
       },
       "xy": [
         76.2,
         99.06
       ],
-      "footprint": "Carrier:ES8389_QFN24_3x3_P0.35",
+      "footprint": "Carrier:ES8388_QFN28_4x4_P0.45",
       "pcb": [
         123.0,
         65.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "S31 TDM pin mux; 0x12; firmware port required",
-      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20250902/D83DF6C36B2B03B18C523F480A71BD56.pdf",
+      "status": "I2S slave; 7-bit 0x10; ADC differential pairs 1 and 2; firmware port required",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20190124/C365736_5E84B6C58F11FDCF085DB830A572A0FC.pdf",
       "dnp": false
     },
     {
@@ -5769,8 +5779,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        133.5,
-        68.0
+        135.75,
+        68.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -5841,8 +5851,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        123.0,
-        68.5
+        117.75,
+        72.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -5856,8 +5866,8 @@
       "kind": "R",
       "value": "100k",
       "nets": {
-        "1": "AUDIO_3V3",
-        "2": "CODEC_DOUT"
+        "1": "CODEC_DOUT",
+        "2": "GND"
       },
       "xy": [
         302.26,
@@ -5866,7 +5876,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
         118.5,
-        62.0
+        61.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -5937,11 +5947,11 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        122.0,
-        61.0
+        127.25,
+        64.75
       ],
       "side": "F",
-      "angle": 180.0,
+      "angle": 0.0,
       "status": "engineering",
       "source": "",
       "dnp": false
@@ -5950,7 +5960,7 @@
       "sheet": "11_codec",
       "ref": "C803",
       "kind": "C",
-      "value": "1u 10V",
+      "value": "100n 10V",
       "nets": {
         "1": "AUDIO_3V3",
         "2": "GND"
@@ -5961,11 +5971,11 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        126.0,
-        61.5
+        126.75,
+        68.5
       ],
       "side": "F",
-      "angle": 180.0,
+      "angle": 0.0,
       "status": "engineering",
       "source": "",
       "dnp": false
@@ -5974,7 +5984,7 @@
       "sheet": "11_codec",
       "ref": "C804",
       "kind": "C",
-      "value": "1u 10V",
+      "value": "100n 10V",
       "nets": {
         "1": "AUDIO_3V3",
         "2": "GND"
@@ -5985,8 +5995,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        129.5,
-        62.0
+        118.75,
+        63.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -5998,7 +6008,7 @@
       "sheet": "11_codec",
       "ref": "C805",
       "kind": "C",
-      "value": "1u 10V",
+      "value": "100n 10V",
       "nets": {
         "1": "DAC_VREF",
         "2": "GND"
@@ -6009,11 +6019,11 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        118.5,
-        60.0
+        123.0,
+        60.75
       ],
       "side": "F",
-      "angle": 180.0,
+      "angle": -90.0,
       "status": "engineering",
       "source": "",
       "dnp": false
@@ -6022,7 +6032,7 @@
       "sheet": "11_codec",
       "ref": "C806",
       "kind": "C",
-      "value": "1u 10V",
+      "value": "10u 10V",
       "nets": {
         "1": "ADC_VREF",
         "2": "GND"
@@ -6033,11 +6043,11 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        119.0,
+        116.25,
         66.0
       ],
       "side": "F",
-      "angle": 180.0,
+      "angle": 90.0,
       "status": "engineering",
       "source": "",
       "dnp": false
@@ -6046,7 +6056,7 @@
       "sheet": "11_codec",
       "ref": "C807",
       "kind": "C",
-      "value": "1u 10V",
+      "value": "10u 10V",
       "nets": {
         "1": "CODEC_VMID",
         "2": "GND"
@@ -6057,11 +6067,11 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        119.5,
-        69.0
+        116.5,
+        70.0
       ],
       "side": "F",
-      "angle": 180.0,
+      "angle": 90.0,
       "status": "engineering",
       "source": "",
       "dnp": false
@@ -6081,7 +6091,7 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        126.5,
+        123.5,
         68.5
       ],
       "side": "F",
@@ -6120,7 +6130,7 @@
       "kind": "C",
       "value": "1u 10V",
       "nets": {
-        "1": "DAC_L_N",
+        "1": "GND",
         "2": "DAC_L_N_AC"
       },
       "xy": [
@@ -6130,7 +6140,7 @@
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
         122.0,
-        59.0
+        58.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6154,7 +6164,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
         119.0,
-        64.0
+        60.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6178,7 +6188,7 @@
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
         127.5,
-        66.0
+        63.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6201,8 +6211,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        127.5,
-        64.0
+        126.25,
+        61.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6216,7 +6226,7 @@
       "kind": "C",
       "value": "1u 10V",
       "nets": {
-        "1": "DAC_R_N",
+        "1": "GND",
         "2": "DAC_R_N_AC"
       },
       "xy": [
@@ -6225,8 +6235,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        131.0,
-        66.0
+        133.25,
+        67.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6249,8 +6259,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        131.0,
-        64.0
+        136.5,
+        66.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -6261,33 +6271,47 @@
     {
       "sheet": "12_fm_audio",
       "ref": "U815",
-      "kind": "RDA5807M",
-      "value": "RDA5807M",
+      "kind": "FSV4730_GU",
+      "value": "FSV4730-D60-GU",
       "nets": {
-        "1": "GND",
-        "2": "FM_ANT_IN",
-        "3": "GND",
-        "4": "FM_SCL",
-        "5": "FM_SDA",
-        "6": "FM_RCLK",
-        "7": "FM_3V0",
-        "8": "GND",
-        "9": "FM_R",
-        "10": "FM_L"
+        "1": null,
+        "2": "GND",
+        "3": "FM_XTAL_OUT",
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": "FM_ANT_IN",
+        "9": "GND",
+        "10": "GND",
+        "11": "GND",
+        "12": "GND",
+        "13": "GND",
+        "14": "GND",
+        "15": "FM_RESET_N",
+        "16": "GND",
+        "17": "FM_SCL",
+        "18": "FM_SDA",
+        "19": "FM_RCLK",
+        "20": "FM_3V0",
+        "21": "FM_3V0",
+        "22": "FM_DBYP",
+        "23": "FM_R",
+        "24": "FM_L"
       },
       "xy": [
         76.2,
         78.74
       ],
-      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "footprint": "Carrier:FSV4730_SSOP24",
       "pcb": [
         104.0,
-        66.0
+        64.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "docs/RDA5807M datasheet_v1.pdf",
+      "status": "FM stereo only; NO RDS on 4730. SEN low: 0x11. Hold I2C idle for 1s after power-on; port driver.",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231110/3FE2255F8E542E1F23F397419E3992D5.pdf",
       "dnp": false
     },
     {
@@ -6444,8 +6468,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        88.5,
-        61.0
+        90.75,
+        58.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -6468,8 +6492,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        109.0,
-        68.0
+        112.5,
+        71.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -6493,7 +6517,7 @@
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
         110.0,
-        59.0
+        57.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -6516,8 +6540,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        110.0,
-        66.0
+        109.25,
+        59.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6536,11 +6560,11 @@
       },
       "xy": [
         190.5,
-        83.82
+        81.28
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        99.5,
+        99.0,
         65.75
       ],
       "side": "F",
@@ -6561,12 +6585,12 @@
       },
       "xy": [
         246.38,
-        83.82
+        81.28
       ],
       "footprint": "Package_TO_SOT_SMD:SOT-23",
       "pcb": [
         102.5,
-        73.5
+        75.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6585,12 +6609,12 @@
       },
       "xy": [
         302.26,
-        83.82
+        81.28
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
         94.0,
-        69.5
+        58.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -6610,12 +6634,12 @@
       },
       "xy": [
         358.14,
-        83.82
+        81.28
       ],
       "footprint": "Package_TO_SOT_SMD:SOT-23",
       "pcb": [
         98.0,
-        70.5
+        72.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -6634,12 +6658,12 @@
       },
       "xy": [
         190.5,
-        111.76
+        106.68
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        99.5,
-        63.0
+        95.75,
+        57.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6658,12 +6682,12 @@
       },
       "xy": [
         246.38,
-        111.76
+        106.68
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        88.5,
-        67.0
+        94.25,
+        69.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6682,12 +6706,12 @@
       },
       "xy": [
         302.26,
-        111.76
+        106.68
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        88.5,
-        63.0
+        90.75,
+        57.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6706,12 +6730,12 @@
       },
       "xy": [
         358.14,
-        111.76
+        106.68
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
         103.0,
-        63.0
+        58.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6730,12 +6754,12 @@
       },
       "xy": [
         190.5,
-        139.7
+        132.07999999999998
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        99.5,
-        61.0
+        106.25,
+        57.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -6754,12 +6778,12 @@
       },
       "xy": [
         246.38,
-        139.7
+        132.07999999999998
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        96.0,
-        60.5
+        112.5,
+        59.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6778,12 +6802,12 @@
       },
       "xy": [
         302.26,
-        139.7
+        132.07999999999998
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        106.5,
-        72.5
+        109.75,
+        75.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6802,12 +6826,12 @@
       },
       "xy": [
         358.14,
-        139.7
+        132.07999999999998
       ],
       "footprint": "Capacitor_SMD:C_0805_2012Metric",
       "pcb": [
         97.5,
-        73.5
+        75.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -6826,12 +6850,12 @@
       },
       "xy": [
         190.5,
-        167.64
+        157.48
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        88.5,
-        65.0
+        113.75,
+        64.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -6850,7 +6874,7 @@
       },
       "xy": [
         246.38,
-        167.64
+        157.48
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
@@ -6874,7 +6898,7 @@
       },
       "xy": [
         302.26,
-        167.64
+        157.48
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
@@ -6898,12 +6922,12 @@
       },
       "xy": [
         358.14,
-        167.64
+        157.48
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        103.0,
-        61.0
+        99.75,
+        58.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -6922,12 +6946,12 @@
       },
       "xy": [
         190.5,
-        195.58
+        182.88
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        99.5,
-        59.0
+        98.75,
+        60.0
       ],
       "side": "F",
       "angle": 180.0,
@@ -6946,12 +6970,12 @@
       },
       "xy": [
         246.38,
-        195.58
+        182.88
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        108.0,
-        70.0
+        109.25,
+        71.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -6963,24 +6987,24 @@
       "sheet": "12_fm_audio",
       "ref": "Y810",
       "kind": "XTAL2",
-      "value": "ABS07-32.768KHZ-7-T",
+      "value": "SXTF3215R32768A20F",
       "nets": {
         "1": "FM_RCLK",
-        "2": "GND"
+        "2": "FM_XTAL_OUT"
       },
       "xy": [
-        190.5,
-        251.46
+        246.38,
+        233.67999999999998
       ],
-      "footprint": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
+      "footprint": "Carrier:SXTF3215R_32k",
       "pcb": [
         104.0,
-        70.0
+        70.25
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "RDA DCXO self-bias, CL=7pF; no generic two-pin MCU Pierce capacitors",
-      "source": "",
+      "status": "32.768kHz, 12.5pF, ESR<=50k; 22pF legs plus board capacitance; measure frequency/startup",
+      "source": "https://item.szlcsc.com/23941597.html",
       "dnp": false
     },
     {
@@ -6993,8 +7017,8 @@
         "2": "GND"
       },
       "xy": [
-        246.38,
-        251.46
+        302.26,
+        233.67999999999998
       ],
       "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
       "pcb": [
@@ -7011,19 +7035,19 @@
       "sheet": "12_fm_audio",
       "ref": "C822",
       "kind": "C",
-      "value": "100p C0G",
+      "value": "1n C0G",
       "nets": {
         "1": "FM_ANT",
         "2": "FM_ANT_IN"
       },
       "xy": [
         302.26,
-        195.58
+        182.88
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        110.0,
-        72.0
+        109.75,
+        73.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -7041,13 +7065,13 @@
         "2": "GND"
       },
       "xy": [
-        302.26,
-        251.46
+        358.14,
+        233.67999999999998
       ],
       "footprint": "Diode_SMD:D_SOD-323",
       "pcb": [
-        88.5,
-        69.0
+        90.75,
+        69.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -7072,8 +7096,8 @@
       ],
       "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
       "pcb": [
-        125.0,
-        73.0
+        138,
+        73
       ],
       "side": "F",
       "angle": 180.0,
@@ -7096,8 +7120,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        132.5,
-        70.0
+        141.5,
+        70
       ],
       "side": "F",
       "angle": 180.0,
@@ -7120,8 +7144,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        132.5,
-        72.0
+        135,
+        76.25
       ],
       "side": "F",
       "angle": 180.0,
@@ -7216,8 +7240,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        121.0,
-        73.0
+        139,
+        76.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -7262,8 +7286,8 @@
       ],
       "footprint": "Carrier:LMA3729T381_OAS02_TopPort",
       "pcb": [
-        65.0,
-        73.0
+        7,
+        73
       ],
       "side": "F",
       "angle": 180.0,
@@ -7286,8 +7310,8 @@
       ],
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pcb": [
-        65.0,
-        67.0
+        3.25,
+        69.5
       ],
       "side": "F",
       "angle": 180.0,
@@ -7310,8 +7334,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        65.0,
-        69.0
+        3.25,
+        74
       ],
       "side": "F",
       "angle": 180.0,
@@ -7406,8 +7430,8 @@
       ],
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pcb": [
-        61.0,
-        73.0
+        3.25,
+        71.75
       ],
       "side": "F",
       "angle": 180.0,
@@ -7480,8 +7504,8 @@
       ],
       "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
       "pcb": [
-        51.0,
-        73.0
+        137.5,
+        45.5
       ],
       "side": "F",
       "angle": 0.0,
@@ -7774,8 +7798,8 @@
       ],
       "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
       "pcb": [
-        36.0,
-        73.0
+        6.5,
+        44
       ],
       "side": "F",
       "angle": 0.0,
@@ -8055,7 +8079,7 @@
       "sheet": "19_stereo_pa",
       "ref": "L820",
       "kind": "L",
-      "value": "1uH Isat>=4.5A",
+      "value": "1uH MWSA0402S-1R0MT",
       "nets": {
         "1": "PA_BUCK_SW",
         "2": "PA_4V8"
@@ -8064,15 +8088,15 @@
         190.5,
         195.58
       ],
-      "footprint": "Inductor_SMD:L_Sunlord_SWPA4020S",
+      "footprint": "Carrier:L_Sunlord_MWSA0402S",
       "pcb": [
         39.0,
         59.0
       ],
       "side": "F",
       "angle": 0.0,
-      "status": "engineering",
-      "source": "",
+      "status": "2023 datasheet: min Isat 4.0A (2.2uH), 5.6A (1uH); thermal validation pending",
+      "source": "https://item.szlcsc.com/397734.html",
       "dnp": false
     },
     {
@@ -8914,7 +8938,7 @@
       "sheet": "17_cabin_sensors",
       "ref": "U1301",
       "kind": "SHT40",
-      "value": "SHT40-AD1B-R2",
+      "value": "SHT40-AD1F-R2",
       "nets": {
         "1": "CABIN_I2C_SDA",
         "2": "CABIN_I2C_SCL",
@@ -8925,14 +8949,14 @@
         76.2,
         147.32
       ],
-      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
       "pcb": [
         23.0,
         80.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "0x44; no center pad; vented thermal island, heater normally off",
+      "status": "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered",
       "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
       "dnp": false
     },
@@ -9055,6 +9079,271 @@
       "status": "engineering",
       "source": "",
       "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C879",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        118.75,
+        65.25
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C880",
+      "kind": "C",
+      "value": "10u 10V",
+      "nets": {
+        "1": "AUDIO_3V3",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        130.5,
+        65.25
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C881",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "ADC_VREF",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        118.75,
+        67.0
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "11_codec",
+      "ref": "C882",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "CODEC_VMID",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        223.52
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        119.0,
+        68.75
+      ],
+      "side": "F",
+      "angle": 180.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "U816",
+      "kind": "MCP120_TT",
+      "value": "MCP120T-270I/TT",
+      "nets": {
+        "1": "FM_RESET_N",
+        "2": "FM_3V0",
+        "3": "GND"
+      },
+      "xy": [
+        190.5,
+        261.62
+      ],
+      "footprint": "Carrier:SOT23_MCP120",
+      "pcb": [
+        109.75,
+        69.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "https://ww1.microchip.com/downloads/en/DeviceDoc/11184d.pdf",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "R821",
+      "kind": "R",
+      "value": "10k",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "FM_RESET_N"
+      },
+      "xy": [
+        358.14,
+        182.88
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pcb": [
+        113.5,
+        69.0
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C823",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        208.27999999999997
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        99.0,
+        62.5
+      ],
+      "side": "F",
+      "angle": -90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C824",
+      "kind": "C",
+      "value": "470n 25V",
+      "nets": {
+        "1": "FM_DBYP",
+        "2": "GND"
+      },
+      "xy": [
+        246.38,
+        208.27999999999997
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        99.0,
+        69.0
+      ],
+      "side": "F",
+      "angle": -90.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C825",
+      "kind": "C",
+      "value": "22p C0G",
+      "nets": {
+        "1": "FM_RCLK",
+        "2": "GND"
+      },
+      "xy": [
+        302.26,
+        208.27999999999997
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        102.0,
+        72.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C826",
+      "kind": "C",
+      "value": "22p C0G",
+      "nets": {
+        "1": "FM_XTAL_OUT",
+        "2": "GND"
+      },
+      "xy": [
+        358.14,
+        208.27999999999997
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        106.0,
+        72.5
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
+    },
+    {
+      "sheet": "12_fm_audio",
+      "ref": "C827",
+      "kind": "C",
+      "value": "100n 10V",
+      "nets": {
+        "1": "FM_3V0",
+        "2": "GND"
+      },
+      "xy": [
+        190.5,
+        233.67999999999998
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pcb": [
+        111.0,
+        66.25
+      ],
+      "side": "F",
+      "angle": 0.0,
+      "status": "engineering",
+      "source": "",
+      "dnp": false
     }
   ],
   "sheets": {
@@ -9068,8 +9357,8 @@
     "08_modem": "08 ML307A-GCLN fitted",
     "09_modem_power": "09 Modem power and RF",
     "10_sim_rf": "10 SIM and antenna interfaces",
-    "11_codec": "11 ES8389 stereo codec",
-    "12_fm_audio": "12 RDA5807M and stereo source",
+    "11_codec": "11 ES8388 stereo codec",
+    "12_fm_audio": "12 FSV4730 FM and stereo source",
     "13_release_holds": "13 Pending interface closure",
     "14_lcd_fpc": "14 LCD FPC and 1V8 controls",
     "15_touch_fpc": "15 Touch FPC reference interface",
@@ -9080,8 +9369,8 @@
   },
   "geometric_verifier": {
     "01_core": {
-      "segments": 128,
-      "pins": 128,
+      "segments": 130,
+      "pins": 130,
       "violations": 0
     },
     "02_usb": {
@@ -9100,8 +9389,8 @@
       "violations": 0
     },
     "05_system_switch": {
-      "segments": 37,
-      "pins": 37,
+      "segments": 38,
+      "pins": 38,
       "violations": 0
     },
     "06_main_power": {
@@ -9130,13 +9419,13 @@
       "violations": 0
     },
     "11_codec": {
-      "segments": 75,
-      "pins": 75,
+      "segments": 83,
+      "pins": 83,
       "violations": 0
     },
     "12_fm_audio": {
-      "segments": 92,
-      "pins": 92,
+      "segments": 116,
+      "pins": 116,
       "violations": 0
     },
     "13_release_holds": {

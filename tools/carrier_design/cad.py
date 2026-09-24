@@ -132,7 +132,7 @@ class Design:
         for p in parts:
             ref=p['ref'];kind=p['kind'];s=self.symbols[kind];x,y=p['xy'];u=uid('part:'+ref)
             b.append(f'(symbol (lib_id {q("Carrier:"+kind)}) (at {f(x)} {f(y)} 0) (unit 1) (in_bom {"no" if ref.startswith(("#","TP")) else "yes"}) (on_board {"yes" if p["footprint"] else "no"}) (dnp {"yes" if p["dnp"] else "no"}) (uuid {u})')
-            vertical = kind in ['R','C','L','FUSE','PWR_FLAG','Q_NMOS','Q_NPN']
+            vertical = kind in ['R','C','CPOL','L','FUSE','PWR_FLAG','Q_NMOS','Q_NPN']
             rx,ry=(x+5.08,y-1.27) if vertical else (x,y-s['halfheight']-5.08)
             vx,vy=(x+5.08,y+1.27) if vertical else (x,y-s['halfheight']-2.54)
             if kind=='USBLC6':

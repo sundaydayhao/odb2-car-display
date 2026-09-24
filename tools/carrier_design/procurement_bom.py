@@ -31,25 +31,15 @@ SPECIAL={
     'J1220':'C2856831','L400':'C54140025','Y810':'C276424','D810':'C552574',
     'SW310':'C273395','R301':'C861611','R302':'C1854557',
 }
-HOLDS={
-    'SW101':'侧按键 PTS645Vx39-2LFS 尚无可核实的立创现货替代；替换需核对定位孔、按压高度和侧向行程。',
-    'SW102':'同 SW101，不能把通用 6x6 按键当作已验证的直替。',
-    'R109':'NTC 10k/B3950 缺完整订货号；R25/B 公差及封装需确认。电池包 NTC 本身不在此载板 BOM 内。',
-    'F300':'J300 改为 PH 2A 后撤销原 8A 占位；按端子、线材和电池包短路电流重选保险丝，额定电流/分断能力/温度降额待闭合。',
-    'L300':'1uH/Isat>=8A 尚需核对热态饱和、RMS/DCR 与 SWPA6045S 焊盘，不能仅按电感值买料。',
-    'L410':'2.2uH/Isat>=3.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。',
-    'L1010':'1uH/Isat>=4.5A 尚需核对热态饱和、RMS/DCR 与 SWPA4020S 焊盘。',
-    'L820':'同 L1010；功放电源需负载瞬态验证。',
-    'C1012':'220uF/6.3V 低 ESR 储能待选聚合物及纹波/降额验证；普通钽不能直接替代。',
-    'C1013':'同 C1012；需保证两只在模组脉冲负载下的有效储能。',
-    'U815':'保留用户指定 RDA5807M；立创旧商品页仅有历史零库存信息，当前可采购库存/交期未确认。',
-    'U1301':'现用 SHT40-AD1B-R2 的立创当前现货未确认；AD1F-R2/C7461846 国内有货，但膜版高度/焊盘/装配尚未完成复核，未自动换料。',
-    'R1010':'536k 1%/0603 尚未找到已核实现货料号；不直接改用相近阻值，以免改变 ML307 供电。',
-    'R1014':'100R/0.25W/1206 精确采购号待闭合；不可用本表 0603 100R 替代。',
-}
-for _r in ['D211','D212','D310','D311']:
-    HOLDS[_r]='BAT54H/C426769 为 SOD-123F，现板为 SOD-123；焊盘兼容复核未完成，暂不作为已验证替代。'
-
+# Revision P overrides after package and electrical review.
+ICS.pop('ES8389')
+ICS.update({'ES8388':'C365736','FSV4730-D60-GU':'C19191931','MCP120T-270I/TT':'C145625',
+            'SHT40-AD1F-R2':'C7461846','BAT54H,115':'C426769'})
+SPECIAL.update({'SW310':'C609825','SW101':'C52178082','SW102':'C52178082',
+    'R109':'C49352955','R1010':'C137701','R1014':'C17901','L300':'C7461343',
+    'L410':'C408335','L1010':'C408332','L820':'C408332','C1012':'C116743',
+    'C1013':'C116743','Y810':'C22386778'})
+HOLDS={'F300':'PH 2A 电池端子：按线材、电池短路电流和温度降额定型；额定电流及分断能力未闭合，不能仅按现货选料。'}
 
 def choose(p):
     ref,value,fp=p['ref'],p['value'],p['footprint']
@@ -70,9 +60,9 @@ def choose(p):
         cmap={('0603','100n'):'C14663',('0603','1u'):'C29936',('0603','4.7u'):'C19666',
               ('0603','2.2u'):'C23630',('0603','10u'):'C19702',('0603','10n'):'C57112',
               ('0603','47n'):'C1622',('0603','22n'):'C21122',('0603','100p'):'C14858',
-              ('0603','22p'):'C1653',('0603','33p'):'C1663',('0603','1n'):'C1588',
+              ('0603','22p'):'C1653',('0603','33p'):'C1663',('0603','1n'):'C1588',('0603','470n'):'C1623',
               ('0805','10u'):'C15850',('0805','22u'):'C45783',('1206','22u'):'C12891',
-              ('1206','10u'):'C13585',('1210','47u'):'C2932478'}
+              ('1206','10u'):'C13585',('1210','47u'):'C84494'}
         code=cmap.get((size,nominal))
         if 'C0G' in value and nominal=='1n':code='C507408'
         if code:
@@ -96,7 +86,7 @@ def generate(project, intent_path):
                  Fitted=0 if p['dnp'] else 1,LCSC=code,Manufacturer=r.get('brandNameEn',''),
                  MPN=r.get('productModel',p['value'] if status=='USER_FIXED' else ''),SelectionStatus=status,Note=note,URL=r.get('url',''))
         rows.append(row);groups[code or 'HOLD:'+p['ref']].append(row)
-    assert len(rows)==327 and sum(r['Fitted'] for r in rows)==320
+    assert len(rows)==338 and sum(r['Fitted'] for r in rows)==331
     grouped=[]
     for key,rr in groups.items():
         code=rr[0]['LCSC'];part=cat.get(code,{})
@@ -126,7 +116,7 @@ def generate(project, intent_path):
     counts=collections.Counter()
     for r in rows:
         if r['Fitted']:counts['selected' if r['LCSC'] else r['SelectionStatus'].lower()]+=1
-    report=dict(revision='L1',boards=100,spare_percent=20,physical_positions=327,fitted_per_board=320,
+    report=dict(revision='P',boards=100,spare_percent=20,physical_positions=len(rows),fitted_per_board=sum(r['Fitted'] for r in rows),
         per_board_sourcing=dict(counts),unique_selected_lcsc_codes=len({r['LCSC'] for r in rows if r['LCSC']}),
         supply_groups=dict(collections.Counter(r['SupplyStatus'] for r in grouped)),
         policy='Aggregate fitted count by LCSC, add 20%, ceil to observed MOQ/order step. DNP count is zero. Stock is an unreserved snapshot, not a supply guarantee.',

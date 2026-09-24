@@ -14,7 +14,8 @@ def render(project):
         s.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{700 if bold else 400}">{html.escape(t)}</text>')
     def rect(x,y,w,h,fill,stroke='none',r=0):
         s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3"/>')
-    text(45,48,'显示载板 · 主控高速接口布局 / 排线穿板' if mipi else '显示载板 · 正面器件 / 背面贴屏 / 排线穿板',30,bold=True)
+    title='显示载板 · 国内采购替换 / 板载 FM 与传感器' if info.get('sourcing_revision')=='P' else '显示载板 · 主控高速接口布局 / 排线穿板' if mipi else '显示载板 · 正面器件 / 背面贴屏 / 排线穿板'
+    text(45,48,title,30,bold=True)
     text(45,81,f'{b.GetTitleBlock().GetRevision()} · 145 × 85 mm · 四层 · 0 条走线 · 穿线槽和屏板间隙尚待实物核对',18)
     scale=4.4;oy=160
     for side,ox,title,sub in [('F',55,'F 面 · 正面 / 朝后壳','从屏幕背面看：USB 在右，TF / SIM 在左'),
@@ -35,7 +36,8 @@ def render(project):
             labels={'U100':'P4C5 / P4C6','J1200':'LCD FPC','J1210':'触摸 FPC','J1220':'CAM',
                     'J300':'电池 2Pin','J301':'NTC 2Pin','J810':'FM ANT','J820':'SPK L','J821':'SPK R',
                     'L400':'L400','U802':'MIC L','U803':'MIC R','U1301':'SHT40',
-                    'U815':'FM RDA5807M','U1300':'OPT3001'}
+                    'U815':'FM '+fps['U815'].GetValue().split('-')[0],'U1300':'OPT3001',
+                    'U800':fps['U800'].GetValue()}
             for r,label in labels.items():
                 f=fps[r];z=f.GetBoundingBox(False,False)
                 region(k.ToMM(z.GetX())-50,k.ToMM(z.GetY())-50,k.ToMM(z.GetWidth()),k.ToMM(z.GetHeight()),'#fff','#456e9d')
@@ -67,7 +69,7 @@ def render(project):
     cards=[(45,'穿板连接','触摸：J1210  →  10 × 3 mm 槽',
             '屏幕：J1200  →  20 × 3 mm 槽','排线从 B 面穿到 F 面，再插入座内。'),
            (535,'背面高度','全部器件本体都在 F 面',
-            '未处理通孔脚：模型最大约 2.4 mm','不含焊锡与公差；需要绝缘间隙。'),
+            '通孔焊脚、焊锡及公差需要留间隙','替换开关的模型未包含全部引脚。'),
            (1025,'装配待定','7.5 / 46.1 mm 是原平面尖端距离',
             '穿板预留 4 mm 补偿，尚未实测','间隙、线长、折弯和针序需样件核对。')]
     if mipi:
@@ -78,7 +80,8 @@ def render(project):
         text(x+18,672,a,16);text(x+18,704,c,16);text(x+18,744,e,14,'#665041')
     core=info['positions']['U100']['xy_mm']
     text(45,817,f'当前 F 面坐标：触摸座 (109, 7.575)；LCD 座 (74.5, 46.175)；核心板 ({core[0]:g}, {core[1]:g}) mm。',17)
-    text(45,848,'双麦间距 60 mm；电池端子 J300 与 NTC 端子 J301 均为 PH 2.0 mm 2Pin。',17)
+    mic_spacing=abs(k.ToMM(fps['U802'].GetPosition().x-fps['U803'].GetPosition().x))
+    text(45,848,f'双麦间距 {mic_spacing:g} mm；两路扬声器接口左右分置。电池 / NTC 均为 PH 2.0 mm 2Pin。',17)
     text(45,889,'主工程未布线；屏板名义间距 3 mm。蓝色是局部出线/开盖空间；装配与高速性能仍待验证。' if mipi else '工程仍未布线；通过间距检查不代表排线已经够长，也不代表可直接贴金属屏背板。',17,'#97452b')
     s.append('</svg>')
     for name in ['FLOORPLAN.svg','FPC_FIT.svg']:(project/name).write_text('\n'.join(s)+'\n',encoding='utf-8')

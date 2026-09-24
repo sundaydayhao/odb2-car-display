@@ -149,7 +149,7 @@ if 'FEXU0640' in fps['L400'].GetValue():
 audio_checks=None
 if 'U820' in fps:
     # Independent pin map from S31-Korvo-1 p4 / ES8389 p6 and RDA5807M p14.
-    for ref,mapping in {
+    audio_pinmaps={
         'U800':{'1':'CODEC_AD0','2':'SYSTEM_I2C_SDA','3':'SYSTEM_I2C_SCL','4':'CODEC_TDMIN',
             '5':'AUDIO_3V3','6':'AUDIO_3V3','7':'GND','8':'CODEC_BCLK','9':'CODEC_MCLK',
             '10':'CODEC_LRCK','11':'CODEC_DOUT','12':'DAC_R_P','13':'DAC_R_N','14':'DAC_VREF',
@@ -161,7 +161,33 @@ if 'U820' in fps:
         'R803':{'1':'I2S_DOUT','2':'CODEC_TDMIN'},'R800':{'1':'I2S_MCLK','2':'CODEC_MCLK'},
         'U810':{'1':'AUDIO_3V3','2':'GND','3':'FM_POWER_EN','5':'FM_3V0'},
         'U822':{'1':'GND','2':'PA_BUCK_SW','3':'+5V','4':'+5V','5':'PA_BUCK_FB'},
-    }.items():
+    }
+    if fps['U800'].GetValue()=='ES8388':
+        # Independent package drawings: ES8388 rev5 p6, FSV4730 rev1.1 p31,
+        # MCP120 DS11184D p1. NCs are checked separately from powered pins.
+        audio_pinmaps.update({
+            'U800':{'1':'CODEC_MCLK','2':'AUDIO_3V3','3':'AUDIO_3V3','4':'GND',
+                '5':'CODEC_BCLK','6':'CODEC_TDMIN','7':'CODEC_LRCK','8':'CODEC_DOUT',
+                '10':'DAC_VREF','11':'DAC_R_P','12':'DAC_L_P','13':'GND','16':'AUDIO_3V3',
+                '17':'AUDIO_3V3','18':'GND','19':'ADC_VREF','20':'CODEC_VMID','21':'MIC_R_N',
+                '22':'MIC_R_P','23':'MIC_L_N','24':'MIC_L_P','26':'CODEC_AD0',
+                '27':'SYSTEM_I2C_SDA','28':'SYSTEM_I2C_SCL','29':'GND'},
+            'U815':{'2':'GND','3':'FM_XTAL_OUT','8':'FM_ANT_IN','9':'GND','10':'GND',
+                '11':'GND','12':'GND','13':'GND','14':'GND','15':'FM_RESET_N','16':'GND',
+                '17':'FM_SCL','18':'FM_SDA','19':'FM_RCLK','20':'FM_3V0','21':'FM_3V0',
+                '22':'FM_DBYP','23':'FM_R','24':'FM_L'},
+            'U816':{'1':'FM_RESET_N','2':'FM_3V0','3':'GND'},
+            'R806':{'1':'CODEC_DOUT','2':'GND'},'R821':{'1':'FM_3V0','2':'FM_RESET_N'},
+            'Y810':{'1':'FM_RCLK','2':'FM_XTAL_OUT'},
+            'C809':{'1':'GND','2':'DAC_L_N_AC'},'C811':{'1':'GND','2':'DAC_R_N_AC'},
+            'C824':{'1':'FM_DBYP','2':'GND'},'C825':{'1':'FM_RCLK','2':'GND'},
+            'C826':{'1':'FM_XTAL_OUT','2':'GND'}})
+        for ref,pins in [('U800',['9','14','15','25']),('U815',['1','4','5','6','7'])]:
+            for pin in pins:assert sch[(ref,pin)].startswith('unconnected-'),(ref,pin)
+        assert fps['C824'].GetValue()=='470n 25V'
+        assert fps['C825'].GetValue()==fps['C826'].GetValue()=='22p C0G'
+        assert fps['C822'].GetValue()=='1n C0G'
+    for ref,mapping in audio_pinmaps.items():
         for pin,net in mapping.items():assert sch[(ref,pin)]==net,(ref,pin)
     for i,ch in enumerate(['L','R']):
         for ref,mapping in {
@@ -183,8 +209,14 @@ if 'U820' in fps:
     assert 'FM_SUM' not in sch.values() and 'J800' not in fps
     assert all(not fps[r].IsDNP() for r in ['U800','U802','U803','U815','U820','U821','J820','J821'])
     assert fps['U802'].GetLayer()==fps['U803'].GetLayer()==(k.F_Cu if screen_back else k.B_Cu)
-    assert abs(abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x))-60)<.001
+    edge_audio=(OUT/'AUDIO_EDGE_LAYOUT.json').is_file()
+    mic_spacing=131 if edge_audio else 60
+    assert abs(abs(k.ToMM(fps['U803'].GetPosition().x-fps['U802'].GetPosition().x))-mic_spacing)<.001
     assert fps['U803'].GetPosition().y==fps['U802'].GetPosition().y
+    if edge_audio:
+        for ref,(x,y) in {'U802':(138,73),'U803':(7,73),'J820':(137.5,45.5),'J821':(6.5,44)}.items():
+            assert abs(k.ToMM(fps[ref].GetPosition().x)-50-x)<.001
+            assert abs(k.ToMM(fps[ref].GetPosition().y)-50-y)<.001
     # TI full-temperature FB +/-2%; 680k/100k resistors +/-1% plus
     # independent worst-case 100ppm/K drift over 100K from 25C => +/-2% each.
     pa_range=[vref*(1+680000*(1+rtol)/(100000*(1-rtol))) for vref,rtol in [(.588,-.02),(.612,.02)]]
@@ -192,9 +224,16 @@ if 'U820' in fps:
     audio_checks={'ES8389_7bit_address':'0x12','RDA5807M_7bit_address':'0x10',
         'stereo_mic_dac_and_BTL_pinmaps':'PASS','S31_TDM_clock_data_pin_swap':'PASS',
         'fm_separate_left_right':'PASS','onboard_mics':2,'speaker_connectors':2,
-        'microphone_center_spacing_mm':60,'PA_nominal_V':4.68,
+        'microphone_center_spacing_mm':mic_spacing,'PA_nominal_V':4.68,
         'PA_static_tolerance_range_V':[round(x,4) for x in pa_range],
         'amplifier_nominal_gain_V_V':2.4,'firmware_and_physical_audio_validation':'NOT_RUN'}
+    if fps['U800'].GetValue()=='ES8388':
+        for key in ['ES8389_7bit_address','RDA5807M_7bit_address','S31_TDM_clock_data_pin_swap']:
+            del audio_checks[key]
+        audio_checks.update(ES8388_7bit_address='0x10',FSV4730_7bit_address='0x11',
+            codec_interface='standard I2S slave; DAC LOUT1/ROUT1 single-ended',
+            FM_RDS_supported=False,FM_RESET='MCP120-270; wait 1s with I2C idle after power enable',
+            replacement_driver_validation='NOT_RUN; ES8388 and FSV4730 ports required')
 # A passive connector with duplicate power pins does not necessarily cause an
 # isolated-label warning. Report these open supply boundaries independently.
 power_holds=['LCD_LEDA','LCD_LEDK','LCD_AVDD_9V8','LCD_VGH','LCD_VGL','LCD_VCOM',

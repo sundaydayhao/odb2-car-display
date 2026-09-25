@@ -1,5 +1,7 @@
 # R0 电气核算和固件接口约定
 
+2026-09-25 修订 R：五类采购替换、3.8V 支路电容静态耐压核算与未完成的纹波/瞬态验证见 [COST_REDUCTION.md](COST_REDUCTION.md)。SHT40 当前为无膜 AD1B；本页较早型号记录按修订时间阅读。
+
 2026-09-24 修订 P 更新：本页旧 ES8389/RDA5807/裸版 SHT40 和未定采购料号的描述已由 [SOURCING_REVIEW.md](SOURCING_REVIEW.md) 取代；当前符号/封装、引脚、地址与驱动约定以实际 P 工程和 AUDIO_ARCHITECTURE.md 为准。其他既有电源核算及待验证条件继续保留。
 
 

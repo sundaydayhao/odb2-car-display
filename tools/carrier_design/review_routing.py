@@ -45,6 +45,9 @@ def review(baseline,project,evidence):
     def fid(f):return str(f.GetFPID().GetLibNickname())+':'+str(f.GetFPID().GetLibItemName())
     shrink=json.loads((project/'PASSIVE_SHRINK.json').read_text('utf8'));changed={r['reference'] for r in shrink['changes']}
     assert len(changed)==155
+    cost_refs=set()
+    if (project/'COST_CHANGES.json').exists():
+        cost_refs=set(json.loads((project/'COST_CHANGES.json').read_text('utf8'))['changes'])
     for ref,f in fps.items():
         p=prior[ref];assert f.m_Uuid.AsString()==p.m_Uuid.AsString(),ref
         assert f.GetPosition()==p.GetPosition() and f.GetOrientationDegrees()==p.GetOrientationDegrees(),ref
@@ -53,15 +56,22 @@ def review(baseline,project,evidence):
             priorpad=oldpads[z.m_Uuid.AsString()]
             assert z.GetNetname()==priorpad.GetNetname() and z.GetNumber()==priorpad.GetNumber(),ref
         if ref in changed:assert fid(f).endswith('_0402_1005Metric')
-        else:assert fid(f)==fid(p),ref
-    # In every schematic, the only permitted edits are the selected Footprint
-    # property strings. No electrical/geometry/UUID change may hide in a rewrite.
+        elif ref not in cost_refs:assert fid(f)==fid(p),ref
+    # Permit passive footprints and the explicitly recorded purchasing delta.
+    # No electrical/geometry/UUID change may hide in a rewrite.
     for path in project.glob('*.kicad_sch'):
         a=sexp.load_file(str(baseline/path.name));c=sexp.load_file(str(path))
+        if cost_refs and path.name=='17_cabin_sensors.kicad_sch':
+            for note in sexp.find_all(c,'text'):
+                note[1]=sexp.QStr.of(str(note[1]).replace('SHT40-AD1B-R2 fixed 0x44','SHT40-AD1F-R2 fixed 0x44'))
+        oldprops={str(next(p[2] for p in sexp.find_all(s,'property') if str(p[1])=='Reference')):
+                  {str(p[1]):p for p in sexp.find_all(s,'property')} for s in sexp.find_all(a,'symbol')}
         for sym in sexp.find_all(c,'symbol'):
             props={str(n[1]):n for n in sexp.find_all(sym,'property')}
             ref=str(props.get('Reference',['','',''])[2])
             if ref in changed:props['Footprint'][2]=sexp.QStr.of(fid(prior[ref]))
+            if ref in cost_refs:
+                for key in ['Value','Footprint','Datasheet','DesignStatus']:props[key][2]=oldprops[ref][key][2]
         assert a==c,path.name
     def invariants(path):
         t=sexp.load_file(str(path))
@@ -142,11 +152,15 @@ def review(baseline,project,evidence):
         assert len(r['ground_vias'])==2
         assert all(min(math.dist(s,g) for g in r['ground_vias'])<2.1 for s in r['signal_vias'])
     drc=json.loads((evidence/'drc-final.json').read_text('utf8'));assert not drc['violations'] and not drc['schematic_parity']
-    rows_bom=list(csv.DictReader((project/'PROCUREMENT_100PCS.csv').read_text('utf-8-sig').splitlines()))
-    assert all(int(r['ObservedStock'])>=3*int(r['ProposedQty']) for r in rows_bom if r['StockChannel']=='lcsc_domestic_direct' and int(r['ProposedQty']))
+    if (project/'PROCUREMENT_PER_BOARD.csv').exists():
+        rows_bom=json.loads((project/'PROCUREMENT_REVIEW.json').read_text('utf8'))['groups']
+        assert all(int(r['ObservedStock'])>=int(r['PerBoard']) for r in rows_bom if r['LCSC'] and r['PerBoard'])
+    else:
+        rows_bom=list(csv.DictReader((project/'PROCUREMENT_100PCS.csv').read_text('utf-8-sig').splitlines()))
+        assert all(int(r['ObservedStock'])>=3*int(r['ProposedQty']) for r in rows_bom if r['StockChannel']=='lcsc_domestic_direct' and int(r['ProposedQty']))
     cn=b.GetConnectivity();cn.Build(b)
     result=dict(revision='Q',status='PASS_PARTIAL_ROUTING_NOT_RELEASED',passives_changed=155,
-        schematic_change='Only 155 Footprint properties; all electrical and drawing trees preserved',
+        schematic_change='155 passive Footprint properties' + (' and the eight-reference purchasing delta plus SHT40 model-name note; electrical trees preserved' if cost_refs else '; all electrical and drawing trees preserved'),
         pad_and_footprint_UUIDs_preserved=True,all_component_centers_and_angles_preserved=True,
         board_outline_slots_and_drawings_preserved=True,planes='In1.Cu and In2.Cu GND; no inner signal tracks',
         mipi=rows,mipi_corners=corners,pair_skew_mm=pairskews,bus_skew=bus_skews,reference_plane_samples_checked=samples,

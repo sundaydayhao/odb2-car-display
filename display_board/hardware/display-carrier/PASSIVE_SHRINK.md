@@ -24,4 +24,4 @@
 
 所有本次选用料号在立创大陆站均为正常供货、直营有货，观察库存至少为 100 块板＋20% 备料需求的 3 倍。库存记录采用页面独立时间戳，不代表锁货或长期保证。替换后全板共 86 个选定料号：85 个直营，BQ25896 一个合作供应；主控和 ML307 单采，F300 原有待定项保留。
 
-检查：20 张原理图只改变隐藏封装属性；原生 SVG 去掉导出时间后全部相同，代表页 PNG 像素差为零。338 个实体器件模型均能加载，SCH/PCB 焊盘网络一致。逐位号清单见 [PASSIVE_SHRINK.json](PASSIVE_SHRINK.json)，实时观察摘要见 [LCSC_STOCK_SNAPSHOT.json](LCSC_STOCK_SNAPSHOT.json)，订购分组见 [PROCUREMENT_100PCS.csv](PROCUREMENT_100PCS.csv)。
+检查：20 张原理图只改变隐藏封装属性；原生 SVG 去掉导出时间后全部相同，代表页 PNG 像素差为零。338 个实体器件模型均能加载，SCH/PCB 焊盘网络一致。逐位号清单见 [PASSIVE_SHRINK.json](PASSIVE_SHRINK.json)，实时观察摘要见 [LCSC_STOCK_SNAPSHOT.json](LCSC_STOCK_SNAPSHOT.json)，订购分组见 [PROCUREMENT_PER_BOARD.csv](PROCUREMENT_PER_BOARD.csv)。

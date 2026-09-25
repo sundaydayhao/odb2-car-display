@@ -349,6 +349,9 @@ apply_domestic_sourcing(d)
 remap_footprints(d.parts)
 from small_passives import apply as apply_small_passives
 apply_small_passives(d.parts)
+from cost_sourcing_spec import apply as apply_cost_sourcing
+apply_cost_sourcing(d.parts)
+d.notes['17_cabin_sensors'] = [n.replace('SHT40-AD1F-R2', 'SHT40-AD1B-R2') for n in d.notes['17_cabin_sensors']]
 d.sheets = dict(sorted(d.sheets.items()))
 
 if __name__=='__main__':

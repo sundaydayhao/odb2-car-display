@@ -1,0 +1,60 @@
+{
+  "revision": "R",
+  "changed_references": [
+    "C1012",
+    "C1013",
+    "C405",
+    "C406",
+    "J1010",
+    "J1011",
+    "U1301",
+    "U300"
+  ],
+  "board_count": 1,
+  "upload_rows": 86,
+  "upload_fitted_count": 328,
+  "complete_fitted_count": 331,
+  "excluded_fixed": [
+    "U100",
+    "U1000"
+  ],
+  "excluded_hold": [
+    "F300"
+  ],
+  "excluded_dnp_count": 7,
+  "pcb_tracks_vias_fills_rules_outline_slots_unchanged": true,
+  "unchanged_footprints": 357,
+  "all_pad_nets_uuids_and_component_centers_preserved": true,
+  "schematic_changes": "Value, Footprint, Datasheet and DesignStatus on eight existing references; one SHT40 model-name note",
+  "mipi_corners": {
+    "junctions_checked": 190,
+    "minimum_interior_angle_degrees": 134.99971352253485,
+    "acute_corners": 0,
+    "maximum_heading_change_degrees": 45,
+    "tolerance_degrees": 0.01,
+    "violations": []
+  },
+  "remaining_unconnected": 519,
+  "tracks_vias": 1242,
+  "physical_drc": 0,
+  "schematic_parity": 0,
+  "erc_errors": 0,
+  "erc_warnings": 13,
+  "polymer_max_static_rail_v": 4.0262,
+  "polymer_static_voltage_utilization": 0.6391,
+  "polymer_land_pattern_mm": {
+    "outer": 8.6,
+    "gap": 3.8,
+    "pad": [
+      2.4,
+      2.8
+    ]
+  },
+  "engineering_limits": [
+    "Polymer ripple rating not given in the linked datasheet; RF burst, startup and temperature qualification remain open.",
+    "MLCC effective capacitance at bias and converter stability remain open.",
+    "SHT40 AD1B has no PTFE membrane; liquid/cleaning/coating protection is required.",
+    "BQ25896RTWT domestic direct inventory observed 72; larger batches require another availability check."
+  ],
+  "status": "DESIGN_FILE_CHECKS_PASS_PARTIAL_BOARD_NOT_RELEASED"
+}

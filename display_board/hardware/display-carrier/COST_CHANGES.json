@@ -1,0 +1,464 @@
+{
+  "revision": "R",
+  "date": "2026-09-25",
+  "changes": {
+    "U1301": {
+      "before": {
+        "sheet": "17_cabin_sensors",
+        "ref": "U1301",
+        "kind": "SHT40",
+        "value": "SHT40-AD1F-R2",
+        "nets": {
+          "1": "CABIN_I2C_SDA",
+          "2": "CABIN_I2C_SCL",
+          "3": "+3V3",
+          "4": "GND"
+        },
+        "xy": [
+          76.2,
+          147.32
+        ],
+        "footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
+        "pcb": [
+          23.0,
+          80.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered",
+        "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "17_cabin_sensors",
+        "ref": "U1301",
+        "kind": "SHT40",
+        "value": "SHT40-AD1B-R2",
+        "nets": {
+          "1": "CABIN_I2C_SDA",
+          "2": "CABIN_I2C_SCL",
+          "3": "+3V3",
+          "4": "GND"
+        },
+        "xy": [
+          76.2,
+          147.32
+        ],
+        "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+        "pcb": [
+          23.0,
+          80.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "Bare SHT40; same I2C 0x44 and pins; protect exposed sensor from liquids, cleaning and coating",
+        "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+        "dnp": false
+      },
+      "lcsc": "C2909890"
+    },
+    "U300": {
+      "before": {
+        "sheet": "04_charger",
+        "ref": "U300",
+        "kind": "BQ25896",
+        "value": "BQ25896RTWR",
+        "nets": {
+          "1": "CHARGE_VBUS",
+          "2": "USB_AUX3V3",
+          "3": "CHG_PG_N",
+          "4": "CHG_STAT_N",
+          "5": "SYSTEM_I2C_SCL",
+          "6": "SYSTEM_I2C_SDA",
+          "7": "CHARGER_INT",
+          "8": "GND",
+          "9": "CHG_DISABLE",
+          "10": "BQ_ILIM",
+          "11": "BAT_TS",
+          "12": "BQ_QON_N",
+          "13": "BAT_PROTECTED",
+          "14": "BAT_PROTECTED",
+          "15": "SYS_ALWAYS",
+          "16": "SYS_ALWAYS",
+          "17": "GND",
+          "18": "GND",
+          "19": "BQ_SW",
+          "20": "BQ_SW",
+          "21": "BQ_BTST",
+          "22": "BQ_REGN",
+          "23": "BQ_PMID",
+          "24": null,
+          "25": "GND"
+        },
+        "xy": [
+          69.85,
+          96.52
+        ],
+        "footprint": "Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm",
+        "pcb": [
+          118.0,
+          18.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "engineering",
+        "source": "https://www.ti.com/lit/ds/symlink/bq25896.pdf",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "04_charger",
+        "ref": "U300",
+        "kind": "BQ25896",
+        "value": "BQ25896RTWT",
+        "nets": {
+          "1": "CHARGE_VBUS",
+          "2": "USB_AUX3V3",
+          "3": "CHG_PG_N",
+          "4": "CHG_STAT_N",
+          "5": "SYSTEM_I2C_SCL",
+          "6": "SYSTEM_I2C_SDA",
+          "7": "CHARGER_INT",
+          "8": "GND",
+          "9": "CHG_DISABLE",
+          "10": "BQ_ILIM",
+          "11": "BAT_TS",
+          "12": "BQ_QON_N",
+          "13": "BAT_PROTECTED",
+          "14": "BAT_PROTECTED",
+          "15": "SYS_ALWAYS",
+          "16": "SYS_ALWAYS",
+          "17": "GND",
+          "18": "GND",
+          "19": "BQ_SW",
+          "20": "BQ_SW",
+          "21": "BQ_BTST",
+          "22": "BQ_REGN",
+          "23": "BQ_PMID",
+          "24": null,
+          "25": "GND"
+        },
+        "xy": [
+          69.85,
+          96.52
+        ],
+        "footprint": "Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm",
+        "pcb": [
+          118.0,
+          18.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "Same BQ25896 RTW die/pinout; small-reel variant chosen for domestic direct stock; limited buffer",
+        "source": "https://www.ti.com/lit/ds/symlink/bq25896.pdf",
+        "dnp": false
+      },
+      "lcsc": "C2876371"
+    },
+    "J1010": {
+      "before": {
+        "sheet": "10_sim_rf",
+        "ref": "J1010",
+        "kind": "RF_CONN",
+        "value": "IPEX-1 50R",
+        "nets": {
+          "1": "LTE_ANT",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          83.82
+        ],
+        "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+        "pcb": [
+          51.0,
+          12.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "engineering",
+        "source": "",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "10_sim_rf",
+        "ref": "J1010",
+        "kind": "RF_CONN",
+        "value": "U.FL-R-SMT-1(80)",
+        "nets": {
+          "1": "LTE_ANT",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          83.82
+        ],
+        "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+        "pcb": [
+          51.0,
+          12.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging",
+        "source": "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue",
+        "dnp": false
+      },
+      "lcsc": "C88374"
+    },
+    "J1011": {
+      "before": {
+        "sheet": "10_sim_rf",
+        "ref": "J1011",
+        "kind": "RF_CONN",
+        "value": "IPEX-1 50R",
+        "nets": {
+          "1": "GNSS_ANT",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          111.76
+        ],
+        "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+        "pcb": [
+          44.0,
+          17.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "engineering",
+        "source": "",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "10_sim_rf",
+        "ref": "J1011",
+        "kind": "RF_CONN",
+        "value": "U.FL-R-SMT-1(80)",
+        "nets": {
+          "1": "GNSS_ANT",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          111.76
+        ],
+        "footprint": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+        "pcb": [
+          44.0,
+          17.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging",
+        "source": "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue",
+        "dnp": false
+      },
+      "lcsc": "C88374"
+    },
+    "C405": {
+      "before": {
+        "sheet": "06_main_power",
+        "ref": "C405",
+        "kind": "C",
+        "value": "22u 10V",
+        "nets": {
+          "1": "SYS_SWITCHED",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          111.76
+        ],
+        "footprint": "Capacitor_SMD:C_1206_3216Metric",
+        "pcb": [
+          120.0,
+          39.8
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "engineering",
+        "source": "",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "06_main_power",
+        "ref": "C405",
+        "kind": "C",
+        "value": "22u 25V X5R 10%",
+        "nets": {
+          "1": "SYS_SWITCHED",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          111.76
+        ],
+        "footprint": "Capacitor_SMD:C_1206_3216Metric",
+        "pcb": [
+          120.0,
+          39.8
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",
+        "source": "https://item.szlcsc.com/8438267.html",
+        "dnp": false
+      },
+      "lcsc": "C7432785"
+    },
+    "C406": {
+      "before": {
+        "sheet": "06_main_power",
+        "ref": "C406",
+        "kind": "C",
+        "value": "22u 10V",
+        "nets": {
+          "1": "SYS_SWITCHED",
+          "2": "GND"
+        },
+        "xy": [
+          190.5,
+          139.7
+        ],
+        "footprint": "Capacitor_SMD:C_1206_3216Metric",
+        "pcb": [
+          109.6,
+          53.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "engineering",
+        "source": "",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "06_main_power",
+        "ref": "C406",
+        "kind": "C",
+        "value": "22u 25V X5R 10%",
+        "nets": {
+          "1": "SYS_SWITCHED",
+          "2": "GND"
+        },
+        "xy": [
+          190.5,
+          139.7
+        ],
+        "footprint": "Capacitor_SMD:C_1206_3216Metric",
+        "pcb": [
+          109.6,
+          53.0
+        ],
+        "side": "F",
+        "angle": 180.0,
+        "status": "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",
+        "source": "https://item.szlcsc.com/8438267.html",
+        "dnp": false
+      },
+      "lcsc": "C7432785"
+    },
+    "C1012": {
+      "before": {
+        "sheet": "09_modem_power",
+        "ref": "C1012",
+        "kind": "CPOL",
+        "value": "220u 10V polymer 25mR",
+        "nets": {
+          "1": "MODEM_3V8",
+          "2": "GND"
+        },
+        "xy": [
+          302.26,
+          83.82
+        ],
+        "footprint": "Carrier:T520D_7343_31",
+        "pcb": [
+          31.0,
+          43.0
+        ],
+        "side": "F",
+        "angle": 90.0,
+        "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
+        "source": "https://item.szlcsc.com/117998.html",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "09_modem_power",
+        "ref": "C1012",
+        "kind": "CPOL",
+        "value": "220u 6.3V polymer 15mR",
+        "nets": {
+          "1": "MODEM_3V8",
+          "2": "GND"
+        },
+        "xy": [
+          302.26,
+          83.82
+        ],
+        "footprint": "Carrier:KNSCHA_177EC0013_7343",
+        "pcb": [
+          31.0,
+          43.0
+        ],
+        "side": "F",
+        "angle": 90.0,
+        "status": "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",
+        "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
+        "dnp": false
+      },
+      "lcsc": "C19192479"
+    },
+    "C1013": {
+      "before": {
+        "sheet": "09_modem_power",
+        "ref": "C1013",
+        "kind": "CPOL",
+        "value": "220u 10V polymer 25mR",
+        "nets": {
+          "1": "MODEM_3V8",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          83.82
+        ],
+        "footprint": "Carrier:T520D_7343_31",
+        "pcb": [
+          25.5,
+          43.0
+        ],
+        "side": "F",
+        "angle": 90.0,
+        "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
+        "source": "https://item.szlcsc.com/117998.html",
+        "dnp": false
+      },
+      "after": {
+        "sheet": "09_modem_power",
+        "ref": "C1013",
+        "kind": "CPOL",
+        "value": "220u 6.3V polymer 15mR",
+        "nets": {
+          "1": "MODEM_3V8",
+          "2": "GND"
+        },
+        "xy": [
+          358.14,
+          83.82
+        ],
+        "footprint": "Carrier:KNSCHA_177EC0013_7343",
+        "pcb": [
+          25.5,
+          43.0
+        ],
+        "side": "F",
+        "angle": 90.0,
+        "status": "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",
+        "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
+        "dnp": false
+      },
+      "lcsc": "C19192479"
+    }
+  }
+}

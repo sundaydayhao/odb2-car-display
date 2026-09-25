@@ -16671,7 +16671,7 @@
 				)
 			)
 		)
-		(property "Value" "22u 10V"
+		(property "Value" "22u 25V X5R 10%"
 			(at 0 1.85 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -16683,7 +16683,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/8438267.html"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -16717,7 +16717,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24750,7 +24750,7 @@
 			)
 		)
 	)
-	(footprint "Carrier:SHT40_AD1F_DFN4_Membrane"
+	(footprint "Carrier:SHT40_DFN4_NoCentralPad"
 		(layer "F.Cu")
 		(uuid "4ff0c83e-6648-4de7-b9bb-cb2a653f9c94")
 		(at 73 130 180)
@@ -24768,7 +24768,7 @@
 				)
 			)
 		)
-		(property "Value" "SHT40-AD1F-R2"
+		(property "Value" "SHT40-AD1B-R2"
 			(at 0 1.7 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -24806,7 +24806,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered"
+		(property "DesignStatus" "Bare SHT40; same I2C 0x44 and pins; protect exposed sensor from liquids, cleaning and coating"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25018,7 +25018,7 @@
 			)
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/Carrier.3dshapes/SHT40_AD1F_DFN4_Membrane.wrl"
+		(model "${KIPRJMOD}/Carrier.3dshapes/SHT40_DFN4_reference.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32069,7 +32069,7 @@
 				)
 			)
 		)
-		(property "Value" "IPEX-1 50R"
+		(property "Value" "U.FL-R-SMT-1(80)"
 			(at 0 3.2 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -32081,7 +32081,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32107,7 +32107,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -32619,7 +32619,7 @@
 				)
 			)
 		)
-		(property "Value" "22u 10V"
+		(property "Value" "22u 25V X5R 10%"
 			(at 0 1.85 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -32631,7 +32631,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://item.szlcsc.com/8438267.html"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -32665,7 +32665,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -40540,7 +40540,7 @@
 			)
 		)
 	)
-	(footprint "Carrier:T520D_7343_31"
+	(footprint "Carrier:KNSCHA_177EC0013_7343"
 		(layer "F.Cu")
 		(uuid "8f880258-d3e9-4b66-b538-7e851ef1e4fe")
 		(at 75.5 93 90)
@@ -40558,7 +40558,7 @@
 				)
 			)
 		)
-		(property "Value" "220u 10V polymer 25mR"
+		(property "Value" "220u 6.3V polymer 15mR"
 			(at 0 3.1 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -40570,7 +40570,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://item.szlcsc.com/117998.html"
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -40604,7 +40604,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height"
+		(property "DesignStatus" "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -40652,8 +40652,8 @@
 			(uuid "ffaa8744-a486-4fb2-b2fa-e4d5e4000ddc")
 		)
 		(fp_rect
-			(start -4.41 -2.4)
-			(end 4.41 2.4)
+			(start -4.55 -2.55)
+			(end 4.55 2.55)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -40724,23 +40724,23 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -3.12 0 90)
-			(size 2.07 2.59)
+			(at -3.1 0 90)
+			(size 2.4 2.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120773)
 			(net "MODEM_3V8")
 			(uuid "372c4636-c70d-4fdd-9a4b-22534aaa1084")
 		)
 		(pad "2" smd roundrect
-			(at 3.12 0 90)
-			(size 2.07 2.59)
+			(at 3.1 0 90)
+			(size 2.4 2.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120773)
 			(net "GND")
 			(uuid "56471efb-9153-4719-b34e-5750e24dc49d")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/Carrier.3dshapes/T520D_7343_31.wrl"
+		(model "${KIPRJMOD}/Carrier.3dshapes/KNSCHA_177EC0013_7343.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -43902,7 +43902,7 @@
 				)
 			)
 		)
-		(property "Value" "BQ25896RTWR"
+		(property "Value" "BQ25896RTWT"
 			(at 0 3.33 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -43948,7 +43948,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "Same BQ25896 RTW die/pinout; small-reel variant chosen for domestic direct stock; limited buffer"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -47499,7 +47499,7 @@
 			)
 		)
 	)
-	(footprint "Carrier:T520D_7343_31"
+	(footprint "Carrier:KNSCHA_177EC0013_7343"
 		(layer "F.Cu")
 		(uuid "ab7b9991-eafd-42de-9fed-ea7ad3a008cf")
 		(at 81 93 90)
@@ -47517,7 +47517,7 @@
 				)
 			)
 		)
-		(property "Value" "220u 10V polymer 25mR"
+		(property "Value" "220u 6.3V polymer 15mR"
 			(at 0 3.1 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -47529,7 +47529,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://item.szlcsc.com/117998.html"
+		(property "Datasheet" "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -47563,7 +47563,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height"
+		(property "DesignStatus" "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -47611,8 +47611,8 @@
 			(uuid "a1be8599-cada-4bc6-a5be-e1ea39022e93")
 		)
 		(fp_rect
-			(start -4.41 -2.4)
-			(end 4.41 2.4)
+			(start -4.55 -2.55)
+			(end 4.55 2.55)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -47683,23 +47683,23 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -3.12 0 90)
-			(size 2.07 2.59)
+			(at -3.1 0 90)
+			(size 2.4 2.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120773)
 			(net "MODEM_3V8")
 			(uuid "6a34e1bc-4048-4e6c-9d74-741d2c667af6")
 		)
 		(pad "2" smd roundrect
-			(at 3.12 0 90)
-			(size 2.07 2.59)
+			(at 3.1 0 90)
+			(size 2.4 2.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.120773)
 			(net "GND")
 			(uuid "061c7e32-63f1-4de6-b542-1a9c7ffad72a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/Carrier.3dshapes/T520D_7343_31.wrl"
+		(model "${KIPRJMOD}/Carrier.3dshapes/KNSCHA_177EC0013_7343.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -48055,7 +48055,7 @@
 				)
 			)
 		)
-		(property "Value" "IPEX-1 50R"
+		(property "Value" "U.FL-R-SMT-1(80)"
 			(at 0 3.2 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -48067,7 +48067,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -48093,7 +48093,7 @@
 				)
 			)
 		)
-		(property "DesignStatus" "engineering"
+		(property "DesignStatus" "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)

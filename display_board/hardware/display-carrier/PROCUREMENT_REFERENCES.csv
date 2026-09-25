@@ -59,7 +59,7 @@ C212,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,SAMSUNG(三星),CL10B105KA8
 C213,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,SAMSUNG(三星),CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/30690.html
 C214,100n,Capacitor_SMD:C_0402_1005Metric,1,C1525,SAMSUNG(三星),CL05B104KO5NNNC,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1877.html
 C215,1u 10V,Capacitor_SMD:C_0603_1608Metric,1,C29936,SAMSUNG(三星),CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/30690.html
-U300,BQ25896RTWR,Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,1,C181475,TI(德州仪器),BQ25896RTWR,SELECTED,,https://item.szlcsc.com/192872.html
+U300,BQ25896RTWT,Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm,1,C2876371,TI(德州仪器),BQ25896RTWT,SELECTED,Same BQ25896 RTW die/pinout; small-reel variant chosen for domestic direct stock; limited buffer,https://item.szlcsc.com/3084983.html
 J300,1S BATTERY / PH 2A,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,与 J301 同款 PH 2Pin；额定 2A/AWG24。电池总电流及保险丝配合尚未验证。,https://item.szlcsc.com/142630.html
 J301,PACK NTC / RETURN,Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,1,C131337,JST,B2B-PH-K-S(LF)(SN),SELECTED,,https://item.szlcsc.com/142630.html
 F300,TBD fuse / PH 2A,Fuse:Fuse_1206_3216Metric,1,,,,HOLD,PH 2A 电池端子：按线材、电池短路电流和温度降额定型；额定电流及分断能力未闭合，不能仅按现货选料。,
@@ -103,8 +103,8 @@ C401,100n,Capacitor_SMD:C_0402_1005Metric,1,C1525,SAMSUNG(三星),CL05B104KO5NNN
 C402,47n,Capacitor_SMD:C_0603_1608Metric,1,C1622,SAMSUNG(三星),CL10B473KB8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/1974.html
 C403,10n loop-tune,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH(风华),0603B103K500NT,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/58143.html
 C404,100p C0G,Capacitor_SMD:C_0402_1005Metric,1,C1546,FH(风华),0402CG101J500NT,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1898.html
-C405,22u 10V,Capacitor_SMD:C_1206_3216Metric,1,C12891,SAMSUNG(三星),CL31A226KAHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/13537.html
-C406,22u 10V,Capacitor_SMD:C_1206_3216Metric,1,C12891,SAMSUNG(三星),CL31A226KAHNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/13537.html
+C405,22u 25V X5R 10%,Capacitor_SMD:C_1206_3216Metric,1,C7432785,Chinocera(华瓷),HGC1206R5226K250NSPJ,SELECTED,"HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",https://item.szlcsc.com/8438267.html
+C406,22u 25V X5R 10%,Capacitor_SMD:C_1206_3216Metric,1,C7432785,Chinocera(华瓷),HGC1206R5226K250NSPJ,SELECTED,"HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",https://item.szlcsc.com/8438267.html
 C407,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C84494,muRata(村田),GRM32ER71A476KE15L,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/85664.html
 C408,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C84494,muRata(村田),GRM32ER71A476KE15L,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/85664.html
 C409,47u 10V,Capacitor_SMD:C_1210_3225Metric,1,C84494,muRata(村田),GRM32ER71A476KE15L,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/85664.html
@@ -156,8 +156,8 @@ R1011,100k 1%,Resistor_SMD:R_0402_1005Metric,1,C25741,UNI-ROYAL(厚声),0402WGF1
 R1012,100k,Resistor_SMD:R_0402_1005Metric,1,C25741,UNI-ROYAL(厚声),0402WGF1003TCE,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/26484.html
 C1010,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,SAMSUNG(三星),CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/46786.html
 C1011,22u 10V,Capacitor_SMD:C_0805_2012Metric,1,C45783,SAMSUNG(三星),CL21A226MAQNNNE,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/46786.html
-C1012,220u 10V polymer 25mR,Carrier:T520D_7343_31,1,C116743,KEMET(基美),T520D227M010ATE025,SELECTED,,https://item.szlcsc.com/117998.html
-C1013,220u 10V polymer 25mR,Carrier:T520D_7343_31,1,C116743,KEMET(基美),T520D227M010ATE025,SELECTED,,https://item.szlcsc.com/117998.html
+C1012,220u 6.3V polymer 15mR,Carrier:KNSCHA_177EC0013_7343,1,C19192479,KNSCHA(科尼盛),177EC0013,SELECTED,"177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",https://item.szlcsc.com/20436581.html
+C1013,220u 6.3V polymer 15mR,Carrier:KNSCHA_177EC0013_7343,1,C19192479,KNSCHA(科尼盛),177EC0013,SELECTED,"177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",https://item.szlcsc.com/20436581.html
 C1014,100n,Capacitor_SMD:C_0402_1005Metric,1,C1525,SAMSUNG(三星),CL05B104KO5NNNC,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1877.html
 C1015,100p C0G,Capacitor_SMD:C_0402_1005Metric,1,C1546,FH(风华),0402CG101J500NT,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1898.html
 C1016,33p C0G,Capacitor_SMD:C_0402_1005Metric,1,C1562,FH(风华),0402CG330J500NT,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1914.html
@@ -184,11 +184,11 @@ C1031,10n,Capacitor_SMD:C_0603_1608Metric,1,C57112,FH(风华),0603B103K500NT,SEL
 R1034,10k,Resistor_SMD:R_0402_1005Metric,1,C25744,UNI-ROYAL(厚声),0402WGF1002TCE,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/26487.html
 U1030,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,1,C7519,ST(意法半导体),USBLC6-2SC6,SELECTED,,https://item.szlcsc.com/7996.html
 U1031,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,1,C7519,ST(意法半导体),USBLC6-2SC6,SELECTED,,https://item.szlcsc.com/7996.html
-J1010,IPEX-1 50R,Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C598199,HRS(广濑),U.FL-R-SMT-1(01),SELECTED,,https://item.szlcsc.com/626815.html
+J1010,U.FL-R-SMT-1(80),Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C88374,HRS(广濑),U.FL-R-SMT-1(80),SELECTED,Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging,https://item.szlcsc.com/89553.html
 R1040,0R RF match,Resistor_SMD:R_0603_1608Metric,1,C21189,UNI-ROYAL(厚声),0603WAF0000T5E,SELECTED,,https://item.szlcsc.com/21903.html
 C1040,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
 C1041,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
-J1011,IPEX-1 50R,Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C598199,HRS(广濑),U.FL-R-SMT-1(01),SELECTED,,https://item.szlcsc.com/626815.html
+J1011,U.FL-R-SMT-1(80),Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical,1,C88374,HRS(广濑),U.FL-R-SMT-1(80),SELECTED,Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging,https://item.szlcsc.com/89553.html
 C1044,100p C0G RF DC block,Capacitor_SMD:C_0402_1005Metric,1,C1546,FH(风华),0402CG101J500NT,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1898.html
 C1042,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
 C1043,DNP RF tune,Capacitor_SMD:C_0603_1608Metric,0,,,,DNP,待实测匹配后定值；本批不采购。,
@@ -320,7 +320,7 @@ C1210,100n 10V X7R,Capacitor_SMD:C_0402_1005Metric,1,C1525,SAMSUNG(三星),CL05B
 C1211,1u 10V X7R,Capacitor_SMD:C_0603_1608Metric,1,C29936,SAMSUNG(三星),CL10B105KA8NNNC,SELECTED,额定电压不低于原要求；电源 MLCC 的直流偏压有效容量、环路和温升仍属整机验证。,https://item.szlcsc.com/30690.html
 J1220,FPC-05FB-24PH20,Carrier:XUNPU_FPC_05FB_24PH20,1,C2856831,XUNPU(讯普),FPC-05FB-24PH20,SELECTED,,https://item.szlcsc.com/3056929.html
 U1300,OPT3001DNPR,Carrier:OPT3001_DNP0006A,1,C90462,TI(德州仪器),OPT3001DNPR,SELECTED,,https://item.szlcsc.com/91649.html
-U1301,SHT40-AD1F-R2,Carrier:SHT40_AD1F_DFN4_Membrane,1,C7461846,Sensirion(瑞士盛思锐),SHT40-AD1F-R2,SELECTED,,https://item.szlcsc.com/8492038.html
+U1301,SHT40-AD1B-R2,Carrier:SHT40_DFN4_NoCentralPad,1,C2909890,Sensirion(瑞士盛思锐),SHT40-AD1B-R2,SELECTED,"Bare SHT40; same I2C 0x44 and pins; protect exposed sensor from liquids, cleaning and coating",https://item.szlcsc.com/3188621.html
 R1300,22R,Resistor_SMD:R_0402_1005Metric,1,C25092,UNI-ROYAL(厚声),0402WGF220JTCE,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/25835.html
 R1301,22R,Resistor_SMD:R_0402_1005Metric,1,C25092,UNI-ROYAL(厚声),0402WGF220JTCE,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/25835.html
 C1300,100n 10V X7R,Capacitor_SMD:C_0402_1005Metric,1,C1525,SAMSUNG(三星),CL05B104KO5NNNC,SELECTED,0402/1005：小信号电阻 62.5mW；100nF 为 16V X7R，其余电容 50V，保持原介质要求。,https://item.szlcsc.com/1877.html

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Revision P: every new package bound to a local datasheet dimension envelope; fit not validated.",
+  "scope": "Revision R purchasing changes; local package models follow selected parts.",
   "models": [
     {
       "reference": "U1000",
@@ -674,8 +674,8 @@
     {
       "reference": "C1012",
       "original_footprint": "Carrier:T520D_7343_31",
-      "footprint": "Carrier:T520D_7343_31",
-      "file": "T520D_7343_31.wrl",
+      "footprint": "Carrier:KNSCHA_177EC0013_7343",
+      "file": "KNSCHA_177EC0013_7343.wrl",
       "offset_mm": [
         0,
         0,
@@ -692,20 +692,20 @@
         1
       ],
       "kind": "datasheet_reference",
-      "source": "KEMET T520D227M010ATE025 D case; C116743",
-      "note": "Dimension envelope; not an assembly fit qualification.",
-      "sha256": "e987f135e8e7b37142c8e4239f0608e857bd791ad622bf931641f2bcd1b8ded0",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
+      "note": "Cost revision R; maximum/reference package envelope; assembly fit remains unqualified",
+      "sha256": "675c411d01561755a3c52ba818766812da8f57f82ce4da8012629211620b8020",
       "body_mm": [
-        7.3,
-        4.3,
-        3.1
+        7.6,
+        4.6,
+        2.2
       ]
     },
     {
       "reference": "C1013",
       "original_footprint": "Carrier:T520D_7343_31",
-      "footprint": "Carrier:T520D_7343_31",
-      "file": "T520D_7343_31.wrl",
+      "footprint": "Carrier:KNSCHA_177EC0013_7343",
+      "file": "KNSCHA_177EC0013_7343.wrl",
       "offset_mm": [
         0,
         0,
@@ -722,20 +722,20 @@
         1
       ],
       "kind": "datasheet_reference",
-      "source": "KEMET T520D227M010ATE025 D case; C116743",
-      "note": "Dimension envelope; not an assembly fit qualification.",
-      "sha256": "e987f135e8e7b37142c8e4239f0608e857bd791ad622bf931641f2bcd1b8ded0",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
+      "note": "Cost revision R; maximum/reference package envelope; assembly fit remains unqualified",
+      "sha256": "675c411d01561755a3c52ba818766812da8f57f82ce4da8012629211620b8020",
       "body_mm": [
-        7.3,
-        4.3,
-        3.1
+        7.6,
+        4.6,
+        2.2
       ]
     },
     {
       "reference": "U1301",
       "original_footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
-      "footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
-      "file": "SHT40_AD1F_DFN4_Membrane.wrl",
+      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
+      "file": "SHT40_DFN4_reference.wrl",
       "offset_mm": [
         0,
         0,
@@ -752,13 +752,13 @@
         1
       ],
       "kind": "datasheet_reference",
-      "source": "Sensirion SHT4x v7.3; C7461846",
-      "note": "Dimension envelope; not an assembly fit qualification.",
-      "sha256": "a5aa533949bedefcc2c8fc391c8c6a2d6262c0d9e8ef11d163d31de7b6e8f442",
+      "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+      "note": "Cost revision R; maximum/reference package envelope; assembly fit remains unqualified",
+      "sha256": "8d81aa055bfff96c047315b5e6c5d2f4f4d0108497b1dd005e5f43cd801aed35",
       "body_mm": [
         1.5,
         1.5,
-        0.69
+        0.6
       ]
     },
     {

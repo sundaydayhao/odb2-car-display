@@ -1,5 +1,7 @@
 # 本地库来源与检查边界
 
+修订 R：C1012/C1013 改为 `Carrier:KNSCHA_177EC0013_7343`，依 [厂家推荐焊盘第 3 页](https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf)：2.4×2.8 mm 两块焊盘、中心 ±3.1 mm，原网络和极性保持。U1301 改回 SHT40-AD1B-R2，无中心焊盘的 DFN4 保持；详细边界见 COST_REDUCTION.md。
+
 2026-09-24 修订 P 更新：本页旧 ES8389/RDA5807/裸版 SHT40 和未定采购料号的描述已由 [SOURCING_REVIEW.md](SOURCING_REVIEW.md) 取代；当前符号/封装、引脚、地址与驱动约定以实际 P 工程和 AUDIO_ARCHITECTURE.md 为准。其他既有电源核算及待验证条件继续保留。
 
 

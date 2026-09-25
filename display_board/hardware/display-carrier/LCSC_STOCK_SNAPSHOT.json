@@ -1,7 +1,7 @@
 {
-  "observed_date": "2026-09-24",
+  "observed_date": "2026-09-25",
   "market": "LCSC mainland China",
-  "note": "Public domestic product-page observations. Direct and partner stock distinguished. SMT quantities are not added. No stock reservation or supply guarantee.",
+  "note": "Selected parts: user quotation at 2026-09-25 08:38:26 CST plus current domestic product pages for replacements. See per-row dates and stock_source; historical/unselected candidates retain their original dates. No reserved inventory or long-term supply guarantee.",
   "parts": {
     "C114218": {
       "productCode": "C114218",
@@ -10,9 +10,9 @@
       "brandNameEn": "HRS(广濑)",
       "encapStandard": "SMD",
       "productCycle": "normal",
-      "stockNumber": 19911,
-      "directStockNumber": 19911,
-      "validStockNumber": 19911,
+      "stockNumber": 19909,
+      "directStockNumber": 19909,
+      "validStockNumber": 19909,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -21,8 +21,8 @@
       "smtStockNumber": 20152,
       "recentSalesCount": 635,
       "url": "https://item.szlcsc.com/115458.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.176915+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "47453e4d70c7b4ebbd4ee3a3064999516a27a01e701e22c101918a39a1648184",
       "parameters": [
         {
@@ -72,7 +72,12 @@
         "fileName": "wj334077",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=OUnVhIflXCOJog0W8%2FRXxLx%2Bvp8%3D&response-content-disposition=attachment%3Bfilename%3DC114218_SD%25E5%258D%25A1-%25E5%25AD%2598%25E5%2582%25A8%25E5%258D%25A1%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_DM3AT-SF-PEJM5_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ334077.PDF",
         "fileUrl": "/upload/public/pdf/source/20170707/1499425911622.pdf"
-      }
+      },
+      "quote_unit_price_cny": 9.49,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C12891": {
       "productCode": "C12891",
@@ -81,20 +86,20 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "1206",
       "productCycle": "normal",
-      "stockNumber": 7200,
-      "directStockNumber": 11000,
-      "validStockNumber": 550,
+      "stockNumber": 0,
+      "directStockNumber": 0,
+      "validStockNumber": 0,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
       "split": 1,
       "delivery": null,
-      "smtStockNumber": 786339,
-      "recentSalesCount": 14096,
+      "smtStockNumber": 783422,
+      "recentSalesCount": 14139,
       "url": "https://item.szlcsc.com/13537.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.176915+00:00",
-      "page_sha256": "301f5ddd8300978ad40bb86d3743bdcc6bf0516af9c43e8534202c3cd0066cf9",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:53:56.456015+00:00",
+      "page_sha256": "14cb4119fe233c4346f22bca706f8e839f03d3d0c14da84c5e45953dfe6bb677",
       "parameters": [
         {
           "parameterName": "容值",
@@ -125,7 +130,13 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=EnS%2FtUDfhWGUx5Girse%2FTHguFD0%3D&response-content-disposition=attachment%3Bfilename%3DC12891_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL31A226KAHNNNE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 1100.2,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 0.5501
     },
     "C131337": {
       "productCode": "C131337",
@@ -134,9 +145,9 @@
       "brandNameEn": "JST",
       "encapStandard": "插件,P=2mm",
       "productCycle": "normal",
-      "stockNumber": 207840,
-      "directStockNumber": 207848,
-      "validStockNumber": 10392,
+      "stockNumber": 198120,
+      "directStockNumber": 198120,
+      "validStockNumber": 198120,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -145,8 +156,8 @@
       "smtStockNumber": 207848,
       "recentSalesCount": 3234,
       "url": "https://item.szlcsc.com/142630.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.176915+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "00749c7412598cffd7c12c147b8e1df691a3390f8da6bef10edbb0c6113ec4da",
       "parameters": [
         {
@@ -274,7 +285,12 @@
         "fileName": "wj204627",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=UfQrsHP1QgRRKeOhYZBxeFojmiM%3D&response-content-disposition=attachment%3Bfilename%3DC131337_%25E7%25BA%25BF%25E5%25AF%25B9%25E6%259D%25BF%25E9%2592%2588%25E5%25BA%25A7_B2B-PH-K-S%2528LF%2529%2528SN%2529_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ204627.PDF",
         "fileUrl": "/upload/public/pdf/source/20171026/C131342_15089839687311058815.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.2166,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C131941": {
       "productCode": "C131941",
@@ -283,9 +299,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "SOT-23-6",
       "productCycle": "normal",
-      "stockNumber": 5795,
-      "directStockNumber": 7794,
-      "validStockNumber": 1558,
+      "stockNumber": 5785,
+      "directStockNumber": 5785,
+      "validStockNumber": 5785,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -294,8 +310,8 @@
       "smtStockNumber": 7794,
       "recentSalesCount": 821,
       "url": "https://item.szlcsc.com/143237.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.176915+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e49cb6eab1f2c472f82e2d2526cd5c04888603c618c9db11b3a538ae11a67dd3",
       "parameters": [
         {
@@ -347,7 +363,12 @@
           "parameterValue": "-40℃~+105℃"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 2.451,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C132554": {
       "productCode": "C132554",
@@ -356,9 +377,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "X2-QFN-12(1.6x1.6)",
       "productCycle": "normal",
-      "stockNumber": 3516,
-      "directStockNumber": 3767,
-      "validStockNumber": 3767,
+      "stockNumber": 3574,
+      "directStockNumber": 3574,
+      "validStockNumber": 3574,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -367,11 +388,16 @@
       "smtStockNumber": 3803,
       "recentSalesCount": 170,
       "url": "https://item.szlcsc.com/143853.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.177931+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "0013ca467c7c0dcacd07edbfc01ace5865bba0617961198767848f4d956297a2",
       "parameters": [],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 6.55,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C13585": {
       "productCode": "C13585",
@@ -380,9 +406,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "1206",
       "productCycle": "normal",
-      "stockNumber": 473160,
-      "directStockNumber": 473163,
-      "validStockNumber": 47316,
+      "stockNumber": 381740,
+      "directStockNumber": 381740,
+      "validStockNumber": 381740,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -391,8 +417,8 @@
       "smtStockNumber": 2656998,
       "recentSalesCount": 29565,
       "url": "https://item.szlcsc.com/14236.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.717524+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "822d9def8ae4982245af89ab6f6840ecc44f20f224c87c27385378262e6cbd07",
       "parameters": [
         {
@@ -424,7 +450,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=VNboJu5BEQZfVvF64yvcHZ4Pp5s%3D&response-content-disposition=attachment%3Bfilename%3DC13585_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL31A106KBHNNNE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.6333,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C141836": {
       "productCode": "C141836",
@@ -433,9 +464,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "SOT-23-5",
       "productCycle": "normal",
-      "stockNumber": 226245,
-      "directStockNumber": 242325,
-      "validStockNumber": 48465,
+      "stockNumber": 225815,
+      "directStockNumber": 225815,
+      "validStockNumber": 225815,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -444,8 +475,8 @@
       "smtStockNumber": 242325,
       "recentSalesCount": 3441,
       "url": "https://item.szlcsc.com/153167.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.718531+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "6e05f1264bbd993bd18b0a0430f827b634ee1e976db8489f0c154072f60870b0",
       "parameters": [
         {
@@ -527,7 +558,12 @@
           "parameterValue": "轻载高效模式；过流保护；工作状态指示"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 0.4681,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C14663": {
       "productCode": "C14663",
@@ -642,9 +678,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0805",
       "productCycle": "normal",
-      "stockNumber": 1635980,
-      "directStockNumber": 1635996,
-      "validStockNumber": 81799,
+      "stockNumber": 1595460,
+      "directStockNumber": 1595460,
+      "validStockNumber": 1595460,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -653,8 +689,8 @@
       "smtStockNumber": 5591664,
       "recentSalesCount": 46161,
       "url": "https://item.szlcsc.com/16532.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:11.799043+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "071a23a399ff6a36a63b2fe6d97b8aa814ab4c91ac50fc9a4e8913182eac452a",
       "parameters": [
         {
@@ -686,7 +722,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=AcdyVQtWLeuhMRSfy8JGefIzmPg%3D&response-content-disposition=attachment%3Bfilename%3DC15850_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL21A106KAYNNNE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.4845,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1588": {
       "productCode": "C1588",
@@ -754,9 +795,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 317700,
-      "directStockNumber": 317725,
-      "validStockNumber": 6354,
+      "stockNumber": 310850,
+      "directStockNumber": 310850,
+      "validStockNumber": 310850,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -765,8 +806,8 @@
       "smtStockNumber": 771868,
       "recentSalesCount": 8078,
       "url": "https://item.szlcsc.com/1974.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.313653+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ad8c0e982a944a31b6ecc6e14b93a2afb7402a74de2f1cb9f57caf9d718746b5",
       "parameters": [
         {
@@ -798,7 +839,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=m7Ty4ZqWqppMB48nzRrfXsO6t2E%3D&response-content-disposition=attachment%3Bfilename%3DC1622_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10B473KB8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0446,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1653": {
       "productCode": "C1653",
@@ -860,9 +906,9 @@
       "brandNameEn": "韩国韩荣",
       "encapStandard": "SMD",
       "productCycle": "normal",
-      "stockNumber": 82440,
-      "directStockNumber": 82440,
-      "validStockNumber": 16488,
+      "stockNumber": 79530,
+      "directStockNumber": 79530,
+      "validStockNumber": 79530,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -871,8 +917,8 @@
       "smtStockNumber": 92660,
       "recentSalesCount": 9831,
       "url": "https://item.szlcsc.com/177331.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.383964+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "56f83eb6d7c6ff44cbed160dc6a3b6fbb998c68405c2ab9db78808d109d2f8fb",
       "parameters": [
         {
@@ -946,7 +992,12 @@
         "fileName": "wj310728",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=l%2B0VMi3VGuOdPnv%2BPA5PcN2z6UU%3D&response-content-disposition=attachment%3Bfilename%3DC165948_USB%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_TYPE-C-31-M-12_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310728.PDF",
         "fileUrl": "/upload/public/pdf/source/20220525/466408E853115E789EDB0DDC29077C05.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.051008,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1663": {
       "productCode": "C1663",
@@ -1009,8 +1060,8 @@
       "encapStandard": "SOT-25",
       "productCycle": "normal",
       "stockNumber": 37915,
-      "directStockNumber": 37919,
-      "validStockNumber": 7583,
+      "directStockNumber": 37915,
+      "validStockNumber": 37915,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1019,8 +1070,8 @@
       "smtStockNumber": 37919,
       "recentSalesCount": 251,
       "url": "https://item.szlcsc.com/188335.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.802267+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "89a6c86f7b5b43bd519bf0c41b20cdffc7ce43ce179a595b45d139f6aa8fad14",
       "parameters": [
         {
@@ -1100,7 +1151,12 @@
         "fileName": "wj19433",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=6doq5apL%2BzCLXY31pXzbv3gsLeM%3D&response-content-disposition=attachment%3Bfilename%3DC176944_%25E7%25BA%25BF%25E6%2580%25A7%25E7%25A8%25B3%25E5%258E%258B%25E5%2599%25A8%2528LDO%2529_AP2112K-1.8TRG1_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ19433.PDF",
         "fileUrl": "/upload/public/pdf/source/20171221/C51118_15138312998391195590.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.0551,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C181475": {
       "productCode": "C181475",
@@ -1109,26 +1165,20 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "QFN-24-EP(4x4)",
       "productCycle": "normal",
-      "stockNumber": 2800,
-      "directStockNumber": 2800,
-      "validStockNumber": 2800,
-      "stock_channel": "partner",
-      "partner": {
-        "productCodeManufacturer": "BQ25896RTWR",
-        "provider": "waldom",
-        "productCodeProvider": "BQ25896RTWR TI 23+",
-        "batchNumber": "23+",
-        "vendorCode": "G9340"
-      },
+      "stockNumber": 10,
+      "directStockNumber": 20,
+      "validStockNumber": 20,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
       "minBuyNumber": 1,
       "split": 1,
-      "delivery": "1-3个工作日",
-      "smtStockNumber": null,
+      "delivery": null,
+      "smtStockNumber": 20,
       "recentSalesCount": 45,
       "url": "https://item.szlcsc.com/192872.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.865163+00:00",
-      "page_sha256": "1c387998d74df11be7935f6540a5fe954f745ba9ff7230b604315a365d18497e",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:53:56.456015+00:00",
+      "page_sha256": "aabe0ffa1235ed08f1c23d63de2dcd964dd7cf2026f5993e2a484685373a6a53",
       "parameters": [
         {
           "parameterName": "芯片类型",
@@ -1209,7 +1259,13 @@
           "parameterValue": "I2C"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 30000,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 12.38
     },
     "C1854557": {
       "productCode": "C1854557",
@@ -1219,8 +1275,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 4500,
-      "directStockNumber": 4501,
-      "validStockNumber": 900,
+      "directStockNumber": 4500,
+      "validStockNumber": 4500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1229,8 +1285,8 @@
       "smtStockNumber": 4501,
       "recentSalesCount": 12,
       "url": "https://item.szlcsc.com/1945370.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.867735+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "504b1053f97a375ac5cfc71ac9cd497dea09bcad60547facb0d3d8fb12f2ae44",
       "parameters": [
         {
@@ -1280,7 +1336,12 @@
         "fileName": "wj324364",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=nWIWU1Ndb0L6gI%2B5kmNocpLwhtY%3D&response-content-disposition=attachment%3Bfilename%3DC1854557_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_TNPW0603187KBEEA_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ324364.PDF",
         "fileUrl": "/upload/public/pdf/source/20210611/7E5076F8AE36443BBEA8C2F8BE3882EA.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.6056,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C189961": {
       "productCode": "C189961",
@@ -1289,9 +1350,9 @@
       "brandNameEn": "Nsiway(纳芯威)",
       "encapStandard": "MSOP-8",
       "productCycle": "normal",
-      "stockNumber": 160055,
-      "directStockNumber": 160056,
-      "validStockNumber": 32011,
+      "stockNumber": 159395,
+      "directStockNumber": 159395,
+      "validStockNumber": 159395,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1300,8 +1361,8 @@
       "smtStockNumber": 160064,
       "recentSalesCount": 2365,
       "url": "https://item.szlcsc.com/207582.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.870783+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "cf74fb4b64cac7a1cbec34226d69745ec77adbfb7b161fde3b9b9cb051db643b",
       "parameters": [
         {
@@ -1381,7 +1442,12 @@
         "fileName": "音频功率放大器_NS4150B_中文规格书",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=VqrOaj2rITxxq3FoDCRl5deoNT0%3D&response-content-disposition=attachment%3Bfilename%3DC189961_%25E9%259F%25B3%25E9%25A2%2591%25E5%258A%259F%25E7%258E%2587%25E6%2594%25BE%25E5%25A4%25A7%25E5%2599%25A8_NS4150B_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_%25E9%259F%25B3%25E9%25A2%2591%25E5%258A%259F%25E7%258E%2587%25E6%2594%25BE%25E5%25A4%25A7%25E5%2599%25A8_NS4150B_%25E4%25B8%25AD%25E6%2596%2587%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6.PDF",
         "fileUrl": "/upload/public/pdf/source/20220916/DAE631F3909B9CBB38BDE76E3E6D5896.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.939,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C19666": {
       "productCode": "C19666",
@@ -1390,9 +1456,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 1029260,
-      "directStockNumber": 1029266,
-      "validStockNumber": 102926,
+      "stockNumber": 987490,
+      "directStockNumber": 987490,
+      "validStockNumber": 987490,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1401,8 +1467,8 @@
       "smtStockNumber": null,
       "recentSalesCount": 33388,
       "url": "https://item.szlcsc.com/20375.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:12.907176+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e82a19241b265cf87d678473edbec4fc9489b1bc271f7489a9dedda0476c0721",
       "parameters": [
         {
@@ -1434,7 +1500,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=8qnfvOvBFSRk2kueH2H3MaY%2FfxI%3D&response-content-disposition=attachment%3Bfilename%3DC19666_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10A475KO8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.1811,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C19702": {
       "productCode": "C19702",
@@ -1443,9 +1514,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 5026860,
-      "directStockNumber": 5026867,
-      "validStockNumber": 251343,
+      "stockNumber": 4946540,
+      "directStockNumber": 4946540,
+      "validStockNumber": 4946540,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1454,8 +1525,8 @@
       "smtStockNumber": 11153552,
       "recentSalesCount": 58593,
       "url": "https://item.szlcsc.com/20411.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.308087+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "6bf824f3d714e30b3b68f55e7ff5e9ccbc9b9d58dc08f819399ad5473a8d6521",
       "parameters": [
         {
@@ -1487,7 +1558,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=M1I9TUfE6EhF0Eecav5Qs7uZQ4g%3D&response-content-disposition=attachment%3Bfilename%3DC19702_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10A106KP8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.1957,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C20526": {
       "productCode": "C20526",
@@ -1496,9 +1572,9 @@
       "brandNameEn": "CJ(江苏长电/长晶)",
       "encapStandard": "SOT-23",
       "productCycle": "normal",
-      "stockNumber": 29900,
-      "directStockNumber": 29926,
-      "validStockNumber": 598,
+      "stockNumber": 31150,
+      "directStockNumber": 31150,
+      "validStockNumber": 31150,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1507,8 +1583,8 @@
       "smtStockNumber": 329321,
       "recentSalesCount": 8862,
       "url": "https://item.szlcsc.com/21237.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.343013+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "887bcdccf8ea7d988722ef9d730ef769bafd193554ec8681396dd862c839a4cf",
       "parameters": [
         {
@@ -1582,7 +1658,12 @@
         "fileName": "wj91199",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=H23GArk07Z0g1jnA84ePfCJ4TnI%3D&response-content-disposition=attachment%3Bfilename%3DC20526_%25E4%25B8%2589%25E6%259E%2581%25E7%25AE%25A1%2528BJT%2529_MMBT3904%2528RANGE-100-300%2529_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ91199.PDF",
         "fileUrl": "/upload/public/pdf/source/20220704/70F575FB75061E03F919270A6BB8BA7F.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0707,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C21122": {
       "productCode": "C21122",
@@ -1644,9 +1725,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 17111500,
-      "directStockNumber": 17111581,
-      "validStockNumber": 171115,
+      "stockNumber": 16847200,
+      "directStockNumber": 16847200,
+      "validStockNumber": 16847200,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1655,8 +1736,8 @@
       "smtStockNumber": 22660573,
       "recentSalesCount": 66844,
       "url": "https://item.szlcsc.com/21903.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.404579+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "abe13cb6ce9adf053e680d6e6a8f90755b68d90b18a3e19ad6c34f60d60be08c",
       "parameters": [
         {
@@ -1706,7 +1787,12 @@
         "fileName": "wj1732172.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=tP3oZ6TwAkVSY9xgT16PulbbRi0%3D&response-content-disposition=attachment%3Bfilename%3DC21189_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF0000T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1732172.PDF",
         "fileUrl": "/upload/public/pdf/source/20250704/8E163ECBCBDDE34D37E0A236B2783941.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0135,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C21190": {
       "productCode": "C21190",
@@ -1715,9 +1801,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 8618600,
-      "directStockNumber": 8618651,
-      "validStockNumber": 86186,
+      "stockNumber": 7884900,
+      "directStockNumber": 7884900,
+      "validStockNumber": 7884900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1726,8 +1812,8 @@
       "smtStockNumber": 23961280,
       "recentSalesCount": 82381,
       "url": "https://item.szlcsc.com/21904.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.439570+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "d1c2d650b19e807ca478e305c74886fab79cbf571aa9928f89b8ff3880029c2a",
       "parameters": [
         {
@@ -1777,7 +1863,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=UlUW4Ndb5UuHSasD0p3RSkaduh0%3D&response-content-disposition=attachment%3Bfilename%3DC21190_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF1001T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0154,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C22380673": {
       "productCode": "C22380673",
@@ -1851,9 +1942,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 7342300,
-      "directStockNumber": 7342351,
-      "validStockNumber": 73423,
+      "stockNumber": 7131100,
+      "directStockNumber": 7131100,
+      "validStockNumber": 7131100,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1862,8 +1953,8 @@
       "smtStockNumber": 12444180,
       "recentSalesCount": 46792,
       "url": "https://item.szlcsc.com/23502.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.894254+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "efcff9bbda1868b92d4fceaa21979e8c9fd4b014778212ee55c4394958f6dc09",
       "parameters": [
         {
@@ -1913,7 +2004,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=riDMRHPuwDxFTwI5uepJctJrmLo%3D&response-content-disposition=attachment%3Bfilename%3DC22775_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF1000T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0189,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C22823": {
       "productCode": "C22823",
@@ -1923,8 +2019,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 22000,
-      "directStockNumber": 22046,
-      "validStockNumber": 220,
+      "directStockNumber": 22000,
+      "validStockNumber": 22000,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -1933,8 +2029,8 @@
       "smtStockNumber": 22046,
       "recentSalesCount": 165,
       "url": "https://item.szlcsc.com/23550.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.896619+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "6d7e3aa8e2da4f37cec7e20252101fb5739cbbb36ad3e6676515c0507b4c8f1d",
       "parameters": [
         {
@@ -1984,7 +2080,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=q0xKDWTIPm4RRaTzfaWq7NdtORs%3D&response-content-disposition=attachment%3Bfilename%3DC22823_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF1783T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0154,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C23003": {
       "productCode": "C23003",
@@ -1993,9 +2094,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 12900,
-      "directStockNumber": 12900,
-      "validStockNumber": 129,
+      "stockNumber": 13400,
+      "directStockNumber": 13400,
+      "validStockNumber": 13400,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2004,8 +2105,8 @@
       "smtStockNumber": 20289,
       "recentSalesCount": 381,
       "url": "https://item.szlcsc.com/23730.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:13.929578+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "5f1cd3ea9c34e45b812087d17ef79eeb05ba26e3e46a09569cead31012daff89",
       "parameters": [
         {
@@ -2055,7 +2156,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=qB0G%2FAjvBBP3WFBxg3KEmxRn7d0%3D&response-content-disposition=attachment%3Bfilename%3DC23003_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF3322T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0092,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C23025": {
       "productCode": "C23025",
@@ -2064,9 +2170,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 1176900,
-      "directStockNumber": 1176931,
-      "validStockNumber": 11769,
+      "stockNumber": 1161300,
+      "directStockNumber": 1161300,
+      "validStockNumber": 1161300,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2075,8 +2181,8 @@
       "smtStockNumber": 1672329,
       "recentSalesCount": 5511,
       "url": "https://item.szlcsc.com/23752.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:14.039389+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "4842af2014eb8d167200a9e6fc90a5d0424325b964f6deb56720b7daf1a2f1f3",
       "parameters": [
         {
@@ -2126,7 +2232,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=ZrrSuXHGvUKAG17SGEYbqh2WkLI%3D&response-content-disposition=attachment%3Bfilename%3DC23025_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF3000T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.018042,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C23080": {
       "productCode": "C23080",
@@ -2135,9 +2246,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 33000,
-      "directStockNumber": 33083,
-      "validStockNumber": 330,
+      "stockNumber": 32900,
+      "directStockNumber": 32900,
+      "validStockNumber": 32900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2146,8 +2257,8 @@
       "smtStockNumber": 37935,
       "recentSalesCount": 397,
       "url": "https://item.szlcsc.com/23807.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:14.379520+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "87fa60d9ad1f74d62542b33f9fcb9225a01cc68f1bde65e98dc7748bffa3b58c",
       "parameters": [
         {
@@ -2197,7 +2308,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=axqV58Xq3RPDgnHCvXw7Y3Ja%2FCU%3D&response-content-disposition=attachment%3Bfilename%3DC23080_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF5622T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0088,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C23162": {
       "productCode": "C23162",
@@ -2348,9 +2464,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 1496350,
-      "directStockNumber": 1496355,
-      "validStockNumber": 29927,
+      "stockNumber": 1458450,
+      "directStockNumber": 1458450,
+      "validStockNumber": 1458450,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2359,8 +2475,8 @@
       "smtStockNumber": 2755776,
       "recentSalesCount": 24365,
       "url": "https://item.szlcsc.com/24366.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:14.493552+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "46b257e4006e283d91989367f7bd694e3bd49cfed12c71f643ac51ddeae3f172",
       "parameters": [
         {
@@ -2392,7 +2508,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=BRT61BvfoRNfCL02RuNE9Z4fqfI%3D&response-content-disposition=attachment%3Bfilename%3DC23630_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10A225KO8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.1107,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25803": {
       "productCode": "C25803",
@@ -2614,9 +2735,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 1161400,
-      "directStockNumber": 1161485,
-      "validStockNumber": 11614,
+      "stockNumber": 1162500,
+      "directStockNumber": 1162500,
+      "validStockNumber": 1162500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2625,8 +2746,8 @@
       "smtStockNumber": 1216528,
       "recentSalesCount": 1142,
       "url": "https://item.szlcsc.com/26565.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.001880+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "28c66a1265423d2deecb0ccac8a457eef900c5778366930243b628302f5395a7",
       "parameters": [
         {
@@ -2676,7 +2797,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=fUdUf7QcAZ9y3RgkTVdFGmg3prI%3D&response-content-disposition=attachment%3Bfilename%3DC25822_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF6803T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0091,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25976": {
       "productCode": "C25976",
@@ -2686,8 +2812,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 30100,
-      "directStockNumber": 30171,
-      "validStockNumber": 301,
+      "directStockNumber": 30100,
+      "validStockNumber": 30100,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2696,8 +2822,8 @@
       "smtStockNumber": 30171,
       "recentSalesCount": 423,
       "url": "https://item.szlcsc.com/26719.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.053223+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "5a0b192da1c703f0cd1a68e751ca01783aa2be603c991677260344eb0a1bd05e",
       "parameters": [
         {
@@ -2747,7 +2873,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=XmtYst4xjFf6h5VvpW%2BfuHqOghQ%3D&response-content-disposition=attachment%3Bfilename%3DC25976_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0603WAF6812T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0122,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C273395": {
       "productCode": "C273395",
@@ -2869,9 +3000,9 @@
       "brandNameEn": "YAGEO(国巨)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 7600,
-      "directStockNumber": 7666,
-      "validStockNumber": 76,
+      "stockNumber": 7700,
+      "directStockNumber": 7700,
+      "validStockNumber": 7700,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -2880,8 +3011,8 @@
       "smtStockNumber": 12516,
       "recentSalesCount": 411,
       "url": "https://item.szlcsc.com/262180.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.382246+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "b434b5358ad90a7818f0f0b935878120faee87e9b8af8c119230e9514fe871e9",
       "parameters": [
         {
@@ -2931,7 +3062,12 @@
         "fileName": "PYu-RC_Group_51_RoHS_L_12.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=IKpoRuHU%2F5hQWmUSLVxm0wp9SRA%3D&response-content-disposition=attachment%3Bfilename%3DC273765_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_RC0603FR-07453KL_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_PYU-RC_GROUP_51_ROHS_L_12.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20250610/89E4D743C004A82A45145C7A2CC3A578.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0381,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C276424": {
       "productCode": "C276424",
@@ -3011,9 +3147,9 @@
       "brandNameEn": "WCH(南京沁恒)",
       "encapStandard": "TQFN-16-EP(3x3)",
       "productCycle": "normal",
-      "stockNumber": 2495,
-      "directStockNumber": 2495,
-      "validStockNumber": 2495,
+      "stockNumber": 4703,
+      "directStockNumber": 4703,
+      "validStockNumber": 4703,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3022,8 +3158,8 @@
       "smtStockNumber": 3149,
       "recentSalesCount": 1852,
       "url": "https://item.szlcsc.com/3039795.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.545849+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "4aaf4be69b6923c67598c0d4c77abf7008405443b95cc073f582b16bcc7f44c2",
       "parameters": [
         {
@@ -3085,7 +3221,12 @@
         "fileName": "wj1666615.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=6XFSYhisoEw6dshGV9aDXpXzyY8%3D&response-content-disposition=attachment%3Bfilename%3DC2846043_USB%25E8%25BD%25AC%25E6%258D%25A2%25E8%258A%25AF%25E7%2589%2587_CH343P_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1666615.PDF",
         "fileUrl": "/upload/public/pdf/source/20250526/E5D5661F81329277E82D637D359EA112.pdf"
-      }
+      },
+      "quote_unit_price_cny": 6.02,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C2856827": {
       "productCode": "C2856827",
@@ -3094,9 +3235,9 @@
       "brandNameEn": "XUNPU(讯普)",
       "encapStandard": "SMD,P=0.5mm,卧贴",
       "productCycle": "normal",
-      "stockNumber": 22070,
-      "directStockNumber": 22074,
-      "validStockNumber": 4414,
+      "stockNumber": 22000,
+      "directStockNumber": 22000,
+      "validStockNumber": 22000,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3105,8 +3246,8 @@
       "smtStockNumber": 22209,
       "recentSalesCount": 333,
       "url": "https://item.szlcsc.com/3056925.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.563984+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "7a33de70aca552dd6e3367a89573a1315c9fb4d4bb6df1b4b9184e1b8edec132",
       "parameters": [
         {
@@ -3186,7 +3327,12 @@
         "fileName": "wj1950541.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Av2fkoWlWkBCBVyHeP1FvuHcFGM%3D&response-content-disposition=attachment%3Bfilename%3DC2856827_FFC-FPC%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_FPC-05FB-6PH20_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1950541.PDF",
         "fileUrl": "/upload/public/pdf/source/20260812/7781C93E6FE5380B5334CF313F9E620E.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.956365,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C2856831": {
       "productCode": "C2856831",
@@ -3195,9 +3341,9 @@
       "brandNameEn": "XUNPU(讯普)",
       "encapStandard": "SMD,P=0.5mm,卧贴",
       "productCycle": "normal",
-      "stockNumber": 32640,
-      "directStockNumber": 32643,
-      "validStockNumber": 6528,
+      "stockNumber": 32610,
+      "directStockNumber": 32610,
+      "validStockNumber": 32610,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3206,8 +3352,8 @@
       "smtStockNumber": 33164,
       "recentSalesCount": 355,
       "url": "https://item.szlcsc.com/3056929.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.659619+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "246f1a3d7e378de728ba92ae280e2e5697340469e3061895b37b0549fd7631be",
       "parameters": [
         {
@@ -3287,7 +3433,12 @@
         "fileName": "XUNPU(讯普)FFC/FPC连接器规格书",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Nt3Gq%2BzgGxlKmpFjJD9hlOnXStc%3D&response-content-disposition=attachment%3Bfilename%3DC2856831_FFC-FPC%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_FPC-05FB-24PH20_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_XUNPU%2528%25E8%25AE%25AF%25E6%2599%25AE%2529FFC%252FFPC%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6.PDF",
         "fileUrl": "/upload/public/pdf/source/20210922/C2856831_717985F95873A81D5C0B7E3F2E5E5327.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.176765,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C2856833": {
       "productCode": "C2856833",
@@ -3296,9 +3447,9 @@
       "brandNameEn": "XUNPU(讯普)",
       "encapStandard": "SMD,P=0.5mm,卧贴",
       "productCycle": "normal",
-      "stockNumber": 32570,
-      "directStockNumber": 32572,
-      "validStockNumber": 6514,
+      "stockNumber": 32495,
+      "directStockNumber": 32495,
+      "validStockNumber": 32495,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3307,8 +3458,8 @@
       "smtStockNumber": 33002,
       "recentSalesCount": 563,
       "url": "https://item.szlcsc.com/3056931.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:15.908256+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "8badccfeac576216bc94b73d770548a8170e961a8f9433e065130310febb170f",
       "parameters": [
         {
@@ -3388,7 +3539,12 @@
         "fileName": "XUNPU(讯普)FFC/FPC连接器规格书",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=1qBpw%2FEgDb2KiChVzHmTMiQOGUA%3D&response-content-disposition=attachment%3Bfilename%3DC2856833_FFC-FPC%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_FPC-05FB-30PH20_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_XUNPU%2528%25E8%25AE%25AF%25E6%2599%25AE%2529FFC%252FFPC%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6.PDF",
         "fileUrl": "/upload/public/pdf/source/20210922/C2856833_974F2E309F01E02BEE862D1FB45F93FA.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.31727,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C2932478": {
       "productCode": "C2932478",
@@ -3450,9 +3606,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 311680,
-      "directStockNumber": 311687,
-      "validStockNumber": 31168,
+      "stockNumber": 73420,
+      "directStockNumber": 73420,
+      "validStockNumber": 73420,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3461,8 +3617,8 @@
       "smtStockNumber": 311687,
       "recentSalesCount": 8711,
       "url": "https://item.szlcsc.com/30690.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.120394+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "6bbbbcf55bd2fb87957d73f471d2fc334ed763b07b9a8fadf8b31c9dae3fe90f",
       "parameters": [
         {
@@ -3494,7 +3650,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=YmV%2BAH5LuOBt9wvfENs3wzJb7WE%3D&response-content-disposition=attachment%3Bfilename%3DC29936_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10B105KA8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.1172,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C3032925": {
       "productCode": "C3032925",
@@ -3503,9 +3664,9 @@
       "brandNameEn": "GCT",
       "encapStandard": "SMD",
       "productCycle": "normal",
-      "stockNumber": 2366,
-      "directStockNumber": 2366,
-      "validStockNumber": 2366,
+      "stockNumber": 2161,
+      "directStockNumber": 2161,
+      "validStockNumber": 2161,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3514,8 +3675,8 @@
       "smtStockNumber": 2642,
       "recentSalesCount": 63,
       "url": "https://item.szlcsc.com/3573575.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.123803+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "b41cab17ce7e69d4c982bffe079ef50736ef5e39585dadc6199b1024d92c4974",
       "parameters": [
         {
@@ -3559,7 +3720,12 @@
         "fileName": "wj160122",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=hBJZkQMJYitbC5vlpFze0DzuXdA%3D&response-content-disposition=attachment%3Bfilename%3DC3032925_SIM%25E5%258D%25A1%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_SIM8066-6-1-14-01-A_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ160122.PDF",
         "fileUrl": "/upload/public/pdf/source/20220608/9F42BCDB5BF50AD41801A284A1F99283.pdf"
-      }
+      },
+      "quote_unit_price_cny": 8.57,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C31850": {
       "productCode": "C31850",
@@ -3639,9 +3805,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "SC-70-6(SOT-363)",
       "productCycle": "normal",
-      "stockNumber": 214680,
-      "directStockNumber": 219964,
-      "validStockNumber": 43992,
+      "stockNumber": 214405,
+      "directStockNumber": 214405,
+      "validStockNumber": 214405,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3650,8 +3816,8 @@
       "smtStockNumber": 219964,
       "recentSalesCount": 815,
       "url": "https://item.szlcsc.com/39646.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.524835+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "91926e1c2e21e062d753cff11d927ee174d45fe24671b73d211b73d97bee6c2b",
       "parameters": [
         {
@@ -3727,7 +3893,12 @@
           "parameterValue": "7pC；3pC"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 0.4868,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C403386": {
       "productCode": "C403386",
@@ -3737,8 +3908,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 3500,
-      "directStockNumber": 3574,
-      "validStockNumber": 35,
+      "directStockNumber": 3500,
+      "validStockNumber": 3500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3747,8 +3918,8 @@
       "smtStockNumber": 3574,
       "recentSalesCount": 14,
       "url": "https://item.szlcsc.com/389185.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.541924+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "641c1a5b01e964959e6a128367c97255903158600a1e7a057ea243bc9830cf57",
       "parameters": [
         {
@@ -3798,7 +3969,12 @@
         "fileName": "wj247465",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=WB2hqWF9F0X5mm3NSMLgQoWgKrU%3D&response-content-disposition=attachment%3Bfilename%3DC403386_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_ERJ3EKF8873V_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ247465.PDF",
         "fileUrl": "/upload/public/pdf/source/20190709/C403410_4AA7B6683950D876CE9308C181828FCD.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0643,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C403651": {
       "productCode": "C403651",
@@ -3808,8 +3984,8 @@
       "encapStandard": "SOT-23-5",
       "productCycle": "normal",
       "stockNumber": 16260,
-      "directStockNumber": 16266,
-      "validStockNumber": 1626,
+      "directStockNumber": 16260,
+      "validStockNumber": 16260,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3818,8 +3994,8 @@
       "smtStockNumber": 16266,
       "recentSalesCount": 267,
       "url": "https://item.szlcsc.com/389701.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.636535+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "c6ecbb55bf7d6277983c59ea05e0efd2d1ca31f6a0aaa6b6589ee8e884b77bff",
       "parameters": [
         {
@@ -3899,7 +4075,12 @@
         "fileName": "wj203056",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=EyxI73SGTIAn3a1Y71DQCu0epyQ%3D&response-content-disposition=attachment%3Bfilename%3DC403651_%25E7%25BA%25BF%25E6%2580%25A7%25E7%25A8%25B3%25E5%258E%258B%25E5%2599%25A8%2528LDO%2529_ME6211C30M5G-N_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ203056.PDF",
         "fileUrl": "/upload/public/pdf/source/20190709/C403651_B6C31F2E850C49363974D5C4E4AF6FD2.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.3802,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C45783": {
       "productCode": "C45783",
@@ -3908,9 +4089,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0805",
       "productCycle": "normal",
-      "stockNumber": 2027640,
-      "directStockNumber": 2027659,
-      "validStockNumber": 101382,
+      "stockNumber": 1933360,
+      "directStockNumber": 1933360,
+      "validStockNumber": 1933360,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3919,8 +4100,8 @@
       "smtStockNumber": null,
       "recentSalesCount": 32727,
       "url": "https://item.szlcsc.com/46786.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.676926+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "b2ca632f433f22fcc2ff39018756905e44b8a7c99ca865b31500e0843f3a4067",
       "parameters": [
         {
@@ -3952,7 +4133,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=nFVJOrxXWufkmnQsgyn2UQDc7lU%3D&response-content-disposition=attachment%3Bfilename%3DC45783_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL21A226MAQNNNE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.3544,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C485117": {
       "productCode": "C485117",
@@ -3963,7 +4149,7 @@
       "productCycle": "normal",
       "stockNumber": 1360,
       "directStockNumber": 1360,
-      "validStockNumber": 272,
+      "validStockNumber": 1360,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -3972,8 +4158,8 @@
       "smtStockNumber": 1360,
       "recentSalesCount": 15,
       "url": "https://item.szlcsc.com/493466.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.713579+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ff64c6df970d3dbe0e22656ce7524bccbdd0aca812e851b6607c490a0bf40655",
       "parameters": [
         {
@@ -4055,7 +4241,12 @@
           "parameterValue": "轻载高效模式；输出放电；工作状态指示；打嗝限流"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 1.5779,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C507408": {
       "productCode": "C507408",
@@ -4064,9 +4255,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 44660,
-      "directStockNumber": 44660,
-      "validStockNumber": 2233,
+      "stockNumber": 44520,
+      "directStockNumber": 44520,
+      "validStockNumber": 44520,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4075,8 +4266,8 @@
       "smtStockNumber": 46931,
       "recentSalesCount": 312,
       "url": "https://item.szlcsc.com/521028.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:16.953917+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "5f99c78dcf4553de93d01f70e011e97172b82041ca33a5a5fff66b8a8afb6413",
       "parameters": [
         {
@@ -4108,7 +4299,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Ux4stfxBZTT2C5RgUduzvafmHI0%3D&response-content-disposition=attachment%3Bfilename%3DC507408_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0603CG102F500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.170097,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C51118": {
       "productCode": "C51118",
@@ -4117,9 +4313,9 @@
       "brandNameEn": "DIODES(美台)",
       "encapStandard": "SOT-25-5",
       "productCycle": "normal",
-      "stockNumber": 45665,
-      "directStockNumber": 45667,
-      "validStockNumber": 9133,
+      "stockNumber": 45510,
+      "directStockNumber": 45510,
+      "validStockNumber": 45510,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4128,8 +4324,8 @@
       "smtStockNumber": 45667,
       "recentSalesCount": 2758,
       "url": "https://item.szlcsc.com/52131.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.069175+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "375987256895fe21b3f78afbdf442e2bc4b45ed7afaa789587dc17f1f1c381a7",
       "parameters": [
         {
@@ -4209,7 +4405,12 @@
         "fileName": "wj19433",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=E84mxq5V91DRKl3r2XzNjAjwrvc%3D&response-content-disposition=attachment%3Bfilename%3DC51118_%25E7%25BA%25BF%25E6%2580%25A7%25E7%25A8%25B3%25E5%258E%258B%25E5%2599%25A8%2528LDO%2529_AP2112K-3.3TRG1_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ19433.PDF",
         "fileUrl": "/upload/public/pdf/source/20171221/C51118_15138312998391195590.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.0516,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C5186957": {
       "productCode": "C5186957",
@@ -4218,9 +4419,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "VSSOP-8",
       "productCycle": "normal",
-      "stockNumber": 15883,
-      "directStockNumber": 16775,
-      "validStockNumber": 16775,
+      "stockNumber": 15848,
+      "directStockNumber": 15848,
+      "validStockNumber": 15848,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4229,8 +4430,8 @@
       "smtStockNumber": 16775,
       "recentSalesCount": 279,
       "url": "https://item.szlcsc.com/5858466.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.072006+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "b941718a37349d08612a74ee01b6b7fce4cf0f7eec054f60b7f3ee40fcc40920",
       "parameters": [
         {
@@ -4328,7 +4529,12 @@
         "fileName": "wj488330.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=7FqjUYU0gE0miyRFVyKWGW%2BH%2FLo%3D&response-content-disposition=attachment%3Bfilename%3DC5186957_%25E8%25BD%25AC%25E6%258D%25A2%25E5%2599%25A8-%25E7%2594%25B5%25E5%25B9%25B3%25E7%25A7%25BB%25E4%25BD%258D%25E5%2599%25A8_TXU0202DCUR_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ488330.PDF",
         "fileUrl": "/upload/public/pdf/source/20230921/2A3CE0A8C69F75F5E0CC5A2F4199E65B.pdf"
-      }
+      },
+      "quote_unit_price_cny": 4.1,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C5217871": {
       "productCode": "C5217871",
@@ -4337,9 +4543,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "VSSOP-8",
       "productCycle": "normal",
-      "stockNumber": 5528,
-      "directStockNumber": 5813,
-      "validStockNumber": 5813,
+      "stockNumber": 5271,
+      "directStockNumber": 5271,
+      "validStockNumber": 5271,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4348,8 +4554,8 @@
       "smtStockNumber": 6349,
       "recentSalesCount": 111,
       "url": "https://item.szlcsc.com/5913611.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.233529+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "89e8d346a628900ef5d218d67244e6eddb7fcd889fa6467c1e6758a3b89ba621",
       "parameters": [
         {
@@ -4443,7 +4649,12 @@
           "parameterValue": "电平转换器"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 3.87,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C54140025": {
       "productCode": "C54140025",
@@ -4463,8 +4674,8 @@
       "smtStockNumber": 745,
       "recentSalesCount": 18,
       "url": "https://item.szlcsc.com/57368157.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.276164+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ae2bef1d00de18369130f64a531db19495d57eea0511e08fb58a93e1f94ee5c9",
       "parameters": [
         {
@@ -4502,7 +4713,12 @@
         "fileName": "FEXU产品选型目录 4.0(2).pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=eY%2BMZ4LjSWovGLzo28XP8yDwLkU%3D&response-content-disposition=attachment%3Bfilename%3DC54140025_%25E4%25B8%2580%25E4%25BD%2593%25E6%2588%2590%25E5%259E%258B%25E7%2594%25B5%25E6%2584%259F_FEXU0640S2R2MGS_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_FEXU%25E4%25BA%25A7%25E5%2593%2581%25E9%2580%2589%25E5%259E%258B%25E7%259B%25AE%25E5%25BD%2595%2B4.0%25282%2529.PDF",
         "fileUrl": "/upload/public/pdf/source/20260920/E79E8D411527B171764520D398BBE9F7.pdf"
-      }
+      },
+      "quote_unit_price_cny": 2.664,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C54320678": {
       "productCode": "C54320678",
@@ -4522,8 +4738,8 @@
       "smtStockNumber": 5754,
       "recentSalesCount": 38,
       "url": "https://item.szlcsc.com/57609984.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.449671+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "c59521b9233462afc39a564cc74475180ddbe77507220b62bbb9444fbc837703",
       "parameters": [
         {
@@ -4609,7 +4825,12 @@
         "fileName": "LMA3729T381-OAS02 ver1.1.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=YEALYiRYjMpGYT50Ca9fcqlxoZA%3D&response-content-disposition=attachment%3Bfilename%3DC54320678_MEMS%25E9%25BA%25A6%25E5%2585%258B%25E9%25A3%258E_LMA3729T381-OAS02_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_LMA3729T381-OAS02%2BVER1.1.PDF",
         "fileUrl": "/upload/public/pdf/source/20260312/251DEEEB010AE1CB274B9700DDD2F677.pdf"
-      }
+      },
+      "quote_unit_price_cny": 2.1,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C552574": {
       "productCode": "C552574",
@@ -4618,9 +4839,9 @@
       "brandNameEn": "Nexperia(安世)",
       "encapStandard": "SOD-323",
       "productCycle": "normal",
-      "stockNumber": 13710,
-      "directStockNumber": 13712,
-      "validStockNumber": 2742,
+      "stockNumber": 13695,
+      "directStockNumber": 13695,
+      "validStockNumber": 13695,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4629,8 +4850,8 @@
       "smtStockNumber": 13712,
       "recentSalesCount": 115,
       "url": "https://item.szlcsc.com/573571.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.615947+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "83ba1ac2603f1f73a6fd839d99b05f7e4a0cc29afe2c14b198489692b14bebf0",
       "parameters": [
         {
@@ -4704,7 +4925,12 @@
         "fileName": "wj417873.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=uqkPJb5gbm8MC4gOdKDE%2FTStyLA%3D&response-content-disposition=attachment%3Bfilename%3DC552574_%25E9%259D%2599%25E7%2594%25B5%25E5%2592%258C%25E6%25B5%25AA%25E6%25B6%258C%25E4%25BF%259D%25E6%258A%25A4%2528TVS-ESD%2529_PESD5V0U1BA%252C115_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ417873.PDF",
         "fileUrl": "/upload/public/pdf/source/20230811/79A49E0224DB130F9556164C91A5BB0A.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.8183,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C55266": {
       "productCode": "C55266",
@@ -4713,9 +4939,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "SOT-23-6",
       "productCycle": "normal",
-      "stockNumber": 57204,
-      "directStockNumber": 59497,
-      "validStockNumber": 59497,
+      "stockNumber": 57196,
+      "directStockNumber": 57196,
+      "validStockNumber": 57196,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4724,8 +4950,8 @@
       "smtStockNumber": 59497,
       "recentSalesCount": 677,
       "url": "https://item.szlcsc.com/56292.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.651371+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "96da360081a803f1bc17116c09188ba103fe2d1af330b22e9364d14a332b1be2",
       "parameters": [
         {
@@ -4777,7 +5003,12 @@
           "parameterValue": "-40℃~+150℃"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 2.74,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C57112": {
       "productCode": "C57112",
@@ -4786,9 +5017,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 179550,
-      "directStockNumber": 179551,
-      "validStockNumber": 3591,
+      "stockNumber": 13050,
+      "directStockNumber": 13050,
+      "validStockNumber": 13050,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4797,8 +5028,8 @@
       "smtStockNumber": 7114188,
       "recentSalesCount": 41450,
       "url": "https://item.szlcsc.com/58143.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.872456+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "501186a0189a3c8cf6274f3146c5dcc4758c7a7fb707fc03440c9228113f1138",
       "parameters": [
         {
@@ -4830,7 +5061,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=V2UpRdpdzpm5dM%2Fgh5JwSUIgQNw%3D&response-content-disposition=attachment%3Bfilename%3DC57112_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0603B103K500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.061473,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C598199": {
       "productCode": "C598199",
@@ -4839,9 +5075,9 @@
       "brandNameEn": "HRS(广濑)",
       "encapStandard": "SMD",
       "productCycle": "normal",
-      "stockNumber": 9715,
-      "directStockNumber": 9715,
-      "validStockNumber": 9715,
+      "stockNumber": 9713,
+      "directStockNumber": 9713,
+      "validStockNumber": 9713,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4850,8 +5086,8 @@
       "smtStockNumber": 9768,
       "recentSalesCount": 130,
       "url": "https://item.szlcsc.com/626815.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.874445+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e4381fbbb31a36ba9bdc59bc216ade3ddc5b576a7fa39eed7efe0e65bb6b0186",
       "parameters": [
         {
@@ -4919,7 +5155,12 @@
         "fileName": "wj112721",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Js06vZW%2BlmgV4muDHlqLhhhutQQ%3D&response-content-disposition=attachment%3Bfilename%3DC598199_RF%25E5%25B0%2584%25E9%25A2%2591%25E5%2590%258C%25E8%25BD%25B4%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_U.FL-R-SMT-1%252801%2529_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ112721.PDF",
         "fileUrl": "/upload/public/pdf/source/20200611/C598199_2308CF7CE2A330A73A3E7FC9509171A2.pdf"
-      }
+      },
+      "quote_unit_price_cny": 6.46,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C667203": {
       "productCode": "C667203",
@@ -4929,8 +5170,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 1420,
-      "directStockNumber": 1430,
-      "validStockNumber": 71,
+      "directStockNumber": 1420,
+      "validStockNumber": 1420,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -4939,8 +5180,8 @@
       "smtStockNumber": 1430,
       "recentSalesCount": 5,
       "url": "https://item.szlcsc.com/696503.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:17.957722+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "9bb22134c8d69a46919e5183e469f48831c8edaa3d342bd93a6cf409e910f113",
       "parameters": [
         {
@@ -4990,7 +5231,12 @@
         "fileName": "wj11931",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=qAcMex%2FyWzZ7i%2BZ0LDeyPc%2FFvfY%3D&response-content-disposition=attachment%3Bfilename%3DC667203_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_TD03G3243BT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ11931.PDF",
         "fileUrl": "/upload/public/pdf/source/20181211/C347100_9EFE94D77969634609276CBD120ED731.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.2532,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C7519": {
       "productCode": "C7519",
@@ -4999,9 +5245,9 @@
       "brandNameEn": "ST(意法半导体)",
       "encapStandard": "SOT-23-6L",
       "productCycle": "normal",
-      "stockNumber": 29605,
-      "directStockNumber": 29606,
-      "validStockNumber": 5921,
+      "stockNumber": 26930,
+      "directStockNumber": 26930,
+      "validStockNumber": 26930,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5010,8 +5256,8 @@
       "smtStockNumber": 29606,
       "recentSalesCount": 6079,
       "url": "https://item.szlcsc.com/7996.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.235473+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "96847511138756f66b86506af9e47a2ef26976ff3ace4dbcfc0573dcd89e5749",
       "parameters": [
         {
@@ -5085,7 +5331,12 @@
         "fileName": "wj333714",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=dansB%2BXQp1xLId7O5DS7ivUfhvA%3D&response-content-disposition=attachment%3Bfilename%3DC7519_%25E9%259D%2599%25E7%2594%25B5%25E5%2592%258C%25E6%25B5%25AA%25E6%25B6%258C%25E4%25BF%259D%25E6%258A%25A4%2528TVS-ESD%2529_USBLC6-2SC6_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ333714.PDF",
         "fileUrl": "/upload/public/pdf/source/20140724/1457707160627.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.083,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C8545": {
       "productCode": "C8545",
@@ -5094,9 +5345,9 @@
       "brandNameEn": "CJ(江苏长电/长晶)",
       "encapStandard": "SOT-23",
       "productCycle": "normal",
-      "stockNumber": 1365750,
-      "directStockNumber": 1365778,
-      "validStockNumber": 27315,
+      "stockNumber": 1350900,
+      "directStockNumber": 1350900,
+      "validStockNumber": 1350900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5105,8 +5356,8 @@
       "smtStockNumber": 1705092,
       "recentSalesCount": 12944,
       "url": "https://item.szlcsc.com/9040.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.237801+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e98f1cdc9654c4c1f6ca20c837831cfce79e7a36941d40d3bc951e1d44a951aa",
       "parameters": [
         {
@@ -5198,7 +5449,12 @@
         "fileName": "wj134536",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=goWyNcWtB63KTX8IbkmI9AUUZKM%3D&response-content-disposition=attachment%3Bfilename%3DC8545_%25E5%259C%25BA%25E6%2595%2588%25E5%25BA%2594%25E7%25AE%25A1%2528MOSFET%2529_2N7002_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ134536.PDF",
         "fileUrl": "/upload/public/pdf/source/20171228/C164913_15144413269051213916.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.1089,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C861611": {
       "productCode": "C861611",
@@ -5207,9 +5463,9 @@
       "brandNameEn": "YAGEO(国巨)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 13920,
-      "directStockNumber": 13929,
-      "validStockNumber": 696,
+      "stockNumber": 13900,
+      "directStockNumber": 13900,
+      "validStockNumber": 13900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5218,8 +5474,8 @@
       "smtStockNumber": 13929,
       "recentSalesCount": 94,
       "url": "https://item.szlcsc.com/921949.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.397732+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "1b5314bb39099cd1e0beb47e82c2232cb0b2cfea5a5a7f37feabee891b21c007",
       "parameters": [
         {
@@ -5269,7 +5525,12 @@
         "fileName": "PYu-RT_1-to-0.01_RoHS_L_16.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=26hljiOXPFTvFIZb0G5c6HjF2Xo%3D&response-content-disposition=attachment%3Bfilename%3DC861611_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_RT0603BRD079K09L_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_PYU-RT_1-TO-0.01_ROHS_L_16.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20250609/0E6D5617EADA80FA3B707391883DF2D5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.3183,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C87357": {
       "productCode": "C87357",
@@ -5278,9 +5539,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "VQFN-20-EP(3.6x4.6)",
       "productCycle": "normal",
-      "stockNumber": 3588,
-      "directStockNumber": 4952,
-      "validStockNumber": 4952,
+      "stockNumber": 3421,
+      "directStockNumber": 3421,
+      "validStockNumber": 3421,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5289,8 +5550,8 @@
       "smtStockNumber": 5423,
       "recentSalesCount": 673,
       "url": "https://item.szlcsc.com/88535.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.436376+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "f0a87f09e19dcd592ff36b3b53f69831aa814d523a84ef7b4787e0ac9f49dfce",
       "parameters": [
         {
@@ -5372,7 +5633,12 @@
           "parameterValue": "轻载高效模式；外部补偿；逐波限流；可调软启动；可调限流"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 6.34,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C90462": {
       "productCode": "C90462",
@@ -5381,9 +5647,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "USON-6-EP(2.1x2.1)",
       "productCycle": "normal",
-      "stockNumber": 5517,
-      "directStockNumber": 6112,
-      "validStockNumber": 6112,
+      "stockNumber": 5484,
+      "directStockNumber": 5484,
+      "validStockNumber": 5484,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5392,8 +5658,8 @@
       "smtStockNumber": 6112,
       "recentSalesCount": 187,
       "url": "https://item.szlcsc.com/91649.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.534678+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "9d3f8cb652d34ea36a4b2ff0e72bd3c86cfd9b5941ba88725ce30ec5ec18843c",
       "parameters": [
         {
@@ -5469,7 +5735,12 @@
           "parameterValue": "低功耗/睡眠模式；中断/事件触发；自动增益控制；光谱校正/滤光"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 8.18,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C962990": {
       "productCode": "C962990",
@@ -5478,9 +5749,9 @@
       "brandNameEn": "TI(德州仪器)",
       "encapStandard": "WSON-10-EP(2x3)",
       "productCycle": "normal",
-      "stockNumber": 1919,
-      "directStockNumber": 2013,
-      "validStockNumber": 2013,
+      "stockNumber": 1915,
+      "directStockNumber": 1915,
+      "validStockNumber": 1915,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5489,8 +5760,8 @@
       "smtStockNumber": 2013,
       "recentSalesCount": 74,
       "url": "https://item.szlcsc.com/1046089.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.681887+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "183b6ffcc83babe6baa00b22547eb1684d2b1569d076e6700ba52f19dc3106c4",
       "parameters": [
         {
@@ -5542,7 +5813,12 @@
           "parameterValue": "-40℃~+105℃"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "quote_unit_price_cny": 4.37,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C7461846": {
       "productCode": "C7461846",
@@ -5551,9 +5827,9 @@
       "brandNameEn": "Sensirion(瑞士盛思锐)",
       "encapStandard": "DFN-4(1.5x1.5)",
       "productCycle": "normal",
-      "stockNumber": 1922,
-      "directStockNumber": 1922,
-      "validStockNumber": 1922,
+      "stockNumber": 1771,
+      "directStockNumber": 1771,
+      "validStockNumber": 1771,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5562,8 +5838,8 @@
       "smtStockNumber": 3136,
       "recentSalesCount": 109,
       "url": "https://item.szlcsc.com/8492038.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:18.793974+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "8233ab3517148470c3a6cd638642d2ca79ceb8a270fd30c250ca5c19f3290c9a",
       "parameters": [
         {
@@ -5625,7 +5901,12 @@
         "fileName": "wj1183236.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=zEjM6JtIeNana934K8Nf2PEhwNI%3D&response-content-disposition=attachment%3Bfilename%3DC7461846_%25E6%25B8%25A9%25E6%25B9%25BF%25E5%25BA%25A6%25E4%25BC%25A0%25E6%2584%259F%25E5%2599%25A8_SHT40-AD1F-R2_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1183236.PDF",
         "fileUrl": "/upload/public/pdf/source/20240530/AF478B3DC610460D00CDC9C611CE2D47.pdf"
-      }
+      },
+      "quote_unit_price_cny": 13.49,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C51904484": {
       "productCode": "C51904484",
@@ -5812,9 +6093,9 @@
       "brandNameEn": "YAGEO(国巨)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 4800,
-      "directStockNumber": 4863,
-      "validStockNumber": 48,
+      "stockNumber": 4900,
+      "directStockNumber": 4900,
+      "validStockNumber": 4900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5823,8 +6104,8 @@
       "smtStockNumber": 5444,
       "recentSalesCount": 34,
       "url": "https://item.szlcsc.com/149017.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:19.078969+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "9db56c9063a5dda34e91b655b8d221e54432086defcf004fd7ad4ea3e89722a9",
       "parameters": [
         {
@@ -5874,7 +6155,12 @@
         "fileName": "PYu-RC_Group_51_RoHS_L_12.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Mcz1ffgnOGhckRnFLxeMVHj%2Fj6U%3D&response-content-disposition=attachment%3Bfilename%3DC137701_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_RC0603FR-07536KL_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_PYU-RC_GROUP_51_ROHS_L_12.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20250610/89E4D743C004A82A45145C7A2CC3A578.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.017,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C167245": {
       "productCode": "C167245",
@@ -5911,9 +6197,9 @@
       "brandNameEn": "Nexperia(安世)",
       "encapStandard": "SOD-123F",
       "productCycle": "normal",
-      "stockNumber": 8350,
-      "directStockNumber": 8354,
-      "validStockNumber": 1670,
+      "stockNumber": 8345,
+      "directStockNumber": 8345,
+      "validStockNumber": 8345,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5922,8 +6208,8 @@
       "smtStockNumber": 8354,
       "recentSalesCount": 77,
       "url": "https://item.szlcsc.com/420788.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:19.325805+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ca880696be8e045fd4c49f50d8233ee9691f10d364927bae5fe1774a69d3b6e4",
       "parameters": [
         {
@@ -5967,7 +6253,12 @@
         "fileName": "wj1202926.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=%2Fu98GrmFzoZR4TWQl%2FprYpZkuZ4%3D&response-content-disposition=attachment%3Bfilename%3DC426769_%25E8%2582%2596%25E7%2589%25B9%25E5%259F%25BA%25E4%25BA%258C%25E6%259E%2581%25E7%25AE%25A1_BAT54H%252C115_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1202926.PDF",
         "fileUrl": "/upload/public/pdf/source/20240724/C4157D4A0EE2E283686E21EAD64C1682.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.884,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C365736": {
       "productCode": "C365736",
@@ -5976,9 +6267,9 @@
       "brandNameEn": "Everest-semi(顺芯)",
       "encapStandard": "QFN-28-EP(4x4)",
       "productCycle": "normal",
-      "stockNumber": 46135,
-      "directStockNumber": 46135,
-      "validStockNumber": 46135,
+      "stockNumber": 46120,
+      "directStockNumber": 46120,
+      "validStockNumber": 46120,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -5987,8 +6278,8 @@
       "smtStockNumber": 46137,
       "recentSalesCount": 982,
       "url": "https://item.szlcsc.com/339918.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:19.513352+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "c6f74f9457dc8a30364ddc058af03c263b1653ed001a80fefe0a62d75af06a3f",
       "parameters": [
         {
@@ -6068,7 +6359,12 @@
         "fileName": "wj233377",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=sd36iAqXzhFhGaYFaliI9OG8dLc%3D&response-content-disposition=attachment%3Bfilename%3DC365736_ADC-DAC-%25E4%25B8%2593%25E7%2594%25A8%25E5%259E%258B_ES8388_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ233377.PDF",
         "fileUrl": "/upload/public/pdf/source/20190124/C365736_5E84B6C58F11FDCF085DB830A572A0FC.pdf"
-      }
+      },
+      "quote_unit_price_cny": 5.73,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C80200": {
       "productCode": "C80200",
@@ -6409,11 +6705,11 @@
       "split": 1,
       "delivery": null,
       "smtStockNumber": 72,
-      "recentSalesCount": 11,
+      "recentSalesCount": 12,
       "url": "https://item.szlcsc.com/3084983.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:19.890629+00:00",
-      "page_sha256": "bd91ead4e9ec3c89db31404142322be9172c4a47bb3ce9f705653584408fbaa8",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:55:45.921566+00:00",
+      "page_sha256": "27093466cb91adef2e3b0efeb656114e8a8015f100d06b4e9b6fa8715caa5f7e",
       "parameters": [
         {
           "parameterName": "芯片类型",
@@ -6470,7 +6766,13 @@
           "parameterValue": "I2C"
         }
       ],
-      "pdf": null
+      "pdf": null,
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 3480,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 17.14
     },
     "C76680": {
       "productCode": "C76680",
@@ -6638,9 +6940,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "1206",
       "productCycle": "normal",
-      "stockNumber": 2668200,
-      "directStockNumber": 2668254,
-      "validStockNumber": 26682,
+      "stockNumber": 2653400,
+      "directStockNumber": 2653400,
+      "validStockNumber": 2653400,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -6649,8 +6951,8 @@
       "smtStockNumber": 3253869,
       "recentSalesCount": 9759,
       "url": "https://item.szlcsc.com/18589.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:20.361800+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "80e90f0d47aa199e112b97ef6dc24a634fed83c96cb9b83792acb29f6de4e5bc",
       "parameters": [
         {
@@ -6700,7 +7002,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=uKDHmsFTcmgUhibKUtVFab4YZiU%3D&response-content-disposition=attachment%3Bfilename%3DC17901_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_1206W4F1000T5E_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.033387,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C23692991": {
       "productCode": "C23692991",
@@ -6762,9 +7069,9 @@
       "brandNameEn": "muRata(村田)",
       "encapStandard": "1210",
       "productCycle": "normal",
-      "stockNumber": 40658,
-      "directStockNumber": 40658,
-      "validStockNumber": 40658,
+      "stockNumber": 40530,
+      "directStockNumber": 40530,
+      "validStockNumber": 40530,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -6773,8 +7080,8 @@
       "smtStockNumber": 46312,
       "recentSalesCount": 632,
       "url": "https://item.szlcsc.com/85664.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:20.605145+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "25375896b538af83a0a7c69bd180738904153fd466dc84d3333cef495148346c",
       "parameters": [
         {
@@ -6806,7 +7113,12 @@
         "fileName": "wj00916",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Px3bVB4eO9OwPm%2FxI7AUQj3HuMg%3D&response-content-disposition=attachment%3Bfilename%3DC84494_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_GRM32ER71A476KE15L_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ00916.PDF",
         "fileUrl": "/upload/public/pdf/source/20161226/1482720144456.pdf"
-      }
+      },
+      "quote_unit_price_cny": 2.32,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C3904356": {
       "productCode": "C3904356",
@@ -6869,8 +7181,8 @@
       "encapStandard": "0603",
       "productCycle": "normal",
       "stockNumber": 3000,
-      "directStockNumber": 3004,
-      "validStockNumber": 150,
+      "directStockNumber": 3000,
+      "validStockNumber": 3000,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -6879,8 +7191,8 @@
       "smtStockNumber": 3004,
       "recentSalesCount": 34,
       "url": "https://item.szlcsc.com/51854434.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:20.717146+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "f95759ee5c15e8ae7245cf2753803ffe91b9ee44432d46e3d09175467446a828",
       "parameters": [
         {
@@ -6960,7 +7272,12 @@
         "fileName": "SMD型片式热敏电阻器-（ST1-0603-103F-3950F） 25.07.10 深圳市立创.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Y%2B4KVNlJ8QWXfnAW5bdcTeVi%2B5Y%3D&response-content-disposition=attachment%3Bfilename%3DC49352955_NTC%25E7%2583%25AD%25E6%2595%258F%25E7%2594%25B5%25E9%2598%25BB_ST10603X103F3950FB_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_SMD%25E5%259E%258B%25E7%2589%2587%25E5%25BC%258F%25E7%2583%25AD%25E6%2595%258F%25E7%2594%25B5%25E9%2598%25BB%25E5%2599%25A8-%25EF%25BC%2588ST1-0603-103F-3950F%25EF%25BC%2589%2B25.07.10%2B%25E6%25B7%25B1%25E5%259C%25B3%25E5%25B8%2582%25E7%25AB%258B%25E5%2588%259B.PDF",
         "fileUrl": "/upload/public/pdf/source/20250714/B431B764B57544E5C27E02CEFB68F577.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.2033,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C92367": {
       "productCode": "C92367",
@@ -7206,8 +7523,8 @@
       "smtStockNumber": 747,
       "recentSalesCount": 12,
       "url": "https://item.szlcsc.com/20433014.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:21.117556+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "fd96727d05bf878181b05686323f4a74958d41beb90bb1733cf93efb7f547bf5",
       "parameters": [
         {
@@ -7293,7 +7610,12 @@
         "fileName": "wj647101.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=N5FoIhKEaSk%2F7B5uuP2eA22IK%2Bc%3D&response-content-disposition=attachment%3Bfilename%3DC19191931_%25E6%2597%25A0%25E7%25BA%25BF%25E6%2594%25B6%25E5%258F%2591%25E8%258A%25AF%25E7%2589%2587_FSV4730-D60-GU_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ647101.PDF",
         "fileUrl": "/upload/public/pdf/source/20231110/3FE2255F8E542E1F23F397419E3992D5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 8.6,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C20842074": {
       "productCode": "C20842074",
@@ -7545,8 +7867,8 @@
       "encapStandard": "插件,10.8x6.1mm",
       "productCycle": "normal",
       "stockNumber": 3080,
-      "directStockNumber": 3083,
-      "validStockNumber": 616,
+      "directStockNumber": 3080,
+      "validStockNumber": 3080,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -7555,8 +7877,8 @@
       "smtStockNumber": 3083,
       "recentSalesCount": 47,
       "url": "https://item.szlcsc.com/639830.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:21.439110+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ccc7b7960a1f45ad60d7aa892abddf0361aae1c187a353cc9db9a5b7b2525769",
       "parameters": [
         {
@@ -7636,7 +7958,12 @@
         "fileName": "wj1944702.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=afELPHloQH8UhIyhdLv0D0cELZo%3D&response-content-disposition=attachment%3Bfilename%3DC609825_%25E6%25BB%2591%25E5%258A%25A8%25E5%25BC%2580%25E5%2585%25B3_SK22D02L4_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1944702.PDF",
         "fileUrl": "/upload/public/pdf/source/20260728/D779EEBDC993B2369DE0C173913900EA.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.702525,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C408335": {
       "productCode": "C408335",
@@ -7645,9 +7972,9 @@
       "brandNameEn": "Sunlord(顺络)",
       "encapStandard": "SMD,4.4x4.2mm",
       "productCycle": "normal",
-      "stockNumber": 23340,
-      "directStockNumber": 23343,
-      "validStockNumber": 4668,
+      "stockNumber": 23260,
+      "directStockNumber": 23260,
+      "validStockNumber": 23260,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -7656,8 +7983,8 @@
       "smtStockNumber": 23360,
       "recentSalesCount": 916,
       "url": "https://item.szlcsc.com/397737.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:21.645009+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "35b5de0308440cc5f4f7b5bb727b424b837ca0c540ebd135a3b78becc168227d",
       "parameters": [
         {
@@ -7701,7 +8028,12 @@
         "fileName": "MWSA-S Series of SMD Power Inductor.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=0T2HfBR3Pc6KbnwnVo%2BBCeMibhc%3D&response-content-disposition=attachment%3Bfilename%3DC408335_%25E5%258A%259F%25E7%258E%2587%25E7%2594%25B5%25E6%2584%259F_MWSA0402S-2R2MT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_MWSA-S%25C2%25A0SERIES%25C2%25A0OF%25C2%25A0SMD%25C2%25A0POWER%25C2%25A0INDUCTOR.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20250613/CEE4AE5EC9F7EB97495A767C9ECB8960.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.8098,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C3018564": {
       "productCode": "C3018564",
@@ -7959,9 +8291,9 @@
       "brandNameEn": "Sunlord(顺络)",
       "encapStandard": "SMD,4.4x4.2mm",
       "productCycle": "normal",
-      "stockNumber": 19690,
-      "directStockNumber": 19693,
-      "validStockNumber": 3938,
+      "stockNumber": 19630,
+      "directStockNumber": 19630,
+      "validStockNumber": 19630,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -7970,8 +8302,8 @@
       "smtStockNumber": 20325,
       "recentSalesCount": 351,
       "url": "https://item.szlcsc.com/397734.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:22.030203+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "41c5056ec3e11548ed2c7a5a5a2711ee7d20f2bb0ed48feece4fd5a0b13b8100",
       "parameters": [
         {
@@ -8015,7 +8347,12 @@
         "fileName": "MWSA-S Series of SMD Power Inductor.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=A9QciE2Dl6EXwDg3xworO0qzW9M%3D&response-content-disposition=attachment%3Bfilename%3DC408332_%25E5%258A%259F%25E7%258E%2587%25E7%2594%25B5%25E6%2584%259F_MWSA0402S-1R0MT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_MWSA-S%25C2%25A0SERIES%25C2%25A0OF%25C2%25A0SMD%25C2%25A0POWER%25C2%25A0INDUCTOR.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20250613/CEE4AE5EC9F7EB97495A767C9ECB8960.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.9393,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C7461343": {
       "productCode": "C7461343",
@@ -8025,8 +8362,8 @@
       "encapStandard": "SMD,5.7x5.2mm",
       "productCycle": "normal",
       "stockNumber": 1330,
-      "directStockNumber": 1332,
-      "validStockNumber": 266,
+      "directStockNumber": 1330,
+      "validStockNumber": 1330,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8035,8 +8372,8 @@
       "smtStockNumber": null,
       "recentSalesCount": 1,
       "url": "https://item.szlcsc.com/8489120.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:22.224637+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "6eed69bbaaa6ac8c61cb1d97206ca21cdcb0d1bdc891f8fbcd478777e86eeb56",
       "parameters": [
         {
@@ -8080,7 +8417,12 @@
         "fileName": "wj402024.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=cd9tqDryRR8URWCu%2BPJbvyv8y5Q%3D&response-content-disposition=attachment%3Bfilename%3DC7461343_%25E4%25B8%2580%25E4%25BD%2593%25E6%2588%2590%25E5%259E%258B%25E7%2594%25B5%25E6%2584%259F_CXP0520-1R0M-AG%25281.0UH%2529_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ402024.PDF",
         "fileUrl": "/upload/public/pdf/source/20230706/7F3A5B39C5AD80A91C9FA782B54A296B.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.7332,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C52178082": {
       "productCode": "C52178082",
@@ -8091,7 +8433,7 @@
       "productCycle": "normal",
       "stockNumber": 970,
       "directStockNumber": 970,
-      "validStockNumber": 97,
+      "validStockNumber": 970,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8100,8 +8442,8 @@
       "smtStockNumber": 970,
       "recentSalesCount": 2,
       "url": "https://item.szlcsc.com/54999684.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:22.302610+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "1de7251d5f3fa703c56cee23b4cc446ec744b44a6dd4ecf02ae7dc73be4390f3",
       "parameters": [
         {
@@ -8193,7 +8535,12 @@
         "fileName": "TS-038-043180-D2.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=BtX6BZfVa9FIwNUvkAuejqaY5m8%3D&response-content-disposition=attachment%3Bfilename%3DC52178082_%25E8%25BD%25BB%25E8%25A7%25A6%25E5%25BC%2580%25E5%2585%25B3_TS-038-060250-D2_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_TS-038-043180-D2.PDF",
         "fileUrl": "/upload/public/pdf/source/20251022/14FF66418EB5EE897559ABA29A76DA54.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.346085,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C520841": {
       "productCode": "C520841",
@@ -8641,9 +8988,9 @@
       "brandNameEn": "KEMET(基美)",
       "encapStandard": "CASE-D-7343-31(mm)",
       "productCycle": "normal",
-      "stockNumber": 1479,
-      "directStockNumber": 1479,
-      "validStockNumber": 1479,
+      "stockNumber": 1247,
+      "directStockNumber": 1247,
+      "validStockNumber": 1247,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8652,8 +8999,8 @@
       "smtStockNumber": 1503,
       "recentSalesCount": 56,
       "url": "https://item.szlcsc.com/117998.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:22.828359+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "f4bbeda11fefe93b687373a6e5eb249756fb6ba65be0f3c8f665dd470d0373f2",
       "parameters": [
         {
@@ -8691,7 +9038,12 @@
         "fileName": "wj130433",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=v3Uz3aWCi5X9bpXvYXJk%2BV3tDZY%3D&response-content-disposition=attachment%3Bfilename%3DC116743_%25E9%2592%25BD%25E7%2594%25B5%25E5%25AE%25B9_T520D227M010ATE025_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ130433.PDF",
         "fileUrl": "/upload/public/pdf/source/20170705/1499242748049.pdf"
-      }
+      },
+      "quote_unit_price_cny": 10.17,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C600597": {
       "productCode": "C600597",
@@ -8770,8 +9122,8 @@
       "smtStockNumber": 2860,
       "recentSalesCount": 9,
       "url": "https://item.szlcsc.com/156957.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:23.103249+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e91a95c535d599f93dc8c1c62309e82744e8a8b3dba83a8abe9ec87d2f7286d6",
       "parameters": [
         {
@@ -8833,7 +9185,12 @@
         "fileName": "wj261668",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=mZ01V%2FRmXx5f8POvkoC%2FEd7MHwM%3D&response-content-disposition=attachment%3Bfilename%3DC145625_%25E7%259B%2591%25E6%258E%25A7%25E5%2592%258C%25E5%25A4%258D%25E4%25BD%258D%25E8%258A%25AF%25E7%2589%2587_MCP120T-270I-TT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ261668.PDF",
         "fileUrl": "/upload/public/pdf/source/20180629/C184503_1CC038E9B0D3DF3822A97DC6D6DEDA4B.pdf"
-      }
+      },
+      "quote_unit_price_cny": 3.14,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C22386778": {
       "productCode": "C22386778",
@@ -8843,8 +9200,8 @@
       "encapStandard": "SMD3215-2P",
       "productCycle": "normal",
       "stockNumber": 695,
-      "directStockNumber": 698,
-      "validStockNumber": 139,
+      "directStockNumber": 695,
+      "validStockNumber": 695,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8853,8 +9210,8 @@
       "smtStockNumber": 698,
       "recentSalesCount": 5,
       "url": "https://item.szlcsc.com/23941597.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:23.143182+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "976e18744ef3441108c35bc8d041425ffd937a4facb0b7439650262f36284515",
       "parameters": [
         {
@@ -8904,7 +9261,12 @@
         "fileName": "SCTF星通时频-TF3215-Series-25-03-18.pdf.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=BrwzDE0Ws1K8w%2FTcs6%2FuEkBnPII%3D&response-content-disposition=attachment%3Bfilename%3DC22386778_%25E6%2597%25A0%25E6%25BA%2590%25E6%2599%25B6%25E6%258C%25AF_SXTF3215R32768A20F_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_SCTF%25E6%2598%259F%25E9%2580%259A%25E6%2597%25B6%25E9%25A2%2591-TF3215-SERIES-25-03-18.PDF.PDF",
         "fileUrl": "/upload/public/pdf/source/20240418/D730C0CA0647153A0B6C1CA4B717E250.pdf"
-      }
+      },
+      "quote_unit_price_cny": 1.2809,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1623": {
       "productCode": "C1623",
@@ -8913,9 +9275,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0603",
       "productCycle": "normal",
-      "stockNumber": 412400,
-      "directStockNumber": 412405,
-      "validStockNumber": 20620,
+      "stockNumber": 421340,
+      "directStockNumber": 421340,
+      "validStockNumber": 421340,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8924,8 +9286,8 @@
       "smtStockNumber": 941419,
       "recentSalesCount": 9537,
       "url": "https://item.szlcsc.com/1975.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T14:54:23.409446+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "eee886a6b07642d316227d114e23d53dc6360e081cfdb09fafd3dd67e80c5911",
       "parameters": [
         {
@@ -8957,7 +9319,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=eOFyFCLS3OnzTVhizfYg7wa0SVM%3D&response-content-disposition=attachment%3Bfilename%3DC1623_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL10B474KA8NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.182,
+      "quote_pricing_quantity": 20,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25744": {
       "productCode": "C25744",
@@ -8966,9 +9333,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 12254400,
-      "directStockNumber": 12254428,
-      "validStockNumber": 122544,
+      "stockNumber": 11618900,
+      "directStockNumber": 11618900,
+      "validStockNumber": 11618900,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -8977,8 +9344,8 @@
       "smtStockNumber": 23733580,
       "recentSalesCount": 63464,
       "url": "https://item.szlcsc.com/26487.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:23.645822+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "0b9475908e7fc47873efbdad4c215c55a323460a16475b9becfc3d4e16ac134f",
       "parameters": [
         {
@@ -9028,7 +9395,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=rra0rIsRk4jVBn%2BeRZO8AEJRxS0%3D&response-content-disposition=attachment%3Bfilename%3DC25744_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF1002TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0205,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1525": {
       "productCode": "C1525",
@@ -9037,9 +9409,9 @@
       "brandNameEn": "SAMSUNG(三星)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 6220700,
-      "directStockNumber": 6220759,
-      "validStockNumber": 62207,
+      "stockNumber": 5541800,
+      "directStockNumber": 5541800,
+      "validStockNumber": 5541800,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9048,8 +9420,8 @@
       "smtStockNumber": 24779124,
       "recentSalesCount": 67732,
       "url": "https://item.szlcsc.com/1877.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:24.632093+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "c061b286cddb95f83091bba2eb008af44af3a8f40966906683018f200df58707",
       "parameters": [
         {
@@ -9081,7 +9453,12 @@
         "fileName": "wj310654",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=tL8OOunVtLHfgNvXfImoI9GquR0%3D&response-content-disposition=attachment%3Bfilename%3DC1525_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_CL05B104KO5NNNC_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ310654.PDF",
         "fileUrl": "/upload/public/pdf/source/20160218/1457707763339.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0274,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25741": {
       "productCode": "C25741",
@@ -9090,9 +9467,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 4831300,
-      "directStockNumber": 4831349,
-      "validStockNumber": 48313,
+      "stockNumber": 4614300,
+      "directStockNumber": 4614300,
+      "validStockNumber": 4614300,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9101,8 +9478,8 @@
       "smtStockNumber": 9001622,
       "recentSalesCount": 45376,
       "url": "https://item.szlcsc.com/26484.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:23.646823+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "ade9d860eb87e31b70c47e0340b1cf9e1aeb22efde8412e4fd42f5f13aa21578",
       "parameters": [
         {
@@ -9152,7 +9529,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=io56xJqIbvwW1VSE2i8sjsDRrWQ%3D&response-content-disposition=attachment%3Bfilename%3DC25741_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF1003TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.013764,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25768": {
       "productCode": "C25768",
@@ -9161,9 +9543,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 528400,
-      "directStockNumber": 528405,
-      "validStockNumber": 5284,
+      "stockNumber": 512100,
+      "directStockNumber": 512100,
+      "validStockNumber": 512100,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9172,8 +9554,8 @@
       "smtStockNumber": 915721,
       "recentSalesCount": 8585,
       "url": "https://item.szlcsc.com/26511.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:24.565241+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "4fc2537560e9fda315d04b7d2fde6819cc459832b3721da35c512c9d1916706d",
       "parameters": [
         {
@@ -9223,7 +9605,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=%2FhT3q2Ogw4gpoCwEiL0I1ZYKBjI%3D&response-content-disposition=attachment%3Bfilename%3DC25768_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF2202TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.013485,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1562": {
       "productCode": "C1562",
@@ -9232,9 +9619,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 478000,
-      "directStockNumber": 478070,
-      "validStockNumber": 4780,
+      "stockNumber": 416500,
+      "directStockNumber": 416500,
+      "validStockNumber": 416500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9243,8 +9630,8 @@
       "smtStockNumber": 1108300,
       "recentSalesCount": 8414,
       "url": "https://item.szlcsc.com/1914.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:03:35.748450+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "d4fb4904e449b79052aa9e71ec21834f62103fdf086594c08b2f5a06a161bfb3",
       "parameters": [
         {
@@ -9276,7 +9663,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=gKEGvpmsvht5Ytoq6I%2Bp%2Bs%2FYk2w%3D&response-content-disposition=attachment%3Bfilename%3DC1562_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0402CG330J500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.021855,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1546": {
       "productCode": "C1546",
@@ -9285,9 +9677,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 1899400,
-      "directStockNumber": 1899411,
-      "validStockNumber": 18994,
+      "stockNumber": 1900800,
+      "directStockNumber": 1900800,
+      "validStockNumber": 1900800,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9296,8 +9688,8 @@
       "smtStockNumber": 3485618,
       "recentSalesCount": 20865,
       "url": "https://item.szlcsc.com/1898.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:03:35.192374+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "75e650725fcb87b32bf4f599447defbfe887be56c05f234d646d26f5812c1e8b",
       "parameters": [
         {
@@ -9329,7 +9721,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=g4LSIIqicenMl3msS54%2FNOp7dZE%3D&response-content-disposition=attachment%3Bfilename%3DC1546_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0402CG101J500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.023715,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1532": {
       "productCode": "C1532",
@@ -9338,9 +9735,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 451000,
-      "directStockNumber": 451016,
-      "validStockNumber": 9020,
+      "stockNumber": 425500,
+      "directStockNumber": 425500,
+      "validStockNumber": 425500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9349,8 +9746,8 @@
       "smtStockNumber": 631889,
       "recentSalesCount": 6152,
       "url": "https://item.szlcsc.com/1884.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:03:35.727536+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "d7fe0877406027ba3cd847277603faaaa31a94ef6ed6856d7705f40613e600fc",
       "parameters": [
         {
@@ -9382,7 +9779,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=wJZfIuARmzOQVtjkq3I2WN2LzDs%3D&response-content-disposition=attachment%3Bfilename%3DC1532_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0402B223K500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.051987,
+      "quote_pricing_quantity": 50,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25792": {
       "productCode": "C25792",
@@ -9391,9 +9793,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 4570400,
-      "directStockNumber": 4570494,
-      "validStockNumber": 45704,
+      "stockNumber": 4504500,
+      "directStockNumber": 4504500,
+      "validStockNumber": 4504500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9402,8 +9804,8 @@
       "smtStockNumber": 5809587,
       "recentSalesCount": 16889,
       "url": "https://item.szlcsc.com/26535.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:24.208049+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "815cf87f6f46767234d0b741f24f6460b1022b1a529394702f7196bc88f1fa10",
       "parameters": [
         {
@@ -9453,7 +9855,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=7kb2dqhJHmIpn9OB8MGgdjBKEvU%3D&response-content-disposition=attachment%3Bfilename%3DC25792_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF4702TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.014508,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25076": {
       "productCode": "C25076",
@@ -9462,9 +9869,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 1671500,
-      "directStockNumber": 1671507,
-      "validStockNumber": 16715,
+      "stockNumber": 1635000,
+      "directStockNumber": 1635000,
+      "validStockNumber": 1635000,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9473,8 +9880,8 @@
       "smtStockNumber": 4716090,
       "recentSalesCount": 31951,
       "url": "https://item.szlcsc.com/25819.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:24.064920+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "09bbb5aa580cfccc28d86dd7928e41c0392c9045a5a39180a055cc6948efe7c0",
       "parameters": [
         {
@@ -9524,7 +9931,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=6IeJUOVbNduLpBsj6vqHaxR9R80%3D&response-content-disposition=attachment%3Bfilename%3DC25076_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF1000TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.0073,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25900": {
       "productCode": "C25900",
@@ -9533,9 +9945,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 11882700,
-      "directStockNumber": 11882767,
-      "validStockNumber": 118827,
+      "stockNumber": 11613600,
+      "directStockNumber": 11613600,
+      "validStockNumber": 11613600,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9544,8 +9956,8 @@
       "smtStockNumber": 16180345,
       "recentSalesCount": 41132,
       "url": "https://item.szlcsc.com/26643.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:23.646823+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "cbc274521f3df831ee4a55ff91906b0fb4f9c8bde8dfe044a35be63ae165dca2",
       "parameters": [
         {
@@ -9595,7 +10007,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=XMX5G8AkcxpLp5HTV%2BwMsouGBUM%3D&response-content-disposition=attachment%3Bfilename%3DC25900_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF4701TCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.015159,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C25092": {
       "productCode": "C25092",
@@ -9604,9 +10021,9 @@
       "brandNameEn": "UNI-ROYAL(厚声)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 1638600,
-      "directStockNumber": 1638624,
-      "validStockNumber": 16386,
+      "stockNumber": 1530500,
+      "directStockNumber": 1530500,
+      "validStockNumber": 1530500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9615,8 +10032,8 @@
       "smtStockNumber": 4126743,
       "recentSalesCount": 23184,
       "url": "https://item.szlcsc.com/25835.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:02:23.646823+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "e144df4354da54028149582f60601f6e406504aacbce9faec3b4f27408b01c28",
       "parameters": [
         {
@@ -9666,7 +10083,12 @@
         "fileName": "wj01897",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=Qfw1Pv9nIPRE7U%2FD9Dd6LIUmJgo%3D&response-content-disposition=attachment%3Bfilename%3DC25092_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E9%2598%25BB_0402WGF220JTCE_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ01897.PDF",
         "fileUrl": "/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.015438,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1523": {
       "productCode": "C1523",
@@ -9675,9 +10097,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 2984300,
-      "directStockNumber": 2984380,
-      "validStockNumber": 29843,
+      "stockNumber": 2024500,
+      "directStockNumber": 2024500,
+      "validStockNumber": 2024500,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9686,8 +10108,8 @@
       "smtStockNumber": 3789627,
       "recentSalesCount": 21548,
       "url": "https://item.szlcsc.com/1875.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:03:35.193362+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "eba49d0ed76f995e852cfaee4604e789a6e441bcdddbf5f777e046aec97b0541",
       "parameters": [
         {
@@ -9719,7 +10141,12 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=hmy9IgTfMCg1OW%2FIMOYKqD6aEeU%3D&response-content-disposition=attachment%3Bfilename%3DC1523_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0402B102K500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
-      }
+      },
+      "quote_unit_price_cny": 0.023994,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
     },
     "C1555": {
       "productCode": "C1555",
@@ -9728,9 +10155,9 @@
       "brandNameEn": "FH(风华)",
       "encapStandard": "0402",
       "productCycle": "normal",
-      "stockNumber": 899100,
-      "directStockNumber": 899102,
-      "validStockNumber": 8991,
+      "stockNumber": 872700,
+      "directStockNumber": 872700,
+      "validStockNumber": 872700,
       "stock_channel": "lcsc_domestic_direct",
       "partner": null,
       "minBuyNumber": 1,
@@ -9739,8 +10166,8 @@
       "smtStockNumber": 1728750,
       "recentSalesCount": 14838,
       "url": "https://item.szlcsc.com/1907.html",
-      "observed_date": "2026-09-24",
-      "retrieved_at_utc": "2026-09-24T16:03:35.193362+00:00",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:38:26+00:00",
       "page_sha256": "33fd51381b1353a3a1062ba68348f402724fc47a3c1ac7bc00c5a4ec7e4908d9",
       "parameters": [
         {
@@ -9772,8 +10199,488 @@
         "fileName": "wj1946456.pdf",
         "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=pYONZ1JsXOCGcDc8z4T%2Fxz9QYgU%3D&response-content-disposition=attachment%3Bfilename%3DC1555_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_0402CG220J500NT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
         "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
+      },
+      "quote_unit_price_cny": 0.023808,
+      "quote_pricing_quantity": 100,
+      "quote_lead": "4小时内发货",
+      "stock_source": "PROCUREMENT_100PCS-立创_20260925.xls",
+      "historical_catalog_note": "Product-page metadata and page_sha256 predate the quotation; inventory counts come from the specified quotation."
+    },
+    "C2909890": {
+      "productCode": "C2909890",
+      "productModel": "SHT40-AD1B-R2",
+      "productId": "3188621",
+      "brandNameEn": "Sensirion(瑞士盛思锐)",
+      "encapStandard": "DFN-4-EP(1.5x1.5)",
+      "productCycle": "normal",
+      "stockNumber": 15398,
+      "directStockNumber": 15398,
+      "validStockNumber": 15398,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 21992,
+      "recentSalesCount": 576,
+      "url": "https://item.szlcsc.com/3188621.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:55:45.921566+00:00",
+      "page_sha256": "1bd33dccecaf9327bef6b798cbd73cae55d1510ab5defc22daf73c1f99dca787",
+      "parameters": [
+        {
+          "parameterName": "温度范围",
+          "parameterCode": "param_14486_s",
+          "parameterDetailValue": "-40℃~+125℃",
+          "parameterValue": "-40℃~+125℃"
+        },
+        {
+          "parameterName": "湿度范围",
+          "parameterCode": "param_14487_s",
+          "parameterDetailValue": "0%RH~100%RH",
+          "parameterValue": "0%RH~100%RH"
+        },
+        {
+          "parameterName": "接口类型",
+          "parameterCode": "param_14490",
+          "parameterDetailValue": "I2C",
+          "parameterValue": "I2C"
+        },
+        {
+          "parameterName": "工作电压",
+          "parameterCode": "param_14488_s",
+          "parameterDetailValue": "1.08V~3.6V",
+          "parameterValue": "1.08V~3.6V"
+        },
+        {
+          "parameterName": "工作电流",
+          "parameterCode": "param_14489_n",
+          "parameterDetailValue": "400nA",
+          "parameterValue": "400nA"
+        },
+        {
+          "parameterName": "湿度精度",
+          "parameterCode": "param_15165_s",
+          "parameterDetailValue": "±1.8%RH",
+          "parameterValue": "±1.8%RH"
+        },
+        {
+          "parameterName": "温度精度",
+          "parameterCode": "param_32240_s",
+          "parameterDetailValue": "±0.2℃",
+          "parameterValue": "±0.2℃"
+        },
+        {
+          "parameterName": "分辨率",
+          "parameterCode": "param_32241_n",
+          "parameterDetailValue": "16bit",
+          "parameterValue": "16bit"
+        },
+        {
+          "parameterName": "功能特性",
+          "parameterCode": "param_33829",
+          "parameterDetailValue": "内置加热器；工厂校准",
+          "parameterValue": "内置加热器；工厂校准"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj82307",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=0znQjKP7qLkemo62w7E2GXSt7Gc%3D&response-content-disposition=attachment%3Bfilename%3DC2909890_%25E6%25B8%25A9%25E6%25B9%25BF%25E5%25BA%25A6%25E4%25BC%25A0%25E6%2584%259F%25E5%2599%25A8_SHT40-AD1B-R2_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ82307.PDF",
+        "fileUrl": "/upload/public/pdf/source/20211021/851BA36A5CA574D725310F52CADA4510.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 17375,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 6.95
+    },
+    "C88374": {
+      "productCode": "C88374",
+      "productModel": "U.FL-R-SMT-1(80)",
+      "productId": "89553",
+      "brandNameEn": "HRS(广濑)",
+      "encapStandard": "SMD",
+      "productCycle": "normal",
+      "stockNumber": 101935,
+      "directStockNumber": 101936,
+      "validStockNumber": 20387,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 104170,
+      "recentSalesCount": 2604,
+      "url": "https://item.szlcsc.com/89553.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:55:45.922564+00:00",
+      "page_sha256": "bc75d033eeecfdb6c859f7b07c4d6acf33479b7d82dd8e6e0656ca3fdfe8254e",
+      "parameters": [
+        {
+          "parameterName": "连接器类型",
+          "parameterCode": "param_13551",
+          "parameterDetailValue": "板端",
+          "parameterValue": "板端"
+        },
+        {
+          "parameterName": "接口类型",
+          "parameterCode": "param_13553",
+          "parameterDetailValue": "内针",
+          "parameterValue": "内针"
+        },
+        {
+          "parameterName": "端口数量",
+          "parameterCode": "param_13554_n",
+          "parameterDetailValue": "1",
+          "parameterValue": "1"
+        },
+        {
+          "parameterName": "接口直径",
+          "parameterCode": "param_13558_n",
+          "parameterDetailValue": "2mm",
+          "parameterValue": "2mm"
+        },
+        {
+          "parameterName": "接口长度/高度",
+          "parameterCode": "param_13559_n",
+          "parameterDetailValue": "1.25mm",
+          "parameterValue": "1.25mm"
+        },
+        {
+          "parameterName": "频率",
+          "parameterCode": "param_13556_n",
+          "parameterDetailValue": "6GHz",
+          "parameterValue": "6GHz"
+        },
+        {
+          "parameterName": "射频系列",
+          "parameterCode": "param_13552",
+          "parameterDetailValue": "IPEX",
+          "parameterValue": "IPEX"
+        },
+        {
+          "parameterName": "阻抗",
+          "parameterCode": "param_13555_n",
+          "parameterDetailValue": "50Ω",
+          "parameterValue": "50Ω"
+        },
+        {
+          "parameterName": "样式",
+          "parameterCode": "param_13557",
+          "parameterDetailValue": "-",
+          "parameterValue": "-"
+        },
+        {
+          "parameterName": "工作温度",
+          "parameterCode": "param_13562_s",
+          "parameterDetailValue": "-40℃~+90℃",
+          "parameterValue": "-40℃~+90℃"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj197998",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=itao2ElTU2XdMGKhtIEqlfYz4Pk%3D&response-content-disposition=attachment%3Bfilename%3DC88374_RF%25E5%25B0%2584%25E9%25A2%2591%25E5%2590%258C%25E8%25BD%25B4%25E8%25BF%259E%25E6%258E%25A5%25E5%2599%25A8_U.FL-R-SMT-1%252880%2529_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ197998.PDF",
+        "fileUrl": "/upload/public/pdf/source/20161125/1480067868647.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 3939,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 0.3939
+    },
+    "C2159304": {
+      "productCode": "C2159304",
+      "productModel": "T55D227M010C0025",
+      "productId": 2251354,
+      "brandNameEn": "VISHAY(威世)",
+      "encapStandard": "CASE-D-7343-31(mm)",
+      "productCycle": "normal",
+      "stockNumber": 5,
+      "directStockNumber": 5,
+      "validStockNumber": 5,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 5,
+      "recentSalesCount": 0,
+      "url": "https://item.szlcsc.com/2251354.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:49:49.722610+00:00",
+      "page_sha256": "d6d34f0886604cce455c8ccb5af2de62d0a3b70d788e11fdc79fede9058548ef",
+      "parameters": [
+        {
+          "parameterName": "容值",
+          "parameterCode": "param_11032_n",
+          "parameterDetailValue": "220uF",
+          "parameterValue": "220uF"
+        },
+        {
+          "parameterName": "精度",
+          "parameterCode": "param_11033_s",
+          "parameterDetailValue": "±20%",
+          "parameterValue": "±20%"
+        },
+        {
+          "parameterName": "额定电压",
+          "parameterCode": "param_11034_n",
+          "parameterDetailValue": "10V",
+          "parameterValue": "10V"
+        },
+        {
+          "parameterName": "漏电流",
+          "parameterCode": "param_11035_nt",
+          "parameterDetailValue": "-",
+          "parameterValue": "-"
+        },
+        {
+          "parameterName": "纹波电流",
+          "parameterCode": "param_11036_nt",
+          "parameterDetailValue": "-",
+          "parameterValue": "-"
+        },
+        {
+          "parameterName": "等效串联电阻(ESR)",
+          "parameterCode": "param_11037_nt",
+          "parameterDetailValue": "25mΩ@100kHz",
+          "parameterValue": "25mΩ@100kHz"
+        },
+        {
+          "parameterName": "工作温度",
+          "parameterCode": "param_11038_s",
+          "parameterDetailValue": "-55℃~+105℃",
+          "parameterValue": "-55℃~+105℃"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj40314",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=BRQ4aIE5iieGejNZ%2BNcMIlUY6tE%3D&response-content-disposition=attachment%3Bfilename%3DC2159304_%25E9%2592%25BD%25E7%2594%25B5%25E5%25AE%25B9_T55D227M010C0025_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ40314.PDF",
+        "fileUrl": "/upload/public/pdf/source/20210427/369E0E2B82AAAC68C140254C20AD9476.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 3455,
+        "isShowPrice": true
       }
+    },
+    "C18213213": {
+      "productCode": "C18213213",
+      "productModel": "1206X226K25ONT",
+      "productId": "19388253",
+      "brandNameEn": "FH(风华)",
+      "encapStandard": "1206",
+      "productCycle": "normal",
+      "stockNumber": 0,
+      "directStockNumber": 2,
+      "validStockNumber": 0,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 2,
+      "recentSalesCount": 18,
+      "url": "https://item.szlcsc.com/19388253.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:53:56.456015+00:00",
+      "page_sha256": "91550f7c4c1f8c8b49732c9ac062f6f89b661808240877253a4f46ee3e2c2b9e",
+      "parameters": [
+        {
+          "parameterName": "容值",
+          "parameterCode": "param_10951_n",
+          "parameterDetailValue": "22uF",
+          "parameterValue": "22uF"
+        },
+        {
+          "parameterName": "精度",
+          "parameterCode": "param_10952_s",
+          "parameterDetailValue": "±10%",
+          "parameterValue": "±10%"
+        },
+        {
+          "parameterName": "额定电压",
+          "parameterCode": "param_10953_n",
+          "parameterDetailValue": "25V",
+          "parameterValue": "25V"
+        },
+        {
+          "parameterName": "温度系数",
+          "parameterCode": "param_10954",
+          "parameterDetailValue": "X5R",
+          "parameterValue": "X5R"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj1946456.pdf",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=2tIdIKulE1JbUtwlD%2Fc5ksakxdY%3D&response-content-disposition=attachment%3Bfilename%3DC18213213_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_1206X226K25ONT_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1946456.PDF",
+        "fileUrl": "/upload/public/pdf/source/20260730/02F3503A6D76391150EDFB346112EFA5.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 454,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 0.227
+    },
+    "C19192479": {
+      "productCode": "C19192479",
+      "productModel": "177EC0013",
+      "productId": "20436581",
+      "brandNameEn": "KNSCHA(科尼盛)",
+      "encapStandard": "SMD,7.3x4.3mm",
+      "productCycle": "normal",
+      "stockNumber": 2879,
+      "directStockNumber": 2879,
+      "validStockNumber": 2879,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 2918,
+      "recentSalesCount": 39,
+      "url": "https://item.szlcsc.com/20436581.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:53:56.456015+00:00",
+      "page_sha256": "68a80f48feb5bfd6d5bca66684584298882bb4364c6bf0d1cfbf1673cf9ce2ff",
+      "parameters": [
+        {
+          "parameterName": "容值",
+          "parameterCode": "param_11022_n",
+          "parameterDetailValue": "220uF",
+          "parameterValue": "220uF"
+        },
+        {
+          "parameterName": "精度",
+          "parameterCode": "param_11023_s",
+          "parameterDetailValue": "±20%",
+          "parameterValue": "±20%"
+        },
+        {
+          "parameterName": "额定电压",
+          "parameterCode": "param_11024_n",
+          "parameterDetailValue": "6.3V",
+          "parameterValue": "6.3V"
+        },
+        {
+          "parameterName": "类型",
+          "parameterCode": "param_11021",
+          "parameterDetailValue": "聚合物",
+          "parameterValue": "聚合物"
+        },
+        {
+          "parameterName": "脚间距",
+          "parameterCode": "param_11027_n",
+          "parameterDetailValue": "1.3mm",
+          "parameterValue": "1.3mm"
+        },
+        {
+          "parameterName": "电容体直径",
+          "parameterCode": "param_11025_n",
+          "parameterDetailValue": "7.3mm",
+          "parameterValue": "7.3mm"
+        },
+        {
+          "parameterName": "电容体长度",
+          "parameterCode": "param_11026_n",
+          "parameterDetailValue": "4.3mm",
+          "parameterValue": "4.3mm"
+        },
+        {
+          "parameterName": "工作寿命",
+          "parameterCode": "param_11030_nt",
+          "parameterDetailValue": "2000hrs@105℃",
+          "parameterValue": "2000hrs@105℃"
+        },
+        {
+          "parameterName": "工作温度",
+          "parameterCode": "param_11031_s",
+          "parameterDetailValue": "-55℃~+105℃",
+          "parameterValue": "-55℃~+105℃"
+        },
+        {
+          "parameterName": "极性类型",
+          "parameterCode": "param_34895",
+          "parameterDetailValue": "有极性",
+          "parameterValue": "有极性"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj721875.pdf",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=uVTxLF1iXEb%2B6YQYvhx1paQPP1Y%3D&response-content-disposition=attachment%3Bfilename%3DC19192479_%25E5%259B%25BA%25E6%2580%2581%25E7%2594%25B5%25E5%25AE%25B9_177EC0013_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ721875.PDF",
+        "fileUrl": "/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 5355,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 1.53
+    },
+    "C7432785": {
+      "productCode": "C7432785",
+      "productModel": "HGC1206R5226K250NSPJ",
+      "productId": "8438267",
+      "brandNameEn": "Chinocera(华瓷)",
+      "encapStandard": "1206",
+      "productCycle": "normal",
+      "stockNumber": 134570,
+      "directStockNumber": 134572,
+      "validStockNumber": 26914,
+      "stock_channel": "lcsc_domestic_direct",
+      "partner": null,
+      "minBuyNumber": 1,
+      "split": 1,
+      "delivery": null,
+      "smtStockNumber": 134572,
+      "recentSalesCount": 403,
+      "url": "https://item.szlcsc.com/8438267.html",
+      "observed_date": "2026-09-25",
+      "retrieved_at_utc": "2026-09-25T00:55:45.920563+00:00",
+      "page_sha256": "c3a9e8f7d8dcde34b4ea96156ff5cc27070b759806e75cd5639b9ee36fb1ca4d",
+      "parameters": [
+        {
+          "parameterName": "容值",
+          "parameterCode": "param_10951_n",
+          "parameterDetailValue": "22uF",
+          "parameterValue": "22uF"
+        },
+        {
+          "parameterName": "精度",
+          "parameterCode": "param_10952_s",
+          "parameterDetailValue": "±10%",
+          "parameterValue": "±10%"
+        },
+        {
+          "parameterName": "额定电压",
+          "parameterCode": "param_10953_n",
+          "parameterDetailValue": "25V",
+          "parameterValue": "25V"
+        },
+        {
+          "parameterName": "温度系数",
+          "parameterCode": "param_10954",
+          "parameterDetailValue": "X5R",
+          "parameterValue": "X5R"
+        }
+      ],
+      "pdf": {
+        "fileName": "wj1934363.pdf",
+        "urlSign": "?Expires=4070880000&OSSAccessKeyId=LTAIJDIkh7KmGS1H&Signature=ZuzjQanUXJoPwImsEc8JYb3R%2B9I%3D&response-content-disposition=attachment%3Bfilename%3DC7432785_%25E8%25B4%25B4%25E7%2589%2587%25E7%2594%25B5%25E5%25AE%25B9%2528MLCC%2529_HGC1206R5226K250NSPJ_%25E8%25A7%2584%25E6%25A0%25BC%25E4%25B9%25A6_WJ1934363.PDF",
+        "fileUrl": "/upload/public/pdf/source/20260723/7EB3BDFEECF66494B0D077AF4F87288B.pdf"
+      },
+      "pricing": {
+        "isShowQuotedPriceBtn": false,
+        "encaptionPrice": 1058,
+        "isShowPrice": true
+      },
+      "page_reference_price_cny": 0.529
     }
   },
-  "latest_passive_observation_date": "2026-09-25 Asia/Shanghai"
+  "latest_passive_observation_date": "2026-09-25 Asia/Shanghai",
+  "cost_revision_date": "2026-09-25",
+  "quote_rows_refreshed": 86
 }

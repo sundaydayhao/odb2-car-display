@@ -1,27 +1,21 @@
-# 立创优先采购表 · 修订 Q
+# 单板采购表 · 修订 R
 
-2026-09-25 增加 155 个 0402 封装位置，详见 [PASSIVE_SHRINK.md](PASSIVE_SHRINK.md)；采购表已经同步。
+2026-09-25，按用户提供的立创报价重新核查价格和交期。导出数量只表示 **一个板子的装配用量**，不乘批量，不加备料，不按起订量放大。主控和 ML307 保留。
 
-2026-09-24 已重新检查大陆站现货，并将稀缺和未定料的载板元件替换/落实到实际 SCH、PCB 与封装。主控和 ML307 保留。
-
-| 项目 | 当前结果 |
+| 文件 | 内容 |
 | --- | --- |
-| 实体位置 / 默认装配 | 338 / 331，7 个 DNP |
-| 具体立创料号 | 86 个，覆盖 328 个装配位置 |
-| 国内直营现货 | 85 个料号，观察库存均不少于 100 块＋20% 备料需求的 3 倍 |
-| 合作供应 | BQ25896 / C181475，2,800 个，Waldom，页面 1–3 天；订单前确认 |
-| 用户固定单采 | U100 主控、U1000 ML307 |
-| 尚待电气定型 | F300 保险丝，需电池包短路电流、线材、PH 2A 端子与温度降额条件 |
+| [PROCUREMENT_PER_BOARD.csv](PROCUREMENT_PER_BOARD.csv) | 立创配单用表，六列：商品编号、型号、品牌、封装、位号、数量；按相同商品编号合并 |
+| [PROCUREMENT_PER_BOARD.xlsx](PROCUREMENT_PER_BOARD.xlsx) | 单板BOM、另购及不装、价格与交期，共三页；配单仅使用第一页 |
+| [PROCUREMENT_REFERENCES.csv](PROCUREMENT_REFERENCES.csv) | 338 个实体位置逐位号记录，Fitted=1/0，便于回查原理图 |
+| [COST_REDUCTION.md](COST_REDUCTION.md) | 本次五类、八个位置的替换及保留原因、资料和验证边界 |
+| [PROCUREMENT_REVIEW.json](PROCUREMENT_REVIEW.json) | 分组、库存观察、另购/待定/DNP 的机器可读记录 |
+| [LCSC_STOCK_SNAPSHOT.json](LCSC_STOCK_SNAPSHOT.json) | 原报价及公开商品页的库存快照；各条记录标明来源和时间 |
+| [PROCUREMENT_AUDIT.json](PROCUREMENT_AUDIT.json) | 单板计数、覆盖率及输入文件 SHA-256 |
 
-完整替换清单、实时库存观察值、封装核对、功能差异和资料链接见 [SOURCING_REVIEW.md](SOURCING_REVIEW.md)。重点替换：ES8389→ES8388、RDA5807M→FSV4730、SHT40 裸版→膜版，以及按键、侧滑、NTC、电感、聚合物电容和两种精确电阻。新 FM 不支持 RDS；两项音频/FM 驱动需要迁移。
+单板默认装配 331 个实体器件：86 个已选立创料号覆盖 328 个位置；U100 主控、U1000 ML307 两项单采；F300 保险丝待电池与线材条件定型。另有 7 个 DNP，默认用量为零。后面三项和 DNP 不混入立创自动匹配表，另页完整保留。
 
-- [PROCUREMENT_100PCS.csv](PROCUREMENT_100PCS.csv)：先合并相同立创编码，100 块基数加 20% 备料，再向上取整到页面 MOQ；含每组现货、来源、时间、链接和数量。
-- [PROCUREMENT_REFERENCES.csv](PROCUREMENT_REFERENCES.csv)：逐位号的电路值、封装、装配状态、制造商、完整型号和编码。
-- [LCSC_STOCK_SNAPSHOT.json](LCSC_STOCK_SNAPSHOT.json)：2026-09-24 原始公开商品数据摘要；直营/合作供应分开，未加贴片仓数，含未选候选。
-- [PROCUREMENT_AUDIT.json](PROCUREMENT_AUDIT.json)：计数、输入文件 SHA 与采购覆盖率。
+原报价把 U100 匹配成 M5Stack 商品（407.137542 元、10 个工作日），并将未定型 F300 及部分 DNP C104x 错配；这些报价不能代表本板真实器件成本。原始 `PROCUREMENT_100PCS-立创_20260925.xls` 原样保留作为依据，不是当前配单表。旧批量 CSV/XLSX 已移入 `.history/procurement-before-per-board-20260925/`。
 
-`STOCK_OK` 仅表示本次需求有不少于 3 倍的观察库存缓冲，未锁货，不是持续供货保证。`PARTNER_CONFIRM` 要向合作供应方确认交期；`HOLD` 不进入采购；DNP 不采购。相同料号中有装配和 DNP 混合位置时，只计装配部分。
+86 个现用立创料号均观察到国内直营库存足够一板；`STOCK_OK` 只表示覆盖本表单板用量，未锁货，不代表大批量或长期供应。BQ25896RTWT 仅观察到 72 个现货，换包装型号是为缩短交期，价格反而较高。
 
-电气保持条件：精密分压不随意改值；功率电阻不能用较小封装顶替；MLCC 的额定电压/介质及直流偏压、聚合物电容极性/ESR、电感热态饱和与有效电流均需按对应电路检查。数据手册封装核对和库存充足不能替代整机验证。
-
-本表是采购评审文件，当前 PCB 仅部分布线，不构成下单投板或量产放行。
+价格页的原价来自用户报价的各行阶梯；新价为网页参考起价，阶梯未核，不能直接相减作为准确节省额。当前 PCB 部分布线，采购表与设计检查不构成投板或量产放行。

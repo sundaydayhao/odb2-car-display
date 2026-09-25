@@ -1,10 +1,12 @@
 # R0 工程草稿状态
 
+2026-09-25，修订 R：导出数量改为单板；五类器件、八个位置替换，详见 COST_REDUCTION.md。布线与既有电路缺口状态保持。
+
 2026-09-25，修订 Q（155 个 0402 位置和首轮布线）。**MIPI 六组差分及参考地已绘制；全板布线和整机电路仍未完成，不能据此投板。** 详见 [ROUTING.md](ROUTING.md) 和 [PASSIVE_SHRINK.md](PASSIVE_SHRINK.md)。
 
 本工程采用 OSPTEK P4C5/P4C6 共用底板，145×85 mm、四层、四角 M2.5 安装孔。F 面朝后壳、B 面朝屏幕；全部器件本体集中到 F 面，B 面整板禁止器件。触摸/LCD 排线通过新增实铣槽到 F 面插接。通孔焊脚仍需绝缘间隙，不能直接贴金属屏背板；屏板名义间距约 3 mm，穿板自由线长及实际净空待测，见 SCREEN_BACK_ASSEMBLY.md。
 
-当前采购修订见 [SOURCING_REVIEW.md](SOURCING_REVIEW.md)：86 个已选立创料号中 85 个直营、BQ25896 为合作供应，F300 仍待电池条件；ES8388/FSV4730 驱动未移植，新 FM 无 RDS。
+当前采购修订见 [COST_REDUCTION.md](COST_REDUCTION.md)：86 个已选立创料号均观察到国内直营现货覆盖一板，BQ25896RTWT 仅 72 个库存，F300 仍待电池条件；ES8388/FSV4730 驱动未移植，新 FM 无 RDS。
 
 ## 实际交付
 

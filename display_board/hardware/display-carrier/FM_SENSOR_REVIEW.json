@@ -1,20 +1,20 @@
 {
-  "revision": "P",
+  "revision": "R",
   "status": "DESIGN_FILES_CHECKED; NOT_HARDWARE_QUALIFIED",
   "FM": "FSV4730-D60-GU",
   "light": "OPT3001DNPR",
-  "temperature_humidity": "SHT40-AD1F-R2",
+  "temperature_humidity": "SHT40-AD1B-R2",
   "i2c_7bit": {
     "FM": "0x11",
     "codec": "0x10",
     "OPT3001": "0x45",
     "SHT40": "0x44"
   },
-  "verification": "SOURCING_REVIEW.json",
+  "verification": "COST_REVIEW.json; previous FM/net audit SOURCING_REVIEW.json",
   "erc_errors": 0,
   "erc_existing_warnings": 13,
   "physical_drc": 0,
   "schematic_parity": 0,
-  "unconnected": 885,
+  "unconnected": 519,
   "firmware_and_hardware_test": "NOT_RUN"
 }

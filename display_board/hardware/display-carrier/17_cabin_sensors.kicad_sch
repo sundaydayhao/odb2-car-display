@@ -808,7 +808,7 @@
 				)
 			)
 		)
-		(property "Value" "SHT40-AD1F-R2"
+		(property "Value" "SHT40-AD1B-R2"
 			(at 76.2 139.7 0)
 			(effects
 				(font
@@ -816,7 +816,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Carrier:SHT40_AD1F_DFN4_Membrane"
+		(property "Footprint" "Carrier:SHT40_DFN4_NoCentralPad"
 			(at 76.2 147.32 0)
 			(effects
 				(font
@@ -834,7 +834,7 @@
 				(hide yes)
 			)
 		)
-		(property "DesignStatus" "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered"
+		(property "DesignStatus" "Bare SHT40; same I2C 0x44 and pins; protect exposed sensor from liquids, cleaning and coating"
 			(at 76.2 147.32 0)
 			(effects
 				(font
@@ -1513,7 +1513,7 @@
 		)
 		(uuid 51f4becf-665a-580a-9f93-5a6346a56b85)
 	)
-	(text "OPT3001DNPR: ADDR=3V3 selects 0x45; SHT40-AD1F-R2 fixed 0x44. SYSTEM_I2C, no extra GPIO."
+	(text "OPT3001DNPR: ADDR=3V3 selects 0x45; SHT40-AD1B-R2 fixed 0x44. SYSTEM_I2C, no extra GPIO."
 		(at 20.32 20.32 0)
 		(effects
 			(font

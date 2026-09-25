@@ -1,5 +1,7 @@
 # 修订 P：国内采购核查与替换
 
+**本页为修订 P 历史记录。现行修订 R 已调整五类料号，数量政策改为单板用量；下文批量需求、历史库存和膜版选型不再作为当前配单依据。** 当前文件见 [PROCUREMENT.md](PROCUREMENT.md) / [COST_REDUCTION.md](COST_REDUCTION.md)。
+
 2026-09-24，基于修订 N / `90df33e`，主控 U100 和 ML307 U1000 按用户要求保留。已核对载板全部实体装配位置，以立创商城大陆站实际商品数据为依据；搜索摘要、贴片仓库存和海外可售数量不混作国内现货。
 
 当前 338 个实体位置、默认装配 331 个。排除主控/ML307 后，328 个装配位置已落实为 **85 个具体立创料号**：84 个国内直营现货料号，1 个合作供应料号；剩余 **F300 保险丝尚待电池条件定型**。7 个原有 DNP 位置保持不装。
@@ -53,7 +55,7 @@ KiCad 10.0.5：370 个原理图符号、361 个电路封装＋4 安装孔；0 �
 
 新增 11 个外围元件，整板仍为 **0 走线、885 项未连接**。检查没有验证射频接收、音频性能、测量精度、功耗或制造装配；LCD/摄像头既有电路缺口仍见 DESIGN_STATUS.md。
 
-- [100 块采购汇总](PROCUREMENT_100PCS.csv)、[逐位号采购表](PROCUREMENT_REFERENCES.csv)、[采购审计](PROCUREMENT_AUDIT.json)。
+- [100 块采购汇总](PROCUREMENT_PER_BOARD.csv)、[逐位号采购表](PROCUREMENT_REFERENCES.csv)、[采购审计](PROCUREMENT_AUDIT.json)。
 - [库存快照](LCSC_STOCK_SNAPSHOT.json)：115 个所查候选的商品链接、时间、国内/合作渠道、现货量、原页 SHA-256 与参数；包含未入选候选，不应直接全量下单。
 - [替换与保存检查](SOURCING_REVIEW.json)、[原生电气/PCB 检查](VERIFICATION.json)、[3D 检查](MODEL_VERIFICATION.json)、[资料版本与 SHA](SOURCING_SOURCES.json)。
 - 本地原始商品页、厂家 PDF、原生 ERC/DRC/网表及图片位于 `build/carrier-sourcing-20260924/`。`stage_domestic_sourcing.py` 用于从 N 基线重建临时 P 工程；`review_domestic_sourcing.py` 独立核对封装关键尺寸、保存边界与采购覆盖率。

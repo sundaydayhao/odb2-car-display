@@ -1820,7 +1820,7 @@
       "sheet": "04_charger",
       "ref": "U300",
       "kind": "BQ25896",
-      "value": "BQ25896RTWR",
+      "value": "BQ25896RTWT",
       "nets": {
         "1": "CHARGE_VBUS",
         "2": "USB_AUX3V3",
@@ -1859,7 +1859,7 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
+      "status": "Same BQ25896 RTW die/pinout; small-reel variant chosen for domestic direct stock; limited buffer",
       "source": "https://www.ti.com/lit/ds/symlink/bq25896.pdf",
       "dnp": false
     },
@@ -3068,7 +3068,7 @@
       "sheet": "06_main_power",
       "ref": "C405",
       "kind": "C",
-      "value": "22u 10V",
+      "value": "22u 25V X5R 10%",
       "nets": {
         "1": "SYS_SWITCHED",
         "2": "GND"
@@ -3084,15 +3084,15 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",
+      "source": "https://item.szlcsc.com/8438267.html",
       "dnp": false
     },
     {
       "sheet": "06_main_power",
       "ref": "C406",
       "kind": "C",
-      "value": "22u 10V",
+      "value": "22u 25V X5R 10%",
       "nets": {
         "1": "SYS_SWITCHED",
         "2": "GND"
@@ -3108,8 +3108,8 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "HGC1206R5226K250NSPJ; 22uF 25V X5R +/-10%, same 1206; SYS input bypass, DC-bias/ripple validation remains required",
+      "source": "https://item.szlcsc.com/8438267.html",
       "dnp": false
     },
     {
@@ -4689,7 +4689,7 @@
       "sheet": "09_modem_power",
       "ref": "C1012",
       "kind": "CPOL",
-      "value": "220u 10V polymer 25mR",
+      "value": "220u 6.3V polymer 15mR",
       "nets": {
         "1": "MODEM_3V8",
         "2": "GND"
@@ -4698,22 +4698,22 @@
         302.26,
         83.82
       ],
-      "footprint": "Carrier:T520D_7343_31",
+      "footprint": "Carrier:KNSCHA_177EC0013_7343",
       "pcb": [
         31.0,
         43.0
       ],
       "side": "F",
       "angle": 90.0,
-      "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
-      "source": "https://item.szlcsc.com/117998.html",
+      "status": "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
       "dnp": false
     },
     {
       "sheet": "09_modem_power",
       "ref": "C1013",
       "kind": "CPOL",
-      "value": "220u 10V polymer 25mR",
+      "value": "220u 6.3V polymer 15mR",
       "nets": {
         "1": "MODEM_3V8",
         "2": "GND"
@@ -4722,15 +4722,15 @@
         358.14,
         83.82
       ],
-      "footprint": "Carrier:T520D_7343_31",
+      "footprint": "Carrier:KNSCHA_177EC0013_7343",
       "pcb": [
         25.5,
         43.0
       ],
       "side": "F",
       "angle": 90.0,
-      "status": "T520D227M010ATE025; polarized polymer, 25mOhm max at 100kHz; 3.1mm maximum height",
-      "source": "https://item.szlcsc.com/117998.html",
+      "status": "177EC0013; polarized 220uF +/-20%, ESR 15mOhm, 6.3V on 3.8V rail; 2.2mm max height; burst/startup/ripple qualification required",
+      "source": "https://atta.szlcsc.com/upload/public/pdf/source/20231121/628C7D57E65046C1B359A0CE9A870900.pdf",
       "dnp": false
     },
     {
@@ -5450,7 +5450,7 @@
       "sheet": "10_sim_rf",
       "ref": "J1010",
       "kind": "RF_CONN",
-      "value": "IPEX-1 50R",
+      "value": "U.FL-R-SMT-1(80)",
       "nets": {
         "1": "LTE_ANT",
         "2": "GND"
@@ -5466,8 +5466,8 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging",
+      "source": "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue",
       "dnp": false
     },
     {
@@ -5546,7 +5546,7 @@
       "sheet": "10_sim_rf",
       "ref": "J1011",
       "kind": "RF_CONN",
-      "value": "IPEX-1 50R",
+      "value": "U.FL-R-SMT-1(80)",
       "nets": {
         "1": "GNSS_ANT",
         "2": "GND"
@@ -5562,8 +5562,8 @@
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "engineering",
-      "source": "",
+      "status": "Same U.FL-R-SMT-1 receptacle and footprint; (80) is 10000/reel packaging",
+      "source": "https://www.hirose.com/product/download/?distributor=all&lang=en&series=U.FL&type=catalogue",
       "dnp": false
     },
     {
@@ -8938,7 +8938,7 @@
       "sheet": "17_cabin_sensors",
       "ref": "U1301",
       "kind": "SHT40",
-      "value": "SHT40-AD1F-R2",
+      "value": "SHT40-AD1B-R2",
       "nets": {
         "1": "CABIN_I2C_SDA",
         "2": "CABIN_I2C_SCL",
@@ -8949,14 +8949,14 @@
         76.2,
         147.32
       ],
-      "footprint": "Carrier:SHT40_AD1F_DFN4_Membrane",
+      "footprint": "Carrier:SHT40_DFN4_NoCentralPad",
       "pcb": [
         23.0,
         80.0
       ],
       "side": "F",
       "angle": 180.0,
-      "status": "PTFE membrane version; same pinout/footprint/address; height 0.69mm; keep vent uncovered",
+      "status": "Bare SHT40; same I2C 0x44 and pins; protect exposed sensor from liquids, cleaning and coating",
       "source": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
       "dnp": false
     },

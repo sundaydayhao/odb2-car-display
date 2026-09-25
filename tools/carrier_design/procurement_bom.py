@@ -1,10 +1,10 @@
 """Generate a purchasing review, not a fabrication/assembly release.
 
-Counts fitted references from checked design intent, groups identical LCSC
-codes before adding 20% spares, then rounds once to the observed order step.
+Counts fitted references from checked design intent for exactly one board.
+No production multiplier, spare allowance or supplier order rounding is used.
 An unknown stock quantity is never treated as zero or as available.
 """
-import argparse, collections, csv, hashlib, json, math
+import argparse, collections, csv, hashlib, json
 from pathlib import Path
 
 # Matches are by electrical value AND footprint; exceptional references below
@@ -43,6 +43,8 @@ HOLDS={'F300':'PH 2A 电池端子：按线材、电池短路电流和温度降�
 
 def choose(p):
     ref,value,fp=p['ref'],p['value'],p['footprint']
+    from cost_sourcing_spec import selected_code as cost_code
+    if cost_code(ref):return cost_code(ref),'SELECTED',p['status']
     if '_0402_1005Metric' in fp:
         from small_passives import selected_code
         code=selected_code(p)
@@ -95,21 +97,17 @@ def generate(project, intent_path):
     grouped=[]
     for key,rr in groups.items():
         code=rr[0]['LCSC'];part=cat.get(code,{})
-        perboard=sum(r['Fitted'] for r in rr);needed=perboard*120
-        step=part.get('split') or 1;minimum=part.get('minBuyNumber') or 1
-        order=math.ceil(max(needed,minimum)/step)*step if needed else 0
+        perboard=sum(r['Fitted'] for r in rr)
         stock=part.get('stockNumber');status=rr[0]['SelectionStatus']
-        if code and needed:
-            status='STOCK_OK' if stock>=order else 'SHORTAGE'
+        if code and perboard:
+            status='STOCK_OK' if stock>=perboard else 'SHORTAGE'
             if part.get('stock_channel')=='partner':status='PARTNER_CONFIRM'
-            elif stock>=order and stock<3*order:status='LOW_BUFFER'
-        elif not needed:status='DNP'
+        elif not perboard:status='DNP'
         grouped.append(dict(LCSC=code,MPN=rr[0]['MPN'],Manufacturer=rr[0]['Manufacturer'],
             CircuitValues=' | '.join(dict.fromkeys(r['CircuitValue'] for r in rr)),
             References=' '.join(r['Reference'] for r in rr if r['Fitted']),
             DNP_References=' '.join(r['Reference'] for r in rr if not r['Fitted']),
-            PerBoard=perboard,Boards=100,BaseQty=perboard*100,SparePercent=20,
-            QtyWithSpares=needed,OrderStep=step if code else '',ProposedQty=order,
+            PerBoard=perboard,Package=part.get('encapStandard',''),
             ObservedStock=stock if stock is not None else '',SupplyStatus=status,
             StockChannel=part.get('stock_channel','') if code else '',
             ObservedAtUTC=part.get('retrieved_at_utc',''),URL=part.get('url',''),
@@ -117,14 +115,21 @@ def generate(project, intent_path):
     def write_csv(name,data):
         with (project/name).open('w',encoding='utf-8-sig',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
-    write_csv('PROCUREMENT_REFERENCES.csv',rows);write_csv('PROCUREMENT_100PCS.csv',grouped)
+    # A single quantity column and exact product codes prevent BOM auto-match
+    # from interpreting U100 or DNP capacitor references as catalogue codes.
+    selected=[r for r in grouped if r['LCSC'] and r['PerBoard']]
+    upload=[dict(商品编号=r['LCSC'],型号=r['MPN'],品牌=r['Manufacturer'],封装=r['Package'],位号=r['References'],数量=r['PerBoard']) for r in selected]
+    write_csv('PROCUREMENT_REFERENCES.csv',rows)
+    write_csv('PROCUREMENT_PER_BOARD.csv',upload)
+    excluded=[r for r in rows if not r['Fitted'] or not r['LCSC']]
+    (project/'PROCUREMENT_REVIEW.json').write_text(json.dumps(dict(groups=grouped,excluded=excluded),ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     counts=collections.Counter()
     for r in rows:
         if r['Fitted']:counts['selected' if r['LCSC'] else r['SelectionStatus'].lower()]+=1
-    report=dict(revision='Q' if (project/'PASSIVE_SHRINK.json').exists() else 'P',boards=100,spare_percent=20,physical_positions=len(rows),fitted_per_board=sum(r['Fitted'] for r in rows),
+    report=dict(revision='R',boards=1,physical_positions=len(rows),fitted_per_board=sum(r['Fitted'] for r in rows),
         per_board_sourcing=dict(counts),unique_selected_lcsc_codes=len({r['LCSC'] for r in rows if r['LCSC']}),
         supply_groups=dict(collections.Counter(r['SupplyStatus'] for r in grouped)),
-        policy='Aggregate fitted count by LCSC, add 20%, ceil to observed MOQ/order step. DNP count is zero. Stock is an unreserved snapshot, not a supply guarantee.',
+        policy='Exactly one board. Aggregate fitted references by exact LCSC code; no spares, MOQ rounding or batch multiplier. Auto-match CSV excludes DNP, USER_FIXED and HOLD. Stock is an unreserved snapshot.',
         hash_normalization='CRLF converted to LF before SHA-256',
         design_intent_sha256=hashlib.sha256(intent_path.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
         snapshot_sha256=hashlib.sha256((project/'LCSC_STOCK_SNAPSHOT.json').read_bytes().replace(b'\r\n',b'\n')).hexdigest(),

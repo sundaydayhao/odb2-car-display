@@ -31,17 +31,17 @@
       "signal_vias": 2,
       "barrel_inclusive_length_mm": 34.368827661636615,
       "outer_equivalent_delay_length_mm": 35.07729186235807,
-      "coupled_at_0_15mm_gap_mm": 25.235862683581825,
-      "fanout_and_corner_uncoupled_mm": 6.004564978054788,
+      "coupled_at_0_15mm_gap_mm": 24.135861683581805,
+      "fanout_and_corner_uncoupled_mm": 7.104565978054808,
       "connected": true
     },
     "CSI_D0_P": {
-      "planar_length_mm": 31.240428528642532,
+      "planar_length_mm": 31.240428502507026,
       "signal_vias": 2,
-      "barrel_inclusive_length_mm": 34.36882852864253,
-      "outer_equivalent_delay_length_mm": 35.07729272936399,
-      "coupled_at_0_15mm_gap_mm": 25.2358626835815,
-      "fanout_and_corner_uncoupled_mm": 6.00456584506103,
+      "barrel_inclusive_length_mm": 34.36882850250703,
+      "outer_equivalent_delay_length_mm": 35.07729270322848,
+      "coupled_at_0_15mm_gap_mm": 24.13586168358148,
+      "fanout_and_corner_uncoupled_mm": 7.104566818925544,
       "connected": true
     },
     "CSI_D1_N": {
@@ -49,17 +49,17 @@
       "signal_vias": 2,
       "barrel_inclusive_length_mm": 34.36882881582993,
       "outer_equivalent_delay_length_mm": 35.07729301655138,
-      "coupled_at_0_15mm_gap_mm": 25.288554372492047,
-      "fanout_and_corner_uncoupled_mm": 5.9518744433378785,
+      "coupled_at_0_15mm_gap_mm": 24.338553372492047,
+      "fanout_and_corner_uncoupled_mm": 6.901875443337879,
       "connected": true
     },
     "CSI_D1_P": {
-      "planar_length_mm": 31.240431313195714,
+      "planar_length_mm": 31.24042981600161,
       "signal_vias": 2,
-      "barrel_inclusive_length_mm": 34.36883131319571,
-      "outer_equivalent_delay_length_mm": 35.07729551391717,
-      "coupled_at_0_15mm_gap_mm": 25.288554372492058,
-      "fanout_and_corner_uncoupled_mm": 5.951876940703656,
+      "barrel_inclusive_length_mm": 34.36882981600161,
+      "outer_equivalent_delay_length_mm": 35.077294016723066,
+      "coupled_at_0_15mm_gap_mm": 24.338553372492058,
+      "fanout_and_corner_uncoupled_mm": 6.9018764435095505,
       "connected": true
     },
     "DSI_CLK_N": {
@@ -85,17 +85,17 @@
       "signal_vias": 2,
       "barrel_inclusive_length_mm": 23.2369942808139,
       "outer_equivalent_delay_length_mm": 23.945458481535354,
-      "coupled_at_0_15mm_gap_mm": 14.484194730670787,
-      "fanout_and_corner_uncoupled_mm": 5.624399550143114,
+      "coupled_at_0_15mm_gap_mm": 13.38419373067078,
+      "fanout_and_corner_uncoupled_mm": 6.72440055014312,
       "connected": true
     },
     "DSI_D0_P": {
-      "planar_length_mm": 20.108594712640723,
+      "planar_length_mm": 20.108592978966993,
       "signal_vias": 2,
-      "barrel_inclusive_length_mm": 23.236994712640723,
-      "outer_equivalent_delay_length_mm": 23.945458913362177,
-      "coupled_at_0_15mm_gap_mm": 14.484194730671428,
-      "fanout_and_corner_uncoupled_mm": 5.624399981969296,
+      "barrel_inclusive_length_mm": 23.236992978966992,
+      "outer_equivalent_delay_length_mm": 23.945457179688447,
+      "coupled_at_0_15mm_gap_mm": 13.384193730671422,
+      "fanout_and_corner_uncoupled_mm": 6.724399248295571,
       "connected": true
     },
     "DSI_D1_N": {
@@ -103,45 +103,139 @@
       "signal_vias": 2,
       "barrel_inclusive_length_mm": 23.23699243953967,
       "outer_equivalent_delay_length_mm": 23.945456640261124,
-      "coupled_at_0_15mm_gap_mm": 14.049563019883578,
-      "fanout_and_corner_uncoupled_mm": 6.059029419656092,
+      "coupled_at_0_15mm_gap_mm": 12.949562019883587,
+      "fanout_and_corner_uncoupled_mm": 7.159030419656084,
       "connected": true
     },
     "DSI_D1_P": {
-      "planar_length_mm": 20.10859375004787,
+      "planar_length_mm": 20.108592016374153,
       "signal_vias": 2,
-      "barrel_inclusive_length_mm": 23.23699375004787,
-      "outer_equivalent_delay_length_mm": 23.945457950769324,
-      "coupled_at_0_15mm_gap_mm": 14.049563019883594,
-      "fanout_and_corner_uncoupled_mm": 6.059030730164276,
+      "barrel_inclusive_length_mm": 23.236992016374153,
+      "outer_equivalent_delay_length_mm": 23.945456217095607,
+      "coupled_at_0_15mm_gap_mm": 12.949562019883603,
+      "fanout_and_corner_uncoupled_mm": 7.159029996490551,
       "connected": true
     }
   },
+  "mipi_corners": {
+    "junctions_checked": 190,
+    "minimum_interior_angle_degrees": 134.99971352253485,
+    "acute_corners": 0,
+    "maximum_heading_change_degrees": 45,
+    "tolerance_degrees": 0.01,
+    "violations": []
+  },
   "pair_skew_mm": {
     "CSI_CLK": 5.857864451286332e-07,
-    "CSI_D0": 8.67005919502617e-07,
-    "CSI_D1": 2.4973657879456823e-06,
+    "CSI_D0": 8.408704132989442e-07,
+    "CSI_D1": 1.0001716823637707e-06,
     "DSI_CLK": 5.85786381179787e-07,
-    "DSI_D0": 4.3182682318843035e-07,
-    "DSI_D1": 1.3105081997366597e-06
+    "DSI_D0": 1.3018469076087058e-06,
+    "DSI_D1": 4.231655168496218e-07
   },
   "bus_skew": {
     "DSI_": {
-      "geometric_mm": 0.521599166216216,
-      "estimated_delay_equivalent_mm": 0.18686789339267307
+      "geometric_mm": 0.5215995893817329,
+      "estimated_delay_equivalent_mm": 0.18686746156584988
     },
     "CSI_": {
       "geometric_mm": 0.5216008045691609,
-      "estimated_delay_equivalent_mm": 0.1868676334978403
+      "estimated_delay_equivalent_mm": 0.18686613630373472
     }
   },
-  "reference_plane_samples_checked": 6284,
+  "reference_plane_samples_checked": 6355,
   "reference_plane_gaps_outside_transition_antipads": 0,
   "paired_ground_returns": 8,
-  "total_tracks_and_vias": 1214,
+  "total_tracks_and_vias": 1242,
   "remaining_unconnected": 519,
   "physical_drc": 0,
   "schematic_parity": 0,
   "signal_integrity": "Not simulated or measured; effective dielectric via delay is a first-order budget only",
-  "impedance": "JLC public calculator estimate 98.738 ohm; production compensation and coupons require board-factory confirmation"
+  "impedance": "JLC public calculator estimate 98.738 ohm; production compensation and coupons require board-factory confirmation",
+  "mipi_corner_correction": {
+    "base_commit": "8c2a274",
+    "changed_nets": [
+      "CSI_D0_P",
+      "CSI_D1_P",
+      "DSI_D0_P",
+      "DSI_D1_P"
+    ],
+    "removed_segments": 12,
+    "added_segments": 40,
+    "before": {
+      "junctions_checked": 162,
+      "minimum_interior_angle_degrees": 13.50023138073384,
+      "acute_corners": 4,
+      "maximum_heading_change_degrees": 45,
+      "tolerance_degrees": 0.01,
+      "violations": [
+        {
+          "net": "DSI_D1_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            68.964,
+            35.3
+          ],
+          "interior_angle_degrees": 55.485051403607514
+        },
+        {
+          "net": "DSI_D1_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            69.869,
+            35.099999999999994
+          ],
+          "interior_angle_degrees": 102.46445111824852
+        },
+        {
+          "net": "DSI_D0_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            72.964,
+            35.3
+          ],
+          "interior_angle_degrees": 55.485051403607514
+        },
+        {
+          "net": "DSI_D0_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            73.869,
+            35.099999999999994
+          ],
+          "interior_angle_degrees": 102.46445111824852
+        },
+        {
+          "net": "CSI_D1_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            83.471,
+            31.028999999999996
+          ],
+          "interior_angle_degrees": 13.50023138073384
+        },
+        {
+          "net": "CSI_D0_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            77.131,
+            35.099999999999994
+          ],
+          "interior_angle_degrees": 102.46446446366546
+        },
+        {
+          "net": "CSI_D0_P",
+          "layer": "B.Cu",
+          "board_relative_xy_mm": [
+            78.036,
+            35.3
+          ],
+          "interior_angle_degrees": 55.48511808920688
+        }
+      ]
+    },
+    "schematic_footprints_vias_planes_and_all_other_nets_unchanged": true,
+    "native_visual_review": "PASS: four before/after crops; 45-degree open compensation bumps",
+    "evidence": "build/carrier-corner-fix-20260925/evidence/mipi-corners-before-after.png"
+  }
 }

@@ -28,6 +28,26 @@ def offset(points,d):
         out.append(b if abs(den)<1e-9 else add(a,mul(v,cross(sub(c,a),w)/den)))
     return out+[lines[-1][1]]
 
+def phase_bump(points,segment,extra,side,span=1.1,chamfer=.18):
+    """Add length with an open, eight-corner 45-degree trapezoidal bump.
+
+    The original triangle at a via reversed direction at an acute tip. Put
+    compensation on a straight run instead, away from the other polarity.
+    ``extra`` is added centerline length, not a vertex displacement.
+    """
+    if extra<=1e-9:return points
+    a,b=points[segment:segment+2];length=math.dist(a,b)
+    assert length>span and span>=4*chamfer
+    u=mul(sub(b,a),1/length);v=(-u[1]*side,u[0]*side)
+    amplitude=(extra+(8-4*math.sqrt(2))*chamfer)/2
+    assert amplitude>=2*chamfer
+    start=(length-span)/2
+    local=[(0,0),(chamfer,chamfer),(chamfer,amplitude-chamfer),
+           (2*chamfer,amplitude),(span-2*chamfer,amplitude),
+           (span-chamfer,amplitude-chamfer),(span-chamfer,chamfer),(span,0)]
+    bump=[add(a,add(mul(u,start+x),mul(v,y))) for x,y in local]
+    return points[:segment+1]+bump+points[segment+1:]
+
 def geometry(d0_top=32.5,clk_right=79.2,csi_clk_bottom=35.0,csi_d0_bottom=35.8,phase=None):
     phase=phase or {}
     paths={};vias={};coupled={}
@@ -42,7 +62,7 @@ def geometry(d0_top=32.5,clk_right=79.2,csi_clk_bottom=35.0,csi_d0_bottom=35.8,p
     name='DSI_D0';pp=pair(name,[(74,35.1),(74,d0_top+.5),(73.5,d0_top),(72.5,d0_top),(72,d0_top+.5),(72,38.2),(70.5,39.7),(70.5,42.3)],-1,B)
     for i,pol in enumerate(['P','N']):
         n=name+'_'+pol;sv=(73.5+i,35.8);ev=(70.85-.7*i,43.1)
-        via(n,sv);via(n,ev);path(n,F,[(73.5+i,34.373),sv]);path(n,B,[sv]+([(sv[0]-phase[name],sv[1]-.5)] if i==0 and name in phase else [])+[pp[i][0]])
+        via(n,sv);via(n,ev);path(n,F,[(73.5+i,34.373),sv]);path(n,B,[sv,pp[i][0]])
         path(n,B,[pp[i][-1],ev]);path(n,F,[ev,(70.75-.5*i,43.2),(70.75-.5*i,44.55)])
     # DSI D1 also reverses direction as a coupled pair before returning to F.Cu.
     name='DSI_D1';bb=pair(name,[(70,35.1),(70,33.4),(69.4,32.8),(68.4,32.8),(67.8,33.4),(67.8,35.5),(70,37.7),(70,38.0)],-1,B)
@@ -51,7 +71,7 @@ def geometry(d0_top=32.5,clk_right=79.2,csi_clk_bottom=35.0,csi_d0_bottom=35.8,p
     for i,pol in enumerate(['P','N']):
         n=name+'_'+pol;sv=(69.5+i,35.8);ev=(70.35-.7*i,38.8)
         via(n,sv);via(n,ev);path(n,F,[(69.5+i,34.373),sv])
-        path(n,B,[sv]+([(sv[0]-phase[name],sv[1]-.5)] if i==0 and name in phase else [])+[bb[i][0]])
+        path(n,B,[sv,bb[i][0]])
         path(n,B,[bb[i][-1],ev])
         start=pp[i][0]
         path(n,F,[ev,(start[0],ev[1]+abs(start[0]-ev[0])),start])
@@ -68,13 +88,13 @@ def geometry(d0_top=32.5,clk_right=79.2,csi_clk_bottom=35.0,csi_d0_bottom=35.8,p
     name='CSI_D0';pp=pair(name,[(77,35.1),(77,34.7),(78,33.7),(80,33.7),(81,34.7),(81,csi_d0_bottom-1),(82,csi_d0_bottom),(83,csi_d0_bottom),(84,csi_d0_bottom-1),(84,34.7),(85,33.7),(94,33.7),(95.5,35.2),(95.5,35.4)],1,B)
     for i,pol in enumerate(['P','N']):
         n=name+'_'+pol;sv=(77.5-i,35.8);ev=(95.15+.7*i,36.1)
-        via(n,sv);via(n,ev);path(n,F,[(77.5-i,34.373),sv]);path(n,B,[sv]+([(sv[0]+phase[name],sv[1]-.5)] if i==0 and name in phase else [])+[pp[i][0]])
+        via(n,sv);via(n,ev);path(n,F,[(77.5-i,34.373),sv]);path(n,B,[sv,pp[i][0]])
         path(n,B,[pp[i][-1],ev]);path(n,F,[ev,(95.25+.5*i,36.2),(95.25+.5*i,37.375)])
     # CSI D1 reverses direction beneath the module before traversing the top lane.
     name='CSI_D1';pp=pair(name,[(82.1,32),(81.2,32),(80.5,31.3),(80.5,30),(81.2,29.3),(95.7,29.3),(98.5,32.1),(98.5,35.4)],1,B)
     for i,pol in enumerate(['P','N']):
         n=name+'_'+pol;sv=(83,31.5+i);ev=(98.15+.7*i,36.1)
-        via(n,sv);via(n,ev);path(n,F,[(81.373,31.5+i),sv]);path(n,B,[sv]+([(sv[0]+phase[name],sv[1]-phase[name])] if i==0 and name in phase else [])+[pp[i][0]])
+        via(n,sv);via(n,ev);path(n,F,[(81.373,31.5+i),sv]);path(n,B,[sv,pp[i][0]])
         path(n,B,[pp[i][-1],ev]);path(n,F,[ev,(98.25+.5*i,36.2),(98.25+.5*i,37.375)])
     name='CSI_CLK';center=[(79,35.7),(79,36.1),(80,37.1),(84,37.1),(85,36.1),(85,33),(86,32),(87,32),(88,33),(88,csi_clk_bottom-1),(89,csi_clk_bottom),(90,csi_clk_bottom),(91,csi_clk_bottom-1),(91,33),(92,32),(96,32),(97,33),(97,36.0)]
     pp=pair(name,center,1,F)
@@ -82,6 +102,13 @@ def geometry(d0_top=32.5,clk_right=79.2,csi_clk_bottom=35.0,csi_d0_bottom=35.8,p
         n=name+'_'+pol;src=(78.5+i,34.373);dest=(96.75+.5*i,37.375)
         path(n,F,[src,(src[0],35.1),pp[i][0]])
         end=pp[i][-1];path(n,F,[end,(dest[0],end[1]+abs(dest[0]-end[0])),dest])
+    # Each side points away from the opposite-polarity trace. Keep the bump
+    # near the skew-producing U-turn, with 0.18 mm chamfers and a broad top.
+    for name,segment,side,span in [('DSI_D0',0,-1,1.1),('DSI_D1',0,-1,1.1),
+                                  ('CSI_D0',2,1,1.1),('CSI_D1',2,1,.95)]:
+        if name in phase:
+            layer,pts=paths[name+'_P'][0]
+            paths[name+'_P'][0]=(layer,phase_bump(pts,segment,phase[name],side,span))
     return paths,vias,coupled
 
 def lengths(paths):return {n:sum(math.dist(a,b) for _,pts in chunks for a,b in zip(pts,pts[1:])) for n,chunks in paths.items()}
@@ -97,16 +124,13 @@ def tuned_geometry():
     settings['clk_right']=79.2+(dsi+via_budget-base['DSI_CLK_N'])/2
     settings['csi_d0_bottom']=35.8+(csi-base['CSI_D0_N'])/2
     settings['csi_clk_bottom']=35+(csi+via_budget-base['CSI_CLK_N'])/2
+    ls=lengths(geometry(**settings)[0])
     for pair in ['DSI_D0','DSI_D1','CSI_D0','CSI_D1']:
-        lo=0.;hi=1.0
-        for _ in range(45):
-            mid=(lo+hi)/2;phase[pair]=mid
-            ls=lengths(geometry(**settings,phase=phase)[0])
-            if ls[pair+'_P']<ls[pair+'_N']:lo=mid
-            else:hi=mid
-        phase[pair]=(lo+hi)/2
+        phase[pair]=ls[pair+'_N']-ls[pair+'_P']
     paths,vias,coupled=geometry(**settings,phase=phase)
-    return paths,vias,coupled,dict(settings=settings,phase=phase,via_delay_equivalent_mm=via_budget)
+    return paths,vias,coupled,dict(settings=settings,phase_extra_mm=phase,
+        phase_shape='45-degree chamfered trapezoid on straight run; no via-end triangle',
+        via_delay_equivalent_mm=via_budget)
 def main(project):
     b=k.LoadBoard(str(project/'display_carrier.kicad_pcb'))
     assert not b.GetTracks(),'Start from the reviewed unrouted baseline'

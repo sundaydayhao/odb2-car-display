@@ -8,6 +8,35 @@ from pathlib import Path
 import pcbnew as k
 from cad import sexp
 
+def review_mipi_corners(board):
+    """Measure saved copper junctions, including joins between path chunks.
+
+    DRC clearance and length checks alone accepted the old 13.5/55.5 degree
+    phase-compensation tips. Gate MIPI centerlines at 135 degrees or wider
+    (at most a 45 degree heading change), allowing native rounding tolerance.
+    Via transitions are separate junctions on each layer, not planar corners.
+    """
+    nodes=collections.defaultdict(list)
+    for t in board.GetTracks():
+        if isinstance(t,k.PCB_VIA) or not t.GetNetname().startswith(('DSI_','CSI_')):continue
+        assert not isinstance(t,k.PCB_ARC),'Arc tangent audit required before accepting MIPI arcs'
+        a,b=t.GetStart(),t.GetEnd()
+        for p,q in [(a,b),(b,a)]:
+            key=(t.GetNetname(),t.GetLayer(),round(p.x/1000),round(p.y/1000))
+            nodes[key].append((q.x-p.x,q.y-p.y))
+    corners=[]
+    for (net,layer,x,y),vectors in nodes.items():
+        if len(vectors)!=2:continue # Connectivity/branch checks run separately.
+        a,b=vectors
+        cosine=(a[0]*b[0]+a[1]*b[1])/(math.hypot(*a)*math.hypot(*b))
+        angle=math.degrees(math.acos(max(-1.,min(1.,cosine))))
+        corners.append(dict(net=net,layer=board.GetLayerName(layer),
+            board_relative_xy_mm=[x/1000-50,y/1000-50],interior_angle_degrees=angle))
+    violations=[c for c in corners if c['interior_angle_degrees']<134.99]
+    return dict(junctions_checked=len(corners),minimum_interior_angle_degrees=min(c['interior_angle_degrees'] for c in corners),
+        acute_corners=sum(c['interior_angle_degrees']<89.99 for c in corners),
+        maximum_heading_change_degrees=45,tolerance_degrees=.01,violations=violations)
+
 def review(baseline,project,evidence):
     b=k.LoadBoard(str(project/'display_carrier.kicad_pcb'))
     old=k.LoadBoard(str(baseline/'display_carrier.kicad_pcb'))
@@ -40,6 +69,8 @@ def review(baseline,project,evidence):
     assert invariants(baseline/'display_carrier.kicad_pcb')==invariants(project/'display_carrier.kicad_pcb')
     tracks=list(b.GetTracks());mipi=[t for t in tracks if t.GetNetname().startswith(('DSI_','CSI_'))]
     assert all(t.IsLocked() for t in mipi)
+    corners=review_mipi_corners(b)
+    assert not corners['violations'],corners
     planes={z.GetLayer():z.GetFilledPolysList(z.GetLayer()) for z in b.Zones() if not z.GetIsRuleArea()}
     assert set(planes)=={k.In1_Cu,k.In2_Cu}
     def pt(v):return (round(v.x/1000),round(v.y/1000)) # 1 um graph tolerance for native integer rounding
@@ -118,7 +149,7 @@ def review(baseline,project,evidence):
         schematic_change='Only 155 Footprint properties; all electrical and drawing trees preserved',
         pad_and_footprint_UUIDs_preserved=True,all_component_centers_and_angles_preserved=True,
         board_outline_slots_and_drawings_preserved=True,planes='In1.Cu and In2.Cu GND; no inner signal tracks',
-        mipi=rows,pair_skew_mm=pairskews,bus_skew=bus_skews,reference_plane_samples_checked=samples,
+        mipi=rows,mipi_corners=corners,pair_skew_mm=pairskews,bus_skew=bus_skews,reference_plane_samples_checked=samples,
         reference_plane_gaps_outside_transition_antipads=0,paired_ground_returns=len(returns),
         total_tracks_and_vias=len(tracks),remaining_unconnected=cn.GetUnconnectedCount(False),
         physical_drc=0,schematic_parity=0,signal_integrity='Not simulated or measured; effective dielectric via delay is a first-order budget only',
